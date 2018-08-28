@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: contracts/Havven.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: contracts/Havven.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const {Contract, providers, utils} = require('ethers');
+const addresses = require('../../lib/addresses');
+const abi = require('../../lib/abis').Havven;
+const ContractSettings = require('../contractSettings');
+
+/** @constructor
+ * @param contractSettings {ContractSettings}
+ */
+function Havven(contractSettings) {
+  this.contractSettings = contractSettings || new ContractSettings();
+  
+  this.contract = new Contract(
+    this.contractSettings.addressList["Havven"],
+    abi,
+    this.contractSettings.signer || this.contractSettings.provider
+  );
+  
+  
+
+  /**
+   * setFeePeriodDuration - function - requires signer
+   * @param duration {Number}
+  
+   **/
+  this.setFeePeriodDuration = async (duration) => {
+    return await this.contract.setFeePeriodDuration(duration);
+  };
+
+
+  /**
+   * setIssuanceRatio - function - requires signer
+   * @param _issuanceRatio {Number}
+  
+   **/
+  this.setIssuanceRatio = async (_issuanceRatio) => {
+    return await this.contract.setIssuanceRatio(_issuanceRatio);
+  };
+
+
+  /**
+   * name - constant - doesn't require signer
+   * @returns String
+   **/
+  this.name = async () => {
+    return await this.contract.name();
+  };
+
+
+  /**
+   * approve - function - requires signer
+   * @param spender {String&lt;EthAddress>}
+   * @param value {Number}
+   * @returns boolean
+   **/
+  this.approve = async (spender, value) => {
+    return await this.contract.approve(spender, value);
+  };
+
+
+  /**
+   * totalIssuanceData - constant - doesn't require signer
+   * @returns Object
+   **/
+  this.totalIssuanceData = async () => {
+    return await this.contract.totalIssuanceData();
+  };
+
+
+  /**
+   * unlockedCollateral - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.unlockedCollateral = async (account) => {
+    return await this.contract.unlockedCollateral(account);
+  };
+
+
+  /**
+   * nominateNewOwner - function - requires signer
+   * @param _owner {String&lt;EthAddress>}
+  
+   **/
+  this.nominateNewOwner = async (_owner) => {
+    return await this.contract.nominateNewOwner(_owner);
+  };
+
+
+  /**
+   * initiationTime - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.initiationTime = async () => {
+    return await this.contract.initiationTime();
+  };
+
+
+  /**
+   * totalSupply - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.totalSupply = async () => {
+    return await this.contract.totalSupply();
+  };
+
+
+  /**
+   * issueNomins - function - requires signer
+   * @param amount {Number}
+  
+   **/
+  this.issueNomins = async (amount) => {
+    return await this.contract.issueNomins(amount);
+  };
+
+
+  /**
+   * setSelfDestructBeneficiary - function - requires signer
+   * @param _beneficiary {String&lt;EthAddress>}
+  
+   **/
+  this.setSelfDestructBeneficiary = async (_beneficiary) => {
+    return await this.contract.setSelfDestructBeneficiary(_beneficiary);
+  };
+
+
+  /**
+   * priceStalePeriod - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.priceStalePeriod = async () => {
+    return await this.contract.priceStalePeriod();
+  };
+
+
+  /**
+   * feePeriodDuration - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.feePeriodDuration = async () => {
+    return await this.contract.feePeriodDuration();
+  };
+
+
+  /**
+   * hasWithdrawnFees - constant - doesn't require signer
+   * @param  {String&lt;EthAddress>}
+   * @returns boolean
+   **/
+  this.hasWithdrawnFees = async () => {
+    return await this.contract.hasWithdrawnFees();
+  };
+
+
+  /**
+   * transferFrom - function - requires signer
+   * @param from {String&lt;EthAddress>}
+   * @param to {String&lt;EthAddress>}
+   * @param value {Number}
+   * @returns boolean
+   **/
+  this.transferFrom = async (from, to, value) => {
+    return await this.contract.transferFrom(from, to, value);
+  };
+
+
+  /**
+   * issuanceDraft - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.issuanceDraft = async (account) => {
+    return await this.contract.issuanceDraft(account);
+  };
+
+
+  /**
+   * setPriceStalePeriod - function - requires signer
+   * @param time {Number}
+  
+   **/
+  this.setPriceStalePeriod = async (time) => {
+    return await this.contract.setPriceStalePeriod(time);
+  };
+
+
+  /**
+   * decimals - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.decimals = async () => {
+    return await this.contract.decimals();
+  };
+
+
+  /**
+   * burnNomins - function - requires signer
+   * @param amount {Number}
+  
+   **/
+  this.burnNomins = async (amount) => {
+    return await this.contract.burnNomins(amount);
+  };
+
+
+  /**
+   * terminateSelfDestruct - function - requires signer
+  
+   **/
+  this.terminateSelfDestruct = async () => {
+    return await this.contract.terminateSelfDestruct();
+  };
+
+
+  /**
+   * withdrawFees - function - requires signer
+  
+   **/
+  this.withdrawFees = async () => {
+    return await this.contract.withdrawFees();
+  };
+
+
+  /**
+   * setIssuer - function - requires signer
+   * @param account {String&lt;EthAddress>}
+   * @param value {boolean}
+  
+   **/
+  this.setIssuer = async (account, value) => {
+    return await this.contract.setIssuer(account, value);
+  };
+
+
+  /**
+   * lastPriceUpdateTime - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.lastPriceUpdateTime = async () => {
+    return await this.contract.lastPriceUpdateTime();
+  };
+
+
+  /**
+   * nominatedOwner - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.nominatedOwner = async () => {
+    return await this.contract.nominatedOwner();
+  };
+
+
+  /**
+   * setNomin - function - requires signer
+   * @param _nomin {String&lt;EthAddress>}
+  
+   **/
+  this.setNomin = async (_nomin) => {
+    return await this.contract.setNomin(_nomin);
+  };
+
+
+  /**
+   * recomputeLastAverageBalance - function - requires signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.recomputeLastAverageBalance = async (account) => {
+    return await this.contract.recomputeLastAverageBalance(account);
+  };
+
+
+  /**
+   * nominsIssued - constant - doesn't require signer
+   * @param  {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.nominsIssued = async () => {
+    return await this.contract.nominsIssued();
+  };
+
+
+  /**
+   * issuanceLastAverageBalance - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.issuanceLastAverageBalance = async (account) => {
+    return await this.contract.issuanceLastAverageBalance(account);
+  };
+
+
+  /**
+   * balanceOf - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.balanceOf = async (account) => {
+    return await this.contract.balanceOf(account);
+  };
+
+
+  /**
+   * feePeriodStartTime - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.feePeriodStartTime = async () => {
+    return await this.contract.feePeriodStartTime();
+  };
+
+
+  /**
+   * acceptOwnership - function - requires signer
+  
+   **/
+  this.acceptOwnership = async () => {
+    return await this.contract.acceptOwnership();
+  };
+
+
+  /**
+   * setOracle - function - requires signer
+   * @param _oracle {String&lt;EthAddress>}
+  
+   **/
+  this.setOracle = async (_oracle) => {
+    return await this.contract.setOracle(_oracle);
+  };
+
+
+  /**
+   * oracle - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.oracle = async () => {
+    return await this.contract.oracle();
+  };
+
+
+  /**
+   * maxIssuableNomins - constant - doesn't require signer
+   * @param issuer {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.maxIssuableNomins = async (issuer) => {
+    return await this.contract.maxIssuableNomins(issuer);
+  };
+
+
+  /**
+   * updatePrice - function - requires signer
+   * @param newPrice {Number}
+   * @param timeSent {Number}
+  
+   **/
+  this.updatePrice = async (newPrice, timeSent) => {
+    return await this.contract.updatePrice(newPrice, timeSent);
+  };
+
+
+  /**
+   * isIssuer - constant - doesn't require signer
+   * @param  {String&lt;EthAddress>}
+   * @returns boolean
+   **/
+  this.isIssuer = async () => {
+    return await this.contract.isIssuer();
+  };
+
+
+  /**
+   * issuanceData - constant - doesn't require signer
+   * @param  {String&lt;EthAddress>}
+   * @returns Object
+   **/
+  this.issuanceData = async () => {
+    return await this.contract.issuanceData();
+  };
+
+
+  /**
+   * owner - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.owner = async () => {
+    return await this.contract.owner();
+  };
+
+
+  /**
+   * lockedCollateral - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.lockedCollateral = async (account) => {
+    return await this.contract.lockedCollateral(account);
+  };
+
+
+  /**
+   * rolloverFeePeriodIfElapsed - function - requires signer
+  
+   **/
+  this.rolloverFeePeriodIfElapsed = async () => {
+    return await this.contract.rolloverFeePeriodIfElapsed();
+  };
+
+
+  /**
+   * totalIssuanceLastModified - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.totalIssuanceLastModified = async () => {
+    return await this.contract.totalIssuanceLastModified();
+  };
+
+
+  /**
+   * symbol - constant - doesn't require signer
+   * @returns String
+   **/
+  this.symbol = async () => {
+    return await this.contract.symbol();
+  };
+
+
+  /**
+   * setProxy - function - requires signer
+   * @param _proxy {String&lt;EthAddress>}
+  
+   **/
+  this.setProxy = async (_proxy) => {
+    return await this.contract.setProxy(_proxy);
+  };
+
+
+  /**
+   * selfDestruct - function - requires signer
+  
+   **/
+  this.selfDestruct = async () => {
+    return await this.contract.selfDestruct();
+  };
+
+
+  /**
+   * UNIT - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.UNIT = async () => {
+    return await this.contract.UNIT();
+  };
+
+
+  /**
+   * setTokenState - function - requires signer
+   * @param _tokenState {String&lt;EthAddress>}
+  
+   **/
+  this.setTokenState = async (_tokenState) => {
+    return await this.contract.setTokenState(_tokenState);
+  };
+
+
+  /**
+   * price - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.price = async () => {
+    return await this.contract.price();
+  };
+
+
+  /**
+   * USDtoHAV - constant - doesn't require signer
+   * @param usd_dec {Number}
+   * @returns Number
+   **/
+  this.USDtoHAV = async (usd_dec) => {
+    return await this.contract.USDtoHAV(usd_dec);
+  };
+
+
+  /**
+   * SELFDESTRUCT_DELAY - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.SELFDESTRUCT_DELAY = async () => {
+    return await this.contract.SELFDESTRUCT_DELAY();
+  };
+
+
+  /**
+   * collateral - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.collateral = async (account) => {
+    return await this.contract.collateral(account);
+  };
+
+
+  /**
+   * transfer - function - requires signer
+   * @param to {String&lt;EthAddress>}
+   * @param value {Number}
+   * @returns boolean
+   **/
+  this.transfer = async (to, value) => {
+    return await this.contract.transfer(to, value);
+  };
+
+
+  /**
+   * issuanceRatio - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.issuanceRatio = async () => {
+    return await this.contract.issuanceRatio();
+  };
+
+
+  /**
+   * selfDestructInitiated - constant - doesn't require signer
+   * @returns boolean
+   **/
+  this.selfDestructInitiated = async () => {
+    return await this.contract.selfDestructInitiated();
+  };
+
+
+  /**
+   * setMessageSender - function - requires signer
+   * @param sender {String&lt;EthAddress>}
+  
+   **/
+  this.setMessageSender = async (sender) => {
+    return await this.contract.setMessageSender(sender);
+  };
+
+
+  /**
+   * initiateSelfDestruct - function - requires signer
+  
+   **/
+  this.initiateSelfDestruct = async () => {
+    return await this.contract.initiateSelfDestruct();
+  };
+
+
+  /**
+   * lastFeesCollected - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.lastFeesCollected = async () => {
+    return await this.contract.lastFeesCollected();
+  };
+
+
+  /**
+   * setEscrow - function - requires signer
+   * @param _escrow {String&lt;EthAddress>}
+  
+   **/
+  this.setEscrow = async (_escrow) => {
+    return await this.contract.setEscrow(_escrow);
+  };
+
+
+  /**
+   * totalIssuanceLastAverageBalance - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.totalIssuanceLastAverageBalance = async () => {
+    return await this.contract.totalIssuanceLastAverageBalance();
+  };
+
+
+  /**
+   * issuanceCurrentBalanceSum - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.issuanceCurrentBalanceSum = async (account) => {
+    return await this.contract.issuanceCurrentBalanceSum(account);
+  };
+
+
+  /**
+   * selfDestructBeneficiary - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.selfDestructBeneficiary = async () => {
+    return await this.contract.selfDestructBeneficiary();
+  };
+
+
+  /**
+   * remainingIssuableNomins - constant - doesn't require signer
+   * @param issuer {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.remainingIssuableNomins = async (issuer) => {
+    return await this.contract.remainingIssuableNomins(issuer);
+  };
+
+
+  /**
+   * lastFeePeriodStartTime - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.lastFeePeriodStartTime = async () => {
+    return await this.contract.lastFeePeriodStartTime();
+  };
+
+
+  /**
+   * totalIssuanceCurrentBalanceSum - constant - doesn't require signer
+   * @returns Number
+   **/
+  this.totalIssuanceCurrentBalanceSum = async () => {
+    return await this.contract.totalIssuanceCurrentBalanceSum();
+  };
+
+
+  /**
+   * issueMaxNomins - function - requires signer
+  
+   **/
+  this.issueMaxNomins = async () => {
+    return await this.contract.issueMaxNomins();
+  };
+
+
+  /**
+   * HAVtoUSD - constant - doesn't require signer
+   * @param hav_dec {Number}
+   * @returns Number
+   **/
+  this.HAVtoUSD = async (hav_dec) => {
+    return await this.contract.HAVtoUSD(hav_dec);
+  };
+
+
+  /**
+   * allowance - constant - doesn't require signer
+   * @param owner {String&lt;EthAddress>}
+   * @param spender {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.allowance = async (owner, spender) => {
+    return await this.contract.allowance(owner, spender);
+  };
+
+
+  /**
+   * transferableHavvens - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.transferableHavvens = async (account) => {
+    return await this.contract.transferableHavvens(account);
+  };
+
+
+  /**
+   * escrow - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.escrow = async () => {
+    return await this.contract.escrow();
+  };
+
+
+  /**
+   * nomin - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.nomin = async () => {
+    return await this.contract.nomin();
+  };
+
+
+  /**
+   * tokenState - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.tokenState = async () => {
+    return await this.contract.tokenState();
+  };
+
+
+  /**
+   * proxy - constant - doesn't require signer
+   * @returns String&lt;EthAddress>
+   **/
+  this.proxy = async () => {
+    return await this.contract.proxy();
+  };
+
+
+  /**
+   * issuanceLastModified - constant - doesn't require signer
+   * @param account {String&lt;EthAddress>}
+   * @returns Number
+   **/
+  this.issuanceLastModified = async (account) => {
+    return await this.contract.issuanceLastModified(account);
+  };
+
+
+  /**
+   * priceIsStale - constant - doesn't require signer
+   * @returns boolean
+   **/
+  this.priceIsStale = async () => {
+    return await this.contract.priceIsStale();
+  };
+
+
+}
+
+module.exports = Havven</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContractSettings.html">ContractSettings</a></li><li><a href="Havven.html">Havven</a></li><li><a href="IssuanceController.html">IssuanceController</a></li><li><a href="Nomin.html">Nomin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Aug 28 2018 10:42:40 GMT+1000 (AEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

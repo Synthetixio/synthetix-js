@@ -1,4 +1,4 @@
-const {Contract, providers, utils} = require('ethers');
+const { Contract, providers, utils } = require('ethers');
 const addresses = require('../../lib/addresses');
 const abi = require('../../lib/abis').Nomin;
 const ContractSettings = require('../contractSettings');
@@ -8,14 +8,12 @@ const ContractSettings = require('../contractSettings');
  */
 function Nomin(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
-  
+
   this.contract = new Contract(
-    this.contractSettings.addressList["Nomin"],
+    this.contractSettings.addressList['Nomin'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
-  
-  
 
   /**
    * court - constant - doesn't require signer
@@ -25,7 +23,6 @@ function Nomin(contractSettings) {
     return await this.contract.court();
   };
 
-
   /**
    * name - constant - doesn't require signer
    * @returns String
@@ -33,7 +30,6 @@ function Nomin(contractSettings) {
   this.name = async () => {
     return await this.contract.name();
   };
-
 
   /**
    * approve - function - requires signer
@@ -45,16 +41,14 @@ function Nomin(contractSettings) {
     return await this.contract.approve(spender, value);
   };
 
-
   /**
    * nominateNewOwner - function - requires signer
    * @param _owner {String<EthAddress>}
   
    **/
-  this.nominateNewOwner = async (_owner) => {
+  this.nominateNewOwner = async _owner => {
     return await this.contract.nominateNewOwner(_owner);
   };
-
 
   /**
    * initiationTime - constant - doesn't require signer
@@ -64,7 +58,6 @@ function Nomin(contractSettings) {
     return await this.contract.initiationTime();
   };
 
-
   /**
    * totalSupply - constant - doesn't require signer
    * @returns Number
@@ -73,26 +66,23 @@ function Nomin(contractSettings) {
     return await this.contract.totalSupply();
   };
 
-
   /**
    * amountReceived - constant - doesn't require signer
    * @param value {Number}
    * @returns Number
    **/
-  this.amountReceived = async (value) => {
+  this.amountReceived = async value => {
     return await this.contract.amountReceived(value);
   };
-
 
   /**
    * setSelfDestructBeneficiary - function - requires signer
    * @param _beneficiary {String<EthAddress>}
   
    **/
-  this.setSelfDestructBeneficiary = async (_beneficiary) => {
+  this.setSelfDestructBeneficiary = async _beneficiary => {
     return await this.contract.setSelfDestructBeneficiary(_beneficiary);
   };
-
 
   /**
    * transferFrom - function - requires signer
@@ -105,7 +95,6 @@ function Nomin(contractSettings) {
     return await this.contract.transferFrom(from, to, value);
   };
 
-
   /**
    * decimals - constant - doesn't require signer
    * @returns Number
@@ -113,7 +102,6 @@ function Nomin(contractSettings) {
   this.decimals = async () => {
     return await this.contract.decimals();
   };
-
 
   /**
    * feeAuthority - constant - doesn't require signer
@@ -123,7 +111,6 @@ function Nomin(contractSettings) {
     return await this.contract.feeAuthority();
   };
 
-
   /**
    * terminateSelfDestruct - function - requires signer
   
@@ -131,7 +118,6 @@ function Nomin(contractSettings) {
   this.terminateSelfDestruct = async () => {
     return await this.contract.terminateSelfDestruct();
   };
-
 
   /**
    * transferFeeRate - constant - doesn't require signer
@@ -141,36 +127,32 @@ function Nomin(contractSettings) {
     return await this.contract.transferFeeRate();
   };
 
-
   /**
    * freezeAndConfiscate - function - requires signer
    * @param target {String<EthAddress>}
   
    **/
-  this.freezeAndConfiscate = async (target) => {
+  this.freezeAndConfiscate = async target => {
     return await this.contract.freezeAndConfiscate(target);
   };
-
 
   /**
    * transferPlusFee - constant - doesn't require signer
    * @param value {Number}
    * @returns Number
    **/
-  this.transferPlusFee = async (value) => {
+  this.transferPlusFee = async value => {
     return await this.contract.transferPlusFee(value);
   };
-
 
   /**
    * setHavven - function - requires signer
    * @param _havven {String<EthAddress>}
   
    **/
-  this.setHavven = async (_havven) => {
+  this.setHavven = async _havven => {
     return await this.contract.setHavven(_havven);
   };
-
 
   /**
    * nominatedOwner - constant - doesn't require signer
@@ -180,36 +162,32 @@ function Nomin(contractSettings) {
     return await this.contract.nominatedOwner();
   };
 
-
   /**
    * donateToFeePool - function - requires signer
    * @param n {Number}
    * @returns boolean
    **/
-  this.donateToFeePool = async (n) => {
+  this.donateToFeePool = async n => {
     return await this.contract.donateToFeePool(n);
   };
-
 
   /**
    * balanceOf - constant - doesn't require signer
    * @param account {String<EthAddress>}
    * @returns Number
    **/
-  this.balanceOf = async (account) => {
+  this.balanceOf = async account => {
     return await this.contract.balanceOf(account);
   };
-
 
   /**
    * unfreezeAccount - function - requires signer
    * @param target {String<EthAddress>}
   
    **/
-  this.unfreezeAccount = async (target) => {
+  this.unfreezeAccount = async target => {
     return await this.contract.unfreezeAccount(target);
   };
-
 
   /**
    * acceptOwnership - function - requires signer
@@ -218,7 +196,6 @@ function Nomin(contractSettings) {
   this.acceptOwnership = async () => {
     return await this.contract.acceptOwnership();
   };
-
 
   /**
    * issue - function - requires signer
@@ -230,16 +207,14 @@ function Nomin(contractSettings) {
     return await this.contract.issue(account, amount);
   };
 
-
   /**
    * setFeeAuthority - function - requires signer
    * @param _feeAuthority {String<EthAddress>}
   
    **/
-  this.setFeeAuthority = async (_feeAuthority) => {
+  this.setFeeAuthority = async _feeAuthority => {
     return await this.contract.setFeeAuthority(_feeAuthority);
   };
-
 
   /**
    * owner - constant - doesn't require signer
@@ -249,7 +224,6 @@ function Nomin(contractSettings) {
     return await this.contract.owner();
   };
 
-
   /**
    * symbol - constant - doesn't require signer
    * @returns String
@@ -258,16 +232,14 @@ function Nomin(contractSettings) {
     return await this.contract.symbol();
   };
 
-
   /**
    * setProxy - function - requires signer
    * @param _proxy {String<EthAddress>}
   
    **/
-  this.setProxy = async (_proxy) => {
+  this.setProxy = async _proxy => {
     return await this.contract.setProxy(_proxy);
   };
-
 
   /**
    * havven - constant - doesn't require signer
@@ -277,7 +249,6 @@ function Nomin(contractSettings) {
     return await this.contract.havven();
   };
 
-
   /**
    * selfDestruct - function - requires signer
   
@@ -286,7 +257,6 @@ function Nomin(contractSettings) {
     return await this.contract.selfDestruct();
   };
 
-
   /**
    * UNIT - constant - doesn't require signer
    * @returns Number
@@ -294,7 +264,6 @@ function Nomin(contractSettings) {
   this.UNIT = async () => {
     return await this.contract.UNIT();
   };
-
 
   /**
    * burn - function - requires signer
@@ -306,16 +275,14 @@ function Nomin(contractSettings) {
     return await this.contract.burn(account, amount);
   };
 
-
   /**
    * setTokenState - function - requires signer
    * @param _tokenState {String<EthAddress>}
   
    **/
-  this.setTokenState = async (_tokenState) => {
+  this.setTokenState = async _tokenState => {
     return await this.contract.setTokenState(_tokenState);
   };
-
 
   /**
    * SELFDESTRUCT_DELAY - constant - doesn't require signer
@@ -324,7 +291,6 @@ function Nomin(contractSettings) {
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
-
 
   /**
    * transfer - function - requires signer
@@ -336,16 +302,14 @@ function Nomin(contractSettings) {
     return await this.contract.transfer(to, value);
   };
 
-
   /**
    * setCourt - function - requires signer
    * @param _court {String<EthAddress>}
   
    **/
-  this.setCourt = async (_court) => {
+  this.setCourt = async _court => {
     return await this.contract.setCourt(_court);
   };
-
 
   /**
    * withdrawFees - function - requires signer
@@ -357,7 +321,6 @@ function Nomin(contractSettings) {
     return await this.contract.withdrawFees(account, value);
   };
 
-
   /**
    * feePool - constant - doesn't require signer
    * @returns Number
@@ -365,7 +328,6 @@ function Nomin(contractSettings) {
   this.feePool = async () => {
     return await this.contract.feePool();
   };
-
 
   /**
    * selfDestructInitiated - constant - doesn't require signer
@@ -375,16 +337,14 @@ function Nomin(contractSettings) {
     return await this.contract.selfDestructInitiated();
   };
 
-
   /**
    * setMessageSender - function - requires signer
    * @param sender {String<EthAddress>}
   
    **/
-  this.setMessageSender = async (sender) => {
+  this.setMessageSender = async sender => {
     return await this.contract.setMessageSender(sender);
   };
-
 
   /**
    * initiateSelfDestruct - function - requires signer
@@ -394,7 +354,6 @@ function Nomin(contractSettings) {
     return await this.contract.initiateSelfDestruct();
   };
 
-
   /**
    * selfDestructBeneficiary - constant - doesn't require signer
    * @returns String<EthAddress>
@@ -403,16 +362,14 @@ function Nomin(contractSettings) {
     return await this.contract.selfDestructBeneficiary();
   };
 
-
   /**
    * setTransferFeeRate - function - requires signer
    * @param _transferFeeRate {Number}
   
    **/
-  this.setTransferFeeRate = async (_transferFeeRate) => {
+  this.setTransferFeeRate = async _transferFeeRate => {
     return await this.contract.setTransferFeeRate(_transferFeeRate);
   };
-
 
   /**
    * frozen - constant - doesn't require signer
@@ -422,7 +379,6 @@ function Nomin(contractSettings) {
   this.frozen = async () => {
     return await this.contract.frozen();
   };
-
 
   /**
    * transferSenderPaysFee - function - requires signer
@@ -434,16 +390,14 @@ function Nomin(contractSettings) {
     return await this.contract.transferSenderPaysFee(to, value);
   };
 
-
   /**
    * transferFeeIncurred - constant - doesn't require signer
    * @param value {Number}
    * @returns Number
    **/
-  this.transferFeeIncurred = async (value) => {
+  this.transferFeeIncurred = async value => {
     return await this.contract.transferFeeIncurred(value);
   };
-
 
   /**
    * allowance - constant - doesn't require signer
@@ -454,7 +408,6 @@ function Nomin(contractSettings) {
   this.allowance = async (owner, spender) => {
     return await this.contract.allowance(owner, spender);
   };
-
 
   /**
    * transferFromSenderPaysFee - function - requires signer
@@ -467,7 +420,6 @@ function Nomin(contractSettings) {
     return await this.contract.transferFromSenderPaysFee(from, to, value);
   };
 
-
   /**
    * tokenState - constant - doesn't require signer
    * @returns String<EthAddress>
@@ -475,7 +427,6 @@ function Nomin(contractSettings) {
   this.tokenState = async () => {
     return await this.contract.tokenState();
   };
-
 
   /**
    * FEE_ADDRESS - constant - doesn't require signer
@@ -485,7 +436,6 @@ function Nomin(contractSettings) {
     return await this.contract.FEE_ADDRESS();
   };
 
-
   /**
    * proxy - constant - doesn't require signer
    * @returns String<EthAddress>
@@ -493,8 +443,6 @@ function Nomin(contractSettings) {
   this.proxy = async () => {
     return await this.contract.proxy();
   };
-
-
 }
 
-module.exports = Nomin
+module.exports = Nomin;

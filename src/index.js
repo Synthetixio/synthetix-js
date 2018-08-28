@@ -1,6 +1,6 @@
-const Havven = require("./contracts/Havven");
-const Nomin = require("./contracts/Nomin");
-const IssuanceController = require("./contracts/IssuanceController");
+const Havven = require('./contracts/Havven');
+const Nomin = require('./contracts/Nomin');
+const IssuanceController = require('./contracts/IssuanceController');
 
 class HavvenJs {
   /**
@@ -11,7 +11,7 @@ class HavvenJs {
    * @constructor
    * @param contractSettings {ContractSettings}
    */
-  constructor(contractSettings){
+  constructor(contractSettings) {
     this.Havven = new Havven(contractSettings);
     this.Nomin = new Nomin(contractSettings);
     this.IssuanceController = new IssuanceController(contractSettings);

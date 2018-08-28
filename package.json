@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "docs": "jsdoc src -r -d ./doc"
+    "docs": "jsdoc src -r -d ./doc",
+    "format": "prettier --write 'src/**/*.js'"
   },
   "author": "Roman Mandryk",
   "license": "MIT",

@@ -1,0 +1,25 @@
+{
+  "name": "havven-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Roman Mandryk",
+  "license": "MIT",
+  "dependencies": {
+    "ethereumjs-tx": "^1.3.7",
+    "ethereumjs-util": "^5.2.0",
+    "ethers": "^3.0.26",
+    "@ledgerhq/hw-app-eth": "^4.21.0",
+    "@ledgerhq/hw-transport": "^4.21.0",
+    "@ledgerhq/hw-transport-u2f": "^4.21.0",
+    "trezor-connect": "^5.0.29"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0"
+  }
+}

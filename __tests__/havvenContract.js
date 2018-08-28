@@ -1,14 +1,13 @@
-const Havven = require('../src/contracts/Havven');
+const HavvenJs = require('../src/index');
+const havjs = new HavvenJs();
+
 const { utils } = require('ethers')
 
 test('Should return Havven total supply', async () => {
-  const HC = new Havven();
-  const totalSupply = await HC.totalSupply();
+  const totalSupply = await havjs.Havven.totalSupply();
   return expect(utils.formatEther(totalSupply)).toBeTruthy();
 });
 
 test('Should throw Missing signer error', async () => {
-  const HC = new Havven();
-  await expect(HC.issueNomins(10)).rejects.toThrow();
-
+  await expect(havjs.Havven.issueNomins(10)).rejects.toThrow();
 });

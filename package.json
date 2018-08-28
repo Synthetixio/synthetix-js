@@ -2,9 +2,10 @@
   "name": "havven-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs": "jsdoc src -r -d ./doc"
   },
   "author": "Roman Mandryk",
   "license": "MIT",

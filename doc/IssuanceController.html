@@ -138,7 +138,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line9">line 9</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -192,7 +192,7 @@
     
 
     
-    <h4 class="name" id="acceptOwnership"><span class="type-signature"></span>acceptOwnership<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="acceptOwnership"><span class="type-signature"></span>acceptOwnership<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -200,285 +200,7 @@
 
 
 <div class="description">
-    acceptOwnership - function - requires signer
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line266">line 266</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="decimals"><span class="type-signature"></span>decimals<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    decimals - constant - doesn't require signer
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line122">line 122</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Number
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="exchangeEtherForHavvens"><span class="type-signature"></span>exchangeEtherForHavvens<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    exchangeEtherForHavvens - function - requires signer
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line161">line 161</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Number
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="exchangeEtherForHavvensAtRate"><span class="type-signature"></span>exchangeEtherForHavvensAtRate<span class="signature">(guaranteedEtherRate, guaranteedHavvenRate)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    exchangeEtherForHavvensAtRate - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -514,36 +236,13 @@
 
         <tr>
             
-                <td class="name"><code>guaranteedEtherRate</code></td>
+                <td class="name"><code>txParams</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>guaranteedHavvenRate</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
+<span class="param-type">TxParams</span>
 
 
             
@@ -594,7 +293,93 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line378">line 378</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line286">line 286</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="decimals"><span class="type-signature"></span>decimals<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line127">line 127</a>
     </li></ul></dd>
     
 
@@ -638,7 +423,7 @@
     
 
     
-    <h4 class="name" id="exchangeEtherForNomins"><span class="type-signature"></span>exchangeEtherForNomins<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="exchangeEtherForHavvens"><span class="type-signature"></span>exchangeEtherForHavvens<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -646,7 +431,8 @@
 
 
 <div class="description">
-    exchangeEtherForNomins - function - requires signer
+    Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
 </div>
 
 
@@ -655,6 +441,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -717,7 +552,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -734,7 +569,7 @@
     
 
     
-    <h4 class="name" id="exchangeEtherForNominsAtRate"><span class="type-signature"></span>exchangeEtherForNominsAtRate<span class="signature">(guaranteedRate)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="exchangeEtherForHavvensAtRate"><span class="type-signature"></span>exchangeEtherForHavvensAtRate<span class="signature">(guaranteedEtherRate, guaranteedHavvenRate, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -742,7 +577,347 @@
 
 
 <div class="description">
-    exchangeEtherForNominsAtRate - function - requires signer
+    Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>guaranteedEtherRate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>guaranteedHavvenRate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line395">line 395</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="exchangeEtherForNomins"><span class="type-signature"></span>exchangeEtherForNomins<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Exchange ETH to nUSD.<br>
+Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line182">line 182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="exchangeEtherForNominsAtRate"><span class="type-signature"></span>exchangeEtherForNominsAtRate<span class="signature">(guaranteedRate, txParams)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
 </div>
 
 
@@ -784,7 +959,30 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -835,7 +1033,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line247">line 247</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line264">line 264</a>
     </li></ul></dd>
     
 
@@ -862,7 +1060,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -879,7 +1077,7 @@
     
 
     
-    <h4 class="name" id="exchangeNominsForHavvens"><span class="type-signature"></span>exchangeNominsForHavvens<span class="signature">(nominAmount)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="exchangeNominsForHavvens"><span class="type-signature"></span>exchangeNominsForHavvens<span class="signature">(nominAmount, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -887,7 +1085,8 @@
 
 
 <div class="description">
-    exchangeNominsForHavvens - function - requires signer
+    Exchange nUSD for Havvens.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -929,7 +1128,30 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -980,7 +1202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line180">line 180</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line194">line 194</a>
     </li></ul></dd>
     
 
@@ -1007,7 +1229,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -1024,7 +1246,7 @@
     
 
     
-    <h4 class="name" id="exchangeNominsForHavvensAtRate"><span class="type-signature"></span>exchangeNominsForHavvensAtRate<span class="signature">(nominAmount, guaranteedRate)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="exchangeNominsForHavvensAtRate"><span class="type-signature"></span>exchangeNominsForHavvensAtRate<span class="signature">(nominAmount, guaranteedRate, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1032,7 +1254,7 @@
 
 
 <div class="description">
-    exchangeNominsForHavvensAtRate - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -1074,7 +1296,7 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
 
 
             
@@ -1097,7 +1319,30 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -1148,7 +1393,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line113">line 113</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line114">line 114</a>
     </li></ul></dd>
     
 
@@ -1175,7 +1420,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -1200,7 +1445,7 @@
 
 
 <div class="description">
-    fundsWallet - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1296,7 +1541,7 @@
 
 
 <div class="description">
-    havven - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1340,7 +1585,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line312">line 312</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line331">line 331</a>
     </li></ul></dd>
     
 
@@ -1392,7 +1637,7 @@
 
 
 <div class="description">
-    havvensReceivedForEther - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1434,7 +1679,7 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
 
 
             
@@ -1512,7 +1757,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -1537,7 +1782,8 @@
 
 
 <div class="description">
-    havvensReceivedForNomins - constant - doesn't require signer
+    Calculate how many havvens you will receive if you transfer an amount of nomins.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1579,7 +1825,7 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
 
 
             
@@ -1630,7 +1876,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line218">line 218</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line233">line 233</a>
     </li></ul></dd>
     
 
@@ -1657,7 +1903,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -1674,7 +1920,7 @@
     
 
     
-    <h4 class="name" id="initiateSelfDestruct"><span class="type-signature"></span>initiateSelfDestruct<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="initiateSelfDestruct"><span class="type-signature"></span>initiateSelfDestruct<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1682,7 +1928,7 @@
 
 
 <div class="description">
-    initiateSelfDestruct - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -1691,6 +1937,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1726,7 +2021,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line387">line 387</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line413">line 413</a>
     </li></ul></dd>
     
 
@@ -1768,7 +2063,7 @@
 
 
 <div class="description">
-    initiationTime - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1812,7 +2107,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line44">line 44</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -1839,7 +2134,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -1864,7 +2159,7 @@
 
 
 <div class="description">
-    lastPauseTime - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1908,7 +2203,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line303">line 303</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line323">line 323</a>
     </li></ul></dd>
     
 
@@ -1935,7 +2230,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -1960,7 +2255,7 @@
 
 
 <div class="description">
-    lastPriceUpdateTime - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2004,7 +2299,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line189">line 189</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line203">line 203</a>
     </li></ul></dd>
     
 
@@ -2031,7 +2326,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -2056,7 +2351,7 @@
 
 
 <div class="description">
-    nomin - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2100,7 +2395,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line414">line 414</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line438">line 438</a>
     </li></ul></dd>
     
 
@@ -2152,7 +2447,7 @@
 
 
 <div class="description">
-    nominatedOwner - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2196,7 +2491,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line208">line 208</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line223">line 223</a>
     </li></ul></dd>
     
 
@@ -2240,7 +2535,7 @@
     
 
     
-    <h4 class="name" id="nominateNewOwner"><span class="type-signature"></span>nominateNewOwner<span class="signature">(_owner)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="nominateNewOwner"><span class="type-signature"></span>nominateNewOwner<span class="signature">(_owner, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2248,7 +2543,7 @@
 
 
 <div class="description">
-    nominateNewOwner - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -2304,128 +2599,16 @@
         </tr>
 
     
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line25">line 25</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="nominsReceivedForEther"><span class="type-signature"></span>nominsReceivedForEther<span class="signature">(amount)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    nominsReceivedForEther - constant - doesn't require signer
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
 
         <tr>
             
-                <td class="name"><code>amount</code></td>
+                <td class="name"><code>txParams</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">TxParams</span>
 
 
             
@@ -2476,7 +2659,143 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line349">line 349</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="nominsReceivedForEther"><span class="type-signature"></span>nominsReceivedForEther<span class="signature">(amount)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Calculate how many nomins you will receive if you transfer an amount of ether.<br>
+Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line367">line 367</a>
     </li></ul></dd>
     
 
@@ -2503,7 +2822,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -2528,7 +2847,7 @@
 
 
 <div class="description">
-    oracle - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2572,7 +2891,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line285">line 285</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line307">line 307</a>
     </li></ul></dd>
     
 
@@ -2624,7 +2943,7 @@
 
 
 <div class="description">
-    owner - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2668,7 +2987,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line294">line 294</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line315">line 315</a>
     </li></ul></dd>
     
 
@@ -2720,7 +3039,7 @@
 
 
 <div class="description">
-    paused - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2764,7 +3083,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line237">line 237</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line253">line 253</a>
     </li></ul></dd>
     
 
@@ -2816,7 +3135,8 @@
 
 
 <div class="description">
-    pricesAreStale - constant - doesn't require signer
+    Check if the prices haven't been updated for longer than the stale period.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2860,7 +3180,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line140">line 140</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line146">line 146</a>
     </li></ul></dd>
     
 
@@ -2912,7 +3232,7 @@
 
 
 <div class="description">
-    priceStalePeriod - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2956,7 +3276,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line92">line 92</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -2983,7 +3303,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -3000,7 +3320,7 @@
     
 
     
-    <h4 class="name" id="selfDestruct"><span class="type-signature"></span>selfDestruct<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="selfDestruct"><span class="type-signature"></span>selfDestruct<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3008,7 +3328,7 @@
 
 
 <div class="description">
-    selfDestruct - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3017,6 +3337,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -3052,7 +3421,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line321">line 321</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line340">line 340</a>
     </li></ul></dd>
     
 
@@ -3094,7 +3463,7 @@
 
 
 <div class="description">
-    SELFDESTRUCT_DELAY - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -3138,7 +3507,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line339">line 339</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line357">line 357</a>
     </li></ul></dd>
     
 
@@ -3165,7 +3534,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -3190,7 +3559,7 @@
 
 
 <div class="description">
-    selfDestructBeneficiary - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -3234,7 +3603,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line405">line 405</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line430">line 430</a>
     </li></ul></dd>
     
 
@@ -3286,7 +3655,7 @@
 
 
 <div class="description">
-    selfDestructInitiated - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -3330,7 +3699,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line358">line 358</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line375">line 375</a>
     </li></ul></dd>
     
 
@@ -3374,7 +3743,7 @@
     
 
     
-    <h4 class="name" id="setFundsWallet"><span class="type-signature"></span>setFundsWallet<span class="signature">(_fundsWallet)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setFundsWallet"><span class="type-signature"></span>setFundsWallet<span class="signature">(_fundsWallet, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3382,7 +3751,8 @@
 
 
 <div class="description">
-    setFundsWallet - function - requires signer
+    Set the funds wallet where ETH raised is held.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3438,398 +3808,16 @@
         </tr>
 
     
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line257">line 257</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="setHavven"><span class="type-signature"></span>setHavven<span class="signature">(_havven)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    setHavven - function - requires signer
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
 
         <tr>
             
-                <td class="name"><code>_havven</code></td>
+                <td class="name"><code>txParams</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String.&lt;EthAddress></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line199">line 199</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="setNomin"><span class="type-signature"></span>setNomin<span class="signature">(_nomin)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    setNomin - function - requires signer
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>_nomin</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String.&lt;EthAddress></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line228">line 228</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="setOracle"><span class="type-signature"></span>setOracle<span class="signature">(_oracle)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    setOracle - function - requires signer
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>_oracle</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String.&lt;EthAddress></span>
+<span class="param-type">TxParams</span>
 
 
             
@@ -3914,7 +3902,7 @@
     
 
     
-    <h4 class="name" id="setPaused"><span class="type-signature"></span>setPaused<span class="signature">(_paused)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setHavven"><span class="type-signature"></span>setHavven<span class="signature">(_havven, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3922,7 +3910,484 @@
 
 
 <div class="description">
-    setPaused - function - requires signer
+    Set the Havven contract that the issuance controller uses to issue Havvens.<br>
+Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>_havven</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line214">line 214</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setNomin"><span class="type-signature"></span>setNomin<span class="signature">(_nomin, txParams)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Set the Nomin contract that the issuance controller uses to issue Nomins.<br>
+Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>_nomin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line244">line 244</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setOracle"><span class="type-signature"></span>setOracle<span class="signature">(_oracle, txParams)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Set the Oracle that pushes the havven price to this contract.<br>
+Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>_oracle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line298">line 298</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setPaused"><span class="type-signature"></span>setPaused<span class="signature">(_paused, txParams)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3978,6 +4443,29 @@
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -4015,7 +4503,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line35">line 35</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -4049,7 +4537,7 @@
     
 
     
-    <h4 class="name" id="setPriceStalePeriod"><span class="type-signature"></span>setPriceStalePeriod<span class="signature">(_time)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setPriceStalePeriod"><span class="type-signature"></span>setPriceStalePeriod<span class="signature">(_time, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4057,7 +4545,8 @@
 
 
 <div class="description">
-    setPriceStalePeriod - function - requires signer
+    Set the stale period on the updated price variables.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4099,7 +4588,30 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -4184,7 +4696,7 @@
     
 
     
-    <h4 class="name" id="setSelfDestructBeneficiary"><span class="type-signature"></span>setSelfDestructBeneficiary<span class="signature">(_beneficiary)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setSelfDestructBeneficiary"><span class="type-signature"></span>setSelfDestructBeneficiary<span class="signature">(_beneficiary, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4192,7 +4704,7 @@
 
 
 <div class="description">
-    setSelfDestructBeneficiary - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4235,6 +4747,29 @@
             
                 
 <span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -4319,7 +4854,7 @@
     
 
     
-    <h4 class="name" id="terminateSelfDestruct"><span class="type-signature"></span>terminateSelfDestruct<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="terminateSelfDestruct"><span class="type-signature"></span>terminateSelfDestruct<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4327,189 +4862,7 @@
 
 
 <div class="description">
-    terminateSelfDestruct - function - requires signer
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line131">line 131</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="UNIT"><span class="type-signature"></span>UNIT<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    UNIT - constant - doesn't require signer
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line330">line 330</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Number
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="updatePrices"><span class="type-signature"></span>updatePrices<span class="signature">(newEthPrice, newHavvenPrice, timeSent)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    updatePrices - function - requires signer
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4545,59 +4898,13 @@
 
         <tr>
             
-                <td class="name"><code>newEthPrice</code></td>
+                <td class="name"><code>txParams</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>newHavvenPrice</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>timeSent</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
+<span class="param-type">TxParams</span>
 
 
             
@@ -4648,7 +4955,308 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line152">line 152</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line136">line 136</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="UNIT"><span class="type-signature"></span>UNIT<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line349">line 349</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updatePrices"><span class="type-signature"></span>updatePrices<span class="signature">(newEthPrice, newHavvenPrice, timeSent, txParams)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Access point for the oracle to update the prices of havvens / eth.<br>
+Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>newEthPrice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>newHavvenPrice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeSent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line159">line 159</a>
     </li></ul></dd>
     
 
@@ -4690,7 +5298,7 @@
 
 
 <div class="description">
-    usdToEthPrice - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -4734,7 +5342,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line367">line 367</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line383">line 383</a>
     </li></ul></dd>
     
 
@@ -4761,7 +5369,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -4786,7 +5394,7 @@
 
 
 <div class="description">
-    usdToHavPrice - constant - doesn't require signer
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -4830,7 +5438,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line396">line 396</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line422">line 422</a>
     </li></ul></dd>
     
 
@@ -4857,7 +5465,7 @@
 
         
 <div class="param-desc">
-    Number
+    BigNumber
 </div>
 
 
@@ -4874,7 +5482,7 @@
     
 
     
-    <h4 class="name" id="withdrawHavvens"><span class="type-signature"></span>withdrawHavvens<span class="signature">(amount)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdrawHavvens"><span class="type-signature"></span>withdrawHavvens<span class="signature">(amount, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4882,7 +5490,8 @@
 
 
 <div class="description">
-    withdrawHavvens - function - requires signer
+    Withdraw havvens: Allows the owner to withdraw havvens from this contract if needed.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4924,7 +5533,30 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -5009,7 +5641,7 @@
     
 
     
-    <h4 class="name" id="withdrawNomins"><span class="type-signature"></span>withdrawNomins<span class="signature">(amount)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdrawNomins"><span class="type-signature"></span>withdrawNomins<span class="signature">(amount, txParams)</span><span class="type-signature"></span></h4>
     
 
     
@@ -5017,7 +5649,8 @@
 
 
 <div class="description">
-    withdrawNomins - function - requires signer
+    Withdraw nomins: Allows the owner to withdraw nomins from this contract if needed.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -5059,7 +5692,30 @@
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
 
 
             
@@ -5110,7 +5766,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line424">line 424</a>
+        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line449">line 449</a>
     </li></ul></dd>
     
 
@@ -5154,13 +5810,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContractSettings.html">ContractSettings</a></li><li><a href="Havven.html">Havven</a></li><li><a href="HavvenJs.html">HavvenJs</a></li><li><a href="IssuanceController.html">IssuanceController</a></li><li><a href="Nomin.html">Nomin</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContractSettings.html">ContractSettings</a></li><li><a href="Havven.html">Havven</a></li><li><a href="HavvenJs.html">HavvenJs</a></li><li><a href="IssuanceController.html">IssuanceController</a></li><li><a href="Mintr.html">Mintr</a></li><li><a href="Nomin.html">Nomin</a></li><li><a href="StablePayments.html">StablePayments</a></li><li><a href="Util.html">Util</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Aug 28 2018 11:49:53 GMT+1000 (AEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Sep 02 2018 22:38:07 GMT+1000 (AEST)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,5 +1,4 @@
-const { Contract, providers, utils } = require('ethers');
-const addresses = require('../../lib/addresses');
+const { Contract } = require('ethers');
 const abi = require('../../lib/abis').Nomin;
 const ContractSettings = require('../contractSettings');
 
@@ -16,7 +15,7 @@ function Nomin(contractSettings) {
   );
 
   /**
-   * court - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.court = async () => {
@@ -24,7 +23,7 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * name - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
   this.name = async () => {
@@ -32,71 +31,79 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * approve - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param spender {String<EthAddress>}
-   * @param value {Number}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.approve = async (spender, value) => {
-    return await this.contract.approve(spender, value);
+  this.approve = async (spender, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.approve(spender, value, txParams);
   };
 
   /**
-   * nominateNewOwner - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.nominateNewOwner = async _owner => {
-    return await this.contract.nominateNewOwner(_owner);
+  this.nominateNewOwner = async (_owner, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.nominateNewOwner(_owner, txParams);
   };
 
   /**
-   * initiationTime - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.initiationTime = async () => {
     return await this.contract.initiationTime();
   };
 
   /**
-   * totalSupply - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.totalSupply = async () => {
     return await this.contract.totalSupply();
   };
 
   /**
-   * amountReceived - constant - doesn't require signer
-   * @param value {Number}
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @param value {BigNumber}
+   * @returns BigNumber
    **/
   this.amountReceived = async value => {
     return await this.contract.amountReceived(value);
   };
 
   /**
-   * setSelfDestructBeneficiary - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setSelfDestructBeneficiary = async _beneficiary => {
-    return await this.contract.setSelfDestructBeneficiary(_beneficiary);
+  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
   };
 
   /**
-   * transferFrom - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
-   * @param value {Number}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.transferFrom = async (from, to, value) => {
-    return await this.contract.transferFrom(from, to, value);
+  this.transferFrom = async (from, to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFrom(from, to, value, txParams);
   };
 
   /**
-   * decimals - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns Number
    **/
   this.decimals = async () => {
@@ -104,7 +111,7 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * feeAuthority - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.feeAuthority = async () => {
@@ -112,50 +119,56 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * terminateSelfDestruct - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.terminateSelfDestruct = async () => {
-    return await this.contract.terminateSelfDestruct();
+  this.terminateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.terminateSelfDestruct(txParams);
   };
 
   /**
-   * transferFeeRate - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.transferFeeRate = async () => {
     return await this.contract.transferFeeRate();
   };
 
   /**
-   * freezeAndConfiscate - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param target {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.freezeAndConfiscate = async target => {
-    return await this.contract.freezeAndConfiscate(target);
+  this.freezeAndConfiscate = async (target, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.freezeAndConfiscate(target, txParams);
   };
 
   /**
-   * transferPlusFee - constant - doesn't require signer
-   * @param value {Number}
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @param value {BigNumber}
+   * @returns BigNumber
    **/
   this.transferPlusFee = async value => {
     return await this.contract.transferPlusFee(value);
   };
 
   /**
-   * setHavven - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _havven {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setHavven = async _havven => {
-    return await this.contract.setHavven(_havven);
+  this.setHavven = async (_havven, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setHavven(_havven, txParams);
   };
 
   /**
-   * nominatedOwner - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {
@@ -163,61 +176,71 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * donateToFeePool - function - requires signer
-   * @param n {Number}
+   * Transaction (consumes gas, requires signer)
+   * @param n {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.donateToFeePool = async n => {
-    return await this.contract.donateToFeePool(n);
+  this.donateToFeePool = async (n, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.donateToFeePool(n, txParams);
   };
 
   /**
-   * balanceOf - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns Number
+   * @returns BigNumber
    **/
   this.balanceOf = async account => {
     return await this.contract.balanceOf(account);
   };
 
   /**
-   * unfreezeAccount - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param target {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.unfreezeAccount = async target => {
-    return await this.contract.unfreezeAccount(target);
+  this.unfreezeAccount = async (target, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.unfreezeAccount(target, txParams);
   };
 
   /**
-   * acceptOwnership - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.acceptOwnership = async () => {
-    return await this.contract.acceptOwnership();
+  this.acceptOwnership = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.acceptOwnership(txParams);
   };
 
   /**
-   * issue - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @param amount {Number}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.issue = async (account, amount) => {
-    return await this.contract.issue(account, amount);
+  this.issue = async (account, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issue(account, amount, txParams);
   };
 
   /**
-   * setFeeAuthority - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _feeAuthority {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setFeeAuthority = async _feeAuthority => {
-    return await this.contract.setFeeAuthority(_feeAuthority);
+  this.setFeeAuthority = async (_feeAuthority, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFeeAuthority(_feeAuthority, txParams);
   };
 
   /**
-   * owner - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.owner = async () => {
@@ -225,7 +248,7 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * symbol - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
   this.symbol = async () => {
@@ -233,16 +256,18 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * setProxy - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _proxy {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setProxy = async _proxy => {
-    return await this.contract.setProxy(_proxy);
+  this.setProxy = async (_proxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setProxy(_proxy, txParams);
   };
 
   /**
-   * havven - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.havven = async () => {
@@ -250,87 +275,99 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * selfDestruct - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.selfDestruct = async () => {
-    return await this.contract.selfDestruct();
+  this.selfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.selfDestruct(txParams);
   };
 
   /**
-   * UNIT - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.UNIT = async () => {
     return await this.contract.UNIT();
   };
 
   /**
-   * burn - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @param amount {Number}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.burn = async (account, amount) => {
-    return await this.contract.burn(account, amount);
+  this.burn = async (account, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burn(account, amount, txParams);
   };
 
   /**
-   * setTokenState - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _tokenState {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setTokenState = async _tokenState => {
-    return await this.contract.setTokenState(_tokenState);
+  this.setTokenState = async (_tokenState, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setTokenState(_tokenState, txParams);
   };
 
   /**
-   * SELFDESTRUCT_DELAY - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
 
   /**
-   * transfer - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
-   * @param value {Number}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.transfer = async (to, value) => {
-    return await this.contract.transfer(to, value);
+  this.transfer = async (to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transfer(to, value, txParams);
   };
 
   /**
-   * setCourt - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _court {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setCourt = async _court => {
-    return await this.contract.setCourt(_court);
+  this.setCourt = async (_court, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCourt(_court, txParams);
   };
 
   /**
-   * withdrawFees - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @param value {Number}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.withdrawFees = async (account, value) => {
-    return await this.contract.withdrawFees(account, value);
+  this.withdrawFees = async (account, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.withdrawFees(account, value, txParams);
   };
 
   /**
-   * feePool - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.feePool = async () => {
     return await this.contract.feePool();
   };
 
   /**
-   * selfDestructInitiated - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.selfDestructInitiated = async () => {
@@ -338,24 +375,28 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * setMessageSender - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param sender {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setMessageSender = async sender => {
-    return await this.contract.setMessageSender(sender);
+  this.setMessageSender = async (sender, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMessageSender(sender, txParams);
   };
 
   /**
-   * initiateSelfDestruct - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.initiateSelfDestruct = async () => {
-    return await this.contract.initiateSelfDestruct();
+  this.initiateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.initiateSelfDestruct(txParams);
   };
 
   /**
-   * selfDestructBeneficiary - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.selfDestructBeneficiary = async () => {
@@ -363,65 +404,71 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * setTransferFeeRate - function - requires signer
-   * @param _transferFeeRate {Number}
+   * Transaction (consumes gas, requires signer)
+   * @param _transferFeeRate {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.setTransferFeeRate = async _transferFeeRate => {
-    return await this.contract.setTransferFeeRate(_transferFeeRate);
+  this.setTransferFeeRate = async (_transferFeeRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setTransferFeeRate(_transferFeeRate, txParams);
   };
 
   /**
-   * frozen - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @param  {String<EthAddress>}
    * @returns boolean
    **/
-  this.frozen = async () => {
-    return await this.contract.frozen();
+  this.frozen = async address => {
+    return await this.contract.frozen(address);
   };
 
   /**
-   * transferSenderPaysFee - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
-   * @param value {Number}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.transferSenderPaysFee = async (to, value) => {
-    return await this.contract.transferSenderPaysFee(to, value);
+  this.transferSenderPaysFee = async (to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferSenderPaysFee(to, value, txParams);
   };
 
   /**
-   * transferFeeIncurred - constant - doesn't require signer
-   * @param value {Number}
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @param value {BigNumber}
+   * @returns BigNumber
    **/
   this.transferFeeIncurred = async value => {
     return await this.contract.transferFeeIncurred(value);
   };
 
   /**
-   * allowance - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @param owner {String<EthAddress>}
    * @param spender {String<EthAddress>}
-   * @returns Number
+   * @returns BigNumber
    **/
   this.allowance = async (owner, spender) => {
     return await this.contract.allowance(owner, spender);
   };
 
   /**
-   * transferFromSenderPaysFee - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
-   * @param value {Number}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.transferFromSenderPaysFee = async (from, to, value) => {
-    return await this.contract.transferFromSenderPaysFee(from, to, value);
+  this.transferFromSenderPaysFee = async (from, to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFromSenderPaysFee(from, to, value, txParams);
   };
 
   /**
-   * tokenState - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.tokenState = async () => {
@@ -429,7 +476,7 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * FEE_ADDRESS - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.FEE_ADDRESS = async () => {
@@ -437,7 +484,7 @@ function Nomin(contractSettings) {
   };
 
   /**
-   * proxy - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.proxy = async () => {

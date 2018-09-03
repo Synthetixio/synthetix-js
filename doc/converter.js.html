@@ -1,4 +1,32 @@
-const { Interface, utils } = require('ethers');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: converter.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: converter.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { Interface, utils } = require('ethers');
 const abis = require('../lib/abis/index');
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
@@ -92,7 +120,7 @@ class Converter {
    * @returns {string}
    */
   cleanInput(inputAmount) {
-    if (typeof inputAmount !== 'string' && inputAmount.toString) {
+    if (typeof inputAmount !== 'string' &amp;&amp; inputAmount.toString) {
       inputAmount = inputAmount.toString();
     }
     if (typeof inputAmount !== 'string') {
@@ -112,7 +140,7 @@ class Converter {
   /**
    *
    * @param inputAmount
-   * @returns {Promise<{etherAmount: string, exchangeRate: void, nominAmount: void, nominFeeAmount: *}>}
+   * @returns {Promise&lt;{etherAmount: string, exchangeRate: void, nominAmount: void, nominFeeAmount: *}>}
    */
   async convertEtherToNomins(inputAmount) {
     inputAmount = this.cleanInput(inputAmount);
@@ -139,7 +167,7 @@ class Converter {
   /**
    *
    * @param inputAmount
-   * @returns {Promise<{nominAmount: string, exchangeRate: void, etherAmount: *, nominFeeAmount: *}>}
+   * @returns {Promise&lt;{nominAmount: string, exchangeRate: void, etherAmount: *, nominFeeAmount: *}>}
    */
   async convertNominsToEther(inputAmount) {
     inputAmount = this.cleanInput(inputAmount);
@@ -169,7 +197,7 @@ class Converter {
   /**
    *
    * @param inputAmount
-   * @returns {Promise<{nominAmount: string, exchangeRate: void, havvenAmount: void, nominFeeAmount: *}>}
+   * @returns {Promise&lt;{nominAmount: string, exchangeRate: void, havvenAmount: void, nominFeeAmount: *}>}
    */
   async convertNominsToHavvens(inputAmount) {
     inputAmount = this.cleanInput(inputAmount);
@@ -194,7 +222,7 @@ class Converter {
   /**
    *
    * @param inputAmount
-   * @returns {Promise<{havvenAmount: string, exchangeRate: void, nominAmount: *, nominFeeAmount: *}>}
+   * @returns {Promise&lt;{havvenAmount: string, exchangeRate: void, nominAmount: *, nominFeeAmount: *}>}
    */
   async convertHavvensToNomins(inputAmount) {
     inputAmount = this.cleanInput(inputAmount);
@@ -220,7 +248,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getEtherToNominsExchangeRate() {
     return await this.issuanceController.usdToEthPrice();
@@ -229,7 +257,7 @@ class Converter {
   /**
    *
    * @param amount
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getNominsReceivedForEther(amount) {
     return await this.issuanceController.nominsReceivedForEther(amount);
@@ -238,7 +266,7 @@ class Converter {
   /**
    *
    * @param amount
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getHavvensReceivedForNomins(amount) {
     return await this.issuanceController.havvensReceivedForNomins(amount);
@@ -246,7 +274,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getNominToHavvenExchangeRate() {
     const unit = utils.parseEther('1');
@@ -257,7 +285,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getEtherBalance() {
     return await this.provider.getBalance(this.account);
@@ -265,7 +293,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getHavvenBalance() {
     if (!this.account) {
@@ -276,7 +304,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getNominBalance() {
     if (!this.account) {
@@ -287,7 +315,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getTotalSupply() {
     return await this.nomin.totalSupply();
@@ -295,7 +323,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getHavvenTotalSupply() {
     return await this.havven.totalSupply();
@@ -303,7 +331,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getEtherPrice() {
     return await this.issuanceController.usdToEthPrice();
@@ -311,7 +339,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getHavvenPrice() {
     return await this.issuanceController.usdToHavPrice();
@@ -319,7 +347,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getNominPrice() {
     return await this.issuanceController.usdToHavPrice();
@@ -327,7 +355,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getNominTransferFeeRate() {
     return await this.nomin.transferFeeRate();
@@ -336,7 +364,7 @@ class Converter {
   /**
    *
    * @param amountSent
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getNominAmountReceived(amountSent) {
     return await this.nomin.amountReceived(amountSent);
@@ -344,7 +372,7 @@ class Converter {
 
   /**
    *
-   * @returns {Promise<number>}
+   * @returns {Promise&lt;number>}
    */
   async getApprovedNominTransferBalance() {
     if (this.account) {
@@ -358,7 +386,7 @@ class Converter {
    *
    * @param inputAmount
    * @param gasPrice
-   * @returns {Promise<*>}
+   * @returns {Promise&lt;*>}
    */
   async exchangeEtherForNomins(inputAmount, gasPrice = 1) {
     if (typeof inputAmount !== 'string') {
@@ -378,7 +406,7 @@ class Converter {
    *
    * @param inputAmount
    * @param gasPrice
-   * @returns {Promise<*>}
+   * @returns {Promise&lt;*>}
    */
   async exchangeEtherForHavvens(inputAmount, gasPrice = 1) {
     if (typeof inputAmount !== 'string') {
@@ -397,7 +425,7 @@ class Converter {
   /**
    *
    * @param inputAmount
-   * @returns {Promise<{nominAmount: string, exchangeRate: void, etherAmount: *, nominFeeAmount: *}>}
+   * @returns {Promise&lt;{nominAmount: string, exchangeRate: void, etherAmount: *, nominFeeAmount: *}>}
    */
   async convertHavvensToEther(inputAmount) {
     inputAmount = this.cleanInput(inputAmount);
@@ -427,7 +455,7 @@ class Converter {
   /**
    *
    * @param inputAmount
-   * @returns {Promise<{etherAmount: string, exchangeRate: void, havvenAmount: void, nominFeeAmount: *}>}
+   * @returns {Promise&lt;{etherAmount: string, exchangeRate: void, havvenAmount: void, nominFeeAmount: *}>}
    */
   async convertEtherToHavvens(inputAmount) {
     inputAmount = this.cleanInput(inputAmount);
@@ -452,7 +480,7 @@ class Converter {
   }
   /**
    *
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getEtherToHavvensExchangeRate() {
     const etherUSDPrice = await this.getEtherPrice();
@@ -462,7 +490,7 @@ class Converter {
   /**
    *
    * @param amount
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async getHavvensReceivedForEther(amount) {
     return await this.issuanceController.havvensReceivedForEther(amount);
@@ -472,7 +500,7 @@ class Converter {
    *
    * @param inputAmount
    * @param gasPrice
-   * @returns {Promise<void>}
+   * @returns {Promise&lt;void>}
    */
   async approveNominsForHavvens(inputAmount, gasPrice = 1) {
     if (typeof inputAmount !== 'string') {
@@ -513,3 +541,26 @@ class Converter {
 }
 
 module.exports = Converter;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContractSettings.html">ContractSettings</a></li><li><a href="Havven.html">Havven</a></li><li><a href="HavvenJs.html">HavvenJs</a></li><li><a href="IssuanceController.html">IssuanceController</a></li><li><a href="Mintr.html">Mintr</a></li><li><a href="Nomin.html">Nomin</a></li><li><a href="StablePayments.html">StablePayments</a></li><li><a href="Util.html">Util</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Sep 02 2018 22:38:07 GMT+1000 (AEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

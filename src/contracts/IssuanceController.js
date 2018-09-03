@@ -1,5 +1,4 @@
-const { Contract, providers, utils } = require('ethers');
-const addresses = require('../../lib/addresses');
+const { Contract } = require('ethers');
 const abi = require('../../lib/abis').IssuanceController;
 const ContractSettings = require('../contractSettings');
 
@@ -16,60 +15,69 @@ function IssuanceController(contractSettings) {
   );
 
   /**
-   * nominateNewOwner - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.nominateNewOwner = async _owner => {
-    return await this.contract.nominateNewOwner(_owner);
+  this.nominateNewOwner = async (_owner, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.nominateNewOwner(_owner, txParams);
   };
 
   /**
-   * setPaused - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _paused {boolean}
+   * @param txParams {TxParams}
   
    **/
-  this.setPaused = async _paused => {
-    return await this.contract.setPaused(_paused);
+  this.setPaused = async (_paused, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setPaused(_paused, txParams);
   };
 
   /**
-   * initiationTime - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.initiationTime = async () => {
     return await this.contract.initiationTime();
   };
 
   /**
-   * withdrawHavvens - function - requires signer
-   * @param amount {Number}
+   * Withdraw havvens: Allows the owner to withdraw havvens from this contract if needed.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.withdrawHavvens = async amount => {
-    return await this.contract.withdrawHavvens(amount);
+  this.withdrawHavvens = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.withdrawHavvens(amount, txParams);
   };
 
   /**
-   * havvensReceivedForEther - constant - doesn't require signer
-   * @param amount {Number}
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
    **/
   this.havvensReceivedForEther = async amount => {
     return await this.contract.havvensReceivedForEther(amount);
   };
 
   /**
-   * setSelfDestructBeneficiary - function - requires signer
+   * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setSelfDestructBeneficiary = async _beneficiary => {
-    return await this.contract.setSelfDestructBeneficiary(_beneficiary);
+  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
   };
 
   /**
-   * fundsWallet - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.fundsWallet = async () => {
@@ -77,34 +85,43 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * priceStalePeriod - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.priceStalePeriod = async () => {
     return await this.contract.priceStalePeriod();
   };
 
   /**
-   * setPriceStalePeriod - function - requires signer
-   * @param _time {Number}
+   * Set the stale period on the updated price variables.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param _time {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.setPriceStalePeriod = async _time => {
-    return await this.contract.setPriceStalePeriod(_time);
+  this.setPriceStalePeriod = async (_time, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setPriceStalePeriod(_time, txParams);
   };
 
   /**
-   * exchangeNominsForHavvensAtRate - function - requires signer
-   * @param nominAmount {Number}
-   * @param guaranteedRate {Number}
-   * @returns Number
+   * Transaction (consumes gas, requires signer)
+   * @param nominAmount {BigNumber}
+   * @param guaranteedRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
    **/
-  this.exchangeNominsForHavvensAtRate = async (nominAmount, guaranteedRate) => {
-    return await this.contract.exchangeNominsForHavvensAtRate(nominAmount, guaranteedRate);
+  this.exchangeNominsForHavvensAtRate = async (nominAmount, guaranteedRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeNominsForHavvensAtRate(
+      nominAmount,
+      guaranteedRate,
+      txParams
+    );
   };
 
   /**
-   * decimals - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns Number
    **/
   this.decimals = async () => {
@@ -112,15 +129,18 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * terminateSelfDestruct - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.terminateSelfDestruct = async () => {
-    return await this.contract.terminateSelfDestruct();
+  this.terminateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.terminateSelfDestruct(txParams);
   };
 
   /**
-   * pricesAreStale - constant - doesn't require signer
+   * Check if the prices haven't been updated for longer than the stale period.<br>
+   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.pricesAreStale = async () => {
@@ -128,60 +148,76 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * updatePrices - function - requires signer
-   * @param newEthPrice {Number}
-   * @param newHavvenPrice {Number}
-   * @param timeSent {Number}
+   * Access point for the oracle to update the prices of havvens / eth.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param newEthPrice {BigNumber}
+   * @param newHavvenPrice {BigNumber}
+   * @param timeSent {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.updatePrices = async (newEthPrice, newHavvenPrice, timeSent) => {
-    return await this.contract.updatePrices(newEthPrice, newHavvenPrice, timeSent);
+  this.updatePrices = async (newEthPrice, newHavvenPrice, timeSent, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.updatePrices(newEthPrice, newHavvenPrice, timeSent, txParams);
   };
 
   /**
-   * exchangeEtherForHavvens - function - requires signer
-   * @returns Number
+   * Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+   * @param txParams {TxParams}
+   * @returns BigNumber
    **/
-  this.exchangeEtherForHavvens = async () => {
-    return await this.contract.exchangeEtherForHavvens();
+  this.exchangeEtherForHavvens = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.exchangeEtherForHavvens(txParams);
   };
 
   /**
-   * exchangeEtherForNomins - function - requires signer
-   * @returns Number
+   * Exchange ETH to nUSD.<br>
+   * Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+   * @param txParams {TxParams}
+   * @returns BigNumber
    **/
-  this.exchangeEtherForNomins = async () => {
-    return await this.contract.exchangeEtherForNomins();
+  this.exchangeEtherForNomins = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.exchangeEtherForNomins(txParams);
   };
 
   /**
-   * exchangeNominsForHavvens - function - requires signer
-   * @param nominAmount {Number}
-   * @returns Number
+   * Exchange nUSD for Havvens.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param nominAmount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
    **/
-  this.exchangeNominsForHavvens = async nominAmount => {
-    return await this.contract.exchangeNominsForHavvens(nominAmount);
+  this.exchangeNominsForHavvens = async (nominAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeNominsForHavvens(nominAmount, txParams);
   };
 
   /**
-   * lastPriceUpdateTime - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.lastPriceUpdateTime = async () => {
     return await this.contract.lastPriceUpdateTime();
   };
 
   /**
-   * setHavven - function - requires signer
+   * Set the Havven contract that the issuance controller uses to issue Havvens.<br>
+   * Transaction (consumes gas, requires signer)
    * @param _havven {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setHavven = async _havven => {
-    return await this.contract.setHavven(_havven);
+  this.setHavven = async (_havven, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setHavven(_havven, txParams);
   };
 
   /**
-   * nominatedOwner - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {
@@ -189,25 +225,29 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * havvensReceivedForNomins - constant - doesn't require signer
-   * @param amount {Number}
-   * @returns Number
+   * Calculate how many havvens you will receive if you transfer an amount of nomins.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
    **/
   this.havvensReceivedForNomins = async amount => {
     return await this.contract.havvensReceivedForNomins(amount);
   };
 
   /**
-   * setNomin - function - requires signer
+   * Set the Nomin contract that the issuance controller uses to issue Nomins.<br>
+   * Transaction (consumes gas, requires signer)
    * @param _nomin {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setNomin = async _nomin => {
-    return await this.contract.setNomin(_nomin);
+  this.setNomin = async (_nomin, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setNomin(_nomin, txParams);
   };
 
   /**
-   * paused - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.paused = async () => {
@@ -215,42 +255,53 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * exchangeEtherForNominsAtRate - function - requires signer
-   * @param guaranteedRate {Number}
-   * @returns Number
+   * Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+   * @param guaranteedRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
    **/
-  this.exchangeEtherForNominsAtRate = async guaranteedRate => {
-    return await this.contract.exchangeEtherForNominsAtRate(guaranteedRate);
+  this.exchangeEtherForNominsAtRate = async (guaranteedRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeEtherForNominsAtRate(guaranteedRate, txParams);
   };
 
   /**
-   * setFundsWallet - function - requires signer
+   * Set the funds wallet where ETH raised is held.<br>
+   * Transaction (consumes gas, requires signer)
    * @param _fundsWallet {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setFundsWallet = async _fundsWallet => {
-    return await this.contract.setFundsWallet(_fundsWallet);
+  this.setFundsWallet = async (_fundsWallet, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFundsWallet(_fundsWallet, txParams);
   };
 
   /**
-   * acceptOwnership - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.acceptOwnership = async () => {
-    return await this.contract.acceptOwnership();
+  this.acceptOwnership = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.acceptOwnership(txParams);
   };
 
   /**
-   * setOracle - function - requires signer
+   * Set the Oracle that pushes the havven price to this contract.<br>
+   * Transaction (consumes gas, requires signer)
    * @param _oracle {String<EthAddress>}
+   * @param txParams {TxParams}
   
    **/
-  this.setOracle = async _oracle => {
-    return await this.contract.setOracle(_oracle);
+  this.setOracle = async (_oracle, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setOracle(_oracle, txParams);
   };
 
   /**
-   * oracle - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.oracle = async () => {
@@ -258,7 +309,7 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * owner - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.owner = async () => {
@@ -266,15 +317,15 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * lastPauseTime - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.lastPauseTime = async () => {
     return await this.contract.lastPauseTime();
   };
 
   /**
-   * havven - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.havven = async () => {
@@ -282,40 +333,43 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * selfDestruct - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.selfDestruct = async () => {
-    return await this.contract.selfDestruct();
+  this.selfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.selfDestruct(txParams);
   };
 
   /**
-   * UNIT - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.UNIT = async () => {
     return await this.contract.UNIT();
   };
 
   /**
-   * SELFDESTRUCT_DELAY - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
 
   /**
-   * nominsReceivedForEther - constant - doesn't require signer
-   * @param amount {Number}
-   * @returns Number
+   * Calculate how many nomins you will receive if you transfer an amount of ether.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
    **/
   this.nominsReceivedForEther = async amount => {
     return await this.contract.nominsReceivedForEther(amount);
   };
 
   /**
-   * selfDestructInitiated - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.selfDestructInitiated = async () => {
@@ -323,44 +377,54 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * usdToEthPrice - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.usdToEthPrice = async () => {
     return await this.contract.usdToEthPrice();
   };
 
   /**
-   * exchangeEtherForHavvensAtRate - function - requires signer
-   * @param guaranteedEtherRate {Number}
-   * @param guaranteedHavvenRate {Number}
-   * @returns Number
+   * Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+   * @param guaranteedEtherRate {BigNumber}
+   * @param guaranteedHavvenRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
    **/
-  this.exchangeEtherForHavvensAtRate = async (guaranteedEtherRate, guaranteedHavvenRate) => {
+  this.exchangeEtherForHavvensAtRate = async (
+    guaranteedEtherRate,
+    guaranteedHavvenRate,
+    txParams
+  ) => {
+    txParams = txParams || {};
     return await this.contract.exchangeEtherForHavvensAtRate(
       guaranteedEtherRate,
-      guaranteedHavvenRate
+      guaranteedHavvenRate,
+      txParams
     );
   };
 
   /**
-   * initiateSelfDestruct - function - requires signer
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
   
    **/
-  this.initiateSelfDestruct = async () => {
-    return await this.contract.initiateSelfDestruct();
+  this.initiateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.initiateSelfDestruct(txParams);
   };
 
   /**
-   * usdToHavPrice - constant - doesn't require signer
-   * @returns Number
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
   this.usdToHavPrice = async () => {
     return await this.contract.usdToHavPrice();
   };
 
   /**
-   * selfDestructBeneficiary - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.selfDestructBeneficiary = async () => {
@@ -368,7 +432,7 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * nomin - constant - doesn't require signer
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nomin = async () => {
@@ -376,12 +440,15 @@ function IssuanceController(contractSettings) {
   };
 
   /**
-   * withdrawNomins - function - requires signer
-   * @param amount {Number}
+   * Withdraw nomins: Allows the owner to withdraw nomins from this contract if needed.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
   
    **/
-  this.withdrawNomins = async amount => {
-    return await this.contract.withdrawNomins(amount);
+  this.withdrawNomins = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.withdrawNomins(amount, txParams);
   };
 }
 

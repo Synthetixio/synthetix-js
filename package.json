@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "docs": "jsdoc src -r -d ./doc",
+    "docs": "jsdoc src -r -d ./doc -c jsdoc.json --readme README.md",
     "format": "prettier --write 'src/**/*.js'",
     "abitojs": "node ./tools/abitojs"
   },
@@ -23,8 +23,10 @@
   "devDependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
+    "docdash": "^1.0.0",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
-    "pretty-quick": "^1.6.0"
+    "pretty-quick": "^1.6.0",
+    "rollup": "^0.65.0"
   }
 }

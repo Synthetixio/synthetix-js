@@ -27,7 +27,7 @@ Default settings don't use any signer. That means that constants can be viewed f
 To execute transactions, set up signer. 3 signers are included in the library - Metamask (compatible with Dapp browsers), Trezor and Ledger.
 Custom ethers.js compatible signers can be used too.
 
-Usage example with signer:
+Usage example with metamask signer:
 ------
 ````
 const HavvenJs = require('HavvenJs');
@@ -37,4 +37,15 @@ const totalSupply = await havjs.IssuanceController.exchangeEtherForNomins();
    
 ````
 
-See __tests__ for more.
+Usage example with private key signer:
+------
+````
+const HavvenJs = require('HavvenJs');
+const signer = new HavvenJs.signers.PrivateKey(null, 0, '0x0123456789012345678901234567890123456789012345678901234567890123');
+const havjs = new HavvenJs({signer});
+await havjs.Havven.issueNomins(10);
+````
+
+
+
+See /__tests__  folder for more examples.

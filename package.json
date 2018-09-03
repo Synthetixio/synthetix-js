@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "docs": "jsdoc src -r -d ./doc",
-    "format": "prettier --write 'src/**/*.js'"
+    "format": "prettier --write 'src/**/*.js'",
+    "abitojs": "node ./tools/abitojs"
   },
   "author": "Roman Mandryk",
   "license": "MIT",
@@ -20,6 +21,8 @@
     "trezor-connect": "^5.0.29"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "pretty-quick": "^1.6.0"

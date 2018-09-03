@@ -12,7 +12,7 @@ class ContractSettings {
    */
   constructor(contractSettings) {
     contractSettings = contractSettings || {};
-    let {provider, signer, fromAddressIndex, networkId} = contractSettings;
+    let { provider, signer, fromAddressIndex, networkId } = contractSettings;
     this.provider = provider || providers.getDefaultProvider();
     if (typeof signer === 'string') {
       const signers = require('../lib/signers');

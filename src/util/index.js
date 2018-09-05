@@ -4,6 +4,7 @@ const IssuanceController = require('../contracts/IssuanceController');
 const Nomin = require('../contracts/Nomin');
 const Havven = require('../contracts/Havven');
 const GWEI = 1000000000;
+const DEFAULT_GAS_LIMIT = 200000;
 
 class Util {
   /**

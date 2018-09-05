@@ -16,7 +16,7 @@ class ContractSettings {
     this.provider = provider || providers.getDefaultProvider();
     if (typeof signer === 'string') {
       const signers = require('../lib/signers');
-      signer = signers[signer](this.provider, networkId, fromAddressIndex);
+      signer = new signers[signer](this.provider, networkId, fromAddressIndex);
     }
     this.signer = signer;
     this.networkId = networkId || 1;

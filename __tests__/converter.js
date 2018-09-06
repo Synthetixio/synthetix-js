@@ -1,4 +1,6 @@
-const HavvenJs = require('../src/index');
+import { HavvenJs } from '../dist/main';
+console.log('here we go');
+console.log(HavvenJs);
 const havjs = new HavvenJs();
 
 test('Should return getHavvensReceivedForEther for 1 ETH', async () => {

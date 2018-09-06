@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
   "constant": true,
   "inputs": [{"name": "", "type": "address"}],
   "name": "nominsIssued",

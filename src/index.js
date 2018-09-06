@@ -1,14 +1,14 @@
-const Havven = require('./contracts/Havven');
-const Nomin = require('./contracts/Nomin');
-const IssuanceController = require('./contracts/IssuanceController');
-const Mintr = require('./contracts/Mintr');
-const Converter = require('./Converter');
-const StablePayments = require('./contracts/StablePayments');
-const util = require('./util');
-const signers = require('../lib/signers');
-const ContractSettings = require('./contractSettings');
+import Havven from './contracts/Havven';
+import Nomin from './contracts/Nomin';
+import IssuanceController from './contracts/IssuanceController';
+import Mintr from './contracts/Mintr';
+import Converter from './converter';
+import StablePayments from './contracts/StablePayments';
+import util from './util/index';
+import signers from '../lib/signers/index';
+import ContractSettings from './contractSettings';
 
-class HavvenJs {
+export class HavvenJs {
   /**
    * Creates instances of Havven contracts based on ContractSettings.
    * Usage example:
@@ -42,5 +42,3 @@ HavvenJs.signers = signers;
  * @type {ContractSettings}
  */
 HavvenJs.ContractSettings = ContractSettings;
-
-module.exports = HavvenJs;

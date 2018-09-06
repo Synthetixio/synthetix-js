@@ -1,8 +1,8 @@
-const { utils, Interface, Wallet } = require('ethers');
-const abis = require('../../lib/abis/index');
-const IssuanceController = require('../contracts/IssuanceController');
-const Nomin = require('../contracts/Nomin');
-const Havven = require('../contracts/Havven');
+import { utils, Interface, Wallet } from 'ethers';
+import abis from '../../lib/abis/index';
+import IssuanceController from '../contracts/IssuanceController';
+import Nomin from '../contracts/Nomin';
+import Havven from '../contracts/Havven';
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
 
@@ -220,4 +220,4 @@ class Util {
   }
 }
 
-module.exports = Util;
+export default Util;

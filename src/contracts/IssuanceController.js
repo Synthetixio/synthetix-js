@@ -1,6 +1,7 @@
-const { Contract } = require('ethers');
-const abi = require('../../lib/abis').IssuanceController;
-const ContractSettings = require('../contractSettings');
+import { Contract } from 'ethers';
+import abis from '../../lib/abis/index';
+import ContractSettings from '../contractSettings';
+const abi = abis.IssuanceController;
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -452,4 +453,4 @@ function IssuanceController(contractSettings) {
   };
 }
 
-module.exports = IssuanceController;
+export default IssuanceController;

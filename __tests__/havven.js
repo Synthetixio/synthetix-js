@@ -1,4 +1,4 @@
-const HavvenJs = require('../src/index');
+const HavvenJs = require('../dist/main');
 const havjs = new HavvenJs();
 
 test('Should return Havven total supply', async () => {

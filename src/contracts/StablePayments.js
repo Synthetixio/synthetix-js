@@ -1,6 +1,7 @@
-const { Contract } = require('ethers');
-const abi = require('../../lib/abis').StablePayments;
-const ContractSettings = require('../contractSettings');
+import { Contract } from 'ethers';
+import abis from '../../lib/abis/index';
+import ContractSettings from '../contractSettings';
+const abi = abis.StablePayments;
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -103,4 +104,4 @@ function StablePayments(contractSettings) {
   };
 }
 
-module.exports = StablePayments;
+export default StablePayments;

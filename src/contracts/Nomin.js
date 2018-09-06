@@ -1,6 +1,7 @@
-const { Contract } = require('ethers');
-const abi = require('../../lib/abis').Nomin;
-const ContractSettings = require('../contractSettings');
+import { Contract } from 'ethers';
+import abis from '../../lib/abis/index';
+import ContractSettings from '../contractSettings';
+const abi = abis.Nomin;
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -492,4 +493,4 @@ function Nomin(contractSettings) {
   };
 }
 
-module.exports = Nomin;
+export default Nomin;

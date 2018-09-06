@@ -1,4 +1,4 @@
-const contracts = require('../lib/abis/index');
+const contracts = require('./abis/index');
 const fs = require('fs');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 const typeMap = {
@@ -27,9 +27,10 @@ const generate = () => {
 };
 
 const generateJSFile = (contractName, functions) => {
-  const content = `const {Contract} = require('ethers');
-const abi = require('../../lib/abis').${contractName};
-const ContractSettings = require('../contractSettings');
+  const content = `import {Contract} from 'ethers';
+import abis from '../../lib/abis/index';
+import ContractSettings from '../contractSettings';
+const abi = abis.${contractName};
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -47,7 +48,7 @@ function ${contractName}(contractSettings) {
 
 }
 
-module.exports = ${contractName}`;
+export default ${contractName}`;
   fs.writeFile(`${__dirname}/../src/contracts/${contractName}.js`, content, err => {
     if (err) {
       console.log(err);

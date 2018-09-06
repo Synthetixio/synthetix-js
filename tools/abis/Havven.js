@@ -1,11 +1,20 @@
-export default [
+module.exports = [
   {
-    constant: true,
-    inputs: [],
-    name: "court",
-    outputs: [{ name: "", type: "address" }],
+    constant: false,
+    inputs: [{ name: "duration", type: "uint256" }],
+    name: "setFeePeriodDuration",
+    outputs: [],
     payable: false,
-    stateMutability: "view",
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: false,
+    inputs: [{ name: "_issuanceRatio", type: "uint256" }],
+    name: "setIssuanceRatio",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
     type: "function"
   },
   {
@@ -27,6 +36,28 @@ export default [
     outputs: [{ name: "", type: "bool" }],
     payable: false,
     stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "totalIssuanceData",
+    outputs: [
+      { name: "currentBalanceSum", type: "uint256" },
+      { name: "lastAverageBalance", type: "uint256" },
+      { name: "lastModified", type: "uint256" }
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "unlockedCollateral",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
     type: "function"
   },
   {
@@ -57,12 +88,12 @@ export default [
     type: "function"
   },
   {
-    constant: true,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "amountReceived",
-    outputs: [{ name: "", type: "uint256" }],
+    constant: false,
+    inputs: [{ name: "amount", type: "uint256" }],
+    name: "issueNomins",
+    outputs: [],
     payable: false,
-    stateMutability: "view",
+    stateMutability: "nonpayable",
     type: "function"
   },
   {
@@ -72,6 +103,33 @@ export default [
     outputs: [],
     payable: false,
     stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "priceStalePeriod",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "feePeriodDuration",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "", type: "address" }],
+    name: "hasWithdrawnFees",
+    outputs: [{ name: "", type: "bool" }],
+    payable: false,
+    stateMutability: "view",
     type: "function"
   },
   {
@@ -89,6 +147,24 @@ export default [
   },
   {
     constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "issuanceDraft",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: false,
+    inputs: [{ name: "time", type: "uint256" }],
+    name: "setPriceStalePeriod",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: true,
     inputs: [],
     name: "decimals",
     outputs: [{ name: "", type: "uint8" }],
@@ -97,12 +173,12 @@ export default [
     type: "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: "feeAuthority",
-    outputs: [{ name: "", type: "address" }],
+    constant: false,
+    inputs: [{ name: "amount", type: "uint256" }],
+    name: "burnNomins",
+    outputs: [],
     payable: false,
-    stateMutability: "view",
+    stateMutability: "nonpayable",
     type: "function"
   },
   {
@@ -115,39 +191,33 @@ export default [
     type: "function"
   },
   {
+    constant: false,
+    inputs: [],
+    name: "withdrawFees",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: false,
+    inputs: [
+      { name: "account", type: "address" },
+      { name: "value", type: "bool" }
+    ],
+    name: "setIssuer",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
     constant: true,
     inputs: [],
-    name: "transferFeeRate",
+    name: "lastPriceUpdateTime",
     outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
-    type: "function"
-  },
-  {
-    constant: false,
-    inputs: [{ name: "target", type: "address" }],
-    name: "freezeAndConfiscate",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
-    constant: true,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "transferPlusFee",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
-  },
-  {
-    constant: false,
-    inputs: [{ name: "_havven", type: "address" }],
-    name: "setHavven",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
     type: "function"
   },
   {
@@ -161,11 +231,38 @@ export default [
   },
   {
     constant: false,
-    inputs: [{ name: "n", type: "uint256" }],
-    name: "donateToFeePool",
-    outputs: [{ name: "", type: "bool" }],
+    inputs: [{ name: "_nomin", type: "address" }],
+    name: "setNomin",
+    outputs: [],
     payable: false,
     stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: false,
+    inputs: [{ name: "account", type: "address" }],
+    name: "recomputeLastAverageBalance",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "", type: "address" }],
+    name: "nominsIssued",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "issuanceLastAverageBalance",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
     type: "function"
   },
   {
@@ -178,12 +275,12 @@ export default [
     type: "function"
   },
   {
-    constant: false,
-    inputs: [{ name: "target", type: "address" }],
-    name: "unfreezeAccount",
-    outputs: [],
+    constant: true,
+    inputs: [],
+    name: "feePeriodStartTime",
+    outputs: [{ name: "", type: "uint256" }],
     payable: false,
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function"
   },
   {
@@ -197,20 +294,8 @@ export default [
   },
   {
     constant: false,
-    inputs: [
-      { name: "account", type: "address" },
-      { name: "amount", type: "uint256" }
-    ],
-    name: "issue",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
-    constant: false,
-    inputs: [{ name: "_feeAuthority", type: "address" }],
-    name: "setFeeAuthority",
+    inputs: [{ name: "_oracle", type: "address" }],
+    name: "setOracle",
     outputs: [],
     payable: false,
     stateMutability: "nonpayable",
@@ -219,8 +304,87 @@ export default [
   {
     constant: true,
     inputs: [],
+    name: "oracle",
+    outputs: [{ name: "", type: "address" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "issuer", type: "address" }],
+    name: "maxIssuableNomins",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: false,
+    inputs: [
+      { name: "newPrice", type: "uint256" },
+      { name: "timeSent", type: "uint256" }
+    ],
+    name: "updatePrice",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "", type: "address" }],
+    name: "isIssuer",
+    outputs: [{ name: "", type: "bool" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "", type: "address" }],
+    name: "issuanceData",
+    outputs: [
+      { name: "currentBalanceSum", type: "uint256" },
+      { name: "lastAverageBalance", type: "uint256" },
+      { name: "lastModified", type: "uint256" }
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
     name: "owner",
     outputs: [{ name: "", type: "address" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "lockedCollateral",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: "rolloverFeePeriodIfElapsed",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "totalIssuanceLastModified",
+    outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
     type: "function"
@@ -244,15 +408,6 @@ export default [
     type: "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: "havven",
-    outputs: [{ name: "", type: "address" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
-  },
-  {
     constant: false,
     inputs: [],
     name: "selfDestruct",
@@ -272,18 +427,6 @@ export default [
   },
   {
     constant: false,
-    inputs: [
-      { name: "account", type: "address" },
-      { name: "amount", type: "uint256" }
-    ],
-    name: "burn",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
-    constant: false,
     inputs: [{ name: "_tokenState", type: "address" }],
     name: "setTokenState",
     outputs: [],
@@ -294,7 +437,34 @@ export default [
   {
     constant: true,
     inputs: [],
+    name: "price",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "usd_dec", type: "uint256" }],
+    name: "USDtoHAV",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
     name: "SELFDESTRUCT_DELAY",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "collateral",
     outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
@@ -313,30 +483,9 @@ export default [
     type: "function"
   },
   {
-    constant: false,
-    inputs: [{ name: "_court", type: "address" }],
-    name: "setCourt",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "account", type: "address" },
-      { name: "value", type: "uint256" }
-    ],
-    name: "withdrawFees",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
     constant: true,
     inputs: [],
-    name: "feePool",
+    name: "issuanceRatio",
     outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
@@ -372,16 +521,16 @@ export default [
   {
     constant: true,
     inputs: [],
-    name: "selfDestructBeneficiary",
-    outputs: [{ name: "", type: "address" }],
+    name: "lastFeesCollected",
+    outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
     type: "function"
   },
   {
     constant: false,
-    inputs: [{ name: "_transferFeeRate", type: "uint256" }],
-    name: "setTransferFeeRate",
+    inputs: [{ name: "_escrow", type: "address" }],
+    name: "setEscrow",
     outputs: [],
     payable: false,
     stateMutability: "nonpayable",
@@ -389,29 +538,71 @@ export default [
   },
   {
     constant: true,
-    inputs: [{ name: "", type: "address" }],
-    name: "frozen",
-    outputs: [{ name: "", type: "bool" }],
+    inputs: [],
+    name: "totalIssuanceLastAverageBalance",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "issuanceCurrentBalanceSum",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "selfDestructBeneficiary",
+    outputs: [{ name: "", type: "address" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [{ name: "issuer", type: "address" }],
+    name: "remainingIssuableNomins",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "lastFeePeriodStartTime",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "totalIssuanceCurrentBalanceSum",
+    outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
     type: "function"
   },
   {
     constant: false,
-    inputs: [
-      { name: "to", type: "address" },
-      { name: "value", type: "uint256" }
-    ],
-    name: "transferSenderPaysFee",
-    outputs: [{ name: "", type: "bool" }],
+    inputs: [],
+    name: "issueMaxNomins",
+    outputs: [],
     payable: false,
     stateMutability: "nonpayable",
     type: "function"
   },
   {
     constant: true,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "transferFeeIncurred",
+    inputs: [{ name: "hav_dec", type: "uint256" }],
+    name: "HAVtoUSD",
     outputs: [{ name: "", type: "uint256" }],
     payable: false,
     stateMutability: "view",
@@ -430,22 +621,18 @@ export default [
     type: "function"
   },
   {
-    constant: false,
-    inputs: [
-      { name: "from", type: "address" },
-      { name: "to", type: "address" },
-      { name: "value", type: "uint256" }
-    ],
-    name: "transferFromSenderPaysFee",
-    outputs: [{ name: "", type: "bool" }],
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "transferableHavvens",
+    outputs: [{ name: "", type: "uint256" }],
     payable: false,
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function"
   },
   {
     constant: true,
     inputs: [],
-    name: "tokenState",
+    name: "escrow",
     outputs: [{ name: "", type: "address" }],
     payable: false,
     stateMutability: "view",
@@ -454,7 +641,16 @@ export default [
   {
     constant: true,
     inputs: [],
-    name: "FEE_ADDRESS",
+    name: "nomin",
+    outputs: [{ name: "", type: "address" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "tokenState",
     outputs: [{ name: "", type: "address" }],
     payable: false,
     stateMutability: "view",
@@ -470,12 +666,32 @@ export default [
     type: "function"
   },
   {
+    constant: true,
+    inputs: [{ name: "account", type: "address" }],
+    name: "issuanceLastModified",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "priceIsStale",
+    outputs: [{ name: "", type: "bool" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+  },
+  {
     inputs: [
       { name: "_proxy", type: "address" },
       { name: "_tokenState", type: "address" },
-      { name: "_havven", type: "address" },
-      { name: "_totalSupply", type: "uint256" },
-      { name: "_owner", type: "address" }
+      { name: "_owner", type: "address" },
+      { name: "_oracle", type: "address" },
+      { name: "_price", type: "uint256" },
+      { name: "_issuers", type: "address[]" },
+      { name: "_oldHavven", type: "address" }
     ],
     payable: false,
     stateMutability: "nonpayable",
@@ -483,59 +699,29 @@ export default [
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: "newCourt", type: "address" }],
-    name: "CourtUpdated",
-    type: "event"
-  },
-  {
-    anonymous: false,
-    inputs: [{ indexed: false, name: "newHavven", type: "address" }],
-    name: "HavvenUpdated",
-    type: "event"
-  },
-  {
-    anonymous: false,
     inputs: [
-      { indexed: true, name: "target", type: "address" },
-      { indexed: false, name: "balance", type: "uint256" }
+      { indexed: false, name: "newPrice", type: "uint256" },
+      { indexed: false, name: "timestamp", type: "uint256" }
     ],
-    name: "AccountFrozen",
+    name: "PriceUpdated",
     type: "event"
   },
   {
     anonymous: false,
-    inputs: [{ indexed: true, name: "target", type: "address" }],
-    name: "AccountUnfrozen",
+    inputs: [{ indexed: false, name: "newRatio", type: "uint256" }],
+    name: "IssuanceRatioUpdated",
     type: "event"
   },
   {
     anonymous: false,
-    inputs: [
-      { indexed: true, name: "account", type: "address" },
-      { indexed: false, name: "amount", type: "uint256" }
-    ],
-    name: "Issued",
+    inputs: [{ indexed: false, name: "timestamp", type: "uint256" }],
+    name: "FeePeriodRollover",
     type: "event"
   },
   {
     anonymous: false,
-    inputs: [
-      { indexed: true, name: "account", type: "address" },
-      { indexed: false, name: "amount", type: "uint256" }
-    ],
-    name: "Burned",
-    type: "event"
-  },
-  {
-    anonymous: false,
-    inputs: [{ indexed: false, name: "newFeeRate", type: "uint256" }],
-    name: "TransferFeeRateUpdated",
-    type: "event"
-  },
-  {
-    anonymous: false,
-    inputs: [{ indexed: false, name: "newFeeAuthority", type: "address" }],
-    name: "FeeAuthorityUpdated",
+    inputs: [{ indexed: false, name: "duration", type: "uint256" }],
+    name: "FeePeriodDurationUpdated",
     type: "event"
   },
   {
@@ -549,11 +735,29 @@ export default [
   },
   {
     anonymous: false,
+    inputs: [{ indexed: false, name: "newOracle", type: "address" }],
+    name: "OracleUpdated",
+    type: "event"
+  },
+  {
+    anonymous: false,
+    inputs: [{ indexed: false, name: "newNomin", type: "address" }],
+    name: "NominUpdated",
+    type: "event"
+  },
+  {
+    anonymous: false,
+    inputs: [{ indexed: false, name: "newEscrow", type: "address" }],
+    name: "EscrowUpdated",
+    type: "event"
+  },
+  {
+    anonymous: false,
     inputs: [
-      { indexed: true, name: "donor", type: "address" },
-      { indexed: false, name: "value", type: "uint256" }
+      { indexed: true, name: "account", type: "address" },
+      { indexed: true, name: "value", type: "bool" }
     ],
-    name: "FeesDonated",
+    name: "IssuersUpdated",
     type: "event"
   },
   {
@@ -627,4 +831,4 @@ export default [
     name: "OwnerChanged",
     type: "event"
   }
-]
+];

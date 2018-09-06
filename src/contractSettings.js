@@ -1,6 +1,7 @@
-const { providers } = require('ethers');
-const addresses = require('../lib/addresses');
-const ABIS = require('../lib/abis');
+import { providers } from 'ethers';
+import addresses from '../lib/addresses';
+import ABIS from '../lib/abis/index';
+import signers from '../lib/signers/index';
 
 class ContractSettings {
   /**
@@ -15,7 +16,6 @@ class ContractSettings {
     let { provider, signer, fromAddressIndex, networkId } = contractSettings;
     this.provider = provider || providers.getDefaultProvider();
     if (typeof signer === 'string') {
-      const signers = require('../lib/signers');
       signer = new signers[signer](this.provider, networkId, fromAddressIndex);
     }
     this.signer = signer;
@@ -25,4 +25,4 @@ class ContractSettings {
   }
 }
 
-module.exports = ContractSettings;
+export default ContractSettings;

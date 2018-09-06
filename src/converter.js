@@ -1,10 +1,11 @@
-const { Interface, utils } = require('ethers');
-const abis = require('../lib/abis/index');
+import { Interface, utils } from 'ethers';
+import abis from '../lib/abis/index';
+import IssuanceController from './contracts/IssuanceController';
+import Nomin from './contracts/Nomin';
+import Havven from './contracts/Havven';
+
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
-const IssuanceController = require('./contracts/IssuanceController');
-const Nomin = require('./contracts/Nomin');
-const Havven = require('./contracts/Havven');
 
 class Converter {
   constructor(contractSettings) {
@@ -512,4 +513,4 @@ class Converter {
   }
 }
 
-module.exports = Converter;
+export default Converter;

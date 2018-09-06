@@ -1,6 +1,7 @@
-const { Contract } = require('ethers');
-const abi = require('../../lib/abis').Mintr;
-const ContractSettings = require('../contractSettings');
+import { Contract } from 'ethers';
+import abis from '../../lib/abis/index';
+import ContractSettings from '../contractSettings';
+const abi = abis.Mintr;
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -97,4 +98,4 @@ function Mintr(contractSettings) {
   };
 }
 
-module.exports = Mintr;
+export default Mintr;

@@ -30556,7 +30556,6 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, chai
 /* harmony default export */ var privateKeySigner = (privateKeySigner_PrivateKeySigner);
 // CONCATENATED MODULE: ./src/index.node.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HavvenJs", function() { return index_node_HavvenJs; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signers", function() { return signers; });
 
 
 
@@ -30596,7 +30595,7 @@ function HavvenJs(contractSettings) {
  * @type {{ PrivateKey}|*}
  */
 
-var signers = {
+index_node_HavvenJs.signers = {
   PrivateKey: privateKeySigner
 };
 /**

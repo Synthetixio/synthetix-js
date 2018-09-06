@@ -36,7 +36,7 @@ export class HavvenJs {
  * Available transaction signers for node.js
  * @type {{ PrivateKey}|*}
  */
-export const signers = {
+HavvenJs.signers = {
   PrivateKey,
 };
 

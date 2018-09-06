@@ -39,7 +39,10 @@ export class HavvenJs {
  * @type {{Trezor, Ledger, Metamask, PrivateKey}|*}
  */
 HavvenJs.signers = {
-  Trezor, Ledger, Metamask, PrivateKey
+  Trezor,
+  Ledger,
+  Metamask,
+  PrivateKey,
 };
 
 /**

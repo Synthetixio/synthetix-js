@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>HavvenJs - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,63 +31,371 @@
 
 <div id="main">
     
+    <h1 class="page-title">HavvenJs</h1>
+    
 
     
 
 
 
+
+<section>
+
+<header>
+    
+        <h2>
+        HavvenJs
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+    
+
+    <h4 class="name" id="HavvenJs"><span class="type-signature"></span>new HavvenJs<span class="signature">(contractSettings)</span><span class="type-signature"></span></h4>
+
     
 
 
 
 
+<dl class="details">
 
-
-
-
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
 
     
 
+    
 
-    <section class="readme">
-        <article><h1>HavvenJs library</h1><p>Havven javascript library which provides a simple interface to communicate with Havven contracts.
-Under the hood HavvenJs uses ethers.js library and it's concept of providers and signers.</p>
-<h2>Install</h2><p><code>npm install havven-js</code> TODO confirm</p>
-<h2>Usage example:</h2><pre class="prettyprint source"><code>const { HavvenJs } = require('havven-js');
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Creates instances of Havven contracts based on ContractSettings.
+Usage example:
+const HavvenJs = require('HavvenJs');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-//return Nomin total supply
-const totalSupply = await havjs.Nomin.totalSupply(); 
-</code></pre><p>Default settings don't use any signer. That means that constants can be viewed from contract but executing transaction will fail.
-To execute transactions, set up signer.</p>
-<p>4 signers are included in the library - Metamask (compatible with Dapp browsers), Trezor, Ledger and PrivateKey.
-Custom ethers.js compatible signers can be used too.</p>
-<h2>Usage example with metamask signer:</h2><pre class="prettyprint source"><code>const { HavvenJs } = require('havven-js');
-const havjs = new HavvenJs({signer: 'Metamask'}); //uses Metamask signer and default provider on mainnet
-//return Nomin total supply
-const totalSupply = await havjs.IssuanceController.exchangeEtherForNomins(); 
-</code></pre><h2>Full example with private key signer:</h2><pre class="prettyprint source"><code>const { HavvenJs } = require('havven-js');
-//parameters: default provider, default networkId, private key as a string
-const signer = new HavvenJs.signers.PrivateKey(null, 0, '0x0123456789012345678901234567890123456789012345678901234567890123');
-const havjs = new HavvenJs({signer});
-
-async function run(){
-  //read contract
-  const totalSupply = await havjs.Havven.totalSupply();
-  const havTotalSupply = havjs.utils.formatEther(totalSupply);
-  console.log('havTotalSupply', havTotalSupply);
-  //execute transaction (requires gas)
-  //issue 100 nomins (will throw if insufficient funds for gas
-  try {
-    await havjs.Havven.issueNomins(havjs.util.parseEther(&quot;100&quot;));
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-run();</code></pre><p>See /__tests__  folder for more examples.</p></article>
-    </section>
+const totalSupply = await havjs.Havven.totalSupply();
+</div>
 
 
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contractSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ContractSettings.html">ContractSettings</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        HavvenJs
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+    
+
+    <h4 class="name" id="HavvenJs"><span class="type-signature"></span>new HavvenJs<span class="signature">(contractSettings)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.node.js.html">index.node.js</a>, <a href="index.node.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Creates instances of Havven contracts based on ContractSettings.
+Usage example:
+const HavvenJs = require('HavvenJs');
+const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+const totalSupply = await havjs.Havven.totalSupply();
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contractSettings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ContractSettings.html">ContractSettings</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

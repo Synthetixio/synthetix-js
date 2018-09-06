@@ -36,7 +36,7 @@ export class HavvenJs {
  * @type {{ PrivateKey}|*}
  */
 HavvenJs.signers = {
-  PrivateKey
+  PrivateKey,
 };
 
 /**

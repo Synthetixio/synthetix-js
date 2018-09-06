@@ -6,7 +6,7 @@ Under the hood HavvenJs uses ethers.js library and it's concept of providers and
 
 Install
 ----
-`npm install havven-js` TODO confirm
+`npm install havven-js`
 
 
 

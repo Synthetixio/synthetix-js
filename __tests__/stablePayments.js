@@ -1,4 +1,4 @@
-const HavvenJs = require('../dist/main');
+import { HavvenJs } from '../dist/main.node';
 const havjs = new HavvenJs();
 
 test('Should return balanceOf nomin fee address', async () => {

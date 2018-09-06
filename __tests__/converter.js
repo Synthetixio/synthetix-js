@@ -1,4 +1,4 @@
-import { HavvenJs } from '../dist/main';
+import { HavvenJs } from '../dist/main.node';
 console.log('here we go');
 console.log(HavvenJs);
 const havjs = new HavvenJs();

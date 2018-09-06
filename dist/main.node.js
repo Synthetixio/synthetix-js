@@ -30556,6 +30556,7 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, chai
 /* harmony default export */ var privateKeySigner = (privateKeySigner_PrivateKeySigner);
 // CONCATENATED MODULE: ./src/index.node.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HavvenJs", function() { return index_node_HavvenJs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signers", function() { return signers; });
 
 
 
@@ -30570,7 +30571,7 @@ var index_node_HavvenJs =
 /**
  * Creates instances of Havven contracts based on ContractSettings.
  * Usage example:
- * const HavvenJs = require('HavvenJs');
+ * const {HavvenJs} = require('HavvenJs');
  * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
  * const totalSupply = await havjs.Havven.totalSupply();
  * @constructor
@@ -30580,6 +30581,7 @@ function HavvenJs(contractSettings) {
   classCallCheck_default()(this, HavvenJs);
 
   contractSettings = new src_contractSettings(contractSettings);
+  this.contractSettings = contractSettings;
   this.Havven = new contracts_Havven(contractSettings);
   this.Nomin = new contracts_Nomin(contractSettings);
   this.IssuanceController = new contracts_IssuanceController(contractSettings);
@@ -30594,7 +30596,7 @@ function HavvenJs(contractSettings) {
  * @type {{ PrivateKey}|*}
  */
 
-index_node_HavvenJs.signers = {
+var signers = {
   PrivateKey: privateKeySigner
 };
 /**

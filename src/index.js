@@ -15,7 +15,7 @@ export class HavvenJs {
   /**
    * Creates instances of Havven contracts based on ContractSettings.
    * Usage example:
-   * const HavvenJs = require('HavvenJs');
+   * const {HavvenJs} = require('HavvenJs');
    * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
    * const totalSupply = await havjs.Havven.totalSupply();
    * @constructor
@@ -23,6 +23,7 @@ export class HavvenJs {
    */
   constructor(contractSettings) {
     contractSettings = new ContractSettings(contractSettings);
+    this.contractSettings = contractSettings;
     this.Havven = new Havven(contractSettings);
     this.Nomin = new Nomin(contractSettings);
     this.IssuanceController = new IssuanceController(contractSettings);

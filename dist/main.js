@@ -51429,7 +51429,7 @@ var src_HavvenJs =
 /**
  * Creates instances of Havven contracts based on ContractSettings.
  * Usage example:
- * const HavvenJs = require('HavvenJs');
+ * const {HavvenJs} = require('HavvenJs');
  * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
  * const totalSupply = await havjs.Havven.totalSupply();
  * @constructor
@@ -51439,6 +51439,7 @@ function HavvenJs(contractSettings) {
   classCallCheck_default()(this, HavvenJs);
 
   contractSettings = new src_contractSettings(contractSettings);
+  this.contractSettings = contractSettings;
   this.Havven = new contracts_Havven(contractSettings);
   this.Nomin = new contracts_Nomin(contractSettings);
   this.IssuanceController = new contracts_IssuanceController(contractSettings);

@@ -20,6 +20,7 @@ const serveConfig = {
     minimize: false
   },
   target: 'node',
+  entry: './src/index.node.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.node.js',
@@ -47,6 +48,7 @@ const clientConfig = {
   optimization: {
     minimize: false
   },
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',

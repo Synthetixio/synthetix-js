@@ -30546,28 +30546,6 @@ function () {
 }();
 
 /* harmony default export */ var util = (util_Util);
-// CONCATENATED MODULE: ./lib/signers/metamaskSigner.js
-
-
-var metamaskSigner_MetamaskSigner = function MetamaskSigner(provider, chainId) {
-  var signer = undefined;
-
-  if (window.web3 && window.web3.currentProvider) {
-    var _provider = new ethers["providers"].Web3Provider(window.web3.currentProvider);
-
-    signer = _provider.getSigner();
-
-    signer.getNextAddresses = function () {
-      return new Promise(function (resolve) {
-        return resolve(_provider.listAccounts());
-      });
-    };
-  }
-
-  return signer;
-};
-
-/* harmony default export */ var metamaskSigner = (metamaskSigner_MetamaskSigner);
 // CONCATENATED MODULE: ./lib/signers/privateKeySigner.js
 
 
@@ -30576,15 +30554,8 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, chai
 };
 
 /* harmony default export */ var privateKeySigner = (privateKeySigner_PrivateKeySigner);
-// CONCATENATED MODULE: ./lib/signers/index.js
-
-
-/* harmony default export */ var signers = ({
-  Metamask: metamaskSigner,
-  PrivateKey: privateKeySigner
-});
-// CONCATENATED MODULE: ./src/index.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HavvenJs", function() { return src_HavvenJs; });
+// CONCATENATED MODULE: ./src/index.node.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HavvenJs", function() { return index_node_HavvenJs; });
 
 
 
@@ -30595,7 +30566,7 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, chai
 
 
 
-var src_HavvenJs =
+var index_node_HavvenJs =
 /**
  * Creates instances of Havven contracts based on ContractSettings.
  * Usage example:
@@ -30619,17 +30590,19 @@ function HavvenJs(contractSettings) {
   this.utils = this.util;
 };
 /**
- * Available transaction signers
- * @type {{Trezor, Ledger, Metamask, PrivateKey}|*}
+ * Available transaction signers for node.js
+ * @type {{ PrivateKey}|*}
  */
 
-src_HavvenJs.signers = signers;
+index_node_HavvenJs.signers = {
+  PrivateKey: privateKeySigner
+};
 /**
  *
  * @type {ContractSettings}
  */
 
-src_HavvenJs.ContractSettings = src_contractSettings;
+index_node_HavvenJs.ContractSettings = src_contractSettings;
 
 /***/ })
 /******/ ]);

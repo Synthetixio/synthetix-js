@@ -5,9 +5,6 @@ import Mintr from './contracts/Mintr';
 import Converter from './converter';
 import StablePayments from './contracts/StablePayments';
 import util from './util/index';
-import Trezor from '../lib/signers/trezorSigner';
-import Metamask from '../lib/signers/metamaskSigner';
-import Ledger from '../lib/signers/ledgerSigner';
 import PrivateKey from '../lib/signers/privateKeySigner';
 import ContractSettings from './contractSettings';
 
@@ -35,11 +32,11 @@ export class HavvenJs {
 }
 
 /**
- * Available transaction signers
- * @type {{Trezor, Ledger, Metamask, PrivateKey}|*}
+ * Available transaction signers for node.js
+ * @type {{ PrivateKey}|*}
  */
 HavvenJs.signers = {
-  Trezor, Ledger, Metamask, PrivateKey
+  PrivateKey
 };
 
 /**

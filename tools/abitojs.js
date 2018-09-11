@@ -15,8 +15,8 @@ const contractAbiMap = {
   IssuanceController: 'IssuanceController',
   StablePayments: 'Nomin',
   Mintr: 'Havven',
-}
-
+  Vestr: 'Vestr',
+};
 
 //console.log(Havven);
 const generate = () => {
@@ -37,13 +37,13 @@ const abi = abis.${contractName};
  */
 function ${contractName}(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
-  
+
   this.contract = new Contract(
     this.contractSettings.addressList["${contractName}"],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
-  
+
   ${functions.map(fn => generateFunctionStr(fn, contractName)).join('')}
 
 }
@@ -60,9 +60,11 @@ export default ${contractName}`;
 };
 
 getFnParams = params => {
-  return params.map(p => {
-    return (p.name) ? p.name: p.type;
-  }).join(', ');
+  return params
+    .map(p => {
+      return p.name ? p.name : p.type;
+    })
+    .join(', ');
 };
 
 getJsdocParam = param => {
@@ -79,13 +81,11 @@ getJsdocReturns = outputs => {
 
 generateJsdoc = (abiFn, params, contractName) => {
   let description = docsDescriptions[contractAbiMap[contractName]][abiFn.name];
-  description = (description) ? description + '<br>\n   * ': '';
+  description = description ? description + '<br>\n   * ' : '';
   const constantStr = abiFn.constant
     ? "Call (no gas consumed, doesn't require signer)"
     : 'Transaction (consumes gas, requires signer)';
-  const payable = abiFn.payable
-    ? "\n<br>Payable (to enter ETH amount set txParams.value)"
-    : '';
+  const payable = abiFn.payable ? '\n<br>Payable (to enter ETH amount set txParams.value)' : '';
   const inputParams = params.length
     ? '\n' + params.map(input => getJsdocParam(input)).join('\n')
     : '';
@@ -98,12 +98,12 @@ generateJsdoc = (abiFn, params, contractName) => {
 
 const generateFunctionStr = (abiFn, contractName) => {
   let params = [...abiFn.inputs];
-  if (!abiFn.constant){
-    params.push({name: 'txParams', type: 'TxParams'});
+  if (!abiFn.constant) {
+    params.push({ name: 'txParams', type: 'TxParams' });
   }
   const paramsStr = getFnParams(params);
   const jsdoc = generateJsdoc(abiFn, params, contractName);
-  if (!abiFn.constant){
+  if (!abiFn.constant) {
     return `
 ${jsdoc}
   this.${abiFn.name} = async (${paramsStr}) => {
@@ -122,5 +122,3 @@ ${jsdoc}
 };
 
 generate();
-
-

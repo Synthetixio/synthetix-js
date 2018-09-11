@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>contracts/StablePayments.js - Documentation</title>
+    <title>contracts/Vestr.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,7 +31,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">contracts/StablePayments.js</h1>
+    <h1 class="page-title">contracts/Vestr.js</h1>
     
 
     
@@ -44,110 +44,39 @@
             <pre class="prettyprint source linenums"><code>import { Contract } from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
-const abi = abis.StablePayments;
+const abi = abis.Vestr;
 
 /** @constructor
  * @param contractSettings {ContractSettings}
  */
-function StablePayments(contractSettings) {
+function Vestr(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['StablePayments'],
+    this.contractSettings.addressList['Vestr'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String
-   **/
-  this.name = async () => {
-    return await this.contract.name();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _spender {String&lt;EthAddress>}
-   * @param _value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.approve = async (_spender, _value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.approve(_spender, _value, txParams);
-  };
-
-  /**
+   * The number of vesting dates in an account's schedule.
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.totalSupply = async () => {
-    return await this.contract.totalSupply();
+  this.numVestingEntries = async account => {
+    return await this.contract.numVestingEntries(account);
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _from {String&lt;EthAddress>}
-   * @param _to {String&lt;EthAddress>}
-   * @param _value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
+   * Allow a user to withdraw any tokens that have vested.
+   * Transaction (gas consumed, require signer)
    **/
-  this.transferFrom = async (_from, _to, _value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(_from, _to, _value, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns Number
-   **/
-  this.decimals = async () => {
-    return await this.contract.decimals();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _owner {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.balanceOf = async _owner => {
-    return await this.contract.balanceOf(_owner);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String
-   **/
-  this.symbol = async () => {
-    return await this.contract.symbol();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _to {String&lt;EthAddress>}
-   * @param _value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (_to, _value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(_to, _value, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _owner {String&lt;EthAddress>}
-   * @param _spender {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.allowance = async (_owner, _spender) => {
-    return await this.contract.allowance(_owner, _spender);
+  this.vest = async () => {
+    return await this.contract.vest();
   };
 }
 
-export default StablePayments;
+export default Vestr;
 </code></pre>
         </article>
     </section>

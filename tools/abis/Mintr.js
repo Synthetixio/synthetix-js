@@ -1,74 +1,87 @@
-module.exports = [{
-  "constant": true,
-  "inputs": [{"name": "", "type": "address"}],
-  "name": "nominsIssued",
-  "outputs": [{"name": "", "type": "uint256"}],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}, {
-  "constant": true,
-  "inputs": [{"name": "issuer", "type": "address"}],
-  "name": "remainingIssuableNomins",
-  "outputs": [{"name": "", "type": "uint256"}],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}, {
-  "constant": true,
-  "inputs": [{"name": "issuer", "type": "address"}],
-  "name": "maxIssuableNomins",
-  "outputs": [{"name": "", "type": "uint256"}],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}, {
-  "constant": false,
-  "inputs": [{"name": "amount", "type": "uint256"}],
-  "name": "issueNomins",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
-}, {
-  "constant": false,
-  "inputs": [],
-  "name": "issueMaxNomins",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
-}, {
-  "constant": false,
-  "inputs": [{"name": "amount", "type": "uint256"}],
-  "name": "burnNomins",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
-}, {
-  "constant": false,
-  "inputs": [],
-  "name": "withdrawFees",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
-}, {
-  "anonymous": false,
-  "inputs": [{"indexed": true, "name": "account", "type": "address"}, {
-    "indexed": false,
-    "name": "value",
-    "type": "uint256"
-  }],
-  "name": "FeesWithdrawn",
-  "type": "event"
-}, {
-  "constant": true,
-  "inputs": [],
-  "name": "lastFeesCollected",
-  "outputs": [{"name": "", "type": "uint256"}],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}]
+module.exports = [
+  {
+    constant: true,
+    inputs: [{ name: '', type: 'address' }],
+    name: 'nominsIssued',
+    outputs: [{ name: '', type: 'uint256' }],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [{ name: 'issuer', type: 'address' }],
+    name: 'remainingIssuableNomins',
+    outputs: [{ name: '', type: 'uint256' }],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [{ name: 'issuer', type: 'address' }],
+    name: 'maxIssuableNomins',
+    outputs: [{ name: '', type: 'uint256' }],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [{ name: 'amount', type: 'uint256' }],
+    name: 'issueNomins',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: 'issueMaxNomins',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [{ name: 'amount', type: 'uint256' }],
+    name: 'burnNomins',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: 'withdrawFees',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, name: 'account', type: 'address' },
+      {
+        indexed: false,
+        name: 'value',
+        type: 'uint256',
+      },
+    ],
+    name: 'FeesWithdrawn',
+    type: 'event',
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: 'lastFeesCollected',
+    outputs: [{ name: '', type: 'uint256' }],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+];

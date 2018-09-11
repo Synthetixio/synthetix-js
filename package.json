@@ -1,6 +1,6 @@
 {
   "name": "havven-js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Havven JS Library - access Havven smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",
@@ -9,10 +9,10 @@
   "scripts": {
     "test": "jest",
     "docs": "jsdoc src -r -d ./doc -c jsdoc.json --readme README.md",
-    "format": "prettier --write 'src/**/*.js'",
+    "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
-    "rollup": "rollup src/index.js --file dist/bundle.js --format umd --name \"havven-js\"",
-    "build": "webpack --mode=production"
+    "webpack": "webpack --mode=production",
+    "build": "npm run abitojs && npm run format && npm run docs && npm run webpack && npm run test"
   },
   "author": "Roman Mandryk",
   "license": "MIT",

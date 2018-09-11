@@ -9,5 +9,5 @@ module.exports = {
   Nomin,
   IssuanceController,
   Mintr,
-  StablePayments
-}
+  StablePayments,
+};

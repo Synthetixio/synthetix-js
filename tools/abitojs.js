@@ -15,7 +15,6 @@ const contractAbiMap = {
   IssuanceController: 'IssuanceController',
   StablePayments: 'Nomin',
   Mintr: 'Havven',
-  Vestr: 'Vestr',
 };
 
 //console.log(Havven);

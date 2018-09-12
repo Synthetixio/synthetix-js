@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>contracts/Vestr.js - Documentation</title>
+    <title>contracts/EscrowChecker.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,7 +31,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">contracts/Vestr.js</h1>
+    <h1 class="page-title">contracts/EscrowChecker.js</h1>
     
 
     
@@ -44,39 +44,41 @@
             <pre class="prettyprint source linenums"><code>import { Contract } from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
-const abi = abis.Vestr;
+const abi = abis.EscrowChecker;
 
 /** @constructor
  * @param contractSettings {ContractSettings}
  */
-function Vestr(contractSettings) {
+function EscrowChecker(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['Vestr'],
+    this.contractSettings.addressList['EscrowChecker'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
 
   /**
-   * The number of vesting dates in an account's schedule.
+   * All the vesting dates in an account's schedule.
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.numVestingEntries = async account => {
-    return await this.contract.numVestingEntries(account);
+  this.checkAccountSchedule = async account => {
+    return await this.contract.checkAccountSchedule(account);
   };
 
   /**
-   * Allow a user to withdraw any tokens that have vested.
-   * Transaction (gas consumed, require signer)
+   * The Havven escrow contract address
+   * Transaction (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
-  this.vest = async () => {
-    return await this.contract.vest();
+
+  this.havvenEscrow = async () => {
+    return await this.contract.havven_escrow();
   };
 }
 
-export default Vestr;
+export default EscrowChecker;
 </code></pre>
         </article>
     </section>

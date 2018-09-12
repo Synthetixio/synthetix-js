@@ -10443,7 +10443,7 @@ if (hadRuntime) {
 /* 45 */
 /***/ (function(module) {
 
-module.exports = {"_args":[["ethers@3.0.26","/Users/clementbalestrat/Workspace/havven-js"]],"_from":"ethers@3.0.26","_id":"ethers@3.0.26","_inBundle":false,"_integrity":"sha512-5O05fG4HCmjIjcyTXl0qIlpVFxMR77d3zjSlmhtQi9s8xaUhOQDWjgPL+zkb6QTjGzB7inCpq4/pac24qV9T2Q==","_location":"/ethers","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"ethers@3.0.26","name":"ethers","escapedName":"ethers","rawSpec":"3.0.26","saveSpec":null,"fetchSpec":"3.0.26"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.26.tgz","_spec":"3.0.26","_where":"/Users/clementbalestrat/Workspace/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.26"};
+module.exports = {"_from":"ethers","_id":"ethers@3.0.26","_inBundle":false,"_integrity":"sha512-5O05fG4HCmjIjcyTXl0qIlpVFxMR77d3zjSlmhtQi9s8xaUhOQDWjgPL+zkb6QTjGzB7inCpq4/pac24qV9T2Q==","_location":"/ethers","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"ethers","name":"ethers","escapedName":"ethers","rawSpec":"","saveSpec":null,"fetchSpec":"latest"},"_requiredBy":["#USER","/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.26.tgz","_shasum":"8b6d9d45c30e4a107cd2467329f2280d650d49f0","_spec":"ethers","_where":"/Users/romanmandryk/git/havven/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"bundleDependencies":false,"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"deprecated":false,"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.26"};
 
 /***/ }),
 /* 46 */
@@ -13828,7 +13828,7 @@ module.exports = Wallet;
 /* 79 */
 /***/ (function(module) {
 
-module.exports = {"_args":[["elliptic@6.3.3","/Users/clementbalestrat/Workspace/havven-js"]],"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/browserify-sign","/create-ecdh","/ethers","/secp256k1"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_spec":"6.3.3","_where":"/Users/clementbalestrat/Workspace/havven-js","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
+module.exports = {"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_shasum":"5482d9646d54bcb89fd7d994fc9e2e9568876e3f","_spec":"elliptic@6.3.3","_where":"/Users/romanmandryk/git/havven/havven-js/node_modules/ethers","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
 
 /***/ }),
 /* 80 */
@@ -19700,2893 +19700,2893 @@ var ethers = __webpack_require__(2);
 /* harmony default export */ var Havven = ([{
   constant: false,
   inputs: [{
-    name: "duration",
-    type: "uint256"
+    name: 'duration',
+    type: 'uint256'
   }],
-  name: "setFeePeriodDuration",
+  name: 'setFeePeriodDuration',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_issuanceRatio",
-    type: "uint256"
+    name: '_issuanceRatio',
+    type: 'uint256'
   }],
-  name: "setIssuanceRatio",
+  name: 'setIssuanceRatio',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "name",
+  name: 'name',
   outputs: [{
-    name: "",
-    type: "string"
+    name: '',
+    type: 'string'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "spender",
-    type: "address"
+    name: 'spender',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "approve",
+  name: 'approve',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "totalIssuanceData",
+  name: 'totalIssuanceData',
   outputs: [{
-    name: "currentBalanceSum",
-    type: "uint256"
+    name: 'currentBalanceSum',
+    type: 'uint256'
   }, {
-    name: "lastAverageBalance",
-    type: "uint256"
+    name: 'lastAverageBalance',
+    type: 'uint256'
   }, {
-    name: "lastModified",
-    type: "uint256"
+    name: 'lastModified',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "unlockedCollateral",
+  name: 'unlockedCollateral',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_owner",
-    type: "address"
+    name: '_owner',
+    type: 'address'
   }],
-  name: "nominateNewOwner",
+  name: 'nominateNewOwner',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "initiationTime",
+  name: 'initiationTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "totalSupply",
+  name: 'totalSupply',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "issueNomins",
+  name: 'issueNomins',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_beneficiary",
-    type: "address"
+    name: '_beneficiary',
+    type: 'address'
   }],
-  name: "setSelfDestructBeneficiary",
+  name: 'setSelfDestructBeneficiary',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "priceStalePeriod",
+  name: 'priceStalePeriod',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "feePeriodDuration",
+  name: 'feePeriodDuration',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
-  name: "hasWithdrawnFees",
+  name: 'hasWithdrawnFees',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "from",
-    type: "address"
+    name: 'from',
+    type: 'address'
   }, {
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transferFrom",
+  name: 'transferFrom',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "issuanceDraft",
+  name: 'issuanceDraft',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "time",
-    type: "uint256"
+    name: 'time',
+    type: 'uint256'
   }],
-  name: "setPriceStalePeriod",
+  name: 'setPriceStalePeriod',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "decimals",
+  name: 'decimals',
   outputs: [{
-    name: "",
-    type: "uint8"
+    name: '',
+    type: 'uint8'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "burnNomins",
+  name: 'burnNomins',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "terminateSelfDestruct",
+  name: 'terminateSelfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "withdrawFees",
+  name: 'withdrawFees',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
-    name: "value",
-    type: "bool"
+    name: 'value',
+    type: 'bool'
   }],
-  name: "setIssuer",
+  name: 'setIssuer',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "lastPriceUpdateTime",
+  name: 'lastPriceUpdateTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "nominatedOwner",
+  name: 'nominatedOwner',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_nomin",
-    type: "address"
+    name: '_nomin',
+    type: 'address'
   }],
-  name: "setNomin",
+  name: 'setNomin',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "recomputeLastAverageBalance",
+  name: 'recomputeLastAverageBalance',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
-  name: "nominsIssued",
+  name: 'nominsIssued',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "issuanceLastAverageBalance",
+  name: 'issuanceLastAverageBalance',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "balanceOf",
+  name: 'balanceOf',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "feePeriodStartTime",
+  name: 'feePeriodStartTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "acceptOwnership",
+  name: 'acceptOwnership',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_oracle",
-    type: "address"
+    name: '_oracle',
+    type: 'address'
   }],
-  name: "setOracle",
+  name: 'setOracle',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "oracle",
+  name: 'oracle',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "issuer",
-    type: "address"
+    name: 'issuer',
+    type: 'address'
   }],
-  name: "maxIssuableNomins",
+  name: 'maxIssuableNomins',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "newPrice",
-    type: "uint256"
+    name: 'newPrice',
+    type: 'uint256'
   }, {
-    name: "timeSent",
-    type: "uint256"
+    name: 'timeSent',
+    type: 'uint256'
   }],
-  name: "updatePrice",
+  name: 'updatePrice',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
-  name: "isIssuer",
+  name: 'isIssuer',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
-  name: "issuanceData",
+  name: 'issuanceData',
   outputs: [{
-    name: "currentBalanceSum",
-    type: "uint256"
+    name: 'currentBalanceSum',
+    type: 'uint256'
   }, {
-    name: "lastAverageBalance",
-    type: "uint256"
+    name: 'lastAverageBalance',
+    type: 'uint256'
   }, {
-    name: "lastModified",
-    type: "uint256"
+    name: 'lastModified',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "owner",
+  name: 'owner',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "lockedCollateral",
+  name: 'lockedCollateral',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "rolloverFeePeriodIfElapsed",
+  name: 'rolloverFeePeriodIfElapsed',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "totalIssuanceLastModified",
+  name: 'totalIssuanceLastModified',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "symbol",
+  name: 'symbol',
   outputs: [{
-    name: "",
-    type: "string"
+    name: '',
+    type: 'string'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_proxy",
-    type: "address"
+    name: '_proxy',
+    type: 'address'
   }],
-  name: "setProxy",
+  name: 'setProxy',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "selfDestruct",
+  name: 'selfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "UNIT",
+  name: 'UNIT',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_tokenState",
-    type: "address"
+    name: '_tokenState',
+    type: 'address'
   }],
-  name: "setTokenState",
+  name: 'setTokenState',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "price",
+  name: 'price',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "usd_dec",
-    type: "uint256"
+    name: 'usd_dec',
+    type: 'uint256'
   }],
-  name: "USDtoHAV",
+  name: 'USDtoHAV',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "SELFDESTRUCT_DELAY",
+  name: 'SELFDESTRUCT_DELAY',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "collateral",
+  name: 'collateral',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transfer",
+  name: 'transfer',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "issuanceRatio",
+  name: 'issuanceRatio',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "selfDestructInitiated",
+  name: 'selfDestructInitiated',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "sender",
-    type: "address"
+    name: 'sender',
+    type: 'address'
   }],
-  name: "setMessageSender",
+  name: 'setMessageSender',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "initiateSelfDestruct",
+  name: 'initiateSelfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "lastFeesCollected",
+  name: 'lastFeesCollected',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_escrow",
-    type: "address"
+    name: '_escrow',
+    type: 'address'
   }],
-  name: "setEscrow",
+  name: 'setEscrow',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "totalIssuanceLastAverageBalance",
+  name: 'totalIssuanceLastAverageBalance',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "issuanceCurrentBalanceSum",
+  name: 'issuanceCurrentBalanceSum',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "selfDestructBeneficiary",
+  name: 'selfDestructBeneficiary',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "issuer",
-    type: "address"
+    name: 'issuer',
+    type: 'address'
   }],
-  name: "remainingIssuableNomins",
+  name: 'remainingIssuableNomins',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "lastFeePeriodStartTime",
+  name: 'lastFeePeriodStartTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "totalIssuanceCurrentBalanceSum",
+  name: 'totalIssuanceCurrentBalanceSum',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "issueMaxNomins",
+  name: 'issueMaxNomins',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "hav_dec",
-    type: "uint256"
+    name: 'hav_dec',
+    type: 'uint256'
   }],
-  name: "HAVtoUSD",
+  name: 'HAVtoUSD',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "owner",
-    type: "address"
+    name: 'owner',
+    type: 'address'
   }, {
-    name: "spender",
-    type: "address"
+    name: 'spender',
+    type: 'address'
   }],
-  name: "allowance",
+  name: 'allowance',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "transferableHavvens",
+  name: 'transferableHavvens',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "escrow",
+  name: 'escrow',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "nomin",
+  name: 'nomin',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "tokenState",
+  name: 'tokenState',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "proxy",
+  name: 'proxy',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "issuanceLastModified",
+  name: 'issuanceLastModified',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "priceIsStale",
+  name: 'priceIsStale',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   inputs: [{
-    name: "_proxy",
-    type: "address"
+    name: '_proxy',
+    type: 'address'
   }, {
-    name: "_tokenState",
-    type: "address"
+    name: '_tokenState',
+    type: 'address'
   }, {
-    name: "_owner",
-    type: "address"
+    name: '_owner',
+    type: 'address'
   }, {
-    name: "_oracle",
-    type: "address"
+    name: '_oracle',
+    type: 'address'
   }, {
-    name: "_price",
-    type: "uint256"
+    name: '_price',
+    type: 'uint256'
   }, {
-    name: "_issuers",
-    type: "address[]"
+    name: '_issuers',
+    type: 'address[]'
   }, {
-    name: "_oldHavven",
-    type: "address"
+    name: '_oldHavven',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "constructor"
+  stateMutability: 'nonpayable',
+  type: 'constructor'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newPrice",
-    type: "uint256"
+    name: 'newPrice',
+    type: 'uint256'
   }, {
     indexed: false,
-    name: "timestamp",
-    type: "uint256"
+    name: 'timestamp',
+    type: 'uint256'
   }],
-  name: "PriceUpdated",
-  type: "event"
+  name: 'PriceUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newRatio",
-    type: "uint256"
+    name: 'newRatio',
+    type: 'uint256'
   }],
-  name: "IssuanceRatioUpdated",
-  type: "event"
+  name: 'IssuanceRatioUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "timestamp",
-    type: "uint256"
+    name: 'timestamp',
+    type: 'uint256'
   }],
-  name: "FeePeriodRollover",
-  type: "event"
+  name: 'FeePeriodRollover',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "duration",
-    type: "uint256"
+    name: 'duration',
+    type: 'uint256'
   }],
-  name: "FeePeriodDurationUpdated",
-  type: "event"
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    name: "account",
-    type: "address"
-  }, {
-    indexed: false,
-    name: "value",
-    type: "uint256"
-  }],
-  name: "FeesWithdrawn",
-  type: "event"
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    name: "newOracle",
-    type: "address"
-  }],
-  name: "OracleUpdated",
-  type: "event"
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    name: "newNomin",
-    type: "address"
-  }],
-  name: "NominUpdated",
-  type: "event"
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    name: "newEscrow",
-    type: "address"
-  }],
-  name: "EscrowUpdated",
-  type: "event"
+  name: 'FeePeriodDurationUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "account",
-    type: "address"
-  }, {
-    indexed: true,
-    name: "value",
-    type: "bool"
-  }],
-  name: "IssuersUpdated",
-  type: "event"
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    name: "from",
-    type: "address"
-  }, {
-    indexed: true,
-    name: "to",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
     indexed: false,
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "Transfer",
-  type: "event"
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    name: "owner",
-    type: "address"
-  }, {
-    indexed: true,
-    name: "spender",
-    type: "address"
-  }, {
-    indexed: false,
-    name: "value",
-    type: "uint256"
-  }],
-  name: "Approval",
-  type: "event"
+  name: 'FeesWithdrawn',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newTokenState",
-    type: "address"
+    name: 'newOracle',
+    type: 'address'
   }],
-  name: "TokenStateUpdated",
-  type: "event"
+  name: 'OracleUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "proxyAddress",
-    type: "address"
+    name: 'newNomin',
+    type: 'address'
   }],
-  name: "ProxyUpdated",
-  type: "event"
+  name: 'NominUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newEscrow',
+    type: 'address'
+  }],
+  name: 'EscrowUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: true,
+    name: 'value',
+    type: 'bool'
+  }],
+  name: 'IssuersUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'from',
+    type: 'address'
+  }, {
+    indexed: true,
+    name: 'to',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Transfer',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'owner',
+    type: 'address'
+  }, {
+    indexed: true,
+    name: 'spender',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Approval',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newTokenState',
+    type: 'address'
+  }],
+  name: 'TokenStateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'proxyAddress',
+    type: 'address'
+  }],
+  name: 'ProxyUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [],
-  name: "SelfDestructTerminated",
-  type: "event"
+  name: 'SelfDestructTerminated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "beneficiary",
-    type: "address"
+    name: 'beneficiary',
+    type: 'address'
   }],
-  name: "SelfDestructed",
-  type: "event"
+  name: 'SelfDestructed',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "selfDestructDelay",
-    type: "uint256"
+    name: 'selfDestructDelay',
+    type: 'uint256'
   }],
-  name: "SelfDestructInitiated",
-  type: "event"
+  name: 'SelfDestructInitiated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newBeneficiary",
-    type: "address"
+    name: 'newBeneficiary',
+    type: 'address'
   }],
-  name: "SelfDestructBeneficiaryUpdated",
-  type: "event"
+  name: 'SelfDestructBeneficiaryUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newOwner",
-    type: "address"
+    name: 'newOwner',
+    type: 'address'
   }],
-  name: "OwnerNominated",
-  type: "event"
+  name: 'OwnerNominated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "oldOwner",
-    type: "address"
+    name: 'oldOwner',
+    type: 'address'
   }, {
     indexed: false,
-    name: "newOwner",
-    type: "address"
+    name: 'newOwner',
+    type: 'address'
   }],
-  name: "OwnerChanged",
-  type: "event"
+  name: 'OwnerChanged',
+  type: 'event'
 }]);
 // CONCATENATED MODULE: ./lib/abis/Nomin.js
 /* harmony default export */ var Nomin = ([{
   constant: true,
   inputs: [],
-  name: "court",
+  name: 'court',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "name",
+  name: 'name',
   outputs: [{
-    name: "",
-    type: "string"
+    name: '',
+    type: 'string'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "spender",
-    type: "address"
+    name: 'spender',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "approve",
+  name: 'approve',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_owner",
-    type: "address"
+    name: '_owner',
+    type: 'address'
   }],
-  name: "nominateNewOwner",
+  name: 'nominateNewOwner',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "initiationTime",
+  name: 'initiationTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "totalSupply",
+  name: 'totalSupply',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "amountReceived",
+  name: 'amountReceived',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_beneficiary",
-    type: "address"
+    name: '_beneficiary',
+    type: 'address'
   }],
-  name: "setSelfDestructBeneficiary",
+  name: 'setSelfDestructBeneficiary',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "from",
-    type: "address"
+    name: 'from',
+    type: 'address'
   }, {
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transferFrom",
+  name: 'transferFrom',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "decimals",
+  name: 'decimals',
   outputs: [{
-    name: "",
-    type: "uint8"
+    name: '',
+    type: 'uint8'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "feeAuthority",
+  name: 'feeAuthority',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "terminateSelfDestruct",
+  name: 'terminateSelfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "transferFeeRate",
+  name: 'transferFeeRate',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "target",
-    type: "address"
+    name: 'target',
+    type: 'address'
   }],
-  name: "freezeAndConfiscate",
+  name: 'freezeAndConfiscate',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transferPlusFee",
+  name: 'transferPlusFee',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_havven",
-    type: "address"
+    name: '_havven',
+    type: 'address'
   }],
-  name: "setHavven",
+  name: 'setHavven',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "nominatedOwner",
+  name: 'nominatedOwner',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "n",
-    type: "uint256"
+    name: 'n',
+    type: 'uint256'
   }],
-  name: "donateToFeePool",
+  name: 'donateToFeePool',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }],
-  name: "balanceOf",
+  name: 'balanceOf',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "target",
-    type: "address"
+    name: 'target',
+    type: 'address'
   }],
-  name: "unfreezeAccount",
+  name: 'unfreezeAccount',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "acceptOwnership",
+  name: 'acceptOwnership',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "issue",
+  name: 'issue',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_feeAuthority",
-    type: "address"
+    name: '_feeAuthority',
+    type: 'address'
   }],
-  name: "setFeeAuthority",
+  name: 'setFeeAuthority',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "owner",
+  name: 'owner',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "symbol",
+  name: 'symbol',
   outputs: [{
-    name: "",
-    type: "string"
+    name: '',
+    type: 'string'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_proxy",
-    type: "address"
+    name: '_proxy',
+    type: 'address'
   }],
-  name: "setProxy",
+  name: 'setProxy',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "havven",
+  name: 'havven',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "selfDestruct",
+  name: 'selfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "UNIT",
+  name: 'UNIT',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "burn",
+  name: 'burn',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_tokenState",
-    type: "address"
+    name: '_tokenState',
+    type: 'address'
   }],
-  name: "setTokenState",
+  name: 'setTokenState',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "SELFDESTRUCT_DELAY",
+  name: 'SELFDESTRUCT_DELAY',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transfer",
+  name: 'transfer',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_court",
-    type: "address"
+    name: '_court',
+    type: 'address'
   }],
-  name: "setCourt",
+  name: 'setCourt',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "withdrawFees",
+  name: 'withdrawFees',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "feePool",
+  name: 'feePool',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "selfDestructInitiated",
+  name: 'selfDestructInitiated',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "sender",
-    type: "address"
+    name: 'sender',
+    type: 'address'
   }],
-  name: "setMessageSender",
+  name: 'setMessageSender',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "initiateSelfDestruct",
+  name: 'initiateSelfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "selfDestructBeneficiary",
+  name: 'selfDestructBeneficiary',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_transferFeeRate",
-    type: "uint256"
+    name: '_transferFeeRate',
+    type: 'uint256'
   }],
-  name: "setTransferFeeRate",
+  name: 'setTransferFeeRate',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
-  name: "frozen",
+  name: 'frozen',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transferSenderPaysFee",
+  name: 'transferSenderPaysFee',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transferFeeIncurred",
+  name: 'transferFeeIncurred',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "owner",
-    type: "address"
+    name: 'owner',
+    type: 'address'
   }, {
-    name: "spender",
-    type: "address"
+    name: 'spender',
+    type: 'address'
   }],
-  name: "allowance",
+  name: 'allowance',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "from",
-    type: "address"
+    name: 'from',
+    type: 'address'
   }, {
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "transferFromSenderPaysFee",
+  name: 'transferFromSenderPaysFee',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "tokenState",
+  name: 'tokenState',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "FEE_ADDRESS",
+  name: 'FEE_ADDRESS',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "proxy",
+  name: 'proxy',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   inputs: [{
-    name: "_proxy",
-    type: "address"
+    name: '_proxy',
+    type: 'address'
   }, {
-    name: "_tokenState",
-    type: "address"
+    name: '_tokenState',
+    type: 'address'
   }, {
-    name: "_havven",
-    type: "address"
+    name: '_havven',
+    type: 'address'
   }, {
-    name: "_totalSupply",
-    type: "uint256"
+    name: '_totalSupply',
+    type: 'uint256'
   }, {
-    name: "_owner",
-    type: "address"
+    name: '_owner',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "constructor"
+  stateMutability: 'nonpayable',
+  type: 'constructor'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newCourt",
-    type: "address"
+    name: 'newCourt',
+    type: 'address'
   }],
-  name: "CourtUpdated",
-  type: "event"
+  name: 'CourtUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newHavven",
-    type: "address"
+    name: 'newHavven',
+    type: 'address'
   }],
-  name: "HavvenUpdated",
-  type: "event"
+  name: 'HavvenUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "target",
-    type: "address"
+    name: 'target',
+    type: 'address'
   }, {
     indexed: false,
-    name: "balance",
-    type: "uint256"
+    name: 'balance',
+    type: 'uint256'
   }],
-  name: "AccountFrozen",
-  type: "event"
+  name: 'AccountFrozen',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "target",
-    type: "address"
+    name: 'target',
+    type: 'address'
   }],
-  name: "AccountUnfrozen",
-  type: "event"
+  name: 'AccountUnfrozen',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
     indexed: false,
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "Issued",
-  type: "event"
+  name: 'Issued',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
     indexed: false,
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "Burned",
-  type: "event"
+  name: 'Burned',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newFeeRate",
-    type: "uint256"
+    name: 'newFeeRate',
+    type: 'uint256'
   }],
-  name: "TransferFeeRateUpdated",
-  type: "event"
+  name: 'TransferFeeRateUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newFeeAuthority",
-    type: "address"
+    name: 'newFeeAuthority',
+    type: 'address'
   }],
-  name: "FeeAuthorityUpdated",
-  type: "event"
+  name: 'FeeAuthorityUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "account",
-    type: "address"
+    name: 'account',
+    type: 'address'
   }, {
     indexed: false,
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "FeesWithdrawn",
-  type: "event"
+  name: 'FeesWithdrawn',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "donor",
-    type: "address"
+    name: 'donor',
+    type: 'address'
   }, {
     indexed: false,
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "FeesDonated",
-  type: "event"
+  name: 'FeesDonated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "from",
-    type: "address"
+    name: 'from',
+    type: 'address'
   }, {
     indexed: true,
-    name: "to",
-    type: "address"
+    name: 'to',
+    type: 'address'
   }, {
     indexed: false,
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "Transfer",
-  type: "event"
+  name: 'Transfer',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: true,
-    name: "owner",
-    type: "address"
+    name: 'owner',
+    type: 'address'
   }, {
     indexed: true,
-    name: "spender",
-    type: "address"
+    name: 'spender',
+    type: 'address'
   }, {
     indexed: false,
-    name: "value",
-    type: "uint256"
+    name: 'value',
+    type: 'uint256'
   }],
-  name: "Approval",
-  type: "event"
+  name: 'Approval',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newTokenState",
-    type: "address"
+    name: 'newTokenState',
+    type: 'address'
   }],
-  name: "TokenStateUpdated",
-  type: "event"
+  name: 'TokenStateUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "proxyAddress",
-    type: "address"
+    name: 'proxyAddress',
+    type: 'address'
   }],
-  name: "ProxyUpdated",
-  type: "event"
+  name: 'ProxyUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [],
-  name: "SelfDestructTerminated",
-  type: "event"
+  name: 'SelfDestructTerminated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "beneficiary",
-    type: "address"
+    name: 'beneficiary',
+    type: 'address'
   }],
-  name: "SelfDestructed",
-  type: "event"
+  name: 'SelfDestructed',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "selfDestructDelay",
-    type: "uint256"
+    name: 'selfDestructDelay',
+    type: 'uint256'
   }],
-  name: "SelfDestructInitiated",
-  type: "event"
+  name: 'SelfDestructInitiated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newBeneficiary",
-    type: "address"
+    name: 'newBeneficiary',
+    type: 'address'
   }],
-  name: "SelfDestructBeneficiaryUpdated",
-  type: "event"
+  name: 'SelfDestructBeneficiaryUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newOwner",
-    type: "address"
+    name: 'newOwner',
+    type: 'address'
   }],
-  name: "OwnerNominated",
-  type: "event"
+  name: 'OwnerNominated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "oldOwner",
-    type: "address"
+    name: 'oldOwner',
+    type: 'address'
   }, {
     indexed: false,
-    name: "newOwner",
-    type: "address"
+    name: 'newOwner',
+    type: 'address'
   }],
-  name: "OwnerChanged",
-  type: "event"
+  name: 'OwnerChanged',
+  type: 'event'
 }]);
 // CONCATENATED MODULE: ./lib/abis/IssuanceController.js
 /* harmony default export */ var IssuanceController = ([{
   constant: false,
   inputs: [{
-    name: "_owner",
-    type: "address"
+    name: '_owner',
+    type: 'address'
   }],
-  name: "nominateNewOwner",
+  name: 'nominateNewOwner',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_paused",
-    type: "bool"
+    name: '_paused',
+    type: 'bool'
   }],
-  name: "setPaused",
+  name: 'setPaused',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "initiationTime",
+  name: 'initiationTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "withdrawHavvens",
+  name: 'withdrawHavvens',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "havvensReceivedForEther",
+  name: 'havvensReceivedForEther',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_beneficiary",
-    type: "address"
+    name: '_beneficiary',
+    type: 'address'
   }],
-  name: "setSelfDestructBeneficiary",
+  name: 'setSelfDestructBeneficiary',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "fundsWallet",
-  outputs: [{
-    name: "",
-    type: "address"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "priceStalePeriod",
+  name: 'fundsWallet',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'priceStalePeriod',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_time",
-    type: "uint256"
+    name: '_time',
+    type: 'uint256'
   }],
-  name: "setPriceStalePeriod",
+  name: 'setPriceStalePeriod',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "nominAmount",
-    type: "uint256"
+    name: 'nominAmount',
+    type: 'uint256'
   }, {
-    name: "guaranteedRate",
-    type: "uint256"
+    name: 'guaranteedRate',
+    type: 'uint256'
   }],
-  name: "exchangeNominsForHavvensAtRate",
+  name: 'exchangeNominsForHavvensAtRate',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "decimals",
+  name: 'decimals',
   outputs: [{
-    name: "",
-    type: "uint8"
+    name: '',
+    type: 'uint8'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "terminateSelfDestruct",
+  name: 'terminateSelfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "pricesAreStale",
+  name: 'pricesAreStale',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "newEthPrice",
-    type: "uint256"
+    name: 'newEthPrice',
+    type: 'uint256'
   }, {
-    name: "newHavvenPrice",
-    type: "uint256"
+    name: 'newHavvenPrice',
+    type: 'uint256'
   }, {
-    name: "timeSent",
-    type: "uint256"
+    name: 'timeSent',
+    type: 'uint256'
   }],
-  name: "updatePrices",
+  name: 'updatePrices',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "exchangeEtherForHavvens",
+  name: 'exchangeEtherForHavvens',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: true,
-  stateMutability: "payable",
-  type: "function"
+  stateMutability: 'payable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "exchangeEtherForNomins",
+  name: 'exchangeEtherForNomins',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: true,
-  stateMutability: "payable",
-  type: "function"
+  stateMutability: 'payable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "nominAmount",
-    type: "uint256"
+    name: 'nominAmount',
+    type: 'uint256'
   }],
-  name: "exchangeNominsForHavvens",
+  name: 'exchangeNominsForHavvens',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "lastPriceUpdateTime",
+  name: 'lastPriceUpdateTime',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_havven",
-    type: "address"
+    name: '_havven',
+    type: 'address'
   }],
-  name: "setHavven",
+  name: 'setHavven',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "nominatedOwner",
+  name: 'nominatedOwner',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [{
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "havvensReceivedForNomins",
+  name: 'havvensReceivedForNomins',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_nomin",
-    type: "address"
+    name: '_nomin',
+    type: 'address'
   }],
-  name: "setNomin",
+  name: 'setNomin',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "paused",
+  name: 'paused',
   outputs: [{
-    name: "",
-    type: "bool"
+    name: '',
+    type: 'bool'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "guaranteedRate",
-    type: "uint256"
+    name: 'guaranteedRate',
+    type: 'uint256'
   }],
-  name: "exchangeEtherForNominsAtRate",
+  name: 'exchangeEtherForNominsAtRate',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: true,
-  stateMutability: "payable",
-  type: "function"
+  stateMutability: 'payable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "_fundsWallet",
-    type: "address"
+    name: '_fundsWallet',
+    type: 'address'
   }],
-  name: "setFundsWallet",
+  name: 'setFundsWallet',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "acceptOwnership",
+  name: 'acceptOwnership',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
-}, {
-  constant: false,
-  inputs: [{
-    name: "_oracle",
-    type: "address"
-  }],
-  name: "setOracle",
-  outputs: [],
-  payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "oracle",
-  outputs: [{
-    name: "",
-    type: "address"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "owner",
-  outputs: [{
-    name: "",
-    type: "address"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "lastPauseTime",
-  outputs: [{
-    name: "",
-    type: "uint256"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "havven",
-  outputs: [{
-    name: "",
-    type: "address"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: false,
-  inputs: [],
-  name: "selfDestruct",
-  outputs: [],
-  payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "UNIT",
-  outputs: [{
-    name: "",
-    type: "uint256"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "SELFDESTRUCT_DELAY",
-  outputs: [{
-    name: "",
-    type: "uint256"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [{
-    name: "amount",
-    type: "uint256"
-  }],
-  name: "nominsReceivedForEther",
-  outputs: [{
-    name: "",
-    type: "uint256"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "selfDestructInitiated",
-  outputs: [{
-    name: "",
-    type: "bool"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
-}, {
-  constant: true,
-  inputs: [],
-  name: "usdToEthPrice",
-  outputs: [{
-    name: "",
-    type: "uint256"
-  }],
-  payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "guaranteedEtherRate",
-    type: "uint256"
+    name: '_oracle',
+    type: 'address'
+  }],
+  name: 'setOracle',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'oracle',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'lastPauseTime',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'havven',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'selfDestruct',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'UNIT',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'SELFDESTRUCT_DELAY',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'nominsReceivedForEther',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'selfDestructInitiated',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'usdToEthPrice',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'guaranteedEtherRate',
+    type: 'uint256'
   }, {
-    name: "guaranteedHavvenRate",
-    type: "uint256"
+    name: 'guaranteedHavvenRate',
+    type: 'uint256'
   }],
-  name: "exchangeEtherForHavvensAtRate",
+  name: 'exchangeEtherForHavvensAtRate',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: true,
-  stateMutability: "payable",
-  type: "function"
+  stateMutability: 'payable',
+  type: 'function'
 }, {
   constant: false,
   inputs: [],
-  name: "initiateSelfDestruct",
+  name: 'initiateSelfDestruct',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "usdToHavPrice",
+  name: 'usdToHavPrice',
   outputs: [{
-    name: "",
-    type: "uint256"
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "selfDestructBeneficiary",
+  name: 'selfDestructBeneficiary',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: true,
   inputs: [],
-  name: "nomin",
+  name: 'nomin',
   outputs: [{
-    name: "",
-    type: "address"
+    name: '',
+    type: 'address'
   }],
   payable: false,
-  stateMutability: "view",
-  type: "function"
+  stateMutability: 'view',
+  type: 'function'
 }, {
   constant: false,
   inputs: [{
-    name: "amount",
-    type: "uint256"
+    name: 'amount',
+    type: 'uint256'
   }],
-  name: "withdrawNomins",
+  name: 'withdrawNomins',
   outputs: [],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "function"
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
   inputs: [{
-    name: "_owner",
-    type: "address"
+    name: '_owner',
+    type: 'address'
   }, {
-    name: "_fundsWallet",
-    type: "address"
+    name: '_fundsWallet',
+    type: 'address'
   }, {
-    name: "_havven",
-    type: "address"
+    name: '_havven',
+    type: 'address'
   }, {
-    name: "_nomin",
-    type: "address"
+    name: '_nomin',
+    type: 'address'
   }, {
-    name: "_oracle",
-    type: "address"
+    name: '_oracle',
+    type: 'address'
   }, {
-    name: "_usdToEthPrice",
-    type: "uint256"
+    name: '_usdToEthPrice',
+    type: 'uint256'
   }, {
-    name: "_usdToHavPrice",
-    type: "uint256"
+    name: '_usdToHavPrice',
+    type: 'uint256'
   }],
   payable: false,
-  stateMutability: "nonpayable",
-  type: "constructor"
+  stateMutability: 'nonpayable',
+  type: 'constructor'
 }, {
   payable: true,
-  stateMutability: "payable",
-  type: "fallback"
+  stateMutability: 'payable',
+  type: 'fallback'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newFundsWallet",
-    type: "address"
+    name: 'newFundsWallet',
+    type: 'address'
   }],
-  name: "FundsWalletUpdated",
-  type: "event"
+  name: 'FundsWalletUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newOracle",
-    type: "address"
+    name: 'newOracle',
+    type: 'address'
   }],
-  name: "OracleUpdated",
-  type: "event"
+  name: 'OracleUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newNominContract",
-    type: "address"
+    name: 'newNominContract',
+    type: 'address'
   }],
-  name: "NominUpdated",
-  type: "event"
+  name: 'NominUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newHavvenContract",
-    type: "address"
+    name: 'newHavvenContract',
+    type: 'address'
   }],
-  name: "HavvenUpdated",
-  type: "event"
+  name: 'HavvenUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "priceStalePeriod",
-    type: "uint256"
+    name: 'priceStalePeriod',
+    type: 'uint256'
   }],
-  name: "PriceStalePeriodUpdated",
-  type: "event"
+  name: 'PriceStalePeriodUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newEthPrice",
-    type: "uint256"
+    name: 'newEthPrice',
+    type: 'uint256'
   }, {
     indexed: false,
-    name: "newHavvenPrice",
-    type: "uint256"
+    name: 'newHavvenPrice',
+    type: 'uint256'
   }, {
     indexed: false,
-    name: "timeSent",
-    type: "uint256"
+    name: 'timeSent',
+    type: 'uint256'
   }],
-  name: "PricesUpdated",
-  type: "event"
+  name: 'PricesUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "fromCurrency",
-    type: "string"
+    name: 'fromCurrency',
+    type: 'string'
   }, {
     indexed: false,
-    name: "fromAmount",
-    type: "uint256"
+    name: 'fromAmount',
+    type: 'uint256'
   }, {
     indexed: false,
-    name: "toCurrency",
-    type: "string"
+    name: 'toCurrency',
+    type: 'string'
   }, {
     indexed: false,
-    name: "toAmount",
-    type: "uint256"
+    name: 'toAmount',
+    type: 'uint256'
   }],
-  name: "Exchange",
-  type: "event"
+  name: 'Exchange',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "isPaused",
-    type: "bool"
+    name: 'isPaused',
+    type: 'bool'
   }],
-  name: "PauseChanged",
-  type: "event"
+  name: 'PauseChanged',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [],
-  name: "SelfDestructTerminated",
-  type: "event"
+  name: 'SelfDestructTerminated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "beneficiary",
-    type: "address"
+    name: 'beneficiary',
+    type: 'address'
   }],
-  name: "SelfDestructed",
-  type: "event"
+  name: 'SelfDestructed',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "selfDestructDelay",
-    type: "uint256"
+    name: 'selfDestructDelay',
+    type: 'uint256'
   }],
-  name: "SelfDestructInitiated",
-  type: "event"
+  name: 'SelfDestructInitiated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newBeneficiary",
-    type: "address"
+    name: 'newBeneficiary',
+    type: 'address'
   }],
-  name: "SelfDestructBeneficiaryUpdated",
-  type: "event"
+  name: 'SelfDestructBeneficiaryUpdated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "newOwner",
-    type: "address"
+    name: 'newOwner',
+    type: 'address'
   }],
-  name: "OwnerNominated",
-  type: "event"
+  name: 'OwnerNominated',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
     indexed: false,
-    name: "oldOwner",
-    type: "address"
+    name: 'oldOwner',
+    type: 'address'
   }, {
     indexed: false,
-    name: "newOwner",
-    type: "address"
+    name: 'newOwner',
+    type: 'address'
   }],
-  name: "OwnerChanged",
-  type: "event"
+  name: 'OwnerChanged',
+  type: 'event'
 }]);
 // CONCATENATED MODULE: ./lib/abis/Mintr.js
 /* harmony default export */ var Mintr = ([{
-  "constant": true,
-  "inputs": [{
-    "name": "",
-    "type": "address"
+  constant: true,
+  inputs: [{
+    name: '',
+    type: 'address'
   }],
-  "name": "nominsIssued",
-  "outputs": [{
-    "name": "",
-    "type": "uint256"
+  name: 'nominsIssued',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [{
-    "name": "issuer",
-    "type": "address"
+  constant: true,
+  inputs: [{
+    name: 'issuer',
+    type: 'address'
   }],
-  "name": "remainingIssuableNomins",
-  "outputs": [{
-    "name": "",
-    "type": "uint256"
+  name: 'remainingIssuableNomins',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [{
-    "name": "issuer",
-    "type": "address"
+  constant: true,
+  inputs: [{
+    name: 'issuer',
+    type: 'address'
   }],
-  "name": "maxIssuableNomins",
-  "outputs": [{
-    "name": "",
-    "type": "uint256"
+  name: 'maxIssuableNomins',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "amount",
-    "type": "uint256"
+  constant: false,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
   }],
-  "name": "issueNomins",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  name: 'issueNomins',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [],
-  "name": "issueMaxNomins",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  constant: false,
+  inputs: [],
+  name: 'issueMaxNomins',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "amount",
-    "type": "uint256"
+  constant: false,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
   }],
-  "name": "burnNomins",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  name: 'burnNomins',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [],
-  "name": "withdrawFees",
-  "outputs": [],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  constant: false,
+  inputs: [],
+  name: 'withdrawFees',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "anonymous": false,
-  "inputs": [{
-    "indexed": true,
-    "name": "account",
-    "type": "address"
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'account',
+    type: 'address'
   }, {
-    "indexed": false,
-    "name": "value",
-    "type": "uint256"
+    indexed: false,
+    name: 'value',
+    type: 'uint256'
   }],
-  "name": "FeesWithdrawn",
-  "type": "event"
+  name: 'FeesWithdrawn',
+  type: 'event'
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "lastFeesCollected",
-  "outputs": [{
-    "name": "",
-    "type": "uint256"
+  constant: true,
+  inputs: [],
+  name: 'lastFeesCollected',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }]);
 // CONCATENATED MODULE: ./lib/abis/StablePayments.js
 /* harmony default export */ var StablePayments = ([{
-  "constant": true,
-  "inputs": [],
-  "name": "name",
-  "outputs": [{
-    "name": "",
-    "type": "string"
+  constant: true,
+  inputs: [],
+  name: 'name',
+  outputs: [{
+    name: '',
+    type: 'string'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "_spender",
-    "type": "address"
+  constant: false,
+  inputs: [{
+    name: '_spender',
+    type: 'address'
   }, {
-    "name": "_value",
-    "type": "uint256"
+    name: '_value',
+    type: 'uint256'
   }],
-  "name": "approve",
-  "outputs": [{
-    "name": "",
-    "type": "bool"
+  name: 'approve',
+  outputs: [{
+    name: '',
+    type: 'bool'
   }],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "totalSupply",
-  "outputs": [{
-    "name": "",
-    "type": "uint256"
+  constant: true,
+  inputs: [],
+  name: 'totalSupply',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "_from",
-    "type": "address"
+  constant: false,
+  inputs: [{
+    name: '_from',
+    type: 'address'
   }, {
-    "name": "_to",
-    "type": "address"
+    name: '_to',
+    type: 'address'
   }, {
-    "name": "_value",
-    "type": "uint256"
+    name: '_value',
+    type: 'uint256'
   }],
-  "name": "transferFrom",
-  "outputs": [{
-    "name": "",
-    "type": "bool"
+  name: 'transferFrom',
+  outputs: [{
+    name: '',
+    type: 'bool'
   }],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "decimals",
-  "outputs": [{
-    "name": "",
-    "type": "uint8"
+  constant: true,
+  inputs: [],
+  name: 'decimals',
+  outputs: [{
+    name: '',
+    type: 'uint8'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [{
-    "name": "_owner",
-    "type": "address"
+  constant: true,
+  inputs: [{
+    name: '_owner',
+    type: 'address'
   }],
-  "name": "balanceOf",
-  "outputs": [{
-    "name": "balance",
-    "type": "uint256"
+  name: 'balanceOf',
+  outputs: [{
+    name: 'balance',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [],
-  "name": "symbol",
-  "outputs": [{
-    "name": "",
-    "type": "string"
+  constant: true,
+  inputs: [],
+  name: 'symbol',
+  outputs: [{
+    name: '',
+    type: 'string'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "constant": false,
-  "inputs": [{
-    "name": "_to",
-    "type": "address"
+  constant: false,
+  inputs: [{
+    name: '_to',
+    type: 'address'
   }, {
-    "name": "_value",
-    "type": "uint256"
+    name: '_value',
+    type: 'uint256'
   }],
-  "name": "transfer",
-  "outputs": [{
-    "name": "",
-    "type": "bool"
+  name: 'transfer',
+  outputs: [{
+    name: '',
+    type: 'bool'
   }],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
 }, {
-  "constant": true,
-  "inputs": [{
-    "name": "_owner",
-    "type": "address"
+  constant: true,
+  inputs: [{
+    name: '_owner',
+    type: 'address'
   }, {
-    "name": "_spender",
-    "type": "address"
+    name: '_spender',
+    type: 'address'
   }],
-  "name": "allowance",
-  "outputs": [{
-    "name": "",
-    "type": "uint256"
+  name: 'allowance',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }, {
-  "payable": true,
-  "stateMutability": "payable",
-  "type": "fallback"
+  payable: true,
+  stateMutability: 'payable',
+  type: 'fallback'
 }, {
-  "anonymous": false,
-  "inputs": [{
-    "indexed": true,
-    "name": "owner",
-    "type": "address"
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'owner',
+    type: 'address'
   }, {
-    "indexed": true,
-    "name": "spender",
-    "type": "address"
+    indexed: true,
+    name: 'spender',
+    type: 'address'
   }, {
-    "indexed": false,
-    "name": "value",
-    "type": "uint256"
+    indexed: false,
+    name: 'value',
+    type: 'uint256'
   }],
-  "name": "Approval",
-  "type": "event"
+  name: 'Approval',
+  type: 'event'
 }, {
-  "anonymous": false,
-  "inputs": [{
-    "indexed": true,
-    "name": "from",
-    "type": "address"
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'from',
+    type: 'address'
   }, {
-    "indexed": true,
-    "name": "to",
-    "type": "address"
+    indexed: true,
+    name: 'to',
+    type: 'address'
   }, {
-    "indexed": false,
-    "name": "value",
-    "type": "uint256"
+    indexed: false,
+    name: 'value',
+    type: 'uint256'
   }],
-  "name": "Transfer",
-  "type": "event"
+  name: 'Transfer',
+  type: 'event'
 }]);
 // CONCATENATED MODULE: ./lib/abis/Vestr.js
 /* harmony default export */ var Vestr = ([{
@@ -22629,36 +22629,36 @@ var ethers = __webpack_require__(2);
 });
 // CONCATENATED MODULE: ./lib/addresses.js
 var MAINNET_ADDRESSES = {
-  Havven: "0xD989a04AD891528B571eF73dAcaEFeB0402a65b3",
-  Mintr: "0xD989a04AD891528B571eF73dAcaEFeB0402a65b3",
+  Havven: '0xD989a04AD891528B571eF73dAcaEFeB0402a65b3',
+  Mintr: '0xD989a04AD891528B571eF73dAcaEFeB0402a65b3',
   // same as Havven contract
-  HavvenState: "0x5b1b5fea1b99d83ad479df0c222f0492385381dd",
-  Nomin: "0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA",
-  StablePayments: "0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA",
-  NominState: "0x2c1ab55bc8fa85589bee7fe5c6b563278eaf2e8f",
+  HavvenState: '0x5b1b5fea1b99d83ad479df0c222f0492385381dd',
+  Nomin: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
+  StablePayments: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
+  NominState: '0x2c1ab55bc8fa85589bee7fe5c6b563278eaf2e8f',
   Court: undefined,
-  Escrow: "0x971e78e0C92392A4E39099835cF7E6aB535b2227",
-  Vestr: "0x971e78e0C92392A4E39099835cF7E6aB535b2227",
+  Escrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
+  Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   // same as Escrow contract
-  IssuanceController: "0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f",
-  HavvenProxy: "0xC011A72400E58ecD99Ee497CF89E3775d4bd732F",
-  NominProxy: "0x57Ab1E02fEE23774580C119740129eAC7081e9D3"
+  IssuanceController: '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
+  HavvenProxy: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
+  NominProxy: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3'
 }; // Havven contracts were too large to be able to deploy to ROPSTEN due to its block size limitations
 
 var ROPSTEN_ADDRESSES = {};
 var KOVAN_ADDRESSES = {
-  Havven: "0xd9f40E8426068758f1cf6616b2baADA4e7a284cf",
-  Mintr: "0xd9f40E8426068758f1cf6616b2baADA4e7a284cf",
-  HavvenState: "0x5557eAcBfF4674941230631D4Ae055c132ad0247",
-  Nomin: "0x27BC88E8070Cf03DB8e993AdE147E18e80B19fa5",
-  StablePayments: "0x27BC88E8070Cf03DB8e993AdE147E18e80B19fa5",
-  NominState: "",
-  Court: "0x2a281B7550e23313dceD368deC1133CBdf9940EB",
-  Escrow: "0x4d9162EeaFacf48EE6f11190C3bc4186381888cc",
-  Vestr: "0x4d9162EeaFacf48EE6f11190C3bc4186381888cc",
-  IssuanceController: "0x54320836626096E05Bd2ae4986c60c5a1B3e1Ea9",
-  HavvenProxy: "0x9B7FaeB7265996aC7ec71C9f86357Db65922808E",
-  NominProxy: "0x2ABFC103776B883B30713B9206a4ef5Ce2BA2FDc"
+  Havven: '0xd9f40E8426068758f1cf6616b2baADA4e7a284cf',
+  Mintr: '0xd9f40E8426068758f1cf6616b2baADA4e7a284cf',
+  HavvenState: '0x5557eAcBfF4674941230631D4Ae055c132ad0247',
+  Nomin: '0x27BC88E8070Cf03DB8e993AdE147E18e80B19fa5',
+  StablePayments: '0x27BC88E8070Cf03DB8e993AdE147E18e80B19fa5',
+  NominState: '',
+  Court: '0x2a281B7550e23313dceD368deC1133CBdf9940EB',
+  Escrow: '0x4d9162EeaFacf48EE6f11190C3bc4186381888cc',
+  Vestr: '0x4d9162EeaFacf48EE6f11190C3bc4186381888cc',
+  IssuanceController: '0x54320836626096E05Bd2ae4986c60c5a1B3e1Ea9',
+  HavvenProxy: '0x9B7FaeB7265996aC7ec71C9f86357Db65922808E',
+  NominProxy: '0x2ABFC103776B883B30713B9206a4ef5Ce2BA2FDc'
 };
 /* harmony default export */ var addresses = ({
   1: MAINNET_ADDRESSES,

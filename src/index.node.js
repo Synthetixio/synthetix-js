@@ -3,6 +3,7 @@ import Nomin from './contracts/Nomin';
 import IssuanceController from './contracts/IssuanceController';
 import Mintr from './contracts/Mintr';
 import Vestr from './contracts/Vestr';
+import EscrowChecker from './contracts/EscrowChecker';
 import Converter from './converter';
 import StablePayments from './contracts/StablePayments';
 import util from './util/index';
@@ -27,6 +28,7 @@ export class HavvenJs {
     this.IssuanceController = new IssuanceController(contractSettings);
     this.Mintr = new Mintr(contractSettings);
     this.Vestr = new Vestr(contractSettings);
+    this.EscrowChecker = new EscrowChecker(contractSettings);
     this.Converter = new Converter(contractSettings);
     this.StablePayments = new StablePayments(contractSettings);
     this.util = new util(contractSettings);

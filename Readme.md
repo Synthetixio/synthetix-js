@@ -1,8 +1,8 @@
 HavvenJs library
 ========
 
-Havven javascript library which provides a simple interface to communicate with Havven contracts.
-Under the hood HavvenJs uses ethers.js library and it's concept of providers and signers.
+Havven javascript library provides a simple interface to communicate with Havven smart contracts on ethereum.
+Under the hood HavvenJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and it's concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
 Install
 ----
@@ -15,8 +15,8 @@ Usage example:
 ````
 const { HavvenJs } = require('havven-js');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-//return Nomin total supply
-const totalSupply = await havjs.Nomin.totalSupply(); 
+//return Nomin(nUSD)stablecoin total supply
+const totalNUSD = await havjs.Nomin.totalSupply(); 
    
 ````
 
@@ -30,10 +30,14 @@ Usage example with metamask signer:
 ------
 ````
 const { HavvenJs } = require('havven-js');
-const havjs = new HavvenJs({signer: 'Metamask'}); //uses Metamask signer and default provider on mainnet
-//return Nomin total supply
-const totalSupply = await havjs.IssuanceController.exchangeEtherForNomins(); 
-   
+const metaMaskSigner = new HavventJs.signers['Metamask']();
+const havjs = new HavvenJs({metaMaskSigner}); //uses Metamask signer and default infura.io provider on mainnet
+
+//Convert ETH for USD pegged stablecoin
+const nUSDReceived = await havjs.IssuanceController.exchangeEtherForNomins(); 
+
+//Transfer stablecoins to any ethereum address
+const success = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
 ````
 
 Full example with private key signer:

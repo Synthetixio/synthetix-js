@@ -34,12 +34,12 @@ Install via npm
 
 Example for getting the total nUSD stablecoin in circulation
 ------
-````
+```javascript
 const { HavvenJs } = require('havven-js');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
 const totalNUSD = await havjs.Nomin.totalSupply(); 
 console.log('nUSDTotalSupply', totalNUSD);
-````
+```
 
 Default settings don't use any signer. That means that constants can be viewed from the contract but executing a transaction will fail.
 To execute transactions, set up signer.
@@ -50,29 +50,29 @@ Custom ethers.js compatible signers can be used too.
 
 Example using a metamask signer
 ------
-````
+```javascript
 const { HavvenJs } = require('havven-js');
 const metaMaskSigner = new HavvenJs.signers.Metamask();
 const havjs = new HavvenJs({signer: metaMaskSigner}); //uses Metamask signer and default infura.io provider on mainnet
-````
+```
 
 Example converting ETH to USD pegged stablecoin nUSD
 ------
 Obtain test ETH from a faucet https://gitter.im/kovan-testnet/faucet
-````
+```javascript
 const txObj = await havjs.IssuanceController.exchangeEtherForNomins({ value: havjs.util.parseEther("0.123") });
-````
+```
 
 Example of making a stablecoin payment
 ------
-````
+```javascript
 //Transfer stablecoins to any ethereum address, wallet or smart contract
 const txObj = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
-````
+```
 
 Example of minting stablecoin(nUSD) with private key signer
 ------
-````
+```javascript
 const { HavvenJs } = require('havven-js');
 //parameters: default provider, default networkId, private key as a string
 const signer = new HavvenJs.signers.PrivateKey(null, 0, '0x0123456789012345678901234567890123456789012345678901234567890123');
@@ -93,7 +93,7 @@ async function run(){
 }
 
 run();
-````
+```
 
 See /\_\_tests__  folder for more examples.
 

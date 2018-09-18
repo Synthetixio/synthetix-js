@@ -1,22 +1,37 @@
 HavvenJs library
 ========
 
-Havven javascript library provides a simple interface to communicate with Havven smart contracts on ethereum.
+The Havven-JS Library provides a simple pre-packaged API to communicate with the Havven payment engine on ethereum; you can use it to build your own project that needs to work with payments using a stablecoin.
+
+This is particularly useful for hackathon teams to quickly `npm install havven-js` and have stable payments integrated into their dApp in just a few minutes.
+
+
 Under the hood HavvenJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and it's concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
-Install
+There are 3 packages;
+*StablePayments* - for transfer() and payment related functions like transfer()
+*Converter* - for Token swapper/exchange functions such as ETH > HAV & ETH > nUSD
+*Mintr*  - if you want to build a dApp for minting and burning stablecoin centralised Mintr
+
+What are some ways I could build on the Havven framework? 
+----
+We’ve come up with some thought starters for dapps or platforms you could create by integrating Havven’s stable payments into your projects.
+Games - lottery
+Loans
+Insurance
+
+
+Install via npm
 ----
 `npm install havven-js`
 
-
-
-Usage example:
+Example for getting the havven stablecoin in circulation
 ------
 ````
 const { HavvenJs } = require('havven-js');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-//return Nomin(nUSD)stablecoin total supply
-const totalNUSD = await havjs.Nomin.totalSupply(); 
+const totalNUSD = await havjs.Nomin.totalSupply(); //return total Nomin(nUSD)stablecoin in circulation
+console.log('nUSDTotalSupply', totalNUSD);
    
 ````
 
@@ -26,7 +41,7 @@ To execute transactions, set up signer.
 4 signers are included in the library - Metamask (compatible with Dapp browsers), Trezor, Ledger and PrivateKey.
 Custom ethers.js compatible signers can be used too.
 
-Usage example with metamask signer:
+ Example of making a stablecoin payment with metamask signer:
 ------
 ````
 const { HavvenJs } = require('havven-js');
@@ -40,7 +55,7 @@ const nUSDReceived = await havjs.IssuanceController.exchangeEtherForNomins();
 const success = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
 ````
 
-Full example with private key signer:
+Example of minting stablecoin(nUSD) with private key signer:
 ------
 ````
 const { HavvenJs } = require('havven-js');
@@ -49,14 +64,13 @@ const signer = new HavvenJs.signers.PrivateKey(null, 0, '0x012345678901234567890
 const havjs = new HavvenJs({signer});
 
 async function run(){
-  //read contract
   const totalSupply = await havjs.Havven.totalSupply();
   const havTotalSupply = havjs.utils.formatEther(totalSupply);
   console.log('havTotalSupply', havTotalSupply);
-  //execute transaction (requires gas)
+  
   //issue 100 nomins (will throw if insufficient funds for gas
   try {
-    await havjs.Havven.issueNomins(havjs.util.parseEther("100"));
+    await havjs.Havven.issueNomins(havjs.util.parseEther("100")); //execute transaction (requires gas)
   } catch (e) {
     console.log(e);
   }

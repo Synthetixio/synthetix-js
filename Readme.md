@@ -1,13 +1,13 @@
 HavvenJs library
 ========
 
-The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum; you can use it to build your own project that needs to work with payments using a stablecoin.
+The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum; you can use it to build your own dApp that needs to work with payments using a stablecoin.
 
 This is particularly useful for hackathon teams to quickly `npm install havven-js` and have stable payments integrated into their dApp in just a few minutes.
 
 Under the hood HavvenJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and it's concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
-The two main packages you want to stable payments is;
+The two main packages to do stable payments with are;
 - [StablePayments](https://havvenjs.havven.io/stablepayments) - for transfer() and payment related functions like transfer()
 - [Util](https://havvenjs.havven.io/util) - a bunch of handy utility functions for number handling and gas estimation
 
@@ -48,27 +48,29 @@ To execute transactions, set up signer.
 Custom ethers.js compatible signers can be used too.
 
 
-Example using a metamask signer:
+Example using a metamask signer
 ------
-
+````
 const { HavvenJs } = require('havven-js');
 const metaMaskSigner = new HavventJs.signers['Metamask']();
 const havjs = new HavvenJs({signer: metaMaskSigner}); //uses Metamask signer and default infura.io provider on mainnet
+````
 
-Example converting ETH to USD pegged stablecoin nUSD:
+Example converting ETH to USD pegged stablecoin nUSD
 ------
+Obtain test ETH from a faucet https://gitter.im/kovan-testnet/faucet
 ````
 const nUSDReceived = await havjs.IssuanceController.exchangeEtherForNomins({value 0.123}); 
 ````
 
-Example of making a stablecoin payment:
+Example of making a stablecoin payment
 ------
 ````
 //Transfer stablecoins to any ethereum address, wallet or smart contract
 const success = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
 ````
 
-Example of minting stablecoin(nUSD) with private key signer:
+Example of minting stablecoin(nUSD) with private key signer
 ------
 ````
 const { HavvenJs } = require('havven-js');
@@ -92,11 +94,9 @@ async function run(){
 run();
 ````
 
-
 See /\_\_tests__  folder for more examples.
 
-Testing on KOVAN with test ETH
-------
-Obtain test ETH from a faucet https://gitter.im/kovan-testnet/faucet
 
+More Info
+------
 To understand the Havven payments engine see more at [developer.havven.io](https://developer.havven.io)

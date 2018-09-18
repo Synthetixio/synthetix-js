@@ -58,7 +58,7 @@ const havjs = new HavvenJs({signer: metaMaskSigner}); //uses Metamask signer and
 
 Example converting ETH to USD pegged stablecoin nUSD
 ------
-Obtain test ETH from a faucet https://gitter.im/kovan-testnet/faucet
+Obtain test ETH from a faucet [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)
 ```javascript
 const txObj = await havjs.IssuanceController.exchangeEtherForNomins({ value: havjs.util.parseEther("0.123") });
 ```

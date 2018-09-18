@@ -100,3 +100,10 @@ See /\_\_tests__  folder for more examples.
 More Info
 ------
 To understand the Havven payments engine see more at [developer.havven.io](https://developer.havven.io)
+- [www.havven.io](https://havven.io/?utm_source=github) 
+- [Reddit](https://twitter.com/havven_io?utm_source=github)
+- [Twitter](https://www.reddit.com/r/havven/?utm_source=github)
+
+Got any questions?
+------
+Join our dev community on Discord: https://discord.gg/S5WmKUp

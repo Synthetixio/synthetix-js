@@ -1,23 +1,23 @@
 HavvenJs library
 ========
 
-The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum; you can use it to build your own dApp that needs to work with payments using a stablecoin.
+The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
 
 This is particularly useful for hackathon teams to quickly `npm install havven-js` and have stable payments integrated into their dApp in just a few minutes.
 
-Under the hood HavvenJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and it's concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
+Under the hood, HavvenJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and its concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
-The two main packages to do stable payments with are;
+The two main packages to do stable payments with are:
 - [StablePayments](https://havvenjs.havven.io/stablepayments) - for transfer() and payment related functions like transfer()
 - [Util](https://havvenjs.havven.io/util) - a bunch of handy utility functions for number handling and gas estimation
 
-Some other packages for hacking with;
+Some other packages for hacking with:
 - [IsssuanceController](https://havvenjs.havven.io/issuancecontroller) - for Token swapper/exchange functions such as ETH > HAV & ETH > nUSD
-- [Mintr](https://havvenjs.havven.io/mintr)  - if you want to build a dApp for minting and burning stablecoin
+- [Mintr](https://havvenjs.havven.io/mintr)  - if you want to build a dApp for minting and burning stablecoins.
 
 What can I build on the Havven payment engine? 
 ----
-Anything you can think of with programmable money. We provide the stability-as-a-service and soon fx with havvens multicurrency release.
+Anything you can think of with programmable money. We provide the stability-as-a-service and soon fx (foreign exchange) with havvens multicurrency release.
 
 We’ve come up with some thought starters for dApps you could create by integrating Havven’s stable payments into your projects.
 - Crypto Games - lottery, poker, fomoNUSD for kicks. 

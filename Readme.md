@@ -107,4 +107,4 @@ To understand the Havven payments engine see more at [developer.havven.io](https
 
 Got any questions?
 ------
-Join our dev community on Discord: https://discord.gg/S5WmKUp
+Join our dev community on Discord: [https://discord.gg/S5WmKUp](https://discord.gg/S5WmKUp)

@@ -52,7 +52,7 @@ Example using a metamask signer
 ------
 ````
 const { HavvenJs } = require('havven-js');
-const metaMaskSigner = new HavventJs.signers['Metamask']();
+const metaMaskSigner = new HavvenJs.signers.Metamask();
 const havjs = new HavvenJs({signer: metaMaskSigner}); //uses Metamask signer and default infura.io provider on mainnet
 ````
 
@@ -60,14 +60,14 @@ Example converting ETH to USD pegged stablecoin nUSD
 ------
 Obtain test ETH from a faucet https://gitter.im/kovan-testnet/faucet
 ````
-const nUSDReceived = await havjs.IssuanceController.exchangeEtherForNomins({value 0.123}); 
+const txObj = await havjs.IssuanceController.exchangeEtherForNomins({ value: havjs.util.parseEther("0.123") });
 ````
 
 Example of making a stablecoin payment
 ------
 ````
 //Transfer stablecoins to any ethereum address, wallet or smart contract
-const success = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
+const txObj = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
 ````
 
 Example of minting stablecoin(nUSD) with private key signer
@@ -83,9 +83,10 @@ async function run(){
   const havTotalSupply = havjs.utils.formatEther(totalSupply);
   console.log('havTotalSupply', havTotalSupply);
   
-  //issue 100 nomins (will throw if insufficient funds for gas
+  //issue 100 nomins (will throw if insufficient funds for gas)
   try {
-    await havjs.Havven.issueNomins(havjs.util.parseEther("100")); //execute transaction (requires gas)
+    const txObj = await havjs.Havven.issueNomins(havjs.util.parseEther("100")); //execute transaction (requires gas)
+    console.log('transaction hash', txObj.hash);
   } catch (e) {
     console.log(e);
   }

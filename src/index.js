@@ -12,6 +12,7 @@ import Metamask from '../lib/signers/metamaskSigner';
 import Ledger from '../lib/signers/ledgerSigner';
 import PrivateKey from '../lib/signers/privateKeySigner';
 import ContractSettings from './contractSettings';
+import ethers from 'ethers';
 
 export class HavvenJs {
   /**
@@ -36,6 +37,7 @@ export class HavvenJs {
     this.StablePayments = new StablePayments(contractSettings);
     this.util = new util(contractSettings);
     this.utils = this.util;
+    this.ethers = ethers;
   }
 }
 

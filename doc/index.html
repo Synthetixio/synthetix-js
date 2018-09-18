@@ -50,41 +50,68 @@
 
 
     <section class="readme">
-        <article><h1>HavvenJs library</h1><p>Havven javascript library which provides a simple interface to communicate with Havven contracts.
-Under the hood HavvenJs uses ethers.js library and it's concept of providers and signers.</p>
-<h2>Install</h2><p><code>npm install havven-js</code></p>
-<h2>Usage example:</h2><pre class="prettyprint source"><code>const { HavvenJs } = require('havven-js');
+        <article><h1>HavvenJs library</h1><p>The Havven-JS Library provides a simple pre-packaged API to communicate with the <a href="https://www.havven.io">Havven payment engine</a> on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.</p>
+<p>This is particularly useful for hackathon teams to quickly <code>npm install havven-js</code> and have stable payments integrated into their dApp in just a few minutes.</p>
+<p>Under the hood, HavvenJs uses <a href="https://github.com/ethers-io/ethers.js/">ethers.js</a> library and its concept of <a href="https://docs.ethers.io/ethers.js/html/api-providers.html">providers</a> and <a href="https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer">transaction signers</a>.</p>
+<p>The two main packages to do stable payments with are:</p>
+<ul>
+<li><a href="https://havvenjs.havven.io/stablepayments">StablePayments</a> - for transfer() and payment related functions like transfer()</li>
+<li><a href="https://havvenjs.havven.io/util">Util</a> - a bunch of handy utility functions for number handling and gas estimation</li>
+</ul>
+<p>Some other packages for hacking with:</p>
+<ul>
+<li><a href="https://havvenjs.havven.io/issuancecontroller">IsssuanceController</a> - for Token swapper/exchange functions such as ETH &gt; HAV &amp; ETH &gt; nUSD</li>
+<li><a href="https://havvenjs.havven.io/mintr">Mintr</a>  - if you want to build a dApp for minting and burning stablecoins.</li>
+</ul>
+<h2>What can I build on the Havven payment engine? </h2><p>Anything you can think of with programmable money. We provide the stability-as-a-service and soon fx (foreign exchange) with havvens multicurrency release.</p>
+<p>We’ve come up with some thought starters for dApps you could create by integrating Havven’s stable payments into your projects.</p>
+<ul>
+<li>Crypto Games - lottery, poker, fomoNUSD for kicks. </li>
+<li>Crypto Ecommerce</li>
+<li>Crypto Loans</li>
+<li>Crypto Insurance</li>
+<li>Crypto Payroll</li>
+<li>Crypto Global Remittance</li>
+</ul>
+<h2>Install via npm</h2><p><code>npm install havven-js</code></p>
+<h2>Example for getting the total nUSD stablecoin in circulation</h2><pre class="prettyprint source lang-javascript"><code>const { HavvenJs } = require('havven-js');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-//return Nomin total supply
-const totalSupply = await havjs.Nomin.totalSupply(); 
-</code></pre><p>Default settings don't use any signer. That means that constants can be viewed from contract but executing transaction will fail.
+const totalNUSD = await havjs.Nomin.totalSupply(); 
+console.log('nUSDTotalSupply', totalNUSD);</code></pre><p>Default settings don't use any signer. That means that constants can be viewed from the contract but executing a transaction will fail.
 To execute transactions, set up signer.</p>
 <p>4 signers are included in the library - Metamask (compatible with Dapp browsers), Trezor, Ledger and PrivateKey.
 Custom ethers.js compatible signers can be used too.</p>
-<h2>Usage example with metamask signer:</h2><pre class="prettyprint source"><code>const { HavvenJs } = require('havven-js');
-const havjs = new HavvenJs({signer: 'Metamask'}); //uses Metamask signer and default provider on mainnet
-//return Nomin total supply
-const totalSupply = await havjs.IssuanceController.exchangeEtherForNomins(); 
-</code></pre><h2>Full example with private key signer:</h2><pre class="prettyprint source"><code>const { HavvenJs } = require('havven-js');
+<h2>Example using a metamask signer</h2><pre class="prettyprint source lang-javascript"><code>const { HavvenJs } = require('havven-js');
+const metaMaskSigner = new HavvenJs.signers.Metamask();
+const havjs = new HavvenJs({signer: metaMaskSigner}); //uses Metamask signer and default infura.io provider on mainnet</code></pre><h2>Example converting ETH to USD pegged stablecoin nUSD</h2><p>Obtain test ETH from a faucet https://gitter.im/kovan-testnet/faucet</p>
+<pre class="prettyprint source lang-javascript"><code>const txObj = await havjs.IssuanceController.exchangeEtherForNomins({ value: havjs.util.parseEther(&quot;0.123&quot;) });</code></pre><h2>Example of making a stablecoin payment</h2><pre class="prettyprint source lang-javascript"><code>//Transfer stablecoins to any ethereum address, wallet or smart contract
+const txObj = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); </code></pre><h2>Example of minting stablecoin(nUSD) with private key signer</h2><pre class="prettyprint source lang-javascript"><code>const { HavvenJs } = require('havven-js');
 //parameters: default provider, default networkId, private key as a string
 const signer = new HavvenJs.signers.PrivateKey(null, 0, '0x0123456789012345678901234567890123456789012345678901234567890123');
 const havjs = new HavvenJs({signer});
 
 async function run(){
-  //read contract
   const totalSupply = await havjs.Havven.totalSupply();
   const havTotalSupply = havjs.utils.formatEther(totalSupply);
   console.log('havTotalSupply', havTotalSupply);
-  //execute transaction (requires gas)
-  //issue 100 nomins (will throw if insufficient funds for gas
+
+  //issue 100 nomins (will throw if insufficient funds for gas)
   try {
-    await havjs.Havven.issueNomins(havjs.util.parseEther(&quot;100&quot;));
+    const txObj = await havjs.Havven.issueNomins(havjs.util.parseEther(&quot;100&quot;)); //execute transaction (requires gas)
+    console.log('transaction hash', txObj.hash);
   } catch (e) {
     console.log(e);
   }
 }
 
-run();</code></pre><p>See /__tests__  folder for more examples.</p></article>
+run();</code></pre><p>See /__tests__  folder for more examples.</p>
+<h2>More Info</h2><p>To understand the Havven payments engine see more at <a href="https://developer.havven.io">developer.havven.io</a></p>
+<ul>
+<li><a href="https://havven.io/?utm_source=github">www.havven.io</a> </li>
+<li><a href="https://twitter.com/havven_io?utm_source=github">Reddit</a></li>
+<li><a href="https://www.reddit.com/r/havven/?utm_source=github">Twitter</a></li>
+</ul>
+<h2>Got any questions?</h2><p>Join our dev community on Discord: https://discord.gg/S5WmKUp</p></article>
     </section>
 
 
@@ -99,7 +126,7 @@ run();</code></pre><p>See /__tests__  folder for more examples.</p></article>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Sep 12 2018 15:39:51 GMT+1000 (AEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Sep 18 2018 15:20:32 GMT+1000 (AEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -9,3 +9,12 @@ test(
   },
   15000
 );
+
+test(
+  'Should return totalIssuanceLastAverageBalance',
+  async () => {
+    const totalIssuanceLastAverageBalance = await havjs.Mintr.totalIssuanceLastAverageBalance();
+    return expect(havjs.utils.formatEther(totalIssuanceLastAverageBalance)).toBeTruthy();
+  },
+  15000
+);

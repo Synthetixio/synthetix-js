@@ -96,6 +96,23 @@ function Mintr(contractSettings) {
   this.lastFeesCollected = async () => {
     return await this.contract.lastFeesCollected();
   };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.totalIssuanceLastAverageBalance = async () => {
+    return await this.contract.totalIssuanceLastAverageBalance();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.issuanceLastAverageBalance = async account => {
+    return await this.contract.issuanceLastAverageBalance(account);
+  };
 }
 
 export default Mintr;

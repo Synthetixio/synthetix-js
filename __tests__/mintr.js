@@ -18,3 +18,12 @@ test(
   },
   15000
 );
+
+test(
+  'Should return feePeriodStartTime',
+  async () => {
+    const feePeriodStartTime = await havjs.Mintr.feePeriodStartTime();
+    return expect(havjs.utils.formatEther(feePeriodStartTime)).toBeTruthy();
+  },
+  15000
+);

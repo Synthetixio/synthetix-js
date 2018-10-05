@@ -1,7 +1,7 @@
 HavvenJs library
 ========
 
-[![CircleCI](https://circleci.com/gh/Havven/havven-js.svg?style=svg&circle-token=d85eadc6d5c07e922ab62eab9c86146b35956f82)](https://circleci.com/gh/Havven/havven-js)
+[![CircleCI](https://circleci.com/gh/Havven/havven-js.svg?style=svg)](https://circleci.com/gh/Havven/havven-js)
 
 The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
 

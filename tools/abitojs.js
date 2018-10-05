@@ -15,6 +15,7 @@ const contractAbiMap = {
   IssuanceController: 'IssuanceController',
   StablePayments: 'Nomin',
   Mintr: 'Havven',
+  Escrow: 'Escrow',
 };
 
 //console.log(Havven);
@@ -79,7 +80,9 @@ getJsdocReturns = outputs => {
 };
 
 generateJsdoc = (abiFn, params, contractName) => {
-  let description = docsDescriptions[contractAbiMap[contractName]][abiFn.name];
+  let description =
+    docsDescriptions[contractAbiMap[contractName]] &&
+    docsDescriptions[contractAbiMap[contractName]][abiFn.name];
   description = description ? description + '<br>\n   * ' : '';
   const constantStr = abiFn.constant
     ? "Call (no gas consumed, doesn't require signer)"

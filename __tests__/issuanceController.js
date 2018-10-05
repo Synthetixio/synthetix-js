@@ -1,5 +1,4 @@
 import { HavvenJs } from '../dist/main.node';
-console.log(HavvenJs);
 const havjs = new HavvenJs();
 
 test(

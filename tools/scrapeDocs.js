@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
 const baseUrl = 'http://developer.havven.io/api/docs/';
-const contractNames = ['Havven', 'Nomin', 'IssuanceController'];
+const contractNames = ['Havven', 'Nomin', 'IssuanceController', 'Escrow'];
 const docsObj = {};
 const writeFile = require('util').promisify(fs.writeFile);
 

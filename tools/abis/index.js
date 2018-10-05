@@ -3,6 +3,7 @@ const Nomin = require('./Nomin');
 const IssuanceController = require('./IssuanceController');
 const Mintr = require('./Mintr');
 const StablePayments = require('./StablePayments');
+const Escrow = require('./Escrow');
 
 module.exports = {
   Havven,
@@ -10,4 +11,5 @@ module.exports = {
   IssuanceController,
   Mintr,
   StablePayments,
+  Escrow,
 };

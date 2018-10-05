@@ -91,14 +91,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 107);
+/******/ 	return __webpack_require__(__webpack_require__.s = 105);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(44);
+module.exports = __webpack_require__(43);
 
 
 /***/ }),
@@ -150,13 +150,13 @@ module.exports = _asyncToGenerator;
 "use strict";
 
 
-var version = __webpack_require__(46).version;
+var version = __webpack_require__(45).version;
 
-var contracts = __webpack_require__(47);
-var providers = __webpack_require__(52);
+var contracts = __webpack_require__(46);
+var providers = __webpack_require__(51);
 var errors = __webpack_require__(6);
 var utils = __webpack_require__(26);
-var wallet = __webpack_require__(78);
+var wallet = __webpack_require__(77);
 
 module.exports = {
     Wallet: wallet.Wallet,
@@ -445,16 +445,16 @@ module.exports = {
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(80).version;
-elliptic.utils = __webpack_require__(81);
-elliptic.rand = __webpack_require__(82);
-elliptic.hmacDRBG = __webpack_require__(83);
-elliptic.curve = __webpack_require__(22);
-elliptic.curves = __webpack_require__(89);
+elliptic.version = __webpack_require__(79).version;
+elliptic.utils = __webpack_require__(80);
+elliptic.rand = __webpack_require__(81);
+elliptic.hmacDRBG = __webpack_require__(82);
+elliptic.curve = __webpack_require__(23);
+elliptic.curves = __webpack_require__(87);
 
 // Protocols
-elliptic.ec = __webpack_require__(91);
-elliptic.eddsa = __webpack_require__(94);
+elliptic.ec = __webpack_require__(89);
+elliptic.eddsa = __webpack_require__(92);
 
 
 /***/ }),
@@ -611,7 +611,7 @@ module.exports = codes;
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(50).Buffer;
+    Buffer = __webpack_require__(49).Buffer;
   } catch (e) {
   }
 
@@ -3987,7 +3987,7 @@ module.exports = codes;
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(49)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(48)(module)))
 
 /***/ }),
 /* 8 */
@@ -4115,8 +4115,8 @@ module.exports = {
 "use strict";
 
 
-var assert = __webpack_require__(17);
-var inherits = __webpack_require__(67);
+var assert = __webpack_require__(18);
+var inherits = __webpack_require__(66);
 
 exports.inherits = inherits;
 
@@ -4376,7 +4376,7 @@ exports.shr64_lo = shr64_lo;
 var BN = __webpack_require__(7);
 
 var convert = __webpack_require__(3);
-var throwError = __webpack_require__(24);
+var throwError = __webpack_require__(25);
 var keccak256 = __webpack_require__(11);
 
 function getChecksumAddress(address) {
@@ -4505,7 +4505,7 @@ module.exports = {
 "use strict";
 
 
-var sha3 = __webpack_require__(51);
+var sha3 = __webpack_require__(50);
 
 var convert = __webpack_require__(3);
 
@@ -4521,11 +4521,11 @@ module.exports = keccak256;
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(103);
+var arrayWithHoles = __webpack_require__(101);
 
-var iterableToArrayLimit = __webpack_require__(104);
+var iterableToArrayLimit = __webpack_require__(102);
 
-var nonIterableRest = __webpack_require__(105);
+var nonIterableRest = __webpack_require__(103);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
@@ -4548,7 +4548,7 @@ var BN = __webpack_require__(7);
 
 var defineProperty = __webpack_require__(4).defineProperty;
 var convert = __webpack_require__(3);
-var throwError = __webpack_require__(24);
+var throwError = __webpack_require__(25);
 
 function BigNumber(value) {
     if (!(this instanceof BigNumber)) { throw new Error('missing new'); }
@@ -4707,11 +4707,11 @@ module.exports = _classCallCheck;
 "use strict";
 
 
-var inherits = __webpack_require__(33);
+var inherits = __webpack_require__(16);
 
-var XMLHttpRequest = __webpack_require__(53).XMLHttpRequest;
+var XMLHttpRequest = __webpack_require__(52).XMLHttpRequest;
 
-var networks = __webpack_require__(59);
+var networks = __webpack_require__(58);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
@@ -4720,7 +4720,7 @@ var utils = (function() {
         defineProperty: __webpack_require__(4).defineProperty,
 
         getAddress: __webpack_require__(10).getAddress,
-        getContractAddress: __webpack_require__(34).getContractAddress,
+        getContractAddress: __webpack_require__(33).getContractAddress,
 
         bigNumberify: __webpack_require__(13).bigNumberify,
         arrayify: convert.arrayify,
@@ -4732,14 +4732,14 @@ var utils = (function() {
         hexStripZeros: convert.hexStripZeros,
         stripZeros: convert.stripZeros,
 
-        base64: __webpack_require__(35),
+        base64: __webpack_require__(34),
 
-        namehash: __webpack_require__(36),
+        namehash: __webpack_require__(35),
 
         toUtf8String: utf8.toUtf8String,
         toUtf8Bytes: utf8.toUtf8Bytes,
 
-        RLP: __webpack_require__(19),
+        RLP: __webpack_require__(20),
     }
 })();
 
@@ -5898,13 +5898,20 @@ module.exports = Provider;
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(32).inherits
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var hash = exports;
 
 hash.utils = __webpack_require__(9);
-hash.common = __webpack_require__(18);
-hash.sha = __webpack_require__(69);
-hash.ripemd = __webpack_require__(73);
-hash.hmac = __webpack_require__(74);
+hash.common = __webpack_require__(19);
+hash.sha = __webpack_require__(68);
+hash.ripemd = __webpack_require__(72);
+hash.hmac = __webpack_require__(73);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -5916,7 +5923,7 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = assert;
@@ -5933,14 +5940,14 @@ assert.equal = function assertEqual(l, r, msg) {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(9);
-var assert = __webpack_require__(17);
+var assert = __webpack_require__(18);
 
 function BlockHash() {
   this.pending = null;
@@ -6032,7 +6039,7 @@ BlockHash.prototype._pad = function pad() {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //See: https://github.com/ethereum/wiki/wiki/RLP
@@ -6180,7 +6187,7 @@ module.exports = {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6506,13 +6513,13 @@ module.exports = JsonRpcProvider;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(16);
+var hash = __webpack_require__(17);
 
 var convert = __webpack_require__(3);
 
@@ -6536,7 +6543,7 @@ module.exports = {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6544,14 +6551,14 @@ module.exports = {
 
 var curve = exports;
 
-curve.base = __webpack_require__(84);
-curve.short = __webpack_require__(85);
-curve.mont = __webpack_require__(87);
-curve.edwards = __webpack_require__(88);
+curve.base = __webpack_require__(83);
+curve.short = __webpack_require__(84);
+curve.mont = __webpack_require__(85);
+curve.edwards = __webpack_require__(86);
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -6573,7 +6580,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6591,12 +6598,6 @@ module.exports = throwError;
 
 
 /***/ }),
-/* 25 */
-/***/ (function(module, exports) {
-
-module.exports = require("util");
-
-/***/ }),
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6607,21 +6608,21 @@ module.exports = require("util");
 //var unorm = require('unorm');
 
 var address = __webpack_require__(10);
-var AbiCoder = __webpack_require__(32);
-var base64 = __webpack_require__(35);
+var AbiCoder = __webpack_require__(31);
+var base64 = __webpack_require__(34);
 var bigNumber = __webpack_require__(13);
-var contractAddress = __webpack_require__(34);
+var contractAddress = __webpack_require__(33);
 var convert = __webpack_require__(3);
-var id = __webpack_require__(66);
+var id = __webpack_require__(65);
 var keccak256 = __webpack_require__(11);
-var namehash = __webpack_require__(36);
-var sha256 = __webpack_require__(21).sha256;
-var solidity = __webpack_require__(75);
-var randomBytes = __webpack_require__(76);
+var namehash = __webpack_require__(35);
+var sha256 = __webpack_require__(22).sha256;
+var solidity = __webpack_require__(74);
+var randomBytes = __webpack_require__(75);
 var properties = __webpack_require__(4);
-var RLP = __webpack_require__(19);
+var RLP = __webpack_require__(20);
 var utf8 = __webpack_require__(8);
-var units = __webpack_require__(77);
+var units = __webpack_require__(76);
 
 
 module.exports = {
@@ -6694,16 +6695,16 @@ module.exports = require("crypto");
 var secp256k1 = new (__webpack_require__(5)).ec('secp256k1');
 
 var wordlist = (function() {
-    var words = __webpack_require__(97);
+    var words = __webpack_require__(95);
     return words.replace(/([A-Z])/g, ' $1').toLowerCase().substring(1).split(' ');
 })();
 
 var utils = (function() {
     var convert = __webpack_require__(3);
 
-    var sha2 = __webpack_require__(21);
+    var sha2 = __webpack_require__(22);
 
-    var hmac = __webpack_require__(41);
+    var hmac = __webpack_require__(40);
 
     return {
         defineProperty: __webpack_require__(4).defineProperty,
@@ -6717,7 +6718,7 @@ var utils = (function() {
         sha256: sha2.sha256,
         createSha512Hmac: hmac.createSha512Hmac,
 
-        pbkdf2: __webpack_require__(42),
+        pbkdf2: __webpack_require__(41),
     }
 })();
 
@@ -6953,19 +6954,6 @@ module.exports = {
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-try {
-  var util = __webpack_require__(25);
-  if (typeof util.inherits !== 'function') throw '';
-  module.exports = util.inherits;
-} catch (e) {
-  module.exports = __webpack_require__(86);
-}
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
@@ -7074,7 +7062,7 @@ module.exports = SigningKey;
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7083,7 +7071,7 @@ module.exports = SigningKey;
 // See: https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
 
 var utils = (function() {
-    var AbiCoder = __webpack_require__(32);
+    var AbiCoder = __webpack_require__(31);
     var convert = __webpack_require__(3);
     var properties = __webpack_require__(4);
     var utf8 = __webpack_require__(8);
@@ -7492,7 +7480,7 @@ module.exports = Interface;
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8517,21 +8505,20 @@ module.exports = Coder
 
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 32 */
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__(25).inherits
-
+module.exports = require("util");
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 var getAddress = __webpack_require__(10).getAddress;
 var convert = __webpack_require__(3);
 var keccak256 = __webpack_require__(11);
-var RLP = __webpack_require__(19);
+var RLP = __webpack_require__(20);
 
 // http://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed
 function getContractAddress(transaction) {
@@ -8550,7 +8537,7 @@ module.exports = {
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8570,7 +8557,7 @@ module.exports = {
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8615,7 +8602,7 @@ module.exports = namehash;
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8671,16 +8658,16 @@ exports.g1_256 = g1_256;
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(9);
-var common = __webpack_require__(18);
-var shaCommon = __webpack_require__(37);
-var assert = __webpack_require__(17);
+var common = __webpack_require__(19);
+var shaCommon = __webpack_require__(36);
+var assert = __webpack_require__(18);
 
 var sum32 = utils.sum32;
 var sum32_4 = utils.sum32_4;
@@ -8783,15 +8770,15 @@ SHA256.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(9);
-var common = __webpack_require__(18);
-var assert = __webpack_require__(17);
+var common = __webpack_require__(19);
+var assert = __webpack_require__(18);
 
 var rotr64_hi = utils.rotr64_hi;
 var rotr64_lo = utils.rotr64_lo;
@@ -9120,7 +9107,7 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9567,15 +9554,15 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(16);
+var hash = __webpack_require__(17);
 
-var sha2 = __webpack_require__(21);
+var sha2 = __webpack_require__(22);
 
 var convert = __webpack_require__(3);
 
@@ -9598,7 +9585,7 @@ module.exports = {
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9656,10 +9643,10 @@ module.exports = pbkdf2;
 
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(106);
+var defineProperty = __webpack_require__(104);
 
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
@@ -9683,7 +9670,7 @@ function _objectSpread(target) {
 module.exports = _objectSpread;
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -9710,7 +9697,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(45);
+module.exports = __webpack_require__(44);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -9726,7 +9713,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /**
@@ -10453,20 +10440,20 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module) {
 
-module.exports = {"name":"ethers","version":"3.0.27","description":"Ethereum wallet library.","main":"index.js","scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"./node_modules/.bin/mocha tests/test-*.js","test-phantomjs":"./node_modules/.bin/grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"keywords":["ethereum","wallet"],"author":"Richard Moore <me@ricmoo.com>","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"license":"MIT"};
+module.exports = {"_from":"ethers","_id":"ethers@3.0.26","_inBundle":false,"_integrity":"sha512-5O05fG4HCmjIjcyTXl0qIlpVFxMR77d3zjSlmhtQi9s8xaUhOQDWjgPL+zkb6QTjGzB7inCpq4/pac24qV9T2Q==","_location":"/ethers","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"ethers","name":"ethers","escapedName":"ethers","rawSpec":"","saveSpec":null,"fetchSpec":"latest"},"_requiredBy":["#USER","/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.26.tgz","_shasum":"8b6d9d45c30e4a107cd2467329f2280d650d49f0","_spec":"ethers","_where":"/Users/romanmandryk/git/havven/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"bundleDependencies":false,"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"deprecated":false,"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.26"};
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Contract = __webpack_require__(48);
-var Interface = __webpack_require__(31);
+var Contract = __webpack_require__(47);
+var Interface = __webpack_require__(30);
 
 module.exports = {
     Contract: Contract,
@@ -10476,16 +10463,15 @@ module.exports = {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Interface = __webpack_require__(31);
+var Interface = __webpack_require__(30);
 
 var utils = (function() {
-    var convert = __webpack_require__(3);
     return {
         defineProperty: __webpack_require__(4).defineProperty,
 
@@ -10493,8 +10479,7 @@ var utils = (function() {
 
         bigNumberify: __webpack_require__(13).bigNumberify,
 
-        arrayify: convert.arrayify,
-        hexlify: convert.hexlify,
+        hexlify: __webpack_require__(3).hexlify,
     };
 })();
 
@@ -10608,12 +10593,9 @@ function Contract(addressOrName, contractInterface, signerOrProvider) {
 
                     }).then(function(value) {
                         try {
-                            if ((utils.arrayify(value).length % 32) !== 0) {
-                                throw new Error('call exception');
-                            }
                             var result = call.parse(value);
                         } catch (error) {
-                            if ((value === '0x' && method.outputs.types.length > 0) || error.message === 'call exception') {
+                            if (value === '0x' && method.outputs.types.length > 0) {
                                 errors.throwError('call exception', errors.CALL_EXCEPTION, {
                                     address: addressOrName,
                                     method: call.signature,
@@ -10814,7 +10796,7 @@ module.exports = Contract;
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -10842,13 +10824,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("buffer");
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports) {
 
 /**
@@ -11329,7 +11311,7 @@ module.exports = require("buffer");
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11337,12 +11319,12 @@ module.exports = require("buffer");
 
 var Provider = __webpack_require__(15);
 
-var EtherscanProvider = __webpack_require__(60);
-var FallbackProvider = __webpack_require__(61);
-var IpcProvider = __webpack_require__(62);
-var InfuraProvider = __webpack_require__(64);
-var JsonRpcProvider = __webpack_require__(20);
-var Web3Provider = __webpack_require__(65);
+var EtherscanProvider = __webpack_require__(59);
+var FallbackProvider = __webpack_require__(60);
+var IpcProvider = __webpack_require__(61);
+var InfuraProvider = __webpack_require__(63);
+var JsonRpcProvider = __webpack_require__(21);
+var Web3Provider = __webpack_require__(64);
 
 function getDefaultProvider(network) {
     return new FallbackProvider([
@@ -11376,7 +11358,7 @@ module.exports = exports;
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -11392,9 +11374,9 @@ module.exports = exports;
  * @license MIT
  */
 
-var Url = __webpack_require__(54);
-var spawn = __webpack_require__(55).spawn;
-var fs = __webpack_require__(56);
+var Url = __webpack_require__(53);
+var spawn = __webpack_require__(54).spawn;
+var fs = __webpack_require__(55);
 
 exports.XMLHttpRequest = function() {
   "use strict";
@@ -11403,8 +11385,8 @@ exports.XMLHttpRequest = function() {
    * Private variables
    */
   var self = this;
-  var http = __webpack_require__(57);
-  var https = __webpack_require__(58);
+  var http = __webpack_require__(56);
+  var https = __webpack_require__(57);
 
   // Holds http.js objects
   var request;
@@ -12002,43 +11984,43 @@ exports.XMLHttpRequest = function() {
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("url");
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module) {
 
 module.exports = {"unspecified":{"chainId":0,"name":"unspecified"},"homestead":{"chainId":1,"ensAddress":"0x314159265dd8dbb310642f98f50c066173c1259b","name":"homestead"},"mainnet":{"chainId":1,"ensAddress":"0x314159265dd8dbb310642f98f50c066173c1259b","name":"homestead"},"morden":{"chainId":2,"name":"morden"},"ropsten":{"chainId":3,"ensAddress":"0x112234455c3a32fd11230c42e7bccd4a84e02010","name":"ropsten"},"testnet":{"chainId":3,"ensAddress":"0x112234455c3a32fd11230c42e7bccd4a84e02010","name":"ropsten"},"rinkeby":{"chainId":4,"name":"rinkeby"},"kovan":{"chainId":42,"name":"kovan"},"classic":{"chainId":61,"name":"classic"}};
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12333,13 +12315,13 @@ module.exports = EtherscanProvider;;
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var inherits = __webpack_require__(33);
+var inherits = __webpack_require__(16);
 
 var Provider = __webpack_require__(15);
 
@@ -12402,15 +12384,15 @@ module.exports = FallbackProvider;
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var net = __webpack_require__(63);
+var net = __webpack_require__(62);
 
-var JsonRpcProvider = __webpack_require__(20);
+var JsonRpcProvider = __webpack_require__(21);
 
 var defineProperty = __webpack_require__(4).defineProperty;
 var errors = __webpack_require__(6);
@@ -12475,20 +12457,20 @@ module.exports = IpcProvider;
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Provider = __webpack_require__(15);
-var JsonRpcProvider = __webpack_require__(20);
+var JsonRpcProvider = __webpack_require__(21);
 
 var utils = (function() {
     return {
@@ -12548,14 +12530,14 @@ module.exports = InfuraProvider;
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Provider = __webpack_require__(15);
-var JsonRpcProvider = __webpack_require__(20);
+var JsonRpcProvider = __webpack_require__(21);
 
 var utils = (function() {
     return {
@@ -12623,7 +12605,7 @@ module.exports = Web3Provider;
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12640,20 +12622,20 @@ module.exports = id;
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
-  var util = __webpack_require__(25);
+  var util = __webpack_require__(32);
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
 } catch (e) {
-  module.exports = __webpack_require__(68);
+  module.exports = __webpack_require__(67);
 }
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -12682,29 +12664,29 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.sha1 = __webpack_require__(69);
+exports.sha224 = __webpack_require__(70);
+exports.sha256 = __webpack_require__(37);
+exports.sha384 = __webpack_require__(71);
+exports.sha512 = __webpack_require__(38);
+
+
+/***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(70);
-exports.sha224 = __webpack_require__(71);
-exports.sha256 = __webpack_require__(38);
-exports.sha384 = __webpack_require__(72);
-exports.sha512 = __webpack_require__(39);
-
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 var utils = __webpack_require__(9);
-var common = __webpack_require__(18);
-var shaCommon = __webpack_require__(37);
+var common = __webpack_require__(19);
+var shaCommon = __webpack_require__(36);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -12777,14 +12759,14 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(9);
-var SHA256 = __webpack_require__(38);
+var SHA256 = __webpack_require__(37);
 
 function SHA224() {
   if (!(this instanceof SHA224))
@@ -12814,7 +12796,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12822,7 +12804,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(9);
 
-var SHA512 = __webpack_require__(39);
+var SHA512 = __webpack_require__(38);
 
 function SHA384() {
   if (!(this instanceof SHA384))
@@ -12856,14 +12838,14 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(9);
-var common = __webpack_require__(18);
+var common = __webpack_require__(19);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -13009,14 +12991,14 @@ var sh = [
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(9);
-var assert = __webpack_require__(17);
+var assert = __webpack_require__(18);
 
 function Hmac(hash, key, enc) {
   if (!(this instanceof Hmac))
@@ -13063,7 +13045,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13075,7 +13057,7 @@ var getAddress = __webpack_require__(10).getAddress;
 var utf8 = __webpack_require__(8);
 
 var hashKeccak256 = __webpack_require__(11);
-var hashSha256 = __webpack_require__(21).sha256;
+var hashSha256 = __webpack_require__(22).sha256;
 
 var regexBytes = new RegExp("^bytes([0-9]+)$");
 var regexNumber = new RegExp("^(u?int)([0-9]*)$");
@@ -13167,7 +13149,7 @@ module.exports = {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13182,11 +13164,11 @@ module.exports = function(length) {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var bigNumberify = __webpack_require__(13).bigNumberify;
-var throwError = __webpack_require__(24);
+var throwError = __webpack_require__(25);
 
 var zero = new bigNumberify(0);
 var negative1 = new bigNumberify(-1);
@@ -13336,15 +13318,15 @@ module.exports = {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Wallet = __webpack_require__(79);
+var Wallet = __webpack_require__(78);
 var HDNode = __webpack_require__(28);
-var SigningKey = __webpack_require__(30);
+var SigningKey = __webpack_require__(29);
 
 module.exports = {
     HDNode: HDNode,
@@ -13355,13 +13337,13 @@ module.exports = {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var scrypt = __webpack_require__(40);
+var scrypt = __webpack_require__(39);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
@@ -13385,7 +13367,7 @@ var utils = (function() {
         //randomBytes: require('../utils/random-bytes'),
         randomBytes: __webpack_require__(26).randomBytes,
 
-        RLP: __webpack_require__(19)
+        RLP: __webpack_require__(20)
     };
 })();
 
@@ -13393,12 +13375,12 @@ var errors = __webpack_require__(6);
 
 var HDNode = __webpack_require__(28);
 
-var secretStorage = __webpack_require__(98);
-var SigningKey = __webpack_require__(30);
+var secretStorage = __webpack_require__(96);
+var SigningKey = __webpack_require__(29);
 
 // This ensures we inject a setImmediate into the global space, which
 // dramatically improves the performance of the scrypt PBKDF.
-__webpack_require__(102);
+__webpack_require__(100);
 
 var defaultPath = "m/44'/60'/0'/0/0";
 
@@ -13843,13 +13825,13 @@ module.exports = Wallet;
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module) {
 
-module.exports = {"name":"elliptic","version":"6.3.3","description":"EC cryptography","main":"lib/elliptic.js","files":["lib"],"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","unit":"istanbul test _mocha --reporter=spec test/index.js","test":"npm run lint && npm run unit","version":"grunt dist && git add dist/"},"repository":{"type":"git","url":"git@github.com:indutny/elliptic"},"keywords":["EC","Elliptic","curve","Cryptography"],"author":"Fedor Indutny <fedor@indutny.com>","license":"MIT","bugs":{"url":"https://github.com/indutny/elliptic/issues"},"homepage":"https://github.com/indutny/elliptic","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"}};
+module.exports = {"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_shasum":"5482d9646d54bcb89fd7d994fc9e2e9568876e3f","_spec":"elliptic@6.3.3","_where":"/Users/romanmandryk/git/havven/havven-js/node_modules/ethers","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14028,7 +14010,7 @@ utils.intFromLE = intFromLE;
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -14099,13 +14081,13 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(16);
+var hash = __webpack_require__(17);
 var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
@@ -14220,7 +14202,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14602,16 +14584,16 @@ BasePoint.prototype.dblp = function dblp(k) {
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(22);
+var curve = __webpack_require__(23);
 var elliptic = __webpack_require__(5);
 var BN = __webpack_require__(7);
-var inherits = __webpack_require__(29);
+var inherits = __webpack_require__(16);
 var Base = curve.base;
 
 var assert = elliptic.utils.assert;
@@ -15547,44 +15529,15 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 86 */
-/***/ (function(module, exports) {
-
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-
-
-/***/ }),
-/* 87 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(22);
+var curve = __webpack_require__(23);
 var BN = __webpack_require__(7);
-var inherits = __webpack_require__(29);
+var inherits = __webpack_require__(16);
 var Base = curve.base;
 
 var elliptic = __webpack_require__(5);
@@ -15763,16 +15716,16 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 88 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(22);
+var curve = __webpack_require__(23);
 var elliptic = __webpack_require__(5);
 var BN = __webpack_require__(7);
-var inherits = __webpack_require__(29);
+var inherits = __webpack_require__(16);
 var Base = curve.base;
 
 var assert = elliptic.utils.assert;
@@ -16203,7 +16156,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 89 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16211,7 +16164,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 var curves = exports;
 
-var hash = __webpack_require__(16);
+var hash = __webpack_require__(17);
 var elliptic = __webpack_require__(5);
 
 var assert = elliptic.utils.assert;
@@ -16376,7 +16329,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(90);
+  pre = __webpack_require__(88);
 } catch (e) {
   pre = undefined;
 }
@@ -16415,7 +16368,7 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 90 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -17201,7 +17154,7 @@ module.exports = {
 
 
 /***/ }),
-/* 91 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17212,8 +17165,8 @@ var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(92);
-var Signature = __webpack_require__(93);
+var KeyPair = __webpack_require__(90);
+var Signature = __webpack_require__(91);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -17445,7 +17398,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 92 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17571,7 +17524,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 93 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17713,19 +17666,19 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 94 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(16);
+var hash = __webpack_require__(17);
 var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(95);
-var Signature = __webpack_require__(96);
+var KeyPair = __webpack_require__(93);
+var Signature = __webpack_require__(94);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -17838,7 +17791,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 95 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17941,7 +17894,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 96 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18014,27 +17967,27 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 97 */
+/* 95 */
 /***/ (function(module) {
 
 module.exports = "AbandonAbilityAbleAboutAboveAbsentAbsorbAbstractAbsurdAbuseAccessAccidentAccountAccuseAchieveAcidAcousticAcquireAcrossActActionActorActressActualAdaptAddAddictAddressAdjustAdmitAdultAdvanceAdviceAerobicAffairAffordAfraidAgainAgeAgentAgreeAheadAimAirAirportAisleAlarmAlbumAlcoholAlertAlienAllAlleyAllowAlmostAloneAlphaAlreadyAlsoAlterAlwaysAmateurAmazingAmongAmountAmusedAnalystAnchorAncientAngerAngleAngryAnimalAnkleAnnounceAnnualAnotherAnswerAntennaAntiqueAnxietyAnyApartApologyAppearAppleApproveAprilArchArcticAreaArenaArgueArmArmedArmorArmyAroundArrangeArrestArriveArrowArtArtefactArtistArtworkAskAspectAssaultAssetAssistAssumeAsthmaAthleteAtomAttackAttendAttitudeAttractAuctionAuditAugustAuntAuthorAutoAutumnAverageAvocadoAvoidAwakeAwareAwayAwesomeAwfulAwkwardAxisBabyBachelorBaconBadgeBagBalanceBalconyBallBambooBananaBannerBarBarelyBargainBarrelBaseBasicBasketBattleBeachBeanBeautyBecauseBecomeBeefBeforeBeginBehaveBehindBelieveBelowBeltBenchBenefitBestBetrayBetterBetweenBeyondBicycleBidBikeBindBiologyBirdBirthBitterBlackBladeBlameBlanketBlastBleakBlessBlindBloodBlossomBlouseBlueBlurBlushBoardBoatBodyBoilBombBoneBonusBookBoostBorderBoringBorrowBossBottomBounceBoxBoyBracketBrainBrandBrassBraveBreadBreezeBrickBridgeBriefBrightBringBriskBroccoliBrokenBronzeBroomBrotherBrownBrushBubbleBuddyBudgetBuffaloBuildBulbBulkBulletBundleBunkerBurdenBurgerBurstBusBusinessBusyButterBuyerBuzzCabbageCabinCableCactusCageCakeCallCalmCameraCampCanCanalCancelCandyCannonCanoeCanvasCanyonCapableCapitalCaptainCarCarbonCardCargoCarpetCarryCartCaseCashCasinoCastleCasualCatCatalogCatchCategoryCattleCaughtCauseCautionCaveCeilingCeleryCementCensusCenturyCerealCertainChairChalkChampionChangeChaosChapterChargeChaseChatCheapCheckCheeseChefCherryChestChickenChiefChildChimneyChoiceChooseChronicChuckleChunkChurnCigarCinnamonCircleCitizenCityCivilClaimClapClarifyClawClayCleanClerkCleverClickClientCliffClimbClinicClipClockClogCloseClothCloudClownClubClumpClusterClutchCoachCoastCoconutCodeCoffeeCoilCoinCollectColorColumnCombineComeComfortComicCommonCompanyConcertConductConfirmCongressConnectConsiderControlConvinceCookCoolCopperCopyCoralCoreCornCorrectCostCottonCouchCountryCoupleCourseCousinCoverCoyoteCrackCradleCraftCramCraneCrashCraterCrawlCrazyCreamCreditCreekCrewCricketCrimeCrispCriticCropCrossCrouchCrowdCrucialCruelCruiseCrumbleCrunchCrushCryCrystalCubeCultureCupCupboardCuriousCurrentCurtainCurveCushionCustomCuteCycleDadDamageDampDanceDangerDaringDashDaughterDawnDayDealDebateDebrisDecadeDecemberDecideDeclineDecorateDecreaseDeerDefenseDefineDefyDegreeDelayDeliverDemandDemiseDenialDentistDenyDepartDependDepositDepthDeputyDeriveDescribeDesertDesignDeskDespairDestroyDetailDetectDevelopDeviceDevoteDiagramDialDiamondDiaryDiceDieselDietDifferDigitalDignityDilemmaDinnerDinosaurDirectDirtDisagreeDiscoverDiseaseDishDismissDisorderDisplayDistanceDivertDivideDivorceDizzyDoctorDocumentDogDollDolphinDomainDonateDonkeyDonorDoorDoseDoubleDoveDraftDragonDramaDrasticDrawDreamDressDriftDrillDrinkDripDriveDropDrumDryDuckDumbDuneDuringDustDutchDutyDwarfDynamicEagerEagleEarlyEarnEarthEasilyEastEasyEchoEcologyEconomyEdgeEditEducateEffortEggEightEitherElbowElderElectricElegantElementElephantElevatorEliteElseEmbarkEmbodyEmbraceEmergeEmotionEmployEmpowerEmptyEnableEnactEndEndlessEndorseEnemyEnergyEnforceEngageEngineEnhanceEnjoyEnlistEnoughEnrichEnrollEnsureEnterEntireEntryEnvelopeEpisodeEqualEquipEraEraseErodeErosionErrorEruptEscapeEssayEssenceEstateEternalEthicsEvidenceEvilEvokeEvolveExactExampleExcessExchangeExciteExcludeExcuseExecuteExerciseExhaustExhibitExileExistExitExoticExpandExpectExpireExplainExposeExpressExtendExtraEyeEyebrowFabricFaceFacultyFadeFaintFaithFallFalseFameFamilyFamousFanFancyFantasyFarmFashionFatFatalFatherFatigueFaultFavoriteFeatureFebruaryFederalFeeFeedFeelFemaleFenceFestivalFetchFeverFewFiberFictionFieldFigureFileFilmFilterFinalFindFineFingerFinishFireFirmFirstFiscalFishFitFitnessFixFlagFlameFlashFlatFlavorFleeFlightFlipFloatFlockFloorFlowerFluidFlushFlyFoamFocusFogFoilFoldFollowFoodFootForceForestForgetForkFortuneForumForwardFossilFosterFoundFoxFragileFrameFrequentFreshFriendFringeFrogFrontFrostFrownFrozenFruitFuelFunFunnyFurnaceFuryFutureGadgetGainGalaxyGalleryGameGapGarageGarbageGardenGarlicGarmentGasGaspGateGatherGaugeGazeGeneralGeniusGenreGentleGenuineGestureGhostGiantGiftGiggleGingerGiraffeGirlGiveGladGlanceGlareGlassGlideGlimpseGlobeGloomGloryGloveGlowGlueGoatGoddessGoldGoodGooseGorillaGospelGossipGovernGownGrabGraceGrainGrantGrapeGrassGravityGreatGreenGridGriefGritGroceryGroupGrowGruntGuardGuessGuideGuiltGuitarGunGymHabitHairHalfHammerHamsterHandHappyHarborHardHarshHarvestHatHaveHawkHazardHeadHealthHeartHeavyHedgehogHeightHelloHelmetHelpHenHeroHiddenHighHillHintHipHireHistoryHobbyHockeyHoldHoleHolidayHollowHomeHoneyHoodHopeHornHorrorHorseHospitalHostHotelHourHoverHubHugeHumanHumbleHumorHundredHungryHuntHurdleHurryHurtHusbandHybridIceIconIdeaIdentifyIdleIgnoreIllIllegalIllnessImageImitateImmenseImmuneImpactImposeImproveImpulseInchIncludeIncomeIncreaseIndexIndicateIndoorIndustryInfantInflictInformInhaleInheritInitialInjectInjuryInmateInnerInnocentInputInquiryInsaneInsectInsideInspireInstallIntactInterestIntoInvestInviteInvolveIronIslandIsolateIssueItemIvoryJacketJaguarJarJazzJealousJeansJellyJewelJobJoinJokeJourneyJoyJudgeJuiceJumpJungleJuniorJunkJustKangarooKeenKeepKetchupKeyKickKidKidneyKindKingdomKissKitKitchenKiteKittenKiwiKneeKnifeKnockKnowLabLabelLaborLadderLadyLakeLampLanguageLaptopLargeLaterLatinLaughLaundryLavaLawLawnLawsuitLayerLazyLeaderLeafLearnLeaveLectureLeftLegLegalLegendLeisureLemonLendLengthLensLeopardLessonLetterLevelLiarLibertyLibraryLicenseLifeLiftLightLikeLimbLimitLinkLionLiquidListLittleLiveLizardLoadLoanLobsterLocalLockLogicLonelyLongLoopLotteryLoudLoungeLoveLoyalLuckyLuggageLumberLunarLunchLuxuryLyricsMachineMadMagicMagnetMaidMailMainMajorMakeMammalManManageMandateMangoMansionManualMapleMarbleMarchMarginMarineMarketMarriageMaskMassMasterMatchMaterialMathMatrixMatterMaximumMazeMeadowMeanMeasureMeatMechanicMedalMediaMelodyMeltMemberMemoryMentionMenuMercyMergeMeritMerryMeshMessageMetalMethodMiddleMidnightMilkMillionMimicMindMinimumMinorMinuteMiracleMirrorMiseryMissMistakeMixMixedMixtureMobileModelModifyMomMomentMonitorMonkeyMonsterMonthMoonMoralMoreMorningMosquitoMotherMotionMotorMountainMouseMoveMovieMuchMuffinMuleMultiplyMuscleMuseumMushroomMusicMustMutualMyselfMysteryMythNaiveNameNapkinNarrowNastyNationNatureNearNeckNeedNegativeNeglectNeitherNephewNerveNestNetNetworkNeutralNeverNewsNextNiceNightNobleNoiseNomineeNoodleNormalNorthNoseNotableNoteNothingNoticeNovelNowNuclearNumberNurseNutOakObeyObjectObligeObscureObserveObtainObviousOccurOceanOctoberOdorOffOfferOfficeOftenOilOkayOldOliveOlympicOmitOnceOneOnionOnlineOnlyOpenOperaOpinionOpposeOptionOrangeOrbitOrchardOrderOrdinaryOrganOrientOriginalOrphanOstrichOtherOutdoorOuterOutputOutsideOvalOvenOverOwnOwnerOxygenOysterOzonePactPaddlePagePairPalacePalmPandaPanelPanicPantherPaperParadeParentParkParrotPartyPassPatchPathPatientPatrolPatternPausePavePaymentPeacePeanutPearPeasantPelicanPenPenaltyPencilPeoplePepperPerfectPermitPersonPetPhonePhotoPhrasePhysicalPianoPicnicPicturePiecePigPigeonPillPilotPinkPioneerPipePistolPitchPizzaPlacePlanetPlasticPlatePlayPleasePledgePluckPlugPlungePoemPoetPointPolarPolePolicePondPonyPoolPopularPortionPositionPossiblePostPotatoPotteryPovertyPowderPowerPracticePraisePredictPreferPreparePresentPrettyPreventPricePridePrimaryPrintPriorityPrisonPrivatePrizeProblemProcessProduceProfitProgramProjectPromoteProofPropertyProsperProtectProudProvidePublicPuddingPullPulpPulsePumpkinPunchPupilPuppyPurchasePurityPurposePursePushPutPuzzlePyramidQualityQuantumQuarterQuestionQuickQuitQuizQuoteRabbitRaccoonRaceRackRadarRadioRailRainRaiseRallyRampRanchRandomRangeRapidRareRateRatherRavenRawRazorReadyRealReasonRebelRebuildRecallReceiveRecipeRecordRecycleReduceReflectReformRefuseRegionRegretRegularRejectRelaxReleaseReliefRelyRemainRememberRemindRemoveRenderRenewRentReopenRepairRepeatReplaceReportRequireRescueResembleResistResourceResponseResultRetireRetreatReturnReunionRevealReviewRewardRhythmRibRibbonRiceRichRideRidgeRifleRightRigidRingRiotRippleRiskRitualRivalRiverRoadRoastRobotRobustRocketRomanceRoofRookieRoomRoseRotateRoughRoundRouteRoyalRubberRudeRugRuleRunRunwayRuralSadSaddleSadnessSafeSailSaladSalmonSalonSaltSaluteSameSampleSandSatisfySatoshiSauceSausageSaveSayScaleScanScareScatterSceneSchemeSchoolScienceScissorsScorpionScoutScrapScreenScriptScrubSeaSearchSeasonSeatSecondSecretSectionSecuritySeedSeekSegmentSelectSellSeminarSeniorSenseSentenceSeriesServiceSessionSettleSetupSevenShadowShaftShallowShareShedShellSheriffShieldShiftShineShipShiverShockShoeShootShopShortShoulderShoveShrimpShrugShuffleShySiblingSickSideSiegeSightSignSilentSilkSillySilverSimilarSimpleSinceSingSirenSisterSituateSixSizeSkateSketchSkiSkillSkinSkirtSkullSlabSlamSleepSlenderSliceSlideSlightSlimSloganSlotSlowSlushSmallSmartSmileSmokeSmoothSnackSnakeSnapSniffSnowSoapSoccerSocialSockSodaSoftSolarSoldierSolidSolutionSolveSomeoneSongSoonSorrySortSoulSoundSoupSourceSouthSpaceSpareSpatialSpawnSpeakSpecialSpeedSpellSpendSphereSpiceSpiderSpikeSpinSpiritSplitSpoilSponsorSpoonSportSpotSpraySpreadSpringSpySquareSqueezeSquirrelStableStadiumStaffStageStairsStampStandStartStateStaySteakSteelStemStepStereoStickStillStingStockStomachStoneStoolStoryStoveStrategyStreetStrikeStrongStruggleStudentStuffStumbleStyleSubjectSubmitSubwaySuccessSuchSuddenSufferSugarSuggestSuitSummerSunSunnySunsetSuperSupplySupremeSureSurfaceSurgeSurpriseSurroundSurveySuspectSustainSwallowSwampSwapSwarmSwearSweetSwiftSwimSwingSwitchSwordSymbolSymptomSyrupSystemTableTackleTagTailTalentTalkTankTapeTargetTaskTasteTattooTaxiTeachTeamTellTenTenantTennisTentTermTestTextThankThatThemeThenTheoryThereTheyThingThisThoughtThreeThriveThrowThumbThunderTicketTideTigerTiltTimberTimeTinyTipTiredTissueTitleToastTobaccoTodayToddlerToeTogetherToiletTokenTomatoTomorrowToneTongueTonightToolToothTopTopicToppleTorchTornadoTortoiseTossTotalTouristTowardTowerTownToyTrackTradeTrafficTragicTrainTransferTrapTrashTravelTrayTreatTreeTrendTrialTribeTrickTriggerTrimTripTrophyTroubleTruckTrueTrulyTrumpetTrustTruthTryTubeTuitionTumbleTunaTunnelTurkeyTurnTurtleTwelveTwentyTwiceTwinTwistTwoTypeTypicalUglyUmbrellaUnableUnawareUncleUncoverUnderUndoUnfairUnfoldUnhappyUniformUniqueUnitUniverseUnknownUnlockUntilUnusualUnveilUpdateUpgradeUpholdUponUpperUpsetUrbanUrgeUsageUseUsedUsefulUselessUsualUtilityVacantVacuumVagueValidValleyValveVanVanishVaporVariousVastVaultVehicleVelvetVendorVentureVenueVerbVerifyVersionVeryVesselVeteranViableVibrantViciousVictoryVideoViewVillageVintageViolinVirtualVirusVisaVisitVisualVitalVividVocalVoiceVoidVolcanoVolumeVoteVoyageWageWagonWaitWalkWallWalnutWantWarfareWarmWarriorWashWaspWasteWaterWaveWayWealthWeaponWearWeaselWeatherWebWeddingWeekendWeirdWelcomeWestWetWhaleWhatWheatWheelWhenWhereWhipWhisperWideWidthWifeWildWillWinWindowWineWingWinkWinnerWinterWireWisdomWiseWishWitnessWolfWomanWonderWoodWoolWordWorkWorldWorryWorthWrapWreckWrestleWristWriteWrongYardYearYellowYouYoungYouthZebraZeroZoneZoo";
 
 /***/ }),
-/* 98 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var aes = __webpack_require__(99);
-var scrypt = __webpack_require__(40);
-var uuid = __webpack_require__(100);
+var aes = __webpack_require__(97);
+var scrypt = __webpack_require__(39);
+var uuid = __webpack_require__(98);
 
-var hmac = __webpack_require__(41);
-var pbkdf2 = __webpack_require__(42);
+var hmac = __webpack_require__(40);
+var pbkdf2 = __webpack_require__(41);
 var utils = __webpack_require__(26);
 
-var SigningKey = __webpack_require__(30);
+var SigningKey = __webpack_require__(29);
 var HDNode = __webpack_require__(28);
 
 // @TODO: Maybe move this to HDNode?
@@ -18476,7 +18429,7 @@ module.exports = secretStorage;
 
 
 /***/ }),
-/* 99 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19269,7 +19222,7 @@ module.exports = secretStorage;
 
 
 /***/ }),
-/* 100 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //     uuid.js
@@ -19280,7 +19233,7 @@ module.exports = secretStorage;
 // Unique ID creation requires a high quality random # generator.  We feature
 // detect to determine the best RNG source, normalizing to a function that
 // returns 128-bits of randomness, since that's what's usually required
-var _rng = __webpack_require__(101);
+var _rng = __webpack_require__(99);
 
 // Maps for number <-> hex string conversion
 var _byteToHex = [];
@@ -19458,7 +19411,7 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 101 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rb = __webpack_require__(27).randomBytes;
@@ -19468,7 +19421,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 102 */
+/* 100 */
 /***/ (function(module, exports) {
 
 (function (global, undefined) {
@@ -19649,7 +19602,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 103 */
+/* 101 */
 /***/ (function(module, exports) {
 
 function _arrayWithHoles(arr) {
@@ -19659,7 +19612,7 @@ function _arrayWithHoles(arr) {
 module.exports = _arrayWithHoles;
 
 /***/ }),
-/* 104 */
+/* 102 */
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -19691,7 +19644,7 @@ function _iterableToArrayLimit(arr, i) {
 module.exports = _iterableToArrayLimit;
 
 /***/ }),
-/* 105 */
+/* 103 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -19701,7 +19654,7 @@ function _nonIterableRest() {
 module.exports = _nonIterableRest;
 
 /***/ }),
-/* 106 */
+/* 104 */
 /***/ (function(module, exports) {
 
 function _defineProperty(obj, key, value) {
@@ -19722,7 +19675,7 @@ function _defineProperty(obj, key, value) {
 module.exports = _defineProperty;
 
 /***/ }),
-/* 107 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22758,7 +22711,398 @@ var ethers = __webpack_require__(2);
   stateMutability: 'view',
   type: 'function'
 }]);
+// CONCATENATED MODULE: ./lib/abis/Escrow.js
+/* harmony default export */ var Escrow = ([{
+  constant: false,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'purgeAccount',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_owner',
+    type: 'address'
+  }],
+  name: 'nominateNewOwner',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'quantity',
+    type: 'uint256'
+  }],
+  name: 'withdrawHavvens',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'getNextVestingIndex',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }, {
+    name: 'time',
+    type: 'uint256'
+  }, {
+    name: 'quantity',
+    type: 'uint256'
+  }],
+  name: 'appendVestingEntry',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'numVestingEntries',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: '',
+    type: 'address'
+  }],
+  name: 'totalVestedAccountBalance',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'getNextVestingEntry',
+  outputs: [{
+    name: '',
+    type: 'uint256[2]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'decimals',
+  outputs: [{
+    name: '',
+    type: 'uint8'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'vest',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'address',
+    type: 'address'
+  }, {
+    name: 'a',
+    type: 'uint256'
+  }, {
+    name: 'b',
+    type: 'uint256'
+  }],
+  name: 'vestingSchedules',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_havven',
+    type: 'address'
+  }],
+  name: 'setHavven',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nominatedOwner',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'getNextVestingTime',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'balanceOf',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'acceptOwnership',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'getNextVestingQuantity',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }, {
+    name: 'index',
+    type: 'uint256'
+  }],
+  name: 'getVestingTime',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'havven',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'UNIT',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'totalVestedBalance',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }, {
+    name: 'times',
+    type: 'uint256[]'
+  }, {
+    name: 'quantities',
+    type: 'uint256[]'
+  }],
+  name: 'addVestingSchedule',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }, {
+    name: 'index',
+    type: 'uint256'
+  }],
+  name: 'getVestingScheduleEntry',
+  outputs: [{
+    name: '',
+    type: 'uint256[2]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }, {
+    name: 'index',
+    type: 'uint256'
+  }],
+  name: 'getVestingQuantity',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  inputs: [{
+    name: '_owner',
+    type: 'address'
+  }, {
+    name: '_havven',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'constructor'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newHavven',
+    type: 'address'
+  }],
+  name: 'HavvenUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'beneficiary',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'time',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Vested',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerNominated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'oldOwner',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerChanged',
+  type: 'event'
+}]);
 // CONCATENATED MODULE: ./lib/abis/index.js
+
 
 
 
@@ -22773,15 +23117,16 @@ var ethers = __webpack_require__(2);
   Mintr: Mintr,
   StablePayments: StablePayments,
   Vestr: Vestr,
-  EscrowChecker: EscrowChecker
+  EscrowChecker: EscrowChecker,
+  Escrow: Escrow
 });
 // CONCATENATED MODULE: ./lib/addresses.js
 var MAINNET_ADDRESSES = {
-  Havven: '0xD989a04AD891528B571eF73dAcaEFeB0402a65b3',
-  Mintr: '0xD989a04AD891528B571eF73dAcaEFeB0402a65b3',
+  HavvenUnderlying: '0xD989a04AD891528B571eF73dAcaEFeB0402a65b3',
+  Mintr: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
   // same as Havven contract
   HavvenState: '0x5b1b5fea1b99d83ad479df0c222f0492385381dd',
-  Nomin: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
+  NominUnderlying: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
   StablePayments: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
   NominState: '0x2c1ab55bc8fa85589bee7fe5c6b563278eaf2e8f',
   Court: undefined,
@@ -22790,8 +23135,8 @@ var MAINNET_ADDRESSES = {
   Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   // same as Escrow contract
   IssuanceController: '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
-  HavvenProxy: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
-  NominProxy: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3'
+  Havven: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
+  Nomin: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3'
 }; // Havven contracts were too large to be able to deploy to ROPSTEN due to its block size limitations
 
 var ROPSTEN_ADDRESSES = {};
@@ -28975,7 +29320,7 @@ var slicedToArray = __webpack_require__(12);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(23);
+var createClass = __webpack_require__(24);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // CONCATENATED MODULE: ./src/converter.js
@@ -30563,8 +30908,876 @@ function StablePayments_StablePayments(contractSettings) {
 }
 
 /* harmony default export */ var contracts_StablePayments = (StablePayments_StablePayments);
+// CONCATENATED MODULE: ./src/contracts/Escrow.js
+
+
+
+
+
+var Escrow_abi = abis.Escrow;
+/** @constructor
+ * @param contractSettings {ContractSettings}
+ */
+
+function Escrow_Escrow(contractSettings) {
+  var _this = this;
+
+  this.contractSettings = contractSettings || new src_contractSettings();
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['Escrow'], Escrow_abi, this.contractSettings.signer || this.contractSettings.provider);
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.purgeAccount =
+  /*#__PURE__*/
+  function () {
+    var _ref = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee(account, txParams) {
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              txParams = txParams || {};
+              _context.next = 3;
+              return _this.contract.purgeAccount(account, txParams);
+
+            case 3:
+              return _context.abrupt("return", _context.sent);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    return function (_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.nominateNewOwner =
+  /*#__PURE__*/
+  function () {
+    var _ref2 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              txParams = txParams || {};
+              _context2.next = 3;
+              return _this.contract.nominateNewOwner(_owner, txParams);
+
+            case 3:
+              return _context2.abrupt("return", _context2.sent);
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, this);
+    }));
+
+    return function (_x3, _x4) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param quantity {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.withdrawHavvens =
+  /*#__PURE__*/
+  function () {
+    var _ref3 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3(quantity, txParams) {
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              txParams = txParams || {};
+              _context3.next = 3;
+              return _this.contract.withdrawHavvens(quantity, txParams);
+
+            case 3:
+              return _context3.abrupt("return", _context3.sent);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, this);
+    }));
+
+    return function (_x5, _x6) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.getNextVestingIndex =
+  /*#__PURE__*/
+  function () {
+    var _ref4 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee4(account) {
+      return regenerator_default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
+              return _this.contract.getNextVestingIndex(account);
+
+            case 2:
+              return _context4.abrupt("return", _context4.sent);
+
+            case 3:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, this);
+    }));
+
+    return function (_x7) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param time {BigNumber}
+   * @param quantity {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.appendVestingEntry =
+  /*#__PURE__*/
+  function () {
+    var _ref5 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee5(account, time, quantity, txParams) {
+      return regenerator_default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              txParams = txParams || {};
+              _context5.next = 3;
+              return _this.contract.appendVestingEntry(account, time, quantity, txParams);
+
+            case 3:
+              return _context5.abrupt("return", _context5.sent);
+
+            case 4:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, this);
+    }));
+
+    return function (_x8, _x9, _x10, _x11) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.numVestingEntries =
+  /*#__PURE__*/
+  function () {
+    var _ref6 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee6(account) {
+      return regenerator_default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              _context6.next = 2;
+              return _this.contract.numVestingEntries(account);
+
+            case 2:
+              return _context6.abrupt("return", _context6.sent);
+
+            case 3:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, this);
+    }));
+
+    return function (_x12) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.totalVestedAccountBalance =
+  /*#__PURE__*/
+  function () {
+    var _ref7 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee7(address) {
+      return regenerator_default.a.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              _context7.next = 2;
+              return _this.contract.totalVestedAccountBalance(address);
+
+            case 2:
+              return _context7.abrupt("return", _context7.sent);
+
+            case 3:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7, this);
+    }));
+
+    return function (_x13) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns uint256[2]
+   **/
+
+
+  this.getNextVestingEntry =
+  /*#__PURE__*/
+  function () {
+    var _ref8 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee8(account) {
+      return regenerator_default.a.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              _context8.next = 2;
+              return _this.contract.getNextVestingEntry(account);
+
+            case 2:
+              return _context8.abrupt("return", _context8.sent);
+
+            case 3:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8, this);
+    }));
+
+    return function (_x14) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+
+
+  this.decimals =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee9() {
+    return regenerator_default.a.wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            _context9.next = 2;
+            return _this.contract.decimals();
+
+          case 2:
+            return _context9.abrupt("return", _context9.sent);
+
+          case 3:
+          case "end":
+            return _context9.stop();
+        }
+      }
+    }, _callee9, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.vest =
+  /*#__PURE__*/
+  function () {
+    var _ref10 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee10(txParams) {
+      return regenerator_default.a.wrap(function _callee10$(_context10) {
+        while (1) {
+          switch (_context10.prev = _context10.next) {
+            case 0:
+              txParams = txParams || {};
+              _context10.next = 3;
+              return _this.contract.vest(txParams);
+
+            case 3:
+              return _context10.abrupt("return", _context10.sent);
+
+            case 4:
+            case "end":
+              return _context10.stop();
+          }
+        }
+      }, _callee10, this);
+    }));
+
+    return function (_x15) {
+      return _ref10.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param address {String<EthAddress>}
+   * @param a {BigNumber}
+   * @param b {BigNumber}
+   * @returns BigNumber
+   **/
+
+
+  this.vestingSchedules =
+  /*#__PURE__*/
+  function () {
+    var _ref11 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee11(address, a, b) {
+      return regenerator_default.a.wrap(function _callee11$(_context11) {
+        while (1) {
+          switch (_context11.prev = _context11.next) {
+            case 0:
+              _context11.next = 2;
+              return _this.contract.vestingSchedules(address, a, b);
+
+            case 2:
+              return _context11.abrupt("return", _context11.sent);
+
+            case 3:
+            case "end":
+              return _context11.stop();
+          }
+        }
+      }, _callee11, this);
+    }));
+
+    return function (_x16, _x17, _x18) {
+      return _ref11.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _havven {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setHavven =
+  /*#__PURE__*/
+  function () {
+    var _ref12 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee12(_havven, txParams) {
+      return regenerator_default.a.wrap(function _callee12$(_context12) {
+        while (1) {
+          switch (_context12.prev = _context12.next) {
+            case 0:
+              txParams = txParams || {};
+              _context12.next = 3;
+              return _this.contract.setHavven(_havven, txParams);
+
+            case 3:
+              return _context12.abrupt("return", _context12.sent);
+
+            case 4:
+            case "end":
+              return _context12.stop();
+          }
+        }
+      }, _callee12, this);
+    }));
+
+    return function (_x19, _x20) {
+      return _ref12.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.nominatedOwner =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee13() {
+    return regenerator_default.a.wrap(function _callee13$(_context13) {
+      while (1) {
+        switch (_context13.prev = _context13.next) {
+          case 0:
+            _context13.next = 2;
+            return _this.contract.nominatedOwner();
+
+          case 2:
+            return _context13.abrupt("return", _context13.sent);
+
+          case 3:
+          case "end":
+            return _context13.stop();
+        }
+      }
+    }, _callee13, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+  this.getNextVestingTime =
+  /*#__PURE__*/
+  function () {
+    var _ref14 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee14(account) {
+      return regenerator_default.a.wrap(function _callee14$(_context14) {
+        while (1) {
+          switch (_context14.prev = _context14.next) {
+            case 0:
+              _context14.next = 2;
+              return _this.contract.getNextVestingTime(account);
+
+            case 2:
+              return _context14.abrupt("return", _context14.sent);
+
+            case 3:
+            case "end":
+              return _context14.stop();
+          }
+        }
+      }, _callee14, this);
+    }));
+
+    return function (_x21) {
+      return _ref14.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.balanceOf =
+  /*#__PURE__*/
+  function () {
+    var _ref15 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee15(account) {
+      return regenerator_default.a.wrap(function _callee15$(_context15) {
+        while (1) {
+          switch (_context15.prev = _context15.next) {
+            case 0:
+              _context15.next = 2;
+              return _this.contract.balanceOf(account);
+
+            case 2:
+              return _context15.abrupt("return", _context15.sent);
+
+            case 3:
+            case "end":
+              return _context15.stop();
+          }
+        }
+      }, _callee15, this);
+    }));
+
+    return function (_x22) {
+      return _ref15.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.acceptOwnership =
+  /*#__PURE__*/
+  function () {
+    var _ref16 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee16(txParams) {
+      return regenerator_default.a.wrap(function _callee16$(_context16) {
+        while (1) {
+          switch (_context16.prev = _context16.next) {
+            case 0:
+              txParams = txParams || {};
+              _context16.next = 3;
+              return _this.contract.acceptOwnership(txParams);
+
+            case 3:
+              return _context16.abrupt("return", _context16.sent);
+
+            case 4:
+            case "end":
+              return _context16.stop();
+          }
+        }
+      }, _callee16, this);
+    }));
+
+    return function (_x23) {
+      return _ref16.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.owner =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee17() {
+    return regenerator_default.a.wrap(function _callee17$(_context17) {
+      while (1) {
+        switch (_context17.prev = _context17.next) {
+          case 0:
+            _context17.next = 2;
+            return _this.contract.owner();
+
+          case 2:
+            return _context17.abrupt("return", _context17.sent);
+
+          case 3:
+          case "end":
+            return _context17.stop();
+        }
+      }
+    }, _callee17, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+  this.getNextVestingQuantity =
+  /*#__PURE__*/
+  function () {
+    var _ref18 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee18(account) {
+      return regenerator_default.a.wrap(function _callee18$(_context18) {
+        while (1) {
+          switch (_context18.prev = _context18.next) {
+            case 0:
+              _context18.next = 2;
+              return _this.contract.getNextVestingQuantity(account);
+
+            case 2:
+              return _context18.abrupt("return", _context18.sent);
+
+            case 3:
+            case "end":
+              return _context18.stop();
+          }
+        }
+      }, _callee18, this);
+    }));
+
+    return function (_x24) {
+      return _ref18.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param index {BigNumber}
+   * @returns BigNumber
+   **/
+
+
+  this.getVestingTime =
+  /*#__PURE__*/
+  function () {
+    var _ref19 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee19(account, index) {
+      return regenerator_default.a.wrap(function _callee19$(_context19) {
+        while (1) {
+          switch (_context19.prev = _context19.next) {
+            case 0:
+              _context19.next = 2;
+              return _this.contract.getVestingTime(account, index);
+
+            case 2:
+              return _context19.abrupt("return", _context19.sent);
+
+            case 3:
+            case "end":
+              return _context19.stop();
+          }
+        }
+      }, _callee19, this);
+    }));
+
+    return function (_x25, _x26) {
+      return _ref19.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.havven =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee20() {
+    return regenerator_default.a.wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+            _context20.next = 2;
+            return _this.contract.havven();
+
+          case 2:
+            return _context20.abrupt("return", _context20.sent);
+
+          case 3:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.UNIT =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee21() {
+    return regenerator_default.a.wrap(function _callee21$(_context21) {
+      while (1) {
+        switch (_context21.prev = _context21.next) {
+          case 0:
+            _context21.next = 2;
+            return _this.contract.UNIT();
+
+          case 2:
+            return _context21.abrupt("return", _context21.sent);
+
+          case 3:
+          case "end":
+            return _context21.stop();
+        }
+      }
+    }, _callee21, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.totalVestedBalance =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee22() {
+    return regenerator_default.a.wrap(function _callee22$(_context22) {
+      while (1) {
+        switch (_context22.prev = _context22.next) {
+          case 0:
+            _context22.next = 2;
+            return _this.contract.totalVestedBalance();
+
+          case 2:
+            return _context22.abrupt("return", _context22.sent);
+
+          case 3:
+          case "end":
+            return _context22.stop();
+        }
+      }
+    }, _callee22, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param times {uint256[]}
+   * @param quantities {uint256[]}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.addVestingSchedule =
+  /*#__PURE__*/
+  function () {
+    var _ref23 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee23(account, times, quantities, txParams) {
+      return regenerator_default.a.wrap(function _callee23$(_context23) {
+        while (1) {
+          switch (_context23.prev = _context23.next) {
+            case 0:
+              txParams = txParams || {};
+              _context23.next = 3;
+              return _this.contract.addVestingSchedule(account, times, quantities, txParams);
+
+            case 3:
+              return _context23.abrupt("return", _context23.sent);
+
+            case 4:
+            case "end":
+              return _context23.stop();
+          }
+        }
+      }, _callee23, this);
+    }));
+
+    return function (_x27, _x28, _x29, _x30) {
+      return _ref23.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param index {BigNumber}
+   * @returns uint256[2]
+   **/
+
+
+  this.getVestingScheduleEntry =
+  /*#__PURE__*/
+  function () {
+    var _ref24 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee24(account, index) {
+      return regenerator_default.a.wrap(function _callee24$(_context24) {
+        while (1) {
+          switch (_context24.prev = _context24.next) {
+            case 0:
+              _context24.next = 2;
+              return _this.contract.getVestingScheduleEntry(account, index);
+
+            case 2:
+              return _context24.abrupt("return", _context24.sent);
+
+            case 3:
+            case "end":
+              return _context24.stop();
+          }
+        }
+      }, _callee24, this);
+    }));
+
+    return function (_x31, _x32) {
+      return _ref24.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param index {BigNumber}
+   * @returns BigNumber
+   **/
+
+
+  this.getVestingQuantity =
+  /*#__PURE__*/
+  function () {
+    var _ref25 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee25(account, index) {
+      return regenerator_default.a.wrap(function _callee25$(_context25) {
+        while (1) {
+          switch (_context25.prev = _context25.next) {
+            case 0:
+              _context25.next = 2;
+              return _this.contract.getVestingQuantity(account, index);
+
+            case 2:
+              return _context25.abrupt("return", _context25.sent);
+
+            case 3:
+            case "end":
+              return _context25.stop();
+          }
+        }
+      }, _callee25, this);
+    }));
+
+    return function (_x33, _x34) {
+      return _ref25.apply(this, arguments);
+    };
+  }();
+}
+
+/* harmony default export */ var contracts_Escrow = (Escrow_Escrow);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectSpread.js
-var objectSpread = __webpack_require__(43);
+var objectSpread = __webpack_require__(42);
 var objectSpread_default = /*#__PURE__*/__webpack_require__.n(objectSpread);
 
 // CONCATENATED MODULE: ./src/util/index.js
@@ -31088,6 +32301,7 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, chai
 
 
 
+
 var index_node_HavvenJs =
 /**
  * Creates instances of Havven contracts based on ContractSettings.
@@ -31111,6 +32325,7 @@ function HavvenJs(contractSettings) {
   this.EscrowChecker = new contracts_EscrowChecker(contractSettings);
   this.Converter = new converter(contractSettings);
   this.StablePayments = new contracts_StablePayments(contractSettings);
+  this.Escrow = new contracts_Escrow(contractSettings);
   this.util = new util(contractSettings);
   this.utils = this.util;
 };

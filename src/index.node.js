@@ -6,6 +6,7 @@ import Vestr from './contracts/Vestr';
 import EscrowChecker from './contracts/EscrowChecker';
 import Converter from './converter';
 import StablePayments from './contracts/StablePayments';
+import Escrow from './contracts/Escrow';
 import util from './util/index';
 import PrivateKey from '../lib/signers/privateKeySigner';
 import ContractSettings from './contractSettings';
@@ -31,6 +32,7 @@ export class HavvenJs {
     this.EscrowChecker = new EscrowChecker(contractSettings);
     this.Converter = new Converter(contractSettings);
     this.StablePayments = new StablePayments(contractSettings);
+    this.Escrow = new Escrow(contractSettings);
     this.util = new util(contractSettings);
     this.utils = this.util;
   }

@@ -39,8 +39,11 @@ Example for getting the total nUSD stablecoin in circulation
 ```javascript
 const { HavvenJs } = require('havven-js');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-const totalNUSD = await havjs.Nomin.totalSupply();
-console.log('nUSDTotalSupply', totalNUSD);
+(async function() {
+  const totalNUSD = await havjs.Nomin.totalSupply();
+  const havTotalSupply = havjs.utils.formatEther(totalNUSD);
+  console.log('nUSDTotalSupply', havTotalSupply);
+})();
 ```
 
 Default settings don't use any signer. That means that constants can be viewed from the contract but executing a transaction will fail.
@@ -103,9 +106,10 @@ See /\_\_tests__  folder for more examples.
 More Info
 ------
 To understand the Havven payments engine see more at [developer.havven.io](https://developer.havven.io)
-- [www.havven.io](https://havven.io/?utm_source=github)
-- [Reddit](https://twitter.com/havven_io?utm_source=github)
-- [Twitter](https://www.reddit.com/r/havven/?utm_source=github)
+- [havven.io](https://havven.io/?utm_source=github)
+- [dashboard.havven.io](https://dashboard.havven.io)
+- [Reddit](https://www.reddit.com/r/havven/?utm_source=github)
+- [Twitter](https://twitter.com/havven_io?utm_source=github)
 
 Got any questions?
 ------

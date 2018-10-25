@@ -22,7 +22,7 @@ What can I build on the Havven payment engine?
 Anything you can think of with programmable money. We provide the stability-as-a-service and soon fx (foreign exchange) with havvens multicurrency release.
 
 We’ve come up with some thought starters for dApps you could create by integrating Havven’s stable payments into your projects.
-- Crypto Games - lottery, poker, fomoNUSD for kicks.
+- Crypto Games - lottery, poker, fomoNUSD, nUSDCrash for kicks.
 - Crypto Ecommerce
 - Crypto Loans
 - Crypto Insurance

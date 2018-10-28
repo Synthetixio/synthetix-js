@@ -4,9 +4,9 @@ import IssuanceController from './contracts/IssuanceController';
 import Mintr from './contracts/Mintr';
 import Vestr from './contracts/Vestr';
 import EscrowChecker from './contracts/EscrowChecker';
-import Converter from './converter';
 import StablePayments from './contracts/StablePayments';
 import Escrow from './contracts/Escrow';
+import Converter from './converter';
 import util from './util/index';
 import PrivateKey from '../lib/signers/privateKeySigner';
 import ContractSettings from './contractSettings';
@@ -24,15 +24,26 @@ export class HavvenJs {
   constructor(contractSettings) {
     contractSettings = new ContractSettings(contractSettings);
     this.contractSettings = contractSettings;
-    this.Havven = new Havven(contractSettings);
-    this.Nomin = new Nomin(contractSettings);
-    this.IssuanceController = new IssuanceController(contractSettings);
-    this.Mintr = new Mintr(contractSettings);
-    this.Vestr = new Vestr(contractSettings);
-    this.EscrowChecker = new EscrowChecker(contractSettings);
     this.Converter = new Converter(contractSettings);
-    this.StablePayments = new StablePayments(contractSettings);
-    this.Escrow = new Escrow(contractSettings);
+    [
+      // Explicitly pass name of the contract as opposed to function.name as babel
+      // will rename these as part of ES6 module tranpilation
+      { name: 'Havven', Contract: Havven},
+      { name: 'Nomin', Contract: Nomin},
+      { name: 'IssuanceController', Contract: IssuanceController},
+      { name: 'Mintr', Contract: Mintr },
+      { name: 'Vestr', Contract: Vestr },
+      { name: 'EscrowChecker', Contract: EscrowChecker },
+      { name: 'StablePayments', Contract: StablePayments },
+      { name: 'Escrow', Contract: Escrow }
+    ]
+      .filter(({ name }) =>
+        // ensure we only instantiate contracts relevant for the provider, by filtering out
+        // those without valid addresses
+        contractSettings.addressList[name])
+      .forEach(({ name, Contract}) => {
+        this[name] = new Contract(contractSettings);
+      });
     this.util = new util(contractSettings);
     this.utils = this.util;
   }

@@ -189,6 +189,15 @@ class Util {
     });
   }
 
+  async getEtherPrice() {
+    return await this.issuanceController.usdToEthPrice();
+  }
+
+  async getHavvenPrice() {
+    return await this.issuanceController.usdToHavPrice();
+  }
+
+
   /**
    * Returns the object with estimates for slow, average and fast gas prices and approximate waiting times
    * @returns {Promise<{gasFastGwei: number, gasAverageGwei: number, gasSlowGwei: number, timeFastMinutes: *, timeAverageMinutes: *, timeSlowMinutes: *}>}

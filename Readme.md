@@ -1,6 +1,8 @@
 HavvenJs library
 ========
 
+[![CircleCI](https://circleci.com/gh/Havven/havven-js.svg?style=svg)](https://circleci.com/gh/Havven/havven-js)
+
 The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
 
 This is particularly useful for hackathon teams to quickly `npm install havven-js` and have stable payments integrated into their dApp in just a few minutes.
@@ -15,12 +17,12 @@ Some other packages for hacking with:
 - [IsssuanceController](https://havvenjs.havven.io/issuancecontroller) - for Token swapper/exchange functions such as ETH > HAV & ETH > nUSD
 - [Mintr](https://havvenjs.havven.io/mintr)  - if you want to build a dApp for minting and burning stablecoins.
 
-What can I build on the Havven payment engine? 
+What can I build on the Havven payment engine?
 ----
 Anything you can think of with programmable money. We provide the stability-as-a-service and soon fx (foreign exchange) with havvens multicurrency release.
 
 We’ve come up with some thought starters for dApps you could create by integrating Havven’s stable payments into your projects.
-- Crypto Games - lottery, poker, fomoNUSD for kicks. 
+- Crypto Games - lottery, poker, fomoNUSD, nUSDCrash for kicks.
 - Crypto Ecommerce
 - Crypto Loans
 - Crypto Insurance
@@ -37,8 +39,11 @@ Example for getting the total nUSD stablecoin in circulation
 ```javascript
 const { HavvenJs } = require('havven-js');
 const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-const totalNUSD = await havjs.Nomin.totalSupply(); 
-console.log('nUSDTotalSupply', totalNUSD);
+(async function() {
+  const totalNUSD = await havjs.Nomin.totalSupply();
+  const havTotalSupply = havjs.utils.formatEther(totalNUSD);
+  console.log('nUSDTotalSupply', havTotalSupply);
+})();
 ```
 
 Default settings don't use any signer. That means that constants can be viewed from the contract but executing a transaction will fail.
@@ -67,7 +72,7 @@ Example of making a stablecoin payment
 ------
 ```javascript
 //Transfer stablecoins to any ethereum address, wallet or smart contract
-const txObj = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived); 
+const txObj = await havjs.StablePayments.transfer('0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f', nUSDReceived);
 ```
 
 Example of minting stablecoin(nUSD) with private key signer
@@ -82,7 +87,7 @@ async function run(){
   const totalSupply = await havjs.Havven.totalSupply();
   const havTotalSupply = havjs.utils.formatEther(totalSupply);
   console.log('havTotalSupply', havTotalSupply);
-  
+
   //issue 100 nomins (will throw if insufficient funds for gas)
   try {
     const txObj = await havjs.Havven.issueNomins(havjs.util.parseEther("100")); //execute transaction (requires gas)
@@ -101,9 +106,10 @@ See /\_\_tests__  folder for more examples.
 More Info
 ------
 To understand the Havven payments engine see more at [developer.havven.io](https://developer.havven.io)
-- [www.havven.io](https://havven.io/?utm_source=github) 
-- [Reddit](https://twitter.com/havven_io?utm_source=github)
-- [Twitter](https://www.reddit.com/r/havven/?utm_source=github)
+- [havven.io](https://havven.io/?utm_source=github)
+- [dashboard.havven.io](https://dashboard.havven.io)
+- [Reddit](https://www.reddit.com/r/havven/?utm_source=github)
+- [Twitter](https://twitter.com/havven_io?utm_source=github)
 
 Got any questions?
 ------

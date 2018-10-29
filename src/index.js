@@ -32,20 +32,22 @@ export class HavvenJs {
     [
       // Explicitly pass name of the contract as opposed to function.name as babel
       // will rename these as part of ES6 module tranpilation
-      { name: 'Havven', Contract: Havven},
-      { name: 'Nomin', Contract: Nomin},
-      { name: 'IssuanceController', Contract: IssuanceController},
+      { name: 'Havven', Contract: Havven },
+      { name: 'Nomin', Contract: Nomin },
+      { name: 'IssuanceController', Contract: IssuanceController },
       { name: 'Mintr', Contract: Mintr },
       { name: 'Vestr', Contract: Vestr },
       { name: 'EscrowChecker', Contract: EscrowChecker },
       { name: 'StablePayments', Contract: StablePayments },
-      { name: 'Escrow', Contract: Escrow }
+      { name: 'Escrow', Contract: Escrow },
     ]
-      .filter(({ name }) =>
-        // ensure we only instantiate contracts relevant for the provider, by filtering out
-        // those without valid addresses
-        contractSettings.addressList[name])
-      .forEach(({ name, Contract}) => {
+      .filter(
+        ({ name }) =>
+          // ensure we only instantiate contracts relevant for the provider, by filtering out
+          // those without valid addresses
+          contractSettings.addressList[name]
+      )
+      .forEach(({ name, Contract }) => {
         this[name] = new Contract(contractSettings);
       });
     this.util = new util(contractSettings);

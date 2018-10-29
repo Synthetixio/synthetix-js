@@ -6803,7 +6803,7 @@ utils.defineProperty(HDNode.prototype, 'derivePath', function(path) {
             if (index >= HardenedBit) { throw new Error('invalid path index - ' + component); }
             result = result._derive(index);
         } else {
-            throw new Error('invalid path component - ' + component);
+            throw new Error('invlaid path component - ' + component);
         }
     }
 
@@ -7503,7 +7503,6 @@ var utils = (function() {
         getAddress: __webpack_require__(10).getAddress,
 
         concat: convert.concat,
-        isHexString: convert.isHexString,
 
         toUtf8Bytes: utf8.toUtf8Bytes,
         toUtf8String: utf8.toUtf8String,
@@ -7898,9 +7897,6 @@ var coderFixedBytes = function(coerceFunc, length, localName) {
         name: name,
         type: name,
         encode: function(value) {
-            if (utils.isHexString(value) && (value.length % 2) !== 0) {
-                throw new Error('hex string cannot be odd-length');
-            }
             try {
                 value = utils.arrayify(value);
 
@@ -10447,7 +10443,7 @@ if (hadRuntime) {
 /* 45 */
 /***/ (function(module) {
 
-module.exports = {"_from":"ethers@~3.0.26","_id":"ethers@3.0.29","_inBundle":false,"_integrity":"sha512-OGyA5pW5xFC5o/ZV5MfIoVp/EdA1QMg2bMJFf7Kznsz8m7IzzbgsPHTCjzSfKQDs/XDphGyRcA7A6bkIeJL4gw==","_location":"/ethers","_phantomChildren":{"bn.js":"4.11.8","brorand":"1.1.0","hash.js":"1.1.5"},"_requested":{"type":"range","registry":true,"raw":"ethers@~3.0.26","name":"ethers","escapedName":"ethers","rawSpec":"~3.0.26","saveSpec":null,"fetchSpec":"~3.0.26"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.29.tgz","_shasum":"ce8139955b4ed44456eb6764b089bb117c86775d","_spec":"ethers@~3.0.26","_where":"/Users/jmoses/Library/Mobile Documents/com~apple~CloudDocs/github/havven/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"bundleDependencies":false,"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"deprecated":false,"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.29"};
+module.exports = {"_from":"ethers","_id":"ethers@3.0.26","_inBundle":false,"_integrity":"sha512-5O05fG4HCmjIjcyTXl0qIlpVFxMR77d3zjSlmhtQi9s8xaUhOQDWjgPL+zkb6QTjGzB7inCpq4/pac24qV9T2Q==","_location":"/ethers","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"ethers","name":"ethers","escapedName":"ethers","rawSpec":"","saveSpec":null,"fetchSpec":"latest"},"_requiredBy":["#USER","/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.26.tgz","_shasum":"8b6d9d45c30e4a107cd2467329f2280d650d49f0","_spec":"ethers","_where":"/Users/romanmandryk/git/havven/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"bundleDependencies":false,"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"deprecated":false,"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.26"};
 
 /***/ }),
 /* 46 */
@@ -10476,7 +10472,6 @@ module.exports = {
 var Interface = __webpack_require__(30);
 
 var utils = (function() {
-    var convert = __webpack_require__(3);
     return {
         defineProperty: __webpack_require__(4).defineProperty,
 
@@ -10484,8 +10479,7 @@ var utils = (function() {
 
         bigNumberify: __webpack_require__(13).bigNumberify,
 
-        arrayify: convert.arrayify,
-        hexlify: convert.hexlify,
+        hexlify: __webpack_require__(3).hexlify,
     };
 })();
 
@@ -10599,12 +10593,9 @@ function Contract(addressOrName, contractInterface, signerOrProvider) {
 
                     }).then(function(value) {
                         try {
-                            if ((utils.arrayify(value).length % 32) !== 0) {
-                                throw new Error('call exception');
-                            }
                             var result = call.parse(value);
                         } catch (error) {
-                            if ((value === '0x' && method.outputs.types.length > 0) || error.message === 'call exception') {
+                            if (value === '0x' && method.outputs.types.length > 0) {
                                 errors.throwError('call exception', errors.CALL_EXCEPTION, {
                                     address: addressOrName,
                                     method: call.signature,
@@ -10650,7 +10641,7 @@ function Contract(addressOrName, contractInterface, signerOrProvider) {
                     }
 
                     var noncePromise = null;
-                    if (transaction.nonce != null) {
+                    if (transaction.nonce) {
                         noncePromise = Promise.resolve(transaction.nonce)
                     } else if (signer.getTransactionCount) {
                         noncePromise = signer.getTransactionCount();
@@ -13837,7 +13828,7 @@ module.exports = Wallet;
 /* 79 */
 /***/ (function(module) {
 
-module.exports = {"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/ethers/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_shasum":"5482d9646d54bcb89fd7d994fc9e2e9568876e3f","_spec":"elliptic@6.3.3","_where":"/Users/jmoses/Library/Mobile Documents/com~apple~CloudDocs/github/havven/havven-js/node_modules/ethers","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
+module.exports = {"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_shasum":"5482d9646d54bcb89fd7d994fc9e2e9568876e3f","_spec":"elliptic@6.3.3","_where":"/Users/romanmandryk/git/havven/havven-js/node_modules/ethers","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
 
 /***/ }),
 /* 80 */
@@ -19690,19 +19681,19 @@ module.exports = _defineProperty;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/classCallCheck.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
 var classCallCheck = __webpack_require__(14);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/regenerator/index.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__(0);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/asyncToGenerator.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(1);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/ethers/index.js
+// EXTERNAL MODULE: ./node_modules/ethers/index.js
 var ethers = __webpack_require__(2);
 
 // CONCATENATED MODULE: ./lib/abis/Havven.js
@@ -30504,11 +30495,11 @@ function Escrow_Escrow(contractSettings) {
 }
 
 /* harmony default export */ var contracts_Escrow = (Escrow_Escrow);
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/slicedToArray.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(12);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/createClass.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
 var createClass = __webpack_require__(24);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
@@ -31785,7 +31776,7 @@ function () {
 }();
 
 /* harmony default export */ var converter = (converter_Converter);
-// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/objectSpread.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectSpread.js
 var objectSpread = __webpack_require__(42);
 var objectSpread_default = /*#__PURE__*/__webpack_require__.n(objectSpread);
 
@@ -32224,6 +32215,62 @@ function () {
         return _waitForTransaction.apply(this, arguments);
       };
     }()
+  }, {
+    key: "getEtherPrice",
+    value: function () {
+      var _getEtherPrice = asyncToGenerator_default()(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee8() {
+        return regenerator_default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                _context8.next = 2;
+                return this.issuanceController.usdToEthPrice();
+
+              case 2:
+                return _context8.abrupt("return", _context8.sent);
+
+              case 3:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8, this);
+      }));
+
+      return function getEtherPrice() {
+        return _getEtherPrice.apply(this, arguments);
+      };
+    }()
+  }, {
+    key: "getHavvenPrice",
+    value: function () {
+      var _getHavvenPrice = asyncToGenerator_default()(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee9() {
+        return regenerator_default.a.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                _context9.next = 2;
+                return this.issuanceController.usdToHavPrice();
+
+              case 2:
+                return _context9.abrupt("return", _context9.sent);
+
+              case 3:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9, this);
+      }));
+
+      return function getHavvenPrice() {
+        return _getHavvenPrice.apply(this, arguments);
+      };
+    }()
     /**
      * Returns the object with estimates for slow, average and fast gas prices and approximate waiting times
      * @returns {Promise<{gasFastGwei: number, gasAverageGwei: number, gasSlowGwei: number, timeFastMinutes: *, timeAverageMinutes: *, timeSlowMinutes: *}>}
@@ -32234,28 +32281,28 @@ function () {
     value: function () {
       var _getGasAndSpeedInfo = asyncToGenerator_default()(
       /*#__PURE__*/
-      regenerator_default.a.mark(function _callee8() {
+      regenerator_default.a.mark(function _callee10() {
         var convetorTxGasPrice, _ref3, _ref4, egsData, ethPrice, data;
 
-        return regenerator_default.a.wrap(function _callee8$(_context8) {
+        return regenerator_default.a.wrap(function _callee10$(_context10) {
           while (1) {
-            switch (_context8.prev = _context8.next) {
+            switch (_context10.prev = _context10.next) {
               case 0:
                 // ethToNomin uses approx 80,000, nominToHav 40,000 but approve 70,000; 100,000 is safe average
                 convetorTxGasPrice = util_DEFAULT_GAS_LIMIT;
-                _context8.next = 3;
+                _context10.next = 3;
                 return Promise.all([fetch('https://ethgasstation.info/json/ethgasAPI.json'), this.getEtherPrice()]);
 
               case 3:
-                _ref3 = _context8.sent;
+                _ref3 = _context10.sent;
                 _ref4 = slicedToArray_default()(_ref3, 2);
                 egsData = _ref4[0];
                 ethPrice = _ref4[1];
-                _context8.next = 9;
+                _context10.next = 9;
                 return egsData.json();
 
               case 9:
-                egsData = _context8.sent;
+                egsData = _context10.sent;
                 ethPrice = Number(ethers["utils"].formatEther(ethPrice));
                 data = {
                   gasFastGwei: egsData.fast / 10,
@@ -32268,14 +32315,14 @@ function () {
                 data.priceFastUsd = Math.round(data.gasFastGwei * ethPrice * convetorTxGasPrice / util_GWEI * 1000) / 1000;
                 data.priceAverageUsd = Math.round(data.gasAverageGwei * ethPrice * convetorTxGasPrice / util_GWEI * 1000) / 1000;
                 data.priceSlowUsd = Math.round(data.gasSlowGwei * ethPrice * convetorTxGasPrice / util_GWEI * 1000) / 1000;
-                return _context8.abrupt("return", data);
+                return _context10.abrupt("return", data);
 
               case 16:
               case "end":
-                return _context8.stop();
+                return _context10.stop();
             }
           }
-        }, _callee8, this);
+        }, _callee10, this);
       }));
 
       return function getGasAndSpeedInfo() {

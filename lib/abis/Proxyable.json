@@ -1,0 +1,3127 @@
+{
+  "contractName": "Proxyable",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "nominateNewOwner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "nominatedOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "proxy",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_proxy",
+          "type": "address"
+        },
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "proxyAddress",
+          "type": "address"
+        }
+      ],
+      "name": "ProxyUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerNominated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "oldOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerChanged",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_proxy",
+          "type": "address"
+        }
+      ],
+      "name": "setProxy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "setMessageSender",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516040806106a283398101604052805160209091015180600160a060020a03811615156100a157604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601960248201527f4f776e657220616464726573732063616e6e6f74206265203000000000000000604482015290519081900360640190fd5b60008054600160a060020a031916600160a060020a038316908117825560408051928352602083019190915280517fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c9281900390910190a15060028054600160a060020a038416600160a060020a0319909116811790915560408051918252517ffc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e9181900360200190a150506105468061015c6000396000f3006080604052600436106100825763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631627540c811461008757806353a47bb7146100aa57806379ba5097146100db5780638da5cb5b146100f057806397107d6d14610105578063bc67f83214610126578063ec55688914610147575b600080fd5b34801561009357600080fd5b506100a8600160a060020a036004351661015c565b005b3480156100b657600080fd5b506100bf610245565b60408051600160a060020a039092168252519081900360200190f35b3480156100e757600080fd5b506100a8610254565b3480156100fc57600080fd5b506100bf61035c565b34801561011157600080fd5b506100a8600160a060020a036004351661036b565b34801561013257600080fd5b506100a8600160a060020a0360043516610454565b34801561015357600080fd5b506100bf61050b565b600054600160a060020a031633146101e4576040805160e560020a62461bcd02815260206004820152602f60248201527f4f6e6c792074686520636f6e7472616374206f776e6572206d6179207065726660448201527f6f726d207468697320616374696f6e0000000000000000000000000000000000606482015290519081900360840190fd5b60018054600160a060020a03831673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517f906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce229181900360200190a150565b600154600160a060020a031681565b600154600160a060020a031633146102dc576040805160e560020a62461bcd02815260206004820152603560248201527f596f75206d757374206265206e6f6d696e61746564206265666f726520796f7560448201527f2063616e20616363657074206f776e6572736869700000000000000000000000606482015290519081900360840190fd5b60005460015460408051600160a060020a03938416815292909116602083015280517fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c9281900390910190a1600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600054600160a060020a031633146103f3576040805160e560020a62461bcd02815260206004820152602f60248201527f4f6e6c792074686520636f6e7472616374206f776e6572206d6179207065726660448201527f6f726d207468697320616374696f6e0000000000000000000000000000000000606482015290519081900360840190fd5b60028054600160a060020a03831673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517ffc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e9181900360200190a150565b600254600160a060020a031633146104dc576040805160e560020a62461bcd02815260206004820152602560248201527f4f6e6c79207468652070726f78792063616e2063616c6c20746869732066756e60448201527f6374696f6e000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600254600160a060020a0316815600a165627a7a72305820fad79a3cea7c0bc28a2a95fd5fec74aad091ff215b7b7de63eb1c513fd0249b90029",
+  "deployedBytecode": "0x6080604052600436106100825763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631627540c811461008757806353a47bb7146100aa57806379ba5097146100db5780638da5cb5b146100f057806397107d6d14610105578063bc67f83214610126578063ec55688914610147575b600080fd5b34801561009357600080fd5b506100a8600160a060020a036004351661015c565b005b3480156100b657600080fd5b506100bf610245565b60408051600160a060020a039092168252519081900360200190f35b3480156100e757600080fd5b506100a8610254565b3480156100fc57600080fd5b506100bf61035c565b34801561011157600080fd5b506100a8600160a060020a036004351661036b565b34801561013257600080fd5b506100a8600160a060020a0360043516610454565b34801561015357600080fd5b506100bf61050b565b600054600160a060020a031633146101e4576040805160e560020a62461bcd02815260206004820152602f60248201527f4f6e6c792074686520636f6e7472616374206f776e6572206d6179207065726660448201527f6f726d207468697320616374696f6e0000000000000000000000000000000000606482015290519081900360840190fd5b60018054600160a060020a03831673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517f906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce229181900360200190a150565b600154600160a060020a031681565b600154600160a060020a031633146102dc576040805160e560020a62461bcd02815260206004820152603560248201527f596f75206d757374206265206e6f6d696e61746564206265666f726520796f7560448201527f2063616e20616363657074206f776e6572736869700000000000000000000000606482015290519081900360840190fd5b60005460015460408051600160a060020a03938416815292909116602083015280517fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c9281900390910190a1600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600054600160a060020a031633146103f3576040805160e560020a62461bcd02815260206004820152602f60248201527f4f6e6c792074686520636f6e7472616374206f776e6572206d6179207065726660448201527f6f726d207468697320616374696f6e0000000000000000000000000000000000606482015290519081900360840190fd5b60028054600160a060020a03831673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517ffc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e9181900360200190a150565b600254600160a060020a031633146104dc576040805160e560020a62461bcd02815260206004820152602560248201527f4f6e6c79207468652070726f78792063616e2063616c6c20746869732066756e60448201527f6374696f6e000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600254600160a060020a0316815600a165627a7a72305820fad79a3cea7c0bc28a2a95fd5fec74aad091ff215b7b7de63eb1c513fd0249b90029",
+  "sourceMap": "820:1367:13:-;;;1186:158;8:9:-1;5:2;;;30:1;27;20:12;5:2;1186:158:13;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1340:20:10;;;;1332:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1400:5;:14;;-1:-1:-1;;;;;;1400:14:10;-1:-1:-1;;;;;1400:14:10;;;;;;;1429:32;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1281:5:13;:21;;-1:-1:-1;;;;;1281:21:13;;-1:-1:-1;;;;;;1281:21:13;;;;;;;;1317:20;;;;;;;;;;;;;;;;1186:158;;820:1367;;;;;;",
+  "deployedSourceMap": "820:1367:13:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1605:158:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1605:158:10;-1:-1:-1;;;;;1605:158:10;;;;;;;1193:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1193:29:10;;;;;;;;-1:-1:-1;;;;;1193:29:10;;;;;;;;;;;;;;1835:278;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1835:278:10;;;;1167:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1167:20:10;;;;1350:146:13;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1350:146:13;-1:-1:-1;;;;;1350:146:13;;;;;1502:120;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1502:120:13;-1:-1:-1;;;;;1502:120:13;;;;;903:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;903:18:13;;;;1605:158:10;2174:5;;-1:-1:-1;;;;;2174:5:10;2160:10;:19;2152:79;;;;;-1:-1:-1;;;;;2152:79:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1696:14;:23;;-1:-1:-1;;;;;1696:23:10;;-1:-1:-1;;1696:23:10;;;;;;;;1734:22;;;;;;;;;;;;;;;;1605:158;:::o;1193:29::-;;;-1:-1:-1;;;;;1193:29:10;;:::o;1835:278::-;1915:14;;-1:-1:-1;;;;;1915:14:10;1901:10;:28;1893:94;;;;;-1:-1:-1;;;;;1893:94:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2015:5;;;2022:14;2002:35;;;-1:-1:-1;;;;;2015:5:10;;;2002:35;;2022:14;;;;2002:35;;;;;;;;;;;;;;;;2055:14;;;;2047:22;;-1:-1:-1;;2047:22:10;;;-1:-1:-1;;;;;2055:14:10;;2047:22;;;;2079:27;;;1835:278::o;1167:20::-;;;-1:-1:-1;;;;;1167:20:10;;:::o;1350:146:13:-;2174:5:10;;-1:-1:-1;;;;;2174:5:10;2160:10;:19;2152:79;;;;;-1:-1:-1;;;;;2152:79:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1433:5:13;:21;;-1:-1:-1;;;;;1433:21:13;;-1:-1:-1;;1433:21:13;;;;;;;;1469:20;;;;;;;;;;;;;;;;1350:146;:::o;1502:120::-;1686:5;;-1:-1:-1;;;;;1686:5:13;1671:10;1665:26;1657:76;;;;;-1:-1:-1;;;;;1657:76:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1593:13;:22;;-1:-1:-1;;1593:22:13;-1:-1:-1;;;;;1593:22:13;;;;;;;;;;1502:120::o;903:18::-;;;-1:-1:-1;;;;;903:18:13;;:::o",
+  "source": "/*\n-----------------------------------------------------------------\nFILE INFORMATION\n-----------------------------------------------------------------\n\nfile:       Proxyable.sol\nversion:    1.1\nauthor:     Anton Jurisevic\n\ndate:       2018-05-15\n\nchecked:    Mike Spain\napproved:   Samuel Brooks\n\n-----------------------------------------------------------------\nMODULE DESCRIPTION\n-----------------------------------------------------------------\n\nA proxyable contract that works hand in hand with the Proxy contract\nto allow for anyone to interact with the underlying contract both\ndirectly and through the proxy.\n\n-----------------------------------------------------------------\n*/\n\n\npragma solidity 0.4.25;\n\nimport \"./Owned.sol\";\nimport \"./Proxy.sol\";\n\n// This contract should be treated like an abstract contract\ncontract Proxyable is Owned {\n    /* The proxy this contract exists behind. */\n    Proxy public proxy;\n\n    /* The caller of the proxy, passed through to this contract.\n     * Note that every function using this member must apply the onlyProxy or\n     * optionalProxy modifiers, otherwise their invocations can use stale values. */ \n    address messageSender; \n\n    constructor(address _proxy, address _owner)\n        Owned(_owner)\n        public\n    {\n        proxy = Proxy(_proxy);\n        emit ProxyUpdated(_proxy);\n    }\n\n    function setProxy(address _proxy)\n        external\n        onlyOwner\n    {\n        proxy = Proxy(_proxy);\n        emit ProxyUpdated(_proxy);\n    }\n\n    function setMessageSender(address sender)\n        external\n        onlyProxy\n    {\n        messageSender = sender;\n    }\n\n    modifier onlyProxy {\n        require(Proxy(msg.sender) == proxy, \"Only the proxy can call this function\");\n        _;\n    }\n\n    modifier optionalProxy\n    {\n        if (Proxy(msg.sender) != proxy) {\n            messageSender = msg.sender;\n        }\n        _;\n    }\n\n    modifier optionalProxy_onlyOwner\n    {\n        if (Proxy(msg.sender) != proxy) {\n            messageSender = msg.sender;\n        }\n        require(messageSender == owner, \"This action can only be performed by the owner\");\n        _;\n    }\n\n    event ProxyUpdated(address proxyAddress);\n}\n",
+  "sourcePath": "/Users/clintonennis/Projects/havven/havven/contracts/Proxyable.sol",
+  "ast": {
+    "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/Proxyable.sol",
+    "exportedSymbols": {
+      "Proxyable": [
+        6214
+      ]
+    },
+    "id": 6215,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6095,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "689:23:13"
+      },
+      {
+        "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/Owned.sol",
+        "file": "./Owned.sol",
+        "id": 6096,
+        "nodeType": "ImportDirective",
+        "scope": 6215,
+        "sourceUnit": 5921,
+        "src": "714:21:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/Proxy.sol",
+        "file": "./Proxy.sol",
+        "id": 6097,
+        "nodeType": "ImportDirective",
+        "scope": 6215,
+        "sourceUnit": 6094,
+        "src": "736:21:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6098,
+              "name": "Owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5920,
+              "src": "842:5:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owned_$5920",
+                "typeString": "contract Owned"
+              }
+            },
+            "id": 6099,
+            "nodeType": "InheritanceSpecifier",
+            "src": "842:5:13"
+          }
+        ],
+        "contractDependencies": [
+          5920
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6214,
+        "linearizedBaseContracts": [
+          6214,
+          5920
+        ],
+        "name": "Proxyable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6101,
+            "name": "proxy",
+            "nodeType": "VariableDeclaration",
+            "scope": 6214,
+            "src": "903:18:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Proxy_$6093",
+              "typeString": "contract Proxy"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 6100,
+              "name": "Proxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6093,
+              "src": "903:5:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Proxy_$6093",
+                "typeString": "contract Proxy"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6103,
+            "name": "messageSender",
+            "nodeType": "VariableDeclaration",
+            "scope": 6214,
+            "src": "1157:21:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6102,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1157:7:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6123,
+              "nodeType": "Block",
+              "src": "1271:73:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6117,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6113,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1281:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 6115,
+                          "name": "_proxy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6105,
+                          "src": "1295:6:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6114,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1289:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6116,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1289:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1281:21:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    }
+                  },
+                  "id": 6118,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1281:21:13"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6120,
+                        "name": "_proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6105,
+                        "src": "1330:6:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6119,
+                      "name": "ProxyUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6213,
+                      "src": "1317:12:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 6121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1317:20:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6122,
+                  "nodeType": "EmitStatement",
+                  "src": "1312:25:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6124,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 6110,
+                    "name": "_owner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 6107,
+                    "src": "1244:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 6111,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6109,
+                  "name": "Owned",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5920,
+                  "src": "1238:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Owned_$5920_$",
+                    "typeString": "type(contract Owned)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1238:13:13"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6105,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6124,
+                  "src": "1198:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6104,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1198:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6107,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6124,
+                  "src": "1214:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6106,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1214:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1197:32:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6112,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1271:0:13"
+            },
+            "scope": 6214,
+            "src": "1186:158:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6141,
+              "nodeType": "Block",
+              "src": "1423:73:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6131,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1433:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 6133,
+                          "name": "_proxy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6126,
+                          "src": "1447:6:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6132,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1441:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6134,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1441:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1433:21:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    }
+                  },
+                  "id": 6136,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1433:21:13"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6138,
+                        "name": "_proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6126,
+                        "src": "1482:6:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6137,
+                      "name": "ProxyUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6213,
+                      "src": "1469:12:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 6139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1469:20:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6140,
+                  "nodeType": "EmitStatement",
+                  "src": "1464:25:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6142,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6129,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6128,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5909,
+                  "src": "1409:9:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1409:9:13"
+              }
+            ],
+            "name": "setProxy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6126,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6142,
+                  "src": "1368:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1368:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1367:16:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6130,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1423:0:13"
+            },
+            "scope": 6214,
+            "src": "1350:146:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 6153,
+              "nodeType": "Block",
+              "src": "1583:39:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6151,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6149,
+                      "name": "messageSender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6103,
+                      "src": "1593:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6150,
+                      "name": "sender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6144,
+                      "src": "1609:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1593:22:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6152,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1593:22:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6154,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6147,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6146,
+                  "name": "onlyProxy",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 6168,
+                  "src": "1569:9:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1569:9:13"
+              }
+            ],
+            "name": "setMessageSender",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6145,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6144,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6154,
+                  "src": "1528:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6143,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1528:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1527:16:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6148,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1583:0:13"
+            },
+            "scope": 6214,
+            "src": "1502:120:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 6167,
+              "nodeType": "Block",
+              "src": "1647:104:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_contract$_Proxy_$6093",
+                          "typeString": "contract Proxy"
+                        },
+                        "id": 6162,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 6158,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 7107,
+                                "src": "1671:3:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 6159,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "1671:10:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 6157,
+                            "name": "Proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6093,
+                            "src": "1665:5:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                              "typeString": "type(contract Proxy)"
+                            }
+                          },
+                          "id": 6160,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1665:17:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Proxy_$6093",
+                            "typeString": "contract Proxy"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6161,
+                          "name": "proxy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6101,
+                          "src": "1686:5:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Proxy_$6093",
+                            "typeString": "contract Proxy"
+                          }
+                        },
+                        "src": "1665:26:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79207468652070726f78792063616e2063616c6c20746869732066756e6374696f6e",
+                        "id": 6163,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1693:39:13",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_543d84b89d7e34fbd714b9bfe175199c1eece7aa6c7cfbf6ca770d0e8183e59c",
+                          "typeString": "literal_string \"Only the proxy can call this function\""
+                        },
+                        "value": "Only the proxy can call this function"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_543d84b89d7e34fbd714b9bfe175199c1eece7aa6c7cfbf6ca770d0e8183e59c",
+                          "typeString": "literal_string \"Only the proxy can call this function\""
+                        }
+                      ],
+                      "id": 6156,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        7110,
+                        7111
+                      ],
+                      "referencedDeclaration": 7111,
+                      "src": "1657:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1657:76:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6165,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1657:76:13"
+                },
+                {
+                  "id": 6166,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1743:1:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6168,
+            "name": "onlyProxy",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6155,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1647:0:13"
+            },
+            "src": "1628:123:13",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6184,
+              "nodeType": "Block",
+              "src": "1784:110:13",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    },
+                    "id": 6175,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6171,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7107,
+                            "src": "1804:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6172,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1804:10:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6170,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1798:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6173,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1798:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 6174,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1819:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1798:26:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 6182,
+                  "nodeType": "IfStatement",
+                  "src": "1794:83:13",
+                  "trueBody": {
+                    "id": 6181,
+                    "nodeType": "Block",
+                    "src": "1826:51:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6179,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 6176,
+                            "name": "messageSender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6103,
+                            "src": "1840:13:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6177,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7107,
+                              "src": "1856:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6178,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1856:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1840:26:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 6180,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1840:26:13"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": 6183,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1886:1:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6185,
+            "name": "optionalProxy",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6169,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1784:0:13"
+            },
+            "src": "1757:137:13",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6208,
+              "nodeType": "Block",
+              "src": "1937:201:13",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    },
+                    "id": 6192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6188,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7107,
+                            "src": "1957:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6189,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1957:10:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6187,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1951:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6190,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1951:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 6191,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1972:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1951:26:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 6199,
+                  "nodeType": "IfStatement",
+                  "src": "1947:83:13",
+                  "trueBody": {
+                    "id": 6198,
+                    "nodeType": "Block",
+                    "src": "1979:51:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6196,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 6193,
+                            "name": "messageSender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6103,
+                            "src": "1993:13:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6194,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7107,
+                              "src": "2009:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6195,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "2009:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1993:26:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 6197,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1993:26:13"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6203,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 6201,
+                          "name": "messageSender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6103,
+                          "src": "2047:13:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6202,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5826,
+                          "src": "2064:5:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "2047:22:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5468697320616374696f6e2063616e206f6e6c7920626520706572666f726d656420627920746865206f776e6572",
+                        "id": 6204,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2071:48:13",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b6b3e8a21b51b7fd32948c56ddb82dcb2eef6d6752247ac3a393ee75e8fa5209",
+                          "typeString": "literal_string \"This action can only be performed by the owner\""
+                        },
+                        "value": "This action can only be performed by the owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b6b3e8a21b51b7fd32948c56ddb82dcb2eef6d6752247ac3a393ee75e8fa5209",
+                          "typeString": "literal_string \"This action can only be performed by the owner\""
+                        }
+                      ],
+                      "id": 6200,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        7110,
+                        7111
+                      ],
+                      "referencedDeclaration": 7111,
+                      "src": "2039:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6205,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2039:81:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6206,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2039:81:13"
+                },
+                {
+                  "id": 6207,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "2130:1:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6209,
+            "name": "optionalProxy_onlyOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6186,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1937:0:13"
+            },
+            "src": "1900:238:13",
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6213,
+            "name": "ProxyUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6211,
+                  "indexed": false,
+                  "name": "proxyAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6213,
+                  "src": "2163:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6210,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2163:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2162:22:13"
+            },
+            "src": "2144:41:13"
+          }
+        ],
+        "scope": 6215,
+        "src": "820:1367:13"
+      }
+    ],
+    "src": "689:1499:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/Proxyable.sol",
+    "exportedSymbols": {
+      "Proxyable": [
+        6214
+      ]
+    },
+    "id": 6215,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6095,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "689:23:13"
+      },
+      {
+        "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/Owned.sol",
+        "file": "./Owned.sol",
+        "id": 6096,
+        "nodeType": "ImportDirective",
+        "scope": 6215,
+        "sourceUnit": 5921,
+        "src": "714:21:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/Proxy.sol",
+        "file": "./Proxy.sol",
+        "id": 6097,
+        "nodeType": "ImportDirective",
+        "scope": 6215,
+        "sourceUnit": 6094,
+        "src": "736:21:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6098,
+              "name": "Owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5920,
+              "src": "842:5:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owned_$5920",
+                "typeString": "contract Owned"
+              }
+            },
+            "id": 6099,
+            "nodeType": "InheritanceSpecifier",
+            "src": "842:5:13"
+          }
+        ],
+        "contractDependencies": [
+          5920
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6214,
+        "linearizedBaseContracts": [
+          6214,
+          5920
+        ],
+        "name": "Proxyable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6101,
+            "name": "proxy",
+            "nodeType": "VariableDeclaration",
+            "scope": 6214,
+            "src": "903:18:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Proxy_$6093",
+              "typeString": "contract Proxy"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 6100,
+              "name": "Proxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6093,
+              "src": "903:5:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Proxy_$6093",
+                "typeString": "contract Proxy"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 6103,
+            "name": "messageSender",
+            "nodeType": "VariableDeclaration",
+            "scope": 6214,
+            "src": "1157:21:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6102,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1157:7:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6123,
+              "nodeType": "Block",
+              "src": "1271:73:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6117,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6113,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1281:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 6115,
+                          "name": "_proxy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6105,
+                          "src": "1295:6:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6114,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1289:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6116,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1289:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1281:21:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    }
+                  },
+                  "id": 6118,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1281:21:13"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6120,
+                        "name": "_proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6105,
+                        "src": "1330:6:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6119,
+                      "name": "ProxyUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6213,
+                      "src": "1317:12:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 6121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1317:20:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6122,
+                  "nodeType": "EmitStatement",
+                  "src": "1312:25:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6124,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 6110,
+                    "name": "_owner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 6107,
+                    "src": "1244:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 6111,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6109,
+                  "name": "Owned",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5920,
+                  "src": "1238:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Owned_$5920_$",
+                    "typeString": "type(contract Owned)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1238:13:13"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6105,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6124,
+                  "src": "1198:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6104,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1198:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6107,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6124,
+                  "src": "1214:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6106,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1214:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1197:32:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6112,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1271:0:13"
+            },
+            "scope": 6214,
+            "src": "1186:158:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6141,
+              "nodeType": "Block",
+              "src": "1423:73:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6131,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1433:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 6133,
+                          "name": "_proxy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6126,
+                          "src": "1447:6:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6132,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1441:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6134,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1441:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1433:21:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    }
+                  },
+                  "id": 6136,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1433:21:13"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6138,
+                        "name": "_proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6126,
+                        "src": "1482:6:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6137,
+                      "name": "ProxyUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6213,
+                      "src": "1469:12:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 6139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1469:20:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6140,
+                  "nodeType": "EmitStatement",
+                  "src": "1464:25:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6142,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6129,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6128,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5909,
+                  "src": "1409:9:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1409:9:13"
+              }
+            ],
+            "name": "setProxy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6126,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6142,
+                  "src": "1368:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1368:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1367:16:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6130,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1423:0:13"
+            },
+            "scope": 6214,
+            "src": "1350:146:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 6153,
+              "nodeType": "Block",
+              "src": "1583:39:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6151,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6149,
+                      "name": "messageSender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6103,
+                      "src": "1593:13:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6150,
+                      "name": "sender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6144,
+                      "src": "1609:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1593:22:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6152,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1593:22:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6154,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6147,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6146,
+                  "name": "onlyProxy",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 6168,
+                  "src": "1569:9:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1569:9:13"
+              }
+            ],
+            "name": "setMessageSender",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6145,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6144,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6154,
+                  "src": "1528:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6143,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1528:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1527:16:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6148,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1583:0:13"
+            },
+            "scope": 6214,
+            "src": "1502:120:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 6167,
+              "nodeType": "Block",
+              "src": "1647:104:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_contract$_Proxy_$6093",
+                          "typeString": "contract Proxy"
+                        },
+                        "id": 6162,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 6158,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 7107,
+                                "src": "1671:3:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 6159,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "1671:10:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 6157,
+                            "name": "Proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6093,
+                            "src": "1665:5:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                              "typeString": "type(contract Proxy)"
+                            }
+                          },
+                          "id": 6160,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1665:17:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Proxy_$6093",
+                            "typeString": "contract Proxy"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6161,
+                          "name": "proxy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6101,
+                          "src": "1686:5:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Proxy_$6093",
+                            "typeString": "contract Proxy"
+                          }
+                        },
+                        "src": "1665:26:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c79207468652070726f78792063616e2063616c6c20746869732066756e6374696f6e",
+                        "id": 6163,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1693:39:13",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_543d84b89d7e34fbd714b9bfe175199c1eece7aa6c7cfbf6ca770d0e8183e59c",
+                          "typeString": "literal_string \"Only the proxy can call this function\""
+                        },
+                        "value": "Only the proxy can call this function"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_543d84b89d7e34fbd714b9bfe175199c1eece7aa6c7cfbf6ca770d0e8183e59c",
+                          "typeString": "literal_string \"Only the proxy can call this function\""
+                        }
+                      ],
+                      "id": 6156,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        7110,
+                        7111
+                      ],
+                      "referencedDeclaration": 7111,
+                      "src": "1657:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1657:76:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6165,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1657:76:13"
+                },
+                {
+                  "id": 6166,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1743:1:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6168,
+            "name": "onlyProxy",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6155,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1647:0:13"
+            },
+            "src": "1628:123:13",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6184,
+              "nodeType": "Block",
+              "src": "1784:110:13",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    },
+                    "id": 6175,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6171,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7107,
+                            "src": "1804:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6172,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1804:10:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6170,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1798:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6173,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1798:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 6174,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1819:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1798:26:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 6182,
+                  "nodeType": "IfStatement",
+                  "src": "1794:83:13",
+                  "trueBody": {
+                    "id": 6181,
+                    "nodeType": "Block",
+                    "src": "1826:51:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6179,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 6176,
+                            "name": "messageSender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6103,
+                            "src": "1840:13:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6177,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7107,
+                              "src": "1856:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6178,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1856:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1840:26:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 6180,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1840:26:13"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": 6183,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1886:1:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6185,
+            "name": "optionalProxy",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6169,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1784:0:13"
+            },
+            "src": "1757:137:13",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6208,
+              "nodeType": "Block",
+              "src": "1937:201:13",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_contract$_Proxy_$6093",
+                      "typeString": "contract Proxy"
+                    },
+                    "id": 6192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6188,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7107,
+                            "src": "1957:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6189,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1957:10:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 6187,
+                        "name": "Proxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6093,
+                        "src": "1951:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Proxy_$6093_$",
+                          "typeString": "type(contract Proxy)"
+                        }
+                      },
+                      "id": 6190,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1951:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 6191,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6101,
+                      "src": "1972:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Proxy_$6093",
+                        "typeString": "contract Proxy"
+                      }
+                    },
+                    "src": "1951:26:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 6199,
+                  "nodeType": "IfStatement",
+                  "src": "1947:83:13",
+                  "trueBody": {
+                    "id": 6198,
+                    "nodeType": "Block",
+                    "src": "1979:51:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6196,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 6193,
+                            "name": "messageSender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6103,
+                            "src": "1993:13:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6194,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7107,
+                              "src": "2009:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 6195,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "2009:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1993:26:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 6197,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1993:26:13"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6203,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 6201,
+                          "name": "messageSender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6103,
+                          "src": "2047:13:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6202,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5826,
+                          "src": "2064:5:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "2047:22:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5468697320616374696f6e2063616e206f6e6c7920626520706572666f726d656420627920746865206f776e6572",
+                        "id": 6204,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2071:48:13",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b6b3e8a21b51b7fd32948c56ddb82dcb2eef6d6752247ac3a393ee75e8fa5209",
+                          "typeString": "literal_string \"This action can only be performed by the owner\""
+                        },
+                        "value": "This action can only be performed by the owner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b6b3e8a21b51b7fd32948c56ddb82dcb2eef6d6752247ac3a393ee75e8fa5209",
+                          "typeString": "literal_string \"This action can only be performed by the owner\""
+                        }
+                      ],
+                      "id": 6200,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        7110,
+                        7111
+                      ],
+                      "referencedDeclaration": 7111,
+                      "src": "2039:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6205,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2039:81:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6206,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2039:81:13"
+                },
+                {
+                  "id": 6207,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "2130:1:13"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6209,
+            "name": "optionalProxy_onlyOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6186,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1937:0:13"
+            },
+            "src": "1900:238:13",
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6213,
+            "name": "ProxyUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6211,
+                  "indexed": false,
+                  "name": "proxyAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6213,
+                  "src": "2163:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6210,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2163:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2162:22:13"
+            },
+            "src": "2144:41:13"
+          }
+        ],
+        "scope": 6215,
+        "src": "820:1367:13"
+      }
+    ],
+    "src": "689:1499:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.1",
+  "updatedAt": "2018-11-21T03:50:47.614Z"
+}

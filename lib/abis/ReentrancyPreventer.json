@@ -1,0 +1,629 @@
+{
+  "contractName": "ReentrancyPreventer",
+  "abi": [],
+  "bytecode": "0x60806040526000805460ff19169055348015601957600080fd5b5060358060276000396000f3006080604052600080fd00a165627a7a72305820fabe7334a3e8711518b1fa78e498de345e0267bd4b3eafbdfbb0742fc5832deb0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820fabe7334a3e8711518b1fa78e498de345e0267bd4b3eafbdfbb0742fc5832deb0029",
+  "sourceMap": "750:297:14:-;;;851:5;827:29;;-1:-1:-1;;827:29:14;;;750:297;5:2:-1;;;;30:1;27;20:12;5:2;750:297:14;;;;;;;",
+  "deployedSourceMap": "750:297:14:-;;;;;",
+  "source": "/*\n-----------------------------------------------------------------\nFILE INFORMATION\n-----------------------------------------------------------------\n\nfile:       ExternStateToken.sol\nversion:    1.0\nauthor:     Kevin Brown\ndate:       2018-08-06\n\n-----------------------------------------------------------------\nMODULE DESCRIPTION\n-----------------------------------------------------------------\n\nThis contract offers a modifer that can prevent reentrancy on\nparticular actions. It will not work if you put it on multiple\nfunctions that can be called from each other. Specifically guard\nexternal entry points to the contract with the modifier only.\n\n-----------------------------------------------------------------\n*/\n\npragma solidity 0.4.25;\n\ncontract ReentrancyPreventer {\n    /* ========== MODIFIERS ========== */\n    bool isInFunctionBody = false;\n\n    modifier preventReentrancy {\n        require(!isInFunctionBody, \"Reverted to prevent reentrancy\");\n        isInFunctionBody = true;\n        _;\n        isInFunctionBody = false;\n    }\n}",
+  "sourcePath": "/Users/clintonennis/Projects/havven/havven/contracts/ReentrancyPreventer.sol",
+  "ast": {
+    "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/ReentrancyPreventer.sol",
+    "exportedSymbols": {
+      "ReentrancyPreventer": [
+        6238
+      ]
+    },
+    "id": 6239,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6216,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "725:23:14"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6238,
+        "linearizedBaseContracts": [
+          6238
+        ],
+        "name": "ReentrancyPreventer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6219,
+            "name": "isInFunctionBody",
+            "nodeType": "VariableDeclaration",
+            "scope": 6238,
+            "src": "827:29:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 6217,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "827:4:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 6218,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "851:5:14",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6236,
+              "nodeType": "Block",
+              "src": "890:155:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6223,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "908:17:14",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 6222,
+                          "name": "isInFunctionBody",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6219,
+                          "src": "909:16:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "526576657274656420746f2070726576656e74207265656e7472616e6379",
+                        "id": 6224,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "927:32:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_57bcb78c01566a01cb66038c4863195c484131409f42d81d22b2c649b71f258d",
+                          "typeString": "literal_string \"Reverted to prevent reentrancy\""
+                        },
+                        "value": "Reverted to prevent reentrancy"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_57bcb78c01566a01cb66038c4863195c484131409f42d81d22b2c649b71f258d",
+                          "typeString": "literal_string \"Reverted to prevent reentrancy\""
+                        }
+                      ],
+                      "id": 6221,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        7110,
+                        7111
+                      ],
+                      "referencedDeclaration": 7111,
+                      "src": "900:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6225,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "900:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6226,
+                  "nodeType": "ExpressionStatement",
+                  "src": "900:60:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6227,
+                      "name": "isInFunctionBody",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6219,
+                      "src": "970:16:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 6228,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "989:4:14",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "970:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 6230,
+                  "nodeType": "ExpressionStatement",
+                  "src": "970:23:14"
+                },
+                {
+                  "id": 6231,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1003:1:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6234,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6232,
+                      "name": "isInFunctionBody",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6219,
+                      "src": "1014:16:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 6233,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1033:5:14",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "1014:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 6235,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1014:24:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6237,
+            "name": "preventReentrancy",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6220,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "890:0:14"
+            },
+            "src": "863:182:14",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6239,
+        "src": "750:297:14"
+      }
+    ],
+    "src": "725:322:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/clintonennis/Projects/havven/havven/contracts/ReentrancyPreventer.sol",
+    "exportedSymbols": {
+      "ReentrancyPreventer": [
+        6238
+      ]
+    },
+    "id": 6239,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6216,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "725:23:14"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6238,
+        "linearizedBaseContracts": [
+          6238
+        ],
+        "name": "ReentrancyPreventer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6219,
+            "name": "isInFunctionBody",
+            "nodeType": "VariableDeclaration",
+            "scope": 6238,
+            "src": "827:29:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 6217,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "827:4:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 6218,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "851:5:14",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6236,
+              "nodeType": "Block",
+              "src": "890:155:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6223,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "908:17:14",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 6222,
+                          "name": "isInFunctionBody",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6219,
+                          "src": "909:16:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "526576657274656420746f2070726576656e74207265656e7472616e6379",
+                        "id": 6224,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "927:32:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_57bcb78c01566a01cb66038c4863195c484131409f42d81d22b2c649b71f258d",
+                          "typeString": "literal_string \"Reverted to prevent reentrancy\""
+                        },
+                        "value": "Reverted to prevent reentrancy"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_57bcb78c01566a01cb66038c4863195c484131409f42d81d22b2c649b71f258d",
+                          "typeString": "literal_string \"Reverted to prevent reentrancy\""
+                        }
+                      ],
+                      "id": 6221,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        7110,
+                        7111
+                      ],
+                      "referencedDeclaration": 7111,
+                      "src": "900:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6225,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "900:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6226,
+                  "nodeType": "ExpressionStatement",
+                  "src": "900:60:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6227,
+                      "name": "isInFunctionBody",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6219,
+                      "src": "970:16:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 6228,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "989:4:14",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "970:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 6230,
+                  "nodeType": "ExpressionStatement",
+                  "src": "970:23:14"
+                },
+                {
+                  "id": 6231,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1003:1:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6234,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6232,
+                      "name": "isInFunctionBody",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6219,
+                      "src": "1014:16:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 6233,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1033:5:14",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "1014:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 6235,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1014:24:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6237,
+            "name": "preventReentrancy",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6220,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "890:0:14"
+            },
+            "src": "863:182:14",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6239,
+        "src": "750:297:14"
+      }
+    ],
+    "src": "725:322:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.1",
+  "updatedAt": "2018-11-21T03:50:47.583Z"
+}

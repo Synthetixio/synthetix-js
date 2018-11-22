@@ -23110,7 +23110,861 @@ var ethers = __webpack_require__(2);
   name: 'OwnerChanged',
   type: 'event'
 }]);
+// CONCATENATED MODULE: ./lib/abis/Depot.js
+/* harmony default export */ var Depot = ([{
+  constant: true,
+  inputs: [],
+  name: 'minimumDepositAmount',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_owner',
+    type: 'address'
+  }],
+  name: 'nominateNewOwner',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_paused',
+    type: 'bool'
+  }],
+  name: 'setPaused',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'initiationTime',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'withdrawHavvens',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'havvensReceivedForEther',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_beneficiary',
+    type: 'address'
+  }],
+  name: 'setSelfDestructBeneficiary',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'fundsWallet',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'priceStalePeriod',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_time',
+    type: 'uint256'
+  }],
+  name: 'setPriceStalePeriod',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'nominAmount',
+    type: 'uint256'
+  }, {
+    name: 'guaranteedRate',
+    type: 'uint256'
+  }],
+  name: 'exchangeNominsForHavvensAtRate',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'decimals',
+  outputs: [{
+    name: '',
+    type: 'uint8'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'terminateSelfDestruct',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'pricesAreStale',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'newEthPrice',
+    type: 'uint256'
+  }, {
+    name: 'newHavvenPrice',
+    type: 'uint256'
+  }, {
+    name: 'timeSent',
+    type: 'uint256'
+  }],
+  name: 'updatePrices',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'exchangeEtherForHavvens',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: true,
+  stateMutability: 'payable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'exchangeEtherForNomins',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: true,
+  stateMutability: 'payable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'nominAmount',
+    type: 'uint256'
+  }],
+  name: 'exchangeNominsForHavvens',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'lastPriceUpdateTime',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'totalSellableDeposits',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_havven',
+    type: 'address'
+  }],
+  name: 'setHavven',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nominatedOwner',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'havvensReceivedForNomins',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_nomin',
+    type: 'address'
+  }],
+  name: 'setNomin',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'paused',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'guaranteedRate',
+    type: 'uint256'
+  }],
+  name: 'exchangeEtherForNominsAtRate',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: true,
+  stateMutability: 'payable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_fundsWallet',
+    type: 'address'
+  }],
+  name: 'setFundsWallet',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'depositNomins',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'depositStartIndex',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'withdrawMyDepositedNomins',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'acceptOwnership',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_oracle',
+    type: 'address'
+  }],
+  name: 'setOracle',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'oracle',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'lastPauseTime',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'havven',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'selfDestruct',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'UNIT',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'SELFDESTRUCT_DELAY',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'nominsReceivedForEther',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_amount',
+    type: 'uint256'
+  }],
+  name: 'setMinimumDepositAmount',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'deposits',
+  outputs: [{
+    name: 'user',
+    type: 'address'
+  }, {
+    name: 'amount',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'selfDestructInitiated',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'usdToEthPrice',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'guaranteedEtherRate',
+    type: 'uint256'
+  }, {
+    name: 'guaranteedHavvenRate',
+    type: 'uint256'
+  }],
+  name: 'exchangeEtherForHavvensAtRate',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: true,
+  stateMutability: 'payable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'initiateSelfDestruct',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'from',
+    type: 'address'
+  }, {
+    name: 'amount',
+    type: 'uint256'
+  }, {
+    name: 'data',
+    type: 'bytes'
+  }],
+  name: 'tokenFallback',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'usdToHavPrice',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'selfDestructBeneficiary',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: '',
+    type: 'address'
+  }],
+  name: 'smallDeposits',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nomin',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'ORACLE_FUTURE_LIMIT',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'depositEndIndex',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  inputs: [{
+    name: '_owner',
+    type: 'address'
+  }, {
+    name: '_fundsWallet',
+    type: 'address'
+  }, {
+    name: '_havven',
+    type: 'address'
+  }, {
+    name: '_nomin',
+    type: 'address'
+  }, {
+    name: '_oracle',
+    type: 'address'
+  }, {
+    name: '_usdToEthPrice',
+    type: 'uint256'
+  }, {
+    name: '_usdToHavPrice',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'constructor'
+}, {
+  payable: true,
+  stateMutability: 'payable',
+  type: 'fallback'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newFundsWallet',
+    type: 'address'
+  }],
+  name: 'FundsWalletUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newOracle',
+    type: 'address'
+  }],
+  name: 'OracleUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newNominContract',
+    type: 'address'
+  }],
+  name: 'NominUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newHavvenContract',
+    type: 'address'
+  }],
+  name: 'HavvenUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'priceStalePeriod',
+    type: 'uint256'
+  }],
+  name: 'PriceStalePeriodUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newEthPrice',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'newHavvenPrice',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'timeSent',
+    type: 'uint256'
+  }],
+  name: 'PricesUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'fromCurrency',
+    type: 'string'
+  }, {
+    indexed: false,
+    name: 'fromAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'toCurrency',
+    type: 'string'
+  }, {
+    indexed: false,
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'price',
+    type: 'uint256'
+  }],
+  name: 'Exchange',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'user',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'NominWithdrawal',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'user',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'NominDeposit',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'user',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'amount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'minimum',
+    type: 'uint256'
+  }],
+  name: 'NominDepositNotAccepted',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'MinimumDepositAmountUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'isPaused',
+    type: 'bool'
+  }],
+  name: 'PauseChanged',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [],
+  name: 'SelfDestructTerminated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'beneficiary',
+    type: 'address'
+  }],
+  name: 'SelfDestructed',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'selfDestructDelay',
+    type: 'uint256'
+  }],
+  name: 'SelfDestructInitiated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newBeneficiary',
+    type: 'address'
+  }],
+  name: 'SelfDestructBeneficiaryUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerNominated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    name: 'oldOwner',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerChanged',
+  type: 'event'
+}]);
 // CONCATENATED MODULE: ./lib/abis/index.js
+
 
 
 
@@ -23127,7 +23981,8 @@ var ethers = __webpack_require__(2);
   StablePayments: StablePayments,
   Vestr: Vestr,
   EscrowChecker: EscrowChecker,
-  Escrow: Escrow
+  Escrow: Escrow,
+  Depot: Depot
 });
 // CONCATENATED MODULE: ./lib/addresses.js
 var MAINNET_ADDRESSES = {
@@ -23144,6 +23999,8 @@ var MAINNET_ADDRESSES = {
   Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   // same as Escrow contract
   IssuanceController: '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
+  Depot: '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
+  //IssuanceController has been renamed to Depot
   Havven: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
   Nomin: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3'
 }; // Havven contracts to be updated on multicurrency release
@@ -23158,7 +24015,7 @@ var KOVAN_ADDRESSES = {
   StablePayments: '0x6ccd6e2426d63f10c957d245c130ca981d9e64e4',
   // same as NominProxy
   NominProxy: '0x6ccd6e2426d63f10c957d245c130ca981d9e64e4',
-  Nomin: '0x820c43db938C9b40E0bf9D2Bd96bc2D15B726306',
+  Nomin: '0xaf28cec7854e9a070f4cd31f18ba005f874d9f50',
   NominState: '0x0b4b3415202209e15451d0fe011dad568b63fd77',
   Escrow: '0xa9b437fb11e8634ae51e8f7ab8b71798f55d813a',
   Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
@@ -30508,6 +31365,1739 @@ function Escrow_Escrow(contractSettings) {
 }
 
 /* harmony default export */ var contracts_Escrow = (Escrow_Escrow);
+// CONCATENATED MODULE: ./src/contracts/Depot.js
+
+
+
+
+
+var Depot_abi = abis.Depot;
+/** @constructor
+ * @param contractSettings {ContractSettings}
+ */
+
+function Depot_Depot(contractSettings) {
+  var _this = this;
+
+  this.contractSettings = contractSettings || new src_contractSettings();
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['Depot'], Depot_abi, this.contractSettings.signer || this.contractSettings.provider);
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.minimumDepositAmount =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee() {
+    return regenerator_default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _this.contract.minimumDepositAmount();
+
+          case 2:
+            return _context.abrupt("return", _context.sent);
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.nominateNewOwner =
+  /*#__PURE__*/
+  function () {
+    var _ref2 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              txParams = txParams || {};
+              _context2.next = 3;
+              return _this.contract.nominateNewOwner(_owner, txParams);
+
+            case 3:
+              return _context2.abrupt("return", _context2.sent);
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, this);
+    }));
+
+    return function (_x, _x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _paused {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setPaused =
+  /*#__PURE__*/
+  function () {
+    var _ref3 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3(_paused, txParams) {
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              txParams = txParams || {};
+              _context3.next = 3;
+              return _this.contract.setPaused(_paused, txParams);
+
+            case 3:
+              return _context3.abrupt("return", _context3.sent);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, this);
+    }));
+
+    return function (_x3, _x4) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.initiationTime =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee4() {
+    return regenerator_default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return _this.contract.initiationTime();
+
+          case 2:
+            return _context4.abrupt("return", _context4.sent);
+
+          case 3:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.withdrawHavvens =
+  /*#__PURE__*/
+  function () {
+    var _ref5 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee5(amount, txParams) {
+      return regenerator_default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              txParams = txParams || {};
+              _context5.next = 3;
+              return _this.contract.withdrawHavvens(amount, txParams);
+
+            case 3:
+              return _context5.abrupt("return", _context5.sent);
+
+            case 4:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, this);
+    }));
+
+    return function (_x5, _x6) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
+   **/
+
+
+  this.havvensReceivedForEther =
+  /*#__PURE__*/
+  function () {
+    var _ref6 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee6(amount) {
+      return regenerator_default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              _context6.next = 2;
+              return _this.contract.havvensReceivedForEther(amount);
+
+            case 2:
+              return _context6.abrupt("return", _context6.sent);
+
+            case 3:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, this);
+    }));
+
+    return function (_x7) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _beneficiary {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setSelfDestructBeneficiary =
+  /*#__PURE__*/
+  function () {
+    var _ref7 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee7(_beneficiary, txParams) {
+      return regenerator_default.a.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              txParams = txParams || {};
+              _context7.next = 3;
+              return _this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
+
+            case 3:
+              return _context7.abrupt("return", _context7.sent);
+
+            case 4:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7, this);
+    }));
+
+    return function (_x8, _x9) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.fundsWallet =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee8() {
+    return regenerator_default.a.wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            _context8.next = 2;
+            return _this.contract.fundsWallet();
+
+          case 2:
+            return _context8.abrupt("return", _context8.sent);
+
+          case 3:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, _callee8, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.priceStalePeriod =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee9() {
+    return regenerator_default.a.wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            _context9.next = 2;
+            return _this.contract.priceStalePeriod();
+
+          case 2:
+            return _context9.abrupt("return", _context9.sent);
+
+          case 3:
+          case "end":
+            return _context9.stop();
+        }
+      }
+    }, _callee9, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _time {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.setPriceStalePeriod =
+  /*#__PURE__*/
+  function () {
+    var _ref10 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee10(_time, txParams) {
+      return regenerator_default.a.wrap(function _callee10$(_context10) {
+        while (1) {
+          switch (_context10.prev = _context10.next) {
+            case 0:
+              txParams = txParams || {};
+              _context10.next = 3;
+              return _this.contract.setPriceStalePeriod(_time, txParams);
+
+            case 3:
+              return _context10.abrupt("return", _context10.sent);
+
+            case 4:
+            case "end":
+              return _context10.stop();
+          }
+        }
+      }, _callee10, this);
+    }));
+
+    return function (_x10, _x11) {
+      return _ref10.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param nominAmount {BigNumber}
+   * @param guaranteedRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+
+
+  this.exchangeNominsForHavvensAtRate =
+  /*#__PURE__*/
+  function () {
+    var _ref11 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee11(nominAmount, guaranteedRate, txParams) {
+      return regenerator_default.a.wrap(function _callee11$(_context11) {
+        while (1) {
+          switch (_context11.prev = _context11.next) {
+            case 0:
+              txParams = txParams || {};
+              _context11.next = 3;
+              return _this.contract.exchangeNominsForHavvensAtRate(nominAmount, guaranteedRate, txParams);
+
+            case 3:
+              return _context11.abrupt("return", _context11.sent);
+
+            case 4:
+            case "end":
+              return _context11.stop();
+          }
+        }
+      }, _callee11, this);
+    }));
+
+    return function (_x12, _x13, _x14) {
+      return _ref11.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+
+
+  this.decimals =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee12() {
+    return regenerator_default.a.wrap(function _callee12$(_context12) {
+      while (1) {
+        switch (_context12.prev = _context12.next) {
+          case 0:
+            _context12.next = 2;
+            return _this.contract.decimals();
+
+          case 2:
+            return _context12.abrupt("return", _context12.sent);
+
+          case 3:
+          case "end":
+            return _context12.stop();
+        }
+      }
+    }, _callee12, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.terminateSelfDestruct =
+  /*#__PURE__*/
+  function () {
+    var _ref13 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee13(txParams) {
+      return regenerator_default.a.wrap(function _callee13$(_context13) {
+        while (1) {
+          switch (_context13.prev = _context13.next) {
+            case 0:
+              txParams = txParams || {};
+              _context13.next = 3;
+              return _this.contract.terminateSelfDestruct(txParams);
+
+            case 3:
+              return _context13.abrupt("return", _context13.sent);
+
+            case 4:
+            case "end":
+              return _context13.stop();
+          }
+        }
+      }, _callee13, this);
+    }));
+
+    return function (_x15) {
+      return _ref13.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+
+  this.pricesAreStale =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee14() {
+    return regenerator_default.a.wrap(function _callee14$(_context14) {
+      while (1) {
+        switch (_context14.prev = _context14.next) {
+          case 0:
+            _context14.next = 2;
+            return _this.contract.pricesAreStale();
+
+          case 2:
+            return _context14.abrupt("return", _context14.sent);
+
+          case 3:
+          case "end":
+            return _context14.stop();
+        }
+      }
+    }, _callee14, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param newEthPrice {BigNumber}
+   * @param newHavvenPrice {BigNumber}
+   * @param timeSent {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.updatePrices =
+  /*#__PURE__*/
+  function () {
+    var _ref15 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee15(newEthPrice, newHavvenPrice, timeSent, txParams) {
+      return regenerator_default.a.wrap(function _callee15$(_context15) {
+        while (1) {
+          switch (_context15.prev = _context15.next) {
+            case 0:
+              txParams = txParams || {};
+              _context15.next = 3;
+              return _this.contract.updatePrices(newEthPrice, newHavvenPrice, timeSent, txParams);
+
+            case 3:
+              return _context15.abrupt("return", _context15.sent);
+
+            case 4:
+            case "end":
+              return _context15.stop();
+          }
+        }
+      }, _callee15, this);
+    }));
+
+    return function (_x16, _x17, _x18, _x19) {
+      return _ref15.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+  <br>Payable (to enter ETH amount set txParams.value)
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+
+
+  this.exchangeEtherForHavvens =
+  /*#__PURE__*/
+  function () {
+    var _ref16 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee16(txParams) {
+      return regenerator_default.a.wrap(function _callee16$(_context16) {
+        while (1) {
+          switch (_context16.prev = _context16.next) {
+            case 0:
+              txParams = txParams || {};
+              _context16.next = 3;
+              return _this.contract.exchangeEtherForHavvens(txParams);
+
+            case 3:
+              return _context16.abrupt("return", _context16.sent);
+
+            case 4:
+            case "end":
+              return _context16.stop();
+          }
+        }
+      }, _callee16, this);
+    }));
+
+    return function (_x20) {
+      return _ref16.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+  <br>Payable (to enter ETH amount set txParams.value)
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+
+
+  this.exchangeEtherForNomins =
+  /*#__PURE__*/
+  function () {
+    var _ref17 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee17(txParams) {
+      return regenerator_default.a.wrap(function _callee17$(_context17) {
+        while (1) {
+          switch (_context17.prev = _context17.next) {
+            case 0:
+              txParams = txParams || {};
+              _context17.next = 3;
+              return _this.contract.exchangeEtherForNomins(txParams);
+
+            case 3:
+              return _context17.abrupt("return", _context17.sent);
+
+            case 4:
+            case "end":
+              return _context17.stop();
+          }
+        }
+      }, _callee17, this);
+    }));
+
+    return function (_x21) {
+      return _ref17.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param nominAmount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+
+
+  this.exchangeNominsForHavvens =
+  /*#__PURE__*/
+  function () {
+    var _ref18 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee18(nominAmount, txParams) {
+      return regenerator_default.a.wrap(function _callee18$(_context18) {
+        while (1) {
+          switch (_context18.prev = _context18.next) {
+            case 0:
+              txParams = txParams || {};
+              _context18.next = 3;
+              return _this.contract.exchangeNominsForHavvens(nominAmount, txParams);
+
+            case 3:
+              return _context18.abrupt("return", _context18.sent);
+
+            case 4:
+            case "end":
+              return _context18.stop();
+          }
+        }
+      }, _callee18, this);
+    }));
+
+    return function (_x22, _x23) {
+      return _ref18.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.lastPriceUpdateTime =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee19() {
+    return regenerator_default.a.wrap(function _callee19$(_context19) {
+      while (1) {
+        switch (_context19.prev = _context19.next) {
+          case 0:
+            _context19.next = 2;
+            return _this.contract.lastPriceUpdateTime();
+
+          case 2:
+            return _context19.abrupt("return", _context19.sent);
+
+          case 3:
+          case "end":
+            return _context19.stop();
+        }
+      }
+    }, _callee19, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.totalSellableDeposits =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee20() {
+    return regenerator_default.a.wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+            _context20.next = 2;
+            return _this.contract.totalSellableDeposits();
+
+          case 2:
+            return _context20.abrupt("return", _context20.sent);
+
+          case 3:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _havven {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.setHavven =
+  /*#__PURE__*/
+  function () {
+    var _ref21 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee21(_havven, txParams) {
+      return regenerator_default.a.wrap(function _callee21$(_context21) {
+        while (1) {
+          switch (_context21.prev = _context21.next) {
+            case 0:
+              txParams = txParams || {};
+              _context21.next = 3;
+              return _this.contract.setHavven(_havven, txParams);
+
+            case 3:
+              return _context21.abrupt("return", _context21.sent);
+
+            case 4:
+            case "end":
+              return _context21.stop();
+          }
+        }
+      }, _callee21, this);
+    }));
+
+    return function (_x24, _x25) {
+      return _ref21.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.nominatedOwner =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee22() {
+    return regenerator_default.a.wrap(function _callee22$(_context22) {
+      while (1) {
+        switch (_context22.prev = _context22.next) {
+          case 0:
+            _context22.next = 2;
+            return _this.contract.nominatedOwner();
+
+          case 2:
+            return _context22.abrupt("return", _context22.sent);
+
+          case 3:
+          case "end":
+            return _context22.stop();
+        }
+      }
+    }, _callee22, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
+   **/
+
+  this.havvensReceivedForNomins =
+  /*#__PURE__*/
+  function () {
+    var _ref23 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee23(amount) {
+      return regenerator_default.a.wrap(function _callee23$(_context23) {
+        while (1) {
+          switch (_context23.prev = _context23.next) {
+            case 0:
+              _context23.next = 2;
+              return _this.contract.havvensReceivedForNomins(amount);
+
+            case 2:
+              return _context23.abrupt("return", _context23.sent);
+
+            case 3:
+            case "end":
+              return _context23.stop();
+          }
+        }
+      }, _callee23, this);
+    }));
+
+    return function (_x26) {
+      return _ref23.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _nomin {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setNomin =
+  /*#__PURE__*/
+  function () {
+    var _ref24 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee24(_nomin, txParams) {
+      return regenerator_default.a.wrap(function _callee24$(_context24) {
+        while (1) {
+          switch (_context24.prev = _context24.next) {
+            case 0:
+              txParams = txParams || {};
+              _context24.next = 3;
+              return _this.contract.setNomin(_nomin, txParams);
+
+            case 3:
+              return _context24.abrupt("return", _context24.sent);
+
+            case 4:
+            case "end":
+              return _context24.stop();
+          }
+        }
+      }, _callee24, this);
+    }));
+
+    return function (_x27, _x28) {
+      return _ref24.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+
+  this.paused =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee25() {
+    return regenerator_default.a.wrap(function _callee25$(_context25) {
+      while (1) {
+        switch (_context25.prev = _context25.next) {
+          case 0:
+            _context25.next = 2;
+            return _this.contract.paused();
+
+          case 2:
+            return _context25.abrupt("return", _context25.sent);
+
+          case 3:
+          case "end":
+            return _context25.stop();
+        }
+      }
+    }, _callee25, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+  <br>Payable (to enter ETH amount set txParams.value)
+   * @param guaranteedRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+
+  this.exchangeEtherForNominsAtRate =
+  /*#__PURE__*/
+  function () {
+    var _ref26 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee26(guaranteedRate, txParams) {
+      return regenerator_default.a.wrap(function _callee26$(_context26) {
+        while (1) {
+          switch (_context26.prev = _context26.next) {
+            case 0:
+              txParams = txParams || {};
+              _context26.next = 3;
+              return _this.contract.exchangeEtherForNominsAtRate(guaranteedRate, txParams);
+
+            case 3:
+              return _context26.abrupt("return", _context26.sent);
+
+            case 4:
+            case "end":
+              return _context26.stop();
+          }
+        }
+      }, _callee26, this);
+    }));
+
+    return function (_x29, _x30) {
+      return _ref26.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _fundsWallet {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setFundsWallet =
+  /*#__PURE__*/
+  function () {
+    var _ref27 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee27(_fundsWallet, txParams) {
+      return regenerator_default.a.wrap(function _callee27$(_context27) {
+        while (1) {
+          switch (_context27.prev = _context27.next) {
+            case 0:
+              txParams = txParams || {};
+              _context27.next = 3;
+              return _this.contract.setFundsWallet(_fundsWallet, txParams);
+
+            case 3:
+              return _context27.abrupt("return", _context27.sent);
+
+            case 4:
+            case "end":
+              return _context27.stop();
+          }
+        }
+      }, _callee27, this);
+    }));
+
+    return function (_x31, _x32) {
+      return _ref27.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.depositNomins =
+  /*#__PURE__*/
+  function () {
+    var _ref28 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee28(amount, txParams) {
+      return regenerator_default.a.wrap(function _callee28$(_context28) {
+        while (1) {
+          switch (_context28.prev = _context28.next) {
+            case 0:
+              txParams = txParams || {};
+              _context28.next = 3;
+              return _this.contract.depositNomins(amount, txParams);
+
+            case 3:
+              return _context28.abrupt("return", _context28.sent);
+
+            case 4:
+            case "end":
+              return _context28.stop();
+          }
+        }
+      }, _callee28, this);
+    }));
+
+    return function (_x33, _x34) {
+      return _ref28.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.depositStartIndex =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee29() {
+    return regenerator_default.a.wrap(function _callee29$(_context29) {
+      while (1) {
+        switch (_context29.prev = _context29.next) {
+          case 0:
+            _context29.next = 2;
+            return _this.contract.depositStartIndex();
+
+          case 2:
+            return _context29.abrupt("return", _context29.sent);
+
+          case 3:
+          case "end":
+            return _context29.stop();
+        }
+      }
+    }, _callee29, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.withdrawMyDepositedNomins =
+  /*#__PURE__*/
+  function () {
+    var _ref30 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee30(txParams) {
+      return regenerator_default.a.wrap(function _callee30$(_context30) {
+        while (1) {
+          switch (_context30.prev = _context30.next) {
+            case 0:
+              txParams = txParams || {};
+              _context30.next = 3;
+              return _this.contract.withdrawMyDepositedNomins(txParams);
+
+            case 3:
+              return _context30.abrupt("return", _context30.sent);
+
+            case 4:
+            case "end":
+              return _context30.stop();
+          }
+        }
+      }, _callee30, this);
+    }));
+
+    return function (_x35) {
+      return _ref30.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.acceptOwnership =
+  /*#__PURE__*/
+  function () {
+    var _ref31 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee31(txParams) {
+      return regenerator_default.a.wrap(function _callee31$(_context31) {
+        while (1) {
+          switch (_context31.prev = _context31.next) {
+            case 0:
+              txParams = txParams || {};
+              _context31.next = 3;
+              return _this.contract.acceptOwnership(txParams);
+
+            case 3:
+              return _context31.abrupt("return", _context31.sent);
+
+            case 4:
+            case "end":
+              return _context31.stop();
+          }
+        }
+      }, _callee31, this);
+    }));
+
+    return function (_x36) {
+      return _ref31.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _oracle {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setOracle =
+  /*#__PURE__*/
+  function () {
+    var _ref32 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee32(_oracle, txParams) {
+      return regenerator_default.a.wrap(function _callee32$(_context32) {
+        while (1) {
+          switch (_context32.prev = _context32.next) {
+            case 0:
+              txParams = txParams || {};
+              _context32.next = 3;
+              return _this.contract.setOracle(_oracle, txParams);
+
+            case 3:
+              return _context32.abrupt("return", _context32.sent);
+
+            case 4:
+            case "end":
+              return _context32.stop();
+          }
+        }
+      }, _callee32, this);
+    }));
+
+    return function (_x37, _x38) {
+      return _ref32.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.oracle =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee33() {
+    return regenerator_default.a.wrap(function _callee33$(_context33) {
+      while (1) {
+        switch (_context33.prev = _context33.next) {
+          case 0:
+            _context33.next = 2;
+            return _this.contract.oracle();
+
+          case 2:
+            return _context33.abrupt("return", _context33.sent);
+
+          case 3:
+          case "end":
+            return _context33.stop();
+        }
+      }
+    }, _callee33, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.owner =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee34() {
+    return regenerator_default.a.wrap(function _callee34$(_context34) {
+      while (1) {
+        switch (_context34.prev = _context34.next) {
+          case 0:
+            _context34.next = 2;
+            return _this.contract.owner();
+
+          case 2:
+            return _context34.abrupt("return", _context34.sent);
+
+          case 3:
+          case "end":
+            return _context34.stop();
+        }
+      }
+    }, _callee34, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.lastPauseTime =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee35() {
+    return regenerator_default.a.wrap(function _callee35$(_context35) {
+      while (1) {
+        switch (_context35.prev = _context35.next) {
+          case 0:
+            _context35.next = 2;
+            return _this.contract.lastPauseTime();
+
+          case 2:
+            return _context35.abrupt("return", _context35.sent);
+
+          case 3:
+          case "end":
+            return _context35.stop();
+        }
+      }
+    }, _callee35, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.havven =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee36() {
+    return regenerator_default.a.wrap(function _callee36$(_context36) {
+      while (1) {
+        switch (_context36.prev = _context36.next) {
+          case 0:
+            _context36.next = 2;
+            return _this.contract.havven();
+
+          case 2:
+            return _context36.abrupt("return", _context36.sent);
+
+          case 3:
+          case "end":
+            return _context36.stop();
+        }
+      }
+    }, _callee36, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.selfDestruct =
+  /*#__PURE__*/
+  function () {
+    var _ref37 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee37(txParams) {
+      return regenerator_default.a.wrap(function _callee37$(_context37) {
+        while (1) {
+          switch (_context37.prev = _context37.next) {
+            case 0:
+              txParams = txParams || {};
+              _context37.next = 3;
+              return _this.contract.selfDestruct(txParams);
+
+            case 3:
+              return _context37.abrupt("return", _context37.sent);
+
+            case 4:
+            case "end":
+              return _context37.stop();
+          }
+        }
+      }, _callee37, this);
+    }));
+
+    return function (_x39) {
+      return _ref37.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.UNIT =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee38() {
+    return regenerator_default.a.wrap(function _callee38$(_context38) {
+      while (1) {
+        switch (_context38.prev = _context38.next) {
+          case 0:
+            _context38.next = 2;
+            return _this.contract.UNIT();
+
+          case 2:
+            return _context38.abrupt("return", _context38.sent);
+
+          case 3:
+          case "end":
+            return _context38.stop();
+        }
+      }
+    }, _callee38, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.SELFDESTRUCT_DELAY =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee39() {
+    return regenerator_default.a.wrap(function _callee39$(_context39) {
+      while (1) {
+        switch (_context39.prev = _context39.next) {
+          case 0:
+            _context39.next = 2;
+            return _this.contract.SELFDESTRUCT_DELAY();
+
+          case 2:
+            return _context39.abrupt("return", _context39.sent);
+
+          case 3:
+          case "end":
+            return _context39.stop();
+        }
+      }
+    }, _callee39, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
+   **/
+
+  this.nominsReceivedForEther =
+  /*#__PURE__*/
+  function () {
+    var _ref40 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee40(amount) {
+      return regenerator_default.a.wrap(function _callee40$(_context40) {
+        while (1) {
+          switch (_context40.prev = _context40.next) {
+            case 0:
+              _context40.next = 2;
+              return _this.contract.nominsReceivedForEther(amount);
+
+            case 2:
+              return _context40.abrupt("return", _context40.sent);
+
+            case 3:
+            case "end":
+              return _context40.stop();
+          }
+        }
+      }, _callee40, this);
+    }));
+
+    return function (_x40) {
+      return _ref40.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setMinimumDepositAmount =
+  /*#__PURE__*/
+  function () {
+    var _ref41 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee41(_amount, txParams) {
+      return regenerator_default.a.wrap(function _callee41$(_context41) {
+        while (1) {
+          switch (_context41.prev = _context41.next) {
+            case 0:
+              txParams = txParams || {};
+              _context41.next = 3;
+              return _this.contract.setMinimumDepositAmount(_amount, txParams);
+
+            case 3:
+              return _context41.abrupt("return", _context41.sent);
+
+            case 4:
+            case "end":
+              return _context41.stop();
+          }
+        }
+      }, _callee41, this);
+    }));
+
+    return function (_x41, _x42) {
+      return _ref41.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns Object
+   **/
+
+
+  this.deposits =
+  /*#__PURE__*/
+  function () {
+    var _ref42 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee42(uint256) {
+      return regenerator_default.a.wrap(function _callee42$(_context42) {
+        while (1) {
+          switch (_context42.prev = _context42.next) {
+            case 0:
+              _context42.next = 2;
+              return _this.contract.deposits(uint256);
+
+            case 2:
+              return _context42.abrupt("return", _context42.sent);
+
+            case 3:
+            case "end":
+              return _context42.stop();
+          }
+        }
+      }, _callee42, this);
+    }));
+
+    return function (_x43) {
+      return _ref42.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+
+  this.selfDestructInitiated =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee43() {
+    return regenerator_default.a.wrap(function _callee43$(_context43) {
+      while (1) {
+        switch (_context43.prev = _context43.next) {
+          case 0:
+            _context43.next = 2;
+            return _this.contract.selfDestructInitiated();
+
+          case 2:
+            return _context43.abrupt("return", _context43.sent);
+
+          case 3:
+          case "end":
+            return _context43.stop();
+        }
+      }
+    }, _callee43, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.usdToEthPrice =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee44() {
+    return regenerator_default.a.wrap(function _callee44$(_context44) {
+      while (1) {
+        switch (_context44.prev = _context44.next) {
+          case 0:
+            _context44.next = 2;
+            return _this.contract.usdToEthPrice();
+
+          case 2:
+            return _context44.abrupt("return", _context44.sent);
+
+          case 3:
+          case "end":
+            return _context44.stop();
+        }
+      }
+    }, _callee44, this);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+  <br>Payable (to enter ETH amount set txParams.value)
+   * @param guaranteedEtherRate {BigNumber}
+   * @param guaranteedHavvenRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+
+  this.exchangeEtherForHavvensAtRate =
+  /*#__PURE__*/
+  function () {
+    var _ref45 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee45(guaranteedEtherRate, guaranteedHavvenRate, txParams) {
+      return regenerator_default.a.wrap(function _callee45$(_context45) {
+        while (1) {
+          switch (_context45.prev = _context45.next) {
+            case 0:
+              txParams = txParams || {};
+              _context45.next = 3;
+              return _this.contract.exchangeEtherForHavvensAtRate(guaranteedEtherRate, guaranteedHavvenRate, txParams);
+
+            case 3:
+              return _context45.abrupt("return", _context45.sent);
+
+            case 4:
+            case "end":
+              return _context45.stop();
+          }
+        }
+      }, _callee45, this);
+    }));
+
+    return function (_x44, _x45, _x46) {
+      return _ref45.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.initiateSelfDestruct =
+  /*#__PURE__*/
+  function () {
+    var _ref46 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee46(txParams) {
+      return regenerator_default.a.wrap(function _callee46$(_context46) {
+        while (1) {
+          switch (_context46.prev = _context46.next) {
+            case 0:
+              txParams = txParams || {};
+              _context46.next = 3;
+              return _this.contract.initiateSelfDestruct(txParams);
+
+            case 3:
+              return _context46.abrupt("return", _context46.sent);
+
+            case 4:
+            case "end":
+              return _context46.stop();
+          }
+        }
+      }, _callee46, this);
+    }));
+
+    return function (_x47) {
+      return _ref46.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param data {bytes}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.tokenFallback =
+  /*#__PURE__*/
+  function () {
+    var _ref47 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee47(from, amount, data, txParams) {
+      return regenerator_default.a.wrap(function _callee47$(_context47) {
+        while (1) {
+          switch (_context47.prev = _context47.next) {
+            case 0:
+              txParams = txParams || {};
+              _context47.next = 3;
+              return _this.contract.tokenFallback(from, amount, data, txParams);
+
+            case 3:
+              return _context47.abrupt("return", _context47.sent);
+
+            case 4:
+            case "end":
+              return _context47.stop();
+          }
+        }
+      }, _callee47, this);
+    }));
+
+    return function (_x48, _x49, _x50, _x51) {
+      return _ref47.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.usdToHavPrice =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee48() {
+    return regenerator_default.a.wrap(function _callee48$(_context48) {
+      while (1) {
+        switch (_context48.prev = _context48.next) {
+          case 0:
+            _context48.next = 2;
+            return _this.contract.usdToHavPrice();
+
+          case 2:
+            return _context48.abrupt("return", _context48.sent);
+
+          case 3:
+          case "end":
+            return _context48.stop();
+        }
+      }
+    }, _callee48, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.selfDestructBeneficiary =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee49() {
+    return regenerator_default.a.wrap(function _callee49$(_context49) {
+      while (1) {
+        switch (_context49.prev = _context49.next) {
+          case 0:
+            _context49.next = 2;
+            return _this.contract.selfDestructBeneficiary();
+
+          case 2:
+            return _context49.abrupt("return", _context49.sent);
+
+          case 3:
+          case "end":
+            return _context49.stop();
+        }
+      }
+    }, _callee49, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+  this.smallDeposits =
+  /*#__PURE__*/
+  function () {
+    var _ref50 = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee50(address) {
+      return regenerator_default.a.wrap(function _callee50$(_context50) {
+        while (1) {
+          switch (_context50.prev = _context50.next) {
+            case 0:
+              _context50.next = 2;
+              return _this.contract.smallDeposits(address);
+
+            case 2:
+              return _context50.abrupt("return", _context50.sent);
+
+            case 3:
+            case "end":
+              return _context50.stop();
+          }
+        }
+      }, _callee50, this);
+    }));
+
+    return function (_x52) {
+      return _ref50.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.nomin =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee51() {
+    return regenerator_default.a.wrap(function _callee51$(_context51) {
+      while (1) {
+        switch (_context51.prev = _context51.next) {
+          case 0:
+            _context51.next = 2;
+            return _this.contract.nomin();
+
+          case 2:
+            return _context51.abrupt("return", _context51.sent);
+
+          case 3:
+          case "end":
+            return _context51.stop();
+        }
+      }
+    }, _callee51, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.ORACLE_FUTURE_LIMIT =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee52() {
+    return regenerator_default.a.wrap(function _callee52$(_context52) {
+      while (1) {
+        switch (_context52.prev = _context52.next) {
+          case 0:
+            _context52.next = 2;
+            return _this.contract.ORACLE_FUTURE_LIMIT();
+
+          case 2:
+            return _context52.abrupt("return", _context52.sent);
+
+          case 3:
+          case "end":
+            return _context52.stop();
+        }
+      }
+    }, _callee52, this);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.depositEndIndex =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee53() {
+    return regenerator_default.a.wrap(function _callee53$(_context53) {
+      while (1) {
+        switch (_context53.prev = _context53.next) {
+          case 0:
+            _context53.next = 2;
+            return _this.contract.depositEndIndex();
+
+          case 2:
+            return _context53.abrupt("return", _context53.sent);
+
+          case 3:
+          case "end":
+            return _context53.stop();
+        }
+      }
+    }, _callee53, this);
+  }));
+}
+
+/* harmony default export */ var contracts_Depot = (Depot_Depot);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(12);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
@@ -32371,6 +34961,7 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, chai
 
 
 
+
 var index_node_HavvenJs =
 /**
  * Creates instances of Havven contracts based on ContractSettings.
@@ -32415,6 +35006,9 @@ function HavvenJs(contractSettings) {
   }, {
     name: 'Escrow',
     Contract: contracts_Escrow
+  }, {
+    name: 'Depot',
+    Contract: contracts_Depot
   }].filter(function (_ref) {
     var name = _ref.name;
     return (// ensure we only instantiate contracts relevant for the provider, by filtering out

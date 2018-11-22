@@ -13,6 +13,7 @@ const contractAbiMap = {
   Nomin: 'Nomin',
   Havven: 'Havven',
   IssuanceController: 'IssuanceController',
+  Depot: 'Depot',
   StablePayments: 'Nomin',
   Mintr: 'Havven',
   Escrow: 'Escrow',

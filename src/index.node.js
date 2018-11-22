@@ -6,6 +6,7 @@ import Vestr from './contracts/Vestr';
 import EscrowChecker from './contracts/EscrowChecker';
 import StablePayments from './contracts/StablePayments';
 import Escrow from './contracts/Escrow';
+import Depot from './contracts/Depot';
 import Converter from './converter';
 import util from './util/index';
 import PrivateKey from '../lib/signers/privateKeySigner';
@@ -36,6 +37,7 @@ export class HavvenJs {
       { name: 'EscrowChecker', Contract: EscrowChecker },
       { name: 'StablePayments', Contract: StablePayments },
       { name: 'Escrow', Contract: Escrow },
+      { name: 'Depot', Contract: Depot },
     ]
       .filter(
         ({ name }) =>

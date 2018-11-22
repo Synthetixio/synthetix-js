@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>IssuanceController - Documentation</title>
+    <title>Depot - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,7 +31,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">IssuanceController</h1>
+    <h1 class="page-title">Depot</h1>
     
 
     
@@ -44,7 +44,7 @@
 <header>
     
         <h2>
-        IssuanceController
+        Depot
         </h2>
         
     
@@ -58,7 +58,7 @@
 
     
 
-    <h4 class="name" id="IssuanceController"><span class="type-signature"></span>new IssuanceController<span class="signature">(contractSettings)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Depot"><span class="type-signature"></span>new Depot<span class="signature">(contractSettings)</span><span class="type-signature"></span></h4>
 
     
 
@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line9">line 9</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -218,7 +218,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line287">line 287</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line322">line 322</a>
     </li></ul></dd>
     
 
@@ -351,7 +351,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line128">line 128</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line134">line 134</a>
     </li></ul></dd>
     
 
@@ -433,6 +433,493 @@
 
     
 
+    <h4 class="name" id="depositEndIndex"><span class="type-signature"></span>depositEndIndex<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line530">line 530</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="depositNomins"><span class="type-signature"></span>depositNomins<span class="signature">(amount, txParams)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line294">line 294</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="deposits"><span class="type-signature"></span>deposits<span class="signature">(uint256)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line421">line 421</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uint256</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Object
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="depositStartIndex"><span class="type-signature"></span>depositStartIndex<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line303">line 303</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
     <h4 class="name" id="exchangeEtherForHavvens"><span class="type-signature"></span>exchangeEtherForHavvens<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
 
     
@@ -445,7 +932,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line171">line 171</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -589,7 +1076,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line396">line 396</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line449">line 449</a>
     </li></ul></dd>
     
 
@@ -779,7 +1266,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line183">line 183</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line186">line 186</a>
     </li></ul></dd>
     
 
@@ -819,8 +1306,7 @@
 
 
 <div class="description">
-    Exchange ETH to nUSD.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
 </div>
 
@@ -924,7 +1410,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line265">line 265</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line272">line 272</a>
     </li></ul></dd>
     
 
@@ -1091,7 +1577,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line195">line 195</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line197">line 197</a>
     </li></ul></dd>
     
 
@@ -1131,8 +1617,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Exchange nUSD for Havvens.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -1258,7 +1743,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line115">line 115</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
@@ -1447,7 +1932,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line84">line 84</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -1541,7 +2026,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line332">line 332</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line366">line 366</a>
     </li></ul></dd>
     
 
@@ -1635,7 +2120,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line65">line 65</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -1778,7 +2263,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line234">line 234</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line242">line 242</a>
     </li></ul></dd>
     
 
@@ -1818,8 +2303,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Calculate how many havvens you will receive if you transfer an amount of nomins.<br>
-Call (no gas consumed, doesn't require signer)
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1922,7 +2406,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line414">line 414</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line467">line 467</a>
     </li></ul></dd>
     
 
@@ -2055,7 +2539,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line44">line 44</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -2149,7 +2633,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line324">line 324</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line358">line 358</a>
     </li></ul></dd>
     
 
@@ -2243,7 +2727,101 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line204">line 204</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line206">line 206</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="minimumDepositAmount"><span class="type-signature"></span>minimumDepositAmount<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -2337,7 +2915,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line439">line 439</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line514">line 514</a>
     </li></ul></dd>
     
 
@@ -2431,7 +3009,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line224">line 224</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line233">line 233</a>
     </li></ul></dd>
     
 
@@ -2525,7 +3103,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line24">line 24</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -2681,7 +3259,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line368">line 368</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line401">line 401</a>
     </li></ul></dd>
     
 
@@ -2721,8 +3299,7 @@ Call (no gas consumed, doesn't require signer)
 
 
 <div class="description">
-    Calculate how many nomins you will receive if you transfer an amount of ether.<br>
-Call (no gas consumed, doesn't require signer)
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2825,7 +3402,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line308">line 308</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line342">line 342</a>
     </li></ul></dd>
     
 
@@ -2907,6 +3484,100 @@ Call (no gas consumed, doesn't require signer)
 
     
 
+    <h4 class="name" id="ORACLE_FUTURE_LIMIT"><span class="type-signature"></span>ORACLE_FUTURE_LIMIT<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line522">line 522</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
     <h4 class="name" id="owner"><span class="type-signature"></span>owner<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
@@ -2919,7 +3590,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line316">line 316</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line350">line 350</a>
     </li></ul></dd>
     
 
@@ -3013,7 +3684,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line254">line 254</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -3107,7 +3778,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line147">line 147</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line152">line 152</a>
     </li></ul></dd>
     
 
@@ -3147,8 +3818,7 @@ Call (no gas consumed, doesn't require signer)
 
 
 <div class="description">
-    Check if the prices haven't been updated for longer than the stale period.<br>
-Call (no gas consumed, doesn't require signer)
+    Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -3202,7 +3872,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line92">line 92</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line99">line 99</a>
     </li></ul></dd>
     
 
@@ -3296,7 +3966,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line341">line 341</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line375">line 375</a>
     </li></ul></dd>
     
 
@@ -3429,7 +4099,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line358">line 358</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line392">line 392</a>
     </li></ul></dd>
     
 
@@ -3523,7 +4193,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line431">line 431</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line497">line 497</a>
     </li></ul></dd>
     
 
@@ -3617,7 +4287,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line376">line 376</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line429">line 429</a>
     </li></ul></dd>
     
 
@@ -3711,7 +4381,7 @@ Call (no gas consumed, doesn't require signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line277">line 277</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line283">line 283</a>
     </li></ul></dd>
     
 
@@ -3751,8 +4421,7 @@ Call (no gas consumed, doesn't require signer)
 
 
 <div class="description">
-    Set the funds wallet where ETH raised is held.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3868,7 +4537,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line215">line 215</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line224">line 224</a>
     </li></ul></dd>
     
 
@@ -3908,8 +4577,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Set the Havven contract that the issuance controller uses to issue Havvens.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4013,7 +4681,7 @@ Transaction (consumes gas, requires signer)
 
     
 
-    <h4 class="name" id="setNomin"><span class="type-signature"></span>setNomin<span class="signature">(_nomin, txParams)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setMinimumDepositAmount"><span class="type-signature"></span>setMinimumDepositAmount<span class="signature">(_amount, txParams)</span><span class="type-signature"></span></h4>
 
     
 
@@ -4025,7 +4693,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line245">line 245</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line411">line 411</a>
     </li></ul></dd>
     
 
@@ -4065,8 +4733,163 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Set the Nomin contract that the issuance controller uses to issue Nomins.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>_amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setNomin"><span class="type-signature"></span>setNomin<span class="signature">(_nomin, txParams)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line252">line 252</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4182,7 +5005,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line299">line 299</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line333">line 333</a>
     </li></ul></dd>
     
 
@@ -4222,8 +5045,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Set the Oracle that pushes the havven price to this contract.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4339,7 +5161,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line35">line 35</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -4495,7 +5317,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line103">line 103</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -4535,8 +5357,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Set the stale period on the updated price variables.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4652,7 +5473,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line75">line 75</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -4796,6 +5617,149 @@ Transaction (consumes gas, requires signer)
 
     
 
+    <h4 class="name" id="smallDeposits"><span class="type-signature"></span>smallDeposits<span class="signature">(address)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line506">line 506</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
     <h4 class="name" id="terminateSelfDestruct"><span class="type-signature"></span>terminateSelfDestruct<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
 
     
@@ -4808,7 +5772,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line137">line 137</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -4929,6 +5893,312 @@ Transaction (consumes gas, requires signer)
 
     
 
+    <h4 class="name" id="tokenFallback"><span class="type-signature"></span>tokenFallback<span class="signature">(from, amount, data, txParams)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line480">line 480</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Transaction (consumes gas, requires signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>from</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bytes</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TxParams</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    boolean
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="totalSellableDeposits"><span class="type-signature"></span>totalSellableDeposits<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line214">line 214</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    BigNumber
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
     <h4 class="name" id="UNIT"><span class="type-signature"></span>UNIT<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
@@ -4941,7 +6211,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line350">line 350</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line384">line 384</a>
     </li></ul></dd>
     
 
@@ -5035,7 +6305,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line160">line 160</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line164">line 164</a>
     </li></ul></dd>
     
 
@@ -5075,8 +6345,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Access point for the oracle to update the prices of havvens / eth.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -5238,7 +6507,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line384">line 384</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line437">line 437</a>
     </li></ul></dd>
     
 
@@ -5332,7 +6601,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line423">line 423</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line489">line 489</a>
     </li></ul></dd>
     
 
@@ -5426,7 +6695,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line55">line 55</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line62">line 62</a>
     </li></ul></dd>
     
 
@@ -5466,8 +6735,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Withdraw havvens: Allows the owner to withdraw havvens from this contract if needed.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -5571,7 +6839,7 @@ Transaction (consumes gas, requires signer)
 
     
 
-    <h4 class="name" id="withdrawNomins"><span class="type-signature"></span>withdrawNomins<span class="signature">(amount, txParams)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdrawMyDepositedNomins"><span class="type-signature"></span>withdrawMyDepositedNomins<span class="signature">(txParams)</span><span class="type-signature"></span></h4>
 
     
 
@@ -5583,7 +6851,7 @@ Transaction (consumes gas, requires signer)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_IssuanceController.js.html">contracts/IssuanceController.js</a>, <a href="contracts_IssuanceController.js.html#line450">line 450</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line312">line 312</a>
     </li></ul></dd>
     
 
@@ -5623,8 +6891,7 @@ Transaction (consumes gas, requires signer)
 
 
 <div class="description">
-    Withdraw nomins: Allows the owner to withdraw nomins from this contract if needed.<br>
-Transaction (consumes gas, requires signer)
+    Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -5658,29 +6925,6 @@ Transaction (consumes gas, requires signer)
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>amount</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">BigNumber</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
     
 
         <tr>

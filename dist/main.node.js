@@ -24015,7 +24015,7 @@ var KOVAN_ADDRESSES = {
   StablePayments: '0x6ccd6e2426d63f10c957d245c130ca981d9e64e4',
   // same as NominProxy
   NominProxy: '0x6ccd6e2426d63f10c957d245c130ca981d9e64e4',
-  Nomin: '0xaf28cec7854e9a070f4cd31f18ba005f874d9f50',
+  Nomin: '0x820c43db938C9b40E0bf9D2Bd96bc2D15B726306',
   NominState: '0x0b4b3415202209e15451d0fe011dad568b63fd77',
   Escrow: '0xa9b437fb11e8634ae51e8f7ab8b71798f55d813a',
   Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',

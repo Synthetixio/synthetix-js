@@ -1,6 +1,6 @@
 import { Interface, utils } from 'ethers';
 import abis from '../lib/abis/index';
-import IssuanceController from './contracts/IssuanceController';
+import Depot from './contracts/Depot';
 import Nomin from './contracts/Nomin';
 import Havven from './contracts/Havven';
 
@@ -10,10 +10,10 @@ const DEFAULT_GAS_LIMIT = 200000;
 class Converter {
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
-    this.issuanceController = new IssuanceController(contractSettings);
+    this.Depot = new Depot(contractSettings);
     this.nomin = new Nomin(contractSettings);
     this.havven = new Havven(contractSettings);
-    this.issuanceControllerInterface = new Interface(abis.IssuanceController);
+    this.DepotInterface = new Interface(abis.Depot);
     this.nominInterface = new Interface(abis.Nomin);
 
     this.convertEtherToNomins = this.convertEtherToNomins.bind(this);
@@ -55,7 +55,7 @@ class Converter {
    * @returns {Number.data|*}
    */
   encodeEthExchangeFunctionCall() {
-    const { data } = this.issuanceControllerInterface.functions.exchangeEtherForNomins();
+    const { data } = this.DepotInterface.functions.exchangeEtherForNomins();
 
     return data;
   }
@@ -80,7 +80,7 @@ class Converter {
    * @returns {Number.data|*}
    */
   encodeExchangeNominsForHavvensFunctionCall(amount) {
-    const { data } = this.issuanceControllerInterface.functions.exchangeNominsForHavvens(
+    const { data } = this.DepotInterface.functions.exchangeNominsForHavvens(
       utils.parseEther(amount)
     );
 
@@ -224,7 +224,7 @@ class Converter {
    * @returns {Promise<void>}
    */
   async getEtherToNominsExchangeRate() {
-    return await this.issuanceController.usdToEthPrice();
+    return await this.Depot.usdToEthPrice();
   }
 
   /**
@@ -233,7 +233,7 @@ class Converter {
    * @returns {Promise<void>}
    */
   async getNominsReceivedForEther(amount) {
-    return await this.issuanceController.nominsReceivedForEther(amount);
+    return await this.Depot.nominsReceivedForEther(amount);
   }
 
   /**
@@ -242,7 +242,7 @@ class Converter {
    * @returns {Promise<void>}
    */
   async getHavvensReceivedForNomins(amount) {
-    return await this.issuanceController.havvensReceivedForNomins(amount);
+    return await this.Depot.havvensReceivedForNomins(amount);
   }
 
   /**
@@ -505,7 +505,7 @@ class Converter {
   }
 
   getToAddress() {
-    return this.contractSettings.addresssList.IssuanceController;
+    return this.contractSettings.addresssList.Depot;
   }
 
   setAccount(account) {

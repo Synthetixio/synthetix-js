@@ -16,21 +16,19 @@ function EscrowChecker(contractSettings) {
   );
 
   /**
-   * All the vesting dates in an account's schedule.
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * @param account {String<EthAddress>}
+   * @returns uint256[16]
    **/
   this.checkAccountSchedule = async account => {
     return await this.contract.checkAccountSchedule(account);
   };
 
   /**
-   * The Havven escrow contract address
-   * Transaction (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-
-  this.havvenEscrow = async () => {
+  this.havven_escrow = async () => {
     return await this.contract.havven_escrow();
   };
 }

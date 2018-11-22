@@ -1,1097 +1,1097 @@
 module.exports = [
   {
-    "constant": true,
-    "inputs": [],
-    "name": "minimumDepositAmount",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'minimumDepositAmount',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_owner",
-        "type": "address"
-      }
+        name: '_owner',
+        type: 'address',
+      },
     ],
-    "name": "nominateNewOwner",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'nominateNewOwner',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_paused",
-        "type": "bool"
-      }
+        name: '_paused',
+        type: 'bool',
+      },
     ],
-    "name": "setPaused",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setPaused',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "initiationTime",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'initiationTime',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_beneficiary",
-        "type": "address"
-      }
+        name: '_beneficiary',
+        type: 'address',
+      },
     ],
-    "name": "setSelfDestructBeneficiary",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setSelfDestructBeneficiary',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "fundsWallet",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'fundsWallet',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "priceStalePeriod",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'priceStalePeriod',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "decimals",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'decimals',
+    outputs: [
       {
-        "name": "",
-        "type": "uint8"
-      }
+        name: '',
+        type: 'uint8',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "terminateSelfDestruct",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    constant: false,
+    inputs: [],
+    name: 'terminateSelfDestruct',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "lastPriceUpdateTime",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'lastPriceUpdateTime',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "totalSellableDeposits",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'totalSellableDeposits',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "nominatedOwner",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'nominatedOwner',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "paused",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'paused',
+    outputs: [
       {
-        "name": "",
-        "type": "bool"
-      }
+        name: '',
+        type: 'bool',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "depositStartIndex",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'depositStartIndex',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "acceptOwnership",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    constant: false,
+    inputs: [],
+    name: 'acceptOwnership',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "oracle",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'oracle',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'owner',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "lastPauseTime",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'lastPauseTime',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "havven",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'havven',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "selfDestruct",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    constant: false,
+    inputs: [],
+    name: 'selfDestruct',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "UNIT",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'UNIT',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "SELFDESTRUCT_DELAY",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'SELFDESTRUCT_DELAY',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [
+    constant: true,
+    inputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "name": "deposits",
-    "outputs": [
+    name: 'deposits',
+    outputs: [
       {
-        "name": "user",
-        "type": "address"
+        name: 'user',
+        type: 'address',
       },
       {
-        "name": "amount",
-        "type": "uint256"
-      }
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "selfDestructInitiated",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'selfDestructInitiated',
+    outputs: [
       {
-        "name": "",
-        "type": "bool"
-      }
+        name: '',
+        type: 'bool',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "usdToEthPrice",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'usdToEthPrice',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "initiateSelfDestruct",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    constant: false,
+    inputs: [],
+    name: 'initiateSelfDestruct',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "usdToHavPrice",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'usdToHavPrice',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "selfDestructBeneficiary",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'selfDestructBeneficiary',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [
+    constant: true,
+    inputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "name": "smallDeposits",
-    "outputs": [
+    name: 'smallDeposits',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "nomin",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'nomin',
+    outputs: [
       {
-        "name": "",
-        "type": "address"
-      }
+        name: '',
+        type: 'address',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "ORACLE_FUTURE_LIMIT",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'ORACLE_FUTURE_LIMIT',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "depositEndIndex",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'depositEndIndex',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "name": "_owner",
-        "type": "address"
+        name: '_owner',
+        type: 'address',
       },
       {
-        "name": "_fundsWallet",
-        "type": "address"
+        name: '_fundsWallet',
+        type: 'address',
       },
       {
-        "name": "_havven",
-        "type": "address"
+        name: '_havven',
+        type: 'address',
       },
       {
-        "name": "_nomin",
-        "type": "address"
+        name: '_nomin',
+        type: 'address',
       },
       {
-        "name": "_oracle",
-        "type": "address"
+        name: '_oracle',
+        type: 'address',
       },
       {
-        "name": "_usdToEthPrice",
-        "type": "uint256"
+        name: '_usdToEthPrice',
+        type: 'uint256',
       },
       {
-        "name": "_usdToHavPrice",
-        "type": "uint256"
-      }
+        name: '_usdToHavPrice',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'constructor',
   },
   {
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "fallback"
+    payable: true,
+    stateMutability: 'payable',
+    type: 'fallback',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newFundsWallet",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newFundsWallet',
+        type: 'address',
+      },
     ],
-    "name": "FundsWalletUpdated",
-    "type": "event"
+    name: 'FundsWalletUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newOracle",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newOracle',
+        type: 'address',
+      },
     ],
-    "name": "OracleUpdated",
-    "type": "event"
+    name: 'OracleUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newNominContract",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newNominContract',
+        type: 'address',
+      },
     ],
-    "name": "NominUpdated",
-    "type": "event"
+    name: 'NominUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newHavvenContract",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newHavvenContract',
+        type: 'address',
+      },
     ],
-    "name": "HavvenUpdated",
-    "type": "event"
+    name: 'HavvenUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "priceStalePeriod",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'priceStalePeriod',
+        type: 'uint256',
+      },
     ],
-    "name": "PriceStalePeriodUpdated",
-    "type": "event"
+    name: 'PriceStalePeriodUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newEthPrice",
-        "type": "uint256"
+        indexed: false,
+        name: 'newEthPrice',
+        type: 'uint256',
       },
       {
-        "indexed": false,
-        "name": "newHavvenPrice",
-        "type": "uint256"
+        indexed: false,
+        name: 'newHavvenPrice',
+        type: 'uint256',
       },
       {
-        "indexed": false,
-        "name": "timeSent",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'timeSent',
+        type: 'uint256',
+      },
     ],
-    "name": "PricesUpdated",
-    "type": "event"
+    name: 'PricesUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "fromCurrency",
-        "type": "string"
+        indexed: false,
+        name: 'fromCurrency',
+        type: 'string',
       },
       {
-        "indexed": false,
-        "name": "fromAmount",
-        "type": "uint256"
+        indexed: false,
+        name: 'fromAmount',
+        type: 'uint256',
       },
       {
-        "indexed": false,
-        "name": "toCurrency",
-        "type": "string"
+        indexed: false,
+        name: 'toCurrency',
+        type: 'string',
       },
       {
-        "indexed": false,
-        "name": "toAmount",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'toAmount',
+        type: 'uint256',
+      },
     ],
-    "name": "Exchange",
-    "type": "event"
+    name: 'Exchange',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "user",
-        "type": "address"
+        indexed: false,
+        name: 'user',
+        type: 'address',
       },
       {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "NominWithdrawal",
-    "type": "event"
+    name: 'NominWithdrawal',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "user",
-        "type": "address"
+        indexed: false,
+        name: 'user',
+        type: 'address',
       },
       {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "NominDeposit",
-    "type": "event"
+    name: 'NominDeposit',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "user",
-        "type": "address"
+        indexed: false,
+        name: 'user',
+        type: 'address',
       },
       {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
       },
       {
-        "indexed": false,
-        "name": "minimum",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'minimum',
+        type: 'uint256',
+      },
     ],
-    "name": "NominDepositNotAccepted",
-    "type": "event"
+    name: 'NominDepositNotAccepted',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "MinimumDepositAmountUpdated",
-    "type": "event"
+    name: 'MinimumDepositAmountUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "isPaused",
-        "type": "bool"
-      }
+        indexed: false,
+        name: 'isPaused',
+        type: 'bool',
+      },
     ],
-    "name": "PauseChanged",
-    "type": "event"
+    name: 'PauseChanged',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [],
-    "name": "SelfDestructTerminated",
-    "type": "event"
+    anonymous: false,
+    inputs: [],
+    name: 'SelfDestructTerminated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "beneficiary",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'beneficiary',
+        type: 'address',
+      },
     ],
-    "name": "SelfDestructed",
-    "type": "event"
+    name: 'SelfDestructed',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "selfDestructDelay",
-        "type": "uint256"
-      }
+        indexed: false,
+        name: 'selfDestructDelay',
+        type: 'uint256',
+      },
     ],
-    "name": "SelfDestructInitiated",
-    "type": "event"
+    name: 'SelfDestructInitiated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newBeneficiary",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newBeneficiary',
+        type: 'address',
+      },
     ],
-    "name": "SelfDestructBeneficiaryUpdated",
-    "type": "event"
+    name: 'SelfDestructBeneficiaryUpdated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "newOwner",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newOwner',
+        type: 'address',
+      },
     ],
-    "name": "OwnerNominated",
-    "type": "event"
+    name: 'OwnerNominated',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "name": "oldOwner",
-        "type": "address"
+        indexed: false,
+        name: 'oldOwner',
+        type: 'address',
       },
       {
-        "indexed": false,
-        "name": "newOwner",
-        "type": "address"
-      }
+        indexed: false,
+        name: 'newOwner',
+        type: 'address',
+      },
     ],
-    "name": "OwnerChanged",
-    "type": "event"
+    name: 'OwnerChanged',
+    type: 'event',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_fundsWallet",
-        "type": "address"
-      }
+        name: '_fundsWallet',
+        type: 'address',
+      },
     ],
-    "name": "setFundsWallet",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setFundsWallet',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_oracle",
-        "type": "address"
-      }
+        name: '_oracle',
+        type: 'address',
+      },
     ],
-    "name": "setOracle",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setOracle',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_nomin",
-        "type": "address"
-      }
+        name: '_nomin',
+        type: 'address',
+      },
     ],
-    "name": "setNomin",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setNomin',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_havven",
-        "type": "address"
-      }
+        name: '_havven',
+        type: 'address',
+      },
     ],
-    "name": "setHavven",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setHavven',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_time",
-        "type": "uint256"
-      }
+        name: '_time',
+        type: 'uint256',
+      },
     ],
-    "name": "setPriceStalePeriod",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setPriceStalePeriod',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "_amount",
-        "type": "uint256"
-      }
+        name: '_amount',
+        type: 'uint256',
+      },
     ],
-    "name": "setMinimumDepositAmount",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setMinimumDepositAmount',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "newEthPrice",
-        "type": "uint256"
+        name: 'newEthPrice',
+        type: 'uint256',
       },
       {
-        "name": "newHavvenPrice",
-        "type": "uint256"
+        name: 'newHavvenPrice',
+        type: 'uint256',
       },
       {
-        "name": "timeSent",
-        "type": "uint256"
-      }
+        name: 'timeSent',
+        type: 'uint256',
+      },
     ],
-    "name": "updatePrices",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'updatePrices',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "exchangeEtherForNomins",
-    "outputs": [
+    constant: false,
+    inputs: [],
+    name: 'exchangeEtherForNomins',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "guaranteedRate",
-        "type": "uint256"
-      }
+        name: 'guaranteedRate',
+        type: 'uint256',
+      },
     ],
-    "name": "exchangeEtherForNominsAtRate",
-    "outputs": [
+    name: 'exchangeEtherForNominsAtRate',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "exchangeEtherForHavvens",
-    "outputs": [
+    constant: false,
+    inputs: [],
+    name: 'exchangeEtherForHavvens',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "guaranteedEtherRate",
-        "type": "uint256"
+        name: 'guaranteedEtherRate',
+        type: 'uint256',
       },
       {
-        "name": "guaranteedHavvenRate",
-        "type": "uint256"
-      }
+        name: 'guaranteedHavvenRate',
+        type: 'uint256',
+      },
     ],
-    "name": "exchangeEtherForHavvensAtRate",
-    "outputs": [
+    name: 'exchangeEtherForHavvensAtRate',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "nominAmount",
-        "type": "uint256"
-      }
+        name: 'nominAmount',
+        type: 'uint256',
+      },
     ],
-    "name": "exchangeNominsForHavvens",
-    "outputs": [
+    name: 'exchangeNominsForHavvens',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "nominAmount",
-        "type": "uint256"
+        name: 'nominAmount',
+        type: 'uint256',
       },
       {
-        "name": "guaranteedRate",
-        "type": "uint256"
-      }
+        name: 'guaranteedRate',
+        type: 'uint256',
+      },
     ],
-    "name": "exchangeNominsForHavvensAtRate",
-    "outputs": [
+    name: 'exchangeNominsForHavvensAtRate',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "amount",
-        "type": "uint256"
-      }
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "withdrawHavvens",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'withdrawHavvens',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "withdrawMyDepositedNomins",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    constant: false,
+    inputs: [],
+    name: 'withdrawMyDepositedNomins',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "amount",
-        "type": "uint256"
-      }
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "depositNomins",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'depositNomins',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "name": "from",
-        "type": "address"
+        name: 'from',
+        type: 'address',
       },
       {
-        "name": "amount",
-        "type": "uint256"
+        name: 'amount',
+        type: 'uint256',
       },
       {
-        "name": "data",
-        "type": "bytes"
-      }
+        name: 'data',
+        type: 'bytes',
+      },
     ],
-    "name": "tokenFallback",
-    "outputs": [
+    name: 'tokenFallback',
+    outputs: [
       {
-        "name": "",
-        "type": "bool"
-      }
+        name: '',
+        type: 'bool',
+      },
     ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "pricesAreStale",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'pricesAreStale',
+    outputs: [
       {
-        "name": "",
-        "type": "bool"
-      }
+        name: '',
+        type: 'bool',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [
+    constant: true,
+    inputs: [
       {
-        "name": "amount",
-        "type": "uint256"
-      }
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "havvensReceivedForNomins",
-    "outputs": [
+    name: 'havvensReceivedForNomins',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [
+    constant: true,
+    inputs: [
       {
-        "name": "amount",
-        "type": "uint256"
-      }
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "havvensReceivedForEther",
-    "outputs": [
+    name: 'havvensReceivedForEther',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "constant": true,
-    "inputs": [
+    constant: true,
+    inputs: [
       {
-        "name": "amount",
-        "type": "uint256"
-      }
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    "name": "nominsReceivedForEther",
-    "outputs": [
+    name: 'nominsReceivedForEther',
+    outputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
+        name: '',
+        type: 'uint256',
+      },
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  }
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
 ];

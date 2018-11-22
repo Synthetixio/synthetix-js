@@ -17,5 +17,5 @@ module.exports = {
   Escrow,
   ExchangeRates,
   FeePool,
-  Vestr
+  Vestr,
 };

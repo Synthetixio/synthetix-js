@@ -10,14 +10,14 @@ function Vestr(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['Vestr'],
+    this.contractSettings.addressList['HavvenEscrow'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
 
   /**
-   * The number of vesting dates in an account's schedule.
    * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
   this.numVestingEntries = async account => {
@@ -25,11 +25,13 @@ function Vestr(contractSettings) {
   };
 
   /**
-   * Allow a user to withdraw any tokens that have vested.
-   * Transaction (gas consumed, require signer)
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
    **/
-  this.vest = async () => {
-    return await this.contract.vest();
+  this.vest = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.vest(txParams);
   };
 }
 

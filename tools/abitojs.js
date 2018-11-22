@@ -21,8 +21,8 @@ const contractToAddressMap = {
   Depot: 'Depot',
   Mintr: 'HavvenProxy',
   Vestr: 'HavvenEscrow',
-  EscrowChecker: 'EscrowChecker'
-}
+  EscrowChecker: 'EscrowChecker',
+};
 
 const typeMap = {
   uint256: 'BigNumber',
@@ -56,7 +56,7 @@ const generate = () => {
     const abiName = contractToAbiMap[contractName];
     const addressName = contractToAddressMap[contractName];
     const functions = contracts[abiName].filter(prop => prop.type === 'function');
-    generateJSFile(contractName, abiName,addressName, functions);
+    generateJSFile(contractName, abiName, addressName, functions);
   });
 };
 

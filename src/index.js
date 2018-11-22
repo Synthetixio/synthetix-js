@@ -1,10 +1,11 @@
 import Havven from './contracts/Havven';
 import Nomin from './contracts/Nomin';
-import IssuanceController from './contracts/IssuanceController';
 import Mintr from './contracts/Mintr';
 import Vestr from './contracts/Vestr';
 import EscrowChecker from './contracts/EscrowChecker';
-import StablePayments from './contracts/StablePayments';
+import Depot from './contracts/Depot';
+import FeePool from './contracts/FeePool';
+import ExchangeRates from './contracts/ExchangeRates';
 import Escrow from './contracts/Escrow';
 import Converter from './converter';
 import util from './util/index';
@@ -34,11 +35,12 @@ export class HavvenJs {
       // will rename these as part of ES6 module tranpilation
       { name: 'Havven', Contract: Havven },
       { name: 'Nomin', Contract: Nomin },
-      { name: 'IssuanceController', Contract: IssuanceController },
+      { name: 'Depot', Contract: Depot },
       { name: 'Mintr', Contract: Mintr },
       { name: 'Vestr', Contract: Vestr },
       { name: 'EscrowChecker', Contract: EscrowChecker },
-      { name: 'StablePayments', Contract: StablePayments },
+      { name: 'FeePool', Contract: FeePool },
+      { name: 'ExchangeRates', Contract: ExchangeRates },
       { name: 'Escrow', Contract: Escrow },
     ]
       .filter(

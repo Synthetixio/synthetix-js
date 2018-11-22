@@ -1,39 +1,16 @@
-export default [
+module.exports = [
   {
     "constant": true,
     "inputs": [],
-    "name": "name",
+    "name": "minimumDepositAmount",
     "outputs": [
       {
         "name": "",
-        "type": "string"
+        "type": "uint256"
       }
     ],
     "payable": false,
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "spender",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "approve",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -51,23 +28,23 @@ export default [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "initiationTime",
-    "outputs": [
+    "constant": false,
+    "inputs": [
       {
-        "name": "",
-        "type": "uint256"
+        "name": "_paused",
+        "type": "bool"
       }
     ],
+    "name": "setPaused",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "constant": true,
     "inputs": [],
-    "name": "totalSupply",
+    "name": "initiationTime",
     "outputs": [
       {
         "name": "",
@@ -95,11 +72,39 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "decimals",
+    "name": "fundsWallet",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "priceStalePeriod",
     "outputs": [
       {
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
       }
     ],
     "payable": false,
@@ -118,11 +123,25 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "exchangeRates",
+    "name": "lastPriceUpdateTime",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "totalSellableDeposits",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -145,13 +164,22 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
       {
-        "name": "account",
-        "type": "address"
+        "name": "",
+        "type": "bool"
       }
     ],
-    "name": "balanceOf",
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "depositStartIndex",
     "outputs": [
       {
         "name": "",
@@ -174,7 +202,7 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "havvenState",
+    "name": "oracle",
     "outputs": [
       {
         "name": "",
@@ -202,11 +230,11 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "symbol",
+    "name": "lastPauseTime",
     "outputs": [
       {
         "name": "",
-        "type": "string"
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -214,17 +242,17 @@ export default [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [
+    "constant": true,
+    "inputs": [],
+    "name": "havven",
+    "outputs": [
       {
-        "name": "_proxy",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "setProxy",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -237,17 +265,17 @@ export default [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [
+    "constant": true,
+    "inputs": [],
+    "name": "UNIT",
+    "outputs": [
       {
-        "name": "_tokenState",
-        "type": "address"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "setTokenState",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -266,12 +294,21 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "feePool",
-    "outputs": [
+    "inputs": [
       {
         "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "deposits",
+    "outputs": [
+      {
+        "name": "user",
         "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -293,17 +330,17 @@ export default [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [
+    "constant": true,
+    "inputs": [],
+    "name": "usdToEthPrice",
+    "outputs": [
       {
-        "name": "sender",
-        "type": "address"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "setMessageSender",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -313,6 +350,20 @@ export default [
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "usdToHavPrice",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -333,15 +384,11 @@ export default [
     "constant": true,
     "inputs": [
       {
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "name": "spender",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "allowance",
+    "name": "smallDeposits",
     "outputs": [
       {
         "name": "",
@@ -355,7 +402,7 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "escrow",
+    "name": "nomin",
     "outputs": [
       {
         "name": "",
@@ -369,63 +416,25 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "tokenState",
+    "name": "ORACLE_FUTURE_LIMIT",
     "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "proxy",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
       {
         "name": "",
         "type": "uint256"
       }
     ],
-    "name": "availableNomins",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "bytes4"
-      }
-    ],
-    "name": "nomins",
+    "inputs": [],
+    "name": "depositEndIndex",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -434,29 +443,33 @@ export default [
   },
   {
     "inputs": [
-      {
-        "name": "_proxy",
-        "type": "address"
-      },
-      {
-        "name": "_tokenState",
-        "type": "address"
-      },
-      {
-        "name": "_havvenState",
-        "type": "address"
-      },
       {
         "name": "_owner",
         "type": "address"
       },
       {
-        "name": "_exchangeRates",
+        "name": "_fundsWallet",
         "type": "address"
       },
       {
-        "name": "_feePool",
+        "name": "_havven",
         "type": "address"
+      },
+      {
+        "name": "_nomin",
+        "type": "address"
+      },
+      {
+        "name": "_oracle",
+        "type": "address"
+      },
+      {
+        "name": "_usdToEthPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "_usdToHavPrice",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -464,20 +477,20 @@ export default [
     "type": "constructor"
   },
   {
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "fallback"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "name": "account",
-        "type": "address"
-      },
-      {
         "indexed": false,
-        "name": "newPreferredCurrency",
-        "type": "bytes4"
+        "name": "newFundsWallet",
+        "type": "address"
       }
     ],
-    "name": "PreferredCurrencyChanged",
+    "name": "FundsWalletUpdated",
     "type": "event"
   },
   {
@@ -485,16 +498,11 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
-      {
-        "indexed": false,
-        "name": "newNomin",
+        "name": "newOracle",
         "type": "address"
       }
     ],
-    "name": "NominAdded",
+    "name": "OracleUpdated",
     "type": "event"
   },
   {
@@ -502,60 +510,57 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
-      {
-        "indexed": false,
-        "name": "removedNomin",
+        "name": "newNominContract",
         "type": "address"
       }
     ],
-    "name": "NominRemoved",
+    "name": "NominUpdated",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "name": "from",
+        "indexed": false,
+        "name": "newHavvenContract",
         "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "to",
-        "type": "address"
-      },
+      }
+    ],
+    "name": "HavvenUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
       {
         "indexed": false,
-        "name": "value",
+        "name": "priceStalePeriod",
         "type": "uint256"
       }
     ],
-    "name": "Transfer",
+    "name": "PriceStalePeriodUpdated",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "spender",
-        "type": "address"
+        "indexed": false,
+        "name": "newEthPrice",
+        "type": "uint256"
       },
       {
         "indexed": false,
-        "name": "value",
+        "name": "newHavvenPrice",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "timeSent",
         "type": "uint256"
       }
     ],
-    "name": "Approval",
+    "name": "PricesUpdated",
     "type": "event"
   },
   {
@@ -563,11 +568,26 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "newTokenState",
-        "type": "address"
+        "name": "fromCurrency",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "fromAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "toCurrency",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "toAmount",
+        "type": "uint256"
       }
     ],
-    "name": "TokenStateUpdated",
+    "name": "Exchange",
     "type": "event"
   },
   {
@@ -575,11 +595,79 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "proxyAddress",
+        "name": "user",
         "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "amount",
+        "type": "uint256"
       }
     ],
-    "name": "ProxyUpdated",
+    "name": "NominWithdrawal",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "NominDeposit",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "minimum",
+        "type": "uint256"
+      }
+    ],
+    "name": "NominDepositNotAccepted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MinimumDepositAmountUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "isPaused",
+        "type": "bool"
+      }
+    ],
+    "name": "PauseChanged",
     "type": "event"
   },
   {
@@ -657,11 +745,11 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "nomin",
+        "name": "_fundsWallet",
         "type": "address"
       }
     ],
-    "name": "addNomin",
+    "name": "setFundsWallet",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -671,25 +759,11 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "removeNomin",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_escrow",
+        "name": "_oracle",
         "type": "address"
       }
     ],
-    "name": "setEscrow",
+    "name": "setOracle",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -699,11 +773,11 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "_exchangeRates",
+        "name": "_nomin",
         "type": "address"
       }
     ],
-    "name": "setExchangeRates",
+    "name": "setNomin",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -713,11 +787,11 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "_havvenState",
+        "name": "_havven",
         "type": "address"
       }
     ],
-    "name": "sethavvenState",
+    "name": "setHavven",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -727,33 +801,131 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "currencyKey",
-        "type": "bytes4"
+        "name": "_time",
+        "type": "uint256"
       }
     ],
-    "name": "setPreferredCurrency",
+    "name": "setPriceStalePeriod",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [
       {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMinimumDepositAmount",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
       {
-        "name": "sourceAmount",
+        "name": "newEthPrice",
         "type": "uint256"
       },
       {
-        "name": "destinationCurrencyKey",
-        "type": "bytes4"
+        "name": "newHavvenPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "timeSent",
+        "type": "uint256"
       }
     ],
-    "name": "effectiveValue",
+    "name": "updatePrices",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "exchangeEtherForNomins",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "guaranteedRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "exchangeEtherForNominsAtRate",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "exchangeEtherForHavvens",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "guaranteedEtherRate",
+        "type": "uint256"
+      },
+      {
+        "name": "guaranteedHavvenRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "exchangeEtherForHavvensAtRate",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "nominAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "exchangeNominsForHavvens",
     "outputs": [
       {
         "name": "",
@@ -761,18 +933,22 @@ export default [
       }
     ],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [
       {
-        "name": "currencyKey",
-        "type": "bytes4"
+        "name": "nominAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "guaranteedRate",
+        "type": "uint256"
       }
     ],
-    "name": "totalIssuedNomins",
+    "name": "exchangeNominsForHavvensAtRate",
     "outputs": [
       {
         "name": "",
@@ -780,17 +956,81 @@ export default [
       }
     ],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawHavvens",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "withdrawMyDepositedNomins",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "depositNomins",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "tokenFallback",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "constant": true,
     "inputs": [],
-    "name": "availableNominCount",
+    "name": "pricesAreStale",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "bool"
       }
     ],
     "payable": false,
@@ -798,269 +1038,33 @@ export default [
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "transfer",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      },
-      {
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "transfer",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      },
-      {
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "transferFrom",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "transferFrom",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "sourceAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "destinationCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "destinationAddress",
-        "type": "address"
-      }
-    ],
-    "name": "exchange",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "sourceAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "destinationCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "destinationAddress",
-        "type": "address"
-      }
-    ],
-    "name": "nominInitiatedExchange",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "sourceAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "nominInitiatedFeePayment",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
       {
         "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "issueNomins",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
+    "name": "havvensReceivedForNomins",
+    "outputs": [
       {
-        "name": "currencyKey",
-        "type": "bytes4"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "issueMaxNomins",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
       {
         "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "burnNomins",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "issuer",
-        "type": "address"
-      },
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "maxIssuableNomins",
+    "name": "havvensReceivedForEther",
     "outputs": [
       {
         "name": "",
@@ -1075,95 +1079,11 @@ export default [
     "constant": true,
     "inputs": [
       {
-        "name": "issuer",
-        "type": "address"
-      }
-    ],
-    "name": "collateralisationRatio",
-    "outputs": [
-      {
-        "name": "",
+        "name": "amount",
         "type": "uint256"
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "issuer",
-        "type": "address"
-      },
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "debtBalanceOf",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "issuer",
-        "type": "address"
-      },
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "remainingIssuableNomins",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "account",
-        "type": "address"
-      }
-    ],
-    "name": "collateral",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "account",
-        "type": "address"
-      }
-    ],
-    "name": "transferableHavvens",
+    "name": "nominsReceivedForEther",
     "outputs": [
       {
         "name": "",

@@ -1,39 +1,16 @@
-export default [
+module.exports = [
   {
     "constant": true,
     "inputs": [],
-    "name": "name",
+    "name": "exchangeFeeRate",
     "outputs": [
       {
         "name": "",
-        "type": "string"
+        "type": "uint256"
       }
     ],
     "payable": false,
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "spender",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "approve",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -65,20 +42,6 @@ export default [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "totalSupply",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "constant": false,
     "inputs": [
       {
@@ -95,11 +58,25 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "decimals",
+    "name": "feePeriodDuration",
     "outputs": [
       {
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "feeAuthority",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
       }
     ],
     "payable": false,
@@ -118,11 +95,46 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "exchangeRates",
+    "name": "transferFeeRate",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "recentFeePeriods",
+    "outputs": [
+      {
+        "name": "feePeriodId",
+        "type": "uint256"
+      },
+      {
+        "name": "startingDebtIndex",
+        "type": "uint256"
+      },
+      {
+        "name": "startTime",
+        "type": "uint256"
+      },
+      {
+        "name": "feesToDistribute",
+        "type": "uint256"
+      },
+      {
+        "name": "feesClaimed",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -145,13 +157,22 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [
+    "inputs": [],
+    "name": "nextFeePeriodId",
+    "outputs": [
       {
-        "name": "account",
-        "type": "address"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "balanceOf",
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "MAX_TRANSFER_FEE_RATE",
     "outputs": [
       {
         "name": "",
@@ -173,12 +194,17 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "havvenState",
-    "outputs": [
+    "inputs": [
       {
         "name": "",
         "type": "address"
+      }
+    ],
+    "name": "lastFeeWithdrawal",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -200,20 +226,6 @@ export default [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "symbol",
-    "outputs": [
-      {
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "constant": false,
     "inputs": [
       {
@@ -228,23 +240,23 @@ export default [
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "selfDestruct",
-    "outputs": [],
+    "name": "havven",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": false,
-    "inputs": [
-      {
-        "name": "_tokenState",
-        "type": "address"
-      }
-    ],
-    "name": "setTokenState",
+    "inputs": [],
+    "name": "selfDestruct",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -258,20 +270,6 @@ export default [
       {
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "feePool",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
       }
     ],
     "payable": false,
@@ -331,17 +329,22 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [
+    "inputs": [],
+    "name": "FEE_PERIOD_LENGTH",
+    "outputs": [
       {
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "name": "spender",
-        "type": "address"
+        "name": "",
+        "type": "uint8"
       }
     ],
-    "name": "allowance",
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "MIN_FEE_PERIOD_DURATION",
     "outputs": [
       {
         "name": "",
@@ -355,21 +358,7 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "escrow",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "tokenState",
+    "name": "FEE_ADDRESS",
     "outputs": [
       {
         "name": "",
@@ -396,17 +385,12 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "availableNomins",
+    "inputs": [],
+    "name": "MAX_FEE_PERIOD_DURATION",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -415,17 +399,12 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "bytes4"
-      }
-    ],
-    "name": "nomins",
+    "inputs": [],
+    "name": "MAX_EXCHANGE_FEE_RATE",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -439,24 +418,24 @@ export default [
         "type": "address"
       },
       {
-        "name": "_tokenState",
-        "type": "address"
-      },
-      {
-        "name": "_havvenState",
-        "type": "address"
-      },
-      {
         "name": "_owner",
         "type": "address"
       },
       {
-        "name": "_exchangeRates",
+        "name": "_havven",
         "type": "address"
       },
       {
-        "name": "_feePool",
+        "name": "_feeAuthority",
         "type": "address"
+      },
+      {
+        "name": "_transferFeeRate",
+        "type": "uint256"
+      },
+      {
+        "name": "_exchangeFeeRate",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -467,95 +446,77 @@ export default [
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
+        "indexed": false,
+        "name": "newFeeRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "TransferFeeUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "newFeeRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "ExchangeFeeUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "newFeePeriodDuration",
+        "type": "uint256"
+      }
+    ],
+    "name": "FeePeriodDurationUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "newFeeAuthority",
+        "type": "address"
+      }
+    ],
+    "name": "FeeAuthorityUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "feePeriodId",
+        "type": "uint256"
+      }
+    ],
+    "name": "FeePeriodClosed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "name": "account",
         "type": "address"
       },
       {
         "indexed": false,
-        "name": "newPreferredCurrency",
-        "type": "bytes4"
-      }
-    ],
-    "name": "PreferredCurrencyChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
-      {
-        "indexed": false,
-        "name": "newNomin",
-        "type": "address"
-      }
-    ],
-    "name": "NominAdded",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
-      {
-        "indexed": false,
-        "name": "removedNomin",
-        "type": "address"
-      }
-    ],
-    "name": "NominRemoved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "value",
+        "name": "hdrAmount",
         "type": "uint256"
       }
     ],
-    "name": "Transfer",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "spender",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "Approval",
+    "name": "FeesClaimed",
     "type": "event"
   },
   {
@@ -563,23 +524,11 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "newTokenState",
+        "name": "newHavven",
         "type": "address"
       }
     ],
-    "name": "TokenStateUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "proxyAddress",
-        "type": "address"
-      }
-    ],
-    "name": "ProxyUpdated",
+    "name": "HavvenUpdated",
     "type": "event"
   },
   {
@@ -629,6 +578,18 @@ export default [
     "inputs": [
       {
         "indexed": false,
+        "name": "proxyAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ProxyUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "name": "newOwner",
         "type": "address"
       }
@@ -657,11 +618,67 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "nomin",
+        "name": "_exchangeFeeRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "setExchangeFeeRate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_transferFeeRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "setTransferFeeRate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_feeAuthority",
         "type": "address"
       }
     ],
-    "name": "addNomin",
+    "name": "setFeeAuthority",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_feePeriodDuration",
+        "type": "uint256"
+      }
+    ],
+    "name": "setFeePeriodDuration",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_havven",
+        "type": "address"
+      }
+    ],
+    "name": "setHavven",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -672,345 +689,23 @@ export default [
     "inputs": [
       {
         "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "removeNomin",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_escrow",
-        "type": "address"
-      }
-    ],
-    "name": "setEscrow",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_exchangeRates",
-        "type": "address"
-      }
-    ],
-    "name": "setExchangeRates",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_havvenState",
-        "type": "address"
-      }
-    ],
-    "name": "sethavvenState",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "setPreferredCurrency",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "sourceCurrencyKey",
         "type": "bytes4"
       },
       {
-        "name": "sourceAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "destinationCurrencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "effectiveValue",
-    "outputs": [
-      {
-        "name": "",
+        "name": "amount",
         "type": "uint256"
       }
     ],
+    "name": "feePaid",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      }
-    ],
-    "name": "totalIssuedNomins",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
+    "constant": false,
     "inputs": [],
-    "name": "availableNominCount",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "transfer",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      },
-      {
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "transfer",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      },
-      {
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "transferFrom",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "transferFrom",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "sourceAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "destinationCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "destinationAddress",
-        "type": "address"
-      }
-    ],
-    "name": "exchange",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "sourceAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "destinationCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "destinationAddress",
-        "type": "address"
-      }
-    ],
-    "name": "nominInitiatedExchange",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "name": "sourceCurrencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "sourceAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "nominInitiatedFeePayment",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "issueNomins",
+    "name": "closeCurrentFeePeriod",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -1024,26 +719,13 @@ export default [
         "type": "bytes4"
       }
     ],
-    "name": "issueMaxNomins",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
+    "name": "claimFees",
+    "outputs": [
       {
-        "name": "currencyKey",
-        "type": "bytes4"
-      },
-      {
-        "name": "amount",
-        "type": "uint256"
+        "name": "",
+        "type": "bool"
       }
     ],
-    "name": "burnNomins",
-    "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1052,15 +734,11 @@ export default [
     "constant": true,
     "inputs": [
       {
-        "name": "issuer",
-        "type": "address"
-      },
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
+        "name": "value",
+        "type": "uint256"
       }
     ],
-    "name": "maxIssuableNomins",
+    "name": "transferFeeIncurred",
     "outputs": [
       {
         "name": "",
@@ -1075,11 +753,11 @@ export default [
     "constant": true,
     "inputs": [
       {
-        "name": "issuer",
-        "type": "address"
+        "name": "value",
+        "type": "uint256"
       }
     ],
-    "name": "collateralisationRatio",
+    "name": "transferredAmountToReceive",
     "outputs": [
       {
         "name": "",
@@ -1094,15 +772,11 @@ export default [
     "constant": true,
     "inputs": [
       {
-        "name": "issuer",
-        "type": "address"
-      },
-      {
-        "name": "currencyKey",
-        "type": "bytes4"
+        "name": "value",
+        "type": "uint256"
       }
     ],
-    "name": "debtBalanceOf",
+    "name": "amountReceivedFromTransfer",
     "outputs": [
       {
         "name": "",
@@ -1117,7 +791,83 @@ export default [
     "constant": true,
     "inputs": [
       {
-        "name": "issuer",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "exchangeFeeIncurred",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "exchangedAmountToReceive",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "amountReceivedFromExchange",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "currencyKey",
+        "type": "bytes4"
+      }
+    ],
+    "name": "totalFeesAvailable",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "account",
         "type": "address"
       },
       {
@@ -1125,7 +875,7 @@ export default [
         "type": "bytes4"
       }
     ],
-    "name": "remainingIssuableNomins",
+    "name": "feesAvailable",
     "outputs": [
       {
         "name": "",
@@ -1144,7 +894,7 @@ export default [
         "type": "address"
       }
     ],
-    "name": "collateral",
+    "name": "currentPenalty",
     "outputs": [
       {
         "name": "",
@@ -1163,11 +913,11 @@ export default [
         "type": "address"
       }
     ],
-    "name": "transferableHavvens",
+    "name": "feesByPeriod",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "uint256[6]"
       }
     ],
     "payable": false,

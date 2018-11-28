@@ -23990,17 +23990,16 @@ var MAINNET_ADDRESSES = {
   Mintr: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
   // same as Havven contract
   HavvenState: '0x5b1b5fea1b99d83ad479df0c222f0492385381dd',
-  NominUnderlying: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
-  StablePayments: '0x92812526ebc2F4Df9E0B77dB74da0803B8F023fA',
+  NominUnderlying: '0xe8f97b2b2551d73d7310a7e7785b429ba2b415e8',
+  StablePayments: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3',
   NominState: '0x2c1ab55bc8fa85589bee7fe5c6b563278eaf2e8f',
   Court: undefined,
   Escrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   EscrowChecker: '0x3c9dF924b16b321847096a47d2d57D4A3259D060',
   Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   // same as Escrow contract
-  IssuanceController: '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
-  Depot: '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
-  //IssuanceController has been renamed to Depot
+  IssuanceController: '0xe5b288da8fb70cd58ab240f71610576657308762',
+  Depot: '0xe5b288da8fb70cd58ab240f71610576657308762',
   Havven: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
   Nomin: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3'
 }; // Havven contracts to be updated on multicurrency release

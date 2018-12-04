@@ -5,13 +5,12 @@ test(
   async () => {
     const signer = new HavvenJs.signers.PrivateKey(
       null,
-      1,
+      42,
       '0x0123456789012345678901234567890123456789012345678901234567890123'
     );
-    console.log(signer);
-    console.log(signer.getAddress());
-    const havjs = new HavvenJs({ signer });
-    const balance = await havjs.Escrow.balanceOf(signer.getAddress());
+    const havjs = new HavvenJs({ signer, networkId: 42 });
+    const balance = await havjs.SynthetixEscrow.balanceOf(signer.getAddress());
+    console.log(balance);
     await expect(balance).toBeTruthy();
   },
   15000

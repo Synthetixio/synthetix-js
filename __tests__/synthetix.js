@@ -1,13 +1,17 @@
 import { HavvenJs } from '../dist/main.node';
-const havjs = new HavvenJs();
+import ethers from 'ethers';
+
+const sUSD = ethers.utils.toUtf8Bytes('sUSD');
+
+const havjs = new HavvenJs({ networkId: 42 });
 
 test('Should return Havven total supply', async () => {
-  const totalSupply = await havjs.Havven.totalSupply();
+  const totalSupply = await havjs.Synthetix.totalSupply();
   return expect(havjs.utils.formatEther(totalSupply)).toBeTruthy();
 });
 
 test('Should throw Missing signer error', async () => {
-  await expect(havjs.Havven.issueNomins(10)).rejects.toThrow('missing signer');
+  await expect(havjs.Synthetix.issueSynths(sUSD, 10)).rejects.toThrow('missing signer');
 });
 
 test(
@@ -18,8 +22,8 @@ test(
       1,
       '0x0123456789012345678901234567890123456789012345678901234567890123'
     );
-    const havjs = new HavvenJs({ signer });
-    await expect(havjs.Havven.issueNomins(havjs.util.parseEther('100'))).rejects.toThrow(
+    const havjs = new HavvenJs({ signer, networkId: 42 });
+    await expect(havjs.Synthetix.issueSynths(sUSD, havjs.util.parseEther('100'))).rejects.toThrow(
       'insufficient funds for gas * price + value'
     );
   },

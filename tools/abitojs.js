@@ -14,7 +14,7 @@ const contractToAddressMap = {
   XDR: 'XDRProxy',
   sUSD: 'sUSDProxy',
   sEUR: 'sEURProxy',
-  sJPY: 'snJPYProxy',
+  sJPY: 'sJPYProxy',
   sAUD: 'sAUDProxy',
   sKRW: 'sKRWProxy',
   sXAU: 'sXAUProxy',

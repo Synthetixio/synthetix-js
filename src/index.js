@@ -1,13 +1,4 @@
-import Havven from './contracts/Havven';
-import Nomin from './contracts/Nomin';
-import Mintr from './contracts/Mintr';
-import Vestr from './contracts/Vestr';
-import EscrowChecker from './contracts/EscrowChecker';
-import Depot from './contracts/Depot';
-import FeePool from './contracts/FeePool';
-import ExchangeRates from './contracts/ExchangeRates';
-import Escrow from './contracts/Escrow';
-import Converter from './converter';
+import contracts from './contracts';
 import util from './util/index';
 import Trezor from '../lib/signers/trezorSigner';
 import Metamask from '../lib/signers/metamaskSigner';
@@ -29,32 +20,13 @@ export class HavvenJs {
   constructor(contractSettings) {
     contractSettings = new ContractSettings(contractSettings);
     this.contractSettings = contractSettings;
-    this.Converter = new Converter(contractSettings);
-    [
-      // Explicitly pass name of the contract as opposed to function.name as babel
-      // will rename these as part of ES6 module tranpilation
-      { name: 'Havven', Contract: Havven },
-      { name: 'Nomin', Contract: Nomin },
-      { name: 'Depot', Contract: Depot },
-      { name: 'Mintr', Contract: Mintr },
-      { name: 'Vestr', Contract: Vestr },
-      { name: 'EscrowChecker', Contract: EscrowChecker },
-      { name: 'FeePool', Contract: FeePool },
-      { name: 'ExchangeRates', Contract: ExchangeRates },
-      { name: 'Escrow', Contract: Escrow },
-    ]
-      .filter(
-        ({ name }) =>
-          // ensure we only instantiate contracts relevant for the provider, by filtering out
-          // those without valid addresses
-          contractSettings.addressList[name]
-      )
-      .forEach(({ name, Contract }) => {
-        this[name] = new Contract(contractSettings);
-      });
+    Object.keys(contracts).forEach(name => {
+      this[name] = new contracts[name](contractSettings);
+    });
     this.util = new util(contractSettings);
     this.utils = this.util;
     this.ethers = ethers;
+    this.SUPPORTED_NETWORKS = ContractSettings.SUPPORTED_NETWORKS;
   }
 }
 

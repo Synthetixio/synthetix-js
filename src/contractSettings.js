@@ -2,6 +2,12 @@ import { providers } from 'ethers';
 import addresses from '../lib/addresses';
 import ABIS from '../lib/abis/index';
 
+const SUPPORTED_NETWORKS = {
+  1: 'mainnet',
+  2: 'ropsten',
+  42: 'kovan',
+};
+
 class ContractSettings {
   /**
    * @constructor
@@ -13,11 +19,16 @@ class ContractSettings {
     contractSettings = contractSettings || {};
     let { provider, signer, networkId } = contractSettings;
     this.provider = provider || providers.getDefaultProvider();
+    if (!provider && networkId) {
+      this.provider = providers.getDefaultProvider(SUPPORTED_NETWORKS[Number(networkId)]);
+    }
     this.signer = signer;
     this.networkId = networkId || 1;
     this.addressList = addresses[this.networkId];
     this.ABIS = ABIS;
   }
 }
+
+ContractSettings.SUPPORTED_NETWORKS = SUPPORTED_NETWORKS;
 
 export default ContractSettings;

@@ -1,8 +1,8 @@
 import { utils, Interface, Wallet } from 'ethers';
 import abis from '../../lib/abis/index';
 import Depot from '../contracts/Depot';
-import Nomin from '../contracts/Nomin';
-import Havven from '../contracts/Havven';
+import Synth from '../contracts/Synth';
+import Synthetix from '../contracts/Synthetix';
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
 
@@ -14,10 +14,10 @@ class Util {
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
     this.depot = new Depot(contractSettings);
-    this.nomin = new Nomin(contractSettings);
-    this.havven = new Havven(contractSettings);
+    this.synth = new Synth(contractSettings);
+    this.synthetix = new Synthetix(contractSettings);
     this.depotInterface = new Interface(abis.Depot);
-    this.nominInterface = new Interface(abis.Nomin);
+    this.synthInterface = new Interface(abis.Synth);
 
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);
     this.getEventLogs = this.getEventLogs.bind(this);
@@ -150,8 +150,8 @@ class Util {
    * @param toAddress - where to send transaction
    * @param ethValue - optional - if function requires ETH to be sent
    * @param data - optional if function requires data to be sent
-   * example  (new Interface(CONTRACT_ABIS.Depot).functions.exchangeEtherForNomins()).data
-   * example2 nominInterface.functions.approve(MAINNET_ADDRESSES.Depot, utils.parseEther("2")).data;
+   * example  (new Interface(CONTRACT_ABIS.Depot).functions.exchangeEtherForSynths()).data
+   * example2 synthInterface.functions.approve(MAINNET_ADDRESSES.Depot, utils.parseEther("2")).data;
    * @returns {Promise<String>}
    */
   async getGasEstimate(toAddress, ethValue, data) {
@@ -193,8 +193,8 @@ class Util {
     return await this.depot.usdToEthPrice();
   }
 
-  async getHavvenPrice() {
-    return await this.depot.usdToHavPrice();
+  async getSynthetixPrice() {
+    return await this.depot.usdToSnxPrice();
   }
 
   /**
@@ -202,7 +202,7 @@ class Util {
    * @returns {Promise<{gasFastGwei: number, gasAverageGwei: number, gasSlowGwei: number, timeFastMinutes: *, timeAverageMinutes: *, timeSlowMinutes: *}>}
    */
   async getGasAndSpeedInfo() {
-    // ethToNomin uses approx 80,000, nominToHav 40,000 but approve 70,000; 100,000 is safe average
+    // ethToSynth uses approx 80,000, synthToHav 40,000 but approve 70,000; 100,000 is safe average
     const convetorTxGasPrice = DEFAULT_GAS_LIMIT;
     let [egsData, ethPrice] = await Promise.all([
       fetch('https://ethgasstation.info/json/ethgasAPI.json'),

@@ -1,4 +1,4 @@
-import { Contract } from 'ethers';
+import {Contract} from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
 const abi = abis.Depot;
@@ -10,10 +10,12 @@ function Depot(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['Depot'],
+    this.contractSettings.addressList["Depot"],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -22,6 +24,16 @@ function Depot(contractSettings) {
   this.minimumDepositAmount = async () => {
     return await this.contract.minimumDepositAmount();
   };
+
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.synth = async () => {
+    return await this.contract.synth();
+  };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -34,6 +46,7 @@ function Depot(contractSettings) {
     return await this.contract.nominateNewOwner(_owner, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param _paused {boolean}
@@ -45,6 +58,7 @@ function Depot(contractSettings) {
     return await this.contract.setPaused(_paused, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -52,6 +66,7 @@ function Depot(contractSettings) {
   this.initiationTime = async () => {
     return await this.contract.initiationTime();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -64,6 +79,7 @@ function Depot(contractSettings) {
     return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
@@ -71,6 +87,7 @@ function Depot(contractSettings) {
   this.fundsWallet = async () => {
     return await this.contract.fundsWallet();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -80,23 +97,17 @@ function Depot(contractSettings) {
     return await this.contract.priceStalePeriod();
   };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns Number
-   **/
-  this.decimals = async () => {
-    return await this.contract.decimals();
-  };
 
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.terminateSelfDestruct = async txParams => {
+  this.terminateSelfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.terminateSelfDestruct(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -106,6 +117,7 @@ function Depot(contractSettings) {
     return await this.contract.lastPriceUpdateTime();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -113,6 +125,7 @@ function Depot(contractSettings) {
   this.totalSellableDeposits = async () => {
     return await this.contract.totalSellableDeposits();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -122,6 +135,7 @@ function Depot(contractSettings) {
     return await this.contract.nominatedOwner();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
@@ -129,6 +143,7 @@ function Depot(contractSettings) {
   this.paused = async () => {
     return await this.contract.paused();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -138,15 +153,26 @@ function Depot(contractSettings) {
     return await this.contract.depositStartIndex();
   };
 
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.synthetix = async () => {
+    return await this.contract.synthetix();
+  };
+
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.acceptOwnership = async txParams => {
+  this.acceptOwnership = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -156,6 +182,7 @@ function Depot(contractSettings) {
     return await this.contract.oracle();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
@@ -163,6 +190,7 @@ function Depot(contractSettings) {
   this.owner = async () => {
     return await this.contract.owner();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -172,31 +200,17 @@ function Depot(contractSettings) {
     return await this.contract.lastPauseTime();
   };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.havven = async () => {
-    return await this.contract.havven();
-  };
 
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.selfDestruct = async txParams => {
+  this.selfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.selfDestruct(txParams);
   };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.UNIT = async () => {
-    return await this.contract.UNIT();
-  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -206,14 +220,25 @@ function Depot(contractSettings) {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
 
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.feePool = async () => {
+    return await this.contract.feePool();
+  };
+
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns Object
    **/
-  this.deposits = async uint256 => {
+  this.deposits = async (uint256) => {
     return await this.contract.deposits(uint256);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -223,6 +248,7 @@ function Depot(contractSettings) {
     return await this.contract.selfDestructInitiated();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -231,23 +257,17 @@ function Depot(contractSettings) {
     return await this.contract.usdToEthPrice();
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.initiateSelfDestruct = async txParams => {
+  this.initiateSelfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.initiateSelfDestruct(txParams);
   };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.usdToHavPrice = async () => {
-    return await this.contract.usdToHavPrice();
-  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -257,22 +277,25 @@ function Depot(contractSettings) {
     return await this.contract.selfDestructBeneficiary();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {String<EthAddress>}
    * @returns BigNumber
    **/
-  this.smallDeposits = async address => {
+  this.smallDeposits = async (address) => {
     return await this.contract.smallDeposits(address);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @returns BigNumber
    **/
-  this.nomin = async () => {
-    return await this.contract.nomin();
+  this.usdToSnxPrice = async () => {
+    return await this.contract.usdToSnxPrice();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -282,6 +305,7 @@ function Depot(contractSettings) {
     return await this.contract.ORACLE_FUTURE_LIMIT();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -289,6 +313,7 @@ function Depot(contractSettings) {
   this.depositEndIndex = async () => {
     return await this.contract.depositEndIndex();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -301,6 +326,7 @@ function Depot(contractSettings) {
     return await this.contract.setFundsWallet(_fundsWallet, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param _oracle {String<EthAddress>}
@@ -312,27 +338,30 @@ function Depot(contractSettings) {
     return await this.contract.setOracle(_oracle, txParams);
   };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _nomin {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setNomin = async (_nomin, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setNomin(_nomin, txParams);
-  };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _havven {String<EthAddress>}
+   * @param _synth {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.setHavven = async (_havven, txParams) => {
+  this.setSynth = async (_synth, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setHavven(_havven, txParams);
+    return await this.contract.setSynth(_synth, txParams);
   };
+
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _synthetix {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSynthetix = async (_synthetix, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSynthetix(_synthetix, txParams);
+  };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -345,6 +374,7 @@ function Depot(contractSettings) {
     return await this.contract.setPriceStalePeriod(_time, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param _amount {BigNumber}
@@ -356,18 +386,20 @@ function Depot(contractSettings) {
     return await this.contract.setMinimumDepositAmount(_amount, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param newEthPrice {BigNumber}
-   * @param newHavvenPrice {BigNumber}
+   * @param newSynthetixPrice {BigNumber}
    * @param timeSent {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.updatePrices = async (newEthPrice, newHavvenPrice, timeSent, txParams) => {
+  this.updatePrices = async (newEthPrice, newSynthetixPrice, timeSent, txParams) => {
     txParams = txParams || {};
-    return await this.contract.updatePrices(newEthPrice, newHavvenPrice, timeSent, txParams);
+    return await this.contract.updatePrices(newEthPrice, newSynthetixPrice, timeSent, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -375,10 +407,11 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeEtherForNomins = async txParams => {
+  this.exchangeEtherForSynths = async (txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangeEtherForNomins(txParams);
+    return await this.contract.exchangeEtherForSynths(txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -387,10 +420,11 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeEtherForNominsAtRate = async (guaranteedRate, txParams) => {
+  this.exchangeEtherForSynthsAtRate = async (guaranteedRate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangeEtherForNominsAtRate(guaranteedRate, txParams);
+    return await this.contract.exchangeEtherForSynthsAtRate(guaranteedRate, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -398,58 +432,50 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeEtherForHavvens = async txParams => {
+  this.exchangeEtherForSynthetix = async (txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangeEtherForHavvens(txParams);
+    return await this.contract.exchangeEtherForSynthetix(txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
    * @param guaranteedEtherRate {BigNumber}
-   * @param guaranteedHavvenRate {BigNumber}
+   * @param guaranteedSynthetixRate {BigNumber}
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeEtherForHavvensAtRate = async (
-    guaranteedEtherRate,
-    guaranteedHavvenRate,
-    txParams
-  ) => {
+  this.exchangeEtherForSynthetixAtRate = async (guaranteedEtherRate, guaranteedSynthetixRate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangeEtherForHavvensAtRate(
-      guaranteedEtherRate,
-      guaranteedHavvenRate,
-      txParams
-    );
+    return await this.contract.exchangeEtherForSynthetixAtRate(guaranteedEtherRate, guaranteedSynthetixRate, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param nominAmount {BigNumber}
+   * @param synthAmount {BigNumber}
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeNominsForHavvens = async (nominAmount, txParams) => {
+  this.exchangeSynthsForSynthetix = async (synthAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangeNominsForHavvens(nominAmount, txParams);
+    return await this.contract.exchangeSynthsForSynthetix(synthAmount, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param nominAmount {BigNumber}
+   * @param synthAmount {BigNumber}
    * @param guaranteedRate {BigNumber}
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeNominsForHavvensAtRate = async (nominAmount, guaranteedRate, txParams) => {
+  this.exchangeSynthsForSynthetixAtRate = async (synthAmount, guaranteedRate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangeNominsForHavvensAtRate(
-      nominAmount,
-      guaranteedRate,
-      txParams
-    );
+    return await this.contract.exchangeSynthsForSynthetixAtRate(synthAmount, guaranteedRate, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -457,20 +483,22 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
   
    **/
-  this.withdrawHavvens = async (amount, txParams) => {
+  this.withdrawSynthetix = async (amount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.withdrawHavvens(amount, txParams);
+    return await this.contract.withdrawSynthetix(amount, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.withdrawMyDepositedNomins = async txParams => {
+  this.withdrawMyDepositedSynths = async (txParams) => {
     txParams = txParams || {};
-    return await this.contract.withdrawMyDepositedNomins(txParams);
+    return await this.contract.withdrawMyDepositedSynths(txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -478,10 +506,11 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
   
    **/
-  this.depositNomins = async (amount, txParams) => {
+  this.depositSynths = async (amount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.depositNomins(amount, txParams);
+    return await this.contract.depositSynths(amount, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -496,6 +525,7 @@ function Depot(contractSettings) {
     return await this.contract.tokenFallback(from, amount, data, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
@@ -504,32 +534,37 @@ function Depot(contractSettings) {
     return await this.contract.pricesAreStale();
   };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param amount {BigNumber}
-   * @returns BigNumber
-   **/
-  this.havvensReceivedForNomins = async amount => {
-    return await this.contract.havvensReceivedForNomins(amount);
-  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
    **/
-  this.havvensReceivedForEther = async amount => {
-    return await this.contract.havvensReceivedForEther(amount);
+  this.synthetixReceivedForSynths = async (amount) => {
+    return await this.contract.synthetixReceivedForSynths(amount);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
    **/
-  this.nominsReceivedForEther = async amount => {
-    return await this.contract.nominsReceivedForEther(amount);
+  this.synthetixReceivedForEther = async (amount) => {
+    return await this.contract.synthetixReceivedForEther(amount);
   };
+
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param amount {BigNumber}
+   * @returns BigNumber
+   **/
+  this.synthsReceivedForEther = async (amount) => {
+    return await this.contract.synthsReceivedForEther(amount);
+  };
+
+
 }
 
-export default Depot;
+export default Depot

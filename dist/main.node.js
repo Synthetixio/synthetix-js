@@ -41738,6 +41738,17 @@ function () {
       return ethers["utils"].formatEther(value);
     }
     /**
+     * converts string to bytes
+     * @param stringValue
+     * @returns {Utf8Bytes}
+     */
+
+  }, {
+    key: "toUtf8Bytes",
+    value: function toUtf8Bytes(stringValue) {
+      return ethers["utils"].toUtf8Bytes(stringValue);
+    }
+    /**
      * Manually sign any transaction with custom signer
      * @param transaction
      * @param fromAddress

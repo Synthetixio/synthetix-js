@@ -46,6 +46,15 @@ class Util {
   }
 
   /**
+   * converts string to bytes
+   * @param stringValue
+   * @returns {Utf8Bytes}
+   */
+  toUtf8Bytes(stringValue) {
+    return utils.toUtf8Bytes(stringValue);
+  }
+
+  /**
    * Manually sign any transaction with custom signer
    * @param transaction
    * @param fromAddress

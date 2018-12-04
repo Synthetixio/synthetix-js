@@ -1,9 +1,7 @@
 import { HavvenJs } from '../dist/main.node';
-import ethers from 'ethers';
-
-const sUSD = ethers.utils.toUtf8Bytes('sUSD');
 
 const havjs = new HavvenJs({ networkId: 42 });
+const sUSD = havjs.utils.toUtf8Bytes('sUSD');
 
 test('Should return Havven total supply', async () => {
   const totalSupply = await havjs.Synthetix.totalSupply();

@@ -1,21 +1,15 @@
-const Havven = require('./Havven');
-const Nomin = require('./Nomin');
-const Mintr = require('./Mintr');
-const Escrow = require('./Escrow');
+const Synthetix = require('./Synthetix');
+const Synth = require('./Synth');
+const SynthetixExcrow = require('./SynthetixEscrow');
 const Depot = require('./Depot');
-const EscrowChecker = require('./EscrowChecker');
 const ExchangeRates = require('./ExchangeRates');
 const FeePool = require('./FeePool');
-const Vestr = require('./Vestr');
 
 module.exports = {
-  Havven,
-  Nomin,
+  Synthetix,
+  Synth,
   Depot,
-  Mintr,
-  EscrowChecker,
-  Escrow,
+  SynthetixExcrow,
   ExchangeRates,
   FeePool,
-  Vestr,
 };

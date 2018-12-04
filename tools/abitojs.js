@@ -8,20 +8,17 @@ const docsDescriptions = require('../lib/docSrc/descriptions');
 const contractToAddressMap = {
   ExchangeRates: 'ExchangeRates',
   FeePool: 'FeePoolProxy',
-  Havven: 'HavvenProxy',
-  Escrow: 'HavvenEscrow',
-  Nomin: 'nUSDProxy',
-  HDRNomin: 'HDRProxy',
-  nUSDNomin: 'nUSDProxy',
-  nEURNomin: 'nEURProxy',
-  nJPYNomin: 'nJPYProxy',
-  nAUDNomin: 'nAUDProxy',
-  nKRWNomin: 'nKRWProxy',
-  nXAUNomin: 'nXAUProxy',
+  Synthetix: 'SynthetixProxy',
+  SynthetixEscrow: 'SynthetixEscrow',
+  Synth: 'sUSDProxy',
+  XDR: 'XDRProxy',
+  sUSD: 'sUSDProxy',
+  sEUR: 'sEURProxy',
+  sJPY: 'snJPYProxy',
+  sAUD: 'sAUDProxy',
+  sKRW: 'sKRWProxy',
+  sXAU: 'sXAUProxy',
   Depot: 'Depot',
-  Mintr: 'HavvenProxy',
-  Vestr: 'HavvenEscrow',
-  EscrowChecker: 'EscrowChecker',
 };
 
 const typeMap = {
@@ -33,22 +30,19 @@ const typeMap = {
 };
 
 const contractToAbiMap = {
-  Nomin: 'Nomin',
-  Havven: 'Havven',
+  Synth: 'Synth',
+  Synthetix: 'Synthetix',
+  SynthetixEscrow: 'SynthetixEscrow',
   Depot: 'Depot',
-  Mintr: 'Havven',
-  Escrow: 'Escrow',
-  HDRNomin: 'Nomin',
-  nUSDNomin: 'Nomin',
-  nEURNomin: 'Nomin',
-  nJPYNomin: 'Nomin',
-  nAUDNomin: 'Nomin',
-  nKRWNomin: 'Nomin',
-  nXAUNomin: 'Nomin',
+  XDR: 'Synth',
+  sUSD: 'Synth',
+  sEUR: 'Synth',
+  sJPY: 'Synth',
+  sAUD: 'Synth',
+  sKRW: 'Synth',
+  sXAU: 'Synth',
   ExchangeRates: 'ExchangeRates',
   FeePool: 'FeePool',
-  Vestr: 'Vestr',
-  EscrowChecker: 'EscrowChecker',
 };
 
 const generate = () => {

@@ -1,12 +1,12 @@
-export default [
+module.exports = [
   {
     "constant": true,
     "inputs": [],
-    "name": "minimumDepositAmount",
+    "name": "name",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "string"
       }
     ],
     "payable": false,
@@ -14,17 +14,26 @@ export default [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "synth",
+    "constant": false,
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "bool"
       }
     ],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -42,23 +51,23 @@ export default [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [
+    "constant": true,
+    "inputs": [],
+    "name": "initiationTime",
+    "outputs": [
       {
-        "name": "_paused",
-        "type": "bool"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "setPaused",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": true,
     "inputs": [],
-    "name": "initiationTime",
+    "name": "totalSupply",
     "outputs": [
       {
         "name": "",
@@ -86,25 +95,11 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "fundsWallet",
+    "name": "decimals",
     "outputs": [
       {
         "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "priceStalePeriod",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
+        "type": "uint8"
       }
     ],
     "payable": false,
@@ -123,34 +118,6 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "lastPriceUpdateTime",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "totalSellableDeposits",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
     "name": "nominatedOwner",
     "outputs": [
       {
@@ -164,22 +131,13 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "paused",
-    "outputs": [
+    "inputs": [
       {
-        "name": "",
-        "type": "bool"
+        "name": "account",
+        "type": "address"
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "depositStartIndex",
+    "name": "balanceOf",
     "outputs": [
       {
         "name": "",
@@ -216,20 +174,6 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "oracle",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
     "name": "owner",
     "outputs": [
       {
@@ -244,11 +188,11 @@ export default [
   {
     "constant": true,
     "inputs": [],
-    "name": "lastPauseTime",
+    "name": "symbol",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "string"
       }
     ],
     "payable": false,
@@ -257,8 +201,36 @@ export default [
   },
   {
     "constant": false,
+    "inputs": [
+      {
+        "name": "_proxy",
+        "type": "address"
+      }
+    ],
+    "name": "setProxy",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
     "inputs": [],
     "name": "selfDestruct",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenState",
+        "type": "address"
+      }
+    ],
+    "name": "setTokenState",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -294,29 +266,6 @@ export default [
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "deposits",
-    "outputs": [
-      {
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [],
     "name": "selfDestructInitiated",
     "outputs": [
@@ -330,17 +279,17 @@ export default [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "usdToEthPrice",
-    "outputs": [
+    "constant": false,
+    "inputs": [
       {
-        "name": "",
-        "type": "uint256"
+        "name": "sender",
+        "type": "address"
       }
     ],
+    "name": "setMessageSender",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -368,73 +317,77 @@ export default [
   },
   {
     "constant": true,
+    "inputs": [],
+    "name": "currencyKey",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes4"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
     "inputs": [
       {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "smallDeposits",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "usdToSnxPrice",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "ORACLE_FUTURE_LIMIT",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "depositEndIndex",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "name": "_owner",
+        "name": "owner",
         "type": "address"
       },
       {
-        "name": "_fundsWallet",
+        "name": "spender",
+        "type": "address"
+      }
+    ],
+    "name": "allowance",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "tokenState",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "proxy",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_proxy",
+        "type": "address"
+      },
+      {
+        "name": "_tokenState",
         "type": "address"
       },
       {
@@ -442,24 +395,24 @@ export default [
         "type": "address"
       },
       {
-        "name": "_synth",
-        "type": "address"
-      },
-      {
         "name": "_feePool",
         "type": "address"
       },
       {
-        "name": "_oracle",
+        "name": "_tokenName",
+        "type": "string"
+      },
+      {
+        "name": "_tokenSymbol",
+        "type": "string"
+      },
+      {
+        "name": "_owner",
         "type": "address"
       },
       {
-        "name": "_usdToEthPrice",
-        "type": "uint256"
-      },
-      {
-        "name": "_usdToSnxPrice",
-        "type": "uint256"
+        "name": "_currencyKey",
+        "type": "bytes4"
       }
     ],
     "payable": false,
@@ -467,52 +420,11 @@ export default [
     "type": "constructor"
   },
   {
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "fallback"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
         "indexed": false,
-        "name": "newFundsWallet",
-        "type": "address"
-      }
-    ],
-    "name": "FundsWalletUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "newOracle",
-        "type": "address"
-      }
-    ],
-    "name": "OracleUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "newSynthContract",
-        "type": "address"
-      }
-    ],
-    "name": "SynthUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "newSynthetixContract",
+        "name": "newSynthetix",
         "type": "address"
       }
     ],
@@ -524,77 +436,28 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "priceStalePeriod",
-        "type": "uint256"
+        "name": "newFeePool",
+        "type": "address"
       }
     ],
-    "name": "PriceStalePeriodUpdated",
+    "name": "FeePoolUpdated",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "name": "newEthPrice",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "newSynthetixPrice",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "timeSent",
-        "type": "uint256"
-      }
-    ],
-    "name": "PricesUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "fromCurrency",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "name": "fromAmount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "toCurrency",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "name": "toAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "Exchange",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "user",
+        "indexed": true,
+        "name": "account",
         "type": "address"
       },
       {
         "indexed": false,
-        "name": "amount",
+        "name": "value",
         "type": "uint256"
       }
     ],
-    "name": "SynthWithdrawal",
+    "name": "Issued",
     "type": "event"
   },
   {
@@ -602,21 +465,16 @@ export default [
     "inputs": [
       {
         "indexed": true,
-        "name": "user",
+        "name": "account",
         "type": "address"
       },
       {
         "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "name": "depositIndex",
+        "name": "value",
         "type": "uint256"
       }
     ],
-    "name": "SynthDeposit",
+    "name": "Burned",
     "type": "event"
   },
   {
@@ -624,104 +482,43 @@ export default [
     "inputs": [
       {
         "indexed": true,
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "name": "depositIndex",
-        "type": "uint256"
-      }
-    ],
-    "name": "SynthDepositRemoved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "minimum",
-        "type": "uint256"
-      }
-    ],
-    "name": "SynthDepositNotAccepted",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "MinimumDepositAmountUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "name": "receiver",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "NonPayableContract",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "name": "fromAddress",
+        "name": "from",
         "type": "address"
       },
       {
         "indexed": true,
-        "name": "toAddress",
+        "name": "to",
         "type": "address"
       },
       {
         "indexed": false,
-        "name": "fromETHAmount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "toAmount",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "name": "depositIndex",
+        "name": "value",
         "type": "uint256"
       }
     ],
-    "name": "ClearedDeposit",
+    "name": "Transfer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Approval",
     "type": "event"
   },
   {
@@ -729,11 +526,23 @@ export default [
     "inputs": [
       {
         "indexed": false,
-        "name": "isPaused",
-        "type": "bool"
+        "name": "newTokenState",
+        "type": "address"
       }
     ],
-    "name": "PauseChanged",
+    "name": "TokenStateUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "proxyAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ProxyUpdated",
     "type": "event"
   },
   {
@@ -811,48 +620,6 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "_fundsWallet",
-        "type": "address"
-      }
-    ],
-    "name": "setFundsWallet",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_oracle",
-        "type": "address"
-      }
-    ],
-    "name": "setOracle",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_synth",
-        "type": "address"
-      }
-    ],
-    "name": "setSynth",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
         "name": "_synthetix",
         "type": "address"
       }
@@ -867,11 +634,11 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "_time",
-        "type": "uint256"
+        "name": "_feePool",
+        "type": "address"
       }
     ],
-    "name": "setPriceStalePeriod",
+    "name": "setFeePool",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -881,12 +648,21 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "_amount",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
         "type": "uint256"
       }
     ],
-    "name": "setMinimumDepositAmount",
-    "outputs": [],
+    "name": "transfer",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
@@ -895,169 +671,25 @@ export default [
     "constant": false,
     "inputs": [
       {
-        "name": "newEthPrice",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
         "type": "uint256"
       },
       {
-        "name": "newSynthetixPrice",
-        "type": "uint256"
-      },
-      {
-        "name": "timeSent",
-        "type": "uint256"
+        "name": "data",
+        "type": "bytes"
       }
     ],
-    "name": "updatePrices",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "exchangeEtherForSynths",
+    "name": "transfer",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "bool"
       }
     ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "guaranteedRate",
-        "type": "uint256"
-      }
-    ],
-    "name": "exchangeEtherForSynthsAtRate",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "exchangeEtherForSynthetix",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "guaranteedEtherRate",
-        "type": "uint256"
-      },
-      {
-        "name": "guaranteedSynthetixRate",
-        "type": "uint256"
-      }
-    ],
-    "name": "exchangeEtherForSynthetixAtRate",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "synthAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "exchangeSynthsForSynthetix",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "synthAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "guaranteedRate",
-        "type": "uint256"
-      }
-    ],
-    "name": "exchangeSynthsForSynthetixAtRate",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdrawSynthetix",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "withdrawMyDepositedSynths",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "depositSynths",
-    "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1070,7 +702,11 @@ export default [
         "type": "address"
       },
       {
-        "name": "amount",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
         "type": "uint256"
       },
       {
@@ -1078,7 +714,7 @@ export default [
         "type": "bytes"
       }
     ],
-    "name": "tokenFallback",
+    "name": "transferFrom",
     "outputs": [
       {
         "name": "",
@@ -1090,9 +726,22 @@ export default [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "pricesAreStale",
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFrom",
     "outputs": [
       {
         "name": "",
@@ -1100,64 +749,173 @@ export default [
       }
     ],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferSenderPaysFee",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "transferSenderPaysFee",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFromSenderPaysFee",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "transferFromSenderPaysFee",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address"
+      },
       {
         "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "synthetixReceivedForSynths",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "name": "issue",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [
+      {
+        "name": "account",
+        "type": "address"
+      },
       {
         "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "synthetixReceivedForEther",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "name": "burn",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [
+      {
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "name": "recipient",
+        "type": "address"
+      },
       {
         "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "synthsReceivedForEther",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "name": "triggerTokenFallbackIfNeeded",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   }
-];
+]

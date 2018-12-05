@@ -10,6 +10,7 @@ import sXAU from './sXAU';
 import Synth from './Synth';
 import Synthetix from './Synthetix';
 import SynthetixEscrow from './SynthetixEscrow';
+import SynthetixState from './SynthetixState';
 import XDR from './XDR';
 
 export default {
@@ -24,6 +25,7 @@ export default {
   sXAU,
   Synth,
   SynthetixEscrow,
+  SynthetixState,
   Synthetix,
   XDR,
 };

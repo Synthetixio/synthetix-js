@@ -1,5 +1,6 @@
 import { HavvenJs } from '../dist/main.node';
-const havjs = new HavvenJs({ networkId: 42 });
+import config from './config';
+const havjs = new HavvenJs({ networkId: config.networkId });
 
 test(
   'Should return Nomin total supply',

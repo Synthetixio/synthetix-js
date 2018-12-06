@@ -1,6 +1,6 @@
 import { HavvenJs } from '../dist/main.node';
-
-const havjs = new HavvenJs({ networkId: 42 });
+import config from './config';
+const havjs = new HavvenJs({ networkId: config.networkId });
 const sUSD = havjs.utils.toUtf8Bytes('sUSD');
 
 test('Should return Havven total supply', async () => {

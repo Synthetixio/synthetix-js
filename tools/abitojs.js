@@ -1,6 +1,27 @@
 const contracts = require('./abis/index');
 const fs = require('fs');
 const docsDescriptions = require('../lib/docSrc/descriptions');
+
+/**
+ * ExportableContractName: AddressKey (name is used to find appropriate ABI and AddressKey for address (for proxy contracts)
+ **/
+const contractToAddressMap = {
+  ExchangeRates: 'ExchangeRates',
+  FeePool: 'FeePoolProxy',
+  Synthetix: 'SynthetixProxy',
+  SynthetixEscrow: 'SynthetixEscrow',
+  SynthetixState: 'SynthetixState',
+  Synth: 'sUSDProxy',
+  XDR: 'XDRProxy',
+  sUSD: 'sUSDProxy',
+  sEUR: 'sEURProxy',
+  sJPY: 'sJPYProxy',
+  sAUD: 'sAUDProxy',
+  sKRW: 'sKRWProxy',
+  sXAU: 'sXAUProxy',
+  Depot: 'Depot',
+};
+
 const typeMap = {
   uint256: 'BigNumber',
   uint8: 'Number',
@@ -9,29 +30,37 @@ const typeMap = {
   string: 'String',
 };
 
-const contractAbiMap = {
-  Nomin: 'Nomin',
-  Havven: 'Havven',
-  IssuanceController: 'IssuanceController',
+const contractToAbiMap = {
+  Synth: 'Synth',
+  Synthetix: 'Synthetix',
+  SynthetixEscrow: 'SynthetixEscrow',
+  SynthetixState: 'SynthetixState',
   Depot: 'Depot',
-  StablePayments: 'Nomin',
-  Mintr: 'Havven',
-  Escrow: 'Escrow',
+  XDR: 'Synth',
+  sUSD: 'Synth',
+  sEUR: 'Synth',
+  sJPY: 'Synth',
+  sAUD: 'Synth',
+  sKRW: 'Synth',
+  sXAU: 'Synth',
+  ExchangeRates: 'ExchangeRates',
+  FeePool: 'FeePool',
 };
 
-//console.log(Havven);
 const generate = () => {
-  Object.keys(contracts).forEach(key => {
-    const functions = contracts[key].filter(prop => prop.type === 'function');
-    generateJSFile(key, functions);
+  Object.keys(contractToAddressMap).forEach(contractName => {
+    const abiName = contractToAbiMap[contractName];
+    const addressName = contractToAddressMap[contractName];
+    const functions = contracts[abiName].filter(prop => prop.type === 'function');
+    generateJSFile(contractName, abiName, addressName, functions);
   });
 };
 
-const generateJSFile = (contractName, functions) => {
+const generateJSFile = (contractName, abiName, addressName, functions) => {
   const content = `import {Contract} from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
-const abi = abis.${contractName};
+const abi = abis.${abiName};
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -40,7 +69,7 @@ function ${contractName}(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList["${contractName}"],
+    this.contractSettings.addressList["${addressName}"],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
@@ -82,8 +111,8 @@ getJsdocReturns = outputs => {
 
 generateJsdoc = (abiFn, params, contractName) => {
   let description =
-    docsDescriptions[contractAbiMap[contractName]] &&
-    docsDescriptions[contractAbiMap[contractName]][abiFn.name];
+    docsDescriptions[contractToAbiMap[contractName]] &&
+    docsDescriptions[contractToAbiMap[contractName]][abiFn.name];
   description = description ? description + '<br>\n   * ' : '';
   const constantStr = abiFn.constant
     ? "Call (no gas consumed, doesn't require signer)"

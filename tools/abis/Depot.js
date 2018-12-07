@@ -3,14 +3,38 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'minimumDepositAmount',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: 'synth',
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
   },
   {
     constant: false,
-    inputs: [{ name: '_owner', type: 'address' }],
+    inputs: [
+      {
+        name: '_owner',
+        type: 'address',
+      },
+    ],
     name: 'nominateNewOwner',
     outputs: [],
     payable: false,
@@ -19,7 +43,12 @@ module.exports = [
   },
   {
     constant: false,
-    inputs: [{ name: '_paused', type: 'bool' }],
+    inputs: [
+      {
+        name: '_paused',
+        type: 'bool',
+      },
+    ],
     name: 'setPaused',
     outputs: [],
     payable: false,
@@ -30,32 +59,24 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'initiationTime',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
   },
   {
     constant: false,
-    inputs: [{ name: 'amount', type: 'uint256' }],
-    name: 'withdrawHavvens',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [{ name: 'amount', type: 'uint256' }],
-    name: 'havvensReceivedForEther',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: '_beneficiary', type: 'address' }],
+    inputs: [
+      {
+        name: '_beneficiary',
+        type: 'address',
+      },
+    ],
     name: 'setSelfDestructBeneficiary',
     outputs: [],
     payable: false,
@@ -66,7 +87,12 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'fundsWallet',
-    outputs: [{ name: '', type: 'address' }],
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -75,34 +101,12 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'priceStalePeriod',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: '_time', type: 'uint256' }],
-    name: 'setPriceStalePeriod',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: 'nominAmount', type: 'uint256' }, { name: 'guaranteedRate', type: 'uint256' }],
-    name: 'exchangeNominsForHavvensAtRate',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: 'decimals',
-    outputs: [{ name: '', type: 'uint8' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -119,57 +123,13 @@ module.exports = [
   {
     constant: true,
     inputs: [],
-    name: 'pricesAreStale',
-    outputs: [{ name: '', type: 'bool' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: 'newEthPrice', type: 'uint256' },
-      { name: 'newHavvenPrice', type: 'uint256' },
-      { name: 'timeSent', type: 'uint256' },
-    ],
-    name: 'updatePrices',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: 'exchangeEtherForHavvens',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: true,
-    stateMutability: 'payable',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: 'exchangeEtherForNomins',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: true,
-    stateMutability: 'payable',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: 'nominAmount', type: 'uint256' }],
-    name: 'exchangeNominsForHavvens',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [],
     name: 'lastPriceUpdateTime',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -178,99 +138,70 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'totalSellableDeposits',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: '_havven', type: 'address' }],
-    name: 'setHavven',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
     type: 'function',
   },
   {
     constant: true,
     inputs: [],
     name: 'nominatedOwner',
-    outputs: [{ name: '', type: 'address' }],
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [{ name: 'amount', type: 'uint256' }],
-    name: 'havvensReceivedForNomins',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: '_nomin', type: 'address' }],
-    name: 'setNomin',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
     type: 'function',
   },
   {
     constant: true,
     inputs: [],
     name: 'paused',
-    outputs: [{ name: '', type: 'bool' }],
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: 'guaranteedRate', type: 'uint256' }],
-    name: 'exchangeEtherForNominsAtRate',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: true,
-    stateMutability: 'payable',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: '_fundsWallet', type: 'address' }],
-    name: 'setFundsWallet',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: 'amount', type: 'uint256' }],
-    name: 'depositNomins',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
     type: 'function',
   },
   {
     constant: true,
     inputs: [],
     name: 'depositStartIndex',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
   },
   {
-    constant: false,
+    constant: true,
     inputs: [],
-    name: 'withdrawMyDepositedNomins',
-    outputs: [],
+    name: 'synthetix',
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
-    stateMutability: 'nonpayable',
+    stateMutability: 'view',
     type: 'function',
   },
   {
@@ -283,19 +214,15 @@ module.exports = [
     type: 'function',
   },
   {
-    constant: false,
-    inputs: [{ name: '_oracle', type: 'address' }],
-    name: 'setOracle',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
     constant: true,
     inputs: [],
     name: 'oracle',
-    outputs: [{ name: '', type: 'address' }],
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -304,7 +231,12 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'owner',
-    outputs: [{ name: '', type: 'address' }],
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -313,16 +245,12 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'lastPauseTime',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: 'havven',
-    outputs: [{ name: '', type: 'address' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -339,8 +267,13 @@ module.exports = [
   {
     constant: true,
     inputs: [],
-    name: 'UNIT',
-    outputs: [{ name: '', type: 'uint256' }],
+    name: 'SELFDESTRUCT_DELAY',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -348,35 +281,36 @@ module.exports = [
   {
     constant: true,
     inputs: [],
-    name: 'SELFDESTRUCT_DELAY',
-    outputs: [{ name: '', type: 'uint256' }],
+    name: 'feePool',
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
   },
   {
     constant: true,
-    inputs: [{ name: 'amount', type: 'uint256' }],
-    name: 'nominsReceivedForEther',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [{ name: '_amount', type: 'uint256' }],
-    name: 'setMinimumDepositAmount',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [{ name: '', type: 'uint256' }],
+    inputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     name: 'deposits',
-    outputs: [{ name: 'user', type: 'address' }, { name: 'amount', type: 'uint256' }],
+    outputs: [
+      {
+        name: 'user',
+        type: 'address',
+      },
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -385,7 +319,12 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'selfDestructInitiated',
-    outputs: [{ name: '', type: 'bool' }],
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -394,21 +333,14 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'usdToEthPrice',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: 'guaranteedEtherRate', type: 'uint256' },
-      { name: 'guaranteedHavvenRate', type: 'uint256' },
-    ],
-    name: 'exchangeEtherForHavvensAtRate',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: true,
-    stateMutability: 'payable',
     type: 'function',
   },
   {
@@ -421,41 +353,34 @@ module.exports = [
     type: 'function',
   },
   {
-    constant: false,
-    inputs: [
-      { name: 'from', type: 'address' },
-      { name: 'amount', type: 'uint256' },
-      { name: 'data', type: 'bytes' },
-    ],
-    name: 'tokenFallback',
-    outputs: [{ name: '', type: 'bool' }],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: 'usdToHavPrice',
-    outputs: [{ name: '', type: 'uint256' }],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
     constant: true,
     inputs: [],
     name: 'selfDestructBeneficiary',
-    outputs: [{ name: '', type: 'address' }],
+    outputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
   },
   {
     constant: true,
-    inputs: [{ name: '', type: 'address' }],
+    inputs: [
+      {
+        name: '',
+        type: 'address',
+      },
+    ],
     name: 'smallDeposits',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -463,8 +388,13 @@ module.exports = [
   {
     constant: true,
     inputs: [],
-    name: 'nomin',
-    outputs: [{ name: '', type: 'address' }],
+    name: 'usdToSnxPrice',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -473,7 +403,12 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'ORACLE_FUTURE_LIMIT',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
@@ -482,62 +417,138 @@ module.exports = [
     constant: true,
     inputs: [],
     name: 'depositEndIndex',
-    outputs: [{ name: '', type: 'uint256' }],
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
     payable: false,
     stateMutability: 'view',
     type: 'function',
   },
   {
     inputs: [
-      { name: '_owner', type: 'address' },
-      { name: '_fundsWallet', type: 'address' },
-      { name: '_havven', type: 'address' },
-      { name: '_nomin', type: 'address' },
-      { name: '_oracle', type: 'address' },
-      { name: '_usdToEthPrice', type: 'uint256' },
-      { name: '_usdToHavPrice', type: 'uint256' },
+      {
+        name: '_owner',
+        type: 'address',
+      },
+      {
+        name: '_fundsWallet',
+        type: 'address',
+      },
+      {
+        name: '_synthetix',
+        type: 'address',
+      },
+      {
+        name: '_synth',
+        type: 'address',
+      },
+      {
+        name: '_feePool',
+        type: 'address',
+      },
+      {
+        name: '_oracle',
+        type: 'address',
+      },
+      {
+        name: '_usdToEthPrice',
+        type: 'uint256',
+      },
+      {
+        name: '_usdToSnxPrice',
+        type: 'uint256',
+      },
     ],
     payable: false,
     stateMutability: 'nonpayable',
     type: 'constructor',
   },
-  { payable: true, stateMutability: 'payable', type: 'fallback' },
+  {
+    payable: true,
+    stateMutability: 'payable',
+    type: 'fallback',
+  },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'newFundsWallet', type: 'address' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'newFundsWallet',
+        type: 'address',
+      },
+    ],
     name: 'FundsWalletUpdated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'newOracle', type: 'address' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'newOracle',
+        type: 'address',
+      },
+    ],
     name: 'OracleUpdated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'newNominContract', type: 'address' }],
-    name: 'NominUpdated',
+    inputs: [
+      {
+        indexed: false,
+        name: 'newSynthContract',
+        type: 'address',
+      },
+    ],
+    name: 'SynthUpdated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'newHavvenContract', type: 'address' }],
-    name: 'HavvenUpdated',
+    inputs: [
+      {
+        indexed: false,
+        name: 'newSynthetixContract',
+        type: 'address',
+      },
+    ],
+    name: 'SynthetixUpdated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'priceStalePeriod', type: 'uint256' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'priceStalePeriod',
+        type: 'uint256',
+      },
+    ],
     name: 'PriceStalePeriodUpdated',
     type: 'event',
   },
   {
     anonymous: false,
     inputs: [
-      { indexed: false, name: 'newEthPrice', type: 'uint256' },
-      { indexed: false, name: 'newHavvenPrice', type: 'uint256' },
-      { indexed: false, name: 'timeSent', type: 'uint256' },
+      {
+        indexed: false,
+        name: 'newEthPrice',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        name: 'newSynthetixPrice',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        name: 'timeSent',
+        type: 'uint256',
+      },
     ],
     name: 'PricesUpdated',
     type: 'event',
@@ -545,11 +556,26 @@ module.exports = [
   {
     anonymous: false,
     inputs: [
-      { indexed: false, name: 'fromCurrency', type: 'string' },
-      { indexed: false, name: 'fromAmount', type: 'uint256' },
-      { indexed: false, name: 'toCurrency', type: 'string' },
-      { indexed: false, name: 'toAmount', type: 'uint256' },
-      { indexed: false, name: 'price', type: 'uint256' },
+      {
+        indexed: false,
+        name: 'fromCurrency',
+        type: 'string',
+      },
+      {
+        indexed: false,
+        name: 'fromAmount',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        name: 'toCurrency',
+        type: 'string',
+      },
+      {
+        indexed: false,
+        name: 'toAmount',
+        type: 'uint256',
+      },
     ],
     name: 'Exchange',
     type: 'event',
@@ -557,75 +583,581 @@ module.exports = [
   {
     anonymous: false,
     inputs: [
-      { indexed: false, name: 'user', type: 'address' },
-      { indexed: false, name: 'amount', type: 'uint256' },
+      {
+        indexed: false,
+        name: 'user',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
     ],
-    name: 'NominWithdrawal',
+    name: 'SynthWithdrawal',
     type: 'event',
   },
   {
     anonymous: false,
     inputs: [
-      { indexed: false, name: 'user', type: 'address' },
-      { indexed: false, name: 'amount', type: 'uint256' },
+      {
+        indexed: true,
+        name: 'user',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
+      {
+        indexed: true,
+        name: 'depositIndex',
+        type: 'uint256',
+      },
     ],
-    name: 'NominDeposit',
+    name: 'SynthDeposit',
     type: 'event',
   },
   {
     anonymous: false,
     inputs: [
-      { indexed: false, name: 'user', type: 'address' },
-      { indexed: false, name: 'amount', type: 'uint256' },
-      { indexed: false, name: 'minimum', type: 'uint256' },
+      {
+        indexed: true,
+        name: 'user',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
+      {
+        indexed: true,
+        name: 'depositIndex',
+        type: 'uint256',
+      },
     ],
-    name: 'NominDepositNotAccepted',
+    name: 'SynthDepositRemoved',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'amount', type: 'uint256' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'user',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        name: 'minimum',
+        type: 'uint256',
+      },
+    ],
+    name: 'SynthDepositNotAccepted',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
     name: 'MinimumDepositAmountUpdated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'isPaused', type: 'bool' }],
+    inputs: [
+      {
+        indexed: true,
+        name: 'receiver',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'NonPayableContract',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        name: 'fromAddress',
+        type: 'address',
+      },
+      {
+        indexed: true,
+        name: 'toAddress',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'fromETHAmount',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        name: 'toAmount',
+        type: 'uint256',
+      },
+      {
+        indexed: true,
+        name: 'depositIndex',
+        type: 'uint256',
+      },
+    ],
+    name: 'ClearedDeposit',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        name: 'isPaused',
+        type: 'bool',
+      },
+    ],
     name: 'PauseChanged',
     type: 'event',
   },
-  { anonymous: false, inputs: [], name: 'SelfDestructTerminated', type: 'event' },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'beneficiary', type: 'address' }],
+    inputs: [],
+    name: 'SelfDestructTerminated',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        name: 'beneficiary',
+        type: 'address',
+      },
+    ],
     name: 'SelfDestructed',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'selfDestructDelay', type: 'uint256' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'selfDestructDelay',
+        type: 'uint256',
+      },
+    ],
     name: 'SelfDestructInitiated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'newBeneficiary', type: 'address' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'newBeneficiary',
+        type: 'address',
+      },
+    ],
     name: 'SelfDestructBeneficiaryUpdated',
     type: 'event',
   },
   {
     anonymous: false,
-    inputs: [{ indexed: false, name: 'newOwner', type: 'address' }],
+    inputs: [
+      {
+        indexed: false,
+        name: 'newOwner',
+        type: 'address',
+      },
+    ],
     name: 'OwnerNominated',
     type: 'event',
   },
   {
     anonymous: false,
     inputs: [
-      { indexed: false, name: 'oldOwner', type: 'address' },
-      { indexed: false, name: 'newOwner', type: 'address' },
+      {
+        indexed: false,
+        name: 'oldOwner',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'newOwner',
+        type: 'address',
+      },
     ],
     name: 'OwnerChanged',
     type: 'event',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_fundsWallet',
+        type: 'address',
+      },
+    ],
+    name: 'setFundsWallet',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_oracle',
+        type: 'address',
+      },
+    ],
+    name: 'setOracle',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_synth',
+        type: 'address',
+      },
+    ],
+    name: 'setSynth',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_synthetix',
+        type: 'address',
+      },
+    ],
+    name: 'setSynthetix',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_time',
+        type: 'uint256',
+      },
+    ],
+    name: 'setPriceStalePeriod',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'setMinimumDepositAmount',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'newEthPrice',
+        type: 'uint256',
+      },
+      {
+        name: 'newSynthetixPrice',
+        type: 'uint256',
+      },
+      {
+        name: 'timeSent',
+        type: 'uint256',
+      },
+    ],
+    name: 'updatePrices',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: 'exchangeEtherForSynths',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'guaranteedRate',
+        type: 'uint256',
+      },
+    ],
+    name: 'exchangeEtherForSynthsAtRate',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: 'exchangeEtherForSynthetix',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'guaranteedEtherRate',
+        type: 'uint256',
+      },
+      {
+        name: 'guaranteedSynthetixRate',
+        type: 'uint256',
+      },
+    ],
+    name: 'exchangeEtherForSynthetixAtRate',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: true,
+    stateMutability: 'payable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'synthAmount',
+        type: 'uint256',
+      },
+    ],
+    name: 'exchangeSynthsForSynthetix',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'synthAmount',
+        type: 'uint256',
+      },
+      {
+        name: 'guaranteedRate',
+        type: 'uint256',
+      },
+    ],
+    name: 'exchangeSynthsForSynthetixAtRate',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'withdrawSynthetix',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: 'withdrawMyDepositedSynths',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'depositSynths',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: 'from',
+        type: 'address',
+      },
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+      {
+        name: 'data',
+        type: 'bytes',
+      },
+    ],
+    name: 'tokenFallback',
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+      },
+    ],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: 'pricesAreStale',
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'synthetixReceivedForSynths',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'synthetixReceivedForEther',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: 'amount',
+        type: 'uint256',
+      },
+    ],
+    name: 'synthsReceivedForEther',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
   },
 ];

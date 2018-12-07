@@ -1,17 +1,17 @@
-const Havven = require('./Havven');
-const Nomin = require('./Nomin');
-const IssuanceController = require('./IssuanceController');
-const Mintr = require('./Mintr');
-const StablePayments = require('./StablePayments');
-const Escrow = require('./Escrow');
+const Synthetix = require('./Synthetix');
+const Synth = require('./Synth');
+const SynthetixEscrow = require('./SynthetixEscrow');
+const SynthetixState = require('./SynthetixState');
 const Depot = require('./Depot');
+const ExchangeRates = require('./ExchangeRates');
+const FeePool = require('./FeePool');
 
 module.exports = {
-  Havven,
-  Nomin,
-  IssuanceController,
-  Mintr,
-  StablePayments,
-  Escrow,
+  Synthetix,
+  Synth,
   Depot,
+  SynthetixEscrow,
+  SynthetixState,
+  ExchangeRates,
+  FeePool,
 };

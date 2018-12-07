@@ -5,6 +5,7 @@ const SynthetixState = require('./SynthetixState');
 const Depot = require('./Depot');
 const ExchangeRates = require('./ExchangeRates');
 const FeePool = require('./FeePool');
+const EscrowChecker = require('./EscrowChecker');
 
 module.exports = {
   Synthetix,
@@ -14,4 +15,5 @@ module.exports = {
   SynthetixState,
   ExchangeRates,
   FeePool,
+  EscrowChecker,
 };

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>contracts/Synthetix.js - Documentation</title>
+    <title>EscrowChecker - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,625 +31,422 @@
 
 <div id="main">
     
-    <h1 class="page-title">contracts/Synthetix.js</h1>
+    <h1 class="page-title">EscrowChecker</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import { Contract } from 'ethers';
-import abis from '../../lib/abis/index';
-import ContractSettings from '../contractSettings';
-const abi = abis.Synthetix;
+        <h2>
+        EscrowChecker
+        </h2>
+        
+    
+</header>
 
-/** @constructor
- * @param contractSettings {ContractSettings}
- */
-function Synthetix(contractSettings) {
-  this.contractSettings = contractSettings || new ContractSettings();
+<article>
+    
+        <div class="container-overview">
+        
+            
 
-  this.contract = new Contract(
-    this.contractSettings.addressList['SynthetixProxy'],
-    abi,
-    this.contractSettings.signer || this.contractSettings.provider
-  );
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String
-   **/
-  this.name = async () => {
-    return await this.contract.name();
-  };
+    <h4 class="name" id="EscrowChecker"><span class="type-signature"></span>new EscrowChecker<span class="signature">(contractSettings)</span><span class="type-signature"></span></h4>
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param spender {String&lt;EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.approve = async (spender, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.approve(spender, value, txParams);
-  };
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _owner {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.nominateNewOwner = async (_owner, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.nominateNewOwner(_owner, txParams);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.initiationTime = async () => {
-    return await this.contract.initiationTime();
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.totalSupply = async () => {
-    return await this.contract.totalSupply();
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _beneficiary {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
-  };
+<dl class="details">
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns Number
-   **/
-  this.decimals = async () => {
-    return await this.contract.decimals();
-  };
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_EscrowChecker.js.html">contracts/EscrowChecker.js</a>, <a href="contracts_EscrowChecker.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.terminateSelfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.terminateSelfDestruct(txParams);
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.exchangeRates = async () => {
-    return await this.contract.exchangeRates();
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes4}
-   * @returns String&lt;EthAddress>
-   **/
-  this.synths = async bytes4 => {
-    return await this.contract.synths(bytes4);
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.nominatedOwner = async () => {
-    return await this.contract.nominatedOwner();
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.balanceOf = async account => {
-    return await this.contract.balanceOf(account);
-  };
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.acceptOwnership = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.acceptOwnership(txParams);
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns String&lt;EthAddress>
-   **/
-  this.availableSynths = async uint256 => {
-    return await this.contract.availableSynths(uint256);
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.owner = async () => {
-    return await this.contract.owner();
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String
-   **/
-  this.symbol = async () => {
-    return await this.contract.symbol();
-  };
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _proxy {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setProxy = async (_proxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setProxy(_proxy, txParams);
-  };
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.selfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.selfDestruct(txParams);
-  };
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _tokenState {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setTokenState = async (_tokenState, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setTokenState(_tokenState, txParams);
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.SELFDESTRUCT_DELAY = async () => {
-    return await this.contract.SELFDESTRUCT_DELAY();
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.feePool = async () => {
-    return await this.contract.feePool();
-  };
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.selfDestructInitiated = async () => {
-    return await this.contract.selfDestructInitiated();
-  };
+    
+</dl>
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param sender {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setMessageSender = async (sender, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setMessageSender(sender, txParams);
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.initiateSelfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.initiateSelfDestruct(txParams);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.selfDestructBeneficiary = async () => {
-    return await this.contract.selfDestructBeneficiary();
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.synthetixState = async () => {
-    return await this.contract.synthetixState();
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param owner {String&lt;EthAddress>}
-   * @param spender {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.allowance = async (owner, spender) => {
-    return await this.contract.allowance(owner, spender);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.escrow = async () => {
-    return await this.contract.escrow();
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.tokenState = async () => {
-    return await this.contract.tokenState();
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String&lt;EthAddress>
-   **/
-  this.proxy = async () => {
-    return await this.contract.proxy();
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param synth {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.addSynth = async (synth, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.addSynth(synth, txParams);
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param txParams {TxParams}
-  
-   **/
-  this.removeSynth = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.removeSynth(currencyKey, txParams);
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _escrow {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setEscrow = async (_escrow, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setEscrow(_escrow, txParams);
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeRates {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setExchangeRates = async (_exchangeRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeRates(_exchangeRates, txParams);
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetixState {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetixState = async (_synthetixState, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetixState(_synthetixState, txParams);
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setPreferredCurrency = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setPreferredCurrency(currencyKey, txParams);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param sourceCurrencyKey {bytes4}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes4}
-   * @returns BigNumber
-   **/
-  this.effectiveValue = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey) => {
-    return await this.contract.effectiveValue(
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey
-    );
-  };
+    <h5>Parameters:</h5>
+    
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes4}
-   * @returns BigNumber
-   **/
-  this.totalIssuedSynths = async currencyKey => {
-    return await this.contract.totalIssuedSynths(currencyKey);
-  };
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.availableSynthCount = async () => {
-    return await this.contract.availableSynthCount();
-  };
+        <th>Type</th>
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param to {String&lt;EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, txParams);
-  };
+        
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param to {String&lt;EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, data, txParams);
-  };
+        
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String&lt;EthAddress>}
-   * @param to {String&lt;EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, data, txParams);
-  };
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String&lt;EthAddress>}
-   * @param to {String&lt;EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, txParams);
-  };
+    <tbody>
+    
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param sourceCurrencyKey {bytes4}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes4}
-   * @param destinationAddress {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.exchange = async (
-    sourceCurrencyKey,
-    sourceAmount,
-    destinationCurrencyKey,
-    destinationAddress,
-    txParams
-  ) => {
-    txParams = txParams || {};
-    return await this.contract.exchange(
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey,
-      destinationAddress,
-      txParams
-    );
-  };
+        <tr>
+            
+                <td class="name"><code>contractSettings</code></td>
+            
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String&lt;EthAddress>}
-   * @param sourceCurrencyKey {bytes4}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes4}
-   * @param destinationAddress {String&lt;EthAddress>}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.synthInitiatedExchange = async (
-    from,
-    sourceCurrencyKey,
-    sourceAmount,
-    destinationCurrencyKey,
-    destinationAddress,
-    txParams
-  ) => {
-    txParams = txParams || {};
-    return await this.contract.synthInitiatedExchange(
-      from,
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey,
-      destinationAddress,
-      txParams
-    );
-  };
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ContractSettings.html">ContractSettings</a></span>
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String&lt;EthAddress>}
-   * @param sourceCurrencyKey {bytes4}
-   * @param sourceAmount {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.synthInitiatedFeePayment = async (from, sourceCurrencyKey, sourceAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.synthInitiatedFeePayment(
-      from,
-      sourceCurrencyKey,
-      sourceAmount,
-      txParams
-    );
-  };
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueSynths = async (currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueSynths(currencyKey, amount, txParams);
-  };
+            
+            </td>
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueMaxSynths = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueMaxSynths(currencyKey, txParams);
-  };
+            
 
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnSynths = async (currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnSynths(currencyKey, amount, txParams);
-  };
+            
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param issuer {String&lt;EthAddress>}
-   * @param currencyKey {bytes4}
-   * @returns BigNumber
-   **/
-  this.maxIssuableSynths = async (issuer, currencyKey) => {
-    return await this.contract.maxIssuableSynths(issuer, currencyKey);
-  };
+            <td class="description last"></td>
+        </tr>
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param issuer {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.collateralisationRatio = async issuer => {
-    return await this.contract.collateralisationRatio(issuer);
-  };
+    
+    </tbody>
+</table>
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param issuer {String&lt;EthAddress>}
-   * @param currencyKey {bytes4}
-   * @returns BigNumber
-   **/
-  this.debtBalanceOf = async (issuer, currencyKey) => {
-    return await this.contract.debtBalanceOf(issuer, currencyKey);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param issuer {String&lt;EthAddress>}
-   * @param currencyKey {bytes4}
-   * @returns BigNumber
-   **/
-  this.remainingIssuableSynths = async (issuer, currencyKey) => {
-    return await this.contract.remainingIssuableSynths(issuer, currencyKey);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.collateral = async account => {
-    return await this.contract.collateral(account);
-  };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String&lt;EthAddress>}
-   * @returns BigNumber
-   **/
-  this.transferableSynthetix = async account => {
-    return await this.contract.transferableSynthetix(account);
-  };
-}
 
-export default Synthetix;
-</code></pre>
-        </article>
-    </section>
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="checkAccountSchedule"><span class="type-signature"></span>checkAccountSchedule<span class="signature">(account)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_EscrowChecker.js.html">contracts/EscrowChecker.js</a>, <a href="contracts_EscrowChecker.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>account</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String.&lt;EthAddress></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    uint256[16]
+</div>
+
+
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="havven_escrow"><span class="type-signature"></span>havven_escrow<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contracts_EscrowChecker.js.html">contracts/EscrowChecker.js</a>, <a href="contracts_EscrowChecker.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Call (no gas consumed, doesn't require signer)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    String<EthAddress>
+</div>
+
+
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

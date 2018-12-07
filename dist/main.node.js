@@ -24050,7 +24050,35 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   stateMutability: 'view',
   type: 'function'
 }]);
+// CONCATENATED MODULE: ./lib/abis/EscrowChecker.js
+/* harmony default export */ var EscrowChecker = ([{
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'checkAccountSchedule',
+  outputs: [{
+    name: '',
+    type: 'uint256[16]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'havven_escrow',
+  outputs: [{
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}]);
 // CONCATENATED MODULE: ./lib/abis/index.js
+
 
 
 
@@ -24065,7 +24093,8 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   SynthetixState: SynthetixState,
   Depot: Depot,
   FeePool: FeePool,
-  ExchangeRates: ExchangeRates
+  ExchangeRates: ExchangeRates,
+  EscrowChecker: EscrowChecker
 });
 // CONCATENATED MODULE: ./lib/addresses.js
 var MAINNET_ADDRESSES = {
@@ -24099,7 +24128,7 @@ var MAINNET_ADDRESSES = {
   sXAUTokenState: '0x20569B49d74c1EDE765382574F7F3fdC2a078A4f',
   sXAUProxy: '0xe05D803fa0c5832Fa2262465290abB25d6C2bFA3',
   sXAUSynth: '0x112D5fA64e4902B6ff1a35495a0f878c210A5601',
-  EscrowChecker: '',
+  EscrowChecker: '0x3c9dF924b16b321847096a47d2d57D4A3259D060',
   Depot: '0x15ED8dcD6D5D7C9e66a28CB70673389A5Dc4fCf5',
   // Vanity APIs
   Mintr: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
@@ -42701,7 +42730,89 @@ function XDR(contractSettings) {
 }
 
 /* harmony default export */ var contracts_XDR = (XDR);
+// CONCATENATED MODULE: ./src/contracts/EscrowChecker.js
+
+
+
+
+
+var EscrowChecker_abi = abis.EscrowChecker;
+/** @constructor
+ * @param contractSettings {ContractSettings}
+ */
+
+function EscrowChecker_EscrowChecker(contractSettings) {
+  var _this = this;
+
+  this.contractSettings = contractSettings || new src_contractSettings();
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['EscrowChecker'], EscrowChecker_abi, this.contractSettings.signer || this.contractSettings.provider);
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns uint256[16]
+   **/
+
+  this.checkAccountSchedule =
+  /*#__PURE__*/
+  function () {
+    var _ref = asyncToGenerator_default()(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee(account) {
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _this.contract.checkAccountSchedule(account);
+
+            case 2:
+              return _context.abrupt("return", _context.sent);
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.havven_escrow =
+  /*#__PURE__*/
+  asyncToGenerator_default()(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee2() {
+    return regenerator_default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return _this.contract.havven_escrow();
+
+          case 2:
+            return _context2.abrupt("return", _context2.sent);
+
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, this);
+  }));
+}
+
+/* harmony default export */ var contracts_EscrowChecker = (EscrowChecker_EscrowChecker);
 // CONCATENATED MODULE: ./src/contracts/index.js
+
 
 
 
@@ -42730,7 +42841,8 @@ function XDR(contractSettings) {
   SynthetixEscrow: contracts_SynthetixEscrow,
   SynthetixState: contracts_SynthetixState,
   Synthetix: contracts_Synthetix,
-  XDR: contracts_XDR
+  XDR: contracts_XDR,
+  EscrowChecker: contracts_EscrowChecker
 });
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(28);

@@ -20,6 +20,7 @@ const contractToAddressMap = {
   sKRW: 'sKRWProxy',
   sXAU: 'sXAUProxy',
   Depot: 'Depot',
+  EscrowChecker: 'EscrowChecker',
 };
 
 const typeMap = {
@@ -45,6 +46,7 @@ const contractToAbiMap = {
   sXAU: 'Synth',
   ExchangeRates: 'ExchangeRates',
   FeePool: 'FeePool',
+  EscrowChecker: 'EscrowChecker',
 };
 
 const generate = () => {

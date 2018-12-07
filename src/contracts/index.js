@@ -12,6 +12,7 @@ import Synthetix from './Synthetix';
 import SynthetixEscrow from './SynthetixEscrow';
 import SynthetixState from './SynthetixState';
 import XDR from './XDR';
+import EscrowChecker from './EscrowChecker';
 
 export default {
   Depot,
@@ -28,4 +29,5 @@ export default {
   SynthetixState,
   Synthetix,
   XDR,
+  EscrowChecker,
 };

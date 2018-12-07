@@ -21,6 +21,7 @@ export class HavvenJs {
     });
     this.util = new util(contractSettings);
     this.utils = this.util;
+    this.ethers = this.ethers;
     this.SUPPORTED_NETWORKS = ContractSettings.SUPPORTED_NETWORKS;
   }
 }

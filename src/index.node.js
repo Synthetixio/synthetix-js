@@ -2,6 +2,7 @@ import contracts from './contracts';
 import util from './util/index';
 import PrivateKey from '../lib/signers/privateKeySigner';
 import ContractSettings from './contractSettings';
+import ethers from 'ethers';
 
 export class HavvenJs {
   /**
@@ -21,7 +22,7 @@ export class HavvenJs {
     });
     this.util = new util(contractSettings);
     this.utils = this.util;
-    this.ethers = this.ethers;
+    this.ethers = ethers;
     this.SUPPORTED_NETWORKS = ContractSettings.SUPPORTED_NETWORKS;
   }
 }

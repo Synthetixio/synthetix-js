@@ -19704,6 +19704,7 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 
 // EXTERNAL MODULE: ./node_modules/ethers/index.js
 var ethers = __webpack_require__(2);
+var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
 
 // CONCATENATED MODULE: ./lib/abis/Synthetix.js
 /* harmony default export */ var Synthetix = ([{
@@ -43329,6 +43330,7 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, netw
 
 
 
+
 var index_node_HavvenJs =
 /**
  * Creates instances of Havven contracts based on ContractSettings.
@@ -43351,7 +43353,7 @@ function HavvenJs(contractSettings) {
   });
   this.util = new util(contractSettings);
   this.utils = this.util;
-  this.ethers = this.ethers;
+  this.ethers = ethers_default.a;
   this.SUPPORTED_NETWORKS = src_contractSettings.SUPPORTED_NETWORKS;
 };
 /**

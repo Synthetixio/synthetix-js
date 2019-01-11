@@ -7,6 +7,8 @@ import sJPY from './sJPY';
 import sKRW from './sKRW';
 import sUSD from './sUSD';
 import sXAU from './sXAU';
+import sGBP from './sGBP';
+import sCHF from './sCHF';
 import Synth from './Synth';
 import Synthetix from './Synthetix';
 import SynthetixEscrow from './SynthetixEscrow';
@@ -24,6 +26,8 @@ export default {
   sKRW,
   sUSD,
   sXAU,
+  sGBP,
+  sCHF,
   Synth,
   SynthetixEscrow,
   SynthetixState,

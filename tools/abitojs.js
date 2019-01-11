@@ -19,6 +19,8 @@ const contractToAddressMap = {
   sAUD: 'sAUDProxy',
   sKRW: 'sKRWProxy',
   sXAU: 'sXAUProxy',
+  sGBP: 'sGBPProxy',
+  sCHF: 'sCHFProxy',
   Depot: 'Depot',
   EscrowChecker: 'EscrowChecker',
 };
@@ -44,6 +46,8 @@ const contractToAbiMap = {
   sAUD: 'Synth',
   sKRW: 'Synth',
   sXAU: 'Synth',
+  sGBP: 'Synth',
+  sCHF: 'Synth',
   ExchangeRates: 'ExchangeRates',
   FeePool: 'FeePool',
   EscrowChecker: 'EscrowChecker',

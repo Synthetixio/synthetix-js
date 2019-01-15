@@ -7,7 +7,7 @@
   "homepage": "https://havven.io",
   "repository": "https://github.com/Havven/havven-js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "docs": "jsdoc src -r -d ./doc -c jsdoc.json --readme README.md",
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",

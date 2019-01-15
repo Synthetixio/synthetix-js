@@ -11,7 +11,6 @@ test(
     );
     const havjs = new HavvenJs({ signer, networkId: config.networkId });
     const balance = await havjs.SynthetixEscrow.balanceOf(signer.getAddress());
-    console.log(balance);
     await expect(balance).toBeTruthy();
   },
   15000

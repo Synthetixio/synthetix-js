@@ -1,6 +1,6 @@
 {
   "name": "havven-js",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Havven JS Library - access Havven smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",

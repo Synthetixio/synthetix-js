@@ -2,27 +2,27 @@
 
 [![CircleCI](https://circleci.com/gh/Synthetixio/havven-js.svg?style=svg)](https://circleci.com/gh/Synthetixio/havven-js)
 
-The Havven-JS Library provides a simple pre-packaged API to communicate with the [Havven payment engine](https://www.havven.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
+The Synthetix-JS Library provides a simple pre-packaged API to communicate with the [Synthetix payment engine](https://synthetix.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
 
 This is particularly useful for hackathon teams to quickly `npm install havven-js` and have stable payments integrated into their dApp in just a few minutes.
 
-Under the hood, HavvenJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and its concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
+Under the hood, SynthetixJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and its concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
 The two main packages to do stable payments with are:
 
-- [StablePayments](https://havvenjs.havven.io/stablepayments) - for transfer() and payment related functions like transfer()
-- [Util](https://havvenjs.havven.io/util) - a bunch of handy utility functions for number handling and gas estimation
+- [StablePayments](https://synthetixjs.synthetix.io/stablepayments) - for transfer() and payment related functions like transfer()
+- [Util](https://synthetixjs.synthetix.io/util) - a bunch of handy utility functions for number handling and gas estimation
 
 Some other packages for hacking with:
 
-- [IsssuanceController](https://havvenjs.havven.io/issuancecontroller) - for Token swapper/exchange functions such as ETH > HAV & ETH > nUSD
-- [Mintr](https://havvenjs.havven.io/mintr) - if you want to build a dApp for minting and burning stablecoins.
+- [IsssuanceController](https://synthetixjs.synthetix.io/issuancecontroller) - for Token swapper/exchange functions such as ETH > HAV & ETH > nUSD
+- [Mintr](https://synthetixjs.synthetix.io/mintr) - if you want to build a dApp for minting and burning stablecoins.
 
-## What can I build on the Havven payment engine?
+## What can I build on the Synthetix payment engine?
 
-Anything you can think of with programmable money. We provide the stability-as-a-service and soon fx (foreign exchange) with havvens multicurrency release.
+Anything you can think of with programmable money. We provide the stability-as-a-service and fx (foreign exchange).
 
-We’ve come up with some thought starters for dApps you could create by integrating Havven’s stable payments into your projects.
+We’ve come up with some thought starters for dApps you could create by integrating Synthetix's stable payments into your projects.
 
 - Crypto Games - lottery, poker, fomoNUSD, nUSDCrash for kicks.
 - Crypto Ecommerce
@@ -114,10 +114,10 @@ See /\_\_tests\_\_ folder for more examples.
 
 ## More Info
 
-To understand the Havven payments engine see more at [developer.havven.io](https://developer.havven.io)
+To understand the Synthetix payments engine see more at [developer.synthetix.io](https://developer.synthetix.io)
 
-- [havven.io](https://havven.io/?utm_source=github)
-- [dashboard.havven.io](https://dashboard.havven.io)
+- [synthetix.io](https://synthetix.io/?utm_source=github)
+- [dashboard.synthetix.io](https://dashboard.synthetix.io)
 - [Reddit](https://www.reddit.com/r/havven/?utm_source=github)
 - [Twitter](https://twitter.com/havven_io?utm_source=github)
 

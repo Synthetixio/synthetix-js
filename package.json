@@ -1,11 +1,11 @@
 {
   "name": "havven-js",
   "version": "1.1.0",
-  "description": "Havven JS Library - access Havven smart contracts from browser and Node.js",
+  "description": "Synthetix JS Library - access Sythetix smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",
-  "homepage": "https://havven.io",
-  "repository": "https://github.com/Havven/havven-js",
+  "homepage": "https://synthetix.io",
+  "repository": "https://github.com/Synthetixio/havven-js",
   "scripts": {
     "test": "jest --runInBand",
     "docs": "jsdoc src -r -d ./doc -c jsdoc.json --readme README.md",

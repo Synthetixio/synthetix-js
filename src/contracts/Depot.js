@@ -283,6 +283,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Set the funds wallet where ETH raised is held.<br>
    * Transaction (consumes gas, requires signer)
    * @param _fundsWallet {String<EthAddress>}
    * @param txParams {TxParams}
@@ -294,6 +295,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Set the Oracle that pushes the synthetix price to this contract.<br>
    * Transaction (consumes gas, requires signer)
    * @param _oracle {String<EthAddress>}
    * @param txParams {TxParams}
@@ -305,6 +307,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Set the Synth contract that the issuance controller uses to issue Synths.<br>
    * Transaction (consumes gas, requires signer)
    * @param _synth {String<EthAddress>}
    * @param txParams {TxParams}
@@ -316,6 +319,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Set the Synthetix contract that the issuance controller uses to issue SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param _synthetix {String<EthAddress>}
    * @param txParams {TxParams}
@@ -327,6 +331,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Set the stale period on the updated price variables.<br>
    * Transaction (consumes gas, requires signer)
    * @param _time {BigNumber}
    * @param txParams {TxParams}
@@ -338,6 +343,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Set the minimum deposit amount required to depoist sUSD into the FIFO queue.<br>
    * Transaction (consumes gas, requires signer)
    * @param _amount {BigNumber}
    * @param txParams {TxParams}
@@ -349,6 +355,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Access point for the oracle to update the prices of SNX / eth.<br>
    * Transaction (consumes gas, requires signer)
    * @param newEthPrice {BigNumber}
    * @param newSynthetixPrice {BigNumber}
@@ -362,6 +369,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Exchange ETH to sUSD.<br>
    * Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
    * @param txParams {TxParams}
@@ -373,6 +381,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Exchange ETH to sUSD while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
    * Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
    * @param guaranteedRate {BigNumber}
@@ -385,6 +394,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Exchange ETH to SNX.<br>
    * Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
    * @param txParams {TxParams}
@@ -396,6 +406,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Exchange ETH to SNX while insisting on a particular set of rates. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rates.<br>
    * Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
    * @param guaranteedEtherRate {BigNumber}
@@ -417,6 +428,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Exchange sUSD for SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param synthAmount {BigNumber}
    * @param txParams {TxParams}
@@ -428,6 +440,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Exchange sUSD for SNX while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
    * Transaction (consumes gas, requires signer)
    * @param synthAmount {BigNumber}
    * @param guaranteedRate {BigNumber}
@@ -444,6 +457,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Allows the owner to withdraw SNX from this contract if needed.<br>
    * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -455,6 +469,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Allows a user to withdraw all of their previously deposited synths from this contract if needed. Developer note: We could keep an index of address to deposits to make this operation more efficient but then all the other operations on the queue become less efficient. It's expected that this function will be very rarely used, so placing the inefficiency here is intentional. The usual use case does not involve a withdrawal.<br>
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -465,6 +480,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * DepositSynths: Allows users to deposit synths via the approve / transferFrom workflow if they'd like. You can equally just transfer synths to this contract and it will work exactly the same way but with one less call (and therefore cheaper transaction fees).<br>
    * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -476,6 +492,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Triggers when users send us SNX or sUSD, but the modifier only allows sUSD calls to proceed.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
@@ -489,6 +506,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Check if the prices haven't been updated for longer than the stale period.<br>
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -497,6 +515,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Calculate how many SNX you will receive if you transfer an amount of synths.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
@@ -506,6 +525,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Calculate how many SNX you will receive if you transfer an amount of ether.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
@@ -515,6 +535,7 @@ function Depot(contractSettings) {
   };
 
   /**
+   * Calculate how many synths you will receive if you transfer an amount of ether.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber

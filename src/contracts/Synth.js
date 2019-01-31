@@ -284,6 +284,7 @@ function Synth(contractSettings) {
   };
 
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -296,6 +297,7 @@ function Synth(contractSettings) {
   };
 
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -309,6 +311,7 @@ function Synth(contractSettings) {
   };
 
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -323,6 +326,7 @@ function Synth(contractSettings) {
   };
 
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}

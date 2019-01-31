@@ -100,6 +100,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * A simple alias to totalVestedAccountBalance: provides ERC20 balance integration.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -109,6 +110,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * The number of vesting dates in an account's schedule.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -118,6 +120,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Get a particular schedule entry for an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param index {BigNumber}
@@ -128,6 +131,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Get the time at which a given schedule entry will vest.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param index {BigNumber}
@@ -138,6 +142,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Get the quantity of SNX associated with a given schedule entry.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param index {BigNumber}
@@ -148,6 +153,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Obtain the index of the next schedule entry that will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -157,6 +163,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Obtain the next schedule entry that will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns uint256[2]
@@ -166,6 +173,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Obtain the time at which the next schedule entry will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -175,6 +183,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Obtain the quantity which the next schedule entry will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -184,6 +193,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * This may only be called by the owner during the contract's setup period., Withdraws a quantity of SNX back to the synthetix contract.<br>
    * Transaction (consumes gas, requires signer)
    * @param quantity {BigNumber}
    * @param txParams {TxParams}
@@ -195,6 +205,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Destroy the vesting information associated with an account.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param txParams {TxParams}
@@ -206,6 +217,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * A call to this should be accompanied by either enough balance already available in this contract, or a corresponding call to synthetix.endow(), to ensure that when the funds are withdrawn, there is enough balance, as well as correctly calculating the fees. This may only be called by the owner during the contract's setup period. Note; although this function could technically be used to produce unbounded arrays, it's only in the foundation's command to add to these lists., Add a new vesting entry at a given time and quantity to an account's schedule.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param time {BigNumber}
@@ -219,6 +231,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Assumes that the quantities are nonzero and that the sequence of timestamps is strictly increasing. This may only be called by the owner during the contract's setup period., Construct a vesting schedule to release a quantities of SNX over a series of intervals.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param times {uint256[]}
@@ -232,6 +245,7 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Allow a user to withdraw any SNX in their schedule that have vested.<br>
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   

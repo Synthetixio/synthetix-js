@@ -288,6 +288,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only the contract owner may call this., Add an associated Synth contract to the Synthetix system.<br>
    * Transaction (consumes gas, requires signer)
    * @param synth {String<EthAddress>}
    * @param txParams {TxParams}
@@ -299,6 +300,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only the contract owner may call this., Remove an associated Synth contract from the Synthetix system.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param txParams {TxParams}
@@ -310,6 +312,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only the contract owner may call this., Set the associated synthetix escrow contract.<br>
    * Transaction (consumes gas, requires signer)
    * @param _escrow {String<EthAddress>}
    * @param txParams {TxParams}
@@ -321,6 +324,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
    * Transaction (consumes gas, requires signer)
    * @param _exchangeRates {String<EthAddress>}
    * @param txParams {TxParams}
@@ -332,6 +336,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only callable by the contract owner., Set the synthetixState contract address where issuance data is held.<br>
    * Transaction (consumes gas, requires signer)
    * @param _synthetixState {String<EthAddress>}
    * @param txParams {TxParams}
@@ -343,6 +348,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Set your preferred currency. Note: This does not automatically exchange any balances you've held previously in other synth currencies in this address, it will apply for any new payments you receive at this address.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param txParams {TxParams}
@@ -354,6 +360,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * A function that lets you easily convert an amount in a source currency to an amount in the destination currency.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param sourceCurrencyKey {bytes4}
    * @param sourceAmount {BigNumber}
@@ -369,6 +376,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Total amount of synths issued by the system, priced in currencyKey.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
    * @returns BigNumber
@@ -378,6 +386,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Returns the count of available synths in the system, which you can use to iterate availableSynths.<br>
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
@@ -386,6 +395,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * ERC20 transfer function.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -398,6 +408,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * ERC20 transfer function.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -411,6 +422,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * ERC20 transferFrom function.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -425,6 +437,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * ERC20 transferFrom function.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -438,6 +451,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Function that allows you to exchange synths you hold in one flavour for another.<br>
    * Transaction (consumes gas, requires signer)
    * @param sourceCurrencyKey {bytes4}
    * @param sourceAmount {BigNumber}
@@ -464,6 +478,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only the synth contract can call this function, Function that allows synth contract to delegate exchanging of a synth that is not the same sourceCurrency.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param sourceCurrencyKey {bytes4}
@@ -493,6 +508,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only the synth contract can call this function., Function that allows synth contract to delegate sending fee to the fee Pool.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param sourceCurrencyKey {bytes4}
@@ -511,6 +527,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param amount {BigNumber}
@@ -523,6 +540,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Issuance is only allowed if the synthetix price isn't stale., Issue the maximum amount of Synths possible against the sender's SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param txParams {TxParams}
@@ -534,6 +552,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Burn synths to clear issued synths/free SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param amount {BigNumber}
@@ -546,6 +565,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @param currencyKey {bytes4}
@@ -556,6 +576,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * The current collateralisation ratio for a user. Collateralisation ratio varies over time as the value of the underlying Synthetix asset changes, e.g. if a user issues their maximum available synths when they hold $10 worth of Synthetix, they will have issued $2 worth of synths. If the value of Synthetix changes, the ratio returned by this function will adjust accordlingly. Users are incentivised to maintain a collateralisation ratio as close to the issuance ratio as possible by altering the amount of fees they're able to claim from the system.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @returns BigNumber
@@ -565,6 +586,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * If a user issues synths backed by SNX in their wallet, the SNX become locked. This function will tell you how many synths a user has to give back to the system in order to unlock their original debt position. This is priced in whichever synth is passed in as a currency key, e.g. you can price the debt in sUSD, XDR, or any other synth you wish.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @param currencyKey {bytes4}
@@ -575,6 +597,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * The remaining synths an issuer can issue against their total synthetix balance.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @param currencyKey {bytes4}
@@ -585,6 +608,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * The total SNX owned by this account, both escrowed and unescrowed, against which synths can be issued. This includes those already being used as collateral (locked), and those available for further issuance (unlocked).<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -594,6 +618,7 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber

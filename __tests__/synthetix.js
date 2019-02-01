@@ -1,27 +1,27 @@
-import { HavvenJs } from '../dist/main.node';
+import { SynthetixJs } from '../dist/main.node';
 import config from './config';
-const havjs = new HavvenJs({ networkId: config.networkId });
-const sUSD = havjs.utils.toUtf8Bytes('sUSD');
+const snxjs = new SynthetixJs({ networkId: config.networkId });
+const sUSD = snxjs.utils.toUtf8Bytes('sUSD');
 
-test('Should return Havven total supply', async () => {
-  const totalSupply = await havjs.Synthetix.totalSupply();
-  return expect(havjs.utils.formatEther(totalSupply)).toBeTruthy();
+test('Should return Synthetix total supply', async () => {
+  const totalSupply = await snxjs.Synthetix.totalSupply();
+  return expect(snxjs.utils.formatEther(totalSupply)).toBeTruthy();
 });
 
 test('Should throw Missing signer error', async () => {
-  await expect(havjs.Synthetix.issueSynths(sUSD, 10)).rejects.toThrow('missing signer');
+  await expect(snxjs.Synthetix.issueSynths(sUSD, 10)).rejects.toThrow('missing signer');
 });
 
 test(
   'Should execute transaction signed with private key but fail on insufficient funds',
   async () => {
-    const signer = new HavvenJs.signers.PrivateKey(
+    const signer = new SynthetixJs.signers.PrivateKey(
       null,
       1,
       '0x0123456789012345678901234567890123456789012345678901234567890123'
     );
-    const havjs = new HavvenJs({ signer, networkId: 42 });
-    await expect(havjs.Synthetix.issueSynths(sUSD, havjs.util.parseEther('100'))).rejects.toThrow(
+    const snxjs = new SynthetixJs({ signer, networkId: 42 });
+    await expect(snxjs.Synthetix.issueSynths(sUSD, snxjs.util.parseEther('100'))).rejects.toThrow(
       'insufficient funds for gas * price + value'
     );
   },

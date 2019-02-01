@@ -7,13 +7,13 @@ import PrivateKey from '../lib/signers/privateKeySigner';
 import ContractSettings from './contractSettings';
 import ethers from 'ethers';
 
-export class HavvenJs {
+export class SynthetixJs {
   /**
-   * Creates instances of Havven contracts based on ContractSettings.
+   * Creates instances of Synthetix contracts based on ContractSettings.
    * Usage example:
-   * const {HavvenJs} = require('HavvenJs');
-   * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-   * const totalSupply = await havjs.Havven.totalSupply();
+   * const {SynthetixJs} = require('SynthetixJs');
+   * const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+   * const totalSupply = await snxjs.Synthetix.totalSupply();
    * @constructor
    * @param contractSettings {ContractSettings}
    */
@@ -34,7 +34,7 @@ export class HavvenJs {
  * Available transaction signers
  * @type {{Trezor, Ledger, Metamask, PrivateKey}|*}
  */
-HavvenJs.signers = {
+SynthetixJs.signers = {
   Trezor,
   Ledger,
   Metamask,
@@ -45,4 +45,4 @@ HavvenJs.signers = {
  *
  * @type {ContractSettings}
  */
-HavvenJs.ContractSettings = ContractSettings;
+SynthetixJs.ContractSettings = ContractSettings;

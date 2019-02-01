@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["HavvenJs"] = factory();
+		exports["SynthetixJs"] = factory();
 	else
-		root["HavvenJs"] = factory();
+		root["SynthetixJs"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -10447,7 +10447,7 @@ if (hadRuntime) {
 /* 45 */
 /***/ (function(module) {
 
-module.exports = {"_args":[["ethers@3.0.29","/Users/clementbalestrat/Workspace/havven-js"]],"_from":"ethers@3.0.29","_id":"ethers@3.0.29","_inBundle":false,"_integrity":"sha512-OGyA5pW5xFC5o/ZV5MfIoVp/EdA1QMg2bMJFf7Kznsz8m7IzzbgsPHTCjzSfKQDs/XDphGyRcA7A6bkIeJL4gw==","_location":"/ethers","_phantomChildren":{"bn.js":"4.11.8","brorand":"1.1.0","hash.js":"1.1.5"},"_requested":{"type":"version","registry":true,"raw":"ethers@3.0.29","name":"ethers","escapedName":"ethers","rawSpec":"3.0.29","saveSpec":null,"fetchSpec":"3.0.29"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.29.tgz","_spec":"3.0.29","_where":"/Users/clementbalestrat/Workspace/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.29"};
+module.exports = {"_from":"ethers@~3.0.26","_id":"ethers@3.0.29","_inBundle":false,"_integrity":"sha512-OGyA5pW5xFC5o/ZV5MfIoVp/EdA1QMg2bMJFf7Kznsz8m7IzzbgsPHTCjzSfKQDs/XDphGyRcA7A6bkIeJL4gw==","_location":"/ethers","_phantomChildren":{"bn.js":"4.11.8","brorand":"1.1.0","hash.js":"1.1.5"},"_requested":{"type":"range","registry":true,"raw":"ethers@~3.0.26","name":"ethers","escapedName":"ethers","rawSpec":"~3.0.26","saveSpec":null,"fetchSpec":"~3.0.26"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.29.tgz","_shasum":"ce8139955b4ed44456eb6764b089bb117c86775d","_spec":"ethers@~3.0.26","_where":"/Users/jmoses/Library/Mobile Documents/com~apple~CloudDocs/github/havven/havven-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"bundleDependencies":false,"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"deprecated":false,"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.29"};
 
 /***/ }),
 /* 46 */
@@ -13837,7 +13837,7 @@ module.exports = Wallet;
 /* 79 */
 /***/ (function(module) {
 
-module.exports = {"_args":[["elliptic@6.3.3","/Users/clementbalestrat/Workspace/havven-js"]],"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/ethers/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_spec":"6.3.3","_where":"/Users/clementbalestrat/Workspace/havven-js","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
+module.exports = {"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/ethers/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_shasum":"5482d9646d54bcb89fd7d994fc9e2e9568876e3f","_spec":"elliptic@6.3.3","_where":"/Users/jmoses/Library/Mobile Documents/com~apple~CloudDocs/github/havven/havven-js/node_modules/ethers","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
 
 /***/ }),
 /* 80 */
@@ -19690,19 +19690,19 @@ module.exports = _defineProperty;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/classCallCheck.js
 var classCallCheck = __webpack_require__(14);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__(0);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/asyncToGenerator.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(1);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 
-// EXTERNAL MODULE: ./node_modules/ethers/index.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/ethers/index.js
 var ethers = __webpack_require__(2);
 var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
 
@@ -25171,6 +25171,7 @@ function Depot_Depot(contractSettings) {
     }, _callee31, this);
   }));
   /**
+   * Set the funds wallet where ETH raised is held.<br>
    * Transaction (consumes gas, requires signer)
    * @param _fundsWallet {String<EthAddress>}
    * @param txParams {TxParams}
@@ -25207,6 +25208,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Set the Oracle that pushes the synthetix price to this contract.<br>
    * Transaction (consumes gas, requires signer)
    * @param _oracle {String<EthAddress>}
    * @param txParams {TxParams}
@@ -25244,6 +25246,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Set the Synth contract that the issuance controller uses to issue Synths.<br>
    * Transaction (consumes gas, requires signer)
    * @param _synth {String<EthAddress>}
    * @param txParams {TxParams}
@@ -25281,6 +25284,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Set the Synthetix contract that the issuance controller uses to issue SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param _synthetix {String<EthAddress>}
    * @param txParams {TxParams}
@@ -25318,6 +25322,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Set the stale period on the updated price variables.<br>
    * Transaction (consumes gas, requires signer)
    * @param _time {BigNumber}
    * @param txParams {TxParams}
@@ -25355,6 +25360,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Set the minimum deposit amount required to depoist sUSD into the FIFO queue.<br>
    * Transaction (consumes gas, requires signer)
    * @param _amount {BigNumber}
    * @param txParams {TxParams}
@@ -25392,6 +25398,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Access point for the oracle to update the prices of SNX / eth.<br>
    * Transaction (consumes gas, requires signer)
    * @param newEthPrice {BigNumber}
    * @param newSynthetixPrice {BigNumber}
@@ -25431,6 +25438,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Exchange ETH to sUSD.<br>
    * Transaction (consumes gas, requires signer)
   <br>Payable (to enter ETH amount set txParams.value)
    * @param txParams {TxParams}
@@ -25468,6 +25476,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Exchange ETH to sUSD while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
    * Transaction (consumes gas, requires signer)
   <br>Payable (to enter ETH amount set txParams.value)
    * @param guaranteedRate {BigNumber}
@@ -25506,6 +25515,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Exchange ETH to SNX.<br>
    * Transaction (consumes gas, requires signer)
   <br>Payable (to enter ETH amount set txParams.value)
    * @param txParams {TxParams}
@@ -25543,6 +25553,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Exchange ETH to SNX while insisting on a particular set of rates. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rates.<br>
    * Transaction (consumes gas, requires signer)
   <br>Payable (to enter ETH amount set txParams.value)
    * @param guaranteedEtherRate {BigNumber}
@@ -25582,6 +25593,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Exchange sUSD for SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param synthAmount {BigNumber}
    * @param txParams {TxParams}
@@ -25619,6 +25631,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Exchange sUSD for SNX while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
    * Transaction (consumes gas, requires signer)
    * @param synthAmount {BigNumber}
    * @param guaranteedRate {BigNumber}
@@ -25657,6 +25670,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Allows the owner to withdraw SNX from this contract if needed.<br>
    * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -25694,6 +25708,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Allows a user to withdraw all of their previously deposited synths from this contract if needed. Developer note: We could keep an index of address to deposits to make this operation more efficient but then all the other operations on the queue become less efficient. It's expected that this function will be very rarely used, so placing the inefficiency here is intentional. The usual use case does not involve a withdrawal.<br>
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -25730,6 +25745,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * DepositSynths: Allows users to deposit synths via the approve / transferFrom workflow if they'd like. You can equally just transfer synths to this contract and it will work exactly the same way but with one less call (and therefore cheaper transaction fees).<br>
    * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -25767,6 +25783,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Triggers when users send us SNX or sUSD, but the modifier only allows sUSD calls to proceed.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
@@ -25806,6 +25823,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Check if the prices haven't been updated for longer than the stale period.<br>
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -25834,6 +25852,7 @@ function Depot_Depot(contractSettings) {
     }, _callee49, this);
   }));
   /**
+   * Calculate how many SNX you will receive if you transfer an amount of synths.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
@@ -25868,6 +25887,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Calculate how many SNX you will receive if you transfer an amount of ether.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
@@ -25903,6 +25923,7 @@ function Depot_Depot(contractSettings) {
     };
   }();
   /**
+   * Calculate how many synths you will receive if you transfer an amount of ether.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param amount {BigNumber}
    * @returns BigNumber
@@ -29330,6 +29351,7 @@ function sAUD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -29368,6 +29390,7 @@ function sAUD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -29407,6 +29430,7 @@ function sAUD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -29447,6 +29471,7 @@ function sAUD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -30692,6 +30717,7 @@ function sEUR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -30730,6 +30756,7 @@ function sEUR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -30769,6 +30796,7 @@ function sEUR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -30809,6 +30837,7 @@ function sEUR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -32054,6 +32083,7 @@ function sJPY(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -32092,6 +32122,7 @@ function sJPY(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -32131,6 +32162,7 @@ function sJPY(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -32171,6 +32203,7 @@ function sJPY(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -33416,6 +33449,7 @@ function sKRW(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -33454,6 +33488,7 @@ function sKRW(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -33493,6 +33528,7 @@ function sKRW(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -33533,6 +33569,7 @@ function sKRW(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -34778,6 +34815,7 @@ function sUSD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -34816,6 +34854,7 @@ function sUSD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -34855,6 +34894,7 @@ function sUSD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -34895,6 +34935,7 @@ function sUSD(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -36140,6 +36181,7 @@ function sXAU(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -36178,6 +36220,7 @@ function sXAU(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -36217,6 +36260,7 @@ function sXAU(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -36257,6 +36301,7 @@ function sXAU(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -37502,6 +37547,7 @@ function sGBP(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -37540,6 +37586,7 @@ function sGBP(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -37579,6 +37626,7 @@ function sGBP(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -37619,6 +37667,7 @@ function sGBP(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -38864,6 +38913,7 @@ function sCHF(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -38902,6 +38952,7 @@ function sCHF(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -38941,6 +38992,7 @@ function sCHF(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -38981,6 +39033,7 @@ function sCHF(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -40226,6 +40279,7 @@ function Synth_Synth(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -40264,6 +40318,7 @@ function Synth_Synth(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -40303,6 +40358,7 @@ function Synth_Synth(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -40343,6 +40399,7 @@ function Synth_Synth(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -41612,6 +41669,7 @@ function Synthetix_Synthetix(contractSettings) {
     }, _callee30, this);
   }));
   /**
+   * Only the contract owner may call this., Add an associated Synth contract to the Synthetix system.<br>
    * Transaction (consumes gas, requires signer)
    * @param synth {String<EthAddress>}
    * @param txParams {TxParams}
@@ -41648,6 +41706,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Only the contract owner may call this., Remove an associated Synth contract from the Synthetix system.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param txParams {TxParams}
@@ -41685,6 +41744,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Only the contract owner may call this., Set the associated synthetix escrow contract.<br>
    * Transaction (consumes gas, requires signer)
    * @param _escrow {String<EthAddress>}
    * @param txParams {TxParams}
@@ -41722,6 +41782,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
    * Transaction (consumes gas, requires signer)
    * @param _exchangeRates {String<EthAddress>}
    * @param txParams {TxParams}
@@ -41759,6 +41820,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Only callable by the contract owner., Set the synthetixState contract address where issuance data is held.<br>
    * Transaction (consumes gas, requires signer)
    * @param _synthetixState {String<EthAddress>}
    * @param txParams {TxParams}
@@ -41796,6 +41858,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Set your preferred currency. Note: This does not automatically exchange any balances you've held previously in other synth currencies in this address, it will apply for any new payments you receive at this address.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param txParams {TxParams}
@@ -41833,6 +41896,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * A function that lets you easily convert an amount in a source currency to an amount in the destination currency.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param sourceCurrencyKey {bytes4}
    * @param sourceAmount {BigNumber}
@@ -41870,6 +41934,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Total amount of synths issued by the system, priced in currencyKey.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
    * @returns BigNumber
@@ -41905,6 +41970,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Returns the count of available synths in the system, which you can use to iterate availableSynths.<br>
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
@@ -41933,6 +41999,7 @@ function Synthetix_Synthetix(contractSettings) {
     }, _callee39, this);
   }));
   /**
+   * ERC20 transfer function.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -41970,6 +42037,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * ERC20 transfer function.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -42009,6 +42077,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * ERC20 transferFrom function.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -42049,6 +42118,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * ERC20 transferFrom function.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -42088,6 +42158,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Function that allows you to exchange synths you hold in one flavour for another.<br>
    * Transaction (consumes gas, requires signer)
    * @param sourceCurrencyKey {bytes4}
    * @param sourceAmount {BigNumber}
@@ -42128,6 +42199,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Only the synth contract can call this function, Function that allows synth contract to delegate exchanging of a synth that is not the same sourceCurrency.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param sourceCurrencyKey {bytes4}
@@ -42169,6 +42241,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Only the synth contract can call this function., Function that allows synth contract to delegate sending fee to the fee Pool.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param sourceCurrencyKey {bytes4}
@@ -42208,6 +42281,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param amount {BigNumber}
@@ -42246,6 +42320,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Issuance is only allowed if the synthetix price isn't stale., Issue the maximum amount of Synths possible against the sender's SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param txParams {TxParams}
@@ -42283,6 +42358,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Burn synths to clear issued synths/free SNX.<br>
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
    * @param amount {BigNumber}
@@ -42321,6 +42397,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @param currencyKey {bytes4}
@@ -42357,6 +42434,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * The current collateralisation ratio for a user. Collateralisation ratio varies over time as the value of the underlying Synthetix asset changes, e.g. if a user issues their maximum available synths when they hold $10 worth of Synthetix, they will have issued $2 worth of synths. If the value of Synthetix changes, the ratio returned by this function will adjust accordlingly. Users are incentivised to maintain a collateralisation ratio as close to the issuance ratio as possible by altering the amount of fees they're able to claim from the system.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @returns BigNumber
@@ -42392,6 +42470,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * If a user issues synths backed by SNX in their wallet, the SNX become locked. This function will tell you how many synths a user has to give back to the system in order to unlock their original debt position. This is priced in whichever synth is passed in as a currency key, e.g. you can price the debt in sUSD, XDR, or any other synth you wish.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @param currencyKey {bytes4}
@@ -42428,6 +42507,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * The remaining synths an issuer can issue against their total synthetix balance.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
    * @param currencyKey {bytes4}
@@ -42464,6 +42544,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * The total SNX owned by this account, both escrowed and unescrowed, against which synths can be issued. This includes those already being used as collateral (locked), and those available for further issuance (unlocked).<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -42499,6 +42580,7 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -42842,6 +42924,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * A simple alias to totalVestedAccountBalance: provides ERC20 balance integration.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -42877,6 +42960,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * The number of vesting dates in an account's schedule.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -42912,6 +42996,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Get a particular schedule entry for an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param index {BigNumber}
@@ -42948,6 +43033,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Get the time at which a given schedule entry will vest.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param index {BigNumber}
@@ -42984,6 +43070,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Get the quantity of SNX associated with a given schedule entry.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param index {BigNumber}
@@ -43020,6 +43107,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Obtain the index of the next schedule entry that will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -43055,6 +43143,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Obtain the next schedule entry that will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns uint256[2]
@@ -43090,6 +43179,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Obtain the time at which the next schedule entry will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -43125,6 +43215,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Obtain the quantity which the next schedule entry will vest for a given user.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -43160,6 +43251,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * This may only be called by the owner during the contract's setup period., Withdraws a quantity of SNX back to the synthetix contract.<br>
    * Transaction (consumes gas, requires signer)
    * @param quantity {BigNumber}
    * @param txParams {TxParams}
@@ -43197,6 +43289,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Destroy the vesting information associated with an account.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param txParams {TxParams}
@@ -43234,6 +43327,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * A call to this should be accompanied by either enough balance already available in this contract, or a corresponding call to synthetix.endow(), to ensure that when the funds are withdrawn, there is enough balance, as well as correctly calculating the fees. This may only be called by the owner during the contract's setup period. Note; although this function could technically be used to produce unbounded arrays, it's only in the foundation's command to add to these lists., Add a new vesting entry at a given time and quantity to an account's schedule.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param time {BigNumber}
@@ -43273,6 +43367,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Assumes that the quantities are nonzero and that the sequence of timestamps is strictly increasing. This may only be called by the owner during the contract's setup period., Construct a vesting schedule to release a quantities of SNX over a series of intervals.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param times {uint256[]}
@@ -43312,6 +43407,7 @@ function SynthetixEscrow_SynthetixEscrow(contractSettings) {
     };
   }();
   /**
+   * Allow a user to withdraw any SNX in their schedule that have vested.<br>
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -45037,6 +45133,7 @@ function XDR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -45075,6 +45172,7 @@ function XDR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -45114,6 +45212,7 @@ function XDR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -45154,6 +45253,7 @@ function XDR(contractSettings) {
     };
   }();
   /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -45584,15 +45684,15 @@ function EscrowChecker_EscrowChecker(contractSettings) {
   XDR: contracts_XDR,
   EscrowChecker: contracts_EscrowChecker
 });
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(28);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectSpread.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/objectSpread.js
 var objectSpread = __webpack_require__(41);
 var objectSpread_default = /*#__PURE__*/__webpack_require__.n(objectSpread);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
+// EXTERNAL MODULE: /Users/jmoses/working/docs/com/.github/havven/havven-js/node_modules/@babel/runtime/helpers/createClass.js
 var createClass = __webpack_require__(42);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
@@ -46176,27 +46276,27 @@ var privateKeySigner_PrivateKeySigner = function PrivateKeySigner(provider, netw
 
 /* harmony default export */ var privateKeySigner = (privateKeySigner_PrivateKeySigner);
 // CONCATENATED MODULE: ./src/index.node.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HavvenJs", function() { return index_node_HavvenJs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SynthetixJs", function() { return index_node_SynthetixJs; });
 
 
 
 
 
 
-var index_node_HavvenJs =
+var index_node_SynthetixJs =
 /**
- * Creates instances of Havven contracts based on ContractSettings.
+ * Creates instances of Synthetix contracts based on ContractSettings.
  * Usage example:
- * const {HavvenJs} = require('HavvenJs');
- * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
- * const totalSupply = await havjs.Havven.totalSupply();
+ * const {SynthetixJs} = require('SynthetixJs');
+ * const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+ * const totalSupply = await snxjs.Synthetix.totalSupply();
  * @constructor
  * @param contractSettings {ContractSettings}
  */
-function HavvenJs(contractSettings) {
+function SynthetixJs(contractSettings) {
   var _this = this;
 
-  classCallCheck_default()(this, HavvenJs);
+  classCallCheck_default()(this, SynthetixJs);
 
   contractSettings = new src_contractSettings(contractSettings);
   this.contractSettings = contractSettings;
@@ -46213,7 +46313,7 @@ function HavvenJs(contractSettings) {
  * @type {{ PrivateKey}|*}
  */
 
-index_node_HavvenJs.signers = {
+index_node_SynthetixJs.signers = {
   PrivateKey: privateKeySigner
 };
 /**
@@ -46221,7 +46321,7 @@ index_node_HavvenJs.signers = {
  * @type {ContractSettings}
  */
 
-index_node_HavvenJs.ContractSettings = src_contractSettings;
+index_node_SynthetixJs.ContractSettings = src_contractSettings;
 
 /***/ })
 /******/ ]);

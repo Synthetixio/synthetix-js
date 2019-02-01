@@ -24,7 +24,7 @@ Anything you can think of with programmable money. We provide the stability-as-a
 
 We’ve come up with some thought starters for dApps you could create by integrating Synthetix's stable payments into your projects.
 
-- Crypto Games - lottery, poker, fomoNUSD, nUSDCrash for kicks.
+- Crypto Games - lottery, poker, fomoSUSD, nUSDCrash for kicks.
 - Crypto Ecommerce
 - Crypto Loans
 - Crypto Insurance
@@ -41,9 +41,9 @@ We’ve come up with some thought starters for dApps you could create by integra
 const { SynthetixJs } = require('synthetix-js');
 const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
 (async function() {
-  const totalNUSD = await snxjs.Nomin.totalSupply();
-  const havTotalSupply = snxjs.utils.formatEther(totalNUSD);
-  console.log('nUSDTotalSupply', havTotalSupply);
+  const totalSUSD = await snxjs.sUSD.totalSupply();
+  const totalSUSDSupply = snxjs.utils.formatEther(totalSUSD);
+  console.log('sUSDTotalSupply', totalSUSDSupply);
 })();
 ```
 
@@ -66,7 +66,7 @@ const snxjs = new SynthetixJs({ signer: metaMaskSigner }); //uses Metamask signe
 Obtain test ETH from a faucet [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)
 
 ```javascript
-const txObj = await snxjs.IssuanceController.exchangeEtherForNomins({
+const txObj = await snxjs.IssuanceController.exchangeEtherForSynths({
   value: snxjs.util.parseEther('0.123'),
 });
 ```
@@ -95,12 +95,12 @@ const snxjs = new SynthetixJs({ signer });
 
 async function run() {
   const totalSupply = await snxjs.Synthetix.totalSupply();
-  const havTotalSupply = snxjs.utils.formatEther(totalSupply);
-  console.log('havTotalSupply', havTotalSupply);
+  const snxTotalSupply = snxjs.utils.formatEther(totalSupply);
+  console.log('snxTotalSupply', snxTotalSupply);
 
-  //issue 100 nomins (will throw if insufficient funds for gas)
+  //issue 100 synths (will throw if insufficient funds for gas)
   try {
-    const txObj = await snxjs.Synthetix.issueNomins(snxjs.util.parseEther('100')); //execute transaction (requires gas)
+    const txObj = await snxjs.Synthetix.issueSynths('USD', snxjs.util.parseEther('100')); //execute transaction (requires gas)
     console.log('transaction hash', txObj.hash);
   } catch (e) {
     console.log(e);

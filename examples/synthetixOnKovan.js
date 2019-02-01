@@ -17,7 +17,7 @@ const snxjs = new SynthetixJs({
 });
 
 (async function() {
-  const totalHAV = await snxjs.Synthetix.totalSupply();
-  const havTotalSupply = snxjs.utils.formatEther(totalHAV);
-  console.log('HAVTotalSupply', havTotalSupply);
+  const totalSNX = await snxjs.Synthetix.totalSupply();
+  const snxTotalSupply = snxjs.utils.formatEther(totalSNX);
+  console.log('SNXTotalSupply on Kovan', snxTotalSupply);
 })();

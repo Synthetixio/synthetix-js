@@ -1,14 +1,14 @@
-import { HavvenJs } from '../dist/main.node';
+import { SynthetixJs } from '../dist/main.node';
 import config from './config';
-const havjs = new HavvenJs({ networkId: config.networkId });
+const snxjs = new SynthetixJs({ networkId: config.networkId });
 
 test(
-  'Should return havvensReceivedForEther for 1 ETH',
+  'Should return synthetixsReceivedForEther for 1 ETH',
   async () => {
-    const synthetixReceivedForEther = await havjs.Depot.synthetixReceivedForEther(
-      havjs.utils.parseEther('1')
+    const synthetixReceivedForEther = await snxjs.Depot.synthetixReceivedForEther(
+      snxjs.utils.parseEther('1')
     );
-    return expect(havjs.utils.formatEther(synthetixReceivedForEther)).toBeTruthy();
+    return expect(snxjs.utils.formatEther(synthetixReceivedForEther)).toBeTruthy();
   },
   15000
 );

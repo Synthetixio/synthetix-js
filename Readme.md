@@ -1,10 +1,10 @@
 # SynthetixJs library
 
-[![CircleCI](https://circleci.com/gh/Synthetixio/havven-js.svg?style=svg)](https://circleci.com/gh/Synthetixio/havven-js)
+[![CircleCI](https://circleci.com/gh/Synthetixio/synthetix-js.svg?style=svg)](https://circleci.com/gh/Synthetixio/synthetix-js)
 
 The Synthetix-JS Library provides a simple pre-packaged API to communicate with the [Synthetix payment engine](https://synthetix.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
 
-This is particularly useful for hackathon teams to quickly `npm install havven-js` and have stable payments integrated into their dApp in just a few minutes.
+This is particularly useful for hackathon teams to quickly `npm install synthetix-js` and have stable payments integrated into their dApp in just a few minutes.
 
 Under the hood, SynthetixJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and its concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
@@ -24,7 +24,7 @@ Anything you can think of with programmable money. We provide the stability-as-a
 
 We’ve come up with some thought starters for dApps you could create by integrating Synthetix's stable payments into your projects.
 
-- Crypto Games - lottery, poker, fomoNUSD, nUSDCrash for kicks.
+- Crypto Games - lottery, poker, fomoSUSD, nUSDCrash for kicks.
 - Crypto Ecommerce
 - Crypto Loans
 - Crypto Insurance
@@ -33,17 +33,17 @@ We’ve come up with some thought starters for dApps you could create by integra
 
 ## Install via npm
 
-`npm install havven-js`
+`npm install synthetix-js`
 
 ## Example for getting the total nUSD stablecoin in circulation
 
 ```javascript
-const { HavvenJs } = require('havven-js');
-const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+const { SynthetixJs } = require('synthetix-js');
+const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
 (async function() {
-  const totalNUSD = await havjs.Nomin.totalSupply();
-  const havTotalSupply = havjs.utils.formatEther(totalNUSD);
-  console.log('nUSDTotalSupply', havTotalSupply);
+  const totalSUSD = await snxjs.sUSD.totalSupply();
+  const totalSUSDSupply = snxjs.utils.formatEther(totalSUSD);
+  console.log('sUSDTotalSupply', totalSUSDSupply);
 })();
 ```
 
@@ -56,9 +56,9 @@ Custom ethers.js compatible signers can be used too.
 ## Example using a metamask signer
 
 ```javascript
-const { HavvenJs } = require('havven-js');
-const metaMaskSigner = new HavvenJs.signers.Metamask();
-const havjs = new HavvenJs({ signer: metaMaskSigner }); //uses Metamask signer and default infura.io provider on mainnet
+const { SynthetixJs } = require('synthetix-js');
+const metaMaskSigner = new SynthetixJs.signers.Metamask();
+const snxjs = new SynthetixJs({ signer: metaMaskSigner }); //uses Metamask signer and default infura.io provider on mainnet
 ```
 
 ## Example converting ETH to USD pegged stablecoin nUSD
@@ -66,8 +66,8 @@ const havjs = new HavvenJs({ signer: metaMaskSigner }); //uses Metamask signer a
 Obtain test ETH from a faucet [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)
 
 ```javascript
-const txObj = await havjs.IssuanceController.exchangeEtherForNomins({
-  value: havjs.util.parseEther('0.123'),
+const txObj = await snxjs.IssuanceController.exchangeEtherForSynths({
+  value: snxjs.util.parseEther('0.123'),
 });
 ```
 
@@ -75,7 +75,7 @@ const txObj = await havjs.IssuanceController.exchangeEtherForNomins({
 
 ```javascript
 //Transfer stablecoins to any ethereum address, wallet or smart contract
-const txObj = await havjs.StablePayments.transfer(
+const txObj = await snxjs.StablePayments.transfer(
   '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
   nUSDReceived
 );
@@ -84,23 +84,24 @@ const txObj = await havjs.StablePayments.transfer(
 ## Example of minting stablecoin(nUSD) with private key signer
 
 ```javascript
-const { HavvenJs } = require('havven-js');
+const { SynthetixJs } = require('synthetix-js');
 //parameters: default provider, default networkId, private key as a string
-const signer = new HavvenJs.signers.PrivateKey(
+const signer = new SynthetixJs.signers.PrivateKey(
   null,
   0,
   '0x0123456789012345678901234567890123456789012345678901234567890123'
 );
-const havjs = new HavvenJs({ signer });
+const snxjs = new SynthetixJs({ signer });
+const sUSD = snxjs.utils.toUtf8Bytes('sUSD');
 
 async function run() {
-  const totalSupply = await havjs.Havven.totalSupply();
-  const havTotalSupply = havjs.utils.formatEther(totalSupply);
-  console.log('havTotalSupply', havTotalSupply);
+  const totalSupply = await snxjs.Synthetix.totalSupply();
+  const snxTotalSupply = snxjs.utils.formatEther(totalSupply);
+  console.log('snxTotalSupply', snxTotalSupply);
 
-  //issue 100 nomins (will throw if insufficient funds for gas)
+  //issue 100 synths (will throw if insufficient funds for gas)
   try {
-    const txObj = await havjs.Havven.issueNomins(havjs.util.parseEther('100')); //execute transaction (requires gas)
+    const txObj = await snxjs.Synthetix.issueSynths(sUSD, snxjs.util.parseEther('100')); //execute transaction (requires gas)
     console.log('transaction hash', txObj.hash);
   } catch (e) {
     console.log(e);
@@ -118,8 +119,8 @@ To understand the Synthetix payments engine see more at [developer.synthetix.io]
 
 - [synthetix.io](https://synthetix.io/?utm_source=github)
 - [dashboard.synthetix.io](https://dashboard.synthetix.io)
-- [Reddit](https://www.reddit.com/r/havven/?utm_source=github)
-- [Twitter](https://twitter.com/havven_io?utm_source=github)
+- [Reddit](https://www.reddit.com/r/synthetix/?utm_source=github)
+- [Twitter](https://twitter.com/synthetix_io?utm_source=github)
 
 ## Got any questions?
 

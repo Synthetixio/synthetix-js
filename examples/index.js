@@ -1,10 +1,12 @@
 'use strict';
 
-const { HavvenJs } = require('../dist/main.node.js');
-const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+const { SynthetixJs } = require('../dist/main.node.js');
+const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
 
 (async function() {
-  const totalNUSD = await havjs.Nomin.totalSupply();
-  const havTotalSupply = havjs.utils.formatEther(totalNUSD);
-  console.log('nUSDTotalSupply', havTotalSupply);
+  ['USD', 'AUD', 'EUR', 'XAU'].forEach(async ticker => {
+    const totalAmount = await snxjs[`s${ticker}`].totalSupply();
+    const totalSupply = snxjs.utils.formatEther(totalAmount);
+    console.log(`s${ticker}TotalSupply`, totalSupply);
+  });
 })();

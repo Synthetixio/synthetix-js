@@ -351,7 +351,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line229">line 229</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line242">line 242</a>
     </li></ul></dd>
     
 
@@ -391,7 +391,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Assumes that the quantities are nonzero and that the sequence of timestamps is strictly increasing. This may only be called by the owner during the contract's setup period., Construct a vesting schedule to release a quantities of SNX over a series of intervals.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -553,7 +554,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line216">line 216</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line228">line 228</a>
     </li></ul></dd>
     
 
@@ -593,7 +594,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    A call to this should be accompanied by either enough balance already available in this contract, or a corresponding call to synthetix.endow(), to ensure that when the funds are withdrawn, there is enough balance, as well as correctly calculating the fees. This may only be called by the owner during the contract's setup period. Note; although this function could technically be used to produce unbounded arrays, it's only in the foundation's command to add to these lists., Add a new vesting entry at a given time and quantity to an account's schedule.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -755,7 +757,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line107">line 107</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line108">line 108</a>
     </li></ul></dd>
     
 
@@ -795,7 +797,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    A simple alias to totalVestedAccountBalance: provides ERC20 balance integration.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -898,7 +901,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line164">line 164</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line171">line 171</a>
     </li></ul></dd>
     
 
@@ -938,7 +941,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Obtain the next schedule entry that will vest for a given user.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1041,7 +1045,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line155">line 155</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line161">line 161</a>
     </li></ul></dd>
     
 
@@ -1081,7 +1085,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Obtain the index of the next schedule entry that will vest for a given user.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1184,7 +1189,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line182">line 182</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line191">line 191</a>
     </li></ul></dd>
     
 
@@ -1224,7 +1229,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Obtain the quantity which the next schedule entry will vest for a given user.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1327,7 +1333,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line173">line 173</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line181">line 181</a>
     </li></ul></dd>
     
 
@@ -1367,7 +1373,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Obtain the time at which the next schedule entry will vest for a given user.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1470,7 +1477,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line146">line 146</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line151">line 151</a>
     </li></ul></dd>
     
 
@@ -1510,7 +1517,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Get the quantity of SNX associated with a given schedule entry.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1636,7 +1644,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line126">line 126</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line129">line 129</a>
     </li></ul></dd>
     
 
@@ -1676,7 +1684,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Get a particular schedule entry for an account.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -1802,7 +1811,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line136">line 136</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -1842,7 +1851,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Get the time at which a given schedule entry will vest.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2218,7 +2228,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line116">line 116</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line118">line 118</a>
     </li></ul></dd>
     
 
@@ -2258,7 +2268,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    The number of vesting dates in an account's schedule.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -2455,7 +2466,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line203">line 203</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line214">line 214</a>
     </li></ul></dd>
     
 
@@ -2495,7 +2506,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Destroy the vesting information associated with an account.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3098,7 +3110,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line239">line 239</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line253">line 253</a>
     </li></ul></dd>
     
 
@@ -3138,7 +3150,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Allow a user to withdraw any SNX in their schedule that have vested.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3420,7 +3433,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line192">line 192</a>
+        <a href="contracts_SynthetixEscrow.js.html">contracts/SynthetixEscrow.js</a>, <a href="contracts_SynthetixEscrow.js.html#line202">line 202</a>
     </li></ul></dd>
     
 
@@ -3460,7 +3473,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    This may only be called by the owner during the contract's setup period., Withdraws a quantity of SNX back to the synthetix contract.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3579,7 +3593,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 14 2019 14:30:53 GMT+1100 (AEDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Feb 01 2019 11:02:22 GMT+1100 (AEDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

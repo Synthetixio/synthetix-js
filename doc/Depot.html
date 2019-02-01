@@ -682,7 +682,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line473">line 473</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line489">line 489</a>
     </li></ul></dd>
     
 
@@ -722,7 +722,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    DepositSynths: Allows users to deposit synths via the approve / transferFrom workflow if they'd like. You can equally just transfer synths to this contract and it will work exactly the same way but with one less call (and therefore cheaper transaction fees).<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -838,7 +839,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line393">line 393</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line403">line 403</a>
     </li></ul></dd>
     
 
@@ -878,7 +879,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Exchange ETH to SNX.<br>
+Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
 </div>
 
@@ -982,7 +984,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line406">line 406</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line417">line 417</a>
     </li></ul></dd>
     
 
@@ -1022,7 +1024,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Exchange ETH to SNX while insisting on a particular set of rates. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rates.<br>
+Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
 </div>
 
@@ -1172,7 +1175,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line370">line 370</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line378">line 378</a>
     </li></ul></dd>
     
 
@@ -1212,7 +1215,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Exchange ETH to sUSD.<br>
+Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
 </div>
 
@@ -1316,7 +1320,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line382">line 382</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line391">line 391</a>
     </li></ul></dd>
     
 
@@ -1356,7 +1360,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Exchange ETH to sUSD while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
+Transaction (consumes gas, requires signer)
 <br>Payable (to enter ETH amount set txParams.value)
 </div>
 
@@ -1483,7 +1488,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line425">line 425</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line437">line 437</a>
     </li></ul></dd>
     
 
@@ -1523,7 +1528,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Exchange sUSD for SNX.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -1649,7 +1655,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line437">line 437</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line450">line 450</a>
     </li></ul></dd>
     
 
@@ -1689,7 +1695,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Exchange sUSD for SNX while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3161,7 +3168,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line495">line 495</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line513">line 513</a>
     </li></ul></dd>
     
 
@@ -3201,7 +3208,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Check if the prices haven't been updated for longer than the stale period.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -3764,7 +3772,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line291">line 291</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line292">line 292</a>
     </li></ul></dd>
     
 
@@ -3804,7 +3812,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Set the funds wallet where ETH raised is held.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -3920,7 +3929,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line346">line 346</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line352">line 352</a>
     </li></ul></dd>
     
 
@@ -3960,7 +3969,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Set the minimum deposit amount required to depoist sUSD into the FIFO queue.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4076,7 +4086,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line302">line 302</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line304">line 304</a>
     </li></ul></dd>
     
 
@@ -4116,7 +4126,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Set the Oracle that pushes the synthetix price to this contract.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4388,7 +4399,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line335">line 335</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line340">line 340</a>
     </li></ul></dd>
     
 
@@ -4428,7 +4439,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Set the stale period on the updated price variables.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4700,7 +4712,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line313">line 313</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line316">line 316</a>
     </li></ul></dd>
     
 
@@ -4740,7 +4752,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Set the Synth contract that the issuance controller uses to issue Synths.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -4856,7 +4869,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line324">line 324</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line328">line 328</a>
     </li></ul></dd>
     
 
@@ -4896,7 +4909,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Set the Synthetix contract that the issuance controller uses to issue SNX.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -5343,7 +5357,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line513">line 513</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line533">line 533</a>
     </li></ul></dd>
     
 
@@ -5383,7 +5397,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Calculate how many SNX you will receive if you transfer an amount of ether.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -5486,7 +5501,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line504">line 504</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line523">line 523</a>
     </li></ul></dd>
     
 
@@ -5526,7 +5541,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Calculate how many SNX you will receive if you transfer an amount of synths.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -5629,7 +5645,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line522">line 522</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line543">line 543</a>
     </li></ul></dd>
     
 
@@ -5669,7 +5685,8 @@
 
 
 <div class="description">
-    Call (no gas consumed, doesn't require signer)
+    Calculate how many synths you will receive if you transfer an amount of ether.<br>
+Call (no gas consumed, doesn't require signer)
 </div>
 
 
@@ -5905,7 +5922,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line486">line 486</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line503">line 503</a>
     </li></ul></dd>
     
 
@@ -5945,7 +5962,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Triggers when users send us SNX or sUSD, but the modifier only allows sUSD calls to proceed.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -6211,7 +6229,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line359">line 359</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line366">line 366</a>
     </li></ul></dd>
     
 
@@ -6251,7 +6269,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Access point for the oracle to update the prices of SNX / eth.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -6601,7 +6620,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line462">line 462</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line477">line 477</a>
     </li></ul></dd>
     
 
@@ -6641,7 +6660,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Allows a user to withdraw all of their previously deposited synths from this contract if needed. Developer note: We could keep an index of address to deposits to make this operation more efficient but then all the other operations on the queue become less efficient. It's expected that this function will be very rarely used, so placing the inefficiency here is intentional. The usual use case does not involve a withdrawal.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -6734,7 +6754,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line452">line 452</a>
+        <a href="contracts_Depot.js.html">contracts/Depot.js</a>, <a href="contracts_Depot.js.html#line466">line 466</a>
     </li></ul></dd>
     
 
@@ -6774,7 +6794,8 @@
 
 
 <div class="description">
-    Transaction (consumes gas, requires signer)
+    Allows the owner to withdraw SNX from this contract if needed.<br>
+Transaction (consumes gas, requires signer)
 </div>
 
 
@@ -6893,7 +6914,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 14 2019 14:30:53 GMT+1100 (AEDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Feb 01 2019 11:02:22 GMT+1100 (AEDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

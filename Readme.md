@@ -92,6 +92,7 @@ const signer = new SynthetixJs.signers.PrivateKey(
   '0x0123456789012345678901234567890123456789012345678901234567890123'
 );
 const snxjs = new SynthetixJs({ signer });
+const sUSD = snxjs.utils.toUtf8Bytes('sUSD');
 
 async function run() {
   const totalSupply = await snxjs.Synthetix.totalSupply();
@@ -100,7 +101,7 @@ async function run() {
 
   //issue 100 synths (will throw if insufficient funds for gas)
   try {
-    const txObj = await snxjs.Synthetix.issueSynths('USD', snxjs.util.parseEther('100')); //execute transaction (requires gas)
+    const txObj = await snxjs.Synthetix.issueSynths(sUSD, snxjs.util.parseEther('100')); //execute transaction (requires gas)
     console.log('transaction hash', txObj.hash);
   } catch (e) {
     console.log(e);

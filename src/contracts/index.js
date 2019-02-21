@@ -9,6 +9,16 @@ import sUSD from './sUSD';
 import sXAU from './sXAU';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
+import sCNY from './sCNY';
+import sSGD from './sSGD';
+import sCAD from './sCAD';
+import sRUB from './sRUB';
+import sINR from './sINR';
+import sBRL from './sBRL';
+import sNZD from './sNZD';
+import sPLN from './sPLN';
+import sAUG from './sAUG';
+import sBTC from './sBTC';
 import Synth from './Synth';
 import Synthetix from './Synthetix';
 import SynthetixEscrow from './SynthetixEscrow';
@@ -28,6 +38,16 @@ export default {
   sXAU,
   sGBP,
   sCHF,
+  sCNY,
+  sSGD,
+  sCAD,
+  sRUB,
+  sINR,
+  sBRL,
+  sNZD,
+  sPLN,
+  sAUG,
+  sBTC,
   Synth,
   SynthetixEscrow,
   SynthetixState,

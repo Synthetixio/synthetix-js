@@ -23,7 +23,7 @@ class ContractSettings {
       this.provider = providers.getDefaultProvider(SUPPORTED_NETWORKS[Number(networkId)]);
     }
     this.signer = signer;
-    this.networkId = networkId || 1;
+    this.networkId = networkId || 42;
     this.addressList = addresses[this.networkId];
     this.ABIS = ABIS;
   }

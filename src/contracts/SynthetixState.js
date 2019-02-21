@@ -1,4 +1,4 @@
-import {Contract} from 'ethers';
+import { Contract } from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
 const abi = abis.SynthetixState;
@@ -10,22 +10,19 @@ function SynthetixState(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList["SynthetixState"],
+    this.contractSettings.addressList['SynthetixState'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
-
-  
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns BigNumber
    **/
-  this.debtLedger = async (uint256) => {
+  this.debtLedger = async uint256 => {
     return await this.contract.debtLedger(uint256);
   };
-
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -38,7 +35,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.nominateNewOwner(_owner, txParams);
   };
 
-
   /**
    * Transaction (consumes gas, requires signer)
    * @param _associatedContract {String<EthAddress>}
@@ -50,7 +46,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.setAssociatedContract(_associatedContract, txParams);
   };
 
-
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
@@ -59,27 +54,24 @@ function SynthetixState(contractSettings) {
     return await this.contract.nominatedOwner();
   };
 
-
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.acceptOwnership = async (txParams) => {
+  this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
   };
-
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {String<EthAddress>}
    * @returns Object
    **/
-  this.issuanceData = async (address) => {
+  this.issuanceData = async address => {
     return await this.contract.issuanceData(address);
   };
-
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -89,7 +81,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.owner();
   };
 
-
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -97,7 +88,6 @@ function SynthetixState(contractSettings) {
   this.totalIssuerCount = async () => {
     return await this.contract.totalIssuerCount();
   };
-
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -107,7 +97,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.associatedContract();
   };
 
-
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -116,16 +105,14 @@ function SynthetixState(contractSettings) {
     return await this.contract.issuanceRatio();
   };
 
-
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {String<EthAddress>}
    * @returns bytes4
    **/
-  this.preferredCurrency = async (address) => {
+  this.preferredCurrency = async address => {
     return await this.contract.preferredCurrency(address);
   };
-
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -139,7 +126,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.setCurrentIssuanceData(account, initialDebtOwnership, txParams);
   };
 
-
   /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
@@ -151,28 +137,25 @@ function SynthetixState(contractSettings) {
     return await this.contract.clearIssuanceData(account, txParams);
   };
 
-
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.incrementTotalIssuerCount = async (txParams) => {
+  this.incrementTotalIssuerCount = async txParams => {
     txParams = txParams || {};
     return await this.contract.incrementTotalIssuerCount(txParams);
   };
 
-
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.decrementTotalIssuerCount = async (txParams) => {
+  this.decrementTotalIssuerCount = async txParams => {
     txParams = txParams || {};
     return await this.contract.decrementTotalIssuerCount(txParams);
   };
-
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -184,7 +167,6 @@ function SynthetixState(contractSettings) {
     txParams = txParams || {};
     return await this.contract.appendDebtLedgerValue(value, txParams);
   };
-
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -198,7 +180,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.setPreferredCurrency(account, currencyKey, txParams);
   };
 
-
   /**
    * Transaction (consumes gas, requires signer)
    * @param _issuanceRatio {BigNumber}
@@ -209,7 +190,6 @@ function SynthetixState(contractSettings) {
     txParams = txParams || {};
     return await this.contract.setIssuanceRatio(_issuanceRatio, txParams);
   };
-
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -223,7 +203,6 @@ function SynthetixState(contractSettings) {
     return await this.contract.importIssuerData(accounts, sUSDAmounts, txParams);
   };
 
-
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -231,7 +210,6 @@ function SynthetixState(contractSettings) {
   this.debtLedgerLength = async () => {
     return await this.contract.debtLedgerLength();
   };
-
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -241,17 +219,14 @@ function SynthetixState(contractSettings) {
     return await this.contract.lastDebtLedgerEntry();
   };
 
-
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns boolean
    **/
-  this.hasIssued = async (account) => {
+  this.hasIssued = async account => {
     return await this.contract.hasIssued(account);
   };
-
-
 }
 
-export default SynthetixState
+export default SynthetixState;

@@ -6,7 +6,6 @@ import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sKRW from './sKRW';
 import sUSD from './sUSD';
-import sXAU from './sXAU';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
 import sCNY from './sCNY';
@@ -17,7 +16,8 @@ import sINR from './sINR';
 import sBRL from './sBRL';
 import sNZD from './sNZD';
 import sPLN from './sPLN';
-import sAUG from './sAUG';
+import sXAU from './sXAU';
+import sXAG from './sXAG';
 import sBTC from './sBTC';
 import Synth from './Synth';
 import Synthetix from './Synthetix';
@@ -35,7 +35,6 @@ export default {
   sJPY,
   sKRW,
   sUSD,
-  sXAU,
   sGBP,
   sCHF,
   sCNY,
@@ -46,7 +45,8 @@ export default {
   sBRL,
   sNZD,
   sPLN,
-  sAUG,
+  sXAU,
+  sXAG,
   sBTC,
   Synth,
   SynthetixEscrow,

@@ -1,4 +1,4 @@
-import {Contract} from 'ethers';
+import { Contract } from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
 const abi = abis.EscrowChecker;
@@ -10,22 +10,19 @@ function EscrowChecker(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList["EscrowChecker"],
+    this.contractSettings.addressList['EscrowChecker'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
-
-  
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns uint256[16]
    **/
-  this.checkAccountSchedule = async (account) => {
+  this.checkAccountSchedule = async account => {
     return await this.contract.checkAccountSchedule(account);
   };
-
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -34,8 +31,6 @@ function EscrowChecker(contractSettings) {
   this.havven_escrow = async () => {
     return await this.contract.havven_escrow();
   };
-
-
 }
 
-export default EscrowChecker
+export default EscrowChecker;

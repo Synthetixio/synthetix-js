@@ -1,4 +1,4 @@
-import { Contract } from 'ethers';
+import {Contract} from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
 const abi = abis.Synth;
@@ -10,10 +10,12 @@ function sGBP(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['sGBPProxy'],
+    this.contractSettings.addressList["sGBPProxy"],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -22,6 +24,7 @@ function sGBP(contractSettings) {
   this.name = async () => {
     return await this.contract.name();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -35,6 +38,7 @@ function sGBP(contractSettings) {
     return await this.contract.approve(spender, value, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
@@ -46,6 +50,7 @@ function sGBP(contractSettings) {
     return await this.contract.nominateNewOwner(_owner, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -54,6 +59,7 @@ function sGBP(contractSettings) {
     return await this.contract.initiationTime();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -61,6 +67,7 @@ function sGBP(contractSettings) {
   this.totalSupply = async () => {
     return await this.contract.totalSupply();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -73,6 +80,7 @@ function sGBP(contractSettings) {
     return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns Number
@@ -81,15 +89,17 @@ function sGBP(contractSettings) {
     return await this.contract.decimals();
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.terminateSelfDestruct = async txParams => {
+  this.terminateSelfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.terminateSelfDestruct(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -99,14 +109,16 @@ function sGBP(contractSettings) {
     return await this.contract.nominatedOwner();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
-  this.balanceOf = async account => {
+  this.balanceOf = async (account) => {
     return await this.contract.balanceOf(account);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -116,15 +128,17 @@ function sGBP(contractSettings) {
     return await this.contract.synthetix();
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.acceptOwnership = async txParams => {
+  this.acceptOwnership = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -134,6 +148,7 @@ function sGBP(contractSettings) {
     return await this.contract.owner();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String
@@ -141,6 +156,7 @@ function sGBP(contractSettings) {
   this.symbol = async () => {
     return await this.contract.symbol();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -153,15 +169,17 @@ function sGBP(contractSettings) {
     return await this.contract.setProxy(_proxy, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.selfDestruct = async txParams => {
+  this.selfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.selfDestruct(txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -174,6 +192,7 @@ function sGBP(contractSettings) {
     return await this.contract.setTokenState(_tokenState, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -181,6 +200,7 @@ function sGBP(contractSettings) {
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -190,6 +210,7 @@ function sGBP(contractSettings) {
     return await this.contract.feePool();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
@@ -197,6 +218,7 @@ function sGBP(contractSettings) {
   this.selfDestructInitiated = async () => {
     return await this.contract.selfDestructInitiated();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -209,15 +231,17 @@ function sGBP(contractSettings) {
     return await this.contract.setMessageSender(sender, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.initiateSelfDestruct = async txParams => {
+  this.initiateSelfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.initiateSelfDestruct(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -227,6 +251,7 @@ function sGBP(contractSettings) {
     return await this.contract.selfDestructBeneficiary();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes4
@@ -234,6 +259,7 @@ function sGBP(contractSettings) {
   this.currencyKey = async () => {
     return await this.contract.currencyKey();
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -245,6 +271,7 @@ function sGBP(contractSettings) {
     return await this.contract.allowance(owner, spender);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
@@ -253,6 +280,7 @@ function sGBP(contractSettings) {
     return await this.contract.tokenState();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
@@ -260,6 +288,7 @@ function sGBP(contractSettings) {
   this.proxy = async () => {
     return await this.contract.proxy();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -272,6 +301,7 @@ function sGBP(contractSettings) {
     return await this.contract.setSynthetix(_synthetix, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param _feePool {String<EthAddress>}
@@ -282,6 +312,7 @@ function sGBP(contractSettings) {
     txParams = txParams || {};
     return await this.contract.setFeePool(_feePool, txParams);
   };
+
 
   /**
    * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
@@ -296,6 +327,7 @@ function sGBP(contractSettings) {
     return await this.contract.transfer(to, value, txParams);
   };
 
+
   /**
    * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
@@ -309,6 +341,7 @@ function sGBP(contractSettings) {
     txParams = txParams || {};
     return await this.contract.transfer(to, value, data, txParams);
   };
+
 
   /**
    * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
@@ -325,6 +358,7 @@ function sGBP(contractSettings) {
     return await this.contract.transferFrom(from, to, value, data, txParams);
   };
 
+
   /**
    * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
@@ -339,6 +373,7 @@ function sGBP(contractSettings) {
     return await this.contract.transferFrom(from, to, value, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
@@ -350,6 +385,7 @@ function sGBP(contractSettings) {
     txParams = txParams || {};
     return await this.contract.transferSenderPaysFee(to, value, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -364,6 +400,7 @@ function sGBP(contractSettings) {
     return await this.contract.transferSenderPaysFee(to, value, data, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
@@ -376,6 +413,7 @@ function sGBP(contractSettings) {
     txParams = txParams || {};
     return await this.contract.transferFromSenderPaysFee(from, to, value, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -391,6 +429,7 @@ function sGBP(contractSettings) {
     return await this.contract.transferFromSenderPaysFee(from, to, value, data, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
@@ -402,6 +441,7 @@ function sGBP(contractSettings) {
     txParams = txParams || {};
     return await this.contract.issue(account, amount, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -415,6 +455,7 @@ function sGBP(contractSettings) {
     return await this.contract.burn(account, amount, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param sender {String<EthAddress>}
@@ -427,6 +468,8 @@ function sGBP(contractSettings) {
     txParams = txParams || {};
     return await this.contract.triggerTokenFallbackIfNeeded(sender, recipient, amount, txParams);
   };
+
+
 }
 
-export default sGBP;
+export default sGBP

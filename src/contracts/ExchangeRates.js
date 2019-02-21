@@ -1,4 +1,4 @@
-import { Contract } from 'ethers';
+import {Contract} from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
 const abi = abis.ExchangeRates;
@@ -10,10 +10,12 @@ function ExchangeRates(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['ExchangeRates'],
+    this.contractSettings.addressList["ExchangeRates"],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -22,6 +24,7 @@ function ExchangeRates(contractSettings) {
   this.rateStalePeriod = async () => {
     return await this.contract.rateStalePeriod();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -34,6 +37,7 @@ function ExchangeRates(contractSettings) {
     return await this.contract.nominateNewOwner(_owner, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -41,6 +45,7 @@ function ExchangeRates(contractSettings) {
   this.initiationTime = async () => {
     return await this.contract.initiationTime();
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -53,15 +58,17 @@ function ExchangeRates(contractSettings) {
     return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.terminateSelfDestruct = async txParams => {
+  this.terminateSelfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.terminateSelfDestruct(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -71,15 +78,17 @@ function ExchangeRates(contractSettings) {
     return await this.contract.nominatedOwner();
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.acceptOwnership = async txParams => {
+  this.acceptOwnership = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -89,6 +98,7 @@ function ExchangeRates(contractSettings) {
     return await this.contract.oracle();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
@@ -97,15 +107,17 @@ function ExchangeRates(contractSettings) {
     return await this.contract.owner();
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.selfDestruct = async txParams => {
+  this.selfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.selfDestruct(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -115,14 +127,16 @@ function ExchangeRates(contractSettings) {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns bytes4
    **/
-  this.xdrParticipants = async uint256 => {
+  this.xdrParticipants = async (uint256) => {
     return await this.contract.xdrParticipants(uint256);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -132,15 +146,17 @@ function ExchangeRates(contractSettings) {
     return await this.contract.selfDestructInitiated();
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
-  this.initiateSelfDestruct = async txParams => {
+  this.initiateSelfDestruct = async (txParams) => {
     txParams = txParams || {};
     return await this.contract.initiateSelfDestruct(txParams);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -150,23 +166,26 @@ function ExchangeRates(contractSettings) {
     return await this.contract.selfDestructBeneficiary();
   };
 
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes4}
-   * @returns BigNumber
-   **/
-  this.rates = async bytes4 => {
-    return await this.contract.rates(bytes4);
-  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {bytes4}
    * @returns BigNumber
    **/
-  this.lastRateUpdateTimes = async bytes4 => {
+  this.rates = async (bytes4) => {
+    return await this.contract.rates(bytes4);
+  };
+
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes4}
+   * @returns BigNumber
+   **/
+  this.lastRateUpdateTimes = async (bytes4) => {
     return await this.contract.lastRateUpdateTimes(bytes4);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -181,6 +200,7 @@ function ExchangeRates(contractSettings) {
     return await this.contract.updateRates(currencyKeys, newRates, timeSent, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes4}
@@ -191,6 +211,7 @@ function ExchangeRates(contractSettings) {
     txParams = txParams || {};
     return await this.contract.deleteRate(currencyKey, txParams);
   };
+
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -203,6 +224,7 @@ function ExchangeRates(contractSettings) {
     return await this.contract.setOracle(_oracle, txParams);
   };
 
+
   /**
    * Transaction (consumes gas, requires signer)
    * @param _time {BigNumber}
@@ -214,59 +236,67 @@ function ExchangeRates(contractSettings) {
     return await this.contract.setRateStalePeriod(_time, txParams);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
    * @returns BigNumber
    **/
-  this.rateForCurrency = async currencyKey => {
+  this.rateForCurrency = async (currencyKey) => {
     return await this.contract.rateForCurrency(currencyKey);
   };
 
+
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKeys {bytes4[]}
    * @returns uint256[]
    **/
-  this.ratesForCurrencies = async currencyKeys => {
+  this.ratesForCurrencies = async (currencyKeys) => {
     return await this.contract.ratesForCurrencies(currencyKeys);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
    * @returns BigNumber
    **/
-  this.lastRateUpdateTimeForCurrency = async currencyKey => {
+  this.lastRateUpdateTimeForCurrency = async (currencyKey) => {
     return await this.contract.lastRateUpdateTimeForCurrency(currencyKey);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKeys {bytes4[]}
    * @returns uint256[]
    **/
-  this.lastRateUpdateTimesForCurrencies = async currencyKeys => {
+  this.lastRateUpdateTimesForCurrencies = async (currencyKeys) => {
     return await this.contract.lastRateUpdateTimesForCurrencies(currencyKeys);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
    * @returns boolean
    **/
-  this.rateIsStale = async currencyKey => {
+  this.rateIsStale = async (currencyKey) => {
     return await this.contract.rateIsStale(currencyKey);
   };
+
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKeys {bytes4[]}
    * @returns boolean
    **/
-  this.anyRateIsStale = async currencyKeys => {
+  this.anyRateIsStale = async (currencyKeys) => {
     return await this.contract.anyRateIsStale(currencyKeys);
   };
+
+
 }
 
-export default ExchangeRates;
+export default ExchangeRates

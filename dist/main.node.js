@@ -24321,7 +24321,7 @@ var KOVAN_ADDRESSES = {
 };
 /* harmony default export */ var addresses = ({
   1: MAINNET_ADDRESSES,
-  2: ROPSTEN_ADDRESSES,
+  3: ROPSTEN_ADDRESSES,
   42: KOVAN_ADDRESSES
 });
 // CONCATENATED MODULE: ./src/contractSettings.js
@@ -24331,7 +24331,7 @@ var KOVAN_ADDRESSES = {
 
 var SUPPORTED_NETWORKS = {
   1: 'mainnet',
-  2: 'ropsten',
+  3: 'ropsten',
   42: 'kovan'
 };
 
@@ -24357,7 +24357,7 @@ function ContractSettings(contractSettings) {
   }
 
   this.signer = signer;
-  this.networkId = networkId || 42;
+  this.networkId = networkId || 1;
   this.addressList = addresses[this.networkId];
   this.ABIS = abis;
 };

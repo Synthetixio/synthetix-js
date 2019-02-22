@@ -4,7 +4,7 @@ import ABIS from '../lib/abis/index';
 
 const SUPPORTED_NETWORKS = {
   1: 'mainnet',
-  2: 'ropsten',
+  3: 'ropsten',
   42: 'kovan',
 };
 
@@ -23,7 +23,7 @@ class ContractSettings {
       this.provider = providers.getDefaultProvider(SUPPORTED_NETWORKS[Number(networkId)]);
     }
     this.signer = signer;
-    this.networkId = networkId || 2;
+    this.networkId = networkId || 1;
     this.addressList = addresses[this.networkId];
     this.ABIS = ABIS;
   }

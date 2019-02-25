@@ -98,7 +98,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(44);
+module.exports = __webpack_require__(43);
 
 
 /***/ }),
@@ -150,13 +150,13 @@ module.exports = _asyncToGenerator;
 "use strict";
 
 
-var version = __webpack_require__(46).version;
+var version = __webpack_require__(45).version;
 
-var contracts = __webpack_require__(47);
-var providers = __webpack_require__(52);
-var errors = __webpack_require__(7);
-var utils = __webpack_require__(25);
-var wallet = __webpack_require__(78);
+var contracts = __webpack_require__(46);
+var providers = __webpack_require__(51);
+var errors = __webpack_require__(6);
+var utils = __webpack_require__(24);
+var wallet = __webpack_require__(77);
 
 module.exports = {
     Wallet: wallet.Wallet,
@@ -188,7 +188,7 @@ module.exports = {
 
 var defineProperty = __webpack_require__(4).defineProperty;
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 function addSlice(array) {
     if (array.slice) { return array; }
@@ -438,27 +438,6 @@ module.exports = {
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty;
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -466,20 +445,20 @@ module.exports = _defineProperty;
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(80).version;
-elliptic.utils = __webpack_require__(81);
-elliptic.rand = __webpack_require__(82);
-elliptic.hmacDRBG = __webpack_require__(83);
-elliptic.curve = __webpack_require__(23);
-elliptic.curves = __webpack_require__(88);
+elliptic.version = __webpack_require__(79).version;
+elliptic.utils = __webpack_require__(80);
+elliptic.rand = __webpack_require__(81);
+elliptic.hmacDRBG = __webpack_require__(82);
+elliptic.curve = __webpack_require__(22);
+elliptic.curves = __webpack_require__(87);
 
 // Protocols
-elliptic.ec = __webpack_require__(90);
-elliptic.eddsa = __webpack_require__(93);
+elliptic.ec = __webpack_require__(89);
+elliptic.eddsa = __webpack_require__(92);
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -577,7 +556,7 @@ module.exports = codes;
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {(function (module, exports) {
@@ -632,7 +611,7 @@ module.exports = codes;
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(50).Buffer;
+    Buffer = __webpack_require__(49).Buffer;
   } catch (e) {
   }
 
@@ -4008,10 +3987,10 @@ module.exports = codes;
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(49)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(48)(module)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -4130,14 +4109,14 @@ module.exports = {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var assert = __webpack_require__(18);
-var inherits = __webpack_require__(67);
+var assert = __webpack_require__(17);
+var inherits = __webpack_require__(66);
 
 exports.inherits = inherits;
 
@@ -4390,15 +4369,15 @@ exports.shr64_lo = shr64_lo;
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var BN = __webpack_require__(8);
+var BN = __webpack_require__(7);
 
 var convert = __webpack_require__(3);
-var throwError = __webpack_require__(24);
-var keccak256 = __webpack_require__(12);
+var throwError = __webpack_require__(23);
+var keccak256 = __webpack_require__(11);
 
 function getChecksumAddress(address) {
     if (typeof(address) !== 'string' || !address.match(/^0x[0-9A-Fa-f]{40}$/)) {
@@ -4520,13 +4499,13 @@ module.exports = {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var sha3 = __webpack_require__(51);
+var sha3 = __webpack_require__(50);
 
 var convert = __webpack_require__(3);
 
@@ -4539,7 +4518,7 @@ module.exports = keccak256;
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -4549,11 +4528,11 @@ module.exports = keccak256;
  *  the underlying BN.js library for something smaller.
  */
 
-var BN = __webpack_require__(8);
+var BN = __webpack_require__(7);
 
 var defineProperty = __webpack_require__(4).defineProperty;
 var convert = __webpack_require__(3);
-var throwError = __webpack_require__(24);
+var throwError = __webpack_require__(23);
 
 function BigNumber(value) {
     if (!(this instanceof BigNumber)) { throw new Error('missing new'); }
@@ -4694,28 +4673,28 @@ module.exports = {
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var inherits = __webpack_require__(16);
+var inherits = __webpack_require__(15);
 
-var XMLHttpRequest = __webpack_require__(53).XMLHttpRequest;
+var XMLHttpRequest = __webpack_require__(52).XMLHttpRequest;
 
-var networks = __webpack_require__(59);
+var networks = __webpack_require__(58);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
-    var utf8 = __webpack_require__(9);
+    var utf8 = __webpack_require__(8);
     return {
         defineProperty: __webpack_require__(4).defineProperty,
 
-        getAddress: __webpack_require__(11).getAddress,
-        getContractAddress: __webpack_require__(33).getContractAddress,
+        getAddress: __webpack_require__(10).getAddress,
+        getContractAddress: __webpack_require__(32).getContractAddress,
 
-        bigNumberify: __webpack_require__(13).bigNumberify,
+        bigNumberify: __webpack_require__(12).bigNumberify,
         arrayify: convert.arrayify,
 
         hexlify: convert.hexlify,
@@ -4725,18 +4704,18 @@ var utils = (function() {
         hexStripZeros: convert.hexStripZeros,
         stripZeros: convert.stripZeros,
 
-        base64: __webpack_require__(34),
+        base64: __webpack_require__(33),
 
-        namehash: __webpack_require__(35),
+        namehash: __webpack_require__(34),
 
         toUtf8String: utf8.toUtf8String,
         toUtf8Bytes: utf8.toUtf8Bytes,
 
-        RLP: __webpack_require__(20),
+        RLP: __webpack_require__(19),
     }
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 function copyObject(obj) {
     var result = {};
@@ -5888,7 +5867,7 @@ module.exports = Provider;
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports) {
 
 function _classCallCheck(instance, Constructor) {
@@ -5900,23 +5879,23 @@ function _classCallCheck(instance, Constructor) {
 module.exports = _classCallCheck;
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(32).inherits
+module.exports = __webpack_require__(31).inherits
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
 
-hash.utils = __webpack_require__(10);
-hash.common = __webpack_require__(19);
-hash.sha = __webpack_require__(69);
-hash.ripemd = __webpack_require__(73);
-hash.hmac = __webpack_require__(74);
+hash.utils = __webpack_require__(9);
+hash.common = __webpack_require__(18);
+hash.sha = __webpack_require__(68);
+hash.ripemd = __webpack_require__(72);
+hash.hmac = __webpack_require__(73);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -5928,7 +5907,7 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = assert;
@@ -5945,14 +5924,14 @@ assert.equal = function assertEqual(l, r, msg) {
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
-var assert = __webpack_require__(18);
+var utils = __webpack_require__(9);
+var assert = __webpack_require__(17);
 
 function BlockHash() {
   this.pending = null;
@@ -6044,7 +6023,7 @@ BlockHash.prototype._pad = function pad() {
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //See: https://github.com/ethereum/wiki/wiki/RLP
@@ -6192,7 +6171,7 @@ module.exports = {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6200,7 +6179,7 @@ module.exports = {
 
 // See: https://github.com/ethereum/wiki/wiki/JSON-RPC
 
-var Provider = __webpack_require__(14);
+var Provider = __webpack_require__(13);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
@@ -6211,13 +6190,13 @@ var utils = (function() {
         isHexString: convert.isHexString,
         hexStripZeros: convert.hexStripZeros,
 
-        toUtf8Bytes: __webpack_require__(9).toUtf8Bytes,
+        toUtf8Bytes: __webpack_require__(8).toUtf8Bytes,
 
-        getAddress: __webpack_require__(11).getAddress,
+        getAddress: __webpack_require__(10).getAddress,
     }
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 function timer(timeout) {
     return new Promise(function(resolve) {
@@ -6518,13 +6497,13 @@ module.exports = JsonRpcProvider;
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(17);
+var hash = __webpack_require__(16);
 
 var convert = __webpack_require__(3);
 
@@ -6548,7 +6527,7 @@ module.exports = {
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6556,14 +6535,14 @@ module.exports = {
 
 var curve = exports;
 
-curve.base = __webpack_require__(84);
-curve.short = __webpack_require__(85);
-curve.mont = __webpack_require__(86);
-curve.edwards = __webpack_require__(87);
+curve.base = __webpack_require__(83);
+curve.short = __webpack_require__(84);
+curve.mont = __webpack_require__(85);
+curve.edwards = __webpack_require__(86);
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6581,7 +6560,7 @@ module.exports = throwError;
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6590,22 +6569,22 @@ module.exports = throwError;
 // This is SUPER useful, but adds 140kb (even zipped, adds 40kb)
 //var unorm = require('unorm');
 
-var address = __webpack_require__(11);
-var AbiCoder = __webpack_require__(31);
-var base64 = __webpack_require__(34);
-var bigNumber = __webpack_require__(13);
-var contractAddress = __webpack_require__(33);
+var address = __webpack_require__(10);
+var AbiCoder = __webpack_require__(30);
+var base64 = __webpack_require__(33);
+var bigNumber = __webpack_require__(12);
+var contractAddress = __webpack_require__(32);
 var convert = __webpack_require__(3);
-var id = __webpack_require__(66);
-var keccak256 = __webpack_require__(12);
-var namehash = __webpack_require__(35);
-var sha256 = __webpack_require__(22).sha256;
-var solidity = __webpack_require__(75);
-var randomBytes = __webpack_require__(76);
+var id = __webpack_require__(65);
+var keccak256 = __webpack_require__(11);
+var namehash = __webpack_require__(34);
+var sha256 = __webpack_require__(21).sha256;
+var solidity = __webpack_require__(74);
+var randomBytes = __webpack_require__(75);
 var properties = __webpack_require__(4);
-var RLP = __webpack_require__(20);
-var utf8 = __webpack_require__(9);
-var units = __webpack_require__(77);
+var RLP = __webpack_require__(19);
+var utf8 = __webpack_require__(8);
+var units = __webpack_require__(76);
 
 
 module.exports = {
@@ -6663,45 +6642,45 @@ module.exports = {
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("crypto");
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // See: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 // See: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
 
-var secp256k1 = new (__webpack_require__(6)).ec('secp256k1');
+var secp256k1 = new (__webpack_require__(5)).ec('secp256k1');
 
 var wordlist = (function() {
-    var words = __webpack_require__(96);
+    var words = __webpack_require__(95);
     return words.replace(/([A-Z])/g, ' $1').toLowerCase().substring(1).split(' ');
 })();
 
 var utils = (function() {
     var convert = __webpack_require__(3);
 
-    var sha2 = __webpack_require__(22);
+    var sha2 = __webpack_require__(21);
 
-    var hmac = __webpack_require__(40);
+    var hmac = __webpack_require__(39);
 
     return {
         defineProperty: __webpack_require__(4).defineProperty,
 
         arrayify: convert.arrayify,
-        bigNumberify: __webpack_require__(13).bigNumberify,
+        bigNumberify: __webpack_require__(12).bigNumberify,
         hexlify: convert.hexlify,
 
-        toUtf8Bytes: __webpack_require__(9).toUtf8Bytes,
+        toUtf8Bytes: __webpack_require__(8).toUtf8Bytes,
 
         sha256: sha2.sha256,
         createSha512Hmac: hmac.createSha512Hmac,
 
-        pbkdf2: __webpack_require__(41),
+        pbkdf2: __webpack_require__(40),
     }
 })();
 
@@ -6934,7 +6913,7 @@ module.exports = {
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6946,7 +6925,7 @@ module.exports = {
  *
  */
 
-var secp256k1 = new (__webpack_require__(6)).ec('secp256k1');
+var secp256k1 = new (__webpack_require__(5)).ec('secp256k1');
 var utils = (function() {
     var convert = __webpack_require__(3);
     return {
@@ -6956,13 +6935,13 @@ var utils = (function() {
         hexlify: convert.hexlify,
         padZeros: convert.padZeros,
 
-        getAddress: __webpack_require__(11).getAddress,
+        getAddress: __webpack_require__(10).getAddress,
 
-        keccak256: __webpack_require__(12)
+        keccak256: __webpack_require__(11)
     };
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 
 function SigningKey(privateKey) {
@@ -7045,14 +7024,14 @@ module.exports = SigningKey;
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(102);
+var arrayWithHoles = __webpack_require__(101);
 
-var iterableToArrayLimit = __webpack_require__(103);
+var iterableToArrayLimit = __webpack_require__(102);
 
-var nonIterableRest = __webpack_require__(104);
+var nonIterableRest = __webpack_require__(103);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
@@ -7061,7 +7040,7 @@ function _slicedToArray(arr, i) {
 module.exports = _slicedToArray;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7070,10 +7049,10 @@ module.exports = _slicedToArray;
 // See: https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
 
 var utils = (function() {
-    var AbiCoder = __webpack_require__(31);
+    var AbiCoder = __webpack_require__(30);
     var convert = __webpack_require__(3);
     var properties = __webpack_require__(4);
-    var utf8 = __webpack_require__(9);
+    var utf8 = __webpack_require__(8);
 
     return {
         defineFrozen: properties.defineFrozen,
@@ -7088,11 +7067,11 @@ var utils = (function() {
 
         toUtf8Bytes: utf8.toUtf8Bytes,
 
-        keccak256: __webpack_require__(12),
+        keccak256: __webpack_require__(11),
     };
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 function parseParams(params) {
     var names = [];
@@ -7479,7 +7458,7 @@ module.exports = Interface;
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7489,7 +7468,7 @@ module.exports = Interface;
 
 var utils = (function() {
     var convert = __webpack_require__(3);
-    var utf8 = __webpack_require__(9);
+    var utf8 = __webpack_require__(8);
 
     return {
         defineProperty: __webpack_require__(4).defineProperty,
@@ -7497,9 +7476,9 @@ var utils = (function() {
         arrayify: convert.arrayify,
         padZeros: convert.padZeros,
 
-        bigNumberify: __webpack_require__(13).bigNumberify,
+        bigNumberify: __webpack_require__(12).bigNumberify,
 
-        getAddress: __webpack_require__(11).getAddress,
+        getAddress: __webpack_require__(10).getAddress,
 
         concat: convert.concat,
         isHexString: convert.isHexString,
@@ -7511,7 +7490,7 @@ var utils = (function() {
     };
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 var paramTypeBytes = new RegExp(/^bytes([0-9]*)$/);
 var paramTypeNumber = new RegExp(/^(u?int)([0-9]*)$/);
@@ -8508,20 +8487,20 @@ module.exports = Coder
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = require("util");
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var getAddress = __webpack_require__(11).getAddress;
+var getAddress = __webpack_require__(10).getAddress;
 var convert = __webpack_require__(3);
-var keccak256 = __webpack_require__(12);
-var RLP = __webpack_require__(20);
+var keccak256 = __webpack_require__(11);
+var RLP = __webpack_require__(19);
 
 // http://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed
 function getContractAddress(transaction) {
@@ -8540,7 +8519,7 @@ module.exports = {
 
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8560,15 +8539,15 @@ module.exports = {
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var convert = __webpack_require__(3);
-var utf8 = __webpack_require__(9);
-var keccak256 = __webpack_require__(12);
+var utf8 = __webpack_require__(8);
+var keccak256 = __webpack_require__(11);
 
 var Zeros = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var Partition = new RegExp("^((.*)\\.)?([^.]+)$");
@@ -8605,13 +8584,13 @@ module.exports = namehash;
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
+var utils = __webpack_require__(9);
 var rotr32 = utils.rotr32;
 
 function ft_1(s, x, y, z) {
@@ -8661,16 +8640,16 @@ exports.g1_256 = g1_256;
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
-var common = __webpack_require__(19);
-var shaCommon = __webpack_require__(36);
-var assert = __webpack_require__(18);
+var utils = __webpack_require__(9);
+var common = __webpack_require__(18);
+var shaCommon = __webpack_require__(35);
+var assert = __webpack_require__(17);
 
 var sum32 = utils.sum32;
 var sum32_4 = utils.sum32_4;
@@ -8773,15 +8752,15 @@ SHA256.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
-var common = __webpack_require__(19);
-var assert = __webpack_require__(18);
+var utils = __webpack_require__(9);
+var common = __webpack_require__(18);
+var assert = __webpack_require__(17);
 
 var rotr64_hi = utils.rotr64_hi;
 var rotr64_lo = utils.rotr64_lo;
@@ -9110,7 +9089,7 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9557,15 +9536,15 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(17);
+var hash = __webpack_require__(16);
 
-var sha2 = __webpack_require__(22);
+var sha2 = __webpack_require__(21);
 
 var convert = __webpack_require__(3);
 
@@ -9588,7 +9567,7 @@ module.exports = {
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9646,10 +9625,10 @@ module.exports = pbkdf2;
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(5);
+var defineProperty = __webpack_require__(104);
 
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
@@ -9673,7 +9652,7 @@ function _objectSpread(target) {
 module.exports = _objectSpread;
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -9695,7 +9674,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -9722,7 +9701,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(45);
+module.exports = __webpack_require__(44);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -9738,7 +9717,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /**
@@ -10465,20 +10444,20 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module) {
 
 module.exports = {"_args":[["ethers@3.0.29","/Users/clementbalestrat/Workspace/synthetix-js"]],"_from":"ethers@3.0.29","_id":"ethers@3.0.29","_inBundle":false,"_integrity":"sha512-OGyA5pW5xFC5o/ZV5MfIoVp/EdA1QMg2bMJFf7Kznsz8m7IzzbgsPHTCjzSfKQDs/XDphGyRcA7A6bkIeJL4gw==","_location":"/ethers","_phantomChildren":{"bn.js":"4.11.8","brorand":"1.1.0","hash.js":"1.1.5"},"_requested":{"type":"version","registry":true,"raw":"ethers@3.0.29","name":"ethers","escapedName":"ethers","rawSpec":"3.0.29","saveSpec":null,"fetchSpec":"3.0.29"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.29.tgz","_spec":"3.0.29","_where":"/Users/clementbalestrat/Workspace/synthetix-js","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.29"};
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Contract = __webpack_require__(48);
-var Interface = __webpack_require__(30);
+var Contract = __webpack_require__(47);
+var Interface = __webpack_require__(29);
 
 module.exports = {
     Contract: Contract,
@@ -10488,29 +10467,29 @@ module.exports = {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Interface = __webpack_require__(30);
+var Interface = __webpack_require__(29);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
     return {
         defineProperty: __webpack_require__(4).defineProperty,
 
-        getAddress: __webpack_require__(11).getAddress,
+        getAddress: __webpack_require__(10).getAddress,
 
-        bigNumberify: __webpack_require__(13).bigNumberify,
+        bigNumberify: __webpack_require__(12).bigNumberify,
 
         arrayify: convert.arrayify,
         hexlify: convert.hexlify,
     };
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 var allowedTransactionKeys = {
     data: true, from: true, gasLimit: true, gasPrice:true, nonce: true, to: true, value: true
@@ -10826,7 +10805,7 @@ module.exports = Contract;
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -10854,13 +10833,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("buffer");
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports) {
 
 /**
@@ -11341,20 +11320,20 @@ module.exports = require("buffer");
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Provider = __webpack_require__(14);
+var Provider = __webpack_require__(13);
 
-var EtherscanProvider = __webpack_require__(60);
-var FallbackProvider = __webpack_require__(61);
-var IpcProvider = __webpack_require__(62);
-var InfuraProvider = __webpack_require__(64);
-var JsonRpcProvider = __webpack_require__(21);
-var Web3Provider = __webpack_require__(65);
+var EtherscanProvider = __webpack_require__(59);
+var FallbackProvider = __webpack_require__(60);
+var IpcProvider = __webpack_require__(61);
+var InfuraProvider = __webpack_require__(63);
+var JsonRpcProvider = __webpack_require__(20);
+var Web3Provider = __webpack_require__(64);
 
 function getDefaultProvider(network) {
     return new FallbackProvider([
@@ -11388,7 +11367,7 @@ module.exports = exports;
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -11404,9 +11383,9 @@ module.exports = exports;
  * @license MIT
  */
 
-var Url = __webpack_require__(54);
-var spawn = __webpack_require__(55).spawn;
-var fs = __webpack_require__(56);
+var Url = __webpack_require__(53);
+var spawn = __webpack_require__(54).spawn;
+var fs = __webpack_require__(55);
 
 exports.XMLHttpRequest = function() {
   "use strict";
@@ -11415,8 +11394,8 @@ exports.XMLHttpRequest = function() {
    * Private variables
    */
   var self = this;
-  var http = __webpack_require__(57);
-  var https = __webpack_require__(58);
+  var http = __webpack_require__(56);
+  var https = __webpack_require__(57);
 
   // Holds http.js objects
   var request;
@@ -12014,49 +11993,49 @@ exports.XMLHttpRequest = function() {
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("url");
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module) {
 
 module.exports = {"unspecified":{"chainId":0,"name":"unspecified"},"homestead":{"chainId":1,"ensAddress":"0x314159265dd8dbb310642f98f50c066173c1259b","name":"homestead"},"mainnet":{"chainId":1,"ensAddress":"0x314159265dd8dbb310642f98f50c066173c1259b","name":"homestead"},"morden":{"chainId":2,"name":"morden"},"ropsten":{"chainId":3,"ensAddress":"0x112234455c3a32fd11230c42e7bccd4a84e02010","name":"ropsten"},"testnet":{"chainId":3,"ensAddress":"0x112234455c3a32fd11230c42e7bccd4a84e02010","name":"ropsten"},"rinkeby":{"chainId":4,"name":"rinkeby"},"kovan":{"chainId":42,"name":"kovan"},"classic":{"chainId":61,"name":"classic"}};
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Provider = __webpack_require__(14);
+var Provider = __webpack_require__(13);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
@@ -12345,15 +12324,15 @@ module.exports = EtherscanProvider;;
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var inherits = __webpack_require__(16);
+var inherits = __webpack_require__(15);
 
-var Provider = __webpack_require__(14);
+var Provider = __webpack_require__(13);
 
 var utils = (function() {
     return {
@@ -12414,18 +12393,18 @@ module.exports = FallbackProvider;
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var net = __webpack_require__(63);
+var net = __webpack_require__(62);
 
-var JsonRpcProvider = __webpack_require__(21);
+var JsonRpcProvider = __webpack_require__(20);
 
 var defineProperty = __webpack_require__(4).defineProperty;
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 function IpcProvider(path, network) {
     errors.checkNew(this, IpcProvider);
@@ -12487,20 +12466,20 @@ module.exports = IpcProvider;
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Provider = __webpack_require__(14);
-var JsonRpcProvider = __webpack_require__(21);
+var Provider = __webpack_require__(13);
+var JsonRpcProvider = __webpack_require__(20);
 
 var utils = (function() {
     return {
@@ -12508,7 +12487,7 @@ var utils = (function() {
     }
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 function InfuraProvider(network, apiAccessToken) {
     errors.checkNew(this, InfuraProvider);
@@ -12560,14 +12539,14 @@ module.exports = InfuraProvider;
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Provider = __webpack_require__(14);
-var JsonRpcProvider = __webpack_require__(21);
+var Provider = __webpack_require__(13);
+var JsonRpcProvider = __webpack_require__(20);
 
 var utils = (function() {
     return {
@@ -12575,7 +12554,7 @@ var utils = (function() {
     }
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
 /*
 @TODO
@@ -12635,14 +12614,14 @@ module.exports = Web3Provider;
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var keccak256 = __webpack_require__(12);
-var utf8 = __webpack_require__(9);
+var keccak256 = __webpack_require__(11);
+var utf8 = __webpack_require__(8);
 
 function id(text) {
     return keccak256(utf8.toUtf8Bytes(text));
@@ -12652,20 +12631,20 @@ module.exports = id;
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
-  var util = __webpack_require__(32);
+  var util = __webpack_require__(31);
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
 } catch (e) {
-  module.exports = __webpack_require__(68);
+  module.exports = __webpack_require__(67);
 }
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -12694,29 +12673,29 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.sha1 = __webpack_require__(69);
+exports.sha224 = __webpack_require__(70);
+exports.sha256 = __webpack_require__(36);
+exports.sha384 = __webpack_require__(71);
+exports.sha512 = __webpack_require__(37);
+
+
+/***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(70);
-exports.sha224 = __webpack_require__(71);
-exports.sha256 = __webpack_require__(37);
-exports.sha384 = __webpack_require__(72);
-exports.sha512 = __webpack_require__(38);
-
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(10);
-var common = __webpack_require__(19);
-var shaCommon = __webpack_require__(36);
+var utils = __webpack_require__(9);
+var common = __webpack_require__(18);
+var shaCommon = __webpack_require__(35);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -12789,14 +12768,14 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
-var SHA256 = __webpack_require__(37);
+var utils = __webpack_require__(9);
+var SHA256 = __webpack_require__(36);
 
 function SHA224() {
   if (!(this instanceof SHA224))
@@ -12826,15 +12805,15 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
+var utils = __webpack_require__(9);
 
-var SHA512 = __webpack_require__(38);
+var SHA512 = __webpack_require__(37);
 
 function SHA384() {
   if (!(this instanceof SHA384))
@@ -12868,14 +12847,14 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
-var common = __webpack_require__(19);
+var utils = __webpack_require__(9);
+var common = __webpack_require__(18);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -13021,14 +13000,14 @@ var sh = [
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(10);
-var assert = __webpack_require__(18);
+var utils = __webpack_require__(9);
+var assert = __webpack_require__(17);
 
 function Hmac(hash, key, enc) {
   if (!(this instanceof Hmac))
@@ -13075,19 +13054,19 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bigNumberify = __webpack_require__(13).bigNumberify;
+var bigNumberify = __webpack_require__(12).bigNumberify;
 var convert = __webpack_require__(3);
-var getAddress = __webpack_require__(11).getAddress;
-var utf8 = __webpack_require__(9);
+var getAddress = __webpack_require__(10).getAddress;
+var utf8 = __webpack_require__(8);
 
-var hashKeccak256 = __webpack_require__(12);
-var hashSha256 = __webpack_require__(22).sha256;
+var hashKeccak256 = __webpack_require__(11);
+var hashSha256 = __webpack_require__(21).sha256;
 
 var regexBytes = new RegExp("^bytes([0-9]+)$");
 var regexNumber = new RegExp("^(u?int)([0-9]*)$");
@@ -13179,13 +13158,13 @@ module.exports = {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var randomBytes = __webpack_require__(26).randomBytes;
+var randomBytes = __webpack_require__(25).randomBytes;
 
 module.exports = function(length) {
     return new Uint8Array(randomBytes(length));
@@ -13194,11 +13173,11 @@ module.exports = function(length) {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var bigNumberify = __webpack_require__(13).bigNumberify;
-var throwError = __webpack_require__(24);
+var bigNumberify = __webpack_require__(12).bigNumberify;
+var throwError = __webpack_require__(23);
 
 var zero = new bigNumberify(0);
 var negative1 = new bigNumberify(-1);
@@ -13348,15 +13327,15 @@ module.exports = {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Wallet = __webpack_require__(79);
-var HDNode = __webpack_require__(27);
-var SigningKey = __webpack_require__(28);
+var Wallet = __webpack_require__(78);
+var HDNode = __webpack_require__(26);
+var SigningKey = __webpack_require__(27);
 
 module.exports = {
     HDNode: HDNode,
@@ -13367,13 +13346,13 @@ module.exports = {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var scrypt = __webpack_require__(39);
+var scrypt = __webpack_require__(38);
 
 var utils = (function() {
     var convert = __webpack_require__(3);
@@ -13386,31 +13365,31 @@ var utils = (function() {
         stripZeros: convert.stripZeros,
         hexZeroPad: convert.hexZeroPad,
 
-        bigNumberify: __webpack_require__(13).bigNumberify,
+        bigNumberify: __webpack_require__(12).bigNumberify,
 
-        toUtf8Bytes: __webpack_require__(9).toUtf8Bytes,
+        toUtf8Bytes: __webpack_require__(8).toUtf8Bytes,
 
-        getAddress: __webpack_require__(11).getAddress,
+        getAddress: __webpack_require__(10).getAddress,
 
-        keccak256: __webpack_require__(12),
+        keccak256: __webpack_require__(11),
 
         //randomBytes: require('../utils/random-bytes'),
-        randomBytes: __webpack_require__(25).randomBytes,
+        randomBytes: __webpack_require__(24).randomBytes,
 
-        RLP: __webpack_require__(20)
+        RLP: __webpack_require__(19)
     };
 })();
 
-var errors = __webpack_require__(7);
+var errors = __webpack_require__(6);
 
-var HDNode = __webpack_require__(27);
+var HDNode = __webpack_require__(26);
 
-var secretStorage = __webpack_require__(97);
-var SigningKey = __webpack_require__(28);
+var secretStorage = __webpack_require__(96);
+var SigningKey = __webpack_require__(27);
 
 // This ensures we inject a setImmediate into the global space, which
 // dramatically improves the performance of the scrypt PBKDF.
-__webpack_require__(101);
+__webpack_require__(100);
 
 var defaultPath = "m/44'/60'/0'/0/0";
 
@@ -13855,20 +13834,20 @@ module.exports = Wallet;
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module) {
 
 module.exports = {"_args":[["elliptic@6.3.3","/Users/clementbalestrat/Workspace/synthetix-js"]],"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/ethers/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_spec":"6.3.3","_where":"/Users/clementbalestrat/Workspace/synthetix-js","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"};
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = exports;
-var BN = __webpack_require__(8);
+var BN = __webpack_require__(7);
 
 utils.assert = function assert(val, msg) {
   if (!val)
@@ -14040,7 +14019,7 @@ utils.intFromLE = intFromLE;
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -14098,7 +14077,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(26);
+    var crypto = __webpack_require__(25);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -14111,14 +14090,14 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(17);
-var elliptic = __webpack_require__(6);
+var hash = __webpack_require__(16);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
@@ -14232,14 +14211,14 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var BN = __webpack_require__(8);
-var elliptic = __webpack_require__(6);
+var BN = __webpack_require__(7);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var getNAF = utils.getNAF;
 var getJSF = utils.getJSF;
@@ -14614,16 +14593,16 @@ BasePoint.prototype.dblp = function dblp(k) {
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(23);
-var elliptic = __webpack_require__(6);
-var BN = __webpack_require__(8);
-var inherits = __webpack_require__(16);
+var curve = __webpack_require__(22);
+var elliptic = __webpack_require__(5);
+var BN = __webpack_require__(7);
+var inherits = __webpack_require__(15);
 var Base = curve.base;
 
 var assert = elliptic.utils.assert;
@@ -15559,18 +15538,18 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(23);
-var BN = __webpack_require__(8);
-var inherits = __webpack_require__(16);
+var curve = __webpack_require__(22);
+var BN = __webpack_require__(7);
+var inherits = __webpack_require__(15);
 var Base = curve.base;
 
-var elliptic = __webpack_require__(6);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 
 function MontCurve(conf) {
@@ -15746,16 +15725,16 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(23);
-var elliptic = __webpack_require__(6);
-var BN = __webpack_require__(8);
-var inherits = __webpack_require__(16);
+var curve = __webpack_require__(22);
+var elliptic = __webpack_require__(5);
+var BN = __webpack_require__(7);
+var inherits = __webpack_require__(15);
 var Base = curve.base;
 
 var assert = elliptic.utils.assert;
@@ -16186,7 +16165,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16194,8 +16173,8 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 var curves = exports;
 
-var hash = __webpack_require__(17);
-var elliptic = __webpack_require__(6);
+var hash = __webpack_require__(16);
+var elliptic = __webpack_require__(5);
 
 var assert = elliptic.utils.assert;
 
@@ -16359,7 +16338,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(89);
+  pre = __webpack_require__(88);
 } catch (e) {
   pre = undefined;
 }
@@ -16398,7 +16377,7 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -17184,19 +17163,19 @@ module.exports = {
 
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var BN = __webpack_require__(8);
-var elliptic = __webpack_require__(6);
+var BN = __webpack_require__(7);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(91);
-var Signature = __webpack_require__(92);
+var KeyPair = __webpack_require__(90);
+var Signature = __webpack_require__(91);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -17428,14 +17407,14 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var BN = __webpack_require__(8);
-var elliptic = __webpack_require__(6);
+var BN = __webpack_require__(7);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
@@ -17554,15 +17533,15 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var BN = __webpack_require__(8);
+var BN = __webpack_require__(7);
 
-var elliptic = __webpack_require__(6);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
@@ -17696,19 +17675,19 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(17);
-var elliptic = __webpack_require__(6);
+var hash = __webpack_require__(16);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(94);
-var Signature = __webpack_require__(95);
+var KeyPair = __webpack_require__(93);
+var Signature = __webpack_require__(94);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -17821,13 +17800,13 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var elliptic = __webpack_require__(6);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
@@ -17924,14 +17903,14 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var BN = __webpack_require__(8);
-var elliptic = __webpack_require__(6);
+var BN = __webpack_require__(7);
+var elliptic = __webpack_require__(5);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var cachedProperty = utils.cachedProperty;
@@ -17997,28 +17976,28 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module) {
 
 module.exports = "AbandonAbilityAbleAboutAboveAbsentAbsorbAbstractAbsurdAbuseAccessAccidentAccountAccuseAchieveAcidAcousticAcquireAcrossActActionActorActressActualAdaptAddAddictAddressAdjustAdmitAdultAdvanceAdviceAerobicAffairAffordAfraidAgainAgeAgentAgreeAheadAimAirAirportAisleAlarmAlbumAlcoholAlertAlienAllAlleyAllowAlmostAloneAlphaAlreadyAlsoAlterAlwaysAmateurAmazingAmongAmountAmusedAnalystAnchorAncientAngerAngleAngryAnimalAnkleAnnounceAnnualAnotherAnswerAntennaAntiqueAnxietyAnyApartApologyAppearAppleApproveAprilArchArcticAreaArenaArgueArmArmedArmorArmyAroundArrangeArrestArriveArrowArtArtefactArtistArtworkAskAspectAssaultAssetAssistAssumeAsthmaAthleteAtomAttackAttendAttitudeAttractAuctionAuditAugustAuntAuthorAutoAutumnAverageAvocadoAvoidAwakeAwareAwayAwesomeAwfulAwkwardAxisBabyBachelorBaconBadgeBagBalanceBalconyBallBambooBananaBannerBarBarelyBargainBarrelBaseBasicBasketBattleBeachBeanBeautyBecauseBecomeBeefBeforeBeginBehaveBehindBelieveBelowBeltBenchBenefitBestBetrayBetterBetweenBeyondBicycleBidBikeBindBiologyBirdBirthBitterBlackBladeBlameBlanketBlastBleakBlessBlindBloodBlossomBlouseBlueBlurBlushBoardBoatBodyBoilBombBoneBonusBookBoostBorderBoringBorrowBossBottomBounceBoxBoyBracketBrainBrandBrassBraveBreadBreezeBrickBridgeBriefBrightBringBriskBroccoliBrokenBronzeBroomBrotherBrownBrushBubbleBuddyBudgetBuffaloBuildBulbBulkBulletBundleBunkerBurdenBurgerBurstBusBusinessBusyButterBuyerBuzzCabbageCabinCableCactusCageCakeCallCalmCameraCampCanCanalCancelCandyCannonCanoeCanvasCanyonCapableCapitalCaptainCarCarbonCardCargoCarpetCarryCartCaseCashCasinoCastleCasualCatCatalogCatchCategoryCattleCaughtCauseCautionCaveCeilingCeleryCementCensusCenturyCerealCertainChairChalkChampionChangeChaosChapterChargeChaseChatCheapCheckCheeseChefCherryChestChickenChiefChildChimneyChoiceChooseChronicChuckleChunkChurnCigarCinnamonCircleCitizenCityCivilClaimClapClarifyClawClayCleanClerkCleverClickClientCliffClimbClinicClipClockClogCloseClothCloudClownClubClumpClusterClutchCoachCoastCoconutCodeCoffeeCoilCoinCollectColorColumnCombineComeComfortComicCommonCompanyConcertConductConfirmCongressConnectConsiderControlConvinceCookCoolCopperCopyCoralCoreCornCorrectCostCottonCouchCountryCoupleCourseCousinCoverCoyoteCrackCradleCraftCramCraneCrashCraterCrawlCrazyCreamCreditCreekCrewCricketCrimeCrispCriticCropCrossCrouchCrowdCrucialCruelCruiseCrumbleCrunchCrushCryCrystalCubeCultureCupCupboardCuriousCurrentCurtainCurveCushionCustomCuteCycleDadDamageDampDanceDangerDaringDashDaughterDawnDayDealDebateDebrisDecadeDecemberDecideDeclineDecorateDecreaseDeerDefenseDefineDefyDegreeDelayDeliverDemandDemiseDenialDentistDenyDepartDependDepositDepthDeputyDeriveDescribeDesertDesignDeskDespairDestroyDetailDetectDevelopDeviceDevoteDiagramDialDiamondDiaryDiceDieselDietDifferDigitalDignityDilemmaDinnerDinosaurDirectDirtDisagreeDiscoverDiseaseDishDismissDisorderDisplayDistanceDivertDivideDivorceDizzyDoctorDocumentDogDollDolphinDomainDonateDonkeyDonorDoorDoseDoubleDoveDraftDragonDramaDrasticDrawDreamDressDriftDrillDrinkDripDriveDropDrumDryDuckDumbDuneDuringDustDutchDutyDwarfDynamicEagerEagleEarlyEarnEarthEasilyEastEasyEchoEcologyEconomyEdgeEditEducateEffortEggEightEitherElbowElderElectricElegantElementElephantElevatorEliteElseEmbarkEmbodyEmbraceEmergeEmotionEmployEmpowerEmptyEnableEnactEndEndlessEndorseEnemyEnergyEnforceEngageEngineEnhanceEnjoyEnlistEnoughEnrichEnrollEnsureEnterEntireEntryEnvelopeEpisodeEqualEquipEraEraseErodeErosionErrorEruptEscapeEssayEssenceEstateEternalEthicsEvidenceEvilEvokeEvolveExactExampleExcessExchangeExciteExcludeExcuseExecuteExerciseExhaustExhibitExileExistExitExoticExpandExpectExpireExplainExposeExpressExtendExtraEyeEyebrowFabricFaceFacultyFadeFaintFaithFallFalseFameFamilyFamousFanFancyFantasyFarmFashionFatFatalFatherFatigueFaultFavoriteFeatureFebruaryFederalFeeFeedFeelFemaleFenceFestivalFetchFeverFewFiberFictionFieldFigureFileFilmFilterFinalFindFineFingerFinishFireFirmFirstFiscalFishFitFitnessFixFlagFlameFlashFlatFlavorFleeFlightFlipFloatFlockFloorFlowerFluidFlushFlyFoamFocusFogFoilFoldFollowFoodFootForceForestForgetForkFortuneForumForwardFossilFosterFoundFoxFragileFrameFrequentFreshFriendFringeFrogFrontFrostFrownFrozenFruitFuelFunFunnyFurnaceFuryFutureGadgetGainGalaxyGalleryGameGapGarageGarbageGardenGarlicGarmentGasGaspGateGatherGaugeGazeGeneralGeniusGenreGentleGenuineGestureGhostGiantGiftGiggleGingerGiraffeGirlGiveGladGlanceGlareGlassGlideGlimpseGlobeGloomGloryGloveGlowGlueGoatGoddessGoldGoodGooseGorillaGospelGossipGovernGownGrabGraceGrainGrantGrapeGrassGravityGreatGreenGridGriefGritGroceryGroupGrowGruntGuardGuessGuideGuiltGuitarGunGymHabitHairHalfHammerHamsterHandHappyHarborHardHarshHarvestHatHaveHawkHazardHeadHealthHeartHeavyHedgehogHeightHelloHelmetHelpHenHeroHiddenHighHillHintHipHireHistoryHobbyHockeyHoldHoleHolidayHollowHomeHoneyHoodHopeHornHorrorHorseHospitalHostHotelHourHoverHubHugeHumanHumbleHumorHundredHungryHuntHurdleHurryHurtHusbandHybridIceIconIdeaIdentifyIdleIgnoreIllIllegalIllnessImageImitateImmenseImmuneImpactImposeImproveImpulseInchIncludeIncomeIncreaseIndexIndicateIndoorIndustryInfantInflictInformInhaleInheritInitialInjectInjuryInmateInnerInnocentInputInquiryInsaneInsectInsideInspireInstallIntactInterestIntoInvestInviteInvolveIronIslandIsolateIssueItemIvoryJacketJaguarJarJazzJealousJeansJellyJewelJobJoinJokeJourneyJoyJudgeJuiceJumpJungleJuniorJunkJustKangarooKeenKeepKetchupKeyKickKidKidneyKindKingdomKissKitKitchenKiteKittenKiwiKneeKnifeKnockKnowLabLabelLaborLadderLadyLakeLampLanguageLaptopLargeLaterLatinLaughLaundryLavaLawLawnLawsuitLayerLazyLeaderLeafLearnLeaveLectureLeftLegLegalLegendLeisureLemonLendLengthLensLeopardLessonLetterLevelLiarLibertyLibraryLicenseLifeLiftLightLikeLimbLimitLinkLionLiquidListLittleLiveLizardLoadLoanLobsterLocalLockLogicLonelyLongLoopLotteryLoudLoungeLoveLoyalLuckyLuggageLumberLunarLunchLuxuryLyricsMachineMadMagicMagnetMaidMailMainMajorMakeMammalManManageMandateMangoMansionManualMapleMarbleMarchMarginMarineMarketMarriageMaskMassMasterMatchMaterialMathMatrixMatterMaximumMazeMeadowMeanMeasureMeatMechanicMedalMediaMelodyMeltMemberMemoryMentionMenuMercyMergeMeritMerryMeshMessageMetalMethodMiddleMidnightMilkMillionMimicMindMinimumMinorMinuteMiracleMirrorMiseryMissMistakeMixMixedMixtureMobileModelModifyMomMomentMonitorMonkeyMonsterMonthMoonMoralMoreMorningMosquitoMotherMotionMotorMountainMouseMoveMovieMuchMuffinMuleMultiplyMuscleMuseumMushroomMusicMustMutualMyselfMysteryMythNaiveNameNapkinNarrowNastyNationNatureNearNeckNeedNegativeNeglectNeitherNephewNerveNestNetNetworkNeutralNeverNewsNextNiceNightNobleNoiseNomineeNoodleNormalNorthNoseNotableNoteNothingNoticeNovelNowNuclearNumberNurseNutOakObeyObjectObligeObscureObserveObtainObviousOccurOceanOctoberOdorOffOfferOfficeOftenOilOkayOldOliveOlympicOmitOnceOneOnionOnlineOnlyOpenOperaOpinionOpposeOptionOrangeOrbitOrchardOrderOrdinaryOrganOrientOriginalOrphanOstrichOtherOutdoorOuterOutputOutsideOvalOvenOverOwnOwnerOxygenOysterOzonePactPaddlePagePairPalacePalmPandaPanelPanicPantherPaperParadeParentParkParrotPartyPassPatchPathPatientPatrolPatternPausePavePaymentPeacePeanutPearPeasantPelicanPenPenaltyPencilPeoplePepperPerfectPermitPersonPetPhonePhotoPhrasePhysicalPianoPicnicPicturePiecePigPigeonPillPilotPinkPioneerPipePistolPitchPizzaPlacePlanetPlasticPlatePlayPleasePledgePluckPlugPlungePoemPoetPointPolarPolePolicePondPonyPoolPopularPortionPositionPossiblePostPotatoPotteryPovertyPowderPowerPracticePraisePredictPreferPreparePresentPrettyPreventPricePridePrimaryPrintPriorityPrisonPrivatePrizeProblemProcessProduceProfitProgramProjectPromoteProofPropertyProsperProtectProudProvidePublicPuddingPullPulpPulsePumpkinPunchPupilPuppyPurchasePurityPurposePursePushPutPuzzlePyramidQualityQuantumQuarterQuestionQuickQuitQuizQuoteRabbitRaccoonRaceRackRadarRadioRailRainRaiseRallyRampRanchRandomRangeRapidRareRateRatherRavenRawRazorReadyRealReasonRebelRebuildRecallReceiveRecipeRecordRecycleReduceReflectReformRefuseRegionRegretRegularRejectRelaxReleaseReliefRelyRemainRememberRemindRemoveRenderRenewRentReopenRepairRepeatReplaceReportRequireRescueResembleResistResourceResponseResultRetireRetreatReturnReunionRevealReviewRewardRhythmRibRibbonRiceRichRideRidgeRifleRightRigidRingRiotRippleRiskRitualRivalRiverRoadRoastRobotRobustRocketRomanceRoofRookieRoomRoseRotateRoughRoundRouteRoyalRubberRudeRugRuleRunRunwayRuralSadSaddleSadnessSafeSailSaladSalmonSalonSaltSaluteSameSampleSandSatisfySatoshiSauceSausageSaveSayScaleScanScareScatterSceneSchemeSchoolScienceScissorsScorpionScoutScrapScreenScriptScrubSeaSearchSeasonSeatSecondSecretSectionSecuritySeedSeekSegmentSelectSellSeminarSeniorSenseSentenceSeriesServiceSessionSettleSetupSevenShadowShaftShallowShareShedShellSheriffShieldShiftShineShipShiverShockShoeShootShopShortShoulderShoveShrimpShrugShuffleShySiblingSickSideSiegeSightSignSilentSilkSillySilverSimilarSimpleSinceSingSirenSisterSituateSixSizeSkateSketchSkiSkillSkinSkirtSkullSlabSlamSleepSlenderSliceSlideSlightSlimSloganSlotSlowSlushSmallSmartSmileSmokeSmoothSnackSnakeSnapSniffSnowSoapSoccerSocialSockSodaSoftSolarSoldierSolidSolutionSolveSomeoneSongSoonSorrySortSoulSoundSoupSourceSouthSpaceSpareSpatialSpawnSpeakSpecialSpeedSpellSpendSphereSpiceSpiderSpikeSpinSpiritSplitSpoilSponsorSpoonSportSpotSpraySpreadSpringSpySquareSqueezeSquirrelStableStadiumStaffStageStairsStampStandStartStateStaySteakSteelStemStepStereoStickStillStingStockStomachStoneStoolStoryStoveStrategyStreetStrikeStrongStruggleStudentStuffStumbleStyleSubjectSubmitSubwaySuccessSuchSuddenSufferSugarSuggestSuitSummerSunSunnySunsetSuperSupplySupremeSureSurfaceSurgeSurpriseSurroundSurveySuspectSustainSwallowSwampSwapSwarmSwearSweetSwiftSwimSwingSwitchSwordSymbolSymptomSyrupSystemTableTackleTagTailTalentTalkTankTapeTargetTaskTasteTattooTaxiTeachTeamTellTenTenantTennisTentTermTestTextThankThatThemeThenTheoryThereTheyThingThisThoughtThreeThriveThrowThumbThunderTicketTideTigerTiltTimberTimeTinyTipTiredTissueTitleToastTobaccoTodayToddlerToeTogetherToiletTokenTomatoTomorrowToneTongueTonightToolToothTopTopicToppleTorchTornadoTortoiseTossTotalTouristTowardTowerTownToyTrackTradeTrafficTragicTrainTransferTrapTrashTravelTrayTreatTreeTrendTrialTribeTrickTriggerTrimTripTrophyTroubleTruckTrueTrulyTrumpetTrustTruthTryTubeTuitionTumbleTunaTunnelTurkeyTurnTurtleTwelveTwentyTwiceTwinTwistTwoTypeTypicalUglyUmbrellaUnableUnawareUncleUncoverUnderUndoUnfairUnfoldUnhappyUniformUniqueUnitUniverseUnknownUnlockUntilUnusualUnveilUpdateUpgradeUpholdUponUpperUpsetUrbanUrgeUsageUseUsedUsefulUselessUsualUtilityVacantVacuumVagueValidValleyValveVanVanishVaporVariousVastVaultVehicleVelvetVendorVentureVenueVerbVerifyVersionVeryVesselVeteranViableVibrantViciousVictoryVideoViewVillageVintageViolinVirtualVirusVisaVisitVisualVitalVividVocalVoiceVoidVolcanoVolumeVoteVoyageWageWagonWaitWalkWallWalnutWantWarfareWarmWarriorWashWaspWasteWaterWaveWayWealthWeaponWearWeaselWeatherWebWeddingWeekendWeirdWelcomeWestWetWhaleWhatWheatWheelWhenWhereWhipWhisperWideWidthWifeWildWillWinWindowWineWingWinkWinnerWinterWireWisdomWiseWishWitnessWolfWomanWonderWoodWoolWordWorkWorldWorryWorthWrapWreckWrestleWristWriteWrongYardYearYellowYouYoungYouthZebraZeroZoneZoo";
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var aes = __webpack_require__(98);
-var scrypt = __webpack_require__(39);
-var uuid = __webpack_require__(99);
+var aes = __webpack_require__(97);
+var scrypt = __webpack_require__(38);
+var uuid = __webpack_require__(98);
 
-var hmac = __webpack_require__(40);
-var pbkdf2 = __webpack_require__(41);
-var utils = __webpack_require__(25);
+var hmac = __webpack_require__(39);
+var pbkdf2 = __webpack_require__(40);
+var utils = __webpack_require__(24);
 
-var SigningKey = __webpack_require__(28);
-var HDNode = __webpack_require__(27);
+var SigningKey = __webpack_require__(27);
+var HDNode = __webpack_require__(26);
 
 // @TODO: Maybe move this to HDNode?
 var defaultPath = "m/44'/60'/0'/0/0";
@@ -18459,7 +18438,7 @@ module.exports = secretStorage;
 
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19252,7 +19231,7 @@ module.exports = secretStorage;
 
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //     uuid.js
@@ -19263,7 +19242,7 @@ module.exports = secretStorage;
 // Unique ID creation requires a high quality random # generator.  We feature
 // detect to determine the best RNG source, normalizing to a function that
 // returns 128-bits of randomness, since that's what's usually required
-var _rng = __webpack_require__(100);
+var _rng = __webpack_require__(99);
 
 // Maps for number <-> hex string conversion
 var _byteToHex = [];
@@ -19441,17 +19420,17 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rb = __webpack_require__(26).randomBytes;
+var rb = __webpack_require__(25).randomBytes;
 module.exports = function() {
   return rb(16);
 };
 
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports) {
 
 (function (global, undefined) {
@@ -19632,7 +19611,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports) {
 
 function _arrayWithHoles(arr) {
@@ -19642,7 +19621,7 @@ function _arrayWithHoles(arr) {
 module.exports = _arrayWithHoles;
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -19674,7 +19653,7 @@ function _iterableToArrayLimit(arr, i) {
 module.exports = _iterableToArrayLimit;
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -19684,6 +19663,27 @@ function _nonIterableRest() {
 module.exports = _nonIterableRest;
 
 /***/ }),
+/* 104 */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+
+/***/ }),
 /* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19691,7 +19691,7 @@ module.exports = _nonIterableRest;
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(15);
+var classCallCheck = __webpack_require__(14);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
@@ -24096,77 +24096,81 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   ExchangeRates: ExchangeRates,
   EscrowChecker: EscrowChecker
 });
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(5);
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
-
 // CONCATENATED MODULE: ./lib/addresses.js
-
-
-var _MAINNET_ADDRESSES;
-
-var MAINNET_ADDRESSES = (_MAINNET_ADDRESSES = {
+var MAINNET_ADDRESSES = {
   SafeDecimalMath: '0x84D626B2BB4D0F064067e4BF80FCe7055d8F3E7B',
+  Depot: '0x172E09691DfBbC035E37c73B62095caa16Ee2388',
   ExchangeRates: '0x73b172756BD5DDf0110Ba8D7b88816Eb639Eb21c',
-  FeePoolProxy: '0xb440DD674e1243644791a4AdfE3A2AbB0A92d309',
   FeePool: '0xEBdBac38835A1105851e80C7Fa1f1E6e25A86e32',
-  SynthetixState: '0x7E295884F3f5e2ea462620018E9193a1C305C185',
+  FeePoolProxy: '0xb440DD674e1243644791a4AdfE3A2AbB0A92d309',
   SynthetixProxy: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
-  SynthetixTokenState: '0x5b1b5fEa1b99D83aD479dF0C222F0492385381dD',
-  Synthetix: '0x58a4CdBA423A4D143426951512F066A995527BFf',
-  SynthetixEscrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
-  XDRTokenState: '0xBF093390d8046ae2d0f5465DEC7001d65DC159d5',
   XDRProxy: '0x62492F15cF60c5847d3053e482cAde8C5c29af88',
-  XDRSynth: '0x2972705AF18c66c14CDd27AD412961E01944A9C3',
-  sUSDTokenState: '0x05a9CBe762B36632b3594DA4F082340E0e5343e8',
-  sUSDProxy: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3',
-  sUSDSynth: '0x48414e5b7ed589956070DFfEBe6e4877DAE35EA6',
-  sEURTokenState: '0x6568D9e750fC44AF00f857885Dfb8281c00529c4',
-  sEURProxy: '0x3EB064766109D150e4362222df80638BcE00e037',
-  sEURSynth: '0xC2bb52457D81FBD223CC92b44cd372d36b338A10',
-  sJPYTokenState: '0x4dFACfB15514C21c991ff75Bc7Bf6Fb1F98361ed',
-  sJPYProxy: '0x559E848A1b6a7AfC69Ee27F8d20280A42628b2cf',
-  sJPYSynth: '0xD9E5A009Ec07dE76616d7361Ed713eF434d71325',
-  sAUDTokenState: '0xCb29D2cf2C65d3Be1d00F07f3441390432D55203',
   sAUDProxy: '0xED4699f180a14B5974c26f494483F9c327Fd381a',
-  sAUDSynth: '0xB03dFc4b9C9756B6D4Fbc12DAde7732149Fcf00d',
-  sKRWTokenState: '0x249A10c68AfA9827571cb73f29ab5Af57Ee5A596',
-  sKRWProxy: '0xdCE506b196B0dF677d07e718f872CAc9Bc368A33',
-  sKRWSynth: '0xdF846D3ded30A0590319f8A7ECD4e233B0e9188C',
-  sXAUTokenState: '0x20569B49d74c1EDE765382574F7F3fdC2a078A4f',
-  sXAUProxy: '0xe05D803fa0c5832Fa2262465290abB25d6C2bFA3',
-  sXAUSynth: '0x112D5fA64e4902B6ff1a35495a0f878c210A5601',
-  sGBPTokenState: '0x7e88D19A79b291cfE5696d496055f7e57F537A75',
-  sGBPProxy: '0x0C8A7D55ef593A2cAd34894c1523162eE2ffB9aC',
-  sGBPSynth: '0xdB36B8f25bB1f289d97aeE8f87BAcCaC58fA8883',
-  sCHFTokenState: '0x52496fE8a4feaEFe14d9433E00D48E6929c13deC',
+  sBRLProxy: '0x5D609C25adAafd856021F92296C66dB602A0fcE8',
+  sBTCProxy: '0x9073Ee83b6CE96C444547DdCAf777b9352163581',
+  sCADProxy: '0x0Bc209fB72390AF12bD6Fd775355ea0856864B31',
   sCHFProxy: '0x28AF5a2f0cC12F2f19dd946608c945456b52b3F6',
+  sCNYProxy: '0x60feeeD05004476518281D43185fB7F52d9722c0',
+  sEURProxy: '0x3EB064766109D150e4362222df80638BcE00e037',
+  sGBPProxy: '0x0C8A7D55ef593A2cAd34894c1523162eE2ffB9aC',
+  sINRProxy: '0x74C80bB51Da1EAc2d40074c647CbD0ab6920063f',
+  sJPYProxy: '0x559E848A1b6a7AfC69Ee27F8d20280A42628b2cf',
+  sKRWProxy: '0xdCE506b196B0dF677d07e718f872CAc9Bc368A33',
+  sNZDProxy: '0x26C0cb14470803120321b70aE85405ac298e5A42',
+  sPLNProxy: '0xD9553f0fDa012224141AeCc1ECa0e29868fF7FE8',
+  sRUBProxy: '0xDcB5821fcFDAB5553307b8f99591fC9DaA3C4be3',
+  sSGDProxy: '0x632dB1c25C03dCAc8d23Ff2c9A4cEa34cbEffa1B',
+  sUSDProxy: '0x57Ab1E02fEE23774580C119740129eAC7081e9D3',
+  sXAGProxy: '0x6e5709515C767c907e43a03388cc816Bd65e797C',
+  sXAUProxy: '0xe05D803fa0c5832Fa2262465290abB25d6C2bFA3',
+  XDRSynth: '0x2972705AF18c66c14CDd27AD412961E01944A9C3',
+  sAUDSynth: '0xB03dFc4b9C9756B6D4Fbc12DAde7732149Fcf00d',
+  sBRLSynth: '0xa5A4ccCCcAa26Cea096F6E493839423F4D66c63F',
+  sBTCSynth: '0xf8AD89091B2724bdb7528c50B282B565Db4635bb',
+  sCADSynth: '0x8f69c9Ee79Bf9320E1A5C19e559108E1cb3d002B',
   sCHFSynth: '0x9270D9970D6ACA773e2FA01633CDc091a46714c9',
-  sCNYTokenState: '0x36874A920109607cC835A23a9eeB69b660bfE03f',
-  sCNYProxy: '0xf221B871f3666A0Bc42902FD2F07a228e25009B6',
-  sCNYSynth: '0x87A0e6E4332a18c744B6FC444E7c2D010046bC8b',
-  sSGDTokenState: '0x557BCc586adad723087EE79fcD3b715277aE7e41',
-  sSGDProxy: '0xaF5DFbE9e09235aF8CC0E4d75b1f851337a671f3',
-  sSGDSynth: '0xF23407BB5e1BfE6Da0ee14d43244Ab2717758687',
-  sCADTokenState: '0xcD45c54cbf3CA5e053eF82d191dcDCC64eeE7d98',
-  sCADProxy: '0x5BADB36c03fCC498F4599F5Ba4E87f7ccB03f2C1',
-  sCADSynth: '0x6f23A76C6a7BF4267e87858DE653076C63764C2b',
-  sRUBTokenState: '0x67CCA4719e5D9Af227CDC513FAD7994AEeB17501',
-  sRUBProxy: '0x3B7Fd83e9478f9a154731F0a0C99f139e2f7633C',
-  sRUBSynth: '0xaA0B2439D8ccF4eBdD146FCbC1d276E797213200',
-  sINRTokenState: '0xB8707b420fb1E593C56593777095Ac9ddDA7DaeB',
-  sINRProxy: '0x07828bdB208f665AE9E4f502185300500Cdf1e16',
-  sINRSynth: '0x0F2715fcEe8Eb945B45B89a789883c803fB2D608',
-  sBRLTokenState: '0xA9a1641134eEef7D812b21094Bcc6Eb9F0ACE991',
-  sBRLProxy: '0x21C32E89A08808c4Fd518977C928d39d8679C702',
-  sBRLSynth: '0x7c93bC5eb2DC266f5543b5786aD2cFEEEb99Aa68',
-  sNZDTokenState: '0x84375f42D1398Cc5A4BDEcD436d28C5470a30A12',
-  sNZDProxy: '0x6e2BDF2de81673c17830F975A76eBf22ccCC9901',
-  sNZDSynth: '0x4FE5A9c0ec879e747D92dFBCD15c155892032928',
-  sPLNTokenState: '0x8F272bcd32de990be10db9C0fc462A20B0E18F23',
-  sPLNProxy: '0xb9576B56633d5D9b4eb9f1BEE55726891fB1DB8a',
-  sPLNSynth: '0xFa9e400525dC2D6Ea6f746Ebb6406F47B0e29574'
-}, defineProperty_default()(_MAINNET_ADDRESSES, "sXAUTokenState", '0x468833D3eeAF9Cf905521a34A66Dff704fDe9dcA'), defineProperty_default()(_MAINNET_ADDRESSES, "sXAUProxy", '0x7097e9E1e75194A29434128d4BdAFb49d4a87153'), defineProperty_default()(_MAINNET_ADDRESSES, "sXAUSynth", '0x1D79Dc0a657550d3831dC134b2651C38F0612854'), defineProperty_default()(_MAINNET_ADDRESSES, "sXAGTokenState", '0x29dcD29f4A8FFA28b843f0147797D269104f9679'), defineProperty_default()(_MAINNET_ADDRESSES, "sXAGProxy", '0x2c4420008165C16f5066f8c795364cf74bc3C974'), defineProperty_default()(_MAINNET_ADDRESSES, "sXAGSynth", '0xFfCb6c87F340D865427487ba25B3218D8aF5DaF7'), defineProperty_default()(_MAINNET_ADDRESSES, "sBTCTokenState", '0xD796B78Ca02aaCEdbFDEe8D58bb7D2Dc5fba791D'), defineProperty_default()(_MAINNET_ADDRESSES, "sBTCProxy", '0x9c0af6Ce612b48F0c101D8d344f9959200544702'), defineProperty_default()(_MAINNET_ADDRESSES, "sBTCSynth", '0x08536f59894f978f504dE94A052A63c302CcEa19'), defineProperty_default()(_MAINNET_ADDRESSES, "EscrowChecker", '0x3c9dF924b16b321847096a47d2d57D4A3259D060'), defineProperty_default()(_MAINNET_ADDRESSES, "Depot", '0x172E09691DfBbC035E37c73B62095caa16Ee2388'), defineProperty_default()(_MAINNET_ADDRESSES, "Mintr", '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F'), defineProperty_default()(_MAINNET_ADDRESSES, "Vestr", '0x971e78e0C92392A4E39099835cF7E6aB535b2227'), _MAINNET_ADDRESSES); // Synthetix contracts to be updated on multicurrency release
+  sCNYSynth: '0x60C34eB93AFCd1B701fF8C036B128441C68A8A70',
+  sEURSynth: '0xC2bb52457D81FBD223CC92b44cd372d36b338A10',
+  sGBPSynth: '0xdB36B8f25bB1f289d97aeE8f87BAcCaC58fA8883',
+  sINRSynth: '0x51671B7556EbEB4c43180e983F5569973e15cAc9',
+  sJPYSynth: '0xD9E5A009Ec07dE76616d7361Ed713eF434d71325',
+  sKRWSynth: '0xdF846D3ded30A0590319f8A7ECD4e233B0e9188C',
+  sNZDSynth: '0xCF401f31c63F58DEbfC76F441731dfa945cd0Bde',
+  sPLNSynth: '0x1943dBd2A793c588B5170188Ee6fb62E02AfdfF7',
+  sRUBSynth: '0x8a8DcbBa6038c6Fc6D192F5cf5C5dD83B98591bc',
+  sSGDSynth: '0x2aE393C18b6Aa62D6a2250aF7b803Fa6973bC981',
+  sUSDSynth: '0x48414e5b7ed589956070DFfEBe6e4877DAE35EA6',
+  sXAGSynth: '0x4D57A8212BDb8bdca049365BCE8afA0244a0E3FC',
+  sXAUSynth: '0x112D5fA64e4902B6ff1a35495a0f878c210A5601',
+  Synthetix: '0x3772f9716Cf6D7a09edE3587738AA2af5577483a',
+  SynthetixEscrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
+  SynthetixState: '0x7E295884F3f5e2ea462620018E9193a1C305C185',
+  SynthetixTokenState: '0x5b1b5fEa1b99D83aD479dF0C222F0492385381dD',
+  XDRTokenState: '0xBF093390d8046ae2d0f5465DEC7001d65DC159d5',
+  sAUDTokenState: '0xCb29D2cf2C65d3Be1d00F07f3441390432D55203',
+  sBRLTokenState: '0x0985de52896fC4C9A84d108F5582ec02fdF91605',
+  sBTCTokenState: '0x4F6296455F8d754c19821cF1EC8FeBF2cD456E67',
+  sCADTokenState: '0xdDf91Fc27087e076574Df31483Db5C21A85E47b6',
+  sCHFTokenState: '0x52496fE8a4feaEFe14d9433E00D48E6929c13deC',
+  sCNYTokenState: '0x5cCA1f0c514C0624d3BA7585d56fD2d72CbeFd80',
+  sEURTokenState: '0x6568D9e750fC44AF00f857885Dfb8281c00529c4',
+  sGBPTokenState: '0x7e88D19A79b291cfE5696d496055f7e57F537A75',
+  sINRTokenState: '0xf8F2f8001fca737eFA2bC26217Fc20C1F8267fbA',
+  sJPYTokenState: '0x4dFACfB15514C21c991ff75Bc7Bf6Fb1F98361ed',
+  sKRWTokenState: '0x249A10c68AfA9827571cb73f29ab5Af57Ee5A596',
+  sNZDTokenState: '0x3FDa286F354a3318534026dBAcf021c84A71B03c',
+  sPLNTokenState: '0xdb957f324Be2dE9BdAB01A3dbb50228569FDEe1B',
+  sRUBTokenState: '0xF1eF8ee7DfEE4BD0e06B0fCed1d299387B78Cb09',
+  sSGDTokenState: '0x000F49FD739d4023B0A6C87eE8705eF1Ffb55C87',
+  sUSDTokenState: '0x05a9CBe762B36632b3594DA4F082340E0e5343e8',
+  sXAGTokenState: '0x53d244Fb46357568DBeF082225cCC87cBD94aAE8',
+  sXAUTokenState: '0x20569B49d74c1EDE765382574F7F3fdC2a078A4f',
+  // Vanity APIs
+  Mintr: '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F',
+  // same as SynthetixProxy
+  Vestr: '0x971e78e0C92392A4E39099835cF7E6aB535b2227' // same as Escrow contract
+
+}; // Synthetix contracts to be updated on multicurrency release
 
 var ROPSTEN_ADDRESSES = {
   SafeDecimalMath: '0xb8a0f476f0C4791F63A64786334059E98E8e640C',
@@ -59494,15 +59498,15 @@ function EscrowChecker_EscrowChecker(contractSettings) {
   EscrowChecker: contracts_EscrowChecker
 });
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
-var slicedToArray = __webpack_require__(29);
+var slicedToArray = __webpack_require__(28);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/objectSpread.js
-var objectSpread = __webpack_require__(42);
+var objectSpread = __webpack_require__(41);
 var objectSpread_default = /*#__PURE__*/__webpack_require__.n(objectSpread);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(43);
+var createClass = __webpack_require__(42);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // CONCATENATED MODULE: ./src/util/index.js

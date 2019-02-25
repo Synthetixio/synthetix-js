@@ -4,7 +4,7 @@ import ABIS from '../lib/abis/index';
 
 const SUPPORTED_NETWORKS = {
   1: 'mainnet',
-  2: 'ropsten',
+  3: 'ropsten',
   42: 'kovan',
 };
 

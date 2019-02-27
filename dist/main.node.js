@@ -19780,6 +19780,43 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   stateMutability: 'nonpayable',
   type: 'function'
 }, {
+  constant: false,
+  inputs: [{
+    name: 'from',
+    type: 'address'
+  }, {
+    name: 'to',
+    type: 'address'
+  }, {
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transferFrom',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'issuer',
+    type: 'address'
+  }, {
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'debtBalanceOf',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
   constant: true,
   inputs: [],
   name: 'decimals',
@@ -19794,6 +19831,77 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   constant: false,
   inputs: [],
   name: 'terminateSelfDestruct',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'sourceCurrencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    name: 'destinationCurrencyKey',
+    type: 'bytes4'
+  }],
+  name: 'effectiveValue',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'totalIssuedSynths',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'sourceCurrencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    name: 'destinationCurrencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'destinationAddress',
+    type: 'address'
+  }],
+  name: 'exchange',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'currencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynths',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
@@ -19835,6 +19943,31 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   stateMutability: 'view',
   type: 'function'
 }, {
+  constant: false,
+  inputs: [{
+    name: '_exchangeRates',
+    type: 'address'
+  }],
+  name: 'setExchangeRates',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'transferableSynthetix',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
   constant: true,
   inputs: [{
     name: 'account',
@@ -19859,6 +19992,23 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
 }, {
   constant: true,
   inputs: [{
+    name: 'issuer',
+    type: 'address'
+  }, {
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'maxIssuableSynths',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
     name: '',
     type: 'uint256'
   }],
@@ -19869,6 +20019,28 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   }],
   payable: false,
   stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'synth',
+    type: 'address'
+  }],
+  name: 'addSynth',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'removeSynth',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
   type: 'function'
 }, {
   constant: true,
@@ -19924,6 +20096,70 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   type: 'function'
 }, {
   constant: true,
+  inputs: [{
+    name: 'issuer',
+    type: 'address'
+  }, {
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'remainingIssuableSynths',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'issueMaxSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'currencyKey',
+    type: 'bytes4'
+  }],
+  name: 'setPreferredCurrency',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_synthetixState',
+    type: 'address'
+  }],
+  name: 'setSynthetixState',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    name: 'issuer',
+    type: 'address'
+  }],
+  name: 'collateralisationRatio',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
   inputs: [],
   name: 'SELFDESTRUCT_DELAY',
   outputs: [{
@@ -19935,6 +20171,60 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   type: 'function'
 }, {
   constant: true,
+  inputs: [{
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'collateral',
+  outputs: [{
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'to',
+    type: 'address'
+  }, {
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transfer',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'from',
+    type: 'address'
+  }, {
+    name: 'to',
+    type: 'address'
+  }, {
+    name: 'value',
+    type: 'uint256'
+  }, {
+    name: 'data',
+    type: 'bytes'
+  }],
+  name: 'transferFrom',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
   inputs: [],
   name: 'feePool',
   outputs: [{
@@ -19943,6 +20233,20 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   }],
   payable: false,
   stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'currencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
   type: 'function'
 }, {
   constant: true,
@@ -19975,6 +20279,83 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   stateMutability: 'nonpayable',
   type: 'function'
 }, {
+  constant: false,
+  inputs: [{
+    name: 'from',
+    type: 'address'
+  }, {
+    name: 'sourceCurrencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    name: 'destinationCurrencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'destinationAddress',
+    type: 'address'
+  }],
+  name: 'synthInitiatedExchange',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'to',
+    type: 'address'
+  }, {
+    name: 'value',
+    type: 'uint256'
+  }, {
+    name: 'data',
+    type: 'bytes'
+  }],
+  name: 'transfer',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: 'from',
+    type: 'address'
+  }, {
+    name: 'sourceCurrencyKey',
+    type: 'bytes4'
+  }, {
+    name: 'sourceAmount',
+    type: 'uint256'
+  }],
+  name: 'synthInitiatedFeePayment',
+  outputs: [{
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    name: '_escrow',
+    type: 'address'
+  }],
+  name: 'setEscrow',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
   constant: true,
   inputs: [],
   name: 'selfDestructBeneficiary',
@@ -19992,6 +20373,17 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   outputs: [{
     name: '',
     type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'availableSynthCount',
+  outputs: [{
+    name: '',
+    type: 'uint256'
   }],
   payable: false,
   stateMutability: 'view',
@@ -20069,6 +20461,35 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   payable: false,
   stateMutability: 'nonpayable',
   type: 'constructor'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    name: 'fromCurrencyKey',
+    type: 'bytes4'
+  }, {
+    indexed: false,
+    name: 'fromAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'toCurrencyKey',
+    type: 'bytes4'
+  }, {
+    indexed: false,
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    name: 'toAddress',
+    type: 'address'
+  }],
+  name: 'SynthExchange',
+  type: 'event'
 }, {
   anonymous: false,
   inputs: [{
@@ -20223,398 +20644,6 @@ var ethers_default = /*#__PURE__*/__webpack_require__.n(ethers);
   }],
   name: 'OwnerChanged',
   type: 'event'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'addSynth',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'removeSynth',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: '_escrow',
-    type: 'address'
-  }],
-  name: 'setEscrow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: '_exchangeRates',
-    type: 'address'
-  }],
-  name: 'setExchangeRates',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: '_synthetixState',
-    type: 'address'
-  }],
-  name: 'setSynthetixState',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'setPreferredCurrency',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'sourceCurrencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    name: 'destinationCurrencyKey',
-    type: 'bytes4'
-  }],
-  name: 'effectiveValue',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'totalIssuedSynths',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableSynthCount',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'to',
-    type: 'address'
-  }, {
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'transfer',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'to',
-    type: 'address'
-  }, {
-    name: 'value',
-    type: 'uint256'
-  }, {
-    name: 'data',
-    type: 'bytes'
-  }],
-  name: 'transfer',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'from',
-    type: 'address'
-  }, {
-    name: 'to',
-    type: 'address'
-  }, {
-    name: 'value',
-    type: 'uint256'
-  }, {
-    name: 'data',
-    type: 'bytes'
-  }],
-  name: 'transferFrom',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'from',
-    type: 'address'
-  }, {
-    name: 'to',
-    type: 'address'
-  }, {
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'transferFrom',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'sourceCurrencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    name: 'destinationCurrencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'destinationAddress',
-    type: 'address'
-  }],
-  name: 'exchange',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'from',
-    type: 'address'
-  }, {
-    name: 'sourceCurrencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    name: 'destinationCurrencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'destinationAddress',
-    type: 'address'
-  }],
-  name: 'synthInitiatedExchange',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'from',
-    type: 'address'
-  }, {
-    name: 'sourceCurrencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'sourceAmount',
-    type: 'uint256'
-  }],
-  name: 'synthInitiatedFeePayment',
-  outputs: [{
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'currencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'issueMaxSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    name: 'currencyKey',
-    type: 'bytes4'
-  }, {
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'issuer',
-    type: 'address'
-  }, {
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'maxIssuableSynths',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatio',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'issuer',
-    type: 'address'
-  }, {
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'debtBalanceOf',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'issuer',
-    type: 'address'
-  }, {
-    name: 'currencyKey',
-    type: 'bytes4'
-  }],
-  name: 'remainingIssuableSynths',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'collateral',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'transferableSynthetix',
-  outputs: [{
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
 }]);
 // CONCATENATED MODULE: ./lib/abis/Synth.js
 /* harmony default export */ var Synth = ([{

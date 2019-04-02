@@ -17,7 +17,7 @@ class ContractSettings {
    */
   constructor(contractSettings) {
     contractSettings = contractSettings || {};
-    let { provider, signer, networkId } = contractSettings;
+    const { provider, signer, networkId } = contractSettings;
     this.provider = provider || providers.getDefaultProvider();
     if (!provider && networkId) {
       this.provider = providers.getDefaultProvider(SUPPORTED_NETWORKS[Number(networkId)]);

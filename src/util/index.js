@@ -90,13 +90,13 @@ class Util {
         parsedData: event.parse(log.topics, log.data),
       }));
       const blocks = await Promise.all(
-        events.map(event => this.contractSettings.provider.getBlock(event.blockNumber))
+        events.map(evt => this.contractSettings.provider.getBlock(evt.blockNumber))
       );
       blocks.forEach(block => {
         blockTimestampMap[block.number] = new Date(block.timestamp * 1000);
       });
-      events.forEach(event => {
-        event.timestamp = blockTimestampMap[event.blockNumber];
+      events.forEach(evt => {
+        event.timestamp = blockTimestampMap[evt.blockNumber];
       });
       return events;
     } catch (err) {
@@ -128,7 +128,7 @@ class Util {
       return amountString;
     } else {
       const [first, remainder] = amountString.split('.');
-      let joined = `${first}.${remainder.substring(0, decimals)}`;
+      const joined = `${first}.${remainder.substring(0, decimals)}`;
 
       if (joined.endsWith('.')) return joined.substring(0, joined.length - 1);
 

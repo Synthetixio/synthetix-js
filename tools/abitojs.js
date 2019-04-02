@@ -1,6 +1,17 @@
-const contracts = require('./abis/index');
 const fs = require('fs');
 const docsDescriptions = require('../lib/docSrc/descriptions');
+const snx = require('synthetix');
+
+// const contracts = {
+//   Synthetix,
+//   Synth,
+//   Depot,
+//   SynthetixEscrow,
+//   SynthetixState,
+//   ExchangeRates,
+//   FeePool,
+//   EscrowChecker,
+// };
 
 /**
  * ExportableContractName: AddressKey (name is used to find appropriate ABI and AddressKey for address (for proxy contracts)
@@ -11,26 +22,26 @@ const contractToAddressMap = {
   Synthetix: 'SynthetixProxy',
   SynthetixEscrow: 'SynthetixEscrow',
   SynthetixState: 'SynthetixState',
-  Synth: 'sUSDProxy',
-  XDR: 'XDRProxy',
-  sUSD: 'sUSDProxy',
-  sEUR: 'sEURProxy',
-  sJPY: 'sJPYProxy',
-  sAUD: 'sAUDProxy',
-  sKRW: 'sKRWProxy',
-  sGBP: 'sGBPProxy',
-  sCHF: 'sCHFProxy',
-  sCNY: 'sCNYProxy',
-  sSGD: 'sSGDProxy',
-  sCAD: 'sCADProxy',
-  sRUB: 'sRUBProxy',
-  sINR: 'sINRProxy',
-  sBRL: 'sBRLProxy',
-  sNZD: 'sNZDProxy',
-  sPLN: 'sPLNProxy',
-  sXAU: 'sXAUProxy',
-  sXAG: 'sXAGProxy',
-  sBTC: 'sBTCProxy',
+  Synth: 'ProxysUSD',
+  XDR: 'ProxyXDR',
+  sUSD: 'ProxysUSD',
+  sEUR: 'ProxysEUR',
+  sJPY: 'ProxysJPY',
+  sAUD: 'ProxysAUD',
+  sKRW: 'ProxysKRW',
+  sGBP: 'ProxysGBP',
+  sCHF: 'ProxysCHF',
+  sCNY: 'ProxysCNY',
+  sSGD: 'ProxysSGD',
+  sCAD: 'ProxysCAD',
+  sRUB: 'ProxysRUB',
+  sINR: 'ProxysINR',
+  sBRL: 'ProxysBRL',
+  sNZD: 'ProxysNZD',
+  sPLN: 'ProxysPLN',
+  sXAU: 'ProxysXAU',
+  sXAG: 'ProxysXAG',
+  sBTC: 'ProxysBTC',
   Depot: 'Depot',
   EscrowChecker: 'EscrowChecker',
 };
@@ -83,10 +94,11 @@ const generate = () => {
 };
 
 const generateJSFile = (contractName, abiName, addressName, functions) => {
-  const content = `import {Contract} from 'ethers';
+  const content = `
+import {Contract} from 'ethers';
 import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
-const abi = abis.${abiName};
+const abi = abis['${abiName}'];
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -95,16 +107,17 @@ function ${contractName}(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList["${addressName}"],
+    this.contractSettings.addressList['${addressName}'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
 
-  ${functions.map(fn => generateFunctionStr(fn, contractName)).join('')}
-
+  ${functions.map(fn => generateFunctionStr(fn, contractName)).join('')};
 }
 
-export default ${contractName}`;
+export default ${contractName};
+`;
+
   fs.writeFile(`${__dirname}/../src/contracts/${contractName}.js`, content, err => {
     if (err) {
       console.log(err);
@@ -115,7 +128,7 @@ export default ${contractName}`;
   return content;
 };
 
-getFnParams = params => {
+const getFnParams = params => {
   return params
     .map(p => {
       return p.name ? p.name : p.type;
@@ -123,11 +136,11 @@ getFnParams = params => {
     .join(', ');
 };
 
-getJsdocParam = param => {
+const getJsdocParam = param => {
   return `   * @param ${param.name} {${typeMap[param.type] || param.type}}`;
 };
 
-getJsdocReturns = outputs => {
+const getJsdocReturns = outputs => {
   if (!outputs.length) return '';
   if (outputs.length === 1) {
     return ` * @returns ${typeMap[outputs[0].type] || outputs[0].type}`;
@@ -135,7 +148,7 @@ getJsdocReturns = outputs => {
   return ` * @returns Object`;
 };
 
-generateJsdoc = (abiFn, params, contractName) => {
+const generateJsdoc = (abiFn, params, contractName) => {
   let description =
     docsDescriptions[contractToAbiMap[contractName]] &&
     docsDescriptions[contractToAbiMap[contractName]][abiFn.name];

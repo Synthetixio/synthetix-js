@@ -1,10 +1,5 @@
 module.exports = {
-  extends: ['last' /*, 'plugin:import/errors'*/],
-  // settings: {
-  // 	'import/resolver': {
-  // 		'babel-module': {},
-  // 	},
-  // },
+  extends: ['last', 'plugin:import/errors'],
 
   env: {
     es6: true,

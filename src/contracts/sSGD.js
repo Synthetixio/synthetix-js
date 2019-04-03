@@ -1,7 +1,6 @@
 import { Contract } from 'ethers';
-import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
-const abi = abis.Synth;
+import abi from '../../lib/abis/Synth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -10,7 +9,7 @@ function sSGD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['sSGDProxy'],
+    0x632db1c25c03dcac8d23ff2c9a4cea34cbeffa1b,
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
@@ -64,6 +63,17 @@ function sSGD(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _feePool {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFeePool = async (_feePool, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFeePool(_feePool, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -71,6 +81,20 @@ function sSGD(contractSettings) {
   this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
     txParams = txParams || {};
     return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
+  };
+
+  /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferFrom = async (from, to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFrom(from, to, value, txParams);
   };
 
   /**
@@ -89,6 +113,20 @@ function sSGD(contractSettings) {
   this.terminateSelfDestruct = async txParams => {
     txParams = txParams || {};
     return await this.contract.terminateSelfDestruct(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param data {bytes}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferFromSenderPaysFee = async (from, to, value, data, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFromSenderPaysFee(from, to, value, data, txParams);
   };
 
   /**
@@ -124,6 +162,18 @@ function sSGD(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issue = async (account, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issue(account, amount, txParams);
   };
 
   /**
@@ -165,6 +215,18 @@ function sSGD(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burn = async (account, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burn(account, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _tokenState {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -183,11 +245,52 @@ function sSGD(contractSettings) {
   };
 
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transfer = async (to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transfer(to, value, txParams);
+  };
+
+  /**
+   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param data {bytes}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferFrom = async (from, to, value, data, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFrom(from, to, value, data, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.feePool = async () => {
     return await this.contract.feePool();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param data {bytes}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferSenderPaysFee = async (to, value, data, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferSenderPaysFee(to, value, data, txParams);
   };
 
   /**
@@ -220,11 +323,37 @@ function sSGD(contractSettings) {
   };
 
   /**
+   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param data {bytes}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transfer = async (to, value, data, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transfer(to, value, data, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.selfDestructBeneficiary = async () => {
     return await this.contract.selfDestructBeneficiary();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferSenderPaysFee = async (to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferSenderPaysFee(to, value, txParams);
   };
 
   /**
@@ -246,125 +375,6 @@ function sSGD(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.tokenState = async () => {
-    return await this.contract.tokenState();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.proxy = async () => {
-    return await this.contract.proxy();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetix {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetix = async (_synthetix, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetix(_synthetix, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePool {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setFeePool = async (_feePool, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePool(_feePool, txParams);
-  };
-
-  /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, txParams);
-  };
-
-  /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, data, txParams);
-  };
-
-  /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, data, txParams);
-  };
-
-  /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferSenderPaysFee = async (to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferSenderPaysFee(to, value, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferSenderPaysFee = async (to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferSenderPaysFee(to, value, data, txParams);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -378,41 +388,11 @@ function sSGD(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.transferFromSenderPaysFee = async (from, to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFromSenderPaysFee(from, to, value, data, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issue = async (account, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issue(account, amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burn = async (account, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burn(account, amount, txParams);
+  this.tokenState = async () => {
+    return await this.contract.tokenState();
   };
 
   /**
@@ -426,6 +406,36 @@ function sSGD(contractSettings) {
   this.triggerTokenFallbackIfNeeded = async (sender, recipient, amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.triggerTokenFallbackIfNeeded(sender, recipient, amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.proxy = async () => {
+    return await this.contract.proxy();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setTotalSupply = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setTotalSupply(amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _synthetix {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSynthetix = async (_synthetix, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSynthetix(_synthetix, txParams);
   };
 }
 

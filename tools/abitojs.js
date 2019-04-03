@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
 const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
@@ -15,18 +16,19 @@ const contracts = {
   EscrowChecker: true,
   ExchangeRates: true,
   FeePool: {
-    target: 'FeePoolProxy',
+    target: 'ProxyFeePool',
   },
   Synth: {
     target: 'ProxysUSD',
   },
   Synthetix: {
-    target: 'SynthetixProxy',
+    target: 'ProxySynthetix',
   },
   SynthetixEscrow: true,
   SynthetixState: true,
 };
 
+// add the synth contract as well (target addresses are their proxies, and source is the synth contract)
 const synths = snx.getSynths();
 synths.forEach(synth => (contracts[synth] = { target: `Proxy${synth}`, source: 'Synth' }));
 
@@ -39,6 +41,7 @@ const typeMap = {
 };
 
 const generate = () => {
+  const network = 'mainnet';
   Object.keys(contracts).forEach(contractName => {
     let target = contractName;
     let source = contractName;
@@ -46,11 +49,12 @@ const generate = () => {
       target = contracts[contractName].target || target;
       source = contracts[contractName].source || source;
     }
-    const address = snx.getDeployment({ network: 'mainnet', contract: target }).address;
     // TODO write out address list
-    const abi = snx.getDeployment({ network: 'mainnet', contract: source }).abi;
+    const { address } = snx.getTarget({ network, contract: target });
+    const { abi } = snx.getSource({ network, contract: source });
     // write out ABI files (assuming mainnet)
     writeABIFile(contractName, abi);
+    // now generate the final JS source
     const functions = abi.filter(prop => prop.type === 'function');
     generateJSFile(contractName, abi, address, functions, source);
   });
@@ -58,7 +62,7 @@ const generate = () => {
 
 const writeABIFile = (contractName, abi) => {
   const abiPath = path.join(__dirname, '..', 'lib', 'abis', `${contractName}.js`);
-  const content = `export default ${abi};`;
+  const content = `export default ${util.inspect(abi, { showHidden: false, depth: null })};`;
   fs.writeFile(abiPath, content, err => {
     if (err) {
       console.log(err);
@@ -72,7 +76,7 @@ const generateJSFile = (contractName, abi, address, functions, source) => {
   const content = `
 import {Contract} from 'ethers';
 import ContractSettings from '../contractSettings';
-const abi = ${abi};
+import abi from '../../lib/abis/${source}';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -107,9 +111,12 @@ export default ${contractName};
 };
 
 const getFnParams = params => {
+  const typeToCounter = {};
   return params
     .map(p => {
-      return p.name ? p.name : p.type;
+      if (p.name) return p.name;
+      typeToCounter[p.type] = typeToCounter[p.type] + 1 || 1;
+      return `${p.type}_${typeToCounter[p.type]}`;
     })
     .join(', ');
 };
@@ -150,22 +157,12 @@ const generateFunctionStr = (abiFn, source) => {
   }
   const paramsStr = getFnParams(params);
   const jsdoc = generateJsdoc(abiFn, params, source);
-  if (!abiFn.constant) {
-    return `
-${jsdoc}
+  return `${jsdoc}
   this.${abiFn.name} = async (${paramsStr}) => {
-    txParams = txParams || {};
+    ${!abiFn.constant ? 'txParams = txParams || {};' : ''}
     return await this.contract.${abiFn.name}(${paramsStr});
   };
 `;
-  } else {
-    return `
-${jsdoc}
-  this.${abiFn.name} = async (${paramsStr}) => {
-    return await this.contract.${abiFn.name}(${paramsStr});
-  };
-`;
-  }
 };
 
 generate();

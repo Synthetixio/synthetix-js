@@ -5,6 +5,14 @@ const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
 /**
+ * This module will perform the following actions for all contracts listed
+ *
+ * 1) Create an ABI file for each underlying source (in lib/abis/) (based on the mainnet release of synthetix - from the dependency)
+ * 2) Create a compilation of addresses for each environment
+ * 3) Create a collection of JS source files under src/contracts
+ */
+
+/**
  * The list of contracts to generate.
  *
  * Each entry can be keyed to either a bool to represent using that key name as the target address and abi file,

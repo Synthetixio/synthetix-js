@@ -14,9 +14,12 @@ const SUPPORTED_NETWORKS = {
 /**
  * This module will perform the following actions for all contracts listed
  *
- * 1) Create an ABI file for each underlying source (in lib/abis/) (based on the mainnet release of synthetix - from the dependency)
- * 2) Create a compilation of addresses for each environment
+ * 1) Create a compilation of addresses for each environment
+ * 2) Create an ABI file for each underlying source (in lib/abis/)
+ *    (based on the mainnet release of synthetix - from the dependency)
+ * 2.1) And create an index file containing all of these for convenience
  * 3) Create a collection of JS source files under src/contracts
+ * 3.1) And create an index file containing all of these for convenience
  */
 
 /**

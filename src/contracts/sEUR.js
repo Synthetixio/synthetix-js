@@ -9,7 +9,7 @@ function sEUR(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x3eb064766109d150e4362222df80638bce00e037,
+    '0x3EB064766109D150e4362222df80638BcE00e037',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

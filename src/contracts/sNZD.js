@@ -9,7 +9,7 @@ function sNZD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x26c0cb14470803120321b70ae85405ac298e5a42,
+    '0x26C0cb14470803120321b70aE85405ac298e5A42',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

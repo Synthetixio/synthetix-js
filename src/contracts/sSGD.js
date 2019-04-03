@@ -9,7 +9,7 @@ function sSGD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x632db1c25c03dcac8d23ff2c9a4cea34cbeffa1b,
+    '0x632dB1c25C03dCAc8d23Ff2c9A4cEa34cbEffa1B',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

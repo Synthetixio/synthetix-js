@@ -9,7 +9,7 @@ function sCAD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x0bc209fb72390af12bd6fd775355ea0856864b31,
+    '0x0Bc209fB72390AF12bD6Fd775355ea0856864B31',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

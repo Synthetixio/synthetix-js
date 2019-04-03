@@ -9,7 +9,7 @@ function sAUD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0xed4699f180a14b5974c26f494483f9c327fd381a,
+    '0xED4699f180a14B5974c26f494483F9c327Fd381a',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

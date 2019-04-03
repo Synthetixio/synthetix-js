@@ -9,7 +9,7 @@ function SynthetixEscrow(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x971e78e0c92392a4e39099835cf7e6ab535b2227,
+    '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
@@ -19,7 +19,7 @@ function SynthetixEscrow(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param txParams {TxParams}
-
+  
    **/
   this.purgeAccount = async (account, txParams) => {
     txParams = txParams || {};
@@ -30,7 +30,7 @@ function SynthetixEscrow(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
-
+  
    **/
   this.nominateNewOwner = async (_owner, txParams) => {
     txParams = txParams || {};
@@ -54,7 +54,7 @@ function SynthetixEscrow(contractSettings) {
    * @param time {BigNumber}
    * @param quantity {BigNumber}
    * @param txParams {TxParams}
-
+  
    **/
   this.appendVestingEntry = async (account, time, quantity, txParams) => {
     txParams = txParams || {};
@@ -94,7 +94,7 @@ function SynthetixEscrow(contractSettings) {
    * Allow a user to withdraw any SNX in their schedule that have vested.<br>
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-
+  
    **/
   this.vest = async txParams => {
     txParams = txParams || {};
@@ -151,7 +151,7 @@ function SynthetixEscrow(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-
+  
    **/
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
@@ -202,7 +202,7 @@ function SynthetixEscrow(contractSettings) {
    * @param times {uint256[]}
    * @param quantities {uint256[]}
    * @param txParams {TxParams}
-
+  
    **/
   this.addVestingSchedule = async (account, times, quantities, txParams) => {
     txParams = txParams || {};
@@ -225,7 +225,7 @@ function SynthetixEscrow(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param quantity {BigNumber}
    * @param txParams {TxParams}
-
+  
    **/
   this.withdrawSynthetix = async (quantity, txParams) => {
     txParams = txParams || {};
@@ -247,7 +247,7 @@ function SynthetixEscrow(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _synthetix {String<EthAddress>}
    * @param txParams {TxParams}
-
+  
    **/
   this.setSynthetix = async (_synthetix, txParams) => {
     txParams = txParams || {};

@@ -9,7 +9,7 @@ function sPLN(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0xd9553f0fda012224141aecc1eca0e29868ff7fe8,
+    '0xD9553f0fDa012224141AeCc1ECa0e29868fF7FE8',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

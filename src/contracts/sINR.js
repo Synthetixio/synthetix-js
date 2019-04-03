@@ -9,7 +9,7 @@ function sINR(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x74c80bb51da1eac2d40074c647cbd0ab6920063f,
+    '0x74C80bB51Da1EAc2d40074c647CbD0ab6920063f',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

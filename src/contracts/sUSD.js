@@ -9,7 +9,7 @@ function sUSD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x57ab1e02fee23774580c119740129eac7081e9d3,
+    '0x57Ab1E02fEE23774580C119740129eAC7081e9D3',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -9,7 +9,7 @@ function SynthetixState(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x4b9ca5607f1ff8019c1c6a3c2f0cc8de622d5b82,
+    '0x4b9Ca5607f1fF8019c1C6A3c2f0CC8de622D5B82',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -9,7 +9,7 @@ function ExchangeRates(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x73b172756bd5ddf0110ba8d7b88816eb639eb21c,
+    '0x73b172756BD5DDf0110Ba8D7b88816Eb639Eb21c',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

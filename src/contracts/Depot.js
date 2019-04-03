@@ -9,7 +9,7 @@ function Depot(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x172e09691dfbbc035e37c73b62095caa16ee2388,
+    '0x172E09691DfBbC035E37c73B62095caa16Ee2388',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

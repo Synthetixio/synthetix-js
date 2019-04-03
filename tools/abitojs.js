@@ -101,7 +101,7 @@ function ${contractName}(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    ${address},
+    '${address}',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

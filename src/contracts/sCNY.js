@@ -9,7 +9,7 @@ function sCNY(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x60feeed05004476518281d43185fb7f52d9722c0,
+    '0x60feeeD05004476518281D43185fB7F52d9722c0',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -9,7 +9,7 @@ function sXAG(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x6e5709515c767c907e43a03388cc816bd65e797c,
+    '0x6e5709515C767c907e43a03388cc816Bd65e797C',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -9,7 +9,7 @@ function sBRL(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0x5d609c25adaafd856021f92296c66db602a0fce8,
+    '0x5D609C25adAafd856021F92296C66dB602A0fcE8',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

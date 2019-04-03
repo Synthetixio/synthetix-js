@@ -9,7 +9,7 @@ function FeePool(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    0xb440dd674e1243644791a4adfe3a2abb0a92d309,
+    '0xb440DD674e1243644791a4AdfE3A2AbB0A92d309',
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -51,8 +51,9 @@ const typeMap = {
 };
 
 const generate = () => {
-  const network = 'mainnet';
   const allContracts = Object.assign({}, contracts, synthContracts);
+  const srcIndexFileHeader = [];
+  const abiIndexFileHeader = [];
 
   Object.keys(allContracts).forEach(contractName => {
     let target = contractName;
@@ -62,17 +63,52 @@ const generate = () => {
       source = allContracts[contractName].source || source;
     }
     // TODO write out address list
-    const { address } = snx.getTarget({ network, contract: target });
-    const { abi } = snx.getSource({ network, contract: source });
 
-    // onlt for contracts in the original contract object
+    // get the abis from the mainnet deploy from synthetix
+    const { abi } = snx.getSource({ network: 'mainnet', contract: source });
+
+    const importStringForIndexFile = `import ${contractName} from './${contractName}';`;
+    // only for contracts in the original contract object
     if (contractName in contracts) {
-      // write out ABI files (assuming mainnet)
+      // write out ABI files (using ABIs from mainnet deploy)
       writeABIFile(contractName, abi);
+      abiIndexFileHeader.push(importStringForIndexFile);
     }
+    srcIndexFileHeader.push(importStringForIndexFile);
+
     // now generate the final JS source
     const functions = abi.filter(prop => prop.type === 'function');
     generateJSFile(contractName, abi, target, functions, source);
+  });
+
+  writeIndexFile(
+    srcIndexFileHeader,
+    Object.keys(allContracts),
+    path.join(__dirname, '..', 'src', 'contracts', `index.js`)
+  );
+  writeIndexFile(
+    abiIndexFileHeader,
+    Object.keys(contracts),
+    path.join(__dirname, '..', 'lib', 'abis', `index.js`)
+  );
+};
+
+const writeIndexFile = (headers, exportList, pathToFile) => {
+  // create index file for contracts
+  const content = `
+${headers.join('\n')}
+
+export default {
+  ${exportList.join(', ')}
+};
+  `;
+
+  fs.writeFile(pathToFile, content, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`${pathToFile} successfully generated.`);
+    }
   });
 };
 

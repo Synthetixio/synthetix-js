@@ -9,7 +9,7 @@ function sJPY(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x559E848A1b6a7AfC69Ee27F8d20280A42628b2cf',
+    this.contractSettings.addressList['ProxysJPY'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

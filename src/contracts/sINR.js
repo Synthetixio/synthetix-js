@@ -9,7 +9,7 @@ function sINR(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x74C80bB51Da1EAc2d40074c647CbD0ab6920063f',
+    this.contractSettings.addressList['ProxysINR'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

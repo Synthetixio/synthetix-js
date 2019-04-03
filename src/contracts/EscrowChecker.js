@@ -9,7 +9,7 @@ function EscrowChecker(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x3c9dF924b16b321847096a47d2d57D4A3259D060',
+    this.contractSettings.addressList['EscrowChecker'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

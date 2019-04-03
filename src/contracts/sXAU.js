@@ -9,7 +9,7 @@ function sXAU(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0xe05D803fa0c5832Fa2262465290abB25d6C2bFA3',
+    this.contractSettings.addressList['ProxysXAU'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

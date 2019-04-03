@@ -9,7 +9,7 @@ function sCHF(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x28AF5a2f0cC12F2f19dd946608c945456b52b3F6',
+    this.contractSettings.addressList['ProxysCHF'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -9,7 +9,7 @@ function FeePool(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0xb440DD674e1243644791a4AdfE3A2AbB0A92d309',
+    this.contractSettings.addressList['ProxyFeePool'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

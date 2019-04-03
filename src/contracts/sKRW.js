@@ -9,7 +9,7 @@ function sKRW(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0xdCE506b196B0dF677d07e718f872CAc9Bc368A33',
+    this.contractSettings.addressList['ProxysKRW'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

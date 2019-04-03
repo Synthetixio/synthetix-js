@@ -9,7 +9,7 @@ function sSGD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x632dB1c25C03dCAc8d23Ff2c9A4cEa34cbEffa1B',
+    this.contractSettings.addressList['ProxysSGD'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

@@ -9,7 +9,7 @@ function sPLN(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0xD9553f0fDa012224141AeCc1ECa0e29868fF7FE8',
+    this.contractSettings.addressList['ProxysPLN'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

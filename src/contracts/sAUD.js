@@ -9,7 +9,7 @@ function sAUD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0xED4699f180a14B5974c26f494483F9c327Fd381a',
+    this.contractSettings.addressList['ProxysAUD'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

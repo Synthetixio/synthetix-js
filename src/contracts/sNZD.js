@@ -9,7 +9,7 @@ function sNZD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x26C0cb14470803120321b70aE85405ac298e5A42',
+    this.contractSettings.addressList['ProxysNZD'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

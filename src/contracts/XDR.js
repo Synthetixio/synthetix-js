@@ -9,7 +9,7 @@ function XDR(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x62492F15cF60c5847d3053e482cAde8C5c29af88',
+    this.contractSettings.addressList['ProxyXDR'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

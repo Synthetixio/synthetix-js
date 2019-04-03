@@ -9,7 +9,7 @@ function sCAD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x0Bc209fB72390AF12bD6Fd775355ea0856864B31',
+    this.contractSettings.addressList['ProxysCAD'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

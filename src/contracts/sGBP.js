@@ -9,7 +9,7 @@ function sGBP(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x0C8A7D55ef593A2cAd34894c1523162eE2ffB9aC',
+    this.contractSettings.addressList['ProxysGBP'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

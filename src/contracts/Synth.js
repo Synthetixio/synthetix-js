@@ -9,7 +9,7 @@ function Synth(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x57Ab1E02fEE23774580C119740129eAC7081e9D3',
+    this.contractSettings.addressList['ProxysUSD'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

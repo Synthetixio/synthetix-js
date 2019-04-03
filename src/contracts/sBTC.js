@@ -9,7 +9,7 @@ function sBTC(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x9073Ee83b6CE96C444547DdCAf777b9352163581',
+    this.contractSettings.addressList['ProxysBTC'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

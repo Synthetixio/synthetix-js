@@ -9,7 +9,7 @@ function SynthetixEscrow(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
+    this.contractSettings.addressList['SynthetixEscrow'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

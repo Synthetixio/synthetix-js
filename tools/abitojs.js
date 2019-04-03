@@ -72,7 +72,7 @@ const generate = () => {
     }
     // now generate the final JS source
     const functions = abi.filter(prop => prop.type === 'function');
-    generateJSFile(contractName, abi, address, functions, source);
+    generateJSFile(contractName, abi, target, functions, source);
   });
 };
 
@@ -88,7 +88,7 @@ const writeABIFile = (contractName, abi) => {
   });
 };
 
-const generateJSFile = (contractName, abi, address, functions, source) => {
+const generateJSFile = (contractName, abi, target, functions, source) => {
   const content = `
 import {Contract} from 'ethers';
 import ContractSettings from '../contractSettings';
@@ -101,7 +101,7 @@ function ${contractName}(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '${address}',
+    this.contractSettings.addressList['${target}'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

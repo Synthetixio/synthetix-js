@@ -9,7 +9,7 @@ function sRUB(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    '0xDcB5821fcFDAB5553307b8f99591fC9DaA3C4be3',
+    this.contractSettings.addressList['ProxysRUB'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

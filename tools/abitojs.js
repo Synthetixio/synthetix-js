@@ -37,8 +37,10 @@ const contracts = {
 };
 
 // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
-const synths = snx.getSynths();
-synths.forEach(synth => (contracts[synth] = { target: `Proxy${synth}`, source: 'Synth' }));
+const synthContracts = snx.getSynths().reduce((memo, synth) => {
+  memo[synth] = { target: `Proxy${synth}`, source: 'Synth' };
+  return memo;
+}, {});
 
 const typeMap = {
   uint256: 'BigNumber',
@@ -50,18 +52,24 @@ const typeMap = {
 
 const generate = () => {
   const network = 'mainnet';
-  Object.keys(contracts).forEach(contractName => {
+  const allContracts = Object.assign({}, contracts, synthContracts);
+
+  Object.keys(allContracts).forEach(contractName => {
     let target = contractName;
     let source = contractName;
-    if (typeof contracts[contractName] === 'object') {
-      target = contracts[contractName].target || target;
-      source = contracts[contractName].source || source;
+    if (typeof allContracts[contractName] === 'object') {
+      target = allContracts[contractName].target || target;
+      source = allContracts[contractName].source || source;
     }
     // TODO write out address list
     const { address } = snx.getTarget({ network, contract: target });
     const { abi } = snx.getSource({ network, contract: source });
-    // write out ABI files (assuming mainnet)
-    writeABIFile(contractName, abi);
+
+    // onlt for contracts in the original contract object
+    if (contractName in contracts) {
+      // write out ABI files (assuming mainnet)
+      writeABIFile(contractName, abi);
+    }
     // now generate the final JS source
     const functions = abi.filter(prop => prop.type === 'function');
     generateJSFile(contractName, abi, address, functions, source);

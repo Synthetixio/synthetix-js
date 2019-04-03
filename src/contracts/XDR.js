@@ -38,7 +38,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.nominateNewOwner = async (_owner, txParams) => {
     txParams = txParams || {};
@@ -65,7 +65,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _feePool {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.setFeePool = async (_feePool, txParams) => {
     txParams = txParams || {};
@@ -76,7 +76,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
     txParams = txParams || {};
@@ -108,7 +108,7 @@ function XDR(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-  
+
    **/
   this.terminateSelfDestruct = async txParams => {
     txParams = txParams || {};
@@ -157,7 +157,7 @@ function XDR(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-  
+
    **/
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
@@ -169,7 +169,7 @@ function XDR(contractSettings) {
    * @param account {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
-  
+
    **/
   this.issue = async (account, amount, txParams) => {
     txParams = txParams || {};
@@ -196,7 +196,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _proxy {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.setProxy = async (_proxy, txParams) => {
     txParams = txParams || {};
@@ -206,7 +206,7 @@ function XDR(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-  
+
    **/
   this.selfDestruct = async txParams => {
     txParams = txParams || {};
@@ -218,7 +218,7 @@ function XDR(contractSettings) {
    * @param account {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
-  
+
    **/
   this.burn = async (account, amount, txParams) => {
     txParams = txParams || {};
@@ -229,7 +229,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _tokenState {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.setTokenState = async (_tokenState, txParams) => {
     txParams = txParams || {};
@@ -305,7 +305,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param sender {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.setMessageSender = async (sender, txParams) => {
     txParams = txParams || {};
@@ -315,7 +315,7 @@ function XDR(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-  
+
    **/
   this.initiateSelfDestruct = async txParams => {
     txParams = txParams || {};
@@ -401,7 +401,7 @@ function XDR(contractSettings) {
    * @param recipient {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
-  
+
    **/
   this.triggerTokenFallbackIfNeeded = async (sender, recipient, amount, txParams) => {
     txParams = txParams || {};
@@ -420,7 +420,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
-  
+
    **/
   this.setTotalSupply = async (amount, txParams) => {
     txParams = txParams || {};
@@ -431,7 +431,7 @@ function XDR(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param _synthetix {String<EthAddress>}
    * @param txParams {TxParams}
-  
+
    **/
   this.setSynthetix = async (_synthetix, txParams) => {
     txParams = txParams || {};

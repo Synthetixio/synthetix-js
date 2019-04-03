@@ -4,6 +4,13 @@ const util = require('util');
 const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
+const SUPPORTED_NETWORKS = {
+  1: 'mainnet',
+  3: 'ropsten',
+  4: 'rinkeby',
+  42: 'kovan',
+};
+
 /**
  * This module will perform the following actions for all contracts listed
  *
@@ -50,10 +57,46 @@ const typeMap = {
   string: 'String',
 };
 
+const writeAddressFile = () => {
+  const addressDefinitions = Object.values(SUPPORTED_NETWORKS)
+    .map(network => {
+      const targets = snx.getTarget({ network });
+
+      return `
+        const ${network.toUpperCase()}_ADDRESSES = {
+          ${Object.keys(targets)
+            .map(name => `${name}: '${targets[name].address}'`)
+            .join(',\n')}
+        };`;
+    })
+    .join('\n\n');
+
+  const exportFooter = `
+    export default {
+    ${Object.entries(SUPPORTED_NETWORKS)
+      .map(([networkId, network]) => `${networkId}: ${network.toUpperCase()}_ADDRESSES`)
+      .join(', ')}
+    };`;
+
+  fs.writeFile(
+    path.join(__dirname, '..', 'lib', 'addresses.js'),
+    addressDefinitions + exportFooter,
+    err => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`lib/addresses.js successfully generated.`);
+      }
+    }
+  );
+};
+
 const generate = () => {
   const allContracts = Object.assign({}, contracts, synthContracts);
   const srcIndexFileHeader = [];
   const abiIndexFileHeader = [];
+
+  writeAddressFile();
 
   Object.keys(allContracts).forEach(contractName => {
     let target = contractName;
@@ -62,11 +105,9 @@ const generate = () => {
       target = allContracts[contractName].target || target;
       source = allContracts[contractName].source || source;
     }
-    // TODO write out address list
 
     // get the abis from the mainnet deploy from synthetix
     const { abi } = snx.getSource({ network: 'mainnet', contract: source });
-
     const importStringForIndexFile = `import ${contractName} from './${contractName}';`;
     // only for contracts in the original contract object
     if (contractName in contracts) {

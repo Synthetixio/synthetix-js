@@ -1,6 +1,6 @@
 {
   "name": "synthetix-js",
-  "version": "2.1.4",
+  "version": "2.1.8",
   "description": "Synthetix JS Library - access Synthetix smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",
@@ -8,12 +8,13 @@
   "repository": "https://github.com/Synthetixio/synthetix-js",
   "scripts": {
     "test": "jest --runInBand",
+    "clear": "$(rm dist/*.js || true) && $(rm src/contracts/*.js || true) && $(rm lib/abis/*.js || true) && $(rm lib/addresses.js || true)",
     "lint": "eslint .",
     "docs": "jsdoc src -r -d ./doc -c jsdoc.json --readme README.md",
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
     "webpack": "webpack --mode=production",
-    "build": "npm run abitojs && npm run format && npm run docs && npm run webpack && npm run test"
+    "build": "npm run clear && npm run abitojs && npm run format && npm run docs && npm run webpack && npm run test"
   },
   "author": "Synthetix",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "ethereumjs-util": "~5.2.0",
     "ethers": "~3.0.26",
     "lodash": "~4.17.11",
+    "synthetix": "2.1.9",
     "trezor-connect": "^7.0.1"
   },
   "devDependencies": {

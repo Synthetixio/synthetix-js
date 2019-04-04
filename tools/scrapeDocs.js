@@ -4,7 +4,7 @@ const fs = require('fs');
 const baseUrl = 'http://developer.synthetix.io/api/docs/';
 const contractNames = ['Synthetix', 'Synth', 'Depot', 'SynthetixEscrow'];
 const docsObj = {};
-const writeFile = require('util').promisify(fs.writeFile);
+require('util').promisify(fs.writeFile);
 
 async function getDocsForContract(contractName) {
   const res = await axios.get(baseUrl + contractName);
@@ -23,7 +23,7 @@ async function getDocsForContract(contractName) {
 
 async function start() {
   try {
-    const done = await Promise.all(contractNames.map(name => getDocsForContract(name)));
+    await Promise.all(contractNames.map(name => getDocsForContract(name)));
     console.log(docsObj);
     await fs.writeFile(
       __dirname + '/../lib/docSrc/descriptions.json',

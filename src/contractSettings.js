@@ -5,6 +5,7 @@ import ABIS from '../lib/abis/index';
 const SUPPORTED_NETWORKS = {
   1: 'mainnet',
   3: 'ropsten',
+  4: 'rinkeby',
   42: 'kovan',
 };
 
@@ -17,7 +18,7 @@ class ContractSettings {
    */
   constructor(contractSettings) {
     contractSettings = contractSettings || {};
-    let { provider, signer, networkId } = contractSettings;
+    const { provider, signer, networkId } = contractSettings;
     this.provider = provider || providers.getDefaultProvider();
     if (!provider && networkId) {
       this.provider = providers.getDefaultProvider(SUPPORTED_NETWORKS[Number(networkId)]);

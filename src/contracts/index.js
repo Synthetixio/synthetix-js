@@ -1,11 +1,17 @@
 import Depot from './Depot';
+import EscrowChecker from './EscrowChecker';
 import ExchangeRates from './ExchangeRates';
 import FeePool from './FeePool';
-import sAUD from './sAUD';
+import Synth from './Synth';
+import Synthetix from './Synthetix';
+import SynthetixEscrow from './SynthetixEscrow';
+import SynthetixState from './SynthetixState';
+import XDR from './XDR';
+import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
+import sAUD from './sAUD';
 import sKRW from './sKRW';
-import sUSD from './sUSD';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
 import sCNY from './sCNY';
@@ -19,22 +25,22 @@ import sPLN from './sPLN';
 import sXAU from './sXAU';
 import sXAG from './sXAG';
 import sBTC from './sBTC';
-import Synth from './Synth';
-import Synthetix from './Synthetix';
-import SynthetixEscrow from './SynthetixEscrow';
-import SynthetixState from './SynthetixState';
-import XDR from './XDR';
-import EscrowChecker from './EscrowChecker';
 
 export default {
   Depot,
+  EscrowChecker,
   ExchangeRates,
   FeePool,
-  sAUD,
+  Synth,
+  Synthetix,
+  SynthetixEscrow,
+  SynthetixState,
+  XDR,
+  sUSD,
   sEUR,
   sJPY,
+  sAUD,
   sKRW,
-  sUSD,
   sGBP,
   sCHF,
   sCNY,
@@ -48,10 +54,4 @@ export default {
   sXAU,
   sXAG,
   sBTC,
-  Synth,
-  SynthetixEscrow,
-  SynthetixState,
-  Synthetix,
-  XDR,
-  EscrowChecker,
 };

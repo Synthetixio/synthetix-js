@@ -1,7 +1,6 @@
 import { Contract } from 'ethers';
-import abis from '../../lib/abis/index';
 import ContractSettings from '../contractSettings';
-const abi = abis.EscrowChecker;
+import abi from '../../lib/abis/EscrowChecker';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -28,8 +27,8 @@ function EscrowChecker(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.havven_escrow = async () => {
-    return await this.contract.havven_escrow();
+  this.synthetix_escrow = async () => {
+    return await this.contract.synthetix_escrow();
   };
 }
 

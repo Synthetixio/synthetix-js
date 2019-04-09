@@ -47,8 +47,8 @@ const contracts = {
 };
 
 // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
-const synthContracts = snx.getSynths().reduce((memo, synth) => {
-  memo[synth] = { target: `Proxy${synth}`, source: 'Synth' };
+const synthContracts = snx.getSynths({ network: 'mainnet' }).reduce((memo, { name }) => {
+  memo[name] = { target: `Proxy${name}`, source: 'Synth' };
   return memo;
 }, {});
 

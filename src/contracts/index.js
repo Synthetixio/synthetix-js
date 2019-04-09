@@ -7,9 +7,9 @@ import Synthetix from './Synthetix';
 import SynthetixEscrow from './SynthetixEscrow';
 import SynthetixState from './SynthetixState';
 import XDR from './XDR';
-import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
+import sUSD from './sUSD';
 import sAUD from './sAUD';
 import sKRW from './sKRW';
 import sGBP from './sGBP';
@@ -36,9 +36,9 @@ export default {
   SynthetixEscrow,
   SynthetixState,
   XDR,
-  sUSD,
   sEUR,
   sJPY,
+  sUSD,
   sAUD,
   sKRW,
   sGBP,

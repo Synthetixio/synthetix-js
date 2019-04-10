@@ -5,10 +5,16 @@ const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js def
 
 (async function() {
   const snxPrice = snxjs.utils.formatEther(await snxjs.utils.getSynthetixPrice());
+  console.log('-------------------');
   console.log(`SNX price: ${snxPrice}`);
-  ['USD', 'AUD', 'EUR', 'XAU', 'BTC'].forEach(async ticker => {
-    const totalAmount = await snxjs[`s${ticker}`].totalSupply();
+  console.log('-------------------');
+  console.log('SYNTH SUPPLY');
+  console.log('-------------------');
+  const { synths } = snxjs.contractSettings;
+
+  synths.forEach(async ({ name, sign, desc }) => {
+    const totalAmount = await snxjs[name].totalSupply();
     const totalSupply = snxjs.utils.formatEther(totalAmount);
-    console.log(`s${ticker}TotalSupply`, totalSupply);
+    console.log(`${desc} (${name}) ${sign}${totalSupply}`);
   });
 })();

@@ -20,14 +20,9 @@ export class SynthetixJs {
     const { network } = contractSettings;
     this.network = network;
     const contractForEnv = contracts[network];
-    this[network] = {};
     Object.keys(contractForEnv).forEach(name => {
       const Contract = contractForEnv[name];
-      this[network][name] = new Contract(contractSettings);
-      if (network === 'mainnet') {
-        // create a handy link for mainnet
-        this[name] = this[network][name];
-      }
+      this[name] = new Contract(contractSettings);
     });
     this.util = new util(contractSettings);
     this.utils = this.util;

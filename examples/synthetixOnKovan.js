@@ -17,7 +17,7 @@ const snxjs = new SynthetixJs({
 });
 
 (async function() {
-  const totalSNX = await snxjs.kovan.Synthetix.totalSupply();
+  const totalSNX = await snxjs.Synthetix.totalSupply();
   const snxTotalSupply = snxjs.utils.formatEther(totalSNX);
   console.log('SNXTotalSupply on ', snxjs.contractSettings.network.toUpperCase(), snxTotalSupply);
   const synths = snxjs.contractSettings.synths.map(({ name }) => name).join(',');

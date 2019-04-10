@@ -17,8 +17,17 @@ export class SynthetixJs {
   constructor(contractSettings) {
     contractSettings = new ContractSettings(contractSettings);
     this.contractSettings = contractSettings;
-    Object.keys(contracts).forEach(name => {
-      this[name] = new contracts[name](contractSettings);
+    const { network } = contractSettings;
+    this.network = network;
+    const contractForEnv = contracts[network];
+    this[network] = {};
+    Object.keys(contractForEnv).forEach(name => {
+      const Contract = contractForEnv[name];
+      this[network][name] = new Contract(contractSettings);
+      if (network === 'mainnet') {
+        // create a handy link for mainnet
+        this[name] = this[network][name];
+      }
     });
     this.util = new util(contractSettings);
     this.utils = this.util;

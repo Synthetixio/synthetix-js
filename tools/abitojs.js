@@ -44,13 +44,8 @@ const contracts = {
   },
   SynthetixEscrow: true,
   SynthetixState: true,
+  // the synths will be added on for each network
 };
-
-// add the synth contract as well (target addresses are their proxies, and source is the synth contract)
-const synthContracts = snx.getSynths({ network: 'mainnet' }).reduce((memo, { name }) => {
-  memo[name] = { target: `Proxy${name}`, source: 'Synth' };
-  return memo;
-}, {});
 
 const typeMap = {
   uint256: 'BigNumber',
@@ -129,45 +124,73 @@ const writeSynthsFile = () => {
 };
 
 const generate = () => {
-  const allContracts = Object.assign({}, contracts, synthContracts);
-  const srcIndexFileHeader = [];
-  const abiIndexFileHeader = [];
-
   writeAddressFile();
   writeSynthsFile();
 
-  Object.keys(allContracts).forEach(contractName => {
-    let target = contractName;
-    let source = contractName;
-    if (typeof allContracts[contractName] === 'object') {
-      target = allContracts[contractName].target || target;
-      source = allContracts[contractName].source || source;
-    }
+  const indexFileHeader = [];
 
-    // get the abis from the mainnet deploy from synthetix
-    const { abi } = snx.getSource({ network: 'mainnet', contract: source });
-    const importStringForIndexFile = `import ${contractName} from './${contractName}';`;
-    // only for contracts in the original contract object
-    if (contractName in contracts) {
-      // write out ABI files (using ABIs from mainnet deploy)
-      writeABIFile(contractName, abi);
-      abiIndexFileHeader.push(importStringForIndexFile);
-    }
-    srcIndexFileHeader.push(importStringForIndexFile);
+  Object.values(SUPPORTED_NETWORKS).map(network => {
+    // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
+    const synthContracts = snx.getSynths({ network }).reduce((memo, { name }) => {
+      memo[name] = { target: `Proxy${name}`, source: 'Synth' };
+      return memo;
+    }, {});
 
-    // now generate the final JS source
-    const functions = abi.filter(prop => prop.type === 'function');
-    generateJSFile(contractName, abi, target, functions, source);
+    const allContracts = Object.assign({}, contracts, synthContracts);
+
+    const importStringForHeaders = `import ${network} from './${network}';`;
+    indexFileHeader.push(importStringForHeaders);
+
+    const srcNetworkIndexFileHeader = [];
+    const abiNetworkIndexFileHeader = [];
+    Object.keys(allContracts).forEach(contractName => {
+      let target = contractName;
+      let source = contractName;
+      if (typeof allContracts[contractName] === 'object') {
+        target = allContracts[contractName].target || target;
+        source = allContracts[contractName].source || source;
+      }
+
+      // get the abis from the network's deploy from synthetix
+      const { abi } = snx.getSource({ network, contract: source });
+      // some environments might not have an ABI for this contract yet
+      if (abi) {
+        const importStringForIndexFile = `import ${contractName} from './${contractName}';`;
+        // only for contracts in the original contract object
+        if (contractName in contracts) {
+          // write out ABI files (using ABIs from mainnet deploy)
+          writeABIFile(network, contractName, abi);
+          abiNetworkIndexFileHeader.push(importStringForIndexFile);
+        }
+        srcNetworkIndexFileHeader.push(importStringForIndexFile);
+
+        // now generate the final JS source
+        const functions = abi.filter(prop => prop.type === 'function');
+        generateJSFile(contractName, network, target, functions, source);
+      }
+    });
+
+    writeIndexFile(
+      srcNetworkIndexFileHeader,
+      Object.keys(allContracts),
+      path.join(__dirname, '..', 'src', 'contracts', network, `index.js`)
+    );
+    writeIndexFile(
+      abiNetworkIndexFileHeader,
+      Object.keys(contracts),
+      path.join(__dirname, '..', 'lib', 'abis', network, `index.js`)
+    );
   });
 
   writeIndexFile(
-    srcIndexFileHeader,
-    Object.keys(allContracts),
+    indexFileHeader,
+    Object.values(SUPPORTED_NETWORKS),
     path.join(__dirname, '..', 'src', 'contracts', `index.js`)
   );
+
   writeIndexFile(
-    abiIndexFileHeader,
-    Object.keys(contracts),
+    indexFileHeader,
+    Object.values(SUPPORTED_NETWORKS),
     path.join(__dirname, '..', 'lib', 'abis', `index.js`)
   );
 };
@@ -191,53 +214,67 @@ export default {
   });
 };
 
-const writeABIFile = (contractName, abi) => {
-  const abiPath = path.join(__dirname, '..', 'lib', 'abis', `${contractName}.js`);
-  const content = `export default ${util.inspect(abi, { showHidden: false, depth: null })};`;
+const abiCache = {};
+const writeABIFile = (network, contractName, abi) => {
+  const folder = path.join(__dirname, '..', 'lib', 'abis', network);
+  if (!fs.existsSync(folder)) {
+    fs.mkdirSync(folder);
+  }
+  const abiPath = path.join(folder, `${contractName}.js`);
+  let content = `export default ${util.inspect(abi, { showHidden: false, depth: null })};`;
+
+  // don't rewrite the same file if it already exists, just import it
+  if (content in abiCache) {
+    content = `import ${contractName} from '${abiCache[content]}';
+      export default ${contractName};
+      `;
+  } else {
+    abiCache[content] = `../${network}/${contractName}`;
+  }
   fs.writeFile(abiPath, content, err => {
     if (err) {
       console.log(err);
     } else {
-      console.log(`ABI ${contractName}.js successfully generated locally.`);
+      console.log(`ABI ${contractName}.js on ${network} successfully generated locally.`);
     }
   });
 };
 
-const generateJSFile = (contractName, abi, target, functions, source) => {
+const generateJSFile = (contractName, network, target, functions, source) => {
   const content = `
-import {Contract} from 'ethers';
-import ContractSettings from '../contractSettings';
-import abi from '../../lib/abis/${source}';
+    import {Contract} from 'ethers';
+    import ContractSettings from '../../contractSettings';
+    import abi from '../../../lib/abis/${network}/${source}';
 
-/** @constructor
- * @param contractSettings {ContractSettings}
- */
-function ${contractName}(contractSettings) {
-  this.contractSettings = contractSettings || new ContractSettings();
+    /** @constructor
+     * @param contractSettings {ContractSettings}
+     */
+    function ${contractName}(contractSettings) {
+      this.contractSettings = contractSettings || new ContractSettings();
 
-  this.contract = new Contract(
-    this.contractSettings.addressList['${target}'],
-    abi,
-    this.contractSettings.signer || this.contractSettings.provider
-  );
+      this.contract = new Contract(
+        this.contractSettings.addressList['${target}'],
+        abi,
+        this.contractSettings.signer || this.contractSettings.provider
+      );
 
-  ${functions.map(fn => generateFunctionStr(fn, source)).join('')};
-}
-
-export default ${contractName};
-`;
-
-  fs.writeFile(
-    path.join(__dirname, '..', 'src', 'contracts', `${contractName}.js`),
-    content,
-    err => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(`${contractName}.js successfully generated.`);
-      }
+      ${functions.map(fn => generateFunctionStr(fn, source)).join('')};
     }
-  );
+
+    export default ${contractName};
+  `;
+
+  const folder = path.join(__dirname, '..', 'src', 'contracts', network);
+  if (!fs.existsSync(folder)) {
+    fs.mkdirSync(folder);
+  }
+  fs.writeFile(path.join(folder, `${contractName}.js`), content, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`${contractName}.js successfully generated.`);
+    }
+  });
   return content;
 };
 

@@ -21,7 +21,7 @@ class ContractSettings {
     contractSettings = contractSettings || {};
     const { provider, signer, networkId } = contractSettings;
     this.networkId = networkId || 1;
-    this.network = SUPPORTED_NETWORKS[Number(networkId)];
+    this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
     this.provider = provider || providers.getDefaultProvider();
     if (!provider && networkId) {
       this.provider = providers.getDefaultProvider(this.network);

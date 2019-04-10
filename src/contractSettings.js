@@ -1,6 +1,7 @@
 import { providers } from 'ethers';
 import addresses from '../lib/addresses';
 import ABIS from '../lib/abis/index';
+import synths from '../lib/synths';
 
 const SUPPORTED_NETWORKS = {
   1: 'mainnet',
@@ -26,6 +27,7 @@ class ContractSettings {
     this.signer = signer;
     this.networkId = networkId || 1;
     this.addressList = addresses[this.networkId];
+    this.synths = synths[this.networkId];
     this.ABIS = ABIS;
   }
 }

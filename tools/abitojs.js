@@ -94,12 +94,47 @@ const writeAddressFile = () => {
   );
 };
 
+const writeSynthsFile = () => {
+  const synthDefinitions = Object.values(SUPPORTED_NETWORKS)
+    .map(network => {
+      const synths = snx.getSynths({ network });
+
+      return `
+        const ${network.toUpperCase()}_SYNTHS = ${util.inspect(synths, {
+        showHidden: false,
+        depth: null,
+      })}
+        `;
+    })
+    .join('\n\n');
+
+  const exportFooter = `
+    export default {
+    ${Object.entries(SUPPORTED_NETWORKS)
+      .map(([networkId, network]) => `${networkId}: ${network.toUpperCase()}_SYNTHS`)
+      .join(', ')}
+    };`;
+
+  fs.writeFile(
+    path.join(__dirname, '..', 'lib', 'synths.js'),
+    synthDefinitions + exportFooter,
+    err => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`lib/synths.js successfully generated.`);
+      }
+    }
+  );
+};
+
 const generate = () => {
   const allContracts = Object.assign({}, contracts, synthContracts);
   const srcIndexFileHeader = [];
   const abiIndexFileHeader = [];
 
   writeAddressFile();
+  writeSynthsFile();
 
   Object.keys(allContracts).forEach(contractName => {
     let target = contractName;

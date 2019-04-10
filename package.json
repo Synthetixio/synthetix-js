@@ -10,7 +10,7 @@
     "test": "jest --runInBand",
     "clear": "$(rm dist/*.js || true) && $(rm src/contracts/*.js || true) && $(rm lib/abis/*.js || true) && $(rm lib/addresses.js || true)",
     "lint": "eslint .",
-    "docs": "jsdoc src -r -d ./doc -c jsdoc.json --readme README.md",
+    "docs": "jsdoc src/index*.js src/contracts/mainnet src/util -r -d ./doc -c jsdoc.json --readme README.md",
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
     "webpack": "webpack --mode=production",
@@ -27,7 +27,7 @@
     "ethereumjs-util": "~5.2.0",
     "ethers": "~3.0.26",
     "lodash": "~4.17.11",
-    "synthetix": "2.1.10-alpha",
+    "synthetix": "2.1.10",
     "trezor-connect": "^7.0.1"
   },
   "devDependencies": {

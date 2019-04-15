@@ -36,6 +36,16 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.mint = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.mint(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -95,6 +105,15 @@ function Synthetix(contractSettings) {
    **/
   this.debtBalanceOf = async (issuer, currencyKey) => {
     return await this.contract.debtBalanceOf(issuer, currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes4}
+   * @returns String<EthAddress>
+   **/
+  this.getSynth = async currencyKey => {
+    return await this.contract.getSynth(currencyKey);
   };
 
   /**
@@ -207,15 +226,11 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeRates {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.setExchangeRates = async (_exchangeRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeRates(_exchangeRates, txParams);
+  this.getSynthetixState = async () => {
+    return await this.contract.getSynthetixState();
   };
 
   /**
@@ -319,6 +334,14 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.minterReward = async () => {
+    return await this.contract.minterReward();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -363,27 +386,11 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Set your preferred currency. Note: This does not automatically exchange any balances you've held previously in other synth currencies in this address, it will apply for any new payments you receive at this address.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.setPreferredCurrency = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setPreferredCurrency(currencyKey, txParams);
-  };
-
-  /**
-   * Only callable by the contract owner., Set the synthetixState contract address where issuance data is held.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetixState {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetixState = async (_synthetixState, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetixState(_synthetixState, txParams);
+  this.getRewardEscrow = async () => {
+    return await this.contract.getRewardEscrow();
   };
 
   /**
@@ -394,6 +401,14 @@ function Synthetix(contractSettings) {
    **/
   this.collateralisationRatio = async issuer => {
     return await this.contract.collateralisationRatio(issuer);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.rewardEscrow = async () => {
+    return await this.contract.rewardEscrow();
   };
 
   /**
@@ -556,15 +571,11 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Only the contract owner may call this., Set the associated synthetix escrow contract.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _escrow {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.setEscrow = async (_escrow, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setEscrow(_escrow, txParams);
+  this.supplySchedule = async () => {
+    return await this.contract.supplySchedule();
   };
 
   /**

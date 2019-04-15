@@ -148,6 +148,14 @@ function sBTC(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes4
+   **/
+  this.getCurrencyKey = async () => {
+    return await this.contract.getCurrencyKey();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.synthetix = async () => {
@@ -334,6 +342,14 @@ function sBTC(contractSettings) {
   this.transfer = async (to, value, data, txParams) => {
     txParams = txParams || {};
     return await this.contract.transfer(to, value, data, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.getTotalSupply = async () => {
+    return await this.contract.getTotalSupply();
   };
 
   /**

@@ -25,6 +25,11 @@ import sPLN from './sPLN';
 import sXAU from './sXAU';
 import sXAG from './sXAG';
 import sBTC from './sBTC';
+import sETH from './sETH';
+import sBNB from './sBNB';
+import iBTC from './iBTC';
+import iETH from './iETH';
+import iBNB from './iBNB';
 
 export default {
   Depot,
@@ -54,4 +59,9 @@ export default {
   sXAU,
   sXAG,
   sBTC,
+  sETH,
+  sBNB,
+  iBTC,
+  iETH,
+  iBNB,
 };

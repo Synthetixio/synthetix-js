@@ -5,11 +5,11 @@ import abi from '../../../lib/abis/kovan/Synth';
 /** @constructor
  * @param contractSettings {ContractSettings}
  */
-function sGBP(contractSettings) {
+function sETH(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['ProxysGBP'],
+    this.contractSettings.addressList['ProxysETH'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
@@ -439,4 +439,4 @@ function sGBP(contractSettings) {
   };
 }
 
-export default sGBP;
+export default sETH;

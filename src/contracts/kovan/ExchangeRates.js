@@ -66,6 +66,15 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes4
+   **/
+  this.invertedKeys = async uint256_1 => {
+    return await this.contract.invertedKeys(uint256_1);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -93,21 +102,6 @@ function ExchangeRates(contractSettings) {
    **/
   this.anyRateIsStale = async currencyKeys => {
     return await this.contract.anyRateIsStale(currencyKeys);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param sourceCurrencyKey {bytes4}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes4}
-   * @returns BigNumber
-   **/
-  this.effectiveValue = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey) => {
-    return await this.contract.effectiveValue(
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey
-    );
   };
 
   /**
@@ -214,6 +208,15 @@ function ExchangeRates(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
+   * @returns boolean
+   **/
+  this.rateIsFrozen = async currencyKey => {
+    return await this.contract.rateIsFrozen(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes4}
    * @returns BigNumber
    **/
   this.rateForCurrency = async currencyKey => {
@@ -248,11 +251,51 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes4}
+   * @param entryPoint {BigNumber}
+   * @param upperLimit {BigNumber}
+   * @param lowerLimit {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setInversePricing = async (currencyKey, entryPoint, upperLimit, lowerLimit, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setInversePricing(
+      currencyKey,
+      entryPoint,
+      upperLimit,
+      lowerLimit,
+      txParams
+    );
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.selfDestructBeneficiary = async () => {
     return await this.contract.selfDestructBeneficiary();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes4}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeInversePricing = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeInversePricing(currencyKey, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes4}
+   * @returns Object
+   **/
+  this.inversePricing = async bytes4_1 => {
+    return await this.contract.inversePricing(bytes4_1);
   };
 
   /**

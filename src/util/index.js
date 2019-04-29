@@ -1,5 +1,7 @@
-import { utils, Interface, Wallet } from 'ethers';
+import { utils, Wallet } from 'ethers';
 import contracts from '../contracts';
+
+const { Interface } = utils;
 
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;

@@ -1,4 +1,4 @@
-import { providers } from 'ethers';
+import { getDefaultProvider } from 'ethers';
 import addresses from '../lib/addresses';
 import ABIS from '../lib/abis';
 import synths from '../lib/synths';
@@ -22,9 +22,9 @@ class ContractSettings {
     const { provider, signer, networkId } = contractSettings;
     this.networkId = networkId || 1;
     this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
-    this.provider = provider || providers.getDefaultProvider();
+    this.provider = provider || getDefaultProvider();
     if (!provider && networkId) {
-      this.provider = providers.getDefaultProvider(this.network);
+      this.provider = getDefaultProvider(this.network);
     }
     this.signer = signer;
     this.addressList = addresses[this.networkId];

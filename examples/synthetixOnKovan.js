@@ -3,7 +3,7 @@
 const { SynthetixJs } = require('../dist/main.node.js');
 
 const {
-  providers: { getDefaultProvider },
+  getDefaultProvider,
   Wallet,
 } = require('ethers');
 const wallet = Wallet.createRandom();

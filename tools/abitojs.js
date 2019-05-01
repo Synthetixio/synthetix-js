@@ -44,6 +44,7 @@ const contracts = {
   },
   SynthetixEscrow: true,
   SynthetixState: true,
+  RewardEscrow: true,
   // the synths will be added on for each network
 };
 

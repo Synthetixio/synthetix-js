@@ -36,6 +36,16 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.mint = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.mint(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -207,18 +217,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeRates {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setExchangeRates = async (_exchangeRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeRates(_exchangeRates, txParams);
-  };
-
-  /**
    * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
@@ -363,30 +361,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Set your preferred currency. Note: This does not automatically exchange any balances you've held previously in other synth currencies in this address, it will apply for any new payments you receive at this address.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes4}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setPreferredCurrency = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setPreferredCurrency(currencyKey, txParams);
-  };
-
-  /**
-   * Only callable by the contract owner., Set the synthetixState contract address where issuance data is held.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetixState {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetixState = async (_synthetixState, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetixState(_synthetixState, txParams);
-  };
-
-  /**
    * The current collateralisation ratio for a user. Collateralisation ratio varies over time as the value of the underlying Synthetix asset changes, e.g. if a user issues their maximum available synths when they hold $10 worth of Synthetix, they will have issued $2 worth of synths. If the value of Synthetix changes, the ratio returned by this function will adjust accordlingly. Users are incentivised to maintain a collateralisation ratio as close to the issuance ratio as possible by altering the amount of fees they're able to claim from the system.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}
@@ -394,6 +368,14 @@ function Synthetix(contractSettings) {
    **/
   this.collateralisationRatio = async issuer => {
     return await this.contract.collateralisationRatio(issuer);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.rewardEscrow = async () => {
+    return await this.contract.rewardEscrow();
   };
 
   /**
@@ -556,15 +538,11 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Only the contract owner may call this., Set the associated synthetix escrow contract.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _escrow {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.setEscrow = async (_escrow, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setEscrow(_escrow, txParams);
+  this.supplySchedule = async () => {
+    return await this.contract.supplySchedule();
   };
 
   /**

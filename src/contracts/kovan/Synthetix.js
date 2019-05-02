@@ -317,14 +317,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.minterReward = async () => {
-    return await this.contract.minterReward();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   

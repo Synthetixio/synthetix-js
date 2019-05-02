@@ -6,6 +6,7 @@ import Synth from './Synth';
 import Synthetix from './Synthetix';
 import SynthetixEscrow from './SynthetixEscrow';
 import SynthetixState from './SynthetixState';
+import RewardEscrow from './RewardEscrow';
 import XDR from './XDR';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
@@ -40,6 +41,7 @@ export default {
   Synthetix,
   SynthetixEscrow,
   SynthetixState,
+  RewardEscrow,
   XDR,
   sEUR,
   sJPY,

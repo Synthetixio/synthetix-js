@@ -106,6 +106,21 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param sourceCurrencyKey {bytes4}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes4}
+   * @returns BigNumber
+   **/
+  this.effectiveValue = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey) => {
+    return await this.contract.effectiveValue(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey
+    );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {

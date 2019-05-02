@@ -44,6 +44,7 @@ const contracts = {
   },
   SynthetixEscrow: true,
   SynthetixState: true,
+  RewardEscrow: true,
   // the synths will be added on for each network
 };
 
@@ -143,6 +144,8 @@ const generate = () => {
 
     const srcNetworkIndexFileHeader = [];
     const abiNetworkIndexFileHeader = [];
+    const contractsInNetwork = [];
+    const sourcesInNetwork = [];
     Object.keys(allContracts).forEach(contractName => {
       let target = contractName;
       let source = contractName;
@@ -152,17 +155,25 @@ const generate = () => {
       }
 
       // get the abis from the network's deploy from synthetix
-      const { abi } = snx.getSource({ network, contract: source });
+      const { abi } = snx.getSource({ network, contract: source }) || {};
       // some environments might not have an ABI for this contract yet
       if (abi) {
+        // track which contracts exist in this netork
+        contractsInNetwork.push(contractName);
+
+        // now create import header for index files
         const importStringForIndexFile = `import ${contractName} from './${contractName}';`;
-        // only for contracts in the original contract object
+        srcNetworkIndexFileHeader.push(importStringForIndexFile);
+
+        // now only for source contracts in the original contract object
         if (contractName in contracts) {
           // write out ABI files (using ABIs from mainnet deploy)
           writeABIFile(network, contractName, abi);
           abiNetworkIndexFileHeader.push(importStringForIndexFile);
+
+          // and track it
+          sourcesInNetwork.push(source);
         }
-        srcNetworkIndexFileHeader.push(importStringForIndexFile);
 
         // now generate the final JS source
         const functions = abi.filter(prop => prop.type === 'function');
@@ -172,12 +183,12 @@ const generate = () => {
 
     writeIndexFile(
       srcNetworkIndexFileHeader,
-      Object.keys(allContracts),
+      contractsInNetwork,
       path.join(__dirname, '..', 'src', 'contracts', network, `index.js`)
     );
     writeIndexFile(
       abiNetworkIndexFileHeader,
-      Object.keys(contracts),
+      sourcesInNetwork,
       path.join(__dirname, '..', 'lib', 'abis', network, `index.js`)
     );
   });

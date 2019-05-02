@@ -1,4 +1,4 @@
-import { SynthetixJs } from '../dist/main.node';
+import { SynthetixJs } from '../src/index.node.js';
 import config from './config';
 
 test(
@@ -11,7 +11,7 @@ test(
     );
     const snxjs = new SynthetixJs({ signer, networkId: config.networkId });
     const balance = await snxjs.SynthetixEscrow.balanceOf(signer.getAddress());
-    await expect(balance).toBeTruthy();
+    await expect(balance).not.toBeNaN();
   },
   15000
 );

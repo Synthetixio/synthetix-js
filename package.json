@@ -27,7 +27,7 @@
     "ethereumjs-util": "~5.2.0",
     "ethers": "~3.0.26",
     "lodash": "~4.17.11",
-    "synthetix": "2.4.1-release-candidate",
+    "synthetix": "2.4.1",
     "trezor-connect": "^7.0.1"
   },
   "devDependencies": {

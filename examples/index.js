@@ -1,9 +1,9 @@
 'use strict';
 
 const { SynthetixJs } = require('../dist/main.node.js');
-const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
 
 (async function() {
+  const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
   const snxPrice = snxjs.utils.formatEther(await snxjs.utils.getSynthetixPrice());
   console.log('-------------------');
   console.log(`SNX price: ${snxPrice}`);

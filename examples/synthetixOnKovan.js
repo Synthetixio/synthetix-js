@@ -2,10 +2,7 @@
 
 const { SynthetixJs } = require('../dist/main.node.js');
 
-const {
-  providers: { getDefaultProvider },
-  Wallet,
-} = require('ethers');
+const { getDefaultProvider, Wallet } = require('ethers');
 const wallet = Wallet.createRandom();
 const snxjs = new SynthetixJs({
   signer: new SynthetixJs.signers.PrivateKey(

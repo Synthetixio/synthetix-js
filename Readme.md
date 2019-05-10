@@ -1,6 +1,7 @@
 # SynthetixJs library
 
 [![CircleCI](https://circleci.com/gh/Synthetixio/synthetix-js.svg?style=svg)](https://circleci.com/gh/Synthetixio/synthetix-js) [![npm version](https://badge.fury.io/js/synthetix-js.svg)](https://badge.fury.io/js/synthetix-js)
+[![Discord](https://img.shields.io/discord/413890591840272394.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discordapp.com/channels/413890591840272394/)
 
 The Synthetix-JS Library provides a simple pre-packaged API to communicate with the [Synthetix payment engine](https://synthetix.io) on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.
 

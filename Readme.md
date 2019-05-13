@@ -10,34 +10,15 @@ This is particularly useful for hackathon teams to quickly `npm install syntheti
 
 Under the hood, SynthetixJs uses [ethers.js](https://github.com/ethers-io/ethers.js/) library and its concept of [providers](https://docs.ethers.io/ethers.js/html/api-providers.html) and [transaction signers](https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer).
 
-The two main packages to do stable payments with are:
-
-- [StablePayments](https://synthetixjs.synthetix.io/stablepayments) - for transfer() and payment related functions like transfer()
-- [Util](https://synthetixjs.synthetix.io/util) - a bunch of handy utility functions for number handling and gas estimation
-
-Some other packages for hacking with:
-
-- [IsssuanceController](https://synthetixjs.synthetix.io/issuancecontroller) - for Token swapper/exchange functions such as ETH > HAV & ETH > nUSD
-- [Mintr](https://synthetixjs.synthetix.io/mintr) - if you want to build a dApp for minting and burning stablecoins.
-
-## What can I build on the Synthetix payment engine?
-
-Anything you can think of with programmable money. We provide the stability-as-a-service and fx (foreign exchange).
-
-We’ve come up with some thought starters for dApps you could create by integrating Synthetix's stable payments into your projects.
-
-- Crypto Games - lottery, poker, fomoSUSD, nUSDCrash for kicks.
-- Crypto Ecommerce
-- Crypto Loans
-- Crypto Insurance
-- Crypto Payroll
-- Crypto Global Remittance
-
 ## Install via npm
 
 `npm install synthetix-js`
 
-## Example for getting the total nUSD stablecoin in circulation
+## Developer Docs
+
+[developer.synthetix.io](https://developer.synthetix.io)
+
+## Example for getting the total sUSD stablecoin in circulation
 
 ```javascript
 const { SynthetixJs } = require('synthetix-js');
@@ -63,27 +44,7 @@ const metaMaskSigner = new SynthetixJs.signers.Metamask();
 const snxjs = new SynthetixJs({ signer: metaMaskSigner }); //uses Metamask signer and default infura.io provider on mainnet
 ```
 
-## Example converting ETH to USD pegged stablecoin nUSD
-
-Obtain test ETH from a faucet [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)
-
-```javascript
-const txObj = await snxjs.IssuanceController.exchangeEtherForSynths({
-  value: snxjs.util.parseEther('0.123'),
-});
-```
-
-## Example of making a stablecoin payment
-
-```javascript
-//Transfer stablecoins to any ethereum address, wallet or smart contract
-const txObj = await snxjs.StablePayments.transfer(
-  '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
-  nUSDReceived
-);
-```
-
-## Example of minting stablecoin(nUSD) with private key signer
+## Example of minting stablecoin(sUSD) with private key signer
 
 ```javascript
 const { SynthetixJs } = require('synthetix-js');
@@ -113,17 +74,12 @@ async function run() {
 run();
 ```
 
-See /\_\_tests\_\_ folder for more examples.
+## Live examples
 
-## More Info
-
-To understand the Synthetix payments engine see more at [developer.synthetix.io](https://developer.synthetix.io)
-
-- [synthetix.io](https://synthetix.io/?utm_source=github)
-- [dashboard.synthetix.io](https://dashboard.synthetix.io)
-- [Reddit](https://www.reddit.com/r/synthetix/?utm_source=github)
-- [Twitter](https://twitter.com/synthetix_io?utm_source=github)
+- Get total synth supply [![Get total supply](https://user-images.githubusercontent.com/799038/57645476-572dc780-758c-11e9-98e3-33846fb8c176.png)](https://codepen.io/justinjmoses/pen/vMKywz/left?editors=0010)
+- Get collateralized state [![image](https://user-images.githubusercontent.com/799038/57646044-ad4f3a80-758d-11e9-879e-4a507c2cf894.png)
+  ](https://codepen.io/justinjmoses/pen/qwqoBR/left?editors=0010)
 
 ## Got any questions?
 
-Join our dev community on Discord: [https://discord.gg/S5WmKUp](https://discord.gg/S5WmKUp)
+Join our dev community on Discord: [![Discord](https://img.shields.io/discord/413890591840272394.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discordapp.com/channels/413890591840272394/)

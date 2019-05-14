@@ -238,10 +238,10 @@ function sEUR(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+  
    **/
-  this.SELFDESTRUCT_DELAY = async () => {
-    return await this.contract.SELFDESTRUCT_DELAY();
+  this.setTokenState = async () => {
+    return await this.contract.setTokenState();
   };
 
   /**

@@ -56,32 +56,15 @@
 
 
     <section class="readme">
-        <article><h1>SynthetixJs library</h1><p><a href="https://circleci.com/gh/Synthetixio/synthetix-js"><img src="https://circleci.com/gh/Synthetixio/synthetix-js.svg?style=svg" alt="CircleCI"></a> <a href="https://badge.fury.io/js/synthetix-js"><img src="https://badge.fury.io/js/synthetix-js.svg" alt="npm version"></a></p>
+        <article><h1>SynthetixJs library</h1><p><a href="https://circleci.com/gh/Synthetixio/synthetix-js"><img src="https://circleci.com/gh/Synthetixio/synthetix-js.svg?style=svg" alt="CircleCI"></a> <a href="https://badge.fury.io/js/synthetix-js"><img src="https://badge.fury.io/js/synthetix-js.svg" alt="npm version"></a>
+<a href="https://discordapp.com/channels/413890591840272394/"><img src="https://img.shields.io/discord/413890591840272394.svg?color=768AD4&amp;label=discord&amp;logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg" alt="Discord"></a>
+<a href="https://twitter.com/synthetix_io"><img src="https://img.shields.io/twitter/follow/synthetix_io.svg?label=synthetix_io&amp;style=social" alt="Twitter Follow"></a></p>
 <p>The Synthetix-JS Library provides a simple pre-packaged API to communicate with the <a href="https://synthetix.io">Synthetix payment engine</a> on ethereum. You can use it to build your own dApp that needs to work with payments using a stablecoin.</p>
 <p>This is particularly useful for hackathon teams to quickly <code>npm install synthetix-js</code> and have stable payments integrated into their dApp in just a few minutes.</p>
 <p>Under the hood, SynthetixJs uses <a href="https://github.com/ethers-io/ethers.js/">ethers.js</a> library and its concept of <a href="https://docs.ethers.io/ethers.js/html/api-providers.html">providers</a> and <a href="https://docs.ethers.io/ethers.js/html/api-contract.html#custom-signer">transaction signers</a>.</p>
-<p>The two main packages to do stable payments with are:</p>
-<ul>
-<li><a href="https://synthetixjs.synthetix.io/stablepayments">StablePayments</a> - for transfer() and payment related functions like transfer()</li>
-<li><a href="https://synthetixjs.synthetix.io/util">Util</a> - a bunch of handy utility functions for number handling and gas estimation</li>
-</ul>
-<p>Some other packages for hacking with:</p>
-<ul>
-<li><a href="https://synthetixjs.synthetix.io/issuancecontroller">IsssuanceController</a> - for Token swapper/exchange functions such as ETH &gt; HAV &amp; ETH &gt; nUSD</li>
-<li><a href="https://synthetixjs.synthetix.io/mintr">Mintr</a> - if you want to build a dApp for minting and burning stablecoins.</li>
-</ul>
-<h2>What can I build on the Synthetix payment engine?</h2><p>Anything you can think of with programmable money. We provide the stability-as-a-service and fx (foreign exchange).</p>
-<p>We’ve come up with some thought starters for dApps you could create by integrating Synthetix's stable payments into your projects.</p>
-<ul>
-<li>Crypto Games - lottery, poker, fomoSUSD, nUSDCrash for kicks.</li>
-<li>Crypto Ecommerce</li>
-<li>Crypto Loans</li>
-<li>Crypto Insurance</li>
-<li>Crypto Payroll</li>
-<li>Crypto Global Remittance</li>
-</ul>
 <h2>Install via npm</h2><p><code>npm install synthetix-js</code></p>
-<h2>Example for getting the total nUSD stablecoin in circulation</h2><pre class="prettyprint source lang-javascript"><code>const { SynthetixJs } = require('synthetix-js');
+<h2>Developer Docs</h2><p><a href="https://developer.synthetix.io">developer.synthetix.io</a></p>
+<h2>Example for getting the total sUSD stablecoin in circulation</h2><pre class="prettyprint source lang-javascript"><code>const { SynthetixJs } = require('synthetix-js');
 const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
 (async function() {
   const totalSUSD = await snxjs.sUSD.totalSupply();
@@ -93,14 +76,7 @@ To execute transactions, set up signer.</p>
 Custom ethers.js compatible signers can be used too.</p>
 <h2>Example using a metamask signer</h2><pre class="prettyprint source lang-javascript"><code>const { SynthetixJs } = require('synthetix-js');
 const metaMaskSigner = new SynthetixJs.signers.Metamask();
-const snxjs = new SynthetixJs({ signer: metaMaskSigner }); //uses Metamask signer and default infura.io provider on mainnet</code></pre><h2>Example converting ETH to USD pegged stablecoin nUSD</h2><p>Obtain test ETH from a faucet <a href="https://gitter.im/kovan-testnet/faucet">https://gitter.im/kovan-testnet/faucet</a></p>
-<pre class="prettyprint source lang-javascript"><code>const txObj = await snxjs.IssuanceController.exchangeEtherForSynths({
-  value: snxjs.util.parseEther('0.123'),
-});</code></pre><h2>Example of making a stablecoin payment</h2><pre class="prettyprint source lang-javascript"><code>//Transfer stablecoins to any ethereum address, wallet or smart contract
-const txObj = await snxjs.StablePayments.transfer(
-  '0x5C545CA7f9D34857664FDCe6aDC22edcF1D5061f',
-  nUSDReceived
-);</code></pre><h2>Example of minting stablecoin(nUSD) with private key signer</h2><pre class="prettyprint source lang-javascript"><code>const { SynthetixJs } = require('synthetix-js');
+const snxjs = new SynthetixJs({ signer: metaMaskSigner }); //uses Metamask signer and default infura.io provider on mainnet</code></pre><h2>Example of minting stablecoin(sUSD) with private key signer</h2><pre class="prettyprint source lang-javascript"><code>const { SynthetixJs } = require('synthetix-js');
 //parameters: default provider, default networkId, private key as a string
 const signer = new SynthetixJs.signers.PrivateKey(
   null,
@@ -124,15 +100,12 @@ async function run() {
   }
 }
 
-run();</code></pre><p>See /__tests__ folder for more examples.</p>
-<h2>More Info</h2><p>To understand the Synthetix payments engine see more at <a href="https://developer.synthetix.io">developer.synthetix.io</a></p>
-<ul>
-<li><a href="https://synthetix.io/?utm_source=github">synthetix.io</a></li>
-<li><a href="https://dashboard.synthetix.io">dashboard.synthetix.io</a></li>
-<li><a href="https://www.reddit.com/r/synthetix/?utm_source=github">Reddit</a></li>
-<li><a href="https://twitter.com/synthetix_io?utm_source=github">Twitter</a></li>
+run();</code></pre><h2>Live examples</h2><ul>
+<li>Get total synth supply <a href="https://codepen.io/justinjmoses/pen/vMKywz/left?editors=0010"><img src="https://user-images.githubusercontent.com/799038/57645476-572dc780-758c-11e9-98e3-33846fb8c176.png" alt="Get total supply"></a></li>
+<li>Get collateralized state <a href="https://codepen.io/justinjmoses/pen/qwqoBR/left?editors=0010"><img src="https://user-images.githubusercontent.com/799038/57646044-ad4f3a80-758d-11e9-879e-4a507c2cf894.png" alt="image">
+</a></li>
 </ul>
-<h2>Got any questions?</h2><p>Join our dev community on Discord: <a href="https://discord.gg/S5WmKUp">https://discord.gg/S5WmKUp</a></p></article>
+<h2>Got any questions?</h2><p>Join our dev community on Discord: <a href="https://discordapp.com/channels/413890591840272394/"><img src="https://img.shields.io/discord/413890591840272394.svg?color=768AD4&amp;label=discord&amp;logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg" alt="Discord"></a></p></article>
     </section>
 
 
@@ -147,7 +120,7 @@ run();</code></pre><p>See /__tests__ folder for more examples.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 02 2019 15:59:35 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 14 2019 16:12:08 GMT+1000 (AEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

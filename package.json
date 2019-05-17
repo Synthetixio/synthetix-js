@@ -7,7 +7,8 @@
   "homepage": "https://developer.synthetix.io",
   "repository": "https://github.com/Synthetixio/synthetix-js",
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --verbose",
+    "clean-install": "rm ./package-lock.json && rm -rf node_modules/* && npm install",
     "clear": "$(rm dist/*.js || true) && $(rm src/contracts/*.js || true) && $(rm lib/abis/*.js || true) && $(rm lib/addresses.js || true)",
     "lint": "eslint .",
     "docs": "jsdoc src/index*.js src/contracts/mainnet src/util -r -d ./doc -c jsdoc.json --readme Readme.md",
@@ -27,7 +28,7 @@
     "ethereumjs-util": "~5.2.0",
     "ethers": "4.0.27",
     "lodash": "~4.17.11",
-    "synthetix": "^2.4.2-beta",
+    "synthetix": "2.4.2-beta-1",
     "trezor-connect": "^7.0.1"
   },
   "devDependencies": {
@@ -37,6 +38,7 @@
     "@babel/runtime": "~7.0.0",
     "axios": "~0.18.0",
     "babel-core": "~7.0.0-bridge.0",
+    "babel-jest": "24.8.0",
     "babel-loader": "~8.0.2",
     "cheerio": "~1.0.0-rc.2",
     "docdash": "~1.0.0",
@@ -46,7 +48,7 @@
     "eslint-import-resolver-webpack": "^0.11.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "jest": "~23.5.0",
+    "jest": "24.8.0",
     "jsdoc": "~3.5.5",
     "prettier": "~1.14.2",
     "pretty-quick": "~1.6.0",

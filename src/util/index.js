@@ -67,7 +67,6 @@ class Util {
     transaction.chainId = this.contractSettings.networkId;
 
     const signedTx = await this.contractSettings.signer.sign(transaction);
-    console.log('signed', signedTx, this.contractSettings.provider);
     const signedSerialziedTx = '0x' + signedTx.serialize().toString('hex');
     return await this.contractSettings.provider.sendTransaction(signedSerialziedTx);
   }

@@ -4,10 +4,12 @@ import { getDefaultProvider } from 'ethers';
 
 const { SUPPORTED_NETWORKS } = ContractSettings;
 
-describe('src/contracts/SynthetixEscrow', () => {
+const contract = 'SynthetixEscrow';
+
+describe(`src/contracts/${contract}`, () => {
   Object.entries(SUPPORTED_NETWORKS).forEach(([networkId, network]) => {
     let snxjs;
-    beforeEach(() => {
+    beforeAll(() => {
       snxjs = new SynthetixJs({ networkId });
     });
 
@@ -19,7 +21,7 @@ describe('src/contracts/SynthetixEscrow', () => {
           networkId,
           '0x0123456789012345678901234567890123456789012345678901234567890123'
         );
-        const balance = await snxjs.SynthetixEscrow.balanceOf(signer.getAddress());
+        const balance = await snxjs[contract].balanceOf(signer.getAddress());
         await expect(balance.toString()).toEqual('0');
       },
       15000

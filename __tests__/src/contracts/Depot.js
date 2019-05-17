@@ -4,16 +4,19 @@ import * as snx from 'synthetix';
 
 const { SUPPORTED_NETWORKS } = ContractSettings;
 
-describe('src/contracts/Depot', () => {
+const contract = 'Depot';
+
+describe(`src/contracts/${contract}`, () => {
   Object.entries(SUPPORTED_NETWORKS).forEach(([networkId, network]) => {
     let snxjs;
-    beforeEach(() => {
+    beforeAll(() => {
       snxjs = new SynthetixJs({ networkId });
     });
+
     test(
       `${network} Should return synthetixsReceivedForEther for 1 ETH`,
       async () => {
-        const synthetixReceivedForEther = await snxjs.Depot.synthetixReceivedForEther(
+        const synthetixReceivedForEther = await snxjs[contract].synthetixReceivedForEther(
           snxjs.utils.parseEther('1')
         );
         expect(snxjs.utils.formatEther(synthetixReceivedForEther)).not.toBeNaN();
@@ -26,7 +29,7 @@ describe('src/contracts/Depot', () => {
     testRunner(
       `${network} Should have correct Synthetix address`,
       async () => {
-        const synthetix = await snxjs.Depot.synthetix();
+        const synthetix = await snxjs[contract].synthetix();
         const expectedAddress = snx.getTarget({ network, contract: 'Synthetix' }).address;
 
         expect(synthetix).toEqual(expectedAddress);

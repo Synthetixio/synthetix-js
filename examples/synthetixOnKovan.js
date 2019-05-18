@@ -5,11 +5,7 @@ const { SynthetixJs } = require('../dist/main.node.js');
 const { getDefaultProvider, Wallet } = require('ethers');
 const wallet = Wallet.createRandom();
 const snxjs = new SynthetixJs({
-  signer: new SynthetixJs.signers.PrivateKey(
-    getDefaultProvider('kovan'),
-    undefined,
-    wallet.privateKey
-  ),
+  signer: new SynthetixJs.signers.PrivateKey(getDefaultProvider('kovan'), 42, wallet.privateKey),
   networkId: 42, // kovan
 });
 

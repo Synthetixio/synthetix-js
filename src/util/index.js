@@ -56,6 +56,39 @@ class Util {
   }
 
   /**
+   * converts a string to a bytes4 array (right padding for Solidity)
+   * @param text {String}
+   */
+  toUtf8Bytes4(text) {
+    return this.strToBytes(text, 4);
+  }
+
+  /**
+   * converts a string to a bytes4 array (right padding for Solidity)
+   * @param text {String}
+   */
+  toUtf8Bytes32(text) {
+    return this.strToBytes(text, 32);
+  }
+
+  /**
+   * converts a string to a bytesN array (right padding for Solidity).
+   * @param text {String}
+   * @param length {Number}
+   */
+  strToBytes(text, length = text.length) {
+    if (text.length > length) {
+      throw new Error(`Cannot convert String of ${text.length} to bytes${length} (it's too big)`);
+    }
+    // extrapolated from https://github.com/ethers-io/ethers.js/issues/66#issuecomment-344347642
+    let result = utils.hexlify(utils.toUtf8Bytes(text));
+    while (result.length < 2 + length * 2) {
+      result += '0';
+    }
+    return utils.arrayify(result);
+  }
+
+  /**
    * Manually sign any transaction with custom signer
    * @param transaction
    * @param fromAddress

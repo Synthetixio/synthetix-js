@@ -344,4 +344,12 @@ const generateFunctionStr = (abiFn, source) => {
 `;
 };
 
-generate();
+module.exports = {
+  contracts,
+  generate,
+};
+
+// run if called by node directly
+if (require.main === module) {
+  generate();
+}

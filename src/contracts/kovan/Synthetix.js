@@ -73,6 +73,17 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _feePool {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFeePool = async (_feePool, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFeePool(_feePool, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -217,6 +228,18 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param _exchangeRates {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeRates = async (_exchangeRates, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeRates(_exchangeRates, txParams);
+  };
+
+  /**
    * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
@@ -314,14 +337,6 @@ function Synthetix(contractSettings) {
   this.setProxy = async (_proxy, txParams) => {
     txParams = txParams || {};
     return await this.contract.setProxy(_proxy, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.minterReward = async () => {
-    return await this.contract.minterReward();
   };
 
   /**

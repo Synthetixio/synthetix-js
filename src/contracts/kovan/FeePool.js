@@ -47,6 +47,18 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param claimingForAddress {String<EthAddress>}
+   * @param currencyKey {bytes4}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.claimOnBehalf = async (claimingForAddress, currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.claimOnBehalf(claimingForAddress, currencyKey, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
@@ -157,6 +169,25 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.approveClaimOnBehalf = async (account, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.approveClaimOnBehalf(account, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.feePoolEternalStorage = async () => {
+    return await this.contract.feePoolEternalStorage();
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -176,6 +207,25 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _delegates {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setDelegateApprovals = async (_delegates, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setDelegateApprovals(_delegates, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.delegates = async () => {
+    return await this.contract.delegates();
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
    * @returns BigNumber
@@ -185,11 +235,14 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
-  this.nextFeePeriodId = async () => {
-    return await this.contract.nextFeePeriodId();
+  this.removeClaimOnBehalf = async (account, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeClaimOnBehalf(account, txParams);
   };
 
   /**
@@ -253,15 +306,6 @@ function FeePool(contractSettings) {
   this.setFeeAuthority = async (_feeAuthority, txParams) => {
     txParams = txParams || {};
     return await this.contract.setFeeAuthority(_feeAuthority, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.lastFeeWithdrawal = async address_1 => {
-    return await this.contract.lastFeeWithdrawal(address_1);
   };
 
   /**

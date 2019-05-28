@@ -27,15 +27,6 @@ function SynthetixState(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param to {String<EthAddress>}
-   * @returns bytes4
-   **/
-  this.getPreferredCurrency = async to => {
-    return await this.contract.getPreferredCurrency(to);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns BigNumber
    **/
@@ -70,15 +61,6 @@ function SynthetixState(contractSettings) {
   this.incrementTotalIssuerCount = async txParams => {
     txParams = txParams || {};
     return await this.contract.incrementTotalIssuerCount(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param from {String<EthAddress>}
-   * @returns Object
-   **/
-  this.getIssuanceData = async from => {
-    return await this.contract.getIssuanceData(from);
   };
 
   /**
@@ -129,15 +111,6 @@ function SynthetixState(contractSettings) {
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param index {BigNumber}
-   * @returns BigNumber
-   **/
-  this.getDebtLedgerAt = async index => {
-    return await this.contract.getDebtLedgerAt(index);
   };
 
   /**
@@ -243,14 +216,6 @@ function SynthetixState(contractSettings) {
   this.decrementTotalIssuerCount = async txParams => {
     txParams = txParams || {};
     return await this.contract.decrementTotalIssuerCount(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.getIssuanceRatio = async () => {
-    return await this.contract.getIssuanceRatio();
   };
 
   /**

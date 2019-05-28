@@ -73,6 +73,17 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _feePool {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFeePool = async (_feePool, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFeePool(_feePool, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -214,6 +225,18 @@ function Synthetix(contractSettings) {
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param _exchangeRates {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeRates = async (_exchangeRates, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeRates(_exchangeRates, txParams);
   };
 
   /**

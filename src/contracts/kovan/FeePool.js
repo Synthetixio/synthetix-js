@@ -38,6 +38,15 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param _claimingAddress {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.getLastFeeWithdrawal = async _claimingAddress => {
+    return await this.contract.getLastFeeWithdrawal(_claimingAddress);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param period {BigNumber}
    * @returns BigNumber

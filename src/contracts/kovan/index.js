@@ -22,9 +22,15 @@ import sXAG from './sXAG';
 import sBTC from './sBTC';
 import sETH from './sETH';
 import sBNB from './sBNB';
+import sMKR from './sMKR';
+import sTRX from './sTRX';
+import sXTZ from './sXTZ';
 import iBTC from './iBTC';
 import iETH from './iETH';
 import iBNB from './iBNB';
+import iMKR from './iMKR';
+import iTRX from './iTRX';
+import iXTZ from './iXTZ';
 
 export default {
   Depot,
@@ -51,7 +57,13 @@ export default {
   sBTC,
   sETH,
   sBNB,
+  sMKR,
+  sTRX,
+  sXTZ,
   iBTC,
   iETH,
   iBNB,
+  iMKR,
+  iTRX,
+  iXTZ,
 };

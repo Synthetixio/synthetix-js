@@ -124,6 +124,17 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _percent {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setTargetThreshold = async (_percent, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setTargetThreshold(_percent, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -144,7 +155,7 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns uint256[2][6]
+   * @returns uint256[2][3]
    **/
   this.feesByPeriod = async account => {
     return await this.contract.feesByPeriod(account);
@@ -213,6 +224,15 @@ function FeePool(contractSettings) {
   this.setExchangeFeeRate = async (_exchangeFeeRate, txParams) => {
     txParams = txParams || {};
     return await this.contract.setExchangeFeeRate(_exchangeFeeRate, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.feesClaimable = async account => {
+    return await this.contract.feesClaimable(account);
   };
 
   /**
@@ -375,6 +395,22 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.TARGET_THRESHOLD = async () => {
+    return await this.contract.TARGET_THRESHOLD();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.getPenaltyThresholdRatio = async () => {
+    return await this.contract.getPenaltyThresholdRatio();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param feePeriodIndex {BigNumber}
    * @param feePeriodId {BigNumber}
@@ -496,15 +532,6 @@ function FeePool(contractSettings) {
   this.claimFees = async (currencyKey, txParams) => {
     txParams = txParams || {};
     return await this.contract.claimFees(currencyKey, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.currentPenalty = async account => {
-    return await this.contract.currentPenalty(account);
   };
 
   /**

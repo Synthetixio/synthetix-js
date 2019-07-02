@@ -12,7 +12,6 @@ import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sUSD from './sUSD';
 import sAUD from './sAUD';
-import sKRW from './sKRW';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
 import sCNY from './sCNY';
@@ -47,7 +46,6 @@ export default {
   sJPY,
   sUSD,
   sAUD,
-  sKRW,
   sGBP,
   sCHF,
   sCNY,

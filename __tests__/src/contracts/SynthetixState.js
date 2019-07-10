@@ -13,10 +13,10 @@ describe(`src/contracts/${contract}`, () => {
     });
 
     test(
-      `${network} Should return target issuance ratio (20)`,
+      `${network} Should return target issuance ratio (0.133333333333333333)`,
       async () => {
         const issuanceRatio = await snxjs[contract].issuanceRatio();
-        return expect(snxjs.utils.formatEther(issuanceRatio)).toEqual('0.2');
+        return expect(snxjs.utils.formatEther(issuanceRatio)).toEqual('0.133333333333333333');
       },
       15000
     );

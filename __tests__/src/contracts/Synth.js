@@ -40,9 +40,7 @@ describe(`src/contracts/${contract}`, () => {
           15000
         );
 
-        // skip ropsten for now as it isn't configured properly
-        const testRunner = network === 'ropsten' ? test.skip : test;
-        testRunner(
+        test(
           `${network} Should have correct Synthetix address`,
           async () => {
             const synthetix = await snxjs[synth].synthetix();

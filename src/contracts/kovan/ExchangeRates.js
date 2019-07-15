@@ -121,6 +121,14 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.priceUpdateLock = async () => {
+    return await this.contract.priceUpdateLock();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {
@@ -134,6 +142,17 @@ function ExchangeRates(contractSettings) {
    **/
   this.ratesForCurrencies = async currencyKeys => {
     return await this.contract.ratesForCurrencies(currencyKeys);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _priceUpdateLock {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setPriceUpdateLock = async (_priceUpdateLock, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setPriceUpdateLock(_priceUpdateLock, txParams);
   };
 
   /**

@@ -259,6 +259,14 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes4[]
+   **/
+  this.availableCurrencyKeys = async () => {
+    return await this.contract.availableCurrencyKeys();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -318,6 +326,17 @@ function Synthetix(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _exchangeEnabled {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeEnabled = async (_exchangeEnabled, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeEnabled(_exchangeEnabled, txParams);
   };
 
   /**
@@ -577,6 +596,17 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _protectionCircuitIsActivated {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setProtectionCircuit = async (_protectionCircuitIsActivated, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setProtectionCircuit(_protectionCircuitIsActivated, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -625,6 +655,14 @@ function Synthetix(contractSettings) {
    **/
   this.proxy = async () => {
     return await this.contract.proxy();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.exchangeEnabled = async () => {
+    return await this.contract.exchangeEnabled();
   };
 }
 

@@ -14,8 +14,6 @@ import sUSD from './sUSD';
 import sAUD from './sAUD';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
-import sCNY from './sCNY';
-import sINR from './sINR';
 import sXAU from './sXAU';
 import sXAG from './sXAG';
 import sBTC from './sBTC';
@@ -48,8 +46,6 @@ export default {
   sAUD,
   sGBP,
   sCHF,
-  sCNY,
-  sINR,
   sXAU,
   sXAG,
   sBTC,

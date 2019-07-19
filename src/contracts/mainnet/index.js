@@ -15,8 +15,6 @@ import sAUD from './sAUD';
 import sKRW from './sKRW';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
-import sCNY from './sCNY';
-import sINR from './sINR';
 import sXAU from './sXAU';
 import sXAG from './sXAG';
 import sBTC from './sBTC';
@@ -28,6 +26,9 @@ import sXTZ from './sXTZ';
 import iBTC from './iBTC';
 import iETH from './iETH';
 import iBNB from './iBNB';
+import iMKR from './iMKR';
+import iTRX from './iTRX';
+import iXTZ from './iXTZ';
 
 export default {
   Depot,
@@ -47,8 +48,6 @@ export default {
   sKRW,
   sGBP,
   sCHF,
-  sCNY,
-  sINR,
   sXAU,
   sXAG,
   sBTC,
@@ -60,4 +59,7 @@ export default {
   iBTC,
   iETH,
   iBNB,
+  iMKR,
+  iTRX,
+  iXTZ,
 };

@@ -22,6 +22,7 @@ import sBNB from './sBNB';
 import sMKR from './sMKR';
 import sTRX from './sTRX';
 import sXTZ from './sXTZ';
+import sCEX from './sCEX';
 import iBTC from './iBTC';
 import iETH from './iETH';
 import iBNB from './iBNB';
@@ -54,6 +55,7 @@ export default {
   sMKR,
   sTRX,
   sXTZ,
+  sCEX,
   iBTC,
   iETH,
   iBNB,

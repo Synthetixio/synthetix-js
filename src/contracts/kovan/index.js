@@ -29,6 +29,7 @@ import iBNB from './iBNB';
 import iMKR from './iMKR';
 import iTRX from './iTRX';
 import iXTZ from './iXTZ';
+import iCEX from './iCEX';
 
 export default {
   Depot,
@@ -62,4 +63,5 @@ export default {
   iMKR,
   iTRX,
   iXTZ,
+  iCEX,
 };

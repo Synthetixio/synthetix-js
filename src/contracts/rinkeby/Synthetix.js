@@ -164,6 +164,14 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.rewardsDistribution = async () => {
+    return await this.contract.rewardsDistribution();
+  };
+
+  /**
    * Total amount of synths issued by the system, priced in currencyKey.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}
@@ -236,18 +244,6 @@ function Synthetix(contractSettings) {
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Only callable by the contract owner., Set the ExchangeRates contract address where rates are held.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeRates {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setExchangeRates = async (_exchangeRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeRates(_exchangeRates, txParams);
   };
 
   /**

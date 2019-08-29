@@ -164,6 +164,14 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.rewardsDistribution = async () => {
+    return await this.contract.rewardsDistribution();
+  };
+
+  /**
    * Total amount of synths issued by the system, priced in currencyKey.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes4}

@@ -377,7 +377,7 @@ function Synth(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes4
+   * @returns bytes32
    **/
   this.currencyKey = async () => {
     return await this.contract.currencyKey();

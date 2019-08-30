@@ -4,7 +4,7 @@ import { getDefaultProvider } from 'ethers';
 
 const { SUPPORTED_NETWORKS } = ContractSettings;
 
-const sUSD = SynthetixJs.utils.toUtf8Bytes('sUSD');
+let sUSD = SynthetixJs.utils.toUtf8Bytes('sUSD');
 const contract = 'Synthetix';
 
 describe(`src/contracts/${contract}`, () => {
@@ -20,6 +20,9 @@ describe(`src/contracts/${contract}`, () => {
     });
 
     test(`${network} Should throw Missing signer error`, async () => {
+      if (network === 'kovan') {
+        sUSD = SynthetixJs.utils.formatBytes32String('sUSD');
+      }
       await expect(snxjs[contract].issueSynths(sUSD, 10)).rejects.toThrow(
         'sending a transaction require a signer'
       );

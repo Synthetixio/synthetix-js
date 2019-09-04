@@ -25,6 +25,7 @@ class Util {
     this.getLatestConversions = this.getLatestConversions.bind(this);
     this.getGasAndSpeedInfo = this.getGasAndSpeedInfo.bind(this);
     this.waitForTransaction = this.waitForTransaction.bind(this);
+    this.getTransactionReceipt = this.getTransactionReceipt.bind(this);
     this.getGasEstimate = this.getGasEstimate.bind(this);
   }
 
@@ -185,7 +186,7 @@ class Util {
     if (typeof transactionHash !== 'string') {
       throw new Error('transactionHash must be a string');
     }
-    return await this.contractSettings.provider.getTransaction(transactionHash);
+    return await this.contractSettings.provider.getTransactionReceipt(transactionHash);
   }
 
   /**
@@ -222,14 +223,18 @@ class Util {
     return new Promise(resolve => {
       const check = async () => {
         const transactionInformation = await this.getTransactionInformation(transactionHash);
-        if (transactionInformation && transactionInformation.blockHash) {
-          resolve(true);
+        if (transactionInformation) {
+          resolve(transactionInformation);
         } else {
           setTimeout(check, 1000);
         }
       };
       check();
     });
+  }
+
+  async getTransactionReceipt(transactionHash) {
+    return await this.contractSettings.provider.getTransactionReceipt(transactionHash);
   }
 
   async getEtherPrice() {

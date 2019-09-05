@@ -6,6 +6,18 @@ const { Interface } = utils;
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
 
+const strToBytes = (text, length = text.length) => {
+  if (text.length > length) {
+    throw new Error(`Cannot convert String of ${text.length} to bytes${length} (it's too big)`);
+  }
+  // extrapolated from https://github.com/ethers-io/ethers.js/issues/66#issuecomment-344347642
+  let result = utils.hexlify(utils.toUtf8Bytes(text));
+  while (result.length < 2 + length * 2) {
+    result += '0';
+  }
+  return utils.arrayify(result);
+};
+
 class Util {
   /**
    * set of helper functions
@@ -60,7 +72,7 @@ class Util {
    * @param text {String}
    */
   toUtf8Bytes4(text) {
-    return this.strToBytes(text, 4);
+    return strToBytes(text, 4);
   }
 
   /**
@@ -68,7 +80,7 @@ class Util {
    * @param text {String}
    */
   toUtf8Bytes32(text) {
-    return this.strToBytes(text, 32);
+    return strToBytes(text, 32);
   }
 
   /**
@@ -77,15 +89,7 @@ class Util {
    * @param length {Number}
    */
   strToBytes(text, length = text.length) {
-    if (text.length > length) {
-      throw new Error(`Cannot convert String of ${text.length} to bytes${length} (it's too big)`);
-    }
-    // extrapolated from https://github.com/ethers-io/ethers.js/issues/66#issuecomment-344347642
-    let result = utils.hexlify(utils.toUtf8Bytes(text));
-    while (result.length < 2 + length * 2) {
-      result += '0';
-    }
-    return utils.arrayify(result);
+    return strToBytes(text, length);
   }
 
   /**

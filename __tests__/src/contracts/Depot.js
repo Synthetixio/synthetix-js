@@ -24,7 +24,7 @@ describe(`src/contracts/${contract}`, () => {
       15000
     );
 
-    test(
+    test.skip(
       `${network} Should have correct Synthetix address`,
       async () => {
         const synthetix = await snxjs[contract].synthetix();

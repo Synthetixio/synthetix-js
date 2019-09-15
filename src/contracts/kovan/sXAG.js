@@ -377,7 +377,7 @@ function sXAG(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32
+   * @returns bytes4
    **/
   this.currencyKey = async () => {
     return await this.contract.currencyKey();

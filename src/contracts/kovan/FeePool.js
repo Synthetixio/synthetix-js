@@ -56,11 +56,33 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param claimingForAddress {String<EthAddress>}
+   * @param currencyKey {bytes4}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.claimOnBehalf = async (claimingForAddress, currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.claimOnBehalf(claimingForAddress, currencyKey, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.exchangeFeeRate = async () => {
     return await this.contract.exchangeFeeRate();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param currencyKey {bytes4}
+   * @returns Object
+   **/
+  this.feesAvailable = async (account, currencyKey) => {
+    return await this.contract.feesAvailable(account, currencyKey);
   };
 
   /**
@@ -192,17 +214,6 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.claimFees = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.claimFees(currencyKey, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -258,15 +269,12 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param claimingForAddress {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-   * @returns boolean
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes4}
+   * @returns BigNumber
    **/
-  this.claimOnBehalf = async (claimingForAddress, currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.claimOnBehalf(claimingForAddress, currencyKey, txParams);
+  this.totalFeesAvailable = async currencyKey => {
+    return await this.contract.totalFeesAvailable(currencyKey);
   };
 
   /**
@@ -352,16 +360,6 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @returns Object
-   **/
-  this.feesAvailable = async (account, currencyKey) => {
-    return await this.contract.feesAvailable(account, currencyKey);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -380,6 +378,18 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes4}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.feePaid = async (currencyKey, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.feePaid(currencyKey, amount, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -393,18 +403,6 @@ function FeePool(contractSettings) {
    **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.feePaid = async (currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.feePaid(currencyKey, amount, txParams);
   };
 
   /**
@@ -549,6 +547,17 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes4}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.claimFees = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.claimFees(currencyKey, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns Number
    **/
@@ -604,15 +613,6 @@ function FeePool(contractSettings) {
    **/
   this.feePoolState = async () => {
     return await this.contract.feePoolState();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.totalFeesAvailable = async currencyKey => {
-    return await this.contract.totalFeesAvailable(currencyKey);
   };
 
   /**

@@ -19,7 +19,7 @@ describe(`src/contracts/${contract}`, () => {
       return expect(snxjs.utils.formatEther(totalSupply)).not.toBeNaN();
     });
 
-    test(`${network} Should throw Missing signer error`, async () => {
+    test.skip(`${network} Should throw Missing signer error`, async () => {
       if (network === 'kovan') {
         sUSD = SynthetixJs.utils.formatBytes32String('sUSD');
       }

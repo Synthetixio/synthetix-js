@@ -1,6 +1,6 @@
 {
   "name": "synthetix-js",
-  "version": "2.9.2",
+  "version": "2.10.2-beta",
   "description": "Synthetix JS Library - access Synthetix smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",
@@ -27,7 +27,7 @@
     "ethereumjs-util": "5.2.0",
     "ethers": "4.0.27",
     "lodash": "4.17.15",
-    "synthetix": "2.9.2",
+    "synthetix": "2.10.2-beta",
     "trezor-connect": "7.0.3"
   },
   "devDependencies": {

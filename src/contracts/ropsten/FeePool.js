@@ -125,6 +125,16 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.recoverTransferFees = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.recoverTransferFees(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _percent {BigNumber}
    * @param txParams {TxParams}
   

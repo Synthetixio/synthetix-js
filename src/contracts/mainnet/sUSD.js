@@ -74,17 +74,6 @@ function sUSD(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _feePool {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setFeePool = async (_feePool, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePool(_feePool, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _beneficiary {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -127,20 +116,6 @@ function sUSD(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFromSenderPaysFee = async (from, to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFromSenderPaysFee(from, to, value, data, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -155,14 +130,6 @@ function sUSD(contractSettings) {
    **/
   this.balanceOf = async account => {
     return await this.contract.balanceOf(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.synthetix = async () => {
-    return await this.contract.synthetix();
   };
 
   /**
@@ -193,6 +160,17 @@ function sUSD(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _synthetixProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSynthetixProxy = async (_synthetixProxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSynthetixProxy(_synthetixProxy, txParams);
   };
 
   /**
@@ -293,27 +271,6 @@ function sUSD(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.feePool = async () => {
-    return await this.contract.feePool();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferSenderPaysFee = async (to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferSenderPaysFee(to, value, data, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.selfDestructInitiated = async () => {
@@ -342,6 +299,14 @@ function sUSD(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.synthetixProxy = async () => {
+    return await this.contract.synthetixProxy();
+  };
+
+  /**
    * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
@@ -364,20 +329,27 @@ function sUSD(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.transferSenderPaysFee = async (to, value, txParams) => {
+  this.feePoolProxy = async () => {
+    return await this.contract.feePoolProxy();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _feePoolProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFeePoolProxy = async (_feePoolProxy, txParams) => {
     txParams = txParams || {};
-    return await this.contract.transferSenderPaysFee(to, value, txParams);
+    return await this.contract.setFeePoolProxy(_feePoolProxy, txParams);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes4
+   * @returns bytes32
    **/
   this.currencyKey = async () => {
     return await this.contract.currencyKey();
@@ -391,19 +363,6 @@ function sUSD(contractSettings) {
    **/
   this.allowance = async (owner, spender) => {
     return await this.contract.allowance(owner, spender);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFromSenderPaysFee = async (from, to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFromSenderPaysFee(from, to, value, txParams);
   };
 
   /**
@@ -444,17 +403,6 @@ function sUSD(contractSettings) {
   this.setTotalSupply = async (amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.setTotalSupply(amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetix {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetix = async (_synthetix, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetix(_synthetix, txParams);
   };
 }
 

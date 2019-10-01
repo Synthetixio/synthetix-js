@@ -336,8 +336,17 @@ const generateFunctionStr = (abiFn, source) => {
   }
   const paramsStr = getFnParams(params);
   const jsdoc = generateJsdoc(abiFn, params, source);
+
+  // Fix to avoid having transfer(address to, uint value, bytes data) to replace  transfer(address to, uint value)
+  // In Synthetix contract only. Will generate two functions:
+  // Transfer() and TransferWithData()
+  const functionName =
+    source === 'Synthetix' && abiFn.name === 'transfer' && paramsStr.includes('data')
+      ? 'transferWithData'
+      : abiFn.name;
+
   return `${jsdoc}
-  this.${abiFn.name} = async (${paramsStr}) => {
+  this.${functionName} = async (${paramsStr}) => {
     ${!abiFn.constant ? 'txParams = txParams || {};' : ''}
     return await this.contract.${abiFn.name}(${paramsStr});
   };

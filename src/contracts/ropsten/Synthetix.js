@@ -546,7 +546,7 @@ function Synthetix(contractSettings) {
    * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.transferWithData = async (to, value, data, txParams) => {
+  this.transfer = async (to, value, data, txParams) => {
     txParams = txParams || {};
     return await this.contract.transfer(to, value, data, txParams);
   };

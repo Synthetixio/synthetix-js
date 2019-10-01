@@ -13,14 +13,10 @@ describe(`src/contracts/${contract}`, () => {
       snxjs = new SynthetixJs({ networkId });
     });
 
-    test(
-      `${network} must return escrow contract address`,
-      async () => {
-        const escrowAddress = await snxjs[contract].synthetix_escrow();
-        const expectedAddress = snx.getTarget({ network, contract: 'SynthetixEscrow' }).address;
-        expect(escrowAddress).toEqual(expectedAddress);
-      },
-      15000
-    );
+    test(`${network} must return escrow contract address`, async () => {
+      const escrowAddress = await snxjs[contract].synthetix_escrow();
+      const expectedAddress = snx.getTarget({ network, contract: 'SynthetixEscrow' }).address;
+      expect(escrowAddress).toEqual(expectedAddress);
+    });
   });
 });

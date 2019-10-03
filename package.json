@@ -15,7 +15,7 @@
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
     "webpack": "webpack --mode=production",
-    "build": "npm run clear && npm run abitojs && npm run format && npm run docs && npm run webpack && npm run test"
+    "build": "npm run clear && npm run abitojs && npm run format && npm run docs && npm run webpack"
   },
   "author": "Synthetix",
   "license": "MIT",
@@ -28,7 +28,8 @@
     "ethers": "4.0.27",
     "lodash": "4.17.15",
     "synthetix": "2.10.5",
-    "trezor-connect": "7.0.3"
+    "trezor-connect": "7.0.3",
+    "walletlink": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "~7.0.0",

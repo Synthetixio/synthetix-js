@@ -4,6 +4,7 @@ import SynthetixJsBase from './SynthetixJsBase';
 import Trezor from '../lib/signers/trezorSigner';
 import Metamask from '../lib/signers/metamaskSigner';
 import Ledger from '../lib/signers/ledgerSigner';
+import Coinbase from '../lib/signers/coinbaseSigner';
 import PrivateKey from '../lib/signers/privateKeySigner';
 
 const signers = {
@@ -11,6 +12,7 @@ const signers = {
   Ledger,
   Metamask,
   PrivateKey,
+  Coinbase,
 };
 
 export class SynthetixJs extends SynthetixJsBase {

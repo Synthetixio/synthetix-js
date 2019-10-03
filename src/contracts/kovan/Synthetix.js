@@ -24,17 +24,6 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _gasPriceLimit {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setGasPriceLimit = async (_gasPriceLimit, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setGasPriceLimit(_gasPriceLimit, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param spender {String<EthAddress>}
    * @param value {BigNumber}
    * @param txParams {TxParams}
@@ -272,15 +261,6 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _givenGasPrice {BigNumber}
-  
-   **/
-  this.validateGasPrice = async _givenGasPrice => {
-    return await this.contract.validateGasPrice(_givenGasPrice);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
@@ -373,14 +353,6 @@ function Synthetix(contractSettings) {
    **/
   this.symbol = async () => {
     return await this.contract.symbol();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.gasPriceLimit = async () => {
-    return await this.contract.gasPriceLimit();
   };
 
   /**

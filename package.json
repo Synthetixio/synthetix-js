@@ -15,7 +15,7 @@
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
     "webpack": "webpack --mode=production",
-    "build": "npm run clear && npm run abitojs && npm run format && npm run docs && npm run webpack"
+    "build": "npm run clear && npm run abitojs && npm run format && npm run docs && npm run webpack && npm test"
   },
   "author": "Synthetix",
   "license": "MIT",

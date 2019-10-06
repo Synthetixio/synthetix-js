@@ -168,7 +168,7 @@ const generate = () => {
         // now only for source contracts in the original contract object
         if (contractName in contracts) {
           // write out ABI files (using ABIs from mainnet deploy)
-          writeABIFile(network, contractName, abi);
+          writeABIFileAsJS(network, contractName, abi);
           abiNetworkIndexFileHeader.push(importStringForIndexFile);
 
           // and track it
@@ -191,6 +191,9 @@ const generate = () => {
       sourcesInNetwork,
       path.join(__dirname, '..', 'lib', 'abis', network, `index.js`)
     );
+
+    // write all ABIs files out for reference
+    writeAllABIFiles(network);
   });
 
   writeIndexFile(
@@ -226,7 +229,7 @@ export default {
 };
 
 const abiCache = {};
-const writeABIFile = (network, contractName, abi) => {
+const writeABIFileAsJS = (network, contractName, abi) => {
   const folder = path.join(__dirname, '..', 'lib', 'abis', network);
   if (!fs.existsSync(folder)) {
     fs.mkdirSync(folder);
@@ -249,6 +252,25 @@ const writeABIFile = (network, contractName, abi) => {
       console.log(`ABI ${contractName}.js on ${network} successfully generated locally.`);
     }
   });
+};
+
+const writeAllABIFiles = network => {
+  const folder = path.join(__dirname, '..', 'lib', 'abis', network);
+  if (!fs.existsSync(folder)) {
+    fs.mkdirSync(folder);
+  }
+  const sources = snx.getSource({ network });
+
+  for (const [source, { abi }] of Object.entries(sources)) {
+    const abiPath = path.join(folder, `${source}.json`);
+    fs.writeFile(abiPath, JSON.stringify(abi, null, '\t') + '\n', err => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`ABI ${source}.son on ${network} successfully generated locally.`);
+      }
+    });
+  }
 };
 
 const generateJSFile = (contractName, network, target, functions, source) => {

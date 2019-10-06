@@ -1,0 +1,477 @@
+[
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_FIVE",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x07abcd9a"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_timeDiff",
+				"type": "uint256"
+			}
+		],
+		"name": "_numWeeksRoundedDown",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x11b92f80"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "nominateNewOwner",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x1627540c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_SEVEN",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x35ecdf1f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "START_DATE",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x372c6533"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_FOUR",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x3dbf6ea2"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "isMintable",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x46b45af7"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "updateMintValues",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x49e70159"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinterReward",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x4ae26521"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "nominatedOwner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "synthetix",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x759b5225"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "INFLATION_SCHEDULES_LENGTH",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7838096d"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "acceptOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x79ba5097"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCurrentSchedule",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8a1a5f3f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8da5cb5b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "mintPeriodDuration",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8f3a7a49"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "minterReward",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9bdd7ac7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_TWO",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb8da6bd5"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "schedules",
+		"outputs": [
+			{
+				"name": "totalSupply",
+				"type": "uint256"
+			},
+			{
+				"name": "startPeriod",
+				"type": "uint256"
+			},
+			{
+				"name": "endPeriod",
+				"type": "uint256"
+			},
+			{
+				"name": "totalSupplyMinted",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbdc6d9ab"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "lastMintEvent",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbe801f01"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_THREE",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbfd7277f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "mintableSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xcc5c095c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_SIX",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xcdf3c270"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "YEAR_ONE",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe4cde889"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_synthetix",
+				"type": "address"
+			}
+		],
+		"name": "setSynthetix",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xfec9f9da"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "previousPeriodAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "currentAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"name": "schedule",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"name": "SupplyMinted",
+		"type": "event",
+		"signature": "0x601e517d4811033fed8290c79b7823ce1ab70258da45400fe2391a3c7432edab"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "newRewardAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "MinterRewardUpdated",
+		"type": "event",
+		"signature": "0x036e0c635f8b7d9314bb6f2a577046108ef0f8b5e3869fbd29fd5a448ed99d30"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnerNominated",
+		"type": "event",
+		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "oldOwner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnerChanged",
+		"type": "event",
+		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
+	}
+]

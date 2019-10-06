@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/mainnet/Synth';
+import abi from '../../../lib/abis/mainnet/PurgeableSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -84,7 +84,6 @@ function iMKR(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -119,8 +118,27 @@ function iMKR(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
+  this.exchangeRates = async () => {
+    return await this.contract.exchangeRates();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _exchangeRates {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeRates = async (_exchangeRates, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeRates(_exchangeRates, txParams);
   };
 
   /**
@@ -140,6 +158,14 @@ function iMKR(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.maxSupplyToPurgeInUSD = async () => {
+    return await this.contract.maxSupplyToPurgeInUSD();
   };
 
   /**
@@ -242,7 +268,6 @@ function iMKR(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -255,7 +280,17 @@ function iMKR(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param addresses {address[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.purge = async (addresses, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.purge(addresses, txParams);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -307,7 +342,6 @@ function iMKR(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}

@@ -132,8 +132,8 @@ const generate = () => {
 
   Object.values(SUPPORTED_NETWORKS).map(network => {
     // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
-    const synthContracts = snx.getSynths({ network }).reduce((memo, { name }) => {
-      memo[name] = { target: `Proxy${name}`, source: 'Synth' };
+    const synthContracts = snx.getSynths({ network }).reduce((memo, { name, subclass }) => {
+      memo[name] = { target: `Proxy${name}`, source: subclass || 'Synth' };
       return memo;
     }, {});
 

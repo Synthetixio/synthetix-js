@@ -40,12 +40,12 @@ describe(`src/contracts/${contract}`, () => {
           15000
         );
 
-        test.skip(
-          `${network} Should have correct Synthetix address`,
+        test(
+          `${network} Should have correct Synthetix Proxy address`,
           async () => {
-            const synthetix = await snxjs[synth].synthetix();
-            const expectedAddress = snx.getTarget({ network, contract: 'Synthetix' }).address;
-            expect(synthetix).toEqual(expectedAddress);
+            const synthetixProxy = await snxjs[synth].synthetixProxy();
+            const expectedAddress = snx.getTarget({ network, contract: 'ProxySynthetix' }).address;
+            expect(synthetixProxy).toEqual(expectedAddress);
           },
           15000
         );

@@ -213,6 +213,21 @@
 		"constant": false,
 		"inputs": [
 			{
+				"name": "_gasLimitOracle",
+				"type": "address"
+			}
+		],
+		"name": "setGasLimitOracle",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x1c8aa5fa"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"name": "_beneficiary",
 				"type": "address"
 			}
@@ -1000,6 +1015,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "messageSender",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd67bdd25"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "synthetixState",
 		"outputs": [
 			{
@@ -1146,6 +1176,21 @@
 		"signature": "0xf5343752"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "gasLimitOracle",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfe7f7bc3"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_proxy",
@@ -1194,7 +1239,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

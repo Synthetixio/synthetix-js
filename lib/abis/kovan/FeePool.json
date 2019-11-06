@@ -654,21 +654,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "TARGET_THRESHOLD",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa6d5bb14"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "getPenaltyThresholdRatio",
 		"outputs": [
 			{
@@ -886,6 +871,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "messageSender",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd67bdd25"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "synthetixState",
 		"outputs": [
 			{
@@ -917,6 +917,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe05bac82"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "targetThreshold",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe0e6393d"
 	},
 	{
 		"constant": true,

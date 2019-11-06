@@ -534,6 +534,21 @@
 		"signature": "0xc9e9cc4d"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "messageSender",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd67bdd25"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{

@@ -130,7 +130,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "owner",
+				"name": "account",
 				"type": "address"
 			}
 		],

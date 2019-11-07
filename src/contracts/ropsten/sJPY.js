@@ -337,6 +337,14 @@ function sJPY(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.messageSender = async () => {
+    return await this.contract.messageSender();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _feePoolProxy {String<EthAddress>}
    * @param txParams {TxParams}

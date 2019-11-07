@@ -178,6 +178,30 @@
 		"signature": "0x19db2228"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "feeRateForExchange",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1a5c6095"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -1239,8 +1263,7 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,

@@ -130,6 +130,16 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param destinationCurrencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.feeRateForExchange = async (sourceCurrencyKey, destinationCurrencyKey) => {
+    return await this.contract.feeRateForExchange(sourceCurrencyKey, destinationCurrencyKey);
+  };
+
+  /**
    * Function that allows you to exchange synths you hold in one flavour for another.<br>
    * Transaction (consumes gas, requires signer)
    * @param sourceCurrencyKey {bytes32}

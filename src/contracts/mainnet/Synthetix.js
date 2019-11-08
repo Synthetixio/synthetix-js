@@ -130,6 +130,16 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param destinationCurrencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.feeRateForExchange = async (sourceCurrencyKey, destinationCurrencyKey) => {
+    return await this.contract.feeRateForExchange(sourceCurrencyKey, destinationCurrencyKey);
+  };
+
+  /**
    * Function that allows you to exchange synths you hold in one flavour for another.<br>
    * Transaction (consumes gas, requires signer)
    * @param sourceCurrencyKey {bytes32}
@@ -154,6 +164,17 @@ function Synthetix(contractSettings) {
       destinationAddress,
       txParams
     );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _gasLimitOracle {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setGasLimitOracle = async (_gasLimitOracle, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setGasLimitOracle(_gasLimitOracle, txParams);
   };
 
   /**
@@ -621,6 +642,14 @@ function Synthetix(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
+  this.messageSender = async () => {
+    return await this.contract.messageSender();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
   this.synthetixState = async () => {
     return await this.contract.synthetixState();
   };
@@ -699,6 +728,14 @@ function Synthetix(contractSettings) {
    **/
   this.exchangeEnabled = async () => {
     return await this.contract.exchangeEnabled();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.gasLimitOracle = async () => {
+    return await this.contract.gasLimitOracle();
   };
 }
 

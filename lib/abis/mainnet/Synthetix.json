@@ -178,6 +178,30 @@
 		"signature": "0x19db2228"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "feeRateForExchange",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1a5c6095"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -208,6 +232,21 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x1aa6adf7"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_gasLimitOracle",
+				"type": "address"
+			}
+		],
+		"name": "setGasLimitOracle",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x1c8aa5fa"
 	},
 	{
 		"constant": false,
@@ -1000,6 +1039,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "messageSender",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd67bdd25"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "synthetixState",
 		"outputs": [
 			{
@@ -1146,6 +1200,21 @@
 		"signature": "0xf5343752"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "gasLimitOracle",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfe7f7bc3"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_proxy",
@@ -1194,8 +1263,7 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,

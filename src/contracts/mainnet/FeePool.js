@@ -405,14 +405,6 @@ function FeePool(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.TARGET_THRESHOLD = async () => {
-    return await this.contract.TARGET_THRESHOLD();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
   this.getPenaltyThresholdRatio = async () => {
     return await this.contract.getPenaltyThresholdRatio();
   };
@@ -550,6 +542,14 @@ function FeePool(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
+  this.messageSender = async () => {
+    return await this.contract.messageSender();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
   this.synthetixState = async () => {
     return await this.contract.synthetixState();
   };
@@ -561,6 +561,14 @@ function FeePool(contractSettings) {
    **/
   this.amountReceivedFromExchange = async value => {
     return await this.contract.amountReceivedFromExchange(value);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.targetThreshold = async () => {
+    return await this.contract.targetThreshold();
   };
 
   /**

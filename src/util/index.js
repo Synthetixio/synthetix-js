@@ -76,7 +76,7 @@ class Util {
   }
 
   /**
-   * converts a string to a bytes4 array (right padding for Solidity)
+   * converts a string to a bytes32 array (right padding for Solidity)
    * @param text {String}
    */
   toUtf8Bytes32(text) {

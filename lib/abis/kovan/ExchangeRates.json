@@ -460,6 +460,30 @@
 		"signature": "0xb8225dec"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "ratesAndStaleForCurrencies",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbabcb423"
+	},
+	{
 		"constant": false,
 		"inputs": [],
 		"name": "initiateSelfDestruct",
@@ -551,7 +575,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "",
+				"name": "code",
 				"type": "bytes32"
 			}
 		],
@@ -571,7 +595,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "",
+				"name": "code",
 				"type": "bytes32"
 			}
 		],
@@ -635,7 +659,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

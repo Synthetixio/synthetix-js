@@ -508,6 +508,26 @@
 		"constant": true,
 		"inputs": [
 			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "reverseSynths",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x82fc0f02"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
 				"name": "issuer",
 				"type": "address"
 			},

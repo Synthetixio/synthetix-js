@@ -328,6 +328,15 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns bytes32
+   **/
+  this.reverseSynths = async address_1 => {
+    return await this.contract.reverseSynths(address_1);
+  };
+
+  /**
    * The remaining synths an issuer can issue against their total synthetix balance.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param issuer {String<EthAddress>}

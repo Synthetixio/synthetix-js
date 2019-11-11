@@ -125,16 +125,6 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.recoverTransferFees = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.recoverTransferFees(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _percent {BigNumber}
    * @param txParams {TxParams}
   
@@ -175,11 +165,11 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
+   * @param index {BigNumber}
    * @returns Object
    **/
-  this.recentFeePeriods = async uint256_1 => {
-    return await this.contract.recentFeePeriods(uint256_1);
+  this.recentFeePeriods = async index => {
+    return await this.contract.recentFeePeriods(index);
   };
 
   /**

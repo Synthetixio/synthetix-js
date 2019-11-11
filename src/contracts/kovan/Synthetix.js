@@ -104,6 +104,15 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns bytes32
+   **/
+  this.synthsByAddress = async address_1 => {
+    return await this.contract.synthsByAddress(address_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.initiationTime = async () => {
@@ -325,15 +334,6 @@ function Synthetix(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns bytes32
-   **/
-  this.reverseSynths = async address_1 => {
-    return await this.contract.reverseSynths(address_1);
   };
 
   /**

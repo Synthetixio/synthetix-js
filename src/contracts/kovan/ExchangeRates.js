@@ -108,14 +108,6 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.priceUpdateLock = async () => {
-    return await this.contract.priceUpdateLock();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes32}
    * @param txParams {TxParams}
@@ -147,17 +139,6 @@ function ExchangeRates(contractSettings) {
       sourceAmount,
       destinationCurrencyKey
     );
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _priceUpdateLock {boolean}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setPriceUpdateLock = async (_priceUpdateLock, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setPriceUpdateLock(_priceUpdateLock, txParams);
   };
 
   /**
@@ -211,6 +192,15 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns boolean
+   **/
+  this.isXDRParticipant = async bytes32_1 => {
+    return await this.contract.isXDRParticipant(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.owner = async () => {
@@ -260,6 +250,38 @@ function ExchangeRates(contractSettings) {
    **/
   this.rateIsFrozen = async currencyKey => {
     return await this.contract.rateIsFrozen(currencyKey);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param entryPoint {BigNumber}
+   * @param upperLimit {BigNumber}
+   * @param lowerLimit {BigNumber}
+   * @param freeze {boolean}
+   * @param freezeAtUpperLimit {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setInversePricing = async (
+    currencyKey,
+    entryPoint,
+    upperLimit,
+    lowerLimit,
+    freeze,
+    freezeAtUpperLimit,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.setInversePricing(
+      currencyKey,
+      entryPoint,
+      upperLimit,
+      lowerLimit,
+      freeze,
+      freezeAtUpperLimit,
+      txParams
+    );
   };
 
   /**
@@ -346,26 +368,6 @@ function ExchangeRates(contractSettings) {
    **/
   this.rates = async code => {
     return await this.contract.rates(code);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param entryPoint {BigNumber}
-   * @param upperLimit {BigNumber}
-   * @param lowerLimit {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setInversePricing = async (currencyKey, entryPoint, upperLimit, lowerLimit, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setInversePricing(
-      currencyKey,
-      entryPoint,
-      upperLimit,
-      lowerLimit,
-      txParams
-    );
   };
 }
 

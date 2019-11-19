@@ -182,6 +182,21 @@
 		"constant": false,
 		"inputs": [
 			{
+				"name": "xdrAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "recordFeePaid",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x22bf55ef"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"name": "_percent",
 				"type": "uint256"
 			}
@@ -365,7 +380,7 @@
 				"type": "address"
 			}
 		],
-		"name": "feesClaimable",
+		"name": "isFeesClaimable",
 		"outputs": [
 			{
 				"name": "",
@@ -375,7 +390,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x58aab84a"
+		"signature": "0x59a2f19f"
 	},
 	{
 		"constant": false,
@@ -621,25 +636,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa461fc82"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "feePaid",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xa5fdab80"
 	},
 	{
 		"constant": true,

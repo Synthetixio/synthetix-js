@@ -149,33 +149,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Function that allows you to exchange synths you hold in one flavour for another.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param sourceCurrencyKey {bytes32}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes32}
-   * @param destinationAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.exchange = async (
-    sourceCurrencyKey,
-    sourceAmount,
-    destinationCurrencyKey,
-    destinationAddress,
-    txParams
-  ) => {
-    txParams = txParams || {};
-    return await this.contract.exchange(
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey,
-      destinationAddress,
-      txParams
-    );
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param _gasLimitOracle {String<EthAddress>}
    * @param txParams {TxParams}
@@ -717,6 +690,25 @@ function Synthetix(contractSettings) {
    **/
   this.proxy = async () => {
     return await this.contract.proxy();
+  };
+
+  /**
+   * Function that allows you to exchange synths you hold in one flavour for another.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.exchange = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exchange(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      txParams
+    );
   };
 
   /**

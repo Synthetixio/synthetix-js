@@ -125,6 +125,17 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param xdrAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.recordFeePaid = async (xdrAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.recordFeePaid(xdrAmount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _percent {BigNumber}
    * @param txParams {TxParams}
   
@@ -226,8 +237,8 @@ function FeePool(contractSettings) {
    * @param account {String<EthAddress>}
    * @returns boolean
    **/
-  this.feesClaimable = async account => {
-    return await this.contract.feesClaimable(account);
+  this.isFeesClaimable = async account => {
+    return await this.contract.isFeesClaimable(account);
   };
 
   /**
@@ -377,18 +388,6 @@ function FeePool(contractSettings) {
    **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.feePaid = async (currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.feePaid(currencyKey, amount, txParams);
   };
 
   /**

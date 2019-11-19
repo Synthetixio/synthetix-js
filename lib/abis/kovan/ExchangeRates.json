@@ -170,21 +170,6 @@
 		"signature": "0x446144ad"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "priceUpdateLock",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x44d010d4"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -241,21 +226,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x654a60ac"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_priceUpdateLock",
-				"type": "bool"
-			}
-		],
-		"name": "setPriceUpdateLock",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x70bb5959"
 	},
 	{
 		"constant": true,
@@ -343,6 +313,26 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x7dc0d1d0"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "isXDRParticipant",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8208e677"
 	},
 	{
 		"constant": true,
@@ -443,6 +433,41 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xaf3aea86"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "entryPoint",
+				"type": "uint256"
+			},
+			{
+				"name": "upperLimit",
+				"type": "uint256"
+			},
+			{
+				"name": "lowerLimit",
+				"type": "uint256"
+			},
+			{
+				"name": "freeze",
+				"type": "bool"
+			},
+			{
+				"name": "freezeAtUpperLimit",
+				"type": "bool"
+			}
+		],
+		"name": "setInversePricing",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb199c764"
 	},
 	{
 		"constant": true,
@@ -610,33 +635,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xdc726205"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "entryPoint",
-				"type": "uint256"
-			},
-			{
-				"name": "upperLimit",
-				"type": "uint256"
-			},
-			{
-				"name": "lowerLimit",
-				"type": "uint256"
-			}
-		],
-		"name": "setInversePricing",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe32111b7"
 	},
 	{
 		"inputs": [

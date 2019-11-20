@@ -180,13 +180,18 @@
 	},
 	{
 		"constant": false,
-		"inputs": [],
-		"name": "recoverTransferFees",
+		"inputs": [
+			{
+				"name": "xdrAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "recordFeePaid",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x242696f6"
+		"signature": "0x22bf55ef"
 	},
 	{
 		"constant": false,
@@ -247,7 +252,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "",
+				"name": "index",
 				"type": "uint256"
 			}
 		],
@@ -255,15 +260,15 @@
 		"outputs": [
 			{
 				"name": "feePeriodId",
-				"type": "uint256"
+				"type": "uint64"
 			},
 			{
 				"name": "startingDebtIndex",
-				"type": "uint256"
+				"type": "uint64"
 			},
 			{
 				"name": "startTime",
-				"type": "uint256"
+				"type": "uint64"
 			},
 			{
 				"name": "feesToDistribute",
@@ -375,7 +380,7 @@
 				"type": "address"
 			}
 		],
-		"name": "feesClaimable",
+		"name": "isFeesClaimable",
 		"outputs": [
 			{
 				"name": "",
@@ -385,7 +390,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x58aab84a"
+		"signature": "0x59a2f19f"
 	},
 	{
 		"constant": false,
@@ -631,25 +636,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa461fc82"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "feePaid",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xa5fdab80"
 	},
 	{
 		"constant": true,
@@ -1099,43 +1085,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "LogInt",
-		"type": "event",
-		"signature": "0x3b53f2745f01e9cc7d8317d92cca0b2e25a1e0f710c5b65c2da4002d794e399f"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "value",
-				"type": "address"
-			}
-		],
-		"name": "LogAddress",
-		"type": "event",
-		"signature": "0x62ddffe5b5108385f7a590f100e1ee414ad9551a31f089e64e82998440785e1e"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

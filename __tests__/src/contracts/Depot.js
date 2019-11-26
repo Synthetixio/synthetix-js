@@ -6,7 +6,7 @@ const { SUPPORTED_NETWORKS } = ContractSettings;
 
 const contract = 'Depot';
 
-describe(`src/contracts/${contract}`, () => {
+xdescribe(`src/contracts/${contract}`, () => {
   Object.entries(SUPPORTED_NETWORKS).forEach(([networkId, network]) => {
     let snxjs;
     beforeAll(() => {

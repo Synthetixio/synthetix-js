@@ -20,7 +20,7 @@ describe(`src/contracts/${contract}`, () => {
     });
 
     test(`${network} Should throw Missing signer error`, async () => {
-      await expect(snxjs[contract].issueSynths(sUSD, 10)).rejects.toThrow(
+      await expect(snxjs[contract].issueSynths(10)).rejects.toThrow(
         'sending a transaction require a signer'
       );
     });
@@ -35,9 +35,9 @@ describe(`src/contracts/${contract}`, () => {
           '0x0123456789012345678901234567890123456789012345678901234567890123'
         );
         snxjs = new SynthetixJs({ signer, networkId });
-        await expect(
-          snxjs[contract].issueSynths(sUSD, snxjs.util.parseEther('100'))
-        ).rejects.toThrow('insufficient funds for gas * price + value');
+        await expect(snxjs[contract].issueSynths(snxjs.util.parseEther('100'))).rejects.toThrow(
+          'insufficient funds for gas * price + value'
+        );
       },
       15000
     );

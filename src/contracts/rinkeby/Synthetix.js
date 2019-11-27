@@ -58,19 +58,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueSynths = async (currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueSynths(currencyKey, amount, txParams);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
    * @returns boolean
@@ -182,6 +169,18 @@ function Synthetix(contractSettings) {
   this.transferFrom = async (from, to, value, txParams) => {
     txParams = txParams || {};
     return await this.contract.transferFrom(from, to, value, txParams);
+  };
+
+  /**
+   * Burn synths to clear issued synths/free SNX.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynths = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynths(amount, txParams);
   };
 
   /**
@@ -349,6 +348,18 @@ function Synthetix(contractSettings) {
   this.addSynth = async (synth, txParams) => {
     txParams = txParams || {};
     return await this.contract.addSynth(synth, txParams);
+  };
+
+  /**
+   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueSynths = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueSynths(amount, txParams);
   };
 
   /**
@@ -540,6 +551,17 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Issuance is only allowed if the synthetix price isn't stale., Issue the maximum amount of Synths possible against the sender's SNX.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueMaxSynths = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.issueMaxSynths(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -672,19 +694,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Burn synths to clear issued synths/free SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnSynths = async (currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnSynths(currencyKey, amount, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -709,18 +718,6 @@ function Synthetix(contractSettings) {
       destinationCurrencyKey,
       txParams
     );
-  };
-
-  /**
-   * Issuance is only allowed if the synthetix price isn't stale., Issue the maximum amount of Synths possible against the sender's SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueMaxSynths = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueMaxSynths(currencyKey, txParams);
   };
 
   /**

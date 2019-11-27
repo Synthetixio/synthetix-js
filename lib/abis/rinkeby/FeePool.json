@@ -308,26 +308,6 @@
 		"signature": "0x4180e5b5"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "claimFees",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4effae80"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "feePoolEternalStorage",
@@ -428,10 +408,6 @@
 			{
 				"name": "claimingForAddress",
 				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
 			}
 		],
 		"name": "claimOnBehalf",
@@ -444,7 +420,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x682b9c16"
+		"signature": "0x6466f45e"
 	},
 	{
 		"constant": false,
@@ -730,7 +706,7 @@
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "pure",
 		"type": "function",
 		"signature": "0xb7fcfa69"
 	},
@@ -838,6 +814,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xd028a3f7"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "claimFees",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xd294f093"
 	},
 	{
 		"constant": true,

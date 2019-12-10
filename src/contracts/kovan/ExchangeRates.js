@@ -25,6 +25,15 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKeys {bytes32[]}
+   * @returns uint256[]
+   **/
+  this.lastRateUpdateTimesForCurrencies = async currencyKeys => {
+    return await this.contract.lastRateUpdateTimesForCurrencies(currencyKeys);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.rateStalePeriod = async () => {

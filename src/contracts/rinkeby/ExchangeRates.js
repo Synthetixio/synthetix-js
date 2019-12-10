@@ -71,6 +71,17 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeAggregator = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeAggregator(currencyKey, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKeys {bytes32[]}
    * @returns boolean
@@ -99,12 +110,15 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
+   * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes32}
-   * @returns BigNumber
+   * @param aggregatorAddress {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
-  this.lastRateUpdateTimeForCurrency = async currencyKey => {
-    return await this.contract.lastRateUpdateTimeForCurrency(currencyKey);
+  this.addAggregator = async (currencyKey, aggregatorAddress, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.addAggregator(currencyKey, aggregatorAddress, txParams);
   };
 
   /**
@@ -116,6 +130,15 @@ function ExchangeRates(contractSettings) {
   this.deleteRate = async (currencyKey, txParams) => {
     txParams = txParams || {};
     return await this.contract.deleteRate(currencyKey, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.aggregatorKeys = async uint256_1 => {
+    return await this.contract.aggregatorKeys(uint256_1);
   };
 
   /**
@@ -139,6 +162,15 @@ function ExchangeRates(contractSettings) {
       sourceAmount,
       destinationCurrencyKey
     );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns String<EthAddress>
+   **/
+  this.aggregators = async bytes32_1 => {
+    return await this.contract.aggregators(bytes32_1);
   };
 
   /**

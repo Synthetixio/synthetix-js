@@ -100,6 +100,21 @@
 		"signature": "0x20714f88"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "removeAggregator",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x2bed9e0c"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -150,24 +165,23 @@
 		"signature": "0x3278c960"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
 				"name": "currencyKey",
 				"type": "bytes32"
-			}
-		],
-		"name": "lastRateUpdateTimeForCurrency",
-		"outputs": [
+			},
 			{
-				"name": "",
-				"type": "uint256"
+				"name": "aggregatorAddress",
+				"type": "address"
 			}
 		],
+		"name": "addAggregator",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x446144ad"
+		"signature": "0x3f0e084f"
 	},
 	{
 		"constant": false,
@@ -183,6 +197,26 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x45938849"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "aggregatorKeys",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4f72def6"
 	},
 	{
 		"constant": true,
@@ -226,6 +260,26 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x654a60ac"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "aggregators",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7103353e"
 	},
 	{
 		"constant": true,
@@ -756,6 +810,42 @@
 		"name": "InversePriceFrozen",
 		"type": "event",
 		"signature": "0x4b3d3f51dab37576ab4ca08ebdb81d4a4c587f25df5cc1f9a620a7faff84aba8"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "aggregator",
+				"type": "address"
+			}
+		],
+		"name": "AggregatorAdded",
+		"type": "event",
+		"signature": "0x0bcae573430f69c5361e5d76534d3f61d2d803958778680cd74be9dc6299bc63"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "aggregator",
+				"type": "address"
+			}
+		],
+		"name": "AggregatorRemoved",
+		"type": "event",
+		"signature": "0xec70e890fc7db7de4059b114c9093a1f41283d18ffcfbcac45566feea4d4f777"
 	},
 	{
 		"anonymous": false,

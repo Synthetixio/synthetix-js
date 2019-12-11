@@ -32,6 +32,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "MAX_MINTER_REWARD",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x22af2bab"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "SUPPLY_DECAY_START",
 		"outputs": [
 			{
@@ -105,7 +120,7 @@
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "pure",
 		"type": "function",
 		"signature": "0x4e070f50"
 	},
@@ -200,21 +215,6 @@
 		"signature": "0x8da5cb5b"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "mintPeriodDuration",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8f3a7a49"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -271,6 +271,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "INITIAL_WEEKLY_SUPPLY",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbadef30a"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "synthetixProxy",
 		"outputs": [
 			{
@@ -297,21 +312,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xbe801f01"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "initialWeeklySupply",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xbfbf664a"
 	},
 	{
 		"constant": true,
@@ -359,6 +359,21 @@
 		"signature": "0xdbd3a6a7"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "MINT_PERIOD_DURATION",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xdf5a9fc1"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_owner",
@@ -393,13 +408,18 @@
 			},
 			{
 				"indexed": false,
+				"name": "lastMintEvent",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
 				"name": "timestamp",
 				"type": "uint256"
 			}
 		],
 		"name": "SupplyMinted",
 		"type": "event",
-		"signature": "0xeae287c62f1ff4911334dee03f631d5dded5284b1b03ea7bc1d6282916c7249f"
+		"signature": "0x601e517d4811033fed8290c79b7823ce1ab70258da45400fe2391a3c7432edab"
 	},
 	{
 		"anonymous": false,
@@ -419,18 +439,13 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
+				"name": "newAddress",
+				"type": "address"
 			}
 		],
-		"name": "LogInt",
+		"name": "SynthetixProxyUpdated",
 		"type": "event",
-		"signature": "0x3b53f2745f01e9cc7d8317d92cca0b2e25a1e0f710c5b65c2da4002d794e399f"
+		"signature": "0xf8df0556b7fde3c4b8394eae329aedfa59c6ffd8b532d572a1efcfa3424ca5fc"
 	},
 	{
 		"anonymous": false,

@@ -528,21 +528,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * ERC20 transferFrom function.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, data, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -588,20 +573,6 @@ function Synthetix(contractSettings) {
   this.initiateSelfDestruct = async txParams => {
     txParams = txParams || {};
     return await this.contract.initiateSelfDestruct(txParams);
-  };
-
-  /**
-   * ERC20 transfer function.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, data, txParams);
   };
 
   /**

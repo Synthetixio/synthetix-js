@@ -255,21 +255,6 @@ function sJPY(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, data, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -304,20 +289,6 @@ function sJPY(contractSettings) {
    **/
   this.synthetixProxy = async () => {
     return await this.contract.synthetixProxy();
-  };
-
-  /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, data, txParams);
   };
 
   /**
@@ -379,19 +350,6 @@ function sJPY(contractSettings) {
    **/
   this.tokenState = async () => {
     return await this.contract.tokenState();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param sender {String<EthAddress>}
-   * @param recipient {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.triggerTokenFallbackIfNeeded = async (sender, recipient, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.triggerTokenFallbackIfNeeded(sender, recipient, amount, txParams);
   };
 
   /**

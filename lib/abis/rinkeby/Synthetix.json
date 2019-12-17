@@ -852,38 +852,6 @@
 		"signature": "0xab3e337d"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "value",
-				"type": "uint256"
-			},
-			{
-				"name": "data",
-				"type": "bytes"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xab67aa58"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "feePool",
@@ -947,34 +915,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xbd32aa44"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "value",
-				"type": "uint256"
-			},
-			{
-				"name": "data",
-				"type": "bytes"
-			}
-		],
-		"name": "transfer",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xbe45fd62"
 	},
 	{
 		"constant": true,

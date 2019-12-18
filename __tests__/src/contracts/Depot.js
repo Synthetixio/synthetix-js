@@ -1,6 +1,6 @@
 import { SynthetixJs } from '../../../src/index.node.js';
 import ContractSettings from '../../../src/contractSettings';
-import * as snx from 'synthetix';
+// import * as snx from 'synthetix';
 
 const { SUPPORTED_NETWORKS } = ContractSettings;
 

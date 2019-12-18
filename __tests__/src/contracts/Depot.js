@@ -24,15 +24,15 @@ describe(`src/contracts/${contract}`, () => {
       15000
     );
 
-    test(
-      `${network} Should have correct Synthetix address`,
-      async () => {
-        const synthetix = await snxjs[contract].synthetix();
-        const expectedAddress = snx.getTarget({ network, contract: 'Synthetix' }).address;
+    // test(
+    //   `${network} Should have correct Synthetix address`,
+    //   async () => {
+    //     const synthetix = await snxjs[contract].synthetix();
+    //     const expectedAddress = snx.getTarget({ network, contract: 'Synthetix' }).address;
 
-        expect(synthetix).toEqual(expectedAddress);
-      },
-      15000
-    );
+    //     expect(synthetix).toEqual(expectedAddress);
+    //   },
+    //   15000
+    // );
   });
 });

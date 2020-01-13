@@ -1,5 +1,20 @@
 [
 	{
+		"constant": false,
+		"inputs": [],
+		"name": "exchangeEtherForSNX",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function",
+		"signature": "0x02279438"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "minimumDepositAmount",
@@ -305,6 +320,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "snxProxy",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4e8788c0"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "nominatedOwner",
 		"outputs": [
 			{
@@ -387,21 +417,6 @@
 		"signature": "0x6d5ab4a9"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "synthetix",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x759b5225"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",
@@ -410,21 +425,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x79ba5097"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "exchangeEtherForSynthetix",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function",
-		"signature": "0x7a2a6526"
 	},
 	{
 		"constant": false,
@@ -660,34 +660,6 @@
 		"signature": "0xbd32aa44"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"name": "data",
-				"type": "bytes"
-			}
-		],
-		"name": "tokenFallback",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xc0ee0b8a"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "selfDestructBeneficiary",
@@ -821,7 +793,7 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_synthetix",
+				"name": "_snxProxy",
 				"type": "address"
 			}
 		],
@@ -843,7 +815,7 @@
 				"type": "address"
 			},
 			{
-				"name": "_synthetix",
+				"name": "_snxProxy",
 				"type": "address"
 			},
 			{
@@ -920,7 +892,7 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "newSynthetixContract",
+				"name": "newSNXProxy",
 				"type": "address"
 			}
 		],

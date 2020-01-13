@@ -15,6 +15,17 @@ function Depot(contractSettings) {
   );
 
   /**
+   * Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeEtherForSNX = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.exchangeEtherForSNX(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
@@ -211,6 +222,14 @@ function Depot(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
+  this.snxProxy = async () => {
+    return await this.contract.snxProxy();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
   };
@@ -261,14 +280,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.synthetix = async () => {
-    return await this.contract.synthetix();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -276,18 +287,6 @@ function Depot(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
-  };
-
-  /**
-   * Exchange ETH to SNX.<br>
-   * Transaction (consumes gas, requires signer)
-<br>Payable (to enter ETH amount set txParams.value)
-   * @param txParams {TxParams}
-   * @returns BigNumber
-   **/
-  this.exchangeEtherForSynthetix = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.exchangeEtherForSynthetix(txParams);
   };
 
   /**
@@ -443,20 +442,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Triggers when users send us SNX or sUSD, but the modifier only allows sUSD calls to proceed.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param data {bytes}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.tokenFallback = async (from, amount, data, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.tokenFallback(from, amount, data, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -534,13 +519,13 @@ function Depot(contractSettings) {
   /**
    * Set the Synthetix contract that the issuance controller uses to issue SNX.<br>
    * Transaction (consumes gas, requires signer)
-   * @param _synthetix {String<EthAddress>}
+   * @param _snxProxy {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.setSynthetix = async (_synthetix, txParams) => {
+  this.setSynthetix = async (_snxProxy, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setSynthetix(_synthetix, txParams);
+    return await this.contract.setSynthetix(_snxProxy, txParams);
   };
 }
 

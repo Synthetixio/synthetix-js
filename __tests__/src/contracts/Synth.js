@@ -13,7 +13,7 @@ describe(`src/contracts/${contract}`, () => {
       snxjs = new SynthetixJs({ networkId });
     });
 
-    ['sUSD', 'sBTC', 'XDR', 'iBTC', 'sAUD'].forEach(synth => {
+    ['sUSD', 'sBTC', 'iBTC', 'sAUD'].forEach(synth => {
       describe(synth, () => {
         test(`${network} Should have correct address and ABI`, () => {
           () => {

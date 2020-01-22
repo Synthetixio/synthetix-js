@@ -9,7 +9,6 @@ describe('util', () => {
       expect(toUtf8Bytes4('S').toString()).toEqual('83,0,0,0');
       expect(toUtf8Bytes4('SN').toString()).toEqual('83,78,0,0');
       expect(toUtf8Bytes4('SNX').toString()).toEqual('83,78,88,0');
-      expect(toUtf8Bytes4('XDR').toString()).toEqual('88,68,82,0');
     });
 
     test('Converts a string 4 long to a right padded one', () => {

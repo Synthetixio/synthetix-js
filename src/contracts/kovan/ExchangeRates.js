@@ -224,15 +224,6 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes32}
-   * @returns boolean
-   **/
-  this.isXDRParticipant = async bytes32_1 => {
-    return await this.contract.isXDRParticipant(bytes32_1);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.owner = async () => {
@@ -255,15 +246,6 @@ function ExchangeRates(contractSettings) {
    **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
-   **/
-  this.xdrParticipants = async uint256_1 => {
-    return await this.contract.xdrParticipants(uint256_1);
   };
 
   /**

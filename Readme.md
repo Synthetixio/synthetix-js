@@ -4,7 +4,7 @@
 [![Discord](https://img.shields.io/discord/413890591840272394.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discordapp.com/channels/413890591840272394/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/synthetix_io.svg?label=synthetix_io&style=social)](https://twitter.com/synthetix_io)
 
-The Synthetix-JS Library provides a simple pre-packaged API to communicate with [Synthetix](https://synthetix.io) on ethereum. You can use it to contribute to DeFi's growing synthetic asset ecosystem. 
+The Synthetix-JS Library provides a simple pre-packaged API to communicate with [Synthetix](https://synthetix.io) on ethereum. You can use it to contribute to DeFi's growing synthetic asset ecosystem.
 
 This is particularly useful for hackathon teams to quickly `npm install synthetix-js` and start building in just a few minutes.
 
@@ -55,7 +55,6 @@ const signer = new SynthetixJs.signers.PrivateKey(
   '0x0123456789012345678901234567890123456789012345678901234567890123'
 );
 const snxjs = new SynthetixJs({ signer });
-const sUSD = snxjs.utils.toUtf8Bytes('sUSD');
 
 async function run() {
   const totalSupply = await snxjs.Synthetix.totalSupply();
@@ -64,7 +63,7 @@ async function run() {
 
   //issue 100 synths (will throw if insufficient funds for gas)
   try {
-    const txObj = await snxjs.Synthetix.issueSynths(sUSD, snxjs.util.parseEther('100')); //execute transaction (requires gas)
+    const txObj = await snxjs.Synthetix.issueSynths(snxjs.util.parseEther('100')); //execute transaction (requires gas)
     console.log('transaction hash', txObj.hash);
   } catch (e) {
     console.log(e);

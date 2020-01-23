@@ -1,6 +1,6 @@
 {
   "name": "synthetix-js",
-  "version": "2.18.1-release-candidate-1",
+  "version": "2.19.0-alpha",
   "description": "Synthetix JS Library - access Synthetix smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",
@@ -29,7 +29,7 @@
     "ethers": "4.0.27",
     "hdkey": "1.1.1",
     "lodash": "4.17.15",
-    "synthetix": "2.18.1-release-candidate",
+    "synthetix": "2.19.0-alpha",
     "trezor-connect": "7.0.3",
     "walletlink": "1.0.0"
   },

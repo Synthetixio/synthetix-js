@@ -8,7 +8,6 @@ import SynthetixEscrow from './SynthetixEscrow';
 import SynthetixState from './SynthetixState';
 import RewardEscrow from './RewardEscrow';
 import DappMaintenance from './DappMaintenance';
-import XDR from './XDR';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sUSD from './sUSD';
@@ -51,7 +50,6 @@ export default {
   SynthetixState,
   RewardEscrow,
   DappMaintenance,
-  XDR,
   sEUR,
   sJPY,
   sUSD,

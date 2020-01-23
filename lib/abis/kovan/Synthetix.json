@@ -1,6 +1,26 @@
 [
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"name": "issuer",
+				"type": "address"
+			}
+		],
+		"name": "maxIssuableSynths",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x05b3c1c9"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "name",
 		"outputs": [
@@ -67,6 +87,30 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x0b887dae"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "issuer",
+				"type": "address"
+			}
+		],
+		"name": "remainingIssuableSynths",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1137aedf"
 	},
 	{
 		"constant": false,
@@ -492,30 +536,6 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "issuer",
-				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "remainingIssuableSynths",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8357ce36"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
 				"name": "",
 				"type": "uint256"
 			}
@@ -766,30 +786,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa5fdc5de"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "issuer",
-				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "maxIssuableSynths",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa8913cdb"
 	},
 	{
 		"constant": false,

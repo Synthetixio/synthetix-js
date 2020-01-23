@@ -15,16 +15,6 @@ function Synthetix(contractSettings) {
   );
 
   /**
-   * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param issuer {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.maxIssuableSynths = async issuer => {
-    return await this.contract.maxIssuableSynths(issuer);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
@@ -65,16 +55,6 @@ function Synthetix(contractSettings) {
   this.removeSynth = async (currencyKey, txParams) => {
     txParams = txParams || {};
     return await this.contract.removeSynth(currencyKey, txParams);
-  };
-
-  /**
-   * The remaining synths an issuer can issue against their total synthetix balance.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param issuer {String<EthAddress>}
-   * @returns Object
-   **/
-  this.remainingIssuableSynths = async issuer => {
-    return await this.contract.remainingIssuableSynths(issuer);
   };
 
   /**
@@ -329,6 +309,17 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * The remaining synths an issuer can issue against their total synthetix balance.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param issuer {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.remainingIssuableSynths = async (issuer, currencyKey) => {
+    return await this.contract.remainingIssuableSynths(issuer, currencyKey);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns String<EthAddress>
@@ -480,6 +471,17 @@ function Synthetix(contractSettings) {
    **/
   this.collateral = async account => {
     return await this.contract.collateral(account);
+  };
+
+  /**
+   * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param issuer {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.maxIssuableSynths = async (issuer, currencyKey) => {
+    return await this.contract.maxIssuableSynths(issuer, currencyKey);
   };
 
   /**

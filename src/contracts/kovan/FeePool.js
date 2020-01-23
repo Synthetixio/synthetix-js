@@ -57,15 +57,6 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns Object
-   **/
-  this.feesAvailable = async account => {
-    return await this.contract.feesAvailable(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.exchangeFeeRate = async () => {
@@ -134,13 +125,13 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
+   * @param xdrAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.recordFeePaid = async (amount, txParams) => {
+  this.recordFeePaid = async (xdrAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.recordFeePaid(amount, txParams);
+    return await this.contract.recordFeePaid(xdrAmount, txParams);
   };
 
   /**
@@ -217,14 +208,6 @@ function FeePool(contractSettings) {
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.totalFeesAvailable = async () => {
-    return await this.contract.totalFeesAvailable();
   };
 
   /**
@@ -349,6 +332,16 @@ function FeePool(contractSettings) {
   this.setProxy = async (_proxy, txParams) => {
     txParams = txParams || {};
     return await this.contract.setProxy(_proxy, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns Object
+   **/
+  this.feesAvailable = async (account, currencyKey) => {
+    return await this.contract.feesAvailable(account, currencyKey);
   };
 
   /**
@@ -575,6 +568,15 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.totalFeesAvailable = async currencyKey => {
+    return await this.contract.totalFeesAvailable(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.FEE_ADDRESS = async () => {
@@ -587,17 +589,6 @@ function FeePool(contractSettings) {
    **/
   this.proxy = async () => {
     return await this.contract.proxy();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param exchangeRatesAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.convertXDRFeesTosUSD = async (exchangeRatesAddress, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.convertXDRFeesTosUSD(exchangeRatesAddress, txParams);
   };
 
   /**

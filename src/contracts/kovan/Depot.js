@@ -65,18 +65,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Exchange sUSD for SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param synthAmount {BigNumber}
-   * @param txParams {TxParams}
-   * @returns BigNumber
-   **/
-  this.exchangeSynthsForSynthetix = async (synthAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.exchangeSynthsForSynthetix(synthAmount, txParams);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -235,23 +223,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Exchange sUSD for SNX while insisting on a particular rate. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rate.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param synthAmount {BigNumber}
-   * @param guaranteedRate {BigNumber}
-   * @param txParams {TxParams}
-   * @returns BigNumber
-   **/
-  this.exchangeSynthsForSynthetixAtRate = async (synthAmount, guaranteedRate, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.exchangeSynthsForSynthetixAtRate(
-      synthAmount,
-      guaranteedRate,
-      txParams
-    );
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -302,28 +273,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Exchange ETH to SNX while insisting on a particular set of rates. This allows a user to exchange while protecting against frontrunning by the contract owner on the exchange rates.<br>
-   * Transaction (consumes gas, requires signer)
-<br>Payable (to enter ETH amount set txParams.value)
-   * @param guaranteedEtherRate {BigNumber}
-   * @param guaranteedSynthetixRate {BigNumber}
-   * @param txParams {TxParams}
-   * @returns BigNumber
-   **/
-  this.exchangeEtherForSynthetixAtRate = async (
-    guaranteedEtherRate,
-    guaranteedSynthetixRate,
-    txParams
-  ) => {
-    txParams = txParams || {};
-    return await this.contract.exchangeEtherForSynthetixAtRate(
-      guaranteedEtherRate,
-      guaranteedSynthetixRate,
-      txParams
-    );
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -356,6 +305,27 @@ function Depot(contractSettings) {
    **/
   this.lastPauseTime = async () => {
     return await this.contract.lastPauseTime();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+<br>Payable (to enter ETH amount set txParams.value)
+   * @param guaranteedEtherRate {BigNumber}
+   * @param guaranteedSynthetixRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeEtherForSNXAtRate = async (
+    guaranteedEtherRate,
+    guaranteedSynthetixRate,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeEtherForSNXAtRate(
+      guaranteedEtherRate,
+      guaranteedSynthetixRate,
+      txParams
+    );
   };
 
   /**
@@ -413,6 +383,18 @@ function Depot(contractSettings) {
    **/
   this.deposits = async uint256_1 => {
     return await this.contract.deposits(uint256_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param synthAmount {BigNumber}
+   * @param guaranteedRate {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeSynthsForSNXAtRate = async (synthAmount, guaranteedRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeSynthsForSNXAtRate(synthAmount, guaranteedRate, txParams);
   };
 
   /**
@@ -506,6 +488,17 @@ function Depot(contractSettings) {
    **/
   this.ORACLE_FUTURE_LIMIT = async () => {
     return await this.contract.ORACLE_FUTURE_LIMIT();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param synthAmount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeSynthsForSNX = async (synthAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeSynthsForSNX(synthAmount, txParams);
   };
 
   /**

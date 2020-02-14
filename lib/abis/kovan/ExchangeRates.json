@@ -55,6 +55,38 @@
 		"signature": "0x0ee4951b"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "startingRoundId",
+				"type": "uint256"
+			},
+			{
+				"name": "startingTimestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "timediff",
+				"type": "uint256"
+			}
+		],
+		"name": "getLastRoundIdBeforeElapsedSecs",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x109e46a2"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -98,6 +130,42 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x20714f88"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "roundIdForSrc",
+				"type": "uint256"
+			},
+			{
+				"name": "roundIdForDest",
+				"type": "uint256"
+			}
+		],
+		"name": "effectiveValueAtRound",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x266da16b"
 	},
 	{
 		"constant": false,
@@ -337,6 +405,26 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x79cb657a"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "getCurrentRoundId",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7a018a1e"
 	},
 	{
 		"constant": false,
@@ -651,6 +739,34 @@
 		"signature": "0xdc726205"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "roundId",
+				"type": "uint256"
+			}
+		],
+		"name": "rateAndTimestampAtRound",
+		"outputs": [
+			{
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"name": "time",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfdadbc7e"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_owner",
@@ -671,7 +787,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

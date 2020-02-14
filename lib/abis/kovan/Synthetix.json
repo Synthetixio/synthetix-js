@@ -1,9 +1,24 @@
 [
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "resolver",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
-				"name": "issuer",
+				"name": "_issuer",
 				"type": "address"
 			}
 		],
@@ -33,21 +48,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x06fdde03"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_gasPriceLimit",
-				"type": "uint256"
-			}
-		],
-		"name": "setGasPriceLimit",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x09231602"
 	},
 	{
 		"constant": false,
@@ -92,7 +92,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "issuer",
+				"name": "_issuer",
 				"type": "address"
 			}
 		],
@@ -208,58 +208,24 @@
 		"signature": "0x18160ddd"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_feePool",
-				"type": "address"
-			}
-		],
-		"name": "setFeePool",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x19db2228"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "sourceCurrencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "destinationCurrencyKey",
+				"name": "currencyKey",
 				"type": "bytes32"
 			}
 		],
-		"name": "feeRateForExchange",
+		"name": "isWaitingPeriod",
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "bool"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x1a5c6095"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_gasLimitOracle",
-				"type": "address"
-			}
-		],
-		"name": "setGasLimitOracle",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1c8aa5fa"
+		"signature": "0x1fce304d"
 	},
 	{
 		"constant": false,
@@ -365,34 +331,19 @@
 		"signature": "0x3278c960"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardsDistribution",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
+		"name": "setResolver",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x3fc6df6e"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "exchangeRates",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x4ffcd9df"
+		"signature": "0x4e543b26"
 	},
 	{
 		"constant": true,
@@ -408,21 +359,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x53a47bb7"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_exchangeRates",
-				"type": "address"
-			}
-		],
-		"name": "setExchangeRates",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x56e44954"
 	},
 	{
 		"constant": true,
@@ -473,19 +409,62 @@
 		"signature": "0x6ac0bf9c"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "_givenGasPrice",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"name": "fromCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "fromAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "toCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "toAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "toAddress",
+				"type": "address"
+			}
+		],
+		"name": "emitSynthExchange",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6c00f310"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "amount",
 				"type": "uint256"
 			}
 		],
-		"name": "validateGasPrice",
+		"name": "emitExchangeRebate",
 		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x6b4dff1f"
+		"signature": "0x6f01a986"
 	},
 	{
 		"constant": true,
@@ -618,21 +597,6 @@
 		"signature": "0x8da5cb5b"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_exchangeEnabled",
-				"type": "bool"
-			}
-		],
-		"name": "setExchangeEnabled",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x94524096"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "symbol",
@@ -648,21 +612,6 @@
 		"signature": "0x95d89b41"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "gasPriceLimit",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x961a929c"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -676,6 +625,30 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x97107d6d"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "settle",
+		"outputs": [
+			{
+				"name": "reclaimed",
+				"type": "uint256"
+			},
+			{
+				"name": "refunded",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x987757dd"
 	},
 	{
 		"constant": false,
@@ -721,7 +694,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "issuer",
+				"name": "_issuer",
 				"type": "address"
 			}
 		],
@@ -736,21 +709,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa311c7c2"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardEscrow",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa430be6c"
 	},
 	{
 		"constant": true,
@@ -815,52 +773,24 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "from",
+				"name": "account",
 				"type": "address"
 			},
 			{
-				"name": "sourceCurrencyKey",
+				"name": "currencyKey",
 				"type": "bytes32"
 			},
 			{
-				"name": "sourceAmount",
+				"name": "amount",
 				"type": "uint256"
-			},
-			{
-				"name": "destinationCurrencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "destinationAddress",
-				"type": "address"
 			}
 		],
-		"name": "synthInitiatedExchange",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
+		"name": "emitExchangeReclaim",
+		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xab3e337d"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "feePool",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xae2e933b"
+		"signature": "0xace88afd"
 	},
 	{
 		"constant": false,
@@ -915,21 +845,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "supplySchedule",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xc40dd66f"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "selfDestructBeneficiary",
 		"outputs": [
 			{
@@ -943,25 +858,10 @@
 		"signature": "0xc58aaae6"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_protectionCircuitIsActivated",
-				"type": "bool"
-			}
-		],
-		"name": "setProtectionCircuit",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xc9df6df5"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "issuer",
+				"name": "_issuer",
 				"type": "address"
 			},
 			{
@@ -983,6 +883,26 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "totalIssuedSynthsExcludeEtherCollateral",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd60888e4"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "messageSender",
 		"outputs": [
@@ -995,21 +915,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xd67bdd25"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "synthetixState",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xdbd4a422"
 	},
 	{
 		"constant": true,
@@ -1049,21 +954,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xdd62ed3e"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "escrow",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe2fdcc17"
 	},
 	{
 		"constant": true,
@@ -1114,44 +1004,14 @@
 		"name": "exchange",
 		"outputs": [
 			{
-				"name": "",
-				"type": "bool"
+				"name": "amountReceived",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xee52a2f3"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "exchangeEnabled",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf5343752"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "gasLimitOracle",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xfe7f7bc3"
 	},
 	{
 		"inputs": [
@@ -1164,45 +1024,22 @@
 				"type": "address"
 			},
 			{
-				"name": "_synthetixState",
-				"type": "address"
-			},
-			{
 				"name": "_owner",
-				"type": "address"
-			},
-			{
-				"name": "_exchangeRates",
-				"type": "address"
-			},
-			{
-				"name": "_feePool",
-				"type": "address"
-			},
-			{
-				"name": "_supplySchedule",
-				"type": "address"
-			},
-			{
-				"name": "_rewardEscrow",
-				"type": "address"
-			},
-			{
-				"name": "_escrow",
-				"type": "address"
-			},
-			{
-				"name": "_rewardsDistribution",
 				"type": "address"
 			},
 			{
 				"name": "_totalSupply",
 				"type": "uint256"
+			},
+			{
+				"name": "_resolver",
+				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,
@@ -1241,6 +1078,52 @@
 		"name": "SynthExchange",
 		"type": "event",
 		"signature": "0x65b6972c94204d84cffd3a95615743e31270f04fdf251f3dccc705cfbad44776"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeReclaim",
+		"type": "event",
+		"signature": "0x491df6adf9cabe8ca514806effd6b6b6475572dc88fe4b8b58d0a20ecf45e105"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeRebate",
+		"type": "event",
+		"signature": "0x93751433c6897553c8950f14ccc193ccffb8f539f7421ffde9af83b9b7dae1a8"
 	},
 	{
 		"anonymous": false,

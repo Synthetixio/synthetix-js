@@ -15,19 +15,19 @@
 		"signature": "0x04c49f2c"
 	},
 	{
-		"constant": false,
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "resolver",
+		"outputs": [
 			{
-				"name": "_feePoolState",
+				"name": "",
 				"type": "address"
 			}
 		],
-		"name": "setFeePoolState",
-		"outputs": [],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x075d2c41"
+		"signature": "0x04f3bcec"
 	},
 	{
 		"constant": true,
@@ -156,21 +156,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x17c70de4"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_rewardsAuthority",
-				"type": "address"
-			}
-		],
-		"name": "setRewardsAuthority",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1c6346ec"
 	},
 	{
 		"constant": false,
@@ -332,19 +317,19 @@
 		"signature": "0x4180e5b5"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "feePoolEternalStorage",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
+		"name": "setResolver",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x52b9f8a2"
+		"signature": "0x4e543b26"
 	},
 	{
 		"constant": true,
@@ -415,36 +400,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_delegates",
-				"type": "address"
-			}
-		],
-		"name": "setDelegateApprovals",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x5b292e94"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "delegates",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x6138b19e"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"name": "claimingForAddress",
 				"type": "address"
 			}
@@ -490,21 +445,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x6de813f1"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "synthetix",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x759b5225"
 	},
 	{
 		"constant": false,
@@ -593,21 +533,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x9cbdaeb6"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardEscrow",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa430be6c"
 	},
 	{
 		"constant": true,
@@ -812,21 +737,6 @@
 		"signature": "0xcff2ddad"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardsAuthority",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xd028a3f7"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "claimFees",
@@ -873,21 +783,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "synthetixState",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xdbd4a422"
-	},
-	{
-		"constant": true,
 		"inputs": [
 			{
 				"name": "value",
@@ -920,21 +815,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe0e6393d"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "feePoolState",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe3082f6a"
 	},
 	{
 		"constant": true,
@@ -1027,21 +907,6 @@
 		"signature": "0xfd1f498d"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_synthetix",
-				"type": "address"
-			}
-		],
-		"name": "setSynthetix",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xfec9f9da"
-	},
-	{
 		"inputs": [
 			{
 				"name": "_proxy",
@@ -1052,32 +917,12 @@
 				"type": "address"
 			},
 			{
-				"name": "_synthetix",
-				"type": "address"
-			},
-			{
-				"name": "_feePoolState",
-				"type": "address"
-			},
-			{
-				"name": "_feePoolEternalStorage",
-				"type": "address"
-			},
-			{
-				"name": "_synthetixState",
-				"type": "address"
-			},
-			{
-				"name": "_rewardEscrow",
-				"type": "address"
-			},
-			{
-				"name": "_rewardsAuthority",
-				"type": "address"
-			},
-			{
 				"name": "_exchangeFeeRate",
 				"type": "uint256"
+			},
+			{
+				"name": "_resolver",
+				"type": "address"
 			}
 		],
 		"payable": false,

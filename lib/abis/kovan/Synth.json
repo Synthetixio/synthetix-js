@@ -2,6 +2,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "resolver",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "name",
 		"outputs": [
 			{
@@ -144,6 +159,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "DECIMALS",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2e0f2625"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "decimals",
 		"outputs": [
 			{
@@ -165,6 +195,21 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x3278c960"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "setResolver",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x4e543b26"
 	},
 	{
 		"constant": true,
@@ -244,21 +289,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x8da5cb5b"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_synthetixProxy",
-				"type": "address"
-			}
-		],
-		"name": "setSynthetixProxy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x95896b76"
 	},
 	{
 		"constant": true,
@@ -389,6 +419,30 @@
 		"signature": "0xa9059cbb"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "transferAndSettle",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb014c3a3"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "selfDestructInitiated",
@@ -431,21 +485,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "synthetixProxy",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xbdd12482"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "selfDestructBeneficiary",
 		"outputs": [
 			{
@@ -461,21 +500,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "feePoolProxy",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xc9e9cc4d"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "messageSender",
 		"outputs": [
 			{
@@ -487,21 +511,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xd67bdd25"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_feePoolProxy",
-				"type": "address"
-			}
-		],
-		"name": "setFeePoolProxy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xd8297e44"
 	},
 	{
 		"constant": true,
@@ -543,6 +552,34 @@
 		"signature": "0xdd62ed3e"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFromAndSettle",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe73cced3"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "tokenState",
@@ -556,6 +593,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe90dd9e2"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "FEE_ADDRESS",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xeb1edd61"
 	},
 	{
 		"constant": true,
@@ -588,6 +640,26 @@
 		"signature": "0xf7ea7a3d"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "transferableSynths",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xffff51d6"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_proxy",
@@ -595,14 +667,6 @@
 			},
 			{
 				"name": "_tokenState",
-				"type": "address"
-			},
-			{
-				"name": "_synthetixProxy",
-				"type": "address"
-			},
-			{
-				"name": "_feePoolProxy",
 				"type": "address"
 			},
 			{
@@ -624,37 +688,16 @@
 			{
 				"name": "_totalSupply",
 				"type": "uint256"
+			},
+			{
+				"name": "_resolver",
+				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newSynthetix",
-				"type": "address"
-			}
-		],
-		"name": "SynthetixUpdated",
-		"type": "event",
-		"signature": "0x46e9c68bd7831071bdd478f1ae4c4a52463961a9d620383a0a121dbfc0e0f06d"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newFeePool",
-				"type": "address"
-			}
-		],
-		"name": "FeePoolUpdated",
-		"type": "event",
-		"signature": "0x6d1d088acfe4f30d6014f6f693c61c16258f9784a6ed8439b2c59213eecb6295"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

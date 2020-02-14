@@ -26,14 +26,11 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePoolState {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.setFeePoolState = async (_feePoolState, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePoolState(_feePoolState, txParams);
+  this.resolver = async () => {
+    return await this.contract.resolver();
   };
 
   /**
@@ -100,17 +97,6 @@ function FeePool(contractSettings) {
    **/
   this.initiationTime = async () => {
     return await this.contract.initiationTime();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _rewardsAuthority {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setRewardsAuthority = async (_rewardsAuthority, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setRewardsAuthority(_rewardsAuthority, txParams);
   };
 
   /**
@@ -204,11 +190,14 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
-  this.feePoolEternalStorage = async () => {
-    return await this.contract.feePoolEternalStorage();
+  this.setResolver = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolver(_resolver, txParams);
   };
 
   /**
@@ -249,25 +238,6 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _delegates {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setDelegateApprovals = async (_delegates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setDelegateApprovals(_delegates, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.delegates = async () => {
-    return await this.contract.delegates();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param claimingForAddress {String<EthAddress>}
    * @param txParams {TxParams}
    * @returns boolean
@@ -294,14 +264,6 @@ function FeePool(contractSettings) {
    **/
   this.totalRewardsAvailable = async () => {
     return await this.contract.totalRewardsAvailable();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.synthetix = async () => {
-    return await this.contract.synthetix();
   };
 
   /**
@@ -367,14 +329,6 @@ function FeePool(contractSettings) {
    **/
   this.integrationProxy = async () => {
     return await this.contract.integrationProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.rewardEscrow = async () => {
-    return await this.contract.rewardEscrow();
   };
 
   /**
@@ -507,14 +461,6 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.rewardsAuthority = async () => {
-    return await this.contract.rewardsAuthority();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
    * @returns boolean
@@ -542,14 +488,6 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.synthetixState = async () => {
-    return await this.contract.synthetixState();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param value {BigNumber}
    * @returns BigNumber
    **/
@@ -563,14 +501,6 @@ function FeePool(contractSettings) {
    **/
   this.targetThreshold = async () => {
     return await this.contract.targetThreshold();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.feePoolState = async () => {
-    return await this.contract.feePoolState();
   };
 
   /**
@@ -625,17 +555,6 @@ function FeePool(contractSettings) {
   this.setRewardsToDistribute = async (amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.setRewardsToDistribute(amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetix {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetix = async (_synthetix, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetix(_synthetix, txParams);
   };
 }
 

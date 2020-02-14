@@ -46,6 +46,8 @@ const contracts = {
   SynthetixState: true,
   RewardEscrow: true,
   DappMaintenance: true,
+  Exchanger: true,
+  EtherCollateral: true,
   // the synths will be added on for each network
 };
 

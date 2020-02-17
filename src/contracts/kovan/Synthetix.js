@@ -224,22 +224,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * A function that lets you easily convert an amount in a source currency to an amount in the destination currency.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param sourceCurrencyKey {bytes32}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.effectiveValue = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey) => {
-    return await this.contract.effectiveValue(
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey
-    );
-  };
-
-  /**
    * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}

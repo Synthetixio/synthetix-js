@@ -424,20 +424,11 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param code {bytes32}
+   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.lastRateUpdateTimes = async code => {
-    return await this.contract.lastRateUpdateTimes(code);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param code {bytes32}
-   * @returns BigNumber
-   **/
-  this.rates = async code => {
-    return await this.contract.rates(code);
+  this.lastRateUpdateTimes = async currencyKey => {
+    return await this.contract.lastRateUpdateTimes(currencyKey);
   };
 
   /**

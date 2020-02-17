@@ -702,7 +702,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "code",
+				"name": "currencyKey",
 				"type": "bytes32"
 			}
 		],
@@ -717,26 +717,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xce8480ea"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "code",
-				"type": "bytes32"
-			}
-		],
-		"name": "rates",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xdc726205"
 	},
 	{
 		"constant": true,
@@ -787,8 +767,7 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,

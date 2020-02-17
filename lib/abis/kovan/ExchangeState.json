@@ -49,6 +49,10 @@
 				"type": "uint256"
 			},
 			{
+				"name": "exchangeFeeRate",
+				"type": "uint256"
+			},
+			{
 				"name": "timestamp",
 				"type": "uint256"
 			},
@@ -85,21 +89,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_associatedContract",
-				"type": "address"
-			}
-		],
-		"name": "setAssociatedContract",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x52f445ca"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"name": "account",
 				"type": "address"
 			},
@@ -120,6 +109,10 @@
 				"type": "uint256"
 			},
 			{
+				"name": "exchangeFeeRate",
+				"type": "uint256"
+			},
+			{
 				"name": "timestamp",
 				"type": "uint256"
 			},
@@ -137,7 +130,22 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x53208a33"
+		"signature": "0x3ca9d85c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_associatedContract",
+				"type": "address"
+			}
+		],
+		"name": "setAssociatedContract",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x52f445ca"
 	},
 	{
 		"constant": true,
@@ -186,6 +194,10 @@
 			},
 			{
 				"name": "amountReceived",
+				"type": "uint256"
+			},
+			{
+				"name": "exchangeFeeRate",
 				"type": "uint256"
 			},
 			{
@@ -341,8 +353,7 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,

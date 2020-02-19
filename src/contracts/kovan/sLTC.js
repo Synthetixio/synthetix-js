@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/kovan/Synth';
+import abi from '../../../lib/abis/kovan/PurgeableSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -92,7 +92,6 @@ function sLTC(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -167,6 +166,14 @@ function sLTC(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.maxSupplyToPurgeInUSD = async () => {
+    return await this.contract.maxSupplyToPurgeInUSD();
   };
 
   /**
@@ -258,7 +265,6 @@ function sLTC(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -268,6 +274,17 @@ function sLTC(contractSettings) {
   this.transfer = async (to, value, txParams) => {
     txParams = txParams || {};
     return await this.contract.transfer(to, value, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param addresses {address[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.purge = async (addresses, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.purge(addresses, txParams);
   };
 
   /**

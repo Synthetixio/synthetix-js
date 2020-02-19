@@ -15,6 +15,26 @@
 		"signature": "0x04f3bcec"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "accountOpenLoanCounter",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x089f7fb4"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -265,6 +285,61 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "getContractInfo",
+		"outputs": [
+			{
+				"name": "_collateralizationRatio",
+				"type": "uint256"
+			},
+			{
+				"name": "_interestRate",
+				"type": "uint256"
+			},
+			{
+				"name": "_issueFeeRate",
+				"type": "uint256"
+			},
+			{
+				"name": "_issueLimit",
+				"type": "uint256"
+			},
+			{
+				"name": "_minLoanSize",
+				"type": "uint256"
+			},
+			{
+				"name": "_totalIssuedSynths",
+				"type": "uint256"
+			},
+			{
+				"name": "_totalLoansCreated",
+				"type": "uint256"
+			},
+			{
+				"name": "_totalOpenLoanCount",
+				"type": "uint256"
+			},
+			{
+				"name": "_ethBalance",
+				"type": "uint256"
+			},
+			{
+				"name": "_liquidationDeadline",
+				"type": "uint256"
+			},
+			{
+				"name": "_loanLiquidationOpen",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7cc1f867"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"name": "_account",
@@ -413,6 +488,14 @@
 			{
 				"name": "timeClosed",
 				"type": "uint256"
+			},
+			{
+				"name": "interest",
+				"type": "uint256"
+			},
+			{
+				"name": "totalFees",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -443,6 +526,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa2e17342"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getAccountsWithOpenLoans",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xa7081a82"
 	},
 	{
 		"constant": false,
@@ -552,21 +650,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xbb8c6d6c"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "accountsWithOpenLoans",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xccbebf4e"
 	},
 	{
 		"constant": true,
@@ -708,6 +791,26 @@
 		"signature": "0xeea8f5da"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "loanAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "collateralAmountForLoan",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf53dfb84"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_owner",
@@ -720,7 +823,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

@@ -23,6 +23,15 @@ function EtherCollateral(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.accountOpenLoanCounter = async address_1 => {
+    return await this.contract.accountOpenLoanCounter(address_1);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -178,6 +187,14 @@ function EtherCollateral(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns Object
+   **/
+  this.getContractInfo = async () => {
+    return await this.contract.getContractInfo();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param _account {String<EthAddress>}
    * @param _loanID {BigNumber}
    * @returns BigNumber
@@ -250,6 +267,14 @@ function EtherCollateral(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns address[]
+   **/
+  this.getAccountsWithOpenLoans = async () => {
+    return await this.contract.getAccountsWithOpenLoans();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _issueFeeRate {BigNumber}
    * @param txParams {TxParams}
@@ -296,14 +321,6 @@ function EtherCollateral(contractSettings) {
   this.setLoanLiquidationOpen = async (_loanLiquidationOpen, txParams) => {
     txParams = txParams || {};
     return await this.contract.setLoanLiquidationOpen(_loanLiquidationOpen, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns address[]
-   **/
-  this.accountsWithOpenLoans = async () => {
-    return await this.contract.accountsWithOpenLoans();
   };
 
   /**
@@ -386,6 +403,15 @@ function EtherCollateral(contractSettings) {
    **/
   this.issueLimit = async () => {
     return await this.contract.issueLimit();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param loanAmount {BigNumber}
+   * @returns BigNumber
+   **/
+  this.collateralAmountForLoan = async loanAmount => {
+    return await this.contract.collateralAmountForLoan(loanAmount);
   };
 }
 

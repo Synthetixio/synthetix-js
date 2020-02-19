@@ -35,6 +35,21 @@
 		"signature": "0x089f7fb4"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "accountLoanLimit",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1474b279"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -232,6 +247,21 @@
 		"constant": false,
 		"inputs": [
 			{
+				"name": "_loanLimit",
+				"type": "uint256"
+			}
+		],
+		"name": "setAccountLoanLimit",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x5d1a2229"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"name": "_interestRate",
 				"type": "uint256"
 			}
@@ -293,7 +323,15 @@
 				"type": "uint256"
 			},
 			{
+				"name": "_issuanceRatio",
+				"type": "uint256"
+			},
+			{
 				"name": "_interestRate",
+				"type": "uint256"
+			},
+			{
+				"name": "_interestPerSecond",
 				"type": "uint256"
 			},
 			{
@@ -528,21 +566,6 @@
 		"signature": "0xa2e17342"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "getAccountsWithOpenLoans",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa7081a82"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -600,26 +623,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xaa754a2a"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "accountsWithOpenLoans",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xafd7e1cd"
 	},
 	{
 		"constant": true,
@@ -870,7 +873,7 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "issueFeeRate",
+				"name": "issueLimit",
 				"type": "uint256"
 			}
 		],
@@ -883,13 +886,26 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "interestRate",
+				"name": "minLoanSize",
 				"type": "uint256"
 			}
 		],
-		"name": "MinLoanSize",
+		"name": "MinLoanSizeUpdated",
 		"type": "event",
-		"signature": "0x6a30c52891aa24421295b6f5672741d310e5edb76bcfcf112b4c91071f06699c"
+		"signature": "0x8640e538c9503bd8d11554fc26280efe867c12195c0eee0aeede5f4a8d528839"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "loanLimit",
+				"type": "uint256"
+			}
+		],
+		"name": "AccountLoanLimitUpdated",
+		"type": "event",
+		"signature": "0x59822dc2d999f6f0618e8b0db5cfc8496084574c769b09609d9b5f4394a310b6"
 	},
 	{
 		"anonymous": false,

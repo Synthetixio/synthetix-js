@@ -32,6 +32,14 @@ function EtherCollateral(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.accountLoanLimit = async () => {
+    return await this.contract.accountLoanLimit();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -143,6 +151,17 @@ function EtherCollateral(contractSettings) {
    **/
   this.paused = async () => {
     return await this.contract.paused();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _loanLimit {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAccountLoanLimit = async (_loanLimit, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAccountLoanLimit(_loanLimit, txParams);
   };
 
   /**
@@ -267,14 +286,6 @@ function EtherCollateral(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns address[]
-   **/
-  this.getAccountsWithOpenLoans = async () => {
-    return await this.contract.getAccountsWithOpenLoans();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param _issueFeeRate {BigNumber}
    * @param txParams {TxParams}
@@ -293,15 +304,6 @@ function EtherCollateral(contractSettings) {
    **/
   this.accountsSynthLoans = async (address_1, uint256_1) => {
     return await this.contract.accountsSynthLoans(address_1, uint256_1);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns String<EthAddress>
-   **/
-  this.accountsWithOpenLoans = async uint256_1 => {
-    return await this.contract.accountsWithOpenLoans(uint256_1);
   };
 
   /**

@@ -27,6 +27,14 @@ function Depot(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.resolver = async () => {
+    return await this.contract.resolver();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.minimumDepositAmount = async () => {
@@ -54,14 +62,6 @@ function Depot(contractSettings) {
    **/
   this.synthsReceivedForEther = async amount => {
     return await this.contract.synthsReceivedForEther(amount);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.synth = async () => {
-    return await this.contract.synth();
   };
 
   /**
@@ -126,26 +126,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.priceStalePeriod = async () => {
-    return await this.contract.priceStalePeriod();
-  };
-
-  /**
-   * Set the stale period on the updated price variables.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _time {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setPriceStalePeriod = async (_time, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setPriceStalePeriod(_time, txParams);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -153,49 +133,6 @@ function Depot(contractSettings) {
   this.terminateSelfDestruct = async txParams => {
     txParams = txParams || {};
     return await this.contract.terminateSelfDestruct(txParams);
-  };
-
-  /**
-   * Set the Synth contract that the issuance controller uses to issue Synths.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _synth {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynth = async (_synth, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynth(_synth, txParams);
-  };
-
-  /**
-   * Check if the prices haven't been updated for longer than the stale period.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.pricesAreStale = async () => {
-    return await this.contract.pricesAreStale();
-  };
-
-  /**
-   * Access point for the oracle to update the prices of SNX / eth.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param newEthPrice {BigNumber}
-   * @param newSynthetixPrice {BigNumber}
-   * @param timeSent {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.updatePrices = async (newEthPrice, newSynthetixPrice, timeSent, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.updatePrices(newEthPrice, newSynthetixPrice, timeSent, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.lastPriceUpdateTime = async () => {
-    return await this.contract.lastPriceUpdateTime();
   };
 
   /**
@@ -207,11 +144,14 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
-  this.snxProxy = async () => {
-    return await this.contract.snxProxy();
+  this.setResolver = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolver(_resolver, txParams);
   };
 
   /**
@@ -258,26 +198,6 @@ function Depot(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
-  };
-
-  /**
-   * Set the Oracle that pushes the synthetix price to this contract.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _oracle {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setOracle = async (_oracle, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setOracle(_oracle, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.oracle = async () => {
-    return await this.contract.oracle();
   };
 
   /**
@@ -370,14 +290,6 @@ function Depot(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.feePool = async () => {
-    return await this.contract.feePool();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns Object
    **/
@@ -399,6 +311,14 @@ function Depot(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.maxEthPurchase = async () => {
+    return await this.contract.maxEthPurchase();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.selfDestructInitiated = async () => {
@@ -406,11 +326,14 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * Transaction (consumes gas, requires signer)
+   * @param _maxEthPurchase {BigNumber}
+   * @param txParams {TxParams}
+  
    **/
-  this.usdToEthPrice = async () => {
-    return await this.contract.usdToEthPrice();
+  this.setMaxEthPurchase = async (_maxEthPurchase, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMaxEthPurchase(_maxEthPurchase, txParams);
   };
 
   /**
@@ -475,22 +398,6 @@ function Depot(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.usdToSnxPrice = async () => {
-    return await this.contract.usdToSnxPrice();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.ORACLE_FUTURE_LIMIT = async () => {
-    return await this.contract.ORACLE_FUTURE_LIMIT();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param synthAmount {BigNumber}
    * @param txParams {TxParams}
@@ -507,18 +414,6 @@ function Depot(contractSettings) {
    **/
   this.depositEndIndex = async () => {
     return await this.contract.depositEndIndex();
-  };
-
-  /**
-   * Set the Synthetix contract that the issuance controller uses to issue SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param _snxProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetix = async (_snxProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetix(_snxProxy, txParams);
   };
 }
 

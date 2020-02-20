@@ -19,8 +19,8 @@ describe(`src/contracts/${contract}`, () => {
     });
 
     test(`${network} Should throw Missing signer error`, async () => {
-      await expect(snxjs[contract].mint()).rejects.toThrow(
-        'sending a transaction require a signer'
+      await expect(snxjs[contract].mint()).rejects.toThrowError(
+        'sending a transaction requires a signer'
       );
     });
 

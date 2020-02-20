@@ -41,6 +41,28 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @param startingRoundId {BigNumber}
+   * @param startingTimestamp {BigNumber}
+   * @param timediff {BigNumber}
+   * @returns BigNumber
+   **/
+  this.getLastRoundIdBeforeElapsedSecs = async (
+    currencyKey,
+    startingRoundId,
+    startingTimestamp,
+    timediff
+  ) => {
+    return await this.contract.getLastRoundIdBeforeElapsedSecs(
+      currencyKey,
+      startingRoundId,
+      startingTimestamp,
+      timediff
+    );
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -68,6 +90,31 @@ function ExchangeRates(contractSettings) {
   this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
     txParams = txParams || {};
     return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param roundIdForSrc {BigNumber}
+   * @param roundIdForDest {BigNumber}
+   * @returns BigNumber
+   **/
+  this.effectiveValueAtRound = async (
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    roundIdForSrc,
+    roundIdForDest
+  ) => {
+    return await this.contract.effectiveValueAtRound(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      roundIdForSrc,
+      roundIdForDest
+    );
   };
 
   /**
@@ -204,6 +251,15 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.getCurrentRoundId = async currencyKey => {
+    return await this.contract.getCurrentRoundId(currencyKey);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _oracle {String<EthAddress>}
    * @param txParams {TxParams}
@@ -220,15 +276,6 @@ function ExchangeRates(contractSettings) {
    **/
   this.oracle = async () => {
     return await this.contract.oracle();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes32}
-   * @returns boolean
-   **/
-  this.isXDRParticipant = async bytes32_1 => {
-    return await this.contract.isXDRParticipant(bytes32_1);
   };
 
   /**
@@ -255,15 +302,6 @@ function ExchangeRates(contractSettings) {
    **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
-   **/
-  this.xdrParticipants = async uint256_1 => {
-    return await this.contract.xdrParticipants(uint256_1);
   };
 
   /**
@@ -386,20 +424,21 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param code {bytes32}
+   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.lastRateUpdateTimes = async code => {
-    return await this.contract.lastRateUpdateTimes(code);
+  this.lastRateUpdateTimes = async currencyKey => {
+    return await this.contract.lastRateUpdateTimes(currencyKey);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param code {bytes32}
-   * @returns BigNumber
+   * @param currencyKey {bytes32}
+   * @param roundId {BigNumber}
+   * @returns Object
    **/
-  this.rates = async code => {
-    return await this.contract.rates(code);
+  this.rateAndTimestampAtRound = async (currencyKey, roundId) => {
+    return await this.contract.rateAndTimestampAtRound(currencyKey, roundId);
   };
 }
 

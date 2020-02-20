@@ -16,6 +16,14 @@ function iBNB(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.resolver = async () => {
+    return await this.contract.resolver();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
   this.name = async () => {
@@ -100,6 +108,14 @@ function iBNB(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns Number
    **/
+  this.DECIMALS = async () => {
+    return await this.contract.DECIMALS();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
   this.decimals = async () => {
     return await this.contract.decimals();
   };
@@ -115,11 +131,14 @@ function iBNB(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
-  this.exchangeRates = async () => {
-    return await this.contract.exchangeRates();
+  this.setResolver = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolver(_resolver, txParams);
   };
 
   /**
@@ -128,17 +147,6 @@ function iBNB(contractSettings) {
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeRates {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setExchangeRates = async (_exchangeRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeRates(_exchangeRates, txParams);
   };
 
   /**
@@ -186,17 +194,6 @@ function iBNB(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetixProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetixProxy = async (_synthetixProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetixProxy(_synthetixProxy, txParams);
   };
 
   /**
@@ -291,6 +288,18 @@ function iBNB(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferAndSettle = async (to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferAndSettle(to, value, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -323,14 +332,6 @@ function iBNB(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.synthetixProxy = async () => {
-    return await this.contract.synthetixProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
   this.selfDestructBeneficiary = async () => {
     return await this.contract.selfDestructBeneficiary();
   };
@@ -339,27 +340,8 @@ function iBNB(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.feePoolProxy = async () => {
-    return await this.contract.feePoolProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
   this.messageSender = async () => {
     return await this.contract.messageSender();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePoolProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setFeePoolProxy = async (_feePoolProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePoolProxy(_feePoolProxy, txParams);
   };
 
   /**
@@ -381,11 +363,32 @@ function iBNB(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferFromAndSettle = async (from, to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFromAndSettle(from, to, value, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.tokenState = async () => {
     return await this.contract.tokenState();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.FEE_ADDRESS = async () => {
+    return await this.contract.FEE_ADDRESS();
   };
 
   /**
@@ -405,6 +408,15 @@ function iBNB(contractSettings) {
   this.setTotalSupply = async (amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.setTotalSupply(amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.transferableSynths = async account => {
+    return await this.contract.transferableSynths(account);
   };
 }
 

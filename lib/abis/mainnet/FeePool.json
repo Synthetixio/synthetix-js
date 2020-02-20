@@ -15,19 +15,19 @@
 		"signature": "0x04c49f2c"
 	},
 	{
-		"constant": false,
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "resolver",
+		"outputs": [
 			{
-				"name": "_feePoolState",
+				"name": "",
 				"type": "address"
 			}
 		],
-		"name": "setFeePoolState",
-		"outputs": [],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x075d2c41"
+		"signature": "0x04f3bcec"
 	},
 	{
 		"constant": true,
@@ -72,6 +72,30 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x0813071c"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "feesAvailable",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x0de58615"
 	},
 	{
 		"constant": true,
@@ -137,21 +161,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_rewardsAuthority",
-				"type": "address"
-			}
-		],
-		"name": "setRewardsAuthority",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1c6346ec"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"name": "_beneficiary",
 				"type": "address"
 			}
@@ -182,7 +191,7 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "xdrAmount",
+				"name": "amount",
 				"type": "uint256"
 			}
 		],
@@ -308,19 +317,19 @@
 		"signature": "0x4180e5b5"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "feePoolEternalStorage",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
+		"name": "setResolver",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x52b9f8a2"
+		"signature": "0x4e543b26"
 	},
 	{
 		"constant": true,
@@ -336,6 +345,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalFeesAvailable",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x569249d0"
 	},
 	{
 		"constant": false,
@@ -371,36 +395,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x59a2f19f"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_delegates",
-				"type": "address"
-			}
-		],
-		"name": "setDelegateApprovals",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x5b292e94"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "delegates",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x6138b19e"
 	},
 	{
 		"constant": false,
@@ -451,21 +445,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x6de813f1"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "synthetix",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x759b5225"
 	},
 	{
 		"constant": false,
@@ -531,34 +510,6 @@
 		"signature": "0x97107d6d"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "feesAvailable",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x9a87239a"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "selfDestruct",
@@ -582,21 +533,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x9cbdaeb6"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardEscrow",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa430be6c"
 	},
 	{
 		"constant": true,
@@ -801,21 +737,6 @@
 		"signature": "0xcff2ddad"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "rewardsAuthority",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xd028a3f7"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "claimFees",
@@ -862,21 +783,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "synthetixState",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xdbd4a422"
-	},
-	{
-		"constant": true,
 		"inputs": [
 			{
 				"name": "value",
@@ -913,41 +819,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "feePoolState",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe3082f6a"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "totalFeesAvailable",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe99bc2d8"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "FEE_ADDRESS",
 		"outputs": [
 			{
@@ -974,6 +845,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xec556889"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "exchangeRatesAddress",
+				"type": "address"
+			}
+		],
+		"name": "convertXDRFeesTosUSD",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xf0496be8"
 	},
 	{
 		"constant": true,
@@ -1021,21 +907,6 @@
 		"signature": "0xfd1f498d"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_synthetix",
-				"type": "address"
-			}
-		],
-		"name": "setSynthetix",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xfec9f9da"
-	},
-	{
 		"inputs": [
 			{
 				"name": "_proxy",
@@ -1046,38 +917,17 @@
 				"type": "address"
 			},
 			{
-				"name": "_synthetix",
-				"type": "address"
-			},
-			{
-				"name": "_feePoolState",
-				"type": "address"
-			},
-			{
-				"name": "_feePoolEternalStorage",
-				"type": "address"
-			},
-			{
-				"name": "_synthetixState",
-				"type": "address"
-			},
-			{
-				"name": "_rewardEscrow",
-				"type": "address"
-			},
-			{
-				"name": "_rewardsAuthority",
-				"type": "address"
-			},
-			{
 				"name": "_exchangeFeeRate",
 				"type": "uint256"
+			},
+			{
+				"name": "_resolver",
+				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,
@@ -1156,7 +1006,7 @@
 			},
 			{
 				"indexed": false,
-				"name": "xdrAmount",
+				"name": "sUSDAmount",
 				"type": "uint256"
 			},
 			{

@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/ropsten/Synth';
+import abi from '../../../lib/abis/ropsten/MultiCollateralSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -13,6 +13,14 @@ function sETH(contractSettings) {
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.resolver = async () => {
+    return await this.contract.resolver();
+  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -84,7 +92,6 @@ function sETH(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}
@@ -95,6 +102,14 @@ function sETH(contractSettings) {
   this.transferFrom = async (from, to, value, txParams) => {
     txParams = txParams || {};
     return await this.contract.transferFrom(from, to, value, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+  this.DECIMALS = async () => {
+    return await this.contract.DECIMALS();
   };
 
   /**
@@ -113,6 +128,17 @@ function sETH(contractSettings) {
   this.terminateSelfDestruct = async txParams => {
     txParams = txParams || {};
     return await this.contract.terminateSelfDestruct(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setResolver = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolver(_resolver, txParams);
   };
 
   /**
@@ -160,17 +186,6 @@ function sETH(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetixProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetixProxy = async (_synthetixProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetixProxy(_synthetixProxy, txParams);
   };
 
   /**
@@ -242,7 +257,6 @@ function sETH(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -252,6 +266,18 @@ function sETH(contractSettings) {
   this.transfer = async (to, value, txParams) => {
     txParams = txParams || {};
     return await this.contract.transfer(to, value, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferAndSettle = async (to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferAndSettle(to, value, txParams);
   };
 
   /**
@@ -287,14 +313,6 @@ function sETH(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.synthetixProxy = async () => {
-    return await this.contract.synthetixProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
   this.selfDestructBeneficiary = async () => {
     return await this.contract.selfDestructBeneficiary();
   };
@@ -303,27 +321,8 @@ function sETH(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.feePoolProxy = async () => {
-    return await this.contract.feePoolProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
   this.messageSender = async () => {
     return await this.contract.messageSender();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePoolProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setFeePoolProxy = async (_feePoolProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePoolProxy(_feePoolProxy, txParams);
   };
 
   /**
@@ -345,11 +344,32 @@ function sETH(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferFromAndSettle = async (from, to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFromAndSettle(from, to, value, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.tokenState = async () => {
     return await this.contract.tokenState();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.FEE_ADDRESS = async () => {
+    return await this.contract.FEE_ADDRESS();
   };
 
   /**
@@ -369,6 +389,23 @@ function sETH(contractSettings) {
   this.setTotalSupply = async (amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.setTotalSupply(amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.multiCollateralKey = async () => {
+    return await this.contract.multiCollateralKey();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.transferableSynths = async account => {
+    return await this.contract.transferableSynths(account);
   };
 }
 

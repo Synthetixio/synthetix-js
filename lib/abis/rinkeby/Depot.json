@@ -17,6 +17,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "resolver",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "minimumDepositAmount",
 		"outputs": [
 			{
@@ -68,41 +83,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x0c928f05"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "synth",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x115f4fee"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "synthAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "exchangeSynthsForSynthetix",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x15ef856d"
 	},
 	{
 		"constant": false,
@@ -195,36 +175,6 @@
 		"signature": "0x2194f3a2"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "priceStalePeriod",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x21cf3514"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_time",
-				"type": "uint256"
-			}
-		],
-		"name": "setPriceStalePeriod",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x29f3533c"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "terminateSelfDestruct",
@@ -233,74 +183,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x3278c960"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_synth",
-				"type": "address"
-			}
-		],
-		"name": "setSynth",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3b2b49b9"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "pricesAreStale",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x3d160de9"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "newEthPrice",
-				"type": "uint256"
-			},
-			{
-				"name": "newSynthetixPrice",
-				"type": "uint256"
-			},
-			{
-				"name": "timeSent",
-				"type": "uint256"
-			}
-		],
-		"name": "updatePrices",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3ed620a4"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "lastPriceUpdateTime",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x49b9a7af"
 	},
 	{
 		"constant": true,
@@ -318,19 +200,19 @@
 		"signature": "0x4d0387fb"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "snxProxy",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
+		"name": "setResolver",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x4e8788c0"
+		"signature": "0x4e543b26"
 	},
 	{
 		"constant": true,
@@ -346,30 +228,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x53a47bb7"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "synthAmount",
-				"type": "uint256"
-			},
-			{
-				"name": "guaranteedRate",
-				"type": "uint256"
-			}
-		],
-		"name": "exchangeSynthsForSynthetixAtRate",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x5b7b5b35"
 	},
 	{
 		"constant": true,
@@ -428,60 +286,6 @@
 	},
 	{
 		"constant": false,
-		"inputs": [
-			{
-				"name": "_oracle",
-				"type": "address"
-			}
-		],
-		"name": "setOracle",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x7adbf973"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "guaranteedEtherRate",
-				"type": "uint256"
-			},
-			{
-				"name": "guaranteedSynthetixRate",
-				"type": "uint256"
-			}
-		],
-		"name": "exchangeEtherForSynthetixAtRate",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function",
-		"signature": "0x7d43c206"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "oracle",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7dc0d1d0"
-	},
-	{
-		"constant": false,
 		"inputs": [],
 		"name": "withdrawMyDepositedSynths",
 		"outputs": [],
@@ -519,6 +323,30 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x91b4ded9"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "guaranteedEtherRate",
+				"type": "uint256"
+			},
+			{
+				"name": "guaranteedSynthetixRate",
+				"type": "uint256"
+			}
+		],
+		"name": "exchangeEtherForSNXAtRate",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function",
+		"signature": "0x9342c0eb"
 	},
 	{
 		"constant": false,
@@ -582,21 +410,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "feePool",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xae2e933b"
-	},
-	{
-		"constant": true,
 		"inputs": [
 			{
 				"name": "",
@@ -620,6 +433,45 @@
 		"signature": "0xb02c43d0"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "synthAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "guaranteedRate",
+				"type": "uint256"
+			}
+		],
+		"name": "exchangeSynthsForSNXAtRate",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb0c2cb96"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "maxEthPurchase",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb1338cc4"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "selfDestructInitiated",
@@ -635,19 +487,19 @@
 		"signature": "0xb8225dec"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "usdToEthPrice",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
+				"name": "_maxEthPurchase",
 				"type": "uint256"
 			}
 		],
+		"name": "setMaxEthPurchase",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xba34251b"
+		"signature": "0xbb7df172"
 	},
 	{
 		"constant": false,
@@ -745,9 +597,14 @@
 		"signature": "0xe6d76a76"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "usdToSnxPrice",
+		"constant": false,
+		"inputs": [
+			{
+				"name": "synthAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "exchangeSynthsForSNX",
 		"outputs": [
 			{
 				"name": "",
@@ -755,24 +612,9 @@
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xec1d0687"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "ORACLE_FUTURE_LIMIT",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf782b3ef"
+		"signature": "0xf852d393"
 	},
 	{
 		"constant": true,
@@ -790,21 +632,6 @@
 		"signature": "0xfd12167f"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_snxProxy",
-				"type": "address"
-			}
-		],
-		"name": "setSynthetix",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xfec9f9da"
-	},
-	{
 		"inputs": [
 			{
 				"name": "_owner",
@@ -815,38 +642,32 @@
 				"type": "address"
 			},
 			{
-				"name": "_snxProxy",
+				"name": "_resolver",
 				"type": "address"
-			},
-			{
-				"name": "_synth",
-				"type": "address"
-			},
-			{
-				"name": "_feePool",
-				"type": "address"
-			},
-			{
-				"name": "_oracle",
-				"type": "address"
-			},
-			{
-				"name": "_usdToEthPrice",
-				"type": "uint256"
-			},
-			{
-				"name": "_usdToSnxPrice",
-				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"payable": true,
 		"stateMutability": "payable",
 		"type": "fallback"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "MaxEthPurchaseUpdated",
+		"type": "event",
+		"signature": "0xdc2be810a133e01cb21a41082f15b2863d96f9fe79d1f84d7e2d5b810c5c8243"
 	},
 	{
 		"anonymous": false,
@@ -860,81 +681,6 @@
 		"name": "FundsWalletUpdated",
 		"type": "event",
 		"signature": "0x4deb077bf9c4bc824cc2c989e01a5e53b0a4ecc44c5039d46abc9ffc88f8a050"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newOracle",
-				"type": "address"
-			}
-		],
-		"name": "OracleUpdated",
-		"type": "event",
-		"signature": "0x3df77beb5db05fcdd70a30fc8adf3f83f9501b68579455adbd100b8180940394"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newSynthContract",
-				"type": "address"
-			}
-		],
-		"name": "SynthUpdated",
-		"type": "event",
-		"signature": "0x765d601a1e833e9d1cda08533c41d3a9e68ea99952d60e479a8e8fa63c390d41"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newSNXProxy",
-				"type": "address"
-			}
-		],
-		"name": "SynthetixUpdated",
-		"type": "event",
-		"signature": "0x46e9c68bd7831071bdd478f1ae4c4a52463961a9d620383a0a121dbfc0e0f06d"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "priceStalePeriod",
-				"type": "uint256"
-			}
-		],
-		"name": "PriceStalePeriodUpdated",
-		"type": "event",
-		"signature": "0x456c8075c5b512d696c9a215b96d7146add8797e2050899ad8a97fd4a648ac93"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newEthPrice",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "newSynthetixPrice",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "timeSent",
-				"type": "uint256"
-			}
-		],
-		"name": "PricesUpdated",
-		"type": "event",
-		"signature": "0xa6b830b74e52d7d1140e76252f225dc7bed28782519845600bbd3182341dc115"
 	},
 	{
 		"anonymous": false,

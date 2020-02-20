@@ -55,6 +55,38 @@
 		"signature": "0x0ee4951b"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "startingRoundId",
+				"type": "uint256"
+			},
+			{
+				"name": "startingTimestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "timediff",
+				"type": "uint256"
+			}
+		],
+		"name": "getLastRoundIdBeforeElapsedSecs",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x109e46a2"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -98,6 +130,42 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x20714f88"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "roundIdForSrc",
+				"type": "uint256"
+			},
+			{
+				"name": "roundIdForDest",
+				"type": "uint256"
+			}
+		],
+		"name": "effectiveValueAtRound",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x266da16b"
 	},
 	{
 		"constant": false,
@@ -339,6 +407,26 @@
 		"signature": "0x79cb657a"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "getCurrentRoundId",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7a018a1e"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -367,26 +455,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x7dc0d1d0"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"name": "isXDRParticipant",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8208e677"
 	},
 	{
 		"constant": true,
@@ -427,26 +495,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa461fc82"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "xdrParticipants",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xaa687daf"
 	},
 	{
 		"constant": true,
@@ -654,7 +702,7 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "code",
+				"name": "currencyKey",
 				"type": "bytes32"
 			}
 		],
@@ -674,21 +722,29 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "code",
+				"name": "currencyKey",
 				"type": "bytes32"
+			},
+			{
+				"name": "roundId",
+				"type": "uint256"
 			}
 		],
-		"name": "rates",
+		"name": "rateAndTimestampAtRound",
 		"outputs": [
 			{
-				"name": "",
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"name": "time",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xdc726205"
+		"signature": "0xfdadbc7e"
 	},
 	{
 		"inputs": [

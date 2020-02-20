@@ -8,6 +8,8 @@ import SynthetixEscrow from './SynthetixEscrow';
 import SynthetixState from './SynthetixState';
 import RewardEscrow from './RewardEscrow';
 import DappMaintenance from './DappMaintenance';
+import Exchanger from './Exchanger';
+import EtherCollateral from './EtherCollateral';
 import XDR from './XDR';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
@@ -51,6 +53,8 @@ export default {
   SynthetixState,
   RewardEscrow,
   DappMaintenance,
+  Exchanger,
+  EtherCollateral,
   XDR,
   sEUR,
   sJPY,

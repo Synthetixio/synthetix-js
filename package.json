@@ -11,7 +11,7 @@
     "clean-install": "rm ./package-lock.json && rm -rf node_modules/* && npm install",
     "clear": "$(rm dist/*.js || true) && $(rm src/contracts/*.js || true) && $(rm lib/abis/*.js || true) && $(rm lib/addresses.js || true)",
     "lint": "eslint .",
-    "docs": "jsdoc src/index*.js src/contracts/mainnet src/util -r -d ./doc -c jsdoc.json --readme Readme.md",
+    "docs": "jsdoc src/index*.js src/contracts/mainnet src/util -r -d ./doc -c jsdoc.json --readme README.md",
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
     "webpack": "webpack --mode=production",

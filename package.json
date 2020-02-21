@@ -29,7 +29,7 @@
     "ethers": "4.0.44",
     "hdkey": "1.1.1",
     "lodash": "4.17.15",
-    "synthetix": "2.19.7",
+    "synthetix": "2.19.8",
     "trezor-connect": "7.0.3",
     "walletlink": "1.0.0"
   },

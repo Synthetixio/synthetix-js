@@ -30,25 +30,6 @@ describe(`src/contracts/${contract}`, () => {
             );
           };
         });
-
-        test(
-          `${network} Should return ${synth} total supply`,
-          async () => {
-            const totalSupply = await snxjs[synth].totalSupply();
-            expect(snxjs.utils.formatEther(totalSupply)).not.toBeNaN();
-          },
-          15000
-        );
-
-        // test(
-        //   `${network} Should have correct Synthetix address via resolver`,
-        //   async () => {
-        //     const synthetix = await snxjs[synth].synthetix();
-        //     const expectedAddress = snx.getTarget({ network, contract: 'Synthetix' }).address;
-        //     expect(synthetix).toEqual(expectedAddress);
-        //   },
-        //   15000
-        // );
       });
     });
   });

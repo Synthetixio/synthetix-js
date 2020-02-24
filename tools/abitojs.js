@@ -48,6 +48,7 @@ const contracts = {
   DappMaintenance: true,
   Exchanger: true,
   EtherCollateral: true,
+  AddressResolver: true,
   // the synths will be added on for each network
 };
 

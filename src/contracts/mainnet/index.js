@@ -10,6 +10,7 @@ import RewardEscrow from './RewardEscrow';
 import DappMaintenance from './DappMaintenance';
 import Exchanger from './Exchanger';
 import EtherCollateral from './EtherCollateral';
+import AddressResolver from './AddressResolver';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sUSD from './sUSD';
@@ -54,6 +55,7 @@ export default {
   DappMaintenance,
   Exchanger,
   EtherCollateral,
+  AddressResolver,
   sEUR,
   sJPY,
   sUSD,

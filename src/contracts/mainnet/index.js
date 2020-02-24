@@ -11,6 +11,7 @@ import DappMaintenance from './DappMaintenance';
 import Exchanger from './Exchanger';
 import EtherCollateral from './EtherCollateral';
 import Issuer from './Issuer';
+import AddressResolver from './AddressResolver';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sUSD from './sUSD';
@@ -56,6 +57,7 @@ export default {
   Exchanger,
   EtherCollateral,
   Issuer,
+  AddressResolver,
   sEUR,
   sJPY,
   sUSD,

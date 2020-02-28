@@ -168,6 +168,26 @@
 		"signature": "0xb06e8c65"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "canBurnSynths",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbff4fdfc"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -242,9 +262,9 @@
 				"type": "uint256"
 			}
 		],
-		"name": "minimumStakeTimeUpdated",
+		"name": "MinimumStakeTimeUpdated",
 		"type": "event",
-		"signature": "0x713b5f1611e62a386e99879d8ee71f56fc0f1b3a5133d83a87604339dfd42e55"
+		"signature": "0x2b0fa66d155c9598699cb6569577f27b95729bbf580268eed39db6bc4e814477"
 	},
 	{
 		"anonymous": false,

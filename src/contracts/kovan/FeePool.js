@@ -520,6 +520,17 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param exchangeRatesAddress {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.convertXDRFeesTosUSD = async (exchangeRatesAddress, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.convertXDRFeesTosUSD(exchangeRatesAddress, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/

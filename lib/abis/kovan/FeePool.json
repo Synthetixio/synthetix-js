@@ -847,21 +847,6 @@
 		"signature": "0xec556889"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "exchangeRatesAddress",
-				"type": "address"
-			}
-		],
-		"name": "convertXDRFeesTosUSD",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xf0496be8"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "MAX_FEE_PERIOD_DURATION",

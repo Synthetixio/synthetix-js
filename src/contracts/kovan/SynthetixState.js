@@ -46,14 +46,6 @@ function SynthetixState(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.importedXDRAmount = async () => {
-    return await this.contract.importedXDRAmount();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -146,18 +138,6 @@ function SynthetixState(contractSettings) {
    **/
   this.totalIssuerCount = async () => {
     return await this.contract.totalIssuerCount();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param accounts {address[]}
-   * @param sUSDAmounts {uint256[]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.importIssuerData = async (accounts, sUSDAmounts, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.importIssuerData(accounts, sUSDAmounts, txParams);
   };
 
   /**

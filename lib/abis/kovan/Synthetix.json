@@ -99,11 +99,15 @@
 		"name": "remainingIssuableSynths",
 		"outputs": [
 			{
-				"name": "",
+				"name": "maxIssuable",
 				"type": "uint256"
 			},
 			{
-				"name": "",
+				"name": "alreadyIssued",
+				"type": "uint256"
+			},
+			{
+				"name": "totalSystemDebt",
 				"type": "uint256"
 			}
 		],
@@ -364,6 +368,34 @@
 		"constant": true,
 		"inputs": [
 			{
+				"name": "_issuer",
+				"type": "address"
+			},
+			{
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "debtBalanceOfAndTotalDebt",
+		"outputs": [
+			{
+				"name": "debtBalance",
+				"type": "uint256"
+			},
+			{
+				"name": "totalSystemValue",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x559cd4ee"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
 				"name": "account",
 				"type": "address"
 			}
@@ -597,6 +629,16 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x97107d6d"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "burnSynthsToTarget",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x9741fb22"
 	},
 	{
 		"constant": false,

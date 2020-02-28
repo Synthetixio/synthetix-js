@@ -35,6 +35,14 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.LAST_ISSUE_EVENT = async () => {
+    return await this.contract.LAST_ISSUE_EVENT();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -43,6 +51,25 @@ function Issuer(contractSettings) {
   this.nominateNewOwner = async (_owner, txParams) => {
     txParams = txParams || {};
     return await this.contract.nominateNewOwner(_owner, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.minimumStakeTime = async () => {
+    return await this.contract.minimumStakeTime();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynthsToTarget = async (from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsToTarget(from, txParams);
   };
 
   /**
@@ -76,6 +103,14 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_MINIMUM_STAKING_TIME = async () => {
+    return await this.contract.MAX_MINIMUM_STAKING_TIME();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.owner = async () => {
@@ -95,6 +130,15 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.canBurnSynths = async account => {
+    return await this.contract.canBurnSynths(account);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param txParams {TxParams}
@@ -103,6 +147,26 @@ function Issuer(contractSettings) {
   this.issueMaxSynths = async (from, txParams) => {
     txParams = txParams || {};
     return await this.contract.issueMaxSynths(from, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.lastIssueEvent = async account => {
+    return await this.contract.lastIssueEvent(account);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _seconds {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMinimumStakeTime = async (_seconds, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMinimumStakeTime(_seconds, txParams);
   };
 }
 

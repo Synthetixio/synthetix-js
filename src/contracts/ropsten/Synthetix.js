@@ -224,6 +224,16 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns Object
+   **/
+  this.debtBalanceOfAndTotalDebt = async (_issuer, currencyKey) => {
+    return await this.contract.debtBalanceOfAndTotalDebt(_issuer, currencyKey);
+  };
+
+  /**
    * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
@@ -373,6 +383,16 @@ function Synthetix(contractSettings) {
   this.setProxy = async (_proxy, txParams) => {
     txParams = txParams || {};
     return await this.contract.setProxy(_proxy, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynthsToTarget = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsToTarget(txParams);
   };
 
   /**

@@ -34,6 +34,21 @@
 		"signature": "0x04f3bcec"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "LAST_ISSUE_EVENT",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x129e05e6"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -47,6 +62,36 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x1627540c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "minimumStakeTime",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x242df9e1"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			}
+		],
+		"name": "burnSynthsToTarget",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x497d704a"
 	},
 	{
 		"constant": false,
@@ -91,6 +136,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "MAX_MINIMUM_STAKING_TIME",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8ce2f55b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -123,6 +183,26 @@
 		"signature": "0xb06e8c65"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "canBurnSynths",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbff4fdfc"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -138,6 +218,41 @@
 		"signature": "0xc8977132"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "lastIssueEvent",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xdd3d2b2e"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_seconds",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinimumStakeTime",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe9422046"
+	},
+	{
 		"inputs": [
 			{
 				"name": "_owner",
@@ -150,7 +265,21 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "minimumStakeTime",
+				"type": "uint256"
+			}
+		],
+		"name": "MinimumStakeTimeUpdated",
+		"type": "event",
+		"signature": "0x2b0fa66d155c9598699cb6569577f27b95729bbf580268eed39db6bc4e814477"
 	},
 	{
 		"anonymous": false,

@@ -1,42 +1,13 @@
 [
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
+				"name": "record",
+				"type": "bytes32"
 			}
 		],
-		"name": "issueSynths",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x042e0688"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "resolver",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x04f3bcec"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "LAST_ISSUE_EVENT",
+		"name": "getBytes32Value",
 		"outputs": [
 			{
 				"name": "",
@@ -46,7 +17,52 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x129e05e6"
+		"signature": "0x025ec81a"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "deleteAddressValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x043106c0"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "deleteBytesValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x0c55d925"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "deleteBytes32Value",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x124f2418"
 	},
 	{
 		"constant": false,
@@ -65,90 +81,150 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "minimumStakeTime",
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "getBooleanValue",
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "bool"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x242df9e1"
+		"signature": "0x17e7dd22"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "burnForAddress",
-				"type": "address"
+				"name": "record",
+				"type": "bytes32"
 			},
 			{
-				"name": "from",
-				"type": "address"
+				"name": "value",
+				"type": "bytes32"
 			}
 		],
-		"name": "burnSynthsToTargetOnBehalf",
+		"name": "setBytes32Value",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x2b3f41aa"
+		"signature": "0x25cf512d"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"name": "setResolverAndSyncCache",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3be99e6f"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "issueForAddress",
-				"type": "address"
+				"name": "record",
+				"type": "bytes32"
 			},
 			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "amount",
+				"name": "value",
 				"type": "uint256"
 			}
 		],
-		"name": "issueSynthsOnBehalf",
+		"name": "setUIntValue",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x44ec6b62"
+		"signature": "0x3562fd20"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "from",
-				"type": "address"
+				"name": "record",
+				"type": "bytes32"
 			}
 		],
-		"name": "burnSynthsToTarget",
+		"name": "deleteBooleanValue",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x497d704a"
+		"signature": "0x3cc1635c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			},
+			{
+				"name": "value",
+				"type": "bool"
+			}
+		],
+		"name": "setBooleanValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3eba9ed2"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "getBytesValue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x44bfa56e"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "getAddressValue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4c77e5ba"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_associatedContract",
+				"type": "address"
+			}
+		],
+		"name": "setAssociatedContract",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x52f445ca"
 	},
 	{
 		"constant": true,
@@ -166,24 +242,23 @@
 		"signature": "0x53a47bb7"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [
 			{
-				"name": "_resolver",
+				"name": "record",
+				"type": "bytes32"
+			},
+			{
+				"name": "value",
 				"type": "address"
 			}
 		],
-		"name": "isResolverCached",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
+		"name": "setAddressValue",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x631e1444"
+		"signature": "0x5a2bf25a"
 	},
 	{
 		"constant": false,
@@ -196,19 +271,19 @@
 		"signature": "0x79ba5097"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_MINIMUM_STAKING_TIME",
-		"outputs": [
+		"constant": false,
+		"inputs": [
 			{
-				"name": "",
-				"type": "uint256"
+				"name": "record",
+				"type": "bytes32"
 			}
 		],
+		"name": "deleteIntValue",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x8ce2f55b"
+		"signature": "0x8267a9ee"
 	},
 	{
 		"constant": true,
@@ -226,185 +301,166 @@
 		"signature": "0x8da5cb5b"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "burnForAddress",
-				"type": "address"
-			},
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "burnSynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x9a5154b4"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "burnSynths",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xb06e8c65"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "canBurnSynths",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xbff4fdfc"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "resolverAddressesRequired",
-		"outputs": [
-			{
-				"name": "",
+				"name": "record",
 				"type": "bytes32"
 			}
 		],
+		"name": "getIntValue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int256"
+			}
+		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xc6c9d828"
+		"signature": "0x9007127b"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "from",
-				"type": "address"
+				"name": "record",
+				"type": "bytes32"
 			}
 		],
-		"name": "issueMaxSynths",
+		"name": "deleteUIntValue",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xc8977132"
+		"signature": "0x93fe4248"
 	},
 	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "account",
-				"type": "address"
+				"name": "record",
+				"type": "bytes32"
 			}
 		],
-		"name": "lastIssueEvent",
+		"name": "getStringValue",
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "string"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xdd3d2b2e"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ADDRESSES_FROM_RESOLVER",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe3235c91"
+		"signature": "0xa209a29c"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_seconds",
-				"type": "uint256"
-			}
-		],
-		"name": "setMinimumStakeTime",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe9422046"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getResolverAddresses",
-		"outputs": [
-			{
-				"name": "addresses",
-				"type": "bytes32[24]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xfa0b5168"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "issueForAddress",
-				"type": "address"
+				"name": "record",
+				"type": "bytes32"
 			},
 			{
-				"name": "from",
-				"type": "address"
+				"name": "value",
+				"type": "int256"
 			}
 		],
-		"name": "issueMaxSynthsOnBehalf",
+		"name": "setIntValue",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xfd864ccf"
+		"signature": "0xa77aa49e"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "associatedContract",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xaefc4ccb"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "deleteStringValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xba69fcaa"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			}
+		],
+		"name": "getUIntValue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbdc963d8"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			},
+			{
+				"name": "value",
+				"type": "bytes"
+			}
+		],
+		"name": "setBytesValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xc9a52d2c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "record",
+				"type": "bytes32"
+			},
+			{
+				"name": "value",
+				"type": "string"
+			}
+		],
+		"name": "setStringValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xf5866066"
 	},
 	{
 		"inputs": [
@@ -413,7 +469,7 @@
 				"type": "address"
 			},
 			{
-				"name": "_resolver",
+				"name": "_associatedContract",
 				"type": "address"
 			}
 		],
@@ -426,13 +482,13 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "minimumStakeTime",
-				"type": "uint256"
+				"name": "associatedContract",
+				"type": "address"
 			}
 		],
-		"name": "MinimumStakeTimeUpdated",
+		"name": "AssociatedContractUpdated",
 		"type": "event",
-		"signature": "0x2b0fa66d155c9598699cb6569577f27b95729bbf580268eed39db6bc4e814477"
+		"signature": "0x73f20cff579e8a4086fa607db83867595f1b6a798e718c0bfa0b94a404128e03"
 	},
 	{
 		"anonymous": false,

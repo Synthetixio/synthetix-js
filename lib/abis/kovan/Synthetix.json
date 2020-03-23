@@ -290,6 +290,21 @@
 		"signature": "0x295da87d"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "burnForAddress",
+				"type": "address"
+			}
+		],
+		"name": "burnSynthsToTargetOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x2c955fa7"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "decimals",
@@ -303,6 +318,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x313ce567"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "issueForAddress",
+				"type": "address"
+			}
+		],
+		"name": "issueMaxSynthsOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x320223db"
 	},
 	{
 		"constant": true,
@@ -342,12 +372,12 @@
 				"type": "address"
 			}
 		],
-		"name": "setResolver",
+		"name": "setResolverAndSyncCache",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x4e543b26"
+		"signature": "0x3be99e6f"
 	},
 	{
 		"constant": true,
@@ -391,6 +421,26 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x559cd4ee"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
 	},
 	{
 		"constant": true,
@@ -657,6 +707,10 @@
 			{
 				"name": "refunded",
 				"type": "uint256"
+			},
+			{
+				"name": "numEntriesSettled",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -857,6 +911,25 @@
 		"signature": "0xbd32aa44"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "burnForAddress",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "burnSynthsOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xc2bf3880"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "selfDestructBeneficiary",
@@ -870,6 +943,58 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xc58aaae6"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "exchangeForAddress",
+				"type": "address"
+			},
+			{
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeOnBehalf",
+		"outputs": [
+			{
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xc836fa0a"
 	},
 	{
 		"constant": true,
@@ -972,6 +1097,40 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "issueForAddress",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "issueSynthsOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe8e09b8b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "tokenState",
 		"outputs": [
 			{
@@ -1026,6 +1185,21 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xee52a2f3"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getResolverAddresses",
+		"outputs": [
+			{
+				"name": "addresses",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfa0b5168"
 	},
 	{
 		"inputs": [

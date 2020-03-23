@@ -28,13 +28,13 @@ function SynthetixEscrow(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
+   * @param quantity {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.nominateNewOwner = async (_owner, txParams) => {
+  this.withdrawHavvens = async (quantity, txParams) => {
     txParams = txParams || {};
-    return await this.contract.nominateNewOwner(_owner, txParams);
+    return await this.contract.withdrawHavvens(quantity, txParams);
   };
 
   /**
@@ -91,6 +91,14 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+  this.decimals = async () => {
+    return await this.contract.decimals();
+  };
+
+  /**
    * Allow a user to withdraw any SNX in their schedule that have vested.<br>
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
@@ -113,11 +121,33 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _havven {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setHavven = async (_havven, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setHavven(_havven, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.nominateOwner = async (_owner, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.nominateOwner(_owner, txParams);
   };
 
   /**
@@ -138,14 +168,6 @@ function SynthetixEscrow(contractSettings) {
    **/
   this.balanceOf = async account => {
     return await this.contract.balanceOf(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.synthetix = async () => {
-    return await this.contract.synthetix();
   };
 
   /**
@@ -189,6 +211,22 @@ function SynthetixEscrow(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.havven = async () => {
+    return await this.contract.havven();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.UNIT = async () => {
+    return await this.contract.UNIT();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.totalVestedBalance = async () => {
@@ -221,18 +259,6 @@ function SynthetixEscrow(contractSettings) {
   };
 
   /**
-   * This may only be called by the owner during the contract's setup period., Withdraws a quantity of SNX back to the synthetix contract.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param quantity {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.withdrawSynthetix = async (quantity, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.withdrawSynthetix(quantity, txParams);
-  };
-
-  /**
    * Get the quantity of SNX associated with a given schedule entry.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
@@ -241,17 +267,6 @@ function SynthetixEscrow(contractSettings) {
    **/
   this.getVestingQuantity = async (account, index) => {
     return await this.contract.getVestingQuantity(account, index);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _synthetix {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSynthetix = async (_synthetix, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSynthetix(_synthetix, txParams);
   };
 }
 

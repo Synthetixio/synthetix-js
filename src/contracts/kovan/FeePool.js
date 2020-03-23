@@ -153,10 +153,21 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns uint256[2][3]
+   * @returns uint256[2][2]
    **/
   this.feesByPeriod = async account => {
     return await this.contract.feesByPeriod(account);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**
@@ -176,28 +187,6 @@ function FeePool(contractSettings) {
    **/
   this.recentFeePeriods = async index => {
     return await this.contract.recentFeePeriods(index);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.approveClaimOnBehalf = async (account, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.approveClaimOnBehalf(account, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolver = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolver(_resolver, txParams);
   };
 
   /**
@@ -237,6 +226,15 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param claimingForAddress {String<EthAddress>}
    * @param txParams {TxParams}
@@ -245,17 +243,6 @@ function FeePool(contractSettings) {
   this.claimOnBehalf = async (claimingForAddress, txParams) => {
     txParams = txParams || {};
     return await this.contract.claimOnBehalf(claimingForAddress, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.removeClaimOnBehalf = async (account, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.removeClaimOnBehalf(account, txParams);
   };
 
   /**
@@ -445,6 +432,15 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param value {BigNumber}
    * @returns BigNumber
    **/
@@ -505,6 +501,14 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.FEE_ADDRESS = async () => {
@@ -520,22 +524,19 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param exchangeRatesAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.convertXDRFeesTosUSD = async (exchangeRatesAddress, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.convertXDRFeesTosUSD(exchangeRatesAddress, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.MAX_FEE_PERIOD_DURATION = async () => {
     return await this.contract.MAX_FEE_PERIOD_DURATION();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddresses = async () => {
+    return await this.contract.getResolverAddresses();
   };
 
   /**

@@ -178,11 +178,33 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param burnForAddress {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynthsToTargetOnBehalf = async (burnForAddress, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsToTargetOnBehalf(burnForAddress, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns Number
    **/
   this.decimals = async () => {
     return await this.contract.decimals();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param issueForAddress {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueMaxSynthsOnBehalf = async (issueForAddress, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueMaxSynthsOnBehalf(issueForAddress, txParams);
   };
 
   /**
@@ -210,9 +232,9 @@ function Synthetix(contractSettings) {
    * @param txParams {TxParams}
   
    **/
-  this.setResolver = async (_resolver, txParams) => {
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setResolver(_resolver, txParams);
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**
@@ -231,6 +253,15 @@ function Synthetix(contractSettings) {
    **/
   this.debtBalanceOfAndTotalDebt = async (_issuer, currencyKey) => {
     return await this.contract.debtBalanceOfAndTotalDebt(_issuer, currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
   };
 
   /**
@@ -530,11 +561,58 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param burnForAddress {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynthsOnBehalf = async (burnForAddress, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsOnBehalf(burnForAddress, amount, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.selfDestructBeneficiary = async () => {
     return await this.contract.selfDestructBeneficiary();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param exchangeForAddress {String<EthAddress>}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeOnBehalf = async (
+    exchangeForAddress,
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeOnBehalf(
+      exchangeForAddress,
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      txParams
+    );
   };
 
   /**
@@ -586,6 +664,26 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param issueForAddress {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueSynthsOnBehalf = async (issueForAddress, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueSynthsOnBehalf(issueForAddress, amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.tokenState = async () => {
@@ -617,6 +715,14 @@ function Synthetix(contractSettings) {
       destinationCurrencyKey,
       txParams
     );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddresses = async () => {
+    return await this.contract.getResolverAddresses();
   };
 }
 

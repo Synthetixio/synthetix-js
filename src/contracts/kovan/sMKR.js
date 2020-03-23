@@ -137,9 +137,9 @@ function sMKR(contractSettings) {
    * @param txParams {TxParams}
   
    **/
-  this.setResolver = async (_resolver, txParams) => {
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setResolver(_resolver, txParams);
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**
@@ -148,6 +148,15 @@ function sMKR(contractSettings) {
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
   };
 
   /**
@@ -321,6 +330,15 @@ function sMKR(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.messageSender = async () => {
@@ -343,6 +361,14 @@ function sMKR(contractSettings) {
    **/
   this.allowance = async (owner, spender) => {
     return await this.contract.allowance(owner, spender);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
   };
 
   /**
@@ -391,6 +417,14 @@ function sMKR(contractSettings) {
   this.setTotalSupply = async (amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.setTotalSupply(amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddresses = async () => {
+    return await this.contract.getResolverAddresses();
   };
 
   /**

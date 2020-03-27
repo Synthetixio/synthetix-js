@@ -211,17 +211,6 @@ function Exchanger(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeEnabled {boolean}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setExchangeEnabled = async (_exchangeEnabled, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeEnabled(_exchangeEnabled, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns bytes32
@@ -236,14 +225,6 @@ function Exchanger(contractSettings) {
    **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
     return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.exchangeEnabled = async () => {
-    return await this.contract.exchangeEnabled();
   };
 
   /**

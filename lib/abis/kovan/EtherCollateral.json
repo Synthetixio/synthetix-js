@@ -154,6 +154,21 @@
 		"signature": "0x361e2086"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "setResolverAndSyncCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3be99e6f"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "totalOpenLoanCount",
@@ -167,21 +182,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x4189bb49"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"name": "setResolver",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4e543b26"
 	},
 	{
 		"constant": false,
@@ -272,6 +272,26 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x5f84f302"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
 	},
 	{
 		"constant": false,
@@ -656,6 +676,26 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "minLoanSize",
 		"outputs": [
@@ -717,6 +757,21 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xe220a811"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
 	},
 	{
 		"constant": true,
@@ -812,6 +867,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xf53dfb84"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getResolverAddresses",
+		"outputs": [
+			{
+				"name": "addresses",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfa0b5168"
 	},
 	{
 		"inputs": [

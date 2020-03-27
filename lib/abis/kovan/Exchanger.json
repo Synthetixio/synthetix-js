@@ -351,21 +351,6 @@
 		"signature": "0x8da5cb5b"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_exchangeEnabled",
-				"type": "bool"
-			}
-		],
-		"name": "setExchangeEnabled",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x94524096"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -403,21 +388,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "exchangeEnabled",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf5343752"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "getResolverAddresses",
 		"outputs": [
 			{
@@ -443,7 +413,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

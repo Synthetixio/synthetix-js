@@ -50,6 +50,8 @@ const contracts = {
   EtherCollateral: true,
   Issuer: true,
   AddressResolver: true,
+  DelegateApprovals: true,
+  SystemStatus: true,
   // the synths will be added on for each network
 };
 

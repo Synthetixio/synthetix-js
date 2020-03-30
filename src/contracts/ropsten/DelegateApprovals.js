@@ -15,6 +15,16 @@ function DelegateApprovals(contractSettings) {
   );
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param authoriser {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.canIssueFor = async (authoriser, delegate) => {
+    return await this.contract.canIssueFor(authoriser, delegate);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -26,14 +36,54 @@ function DelegateApprovals(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param authoriser {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.canClaimFor = async (authoriser, delegate) => {
+    return await this.contract.canClaimFor(authoriser, delegate);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.ISSUE_FOR_ADDRESS = async () => {
+    return await this.contract.ISSUE_FOR_ADDRESS();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
-   * @param _associatedContract {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.setAssociatedContract = async (_associatedContract, txParams) => {
+  this.approveClaimOnBehalf = async (delegate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setAssociatedContract(_associatedContract, txParams);
+    return await this.contract.approveClaimOnBehalf(delegate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeIssueOnBehalf = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeIssueOnBehalf(delegate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.approveExchangeOnBehalf = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.approveExchangeOnBehalf(delegate, txParams);
   };
 
   /**
@@ -46,14 +96,35 @@ function DelegateApprovals(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param authoriser {String<EthAddress>}
    * @param delegate {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.withdrawApproval = async (authoriser, delegate, txParams) => {
+  this.removeBurnOnBehalf = async (delegate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.withdrawApproval(authoriser, delegate, txParams);
+    return await this.contract.removeBurnOnBehalf(delegate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeClaimOnBehalf = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeClaimOnBehalf(delegate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeAllDelegatePowers = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeAllDelegatePowers(delegate, txParams);
   };
 
   /**
@@ -68,6 +139,16 @@ function DelegateApprovals(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param authoriser {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.canBurnFor = async (authoriser, delegate) => {
+    return await this.contract.canBurnFor(authoriser, delegate);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.owner = async () => {
@@ -78,30 +159,115 @@ function DelegateApprovals(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.associatedContract = async () => {
-    return await this.contract.associatedContract();
+  this.eternalStorage = async () => {
+    return await this.contract.eternalStorage();
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param authoriser {String<EthAddress>}
    * @param delegate {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.setApproval = async (authoriser, delegate, txParams) => {
+  this.approveBurnOnBehalf = async (delegate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setApproval(authoriser, delegate, txParams);
+    return await this.contract.approveBurnOnBehalf(delegate, txParams);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @param  {String<EthAddress>}
+   * @returns bytes32
+   **/
+  this.APPROVE_ALL = async () => {
+    return await this.contract.APPROVE_ALL();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.approveIssueOnBehalf = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.approveIssueOnBehalf(delegate, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param authoriser {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
    * @returns boolean
    **/
-  this.approval = async (address_1, address_2) => {
-    return await this.contract.approval(address_1, address_2);
+  this.approvedAll = async (authoriser, delegate) => {
+    return await this.contract.approvedAll(authoriser, delegate);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _eternalStorage {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setEternalStorage = async (_eternalStorage, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setEternalStorage(_eternalStorage, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeExchangeOnBehalf = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeExchangeOnBehalf(delegate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param delegate {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.approveAllDelegatePowers = async (delegate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.approveAllDelegatePowers(delegate, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CLAIM_FOR_ADDRESS = async () => {
+    return await this.contract.CLAIM_FOR_ADDRESS();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.EXCHANGE_FOR_ADDRESS = async () => {
+    return await this.contract.EXCHANGE_FOR_ADDRESS();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.BURN_FOR_ADDRESS = async () => {
+    return await this.contract.BURN_FOR_ADDRESS();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param authoriser {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.canExchangeFor = async (authoriser, delegate) => {
+    return await this.contract.canExchangeFor(authoriser, delegate);
   };
 }
 

@@ -105,6 +105,17 @@ function Exchanger(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param from {String<EthAddress>}
    * @param currencyKey {bytes32}
@@ -117,22 +128,20 @@ function Exchanger(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolver = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolver(_resolver, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
   };
 
   /**
@@ -144,6 +153,35 @@ function Exchanger(contractSettings) {
   this.setWaitingPeriodSecs = async (_waitingPeriodSecs, txParams) => {
     txParams = txParams || {};
     return await this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param exchangeForAddress {String<EthAddress>}
+   * @param from {String<EthAddress>}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeOnBehalf = async (
+    exchangeForAddress,
+    from,
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeOnBehalf(
+      exchangeForAddress,
+      from,
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      txParams
+    );
   };
 
   /**
@@ -173,22 +211,28 @@ function Exchanger(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _exchangeEnabled {boolean}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
    **/
-  this.setExchangeEnabled = async (_exchangeEnabled, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeEnabled(_exchangeEnabled, txParams);
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
+   * @param  {BigNumber}
+   * @returns bytes32
    **/
-  this.exchangeEnabled = async () => {
-    return await this.contract.exchangeEnabled();
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
   };
 }
 

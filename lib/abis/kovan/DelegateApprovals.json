@@ -292,6 +292,30 @@
 		"signature": "0x9f61d336"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approvedAll",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb42e0f15"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{

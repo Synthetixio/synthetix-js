@@ -194,6 +194,16 @@ function DelegateApprovals(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param authoriser {String<EthAddress>}
+   * @param delegate {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.approvedAll = async (authoriser, delegate) => {
+    return await this.contract.approvedAll(authoriser, delegate);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _eternalStorage {String<EthAddress>}
    * @param txParams {TxParams}

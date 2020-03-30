@@ -647,6 +647,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "getResolverAddressesRequired",
+		"outputs": [
+			{
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "issuanceRatio",
 		"outputs": [
 			{
@@ -867,21 +882,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xf53dfb84"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getResolverAddresses",
-		"outputs": [
-			{
-				"name": "addresses",
-				"type": "bytes32[24]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xfa0b5168"
 	},
 	{
 		"inputs": [

@@ -508,6 +508,14 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param currencyKey {bytes32}
@@ -715,14 +723,6 @@ function Synthetix(contractSettings) {
       destinationCurrencyKey,
       txParams
     );
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddresses = async () => {
-    return await this.contract.getResolverAddresses();
   };
 }
 

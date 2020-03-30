@@ -286,6 +286,14 @@ function iCEX(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param addresses {address[]}
    * @param txParams {TxParams}
@@ -434,14 +442,6 @@ function iCEX(contractSettings) {
   this.setTotalSupply = async (amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.setTotalSupply(amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddresses = async () => {
-    return await this.contract.getResolverAddresses();
   };
 
   /**

@@ -212,6 +212,14 @@ function Exchanger(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param  {BigNumber}
    * @returns bytes32
    **/
@@ -225,14 +233,6 @@ function Exchanger(contractSettings) {
    **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
     return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddresses = async () => {
-    return await this.contract.getResolverAddresses();
   };
 }
 

@@ -317,6 +317,14 @@ function EtherCollateral(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.issuanceRatio = async () => {
@@ -440,14 +448,6 @@ function EtherCollateral(contractSettings) {
    **/
   this.collateralAmountForLoan = async loanAmount => {
     return await this.contract.collateralAmountForLoan(loanAmount);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddresses = async () => {
-    return await this.contract.getResolverAddresses();
   };
 }
 

@@ -165,6 +165,14 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
@@ -231,14 +239,6 @@ function Issuer(contractSettings) {
   this.setMinimumStakeTime = async (_seconds, txParams) => {
     txParams = txParams || {};
     return await this.contract.setMinimumStakeTime(_seconds, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddresses = async () => {
-    return await this.contract.getResolverAddresses();
   };
 
   /**

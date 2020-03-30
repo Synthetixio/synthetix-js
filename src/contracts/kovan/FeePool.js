@@ -328,6 +328,14 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.getPenaltyThresholdRatio = async () => {
@@ -529,14 +537,6 @@ function FeePool(contractSettings) {
    **/
   this.MAX_FEE_PERIOD_DURATION = async () => {
     return await this.contract.MAX_FEE_PERIOD_DURATION();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddresses = async () => {
-    return await this.contract.getResolverAddresses();
   };
 
   /**

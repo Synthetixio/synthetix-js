@@ -204,12 +204,12 @@
 				"type": "address"
 			}
 		],
-		"name": "setResolver",
+		"name": "setResolverAndSyncCache",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x4e543b26"
+		"signature": "0x3be99e6f"
 	},
 	{
 		"constant": true,
@@ -225,6 +225,26 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
 	},
 	{
 		"constant": true,
@@ -419,6 +439,21 @@
 		"signature": "0xa9059cbb"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "getResolverAddressesRequired",
+		"outputs": [
+			{
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xab49848c"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -499,6 +534,26 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "messageSender",
 		"outputs": [
@@ -550,6 +605,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xdd62ed3e"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
 	},
 	{
 		"constant": false,
@@ -696,7 +766,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

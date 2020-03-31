@@ -110,6 +110,10 @@
 			{
 				"name": "rebateAmount",
 				"type": "uint256"
+			},
+			{
+				"name": "numEntries",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -162,12 +166,31 @@
 			{
 				"name": "refunded",
 				"type": "uint256"
+			},
+			{
+				"name": "numEntriesSettled",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x1b16802c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "setResolverAndSyncCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3be99e6f"
 	},
 	{
 		"constant": true,
@@ -202,21 +225,6 @@
 		"signature": "0x4c268fc8"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"name": "setResolver",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4e543b26"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "nominatedOwner",
@@ -232,6 +240,26 @@
 		"signature": "0x53a47bb7"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -245,6 +273,42 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x635a3872"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "exchangeForAddress",
+				"type": "address"
+			},
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeOnBehalf",
+		"outputs": [
+			{
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6a1c4758"
 	},
 	{
 		"constant": false,
@@ -287,34 +351,54 @@
 		"signature": "0x8da5cb5b"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_exchangeEnabled",
-				"type": "bool"
-			}
-		],
-		"name": "setExchangeEnabled",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x94524096"
-	},
-	{
 		"constant": true,
 		"inputs": [],
-		"name": "exchangeEnabled",
+		"name": "getResolverAddressesRequired",
 		"outputs": [
 			{
-				"name": "",
-				"type": "bool"
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xf5343752"
+		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
 	},
 	{
 		"inputs": [
@@ -329,7 +413,8 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,

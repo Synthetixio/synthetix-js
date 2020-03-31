@@ -1,5 +1,29 @@
 [
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "canIssueFor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04872617"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -15,19 +39,88 @@
 		"signature": "0x1627540c"
 	},
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
-				"name": "_associatedContract",
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"name": "delegate",
 				"type": "address"
 			}
 		],
-		"name": "setAssociatedContract",
+		"name": "canClaimFor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x21f4ae57"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "ISSUE_FOR_ADDRESS",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2c70aecf"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveClaimOnBehalf",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x52f445ca"
+		"signature": "0x4180e5b5"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "removeIssueOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x431ce540"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveExchangeOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x447fbc63"
 	},
 	{
 		"constant": true,
@@ -48,20 +141,46 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "authoriser",
+				"name": "delegate",
 				"type": "address"
-			},
+			}
+		],
+		"name": "removeBurnOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x59cec3d6"
+	},
+	{
+		"constant": false,
+		"inputs": [
 			{
 				"name": "delegate",
 				"type": "address"
 			}
 		],
-		"name": "withdrawApproval",
+		"name": "removeClaimOnBehalf",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x5f0736a1"
+		"signature": "0x6c8bc9fe"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "removeAllDelegatePowers",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6f95200b"
 	},
 	{
 		"constant": false,
@@ -72,6 +191,30 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x79ba5097"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "canBurnFor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7d3f0ba2"
 	},
 	{
 		"constant": true,
@@ -91,7 +234,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "associatedContract",
+		"name": "eternalStorage",
 		"outputs": [
 			{
 				"name": "",
@@ -101,10 +244,55 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xaefc4ccb"
+		"signature": "0x98ff9c54"
 	},
 	{
 		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveBurnOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x9c79ce35"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "APPROVE_ALL",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9cbc2ebe"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveIssueOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x9f61d336"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"name": "authoriser",
@@ -115,26 +303,7 @@
 				"type": "address"
 			}
 		],
-		"name": "setApproval",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xb3c12354"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			},
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "approval",
+		"name": "approvedAll",
 		"outputs": [
 			{
 				"name": "",
@@ -144,7 +313,121 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xe1270b6e"
+		"signature": "0xb42e0f15"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_eternalStorage",
+				"type": "address"
+			}
+		],
+		"name": "setEternalStorage",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb5bb5619"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "removeExchangeOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb9156efa"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveAllDelegatePowers",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xbc87acbf"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "CLAIM_FOR_ADDRESS",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc5e17ab0"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "EXCHANGE_FOR_ADDRESS",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd8eeb7c1"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "BURN_FOR_ADDRESS",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe32b3f52"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "canExchangeFor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfaf431bb"
 	},
 	{
 		"inputs": [
@@ -153,13 +436,14 @@
 				"type": "address"
 			},
 			{
-				"name": "_associatedContract",
+				"name": "_eternalStorage",
 				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
 		"anonymous": false,
@@ -173,11 +457,16 @@
 				"indexed": false,
 				"name": "delegate",
 				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "action",
+				"type": "bytes32"
 			}
 		],
 		"name": "Approval",
 		"type": "event",
-		"signature": "0xf37f546c25e850257cc0c94f92bec94a17e2f0e884ddda268a25d8144b70eb6a"
+		"signature": "0x36a9e0c1da9cdc6d8f4bd4cb261f9ad6a45eb1641a557ead7530fbeff9a26336"
 	},
 	{
 		"anonymous": false,
@@ -191,24 +480,29 @@
 				"indexed": false,
 				"name": "delegate",
 				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "action",
+				"type": "bytes32"
 			}
 		],
 		"name": "WithdrawApproval",
 		"type": "event",
-		"signature": "0x16097899efec09cc50ee9db7218e30a5d8d6d2b2549c23e79568bf4a1a8c6f74"
+		"signature": "0x7e8dc09322ac82342d9dbfd49eb6497fa7ab69ac444f3763a9b8e16530342f41"
 	},
 	{
 		"anonymous": false,
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "associatedContract",
+				"name": "newEternalStorage",
 				"type": "address"
 			}
 		],
-		"name": "AssociatedContractUpdated",
+		"name": "EternalStorageUpdated",
 		"type": "event",
-		"signature": "0x73f20cff579e8a4086fa607db83867595f1b6a798e718c0bfa0b94a404128e03"
+		"signature": "0xe3ebe3d58e84fbd094152babb730cf99a14b47f65ed04f35a3bd6356f8161a17"
 	},
 	{
 		"anonymous": false,

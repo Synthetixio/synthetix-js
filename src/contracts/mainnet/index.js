@@ -12,6 +12,7 @@ import EtherCollateral from './EtherCollateral';
 import Issuer from './Issuer';
 import AddressResolver from './AddressResolver';
 import DelegateApprovals from './DelegateApprovals';
+import SystemStatus from './SystemStatus';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sUSD from './sUSD';
@@ -58,6 +59,7 @@ export default {
   Issuer,
   AddressResolver,
   DelegateApprovals,
+  SystemStatus,
   sEUR,
   sJPY,
   sUSD,

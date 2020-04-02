@@ -30,6 +30,14 @@ import sXTZ from './sXTZ';
 import sXRP from './sXRP';
 import sLTC from './sLTC';
 import sLINK from './sLINK';
+import sEOS from './sEOS';
+import sBCH from './sBCH';
+import sETC from './sETC';
+import sDASH from './sDASH';
+import sXMR from './sXMR';
+import sADA from './sADA';
+import sFTSE from './sFTSE';
+import sNIKKEI from './sNIKKEI';
 import sCEX from './sCEX';
 import sDEFI from './sDEFI';
 import iBTC from './iBTC';
@@ -41,6 +49,12 @@ import iXTZ from './iXTZ';
 import iXRP from './iXRP';
 import iLINK from './iLINK';
 import iLTC from './iLTC';
+import iEOS from './iEOS';
+import iBCH from './iBCH';
+import iETC from './iETC';
+import iDASH from './iDASH';
+import iXMR from './iXMR';
+import iADA from './iADA';
 import iCEX from './iCEX';
 import iDEFI from './iDEFI';
 
@@ -77,6 +91,14 @@ export default {
   sXRP,
   sLTC,
   sLINK,
+  sEOS,
+  sBCH,
+  sETC,
+  sDASH,
+  sXMR,
+  sADA,
+  sFTSE,
+  sNIKKEI,
   sCEX,
   sDEFI,
   iBTC,
@@ -88,6 +110,12 @@ export default {
   iXRP,
   iLINK,
   iLTC,
+  iEOS,
+  iBCH,
+  iETC,
+  iDASH,
+  iXMR,
+  iADA,
   iCEX,
   iDEFI,
 };

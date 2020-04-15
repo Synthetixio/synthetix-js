@@ -8,6 +8,7 @@ const SUPPORTED_NETWORKS = {
   3: 'ropsten',
   4: 'rinkeby',
   42: 'kovan',
+  108: 'ovm',
 };
 
 class ContractSettings {

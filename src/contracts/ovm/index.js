@@ -12,18 +12,9 @@ import EtherCollateral from './EtherCollateral';
 import Issuer from './Issuer';
 import AddressResolver from './AddressResolver';
 import DelegateApprovals from './DelegateApprovals';
-import SystemStatus from './SystemStatus';
-import sEUR from './sEUR';
-import sJPY from './sJPY';
 import sUSD from './sUSD';
-import sAUD from './sAUD';
-import sGBP from './sGBP';
-import sCHF from './sCHF';
-import sXAU from './sXAU';
-import sXAG from './sXAG';
 import sBTC from './sBTC';
 import sETH from './sETH';
-import sBNB from './sBNB';
 import sTRX from './sTRX';
 import sXTZ from './sXTZ';
 import sXRP from './sXRP';
@@ -35,13 +26,8 @@ import sETC from './sETC';
 import sDASH from './sDASH';
 import sXMR from './sXMR';
 import sADA from './sADA';
-import sFTSE from './sFTSE';
-import sNIKKEI from './sNIKKEI';
-import sCEX from './sCEX';
-import sDEFI from './sDEFI';
 import iBTC from './iBTC';
 import iETH from './iETH';
-import iBNB from './iBNB';
 import iTRX from './iTRX';
 import iXTZ from './iXTZ';
 import iXRP from './iXRP';
@@ -53,8 +39,6 @@ import iETC from './iETC';
 import iDASH from './iDASH';
 import iXMR from './iXMR';
 import iADA from './iADA';
-import iCEX from './iCEX';
-import iDEFI from './iDEFI';
 
 export default {
   Depot,
@@ -71,18 +55,9 @@ export default {
   Issuer,
   AddressResolver,
   DelegateApprovals,
-  SystemStatus,
-  sEUR,
-  sJPY,
   sUSD,
-  sAUD,
-  sGBP,
-  sCHF,
-  sXAU,
-  sXAG,
   sBTC,
   sETH,
-  sBNB,
   sTRX,
   sXTZ,
   sXRP,
@@ -94,13 +69,8 @@ export default {
   sDASH,
   sXMR,
   sADA,
-  sFTSE,
-  sNIKKEI,
-  sCEX,
-  sDEFI,
   iBTC,
   iETH,
-  iBNB,
   iTRX,
   iXTZ,
   iXRP,
@@ -112,6 +82,4 @@ export default {
   iDASH,
   iXMR,
   iADA,
-  iCEX,
-  iDEFI,
 };

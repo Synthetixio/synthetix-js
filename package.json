@@ -1,6 +1,6 @@
 {
   "name": "synthetix-js",
-  "version": "2.21.8-release-candidate",
+  "version": "2.21.9",
   "description": "Synthetix JS Library - access Synthetix smart contracts from browser and Node.js",
   "main": "dist/main.node.js",
   "browser": "dist/main.js",

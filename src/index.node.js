@@ -1,4 +1,4 @@
-import { utils } from 'ethers';
+import { utils, providers } from 'ethers';
 
 import SynthetixJsBase from './SynthetixJsBase';
 import PrivateKey from '../lib/signers/privateKeySigner';
@@ -24,3 +24,4 @@ export class SynthetixJs extends SynthetixJsBase {
 
 SynthetixJs.signers = signers;
 SynthetixJs.utils = utils; // shortcut to ethers utils without having to create instance
+SynthetixJs.providers = providers;

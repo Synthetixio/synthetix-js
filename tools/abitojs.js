@@ -37,10 +37,10 @@ const contracts = {
     target: 'ProxyFeePool',
   },
   Synth: {
-    target: 'ProxysUSD',
+    target: 'ProxyERC20sUSD',
   },
   Synthetix: {
-    target: 'ProxySynthetix',
+    target: 'ProxyERC20',
   },
   SynthetixEscrow: true,
   SynthetixState: true,

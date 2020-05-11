@@ -9,7 +9,7 @@ function Synthetix(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['ProxySynthetix'],
+    this.contractSettings.addressList['ProxyERC20'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

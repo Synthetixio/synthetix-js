@@ -52,6 +52,7 @@ const contracts = {
   AddressResolver: true,
   DelegateApprovals: true,
   SystemStatus: true,
+  RewardsDistribution: true,
   // the synths will be added on for each network
 };
 

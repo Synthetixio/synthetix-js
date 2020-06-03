@@ -13,6 +13,7 @@ import Issuer from './Issuer';
 import AddressResolver from './AddressResolver';
 import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
+import RewardsDistribution from './RewardsDistribution';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
 import sUSD from './sUSD';
@@ -72,6 +73,7 @@ export default {
   AddressResolver,
   DelegateApprovals,
   SystemStatus,
+  RewardsDistribution,
   sEUR,
   sJPY,
   sUSD,

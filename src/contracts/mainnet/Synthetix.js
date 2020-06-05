@@ -16,28 +16,74 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @returns Number
    **/
-  this.resolver = async () => {
-    return await this.contract.resolver();
+  this.DECIMALS = async () => {
+    return await this.contract.DECIMALS();
   };
 
   /**
-   * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
    * @returns BigNumber
    **/
-  this.maxIssuableSynths = async _issuer => {
-    return await this.contract.maxIssuableSynths(_issuer);
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.SELFDESTRUCT_DELAY = async () => {
+    return await this.contract.SELFDESTRUCT_DELAY();
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
-  this.name = async () => {
-    return await this.contract.name();
+  this.TOKEN_NAME = async () => {
+    return await this.contract.TOKEN_NAME();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String
+   **/
+  this.TOKEN_SYMBOL = async () => {
+    return await this.contract.TOKEN_SYMBOL();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.acceptOwnership = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.acceptOwnership(txParams);
+  };
+
+  /**
+   * Only the contract owner may call this., Add an associated Synth contract to the Synthetix system.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param synth {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.addSynth = async (synth, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.addSynth(synth, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param owner {String<EthAddress>}
+   * @param spender {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.allowance = async (owner, spender) => {
+    return await this.contract.allowance(owner, spender);
   };
 
   /**
@@ -53,116 +99,38 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Only the contract owner may call this., Remove an associated Synth contract from the Synthetix system.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-  
-   **/
-  this.removeSynth = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.removeSynth(currencyKey, txParams);
-  };
-
-  /**
-   * The remaining synths an issuer can issue against their total synthetix balance.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
-   * @returns Object
+   * @returns bytes32[]
    **/
-  this.remainingIssuableSynths = async _issuer => {
-    return await this.contract.remainingIssuableSynths(_issuer);
+  this.availableCurrencyKeys = async () => {
+    return await this.contract.availableCurrencyKeys();
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.mint = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.mint(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _integrationProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.nominateNewOwner = async (_owner, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.nominateNewOwner(_owner, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns bytes32
-   **/
-  this.synthsByAddress = async address_1 => {
-    return await this.contract.synthsByAddress(address_1);
-  };
-
-  /**
+   * Returns the count of available synths in the system, which you can use to iterate availableSynths.<br>
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.initiationTime = async () => {
-    return await this.contract.initiationTime();
+  this.availableSynthCount = async () => {
+    return await this.contract.availableSynthCount();
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns String<EthAddress>
+   **/
+  this.availableSynths = async uint256_1 => {
+    return await this.contract.availableSynths(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
-  this.totalSupply = async () => {
-    return await this.contract.totalSupply();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns boolean
-   **/
-  this.isWaitingPeriod = async currencyKey => {
-    return await this.contract.isWaitingPeriod(currencyKey);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _beneficiary {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
-  };
-
-  /**
-   * ERC20 transferFrom function.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transferFrom = async (from, to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transferFrom(from, to, value, txParams);
+  this.balanceOf = async account => {
+    return await this.contract.balanceOf(account);
   };
 
   /**
@@ -180,6 +148,28 @@ function Synthetix(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param burnForAddress {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynthsOnBehalf = async (burnForAddress, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsOnBehalf(burnForAddress, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSynthsToTarget = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsToTarget(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param burnForAddress {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
@@ -189,60 +179,34 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * The total SNX owned by this account, both escrowed and unescrowed, against which synths can be issued. This includes those already being used as collateral (locked), and those available for further issuance (unlocked).<br>
    * Call (no gas consumed, doesn't require signer)
-   * @returns Number
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
    **/
-  this.decimals = async () => {
-    return await this.contract.decimals();
+  this.collateral = async account => {
+    return await this.contract.collateral(account);
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueMaxSynthsOnBehalf = async (issueForAddress, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueMaxSynthsOnBehalf(issueForAddress, txParams);
-  };
-
-  /**
+   * The current collateralisation ratio for a user. Collateralisation ratio varies over time as the value of the underlying Synthetix asset changes, e.g. if a user issues their maximum available synths when they hold $10 worth of Synthetix, they will have issued $2 worth of synths. If the value of Synthetix changes, the ratio returned by this function will adjust accordlingly. Users are incentivised to maintain a collateralisation ratio as close to the issuance ratio as possible by altering the amount of fees they're able to claim from the system.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes32}
-   * @returns String<EthAddress>
+   * @param _issuer {String<EthAddress>}
+   * @returns BigNumber
    **/
-  this.synths = async bytes32_1 => {
-    return await this.contract.synths(bytes32_1);
+  this.collateralisationRatio = async _issuer => {
+    return await this.contract.collateralisationRatio(_issuer);
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.terminateSelfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.terminateSelfDestruct(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolverAndSyncCache = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
-  };
-
-  /**
+   * If a user issues synths backed by SNX in their wallet, the SNX become locked. This function will tell you how many synths a user has to give back to the system in order to unlock their original debt position. This is priced in whichever synth is passed in as a currency key, e.g. you can price the debt in sUSD, XDR, or any other synth you wish.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @param _issuer {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
    **/
-  this.nominatedOwner = async () => {
-    return await this.contract.nominatedOwner();
+  this.debtBalanceOf = async (_issuer, currencyKey) => {
+    return await this.contract.debtBalanceOf(_issuer, currencyKey);
   };
 
   /**
@@ -257,21 +221,36 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _resolver {String<EthAddress>}
-   * @returns boolean
+   * @returns Number
    **/
-  this.isResolverCached = async _resolver => {
-    return await this.contract.isResolverCached(_resolver);
+  this.decimals = async () => {
+    return await this.contract.decimals();
   };
 
   /**
-   * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
-   * Call (no gas consumed, doesn't require signer)
+   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @returns BigNumber
+   * @param currencyKey {bytes32}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
    **/
-  this.transferableSynthetix = async account => {
-    return await this.contract.transferableSynthetix(account);
+  this.emitExchangeRebate = async (account, currencyKey, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.emitExchangeRebate(account, currencyKey, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.emitExchangeReclaim = async (account, currencyKey, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.emitExchangeReclaim(account, currencyKey, amount, txParams);
   };
 
   /**
@@ -307,294 +286,22 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Function that allows you to exchange synths you hold in one flavour for another.<br>
    * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @param amount {BigNumber}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
    * @param txParams {TxParams}
-  
-   **/
-  this.emitExchangeRebate = async (account, currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.emitExchangeRebate(account, currencyKey, amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
-  this.balanceOf = async account => {
-    return await this.contract.balanceOf(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[]
-   **/
-  this.availableCurrencyKeys = async () => {
-    return await this.contract.availableCurrencyKeys();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.acceptOwnership = async txParams => {
+  this.exchange = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey, txParams) => {
     txParams = txParams || {};
-    return await this.contract.acceptOwnership(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns String<EthAddress>
-   **/
-  this.availableSynths = async uint256_1 => {
-    return await this.contract.availableSynths(uint256_1);
-  };
-
-  /**
-   * Total amount of synths issued by the system, priced in currencyKey.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.totalIssuedSynths = async currencyKey => {
-    return await this.contract.totalIssuedSynths(currencyKey);
-  };
-
-  /**
-   * Only the contract owner may call this., Add an associated Synth contract to the Synthetix system.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param synth {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.addSynth = async (synth, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.addSynth(synth, txParams);
-  };
-
-  /**
-   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueSynths = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueSynths(amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.owner = async () => {
-    return await this.contract.owner();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String
-   **/
-  this.symbol = async () => {
-    return await this.contract.symbol();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _proxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setProxy = async (_proxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setProxy(_proxy, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnSynthsToTarget = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.burnSynthsToTarget(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-   * @returns Object
-   **/
-  this.settle = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.settle(currencyKey, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.selfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.selfDestruct(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.integrationProxy = async () => {
-    return await this.contract.integrationProxy();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _tokenState {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setTokenState = async (_tokenState, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setTokenState(_tokenState, txParams);
-  };
-
-  /**
-   * The current collateralisation ratio for a user. Collateralisation ratio varies over time as the value of the underlying Synthetix asset changes, e.g. if a user issues their maximum available synths when they hold $10 worth of Synthetix, they will have issued $2 worth of synths. If the value of Synthetix changes, the ratio returned by this function will adjust accordlingly. Users are incentivised to maintain a collateralisation ratio as close to the issuance ratio as possible by altering the amount of fees they're able to claim from the system.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.collateralisationRatio = async _issuer => {
-    return await this.contract.collateralisationRatio(_issuer);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.SELFDESTRUCT_DELAY = async () => {
-    return await this.contract.SELFDESTRUCT_DELAY();
-  };
-
-  /**
-   * The total SNX owned by this account, both escrowed and unescrowed, against which synths can be issued. This includes those already being used as collateral (locked), and those available for further issuance (unlocked).<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.collateral = async account => {
-    return await this.contract.collateral(account);
-  };
-
-  /**
-   * ERC20 transfer function.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
-   * @param value {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.transfer = async (to, value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.transfer(to, value, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddressesRequired = async () => {
-    return await this.contract.getResolverAddressesRequired();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.emitExchangeReclaim = async (account, currencyKey, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.emitExchangeReclaim(account, currencyKey, amount, txParams);
-  };
-
-  /**
-   * Issuance is only allowed if the synthetix price isn't stale., Issue the maximum amount of Synths possible against the sender's SNX.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueMaxSynths = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.issueMaxSynths(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.selfDestructInitiated = async () => {
-    return await this.contract.selfDestructInitiated();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param sender {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setMessageSender = async (sender, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setMessageSender(sender, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.initiateSelfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.initiateSelfDestruct(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param burnForAddress {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnSynthsOnBehalf = async (burnForAddress, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnSynthsOnBehalf(burnForAddress, amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.selfDestructBeneficiary = async () => {
-    return await this.contract.selfDestructBeneficiary();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
-   **/
-  this.resolverAddressesRequired = async uint256_1 => {
-    return await this.contract.resolverAddressesRequired(uint256_1);
+    return await this.contract.exchange(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      txParams
+    );
   };
 
   /**
@@ -624,58 +331,89 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * If a user issues synths backed by SNX in their wallet, the SNX become locked. This function will tell you how many synths a user has to give back to the system in order to unlock their original debt position. This is priced in whichever synth is passed in as a currency key, e.g. you can price the debt in sUSD, XDR, or any other synth you wish.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
+   * @returns bytes32[24]
    **/
-  this.debtBalanceOf = async (_issuer, currencyKey) => {
-    return await this.contract.debtBalanceOf(_issuer, currencyKey);
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.initiateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.initiateSelfDestruct(txParams);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.totalIssuedSynthsExcludeEtherCollateral = async currencyKey => {
-    return await this.contract.totalIssuedSynthsExcludeEtherCollateral(currencyKey);
+  this.initiationTime = async () => {
+    return await this.contract.initiationTime();
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.messageSender = async () => {
-    return await this.contract.messageSender();
-  };
-
-  /**
-   * Returns the count of available synths in the system, which you can use to iterate availableSynths.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.availableSynthCount = async () => {
-    return await this.contract.availableSynthCount();
+  this.integrationProxy = async () => {
+    return await this.contract.integrationProxy();
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param owner {String<EthAddress>}
-   * @param spender {String<EthAddress>}
-   * @returns BigNumber
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
    **/
-  this.allowance = async (owner, spender) => {
-    return await this.contract.allowance(owner, spender);
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * @param currencyKey {bytes32}
+   * @returns boolean
    **/
-  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
-    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  this.isWaitingPeriod = async currencyKey => {
+    return await this.contract.isWaitingPeriod(currencyKey);
+  };
+
+  /**
+   * Issuance is only allowed if the synthetix price isn't stale., Issue the maximum amount of Synths possible against the sender's SNX.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueMaxSynths = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.issueMaxSynths(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param issueForAddress {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueMaxSynthsOnBehalf = async (issueForAddress, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueMaxSynthsOnBehalf(issueForAddress, txParams);
+  };
+
+  /**
+   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueSynths = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueSynths(amount, txParams);
   };
 
   /**
@@ -691,11 +429,78 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param susdAmount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.liquidateDelinquentAccount = async (account, susdAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.liquidateDelinquentAccount(account, susdAmount, txParams);
+  };
+
+  /**
+   * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.maxIssuableSynths = async _issuer => {
+    return await this.contract.maxIssuableSynths(_issuer);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.tokenState = async () => {
-    return await this.contract.tokenState();
+  this.messageSender = async () => {
+    return await this.contract.messageSender();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.mint = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.mint(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String
+   **/
+  this.name = async () => {
+    return await this.contract.name();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.nominateNewOwner = async (_owner, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.nominateNewOwner(_owner, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.nominatedOwner = async () => {
+    return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.owner = async () => {
+    return await this.contract.owner();
   };
 
   /**
@@ -707,22 +512,261 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Function that allows you to exchange synths you hold in one flavour for another.<br>
+   * The remaining synths an issuer can issue against their total synthetix balance.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns Object
+   **/
+  this.remainingIssuableSynths = async _issuer => {
+    return await this.contract.remainingIssuableSynths(_issuer);
+  };
+
+  /**
+   * Only the contract owner may call this., Remove an associated Synth contract from the Synthetix system.<br>
    * Transaction (consumes gas, requires signer)
-   * @param sourceCurrencyKey {bytes32}
-   * @param sourceAmount {BigNumber}
-   * @param destinationCurrencyKey {bytes32}
+   * @param currencyKey {bytes32}
    * @param txParams {TxParams}
+  
+   **/
+  this.removeSynth = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeSynth(currencyKey, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.resolver = async () => {
+    return await this.contract.resolver();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.sUSD = async () => {
+    return await this.contract.sUSD();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.selfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.selfDestruct(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.selfDestructBeneficiary = async () => {
+    return await this.contract.selfDestructBeneficiary();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.selfDestructInitiated = async () => {
+    return await this.contract.selfDestructInitiated();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _integrationProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sender {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMessageSender = async (sender, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMessageSender(sender, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _proxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setProxy = async (_proxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setProxy(_proxy, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _beneficiary {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _tokenState {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setTokenState = async (_tokenState, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setTokenState(_tokenState, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+  this.settle = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.settle(currencyKey, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String
+   **/
+  this.symbol = async () => {
+    return await this.contract.symbol();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns String<EthAddress>
+   **/
+  this.synths = async bytes32_1 => {
+    return await this.contract.synths(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns bytes32
+   **/
+  this.synthsByAddress = async address_1 => {
+    return await this.contract.synthsByAddress(address_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.terminateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.terminateSelfDestruct(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.tokenState = async () => {
+    return await this.contract.tokenState();
+  };
+
+  /**
+   * Total amount of synths issued by the system, priced in currencyKey.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.exchange = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey, txParams) => {
+  this.totalIssuedSynths = async currencyKey => {
+    return await this.contract.totalIssuedSynths(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.totalIssuedSynthsExcludeEtherCollateral = async currencyKey => {
+    return await this.contract.totalIssuedSynthsExcludeEtherCollateral(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.totalSupply = async () => {
+    return await this.contract.totalSupply();
+  };
+
+  /**
+   * ERC20 transfer function.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transfer = async (to, value, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchange(
-      sourceCurrencyKey,
-      sourceAmount,
-      destinationCurrencyKey,
-      txParams
-    );
+    return await this.contract.transfer(to, value, txParams);
+  };
+
+  /**
+   * ERC20 transferFrom function.<br>
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.transferFrom = async (from, to, value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.transferFrom(from, to, value, txParams);
+  };
+
+  /**
+   * When issuing, escrowed SNX are locked first, then non-escrowed SNX are locked last, but escrowed SNX are not transferable, so they are not included in this calculation., The number of SNX that are free to be transferred by an account.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.transferableSynthetix = async account => {
+    return await this.contract.transferableSynthetix(account);
   };
 }
 

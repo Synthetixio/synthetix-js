@@ -1,34 +1,63 @@
 [
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "resolver",
-		"outputs": [
+		"inputs": [
 			{
-				"name": "",
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x04f3bcec"
+		"stateMutability": "nonpayable",
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
-		"constant": true,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "account",
+				"indexed": false,
+				"internalType": "address",
+				"name": "oldOwner",
 				"type": "address"
 			},
 			{
-				"name": "currencyKey",
-				"type": "bytes32"
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
 			}
 		],
-		"name": "maxSecsLeftInWaitingPeriod",
+		"name": "OwnerChanged",
+		"type": "event",
+		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnerNominated",
+		"type": "event",
+		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
 		"outputs": [
 			{
+				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
 			}
@@ -36,28 +65,80 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x059c29ec"
+		"signature": "0xe3235c91"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "acceptOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x79ba5097"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "refunded",
+				"type": "uint256"
+			}
+		],
+		"name": "calculateAmountAfterSettlement",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountAfterSettlement",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4c268fc8"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
 			{
+				"internalType": "bytes32",
 				"name": "sourceCurrencyKey",
 				"type": "bytes32"
 			},
 			{
+				"internalType": "uint256",
 				"name": "sourceAmount",
 				"type": "uint256"
 			},
 			{
+				"internalType": "bytes32",
 				"name": "destinationCurrencyKey",
 				"type": "bytes32"
 			},
 			{
+				"internalType": "address",
 				"name": "destinationAddress",
 				"type": "address"
 			}
@@ -65,6 +146,7 @@
 		"name": "exchange",
 		"outputs": [
 			{
+				"internalType": "uint256",
 				"name": "amountReceived",
 				"type": "uint256"
 			}
@@ -78,6 +160,210 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "exchangeForAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeOnBehalf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6a1c4758"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "feeRateForExchange",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "exchangeFeeRate",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1a5c6095"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "getAmountsForExchange",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "exchangeFeeRate",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf450aa34"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getResolverAddressesRequired",
+		"outputs": [
+			{
+				"internalType": "bytes32[24]",
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "hasWaitingPeriodOrSettlementOwing",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd6f32e06"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "maxSecsLeftInWaitingPeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x059c29ec"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "_owner",
 				"type": "address"
 			}
@@ -91,96 +377,79 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "settlementOwing",
+		"inputs": [],
+		"name": "nominatedOwner",
 		"outputs": [
 			{
-				"name": "reclaimAmount",
-				"type": "uint256"
-			},
-			{
-				"name": "rebateAmount",
-				"type": "uint256"
-			},
-			{
-				"name": "numEntries",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x19d5c665"
+		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8da5cb5b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "resolver",
+		"outputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
 	},
 	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "sourceCurrencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "destinationCurrencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "feeRateForExchange",
-		"outputs": [
-			{
+				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x1a5c6095"
+		"signature": "0xc6c9d828"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "settle",
-		"outputs": [
-			{
-				"name": "reclaimed",
-				"type": "uint256"
-			},
-			{
-				"name": "refunded",
-				"type": "uint256"
-			},
-			{
-				"name": "numEntriesSettled",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1b16802c"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
+				"internalType": "contract AddressResolver",
 				"name": "_resolver",
 				"type": "address"
 			}
@@ -193,76 +462,10 @@
 		"signature": "0x3be99e6f"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"name": "refunded",
-				"type": "uint256"
-			}
-		],
-		"name": "calculateAmountAfterSettlement",
-		"outputs": [
-			{
-				"name": "amountAfterSettlement",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x4c268fc8"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "nominatedOwner",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x53a47bb7"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"name": "isResolverCached",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x631e1444"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "uint256",
 				"name": "_waitingPeriodSecs",
 				"type": "uint256"
 			}
@@ -278,47 +481,75 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "exchangeForAddress",
-				"type": "address"
-			},
-			{
+				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
 			{
-				"name": "sourceCurrencyKey",
-				"type": "bytes32"
-			},
-			{
-				"name": "sourceAmount",
-				"type": "uint256"
-			},
-			{
-				"name": "destinationCurrencyKey",
+				"internalType": "bytes32",
+				"name": "currencyKey",
 				"type": "bytes32"
 			}
 		],
-		"name": "exchangeOnBehalf",
+		"name": "settle",
 		"outputs": [
 			{
-				"name": "amountReceived",
+				"internalType": "uint256",
+				"name": "reclaimed",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "refunded",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "numEntriesSettled",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x6a1c4758"
+		"signature": "0x1b16802c"
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "acceptOwnership",
-		"outputs": [],
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "settlementOwing",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "reclaimAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "rebateAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "numEntries",
+				"type": "uint256"
+			}
+		],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x79ba5097"
+		"signature": "0x19d5c665"
 	},
 	{
 		"constant": true,
@@ -326,6 +557,7 @@
 		"name": "waitingPeriodSecs",
 		"outputs": [
 			{
+				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
 			}
@@ -334,117 +566,5 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x89257117"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8da5cb5b"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getResolverAddressesRequired",
-		"outputs": [
-			{
-				"name": "addressesRequired",
-				"type": "bytes32[24]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xab49848c"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "resolverAddressesRequired",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xc6c9d828"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ADDRESSES_FROM_RESOLVER",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe3235c91"
-	},
-	{
-		"inputs": [
-			{
-				"name": "_owner",
-				"type": "address"
-			},
-			{
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnerNominated",
-		"type": "event",
-		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "oldOwner",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnerChanged",
-		"type": "event",
-		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
 	}
 ]

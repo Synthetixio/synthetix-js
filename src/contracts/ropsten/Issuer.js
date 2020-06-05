@@ -15,26 +15,6 @@ function Issuer(contractSettings) {
   );
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueSynths = async (from, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueSynths(from, amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.resolver = async () => {
-    return await this.contract.resolver();
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32
    **/
@@ -43,86 +23,19 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
-  this.nominateNewOwner = async (_owner, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.nominateNewOwner(_owner, txParams);
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.minimumStakeTime = async () => {
-    return await this.contract.minimumStakeTime();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param burnForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnSynthsToTargetOnBehalf = async (burnForAddress, from, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnSynthsToTargetOnBehalf(burnForAddress, from, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolverAndSyncCache = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueSynthsOnBehalf = async (issueForAddress, from, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueSynthsOnBehalf(issueForAddress, from, amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnSynthsToTarget = async (from, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnSynthsToTarget(from, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.nominatedOwner = async () => {
-    return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _resolver {String<EthAddress>}
-   * @returns boolean
-   **/
-  this.isResolverCached = async _resolver => {
-    return await this.contract.isResolverCached(_resolver);
+  this.MAX_MINIMUM_STAKING_TIME = async () => {
+    return await this.contract.MAX_MINIMUM_STAKING_TIME();
   };
 
   /**
@@ -136,19 +49,15 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
    **/
-  this.MAX_MINIMUM_STAKING_TIME = async () => {
-    return await this.contract.MAX_MINIMUM_STAKING_TIME();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.owner = async () => {
-    return await this.contract.owner();
+  this.burnSynths = async (from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynths(from, amount, txParams);
   };
 
   /**
@@ -165,23 +74,26 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
-  this.getResolverAddressesRequired = async () => {
-    return await this.contract.getResolverAddressesRequired();
+  this.burnSynthsToTarget = async (from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsToTarget(from, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param burnForAddress {String<EthAddress>}
    * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.burnSynths = async (from, amount, txParams) => {
+  this.burnSynthsToTargetOnBehalf = async (burnForAddress, from, txParams) => {
     txParams = txParams || {};
-    return await this.contract.burnSynths(from, amount, txParams);
+    return await this.contract.burnSynthsToTargetOnBehalf(burnForAddress, from, txParams);
   };
 
   /**
@@ -195,11 +107,19 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
+   * @returns bytes32[24]
    **/
-  this.resolverAddressesRequired = async uint256_1 => {
-    return await this.contract.resolverAddressesRequired(uint256_1);
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
   };
 
   /**
@@ -214,6 +134,43 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param issueForAddress {String<EthAddress>}
+   * @param from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueMaxSynthsOnBehalf = async (issueForAddress, from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueMaxSynthsOnBehalf(issueForAddress, from, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueSynths = async (from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueSynths(from, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param issueForAddress {String<EthAddress>}
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issueSynthsOnBehalf = async (issueForAddress, from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueSynthsOnBehalf(issueForAddress, from, amount, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
@@ -223,11 +180,73 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param susdAmount {BigNumber}
+   * @param liquidator {String<EthAddress>}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+  this.liquidateDelinquentAccount = async (account, susdAmount, liquidator, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.liquidateDelinquentAccount(
+      account,
+      susdAmount,
+      liquidator,
+      txParams
+    );
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
-    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  this.minimumStakeTime = async () => {
+    return await this.contract.minimumStakeTime();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.nominateNewOwner = async (_owner, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.nominateNewOwner(_owner, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.nominatedOwner = async () => {
+    return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.owner = async () => {
+    return await this.contract.owner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.resolver = async () => {
+    return await this.contract.resolver();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
   };
 
   /**
@@ -243,14 +262,13 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
+   * @param _resolver {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.issueMaxSynthsOnBehalf = async (issueForAddress, from, txParams) => {
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issueMaxSynthsOnBehalf(issueForAddress, from, txParams);
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 }
 

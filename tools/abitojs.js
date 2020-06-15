@@ -142,7 +142,7 @@ const generate = () => {
     // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
     const synthContracts = snx.getSynths({ network }).reduce((memo, { name, subclass }) => {
       memo[name] = {
-        target: `Proxy${network === 'mainnet' && name === 'sUSD' ? 'ERC20sUSD' : name}`,
+        target: `Proxy${name === 'sUSD' ? 'ERC20sUSD' : name}`,
         source: subclass || 'Synth',
       };
       return memo;

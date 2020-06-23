@@ -111,6 +111,21 @@ function ExchangeRates(contractSettings) {
    * @param sourceCurrencyKey {bytes32}
    * @param sourceAmount {BigNumber}
    * @param destinationCurrencyKey {bytes32}
+   * @returns Object
+   **/
+  this.effectiveValueAndRates = async (sourceCurrencyKey, sourceAmount, destinationCurrencyKey) => {
+    return await this.contract.effectiveValueAndRates(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey
+    );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
    * @param roundIdForSrc {BigNumber}
    * @param roundIdForDest {BigNumber}
    * @returns BigNumber
@@ -264,6 +279,15 @@ function ExchangeRates(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes32}
+   * @returns Object
+   **/
+  this.rateAndUpdatedTime = async currencyKey => {
+    return await this.contract.rateAndUpdatedTime(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
   this.rateForCurrency = async currencyKey => {
@@ -303,6 +327,16 @@ function ExchangeRates(contractSettings) {
    **/
   this.ratesAndStaleForCurrencies = async currencyKeys => {
     return await this.contract.ratesAndStaleForCurrencies(currencyKeys);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @param numRounds {BigNumber}
+   * @returns Object
+   **/
+  this.ratesAndUpdatedTimeForCurrencyLastNRounds = async (currencyKey, numRounds) => {
+    return await this.contract.ratesAndUpdatedTimeForCurrencyLastNRounds(currencyKey, numRounds);
   };
 
   /**

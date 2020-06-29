@@ -50,6 +50,50 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param synth {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.addSynth = async (synth, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.addSynth(synth, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.anySynthOrSNXRateIsStale = async () => {
+    return await this.contract.anySynthOrSNXRateIsStale();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[]
+   **/
+  this.availableCurrencyKeys = async () => {
+    return await this.contract.availableCurrencyKeys();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.availableSynthCount = async () => {
+    return await this.contract.availableSynthCount();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns String<EthAddress>
+   **/
+  this.availableSynths = async uint256_1 => {
+    return await this.contract.availableSynths(uint256_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -103,6 +147,43 @@ function Issuer(contractSettings) {
    **/
   this.canBurnSynths = async account => {
     return await this.contract.canBurnSynths(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.collateral = async account => {
+    return await this.contract.collateral(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.collateralisationRatio = async _issuer => {
+    return await this.contract.collateralisationRatio(_issuer);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns Object
+   **/
+  this.collateralisationRatioAndAnyRatesStale = async _issuer => {
+    return await this.contract.collateralisationRatioAndAnyRatesStale(_issuer);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.debtBalanceOf = async (_issuer, currencyKey) => {
+    return await this.contract.debtBalanceOf(_issuer, currencyKey);
   };
 
   /**
@@ -199,6 +280,15 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.maxIssuableSynths = async _issuer => {
+    return await this.contract.maxIssuableSynths(_issuer);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.minimumStakeTime = async () => {
@@ -230,6 +320,26 @@ function Issuer(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns Object
+   **/
+  this.remainingIssuableSynths = async _issuer => {
+    return await this.contract.remainingIssuableSynths(_issuer);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeSynth = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeSynth(currencyKey, txParams);
   };
 
   /**
@@ -269,6 +379,44 @@ function Issuer(contractSettings) {
   this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
     return await this.contract.setResolverAndSyncCache(_resolver, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns String<EthAddress>
+   **/
+  this.synths = async bytes32_1 => {
+    return await this.contract.synths(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns bytes32
+   **/
+  this.synthsByAddress = async address_1 => {
+    return await this.contract.synthsByAddress(address_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @param excludeEtherCollateral {boolean}
+   * @returns BigNumber
+   **/
+  this.totalIssuedSynths = async (currencyKey, excludeEtherCollateral) => {
+    return await this.contract.totalIssuedSynths(currencyKey, excludeEtherCollateral);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param balance {BigNumber}
+   * @returns Object
+   **/
+  this.transferableSynthetixAndAnyRateIsStale = async (account, balance) => {
+    return await this.contract.transferableSynthetixAndAnyRateIsStale(account, balance);
   };
 }
 

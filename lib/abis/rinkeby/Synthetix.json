@@ -414,22 +414,6 @@
 		"signature": "0x79ba5097"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "contract ISynth",
-				"name": "synth",
-				"type": "address"
-			}
-		],
-		"name": "addSynth",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x849cf588"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -455,6 +439,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xdd62ed3e"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "anySynthOrSNXRateIsStale",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "anyRateStale",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf354cad1"
 	},
 	{
 		"constant": false,
@@ -520,7 +520,7 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "index",
 				"type": "uint256"
 			}
 		],
@@ -671,7 +671,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_issuer",
+				"name": "account",
 				"type": "address"
 			},
 			{
@@ -692,38 +692,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xd37c4d8b"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_issuer",
-				"type": "address"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "debtBalanceOfAndTotalDebt",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "debtBalance",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "totalSystemValue",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x559cd4ee"
 	},
 	{
 		"constant": true,
@@ -1100,7 +1068,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_issuer",
+				"name": "account",
 				"type": "address"
 			}
 		],
@@ -1108,7 +1076,7 @@
 		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "maxIssuable",
 				"type": "uint256"
 			}
 		],
@@ -1234,7 +1202,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_issuer",
+				"name": "account",
 				"type": "address"
 			}
 		],
@@ -1260,22 +1228,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x1137aedf"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "removeSynth",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x0b887dae"
 	},
 	{
 		"constant": true,
@@ -1522,7 +1474,7 @@
 		"inputs": [
 			{
 				"internalType": "bytes32",
-				"name": "",
+				"name": "currencyKey",
 				"type": "bytes32"
 			}
 		],
@@ -1544,7 +1496,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "",
+				"name": "synthAddress",
 				"type": "address"
 			}
 		],
@@ -1719,7 +1671,7 @@
 		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "transferable",
 				"type": "uint256"
 			}
 		],

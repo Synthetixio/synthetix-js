@@ -65,18 +65,6 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Only the contract owner may call this., Add an associated Synth contract to the Synthetix system.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param synth {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.addSynth = async (synth, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.addSynth(synth, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param owner {String<EthAddress>}
    * @param spender {String<EthAddress>}
@@ -84,6 +72,14 @@ function Synthetix(contractSettings) {
    **/
   this.allowance = async (owner, spender) => {
     return await this.contract.allowance(owner, spender);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.anySynthOrSNXRateIsStale = async () => {
+    return await this.contract.anySynthOrSNXRateIsStale();
   };
 
   /**
@@ -117,11 +113,11 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
+   * @param index {BigNumber}
    * @returns String<EthAddress>
    **/
-  this.availableSynths = async uint256_1 => {
-    return await this.contract.availableSynths(uint256_1);
+  this.availableSynths = async index => {
+    return await this.contract.availableSynths(index);
   };
 
   /**
@@ -201,22 +197,12 @@ function Synthetix(contractSettings) {
   /**
    * If a user issues synths backed by SNX in their wallet, the SNX become locked. This function will tell you how many synths a user has to give back to the system in order to unlock their original debt position. This is priced in whichever synth is passed in as a currency key, e.g. you can price the debt in sUSD, XDR, or any other synth you wish.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
+   * @param account {String<EthAddress>}
    * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.debtBalanceOf = async (_issuer, currencyKey) => {
-    return await this.contract.debtBalanceOf(_issuer, currencyKey);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @returns Object
-   **/
-  this.debtBalanceOfAndTotalDebt = async (_issuer, currencyKey) => {
-    return await this.contract.debtBalanceOfAndTotalDebt(_issuer, currencyKey);
+  this.debtBalanceOf = async (account, currencyKey) => {
+    return await this.contract.debtBalanceOf(account, currencyKey);
   };
 
   /**
@@ -443,11 +429,11 @@ function Synthetix(contractSettings) {
   /**
    * The maximum synths an issuer can issue against their total synthetix quantity, priced in XDRs. This ignores any already issued synths, and is purely giving you the maximimum amount the user can issue.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
+   * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
-  this.maxIssuableSynths = async _issuer => {
-    return await this.contract.maxIssuableSynths(_issuer);
+  this.maxIssuableSynths = async account => {
+    return await this.contract.maxIssuableSynths(account);
   };
 
   /**
@@ -514,23 +500,11 @@ function Synthetix(contractSettings) {
   /**
    * The remaining synths an issuer can issue against their total synthetix balance.<br>
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
+   * @param account {String<EthAddress>}
    * @returns Object
    **/
-  this.remainingIssuableSynths = async _issuer => {
-    return await this.contract.remainingIssuableSynths(_issuer);
-  };
-
-  /**
-   * Only the contract owner may call this., Remove an associated Synth contract from the Synthetix system.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-  
-   **/
-  this.removeSynth = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.removeSynth(currencyKey, txParams);
+  this.remainingIssuableSynths = async account => {
+    return await this.contract.remainingIssuableSynths(account);
   };
 
   /**
@@ -671,20 +645,20 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes32}
+   * @param currencyKey {bytes32}
    * @returns String<EthAddress>
    **/
-  this.synths = async bytes32_1 => {
-    return await this.contract.synths(bytes32_1);
+  this.synths = async currencyKey => {
+    return await this.contract.synths(currencyKey);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
+   * @param synthAddress {String<EthAddress>}
    * @returns bytes32
    **/
-  this.synthsByAddress = async address_1 => {
-    return await this.contract.synthsByAddress(address_1);
+  this.synthsByAddress = async synthAddress => {
+    return await this.contract.synthsByAddress(synthAddress);
   };
 
   /**

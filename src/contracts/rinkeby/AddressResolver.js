@@ -16,22 +16,12 @@ function AddressResolver(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.nominateNewOwner = async (_owner, txParams) => {
+  this.acceptOwnership = async txParams => {
     txParams = txParams || {};
-    return await this.contract.nominateNewOwner(_owner, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes32}
-   * @returns String<EthAddress>
-   **/
-  this.repository = async bytes32_1 => {
-    return await this.contract.repository(bytes32_1);
+    return await this.contract.acceptOwnership(txParams);
   };
 
   /**
@@ -45,28 +35,11 @@ function AddressResolver(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param key {bytes32}
    * @returns String<EthAddress>
    **/
-  this.nominatedOwner = async () => {
-    return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.acceptOwnership = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.acceptOwnership(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.owner = async () => {
-    return await this.contract.owner();
+  this.getSynth = async key => {
+    return await this.contract.getSynth(key);
   };
 
   /**
@@ -79,6 +52,42 @@ function AddressResolver(contractSettings) {
   this.importAddresses = async (names, destinations, txParams) => {
     txParams = txParams || {};
     return await this.contract.importAddresses(names, destinations, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.nominateNewOwner = async (_owner, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.nominateNewOwner(_owner, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.nominatedOwner = async () => {
+    return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.owner = async () => {
+    return await this.contract.owner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns String<EthAddress>
+   **/
+  this.repository = async bytes32_1 => {
+    return await this.contract.repository(bytes32_1);
   };
 
   /**

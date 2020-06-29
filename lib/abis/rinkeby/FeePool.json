@@ -716,7 +716,7 @@
 		"outputs": [
 			{
 				"internalType": "bool",
-				"name": "",
+				"name": "feesClaimable",
 				"type": "bool"
 			}
 		],

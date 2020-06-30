@@ -1,73 +1,50 @@
 [
 	{
-		"constant": false,
 		"inputs": [
 			{
+				"internalType": "address",
 				"name": "_owner",
 				"type": "address"
 			}
 		],
-		"name": "nominateNewOwner",
-		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1627540c"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
-		"constant": true,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"name": "repository",
-		"outputs": [
+				"indexed": false,
+				"internalType": "address",
+				"name": "oldOwner",
+				"type": "address"
+			},
 			{
-				"name": "",
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x187f7935"
+		"name": "OwnerChanged",
+		"type": "event",
+		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
 	},
 	{
-		"constant": true,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "name",
-				"type": "bytes32"
-			}
-		],
-		"name": "getAddress",
-		"outputs": [
-			{
-				"name": "",
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x21f8a721"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "nominatedOwner",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x53a47bb7"
+		"name": "OwnerNominated",
+		"type": "event",
+		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
 	},
 	{
 		"constant": false,
@@ -81,10 +58,17 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "owner",
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			}
+		],
+		"name": "getAddress",
 		"outputs": [
 			{
+				"internalType": "address",
 				"name": "",
 				"type": "address"
 			}
@@ -92,16 +76,40 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x8da5cb5b"
+		"signature": "0x21f8a721"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "key",
+				"type": "bytes32"
+			}
+		],
+		"name": "getSynth",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x51456061"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "bytes32[]",
 				"name": "names",
 				"type": "bytes32[]"
 			},
 			{
+				"internalType": "address[]",
 				"name": "destinations",
 				"type": "address[]"
 			}
@@ -114,13 +122,85 @@
 		"signature": "0xab0b8f77"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "nominateNewOwner",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x1627540c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "nominatedOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8da5cb5b"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "repository",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x187f7935"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
 				"name": "name",
 				"type": "bytes32"
 			},
 			{
+				"internalType": "string",
 				"name": "reason",
 				"type": "string"
 			}
@@ -128,6 +208,7 @@
 		"name": "requireAndGetAddress",
 		"outputs": [
 			{
+				"internalType": "address",
 				"name": "",
 				"type": "address"
 			}
@@ -136,47 +217,5 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xdacb2d01"
-	},
-	{
-		"inputs": [
-			{
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnerNominated",
-		"type": "event",
-		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "oldOwner",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnerChanged",
-		"type": "event",
-		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
 	}
 ]

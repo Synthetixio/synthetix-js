@@ -1,6 +1,6 @@
 const { toBN, toWei } = require('web3-utils');
 
-export const Side = {
+const Side = {
   Long: 0,
   Short: 1,
 };
@@ -40,7 +40,7 @@ function subToZero(a, b) {
   return a.lte(b) ? toBN(0) : a.sub(b);
 }
 
-export function pricesAfterBidOrRefund({
+function pricesAfterBidOrRefund({
   side,
   value,
   refund,
@@ -75,7 +75,7 @@ export function pricesAfterBidOrRefund({
   });
 }
 
-export function bidOrRefundForPrice({
+function bidOrRefundForPrice({
   bidSide,
   priceSide,
   price,
@@ -108,3 +108,4 @@ export function bidOrRefundForPrice({
     return refund ? divDecRound(value, UNIT.sub(refundFee)) : value;
   }
 }
+

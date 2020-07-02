@@ -30,7 +30,7 @@
     "lodash": "4.17.15",
     "synthetix": "2.24.0",
     "trezor-connect": "7.0.3",
-    "walletlink": "1.0.0"
+    "walletlink": "2.0.2"
   },
   "devDependencies": {
     "@babel/core": "~7.0.0",

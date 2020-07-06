@@ -7,6 +7,7 @@ import Ledger from '../lib/signers/ledgerSigner';
 import Coinbase from '../lib/signers/coinbaseSigner';
 import PrivateKey from '../lib/signers/privateKeySigner';
 import WalletConnect from '../lib/signers/walletConnectSigner';
+import Portis from '../lib/signers/portisSigner';
 
 const signers = {
   Trezor,
@@ -15,6 +16,7 @@ const signers = {
   PrivateKey,
   Coinbase,
   WalletConnect,
+  Portis,
 };
 
 export class SynthetixJs extends SynthetixJsBase {

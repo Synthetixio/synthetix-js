@@ -108,4 +108,3 @@ function bidOrRefundForPrice({
     return refund ? divDecRound(value, UNIT.sub(refundFee)) : value;
   }
 }
-

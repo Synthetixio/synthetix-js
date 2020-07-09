@@ -1,11 +1,13 @@
-const { toBN, toWei } = require('web3-utils');
+const utils = require('ethers').utils;
 
 const Side = {
   Long: 0,
   Short: 1,
 };
 
-const toUnit = n => toBN(toWei(n));
+const toBN = utils.bigNumberify;
+const toUnit = utils.parseEther;
+
 const UNIT = toUnit('1');
 
 const mulDecRound = (x, y) => {
@@ -40,7 +42,7 @@ function subToZero(a, b) {
   return a.lte(b) ? toBN(0) : a.sub(b);
 }
 
-function pricesAfterBidOrRefund({
+export function pricesAfterBidOrRefund({
   side,
   value,
   refund,
@@ -75,7 +77,7 @@ function pricesAfterBidOrRefund({
   });
 }
 
-function bidOrRefundForPrice({
+export function bidOrRefundForPrice({
   bidSide,
   priceSide,
   price,

@@ -31,7 +31,6 @@
     "lodash": "4.17.15",
     "synthetix": "2.24.0",
     "trezor-connect": "7.0.3",
-    "web3-utils": "^1.2.9",
     "walletlink": "2.0.2"
   },
   "devDependencies": {

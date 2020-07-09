@@ -1,6 +1,7 @@
 import * as ethers from 'ethers';
 import contracts from './contracts';
 import util from './util/index';
+import * as BinaryOptionsUtils from './util/binaryOptions';
 import ContractSettings from './contractSettings';
 import PrivateKey from '../lib/signers/privateKeySigner';
 
@@ -20,6 +21,7 @@ class SynthetixJsBase {
     });
     this.util = new util(contractSettings);
     this.utils = this.util;
+    this.binaryOptionsUtils = BinaryOptionsUtils;
     this.ethers = ethers;
     this.SUPPORTED_NETWORKS = ContractSettings.SUPPORTED_NETWORKS;
   }

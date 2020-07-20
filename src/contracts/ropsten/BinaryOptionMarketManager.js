@@ -52,16 +52,35 @@ function BinaryOptionMarketManager(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param market {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.cancelMarket = async (market, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.cancelMarket(market, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param oracleKey {bytes32}
    * @param strikePrice {BigNumber}
+   * @param refundsEnabled {boolean}
    * @param times {uint256[2]}
    * @param bids {uint256[2]}
    * @param txParams {TxParams}
    * @returns String<EthAddress>
    **/
-  this.createMarket = async (oracleKey, strikePrice, times, bids, txParams) => {
+  this.createMarket = async (oracleKey, strikePrice, refundsEnabled, times, bids, txParams) => {
     txParams = txParams || {};
-    return await this.contract.createMarket(oracleKey, strikePrice, times, bids, txParams);
+    return await this.contract.createMarket(
+      oracleKey,
+      strikePrice,
+      refundsEnabled,
+      times,
+      bids,
+      txParams
+    );
   };
 
   /**

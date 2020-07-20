@@ -166,6 +166,11 @@
 				"type": "uint256"
 			},
 			{
+				"internalType": "bool",
+				"name": "refundsEnabled",
+				"type": "bool"
+			},
+			{
 				"internalType": "uint256[3]",
 				"name": "times",
 				"type": "uint256[3]"
@@ -192,7 +197,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x476d1715"
+		"signature": "0x130efa50"
 	},
 	{
 		"constant": true,

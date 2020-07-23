@@ -30,7 +30,7 @@
     "hdkey": "1.1.1",
     "lodash": "4.17.15",
     "synthetix": "2.25.0",
-    "trezor-connect": "7.0.3",
+    "trezor-connect": "8.1.8",
     "walletlink": "2.0.2"
   },
   "devDependencies": {

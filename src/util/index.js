@@ -1,10 +1,22 @@
-import { utils, Interface, Wallet } from 'ethers';
-import abis from '../../lib/abis/index';
-import IssuanceController from '../contracts/IssuanceController';
-import Nomin from '../contracts/Nomin';
-import Havven from '../contracts/Havven';
+import { utils, Wallet } from 'ethers';
+import contracts from '../contracts';
+
+const { Interface } = utils;
+
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
+
+const strToBytes = (text, length = text.length) => {
+  if (text.length > length) {
+    throw new Error(`Cannot convert String of ${text.length} to bytes${length} (it's too big)`);
+  }
+  // extrapolated from https://github.com/ethers-io/ethers.js/issues/66#issuecomment-344347642
+  let result = utils.hexlify(utils.toUtf8Bytes(text));
+  while (result.length < 2 + length * 2) {
+    result += '0';
+  }
+  return utils.arrayify(result);
+};
 
 class Util {
   /**
@@ -13,11 +25,12 @@ class Util {
    */
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
-    this.issuanceController = new IssuanceController(contractSettings);
-    this.nomin = new Nomin(contractSettings);
-    this.havven = new Havven(contractSettings);
-    this.issuanceControllerInterface = new Interface(abis.IssuanceController);
-    this.nominInterface = new Interface(abis.Nomin);
+    const { Depot, Synth, Synthetix } = contracts[contractSettings.network];
+    this.depot = new Depot(contractSettings);
+    this.synth = new Synth(contractSettings);
+    this.synthetix = new Synthetix(contractSettings);
+    this.depotInterface = new Interface(contractSettings.ABIS.Depot);
+    this.synthInterface = new Interface(contractSettings.ABIS.Synth);
 
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);
     this.getEventLogs = this.getEventLogs.bind(this);
@@ -43,6 +56,40 @@ class Util {
    */
   formatEther(value) {
     return utils.formatEther(value);
+  }
+
+  /**
+   * converts string to bytes
+   * @param stringValue
+   * @returns {Utf8Bytes}
+   */
+  toUtf8Bytes(stringValue) {
+    return utils.toUtf8Bytes(stringValue);
+  }
+
+  /**
+   * converts a string to a bytes4 array (right padding for Solidity)
+   * @param text {String}
+   */
+  toUtf8Bytes4(text) {
+    return strToBytes(text, 4);
+  }
+
+  /**
+   * converts a string to a bytes32 array (right padding for Solidity)
+   * @param text {String}
+   */
+  toUtf8Bytes32(text) {
+    return strToBytes(text, 32);
+  }
+
+  /**
+   * converts a string to a bytesN array (right padding for Solidity).
+   * @param text {String}
+   * @param length {Number}
+   */
+  strToBytes(text, length = text.length) {
+    return strToBytes(text, length);
   }
 
   /**
@@ -81,13 +128,13 @@ class Util {
         parsedData: event.parse(log.topics, log.data),
       }));
       const blocks = await Promise.all(
-        events.map(event => this.contractSettings.provider.getBlock(event.blockNumber))
+        events.map(evt => this.contractSettings.provider.getBlock(evt.blockNumber))
       );
       blocks.forEach(block => {
         blockTimestampMap[block.number] = new Date(block.timestamp * 1000);
       });
-      events.forEach(event => {
-        event.timestamp = blockTimestampMap[event.blockNumber];
+      events.forEach(evt => {
+        event.timestamp = blockTimestampMap[evt.blockNumber];
       });
       return events;
     } catch (err) {
@@ -97,9 +144,9 @@ class Util {
 
   async getLatestConversions() {
     const latestBlockNumber = await this.contractSettings.provider.getBlockNumber();
-    const contractAddr = this.contractSettings.addressList.IssuanceController;
+    const contractAddr = this.contractSettings.addressList.Depot;
 
-    const ExchangeEvent = this.issuanceControllerInterface.events.Exchange;
+    const ExchangeEvent = this.depotInterface.events.Exchange;
     let events = await this.getEventLogs(contractAddr, ExchangeEvent, latestBlockNumber - 10000);
     if (events.length < 5) {
       events = await this.getEventLogs(contractAddr, ExchangeEvent, latestBlockNumber - 100000);
@@ -119,7 +166,7 @@ class Util {
       return amountString;
     } else {
       const [first, remainder] = amountString.split('.');
-      let joined = `${first}.${remainder.substring(0, decimals)}`;
+      const joined = `${first}.${remainder.substring(0, decimals)}`;
 
       if (joined.endsWith('.')) return joined.substring(0, joined.length - 1);
 
@@ -150,8 +197,8 @@ class Util {
    * @param toAddress - where to send transaction
    * @param ethValue - optional - if function requires ETH to be sent
    * @param data - optional if function requires data to be sent
-   * example  (new Interface(CONTRACT_ABIS.IssuanceController).functions.exchangeEtherForNomins()).data
-   * example2 nominInterface.functions.approve(MAINNET_ADDRESSES.IssuanceController, utils.parseEther("2")).data;
+   * example  (new Interface(CONTRACT_ABIS.Depot).functions.exchangeEtherForSynths()).data
+   * example2 synthInterface.functions.approve(MAINNET_ADDRESSES.Depot, utils.parseEther("2")).data;
    * @returns {Promise<String>}
    */
   async getGasEstimate(toAddress, ethValue, data) {
@@ -189,12 +236,20 @@ class Util {
     });
   }
 
+  async getEtherPrice() {
+    return await this.depot.usdToEthPrice();
+  }
+
+  async getSynthetixPrice() {
+    return await this.depot.usdToSnxPrice();
+  }
+
   /**
    * Returns the object with estimates for slow, average and fast gas prices and approximate waiting times
    * @returns {Promise<{gasFastGwei: number, gasAverageGwei: number, gasSlowGwei: number, timeFastMinutes: *, timeAverageMinutes: *, timeSlowMinutes: *}>}
    */
   async getGasAndSpeedInfo() {
-    // ethToNomin uses approx 80,000, nominToHav 40,000 but approve 70,000; 100,000 is safe average
+    // ethToSynth uses approx 80,000, synthToHav 40,000 but approve 70,000; 100,000 is safe average
     const convetorTxGasPrice = DEFAULT_GAS_LIMIT;
     let [egsData, ethPrice] = await Promise.all([
       fetch('https://ethgasstation.info/json/ethgasAPI.json'),

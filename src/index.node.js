@@ -1,46 +1,27 @@
-import Havven from './contracts/Havven';
-import Nomin from './contracts/Nomin';
-import IssuanceController from './contracts/IssuanceController';
-import Mintr from './contracts/Mintr';
-import Converter from './converter';
-import StablePayments from './contracts/StablePayments';
-import util from './util/index';
-import PrivateKey from '../lib/signers/privateKeySigner';
-import ContractSettings from './contractSettings';
+import { utils, providers } from 'ethers';
 
-export class HavvenJs {
+import SynthetixJsBase from './SynthetixJsBase';
+import PrivateKey from '../lib/signers/privateKeySigner';
+
+const signers = {
+  PrivateKey,
+};
+
+export class SynthetixJs extends SynthetixJsBase {
   /**
-   * Creates instances of Havven contracts based on ContractSettings.
+   * Creates instances of Synthetix contracts based on ContractSettings.
    * Usage example:
-   * const HavvenJs = require('HavvenJs');
-   * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-   * const totalSupply = await havjs.Havven.totalSupply();
+   * const {SynthetixJs} = require('SynthetixJs');
+   * const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+   * const totalSupply = await snxjs.Synthetix.totalSupply();
    * @constructor
    * @param contractSettings {ContractSettings}
    */
   constructor(contractSettings) {
-    contractSettings = new ContractSettings(contractSettings);
-    this.Havven = new Havven(contractSettings);
-    this.Nomin = new Nomin(contractSettings);
-    this.IssuanceController = new IssuanceController(contractSettings);
-    this.Mintr = new Mintr(contractSettings);
-    this.Converter = new Converter(contractSettings);
-    this.StablePayments = new StablePayments(contractSettings);
-    this.util = new util(contractSettings);
-    this.utils = this.util;
+    super(contractSettings, signers);
   }
 }
 
-/**
- * Available transaction signers for node.js
- * @type {{ PrivateKey}|*}
- */
-HavvenJs.signers = {
-  PrivateKey
-};
-
-/**
- *
- * @type {ContractSettings}
- */
-HavvenJs.ContractSettings = ContractSettings;
+SynthetixJs.signers = signers;
+SynthetixJs.utils = utils; // shortcut to ethers utils without having to create instance
+SynthetixJs.providers = providers;

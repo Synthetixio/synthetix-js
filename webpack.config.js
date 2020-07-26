@@ -10,24 +10,24 @@ const serveConfig = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
   optimization: {
-    minimize: false
+    minimize: false,
   },
   target: 'node',
   entry: './src/index.node.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.node.js',
-    library: 'HavvenJs',
+    library: 'SynthetixJs',
     libraryTarget: 'umd',
-    globalObject: 'typeof self !== \'undefined\' ? self : this',
-  }
+    globalObject: "typeof self !== 'undefined' ? self : this",
+  },
 };
 
 const clientConfig = {
@@ -39,22 +39,19 @@ const clientConfig = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  },
-  optimization: {
-    minimize: false
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-    library: 'HavvenJs',
-    libraryTarget: 'umd'
-  }
+    library: 'SynthetixJs',
+    libraryTarget: 'umd',
+  },
 };
 
 module.exports = [clientConfig, serveConfig];

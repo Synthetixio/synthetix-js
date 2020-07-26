@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:10.16'
+    working_directory: null
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v1.1-dependencies-{{ checksum "package-lock.json" }}'
+            - v1.1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: 'v1.1-dependencies-{{ checksum "package-lock.json" }}'
+      - run: npm run lint
+      - run: npm test

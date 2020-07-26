@@ -1,49 +1,38 @@
-import Havven from './contracts/Havven';
-import Nomin from './contracts/Nomin';
-import IssuanceController from './contracts/IssuanceController';
-import Mintr from './contracts/Mintr';
-import Converter from './converter';
-import StablePayments from './contracts/StablePayments';
-import util from './util/index';
+import { utils } from 'ethers';
+
+import SynthetixJsBase from './SynthetixJsBase';
 import Trezor from '../lib/signers/trezorSigner';
 import Metamask from '../lib/signers/metamaskSigner';
 import Ledger from '../lib/signers/ledgerSigner';
+import Coinbase from '../lib/signers/coinbaseSigner';
 import PrivateKey from '../lib/signers/privateKeySigner';
-import ContractSettings from './contractSettings';
+import WalletConnect from '../lib/signers/walletConnectSigner';
+import Portis from '../lib/signers/portisSigner';
 
-export class HavvenJs {
+const signers = {
+  Trezor,
+  Ledger,
+  Metamask,
+  PrivateKey,
+  Coinbase,
+  WalletConnect,
+  Portis,
+};
+
+export class SynthetixJs extends SynthetixJsBase {
   /**
-   * Creates instances of Havven contracts based on ContractSettings.
+   * Creates instances of Synthetix contracts based on ContractSettings.
    * Usage example:
-   * const HavvenJs = require('HavvenJs');
-   * const havjs = new HavvenJs(); //uses default ContractSettings - ethers.js default provider, mainnet
-   * const totalSupply = await havjs.Havven.totalSupply();
+   * const {SynthetixJs} = require('SynthetixJs');
+   * const snxjs = new SynthetixJs(); //uses default ContractSettings - ethers.js default provider, mainnet
+   * const totalSupply = await snxjs.Synthetix.totalSupply();
    * @constructor
    * @param contractSettings {ContractSettings}
    */
   constructor(contractSettings) {
-    contractSettings = new ContractSettings(contractSettings);
-    this.Havven = new Havven(contractSettings);
-    this.Nomin = new Nomin(contractSettings);
-    this.IssuanceController = new IssuanceController(contractSettings);
-    this.Mintr = new Mintr(contractSettings);
-    this.Converter = new Converter(contractSettings);
-    this.StablePayments = new StablePayments(contractSettings);
-    this.util = new util(contractSettings);
-    this.utils = this.util;
+    super(contractSettings, signers);
   }
 }
 
-/**
- * Available transaction signers
- * @type {{Trezor, Ledger, Metamask, PrivateKey}|*}
- */
-HavvenJs.signers = {
-  Trezor, Ledger, Metamask, PrivateKey
-};
-
-/**
- *
- * @type {ContractSettings}
- */
-HavvenJs.ContractSettings = ContractSettings;
+SynthetixJs.signers = signers;
+SynthetixJs.utils = utils; // shortcut to ethers utils without having to create instance

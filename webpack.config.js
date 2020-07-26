@@ -24,7 +24,7 @@ const serveConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.node.js',
-    library: 'HavvenJs',
+    library: 'SynthetixJs',
     libraryTarget: 'umd',
     globalObject: "typeof self !== 'undefined' ? self : this",
   },
@@ -49,7 +49,7 @@ const clientConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-    library: 'HavvenJs',
+    library: 'SynthetixJs',
     libraryTarget: 'umd',
   },
 };

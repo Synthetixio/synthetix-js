@@ -1,10 +1,22 @@
-import { utils, Interface, Wallet } from 'ethers';
-import abis from '../../lib/abis/index';
-import Depot from '../contracts/Depot';
-import Synth from '../contracts/Synth';
-import Synthetix from '../contracts/Synthetix';
+import { utils, Wallet } from 'ethers';
+import contracts from '../contracts';
+
+const { Interface } = utils;
+
 const GWEI = 1000000000;
 const DEFAULT_GAS_LIMIT = 200000;
+
+const strToBytes = (text, length = text.length) => {
+  if (text.length > length) {
+    throw new Error(`Cannot convert String of ${text.length} to bytes${length} (it's too big)`);
+  }
+  // extrapolated from https://github.com/ethers-io/ethers.js/issues/66#issuecomment-344347642
+  let result = utils.hexlify(utils.toUtf8Bytes(text));
+  while (result.length < 2 + length * 2) {
+    result += '0';
+  }
+  return utils.arrayify(result);
+};
 
 class Util {
   /**
@@ -13,11 +25,12 @@ class Util {
    */
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
+    const { Depot, Synth, Synthetix } = contracts[contractSettings.network];
     this.depot = new Depot(contractSettings);
     this.synth = new Synth(contractSettings);
     this.synthetix = new Synthetix(contractSettings);
-    this.depotInterface = new Interface(abis.Depot);
-    this.synthInterface = new Interface(abis.Synth);
+    this.depotInterface = new Interface(contractSettings.ABIS.Depot);
+    this.synthInterface = new Interface(contractSettings.ABIS.Synth);
 
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);
     this.getEventLogs = this.getEventLogs.bind(this);
@@ -52,6 +65,31 @@ class Util {
    */
   toUtf8Bytes(stringValue) {
     return utils.toUtf8Bytes(stringValue);
+  }
+
+  /**
+   * converts a string to a bytes4 array (right padding for Solidity)
+   * @param text {String}
+   */
+  toUtf8Bytes4(text) {
+    return strToBytes(text, 4);
+  }
+
+  /**
+   * converts a string to a bytes32 array (right padding for Solidity)
+   * @param text {String}
+   */
+  toUtf8Bytes32(text) {
+    return strToBytes(text, 32);
+  }
+
+  /**
+   * converts a string to a bytesN array (right padding for Solidity).
+   * @param text {String}
+   * @param length {Number}
+   */
+  strToBytes(text, length = text.length) {
+    return strToBytes(text, length);
   }
 
   /**
@@ -90,13 +128,13 @@ class Util {
         parsedData: event.parse(log.topics, log.data),
       }));
       const blocks = await Promise.all(
-        events.map(event => this.contractSettings.provider.getBlock(event.blockNumber))
+        events.map(evt => this.contractSettings.provider.getBlock(evt.blockNumber))
       );
       blocks.forEach(block => {
         blockTimestampMap[block.number] = new Date(block.timestamp * 1000);
       });
-      events.forEach(event => {
-        event.timestamp = blockTimestampMap[event.blockNumber];
+      events.forEach(evt => {
+        event.timestamp = blockTimestampMap[evt.blockNumber];
       });
       return events;
     } catch (err) {
@@ -128,7 +166,7 @@ class Util {
       return amountString;
     } else {
       const [first, remainder] = amountString.split('.');
-      let joined = `${first}.${remainder.substring(0, decimals)}`;
+      const joined = `${first}.${remainder.substring(0, decimals)}`;
 
       if (joined.endsWith('.')) return joined.substring(0, joined.length - 1);
 

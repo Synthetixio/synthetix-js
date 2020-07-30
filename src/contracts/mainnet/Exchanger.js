@@ -18,6 +18,14 @@ function Exchanger(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.CIRCUIT_BREAKER_SUSPENSION_REASON = async () => {
+    return await this.contract.CIRCUIT_BREAKER_SUSPENSION_REASON();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
     return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
   };
@@ -156,6 +164,24 @@ function Exchanger(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.isSynthRateInvalid = async currencyKey => {
+    return await this.contract.isSynthRateInvalid(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns BigNumber
+   **/
+  this.lastExchangeRate = async bytes32_1 => {
+    return await this.contract.lastExchangeRate(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param currencyKey {bytes32}
    * @returns BigNumber
@@ -193,6 +219,14 @@ function Exchanger(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.priceDeviationThresholdFactor = async () => {
+    return await this.contract.priceDeviationThresholdFactor();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.resolver = async () => {
@@ -206,6 +240,20 @@ function Exchanger(contractSettings) {
    **/
   this.resolverAddressesRequired = async uint256_1 => {
     return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _priceDeviationThresholdFactor {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setPriceDeviationThresholdFactor = async (_priceDeviationThresholdFactor, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setPriceDeviationThresholdFactor(
+      _priceDeviationThresholdFactor,
+      txParams
+    );
   };
 
   /**
@@ -250,6 +298,17 @@ function Exchanger(contractSettings) {
    **/
   this.settlementOwing = async (account, currencyKey) => {
     return await this.contract.settlementOwing(account, currencyKey);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendSynthWithInvalidRate = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendSynthWithInvalidRate(currencyKey, txParams);
   };
 
   /**

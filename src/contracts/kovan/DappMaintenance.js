@@ -16,13 +16,28 @@ function DappMaintenance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param isPaused {boolean}
    * @param txParams {TxParams}
   
    **/
-  this.setMaintenanceModeMintr = async (isPaused, txParams) => {
+  this.acceptOwnership = async txParams => {
     txParams = txParams || {};
-    return await this.contract.setMaintenanceModeMintr(isPaused, txParams);
+    return await this.contract.acceptOwnership(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.isPausedSX = async () => {
+    return await this.contract.isPausedSX();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.isPausedStaking = async () => {
+    return await this.contract.isPausedStaking();
   };
 
   /**
@@ -37,40 +52,11 @@ function DappMaintenance(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param isPaused {boolean}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setMaintenanceModeAll = async (isPaused, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setMaintenanceModeAll(isPaused, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.isPausedMintr = async () => {
-    return await this.contract.isPausedMintr();
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.nominatedOwner = async () => {
     return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.acceptOwnership = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.acceptOwnership(txParams);
   };
 
   /**
@@ -82,11 +68,14 @@ function DappMaintenance(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
+   * Transaction (consumes gas, requires signer)
+   * @param isPaused {boolean}
+   * @param txParams {TxParams}
+  
    **/
-  this.isPausedSX = async () => {
-    return await this.contract.isPausedSX();
+  this.setMaintenanceModeAll = async (isPaused, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMaintenanceModeAll(isPaused, txParams);
   };
 
   /**
@@ -98,6 +87,17 @@ function DappMaintenance(contractSettings) {
   this.setMaintenanceModeSX = async (isPaused, txParams) => {
     txParams = txParams || {};
     return await this.contract.setMaintenanceModeSX(isPaused, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param isPaused {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMaintenanceModeStaking = async (isPaused, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMaintenanceModeStaking(isPaused, txParams);
   };
 }
 

@@ -170,34 +170,6 @@
 		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "threshold",
-				"type": "uint256"
-			}
-		],
-		"name": "PriceDeviationThresholdUpdated",
-		"type": "event",
-		"signature": "0x6e65c7d32a9129ebc4e4e6d755e2a9668753c046f4b128ac8aeb4f3e5446a1e5"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "waitingPeriodSecs",
-				"type": "uint256"
-			}
-		],
-		"name": "WaitingPeriodSecsUpdated",
-		"type": "event",
-		"signature": "0xc32c92cac11e29883e0fb2d9e38230cc510e3bda48abc270b780de60bb8465f8"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "CIRCUIT_BREAKER_SUSPENSION_REASON",
@@ -671,22 +643,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_priceDeviationThresholdFactor",
-				"type": "uint256"
-			}
-		],
-		"name": "setPriceDeviationThresholdFactor",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1e6e2190"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "contract AddressResolver",
 				"name": "_resolver",
 				"type": "address"
@@ -698,22 +654,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x3be99e6f"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_waitingPeriodSecs",
-				"type": "uint256"
-			}
-		],
-		"name": "setWaitingPeriodSecs",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x635a3872"
 	},
 	{
 		"constant": false,

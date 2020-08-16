@@ -443,18 +443,18 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "anySynthOrSNXRateIsStale",
+		"name": "anySynthOrSNXRateIsInvalid",
 		"outputs": [
 			{
 				"internalType": "bool",
-				"name": "anyRateStale",
+				"name": "anyRateInvalid",
 				"type": "bool"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xf354cad1"
+		"signature": "0x4e99bda9"
 	},
 	{
 		"constant": false,

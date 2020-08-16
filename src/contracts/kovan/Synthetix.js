@@ -78,8 +78,8 @@ function Synthetix(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
-  this.anySynthOrSNXRateIsStale = async () => {
-    return await this.contract.anySynthOrSNXRateIsStale();
+  this.anySynthOrSNXRateIsInvalid = async () => {
+    return await this.contract.anySynthOrSNXRateIsInvalid();
   };
 
   /**

@@ -62,48 +62,6 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "newDelay",
-				"type": "uint256"
-			}
-		],
-		"name": "LiquidationDelayUpdated",
-		"type": "event",
-		"signature": "0x9917e32433edcb65f8982c1b2c26c3469468308456f93cf34b98c1b0459c5398"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "newPenalty",
-				"type": "uint256"
-			}
-		],
-		"name": "LiquidationPenaltyUpdated",
-		"type": "event",
-		"signature": "0xbfb22c07314f4682bba789860ceb851eb8cea2d867920332b2a42cf56be5b2e9"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "newRatio",
-				"type": "uint256"
-			}
-		],
-		"name": "LiquidationRatioUpdated",
-		"type": "event",
-		"signature": "0x5568be83e5cf7405adf8fb39305e2cdf49c43336606d23c3e0d3fe54e205150a"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
 				"internalType": "address",
 				"name": "oldOwner",
 				"type": "address"
@@ -180,70 +138,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe3235c91"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_LIQUIDATION_DELAY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf1076b25"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_LIQUIDATION_PENALTY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x085f95cd"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_LIQUIDATION_RATIO",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xb2ea7054"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MIN_LIQUIDATION_DELAY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xadd0989d"
 	},
 	{
 		"constant": false,
@@ -361,6 +255,28 @@
 				"type": "address"
 			}
 		],
+		"name": "isLiquidationDeadlinePassed",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x39a9df1b"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
 		"name": "isOpenForLiquidation",
 		"outputs": [
 			{
@@ -398,25 +314,19 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "isliquidationDeadlinePassed",
+		"inputs": [],
+		"name": "issuanceRatio",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bool"
+				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x9b4f2092"
+		"signature": "0xb410a034"
 	},
 	{
 		"constant": true,
@@ -583,54 +493,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xc6c9d828"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "time",
-				"type": "uint256"
-			}
-		],
-		"name": "setLiquidationDelay",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x5e0117d6"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "penalty",
-				"type": "uint256"
-			}
-		],
-		"name": "setLiquidationPenalty",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x2806a743"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_liquidationRatio",
-				"type": "uint256"
-			}
-		],
-		"name": "setLiquidationRatio",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x946ce8cd"
 	},
 	{
 		"constant": false,

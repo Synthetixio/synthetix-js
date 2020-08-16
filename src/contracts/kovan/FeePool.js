@@ -42,30 +42,6 @@ function FeePool(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.MAX_EXCHANGE_FEE_RATE = async () => {
-    return await this.contract.MAX_EXCHANGE_FEE_RATE();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_FEE_PERIOD_DURATION = async () => {
-    return await this.contract.MAX_FEE_PERIOD_DURATION();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MIN_FEE_PERIOD_DURATION = async () => {
-    return await this.contract.MIN_FEE_PERIOD_DURATION();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
@@ -179,15 +155,6 @@ function FeePool(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param synthKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.getExchangeFeeRateForSynth = async synthKey => {
-    return await this.contract.getExchangeFeeRateForSynth(synthKey);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param _claimingAddress {String<EthAddress>}
    * @returns BigNumber
    **/
@@ -291,6 +258,14 @@ function FeePool(contractSettings) {
    **/
   this.isResolverCached = async _resolver => {
     return await this.contract.isResolverCached(_resolver);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.issuanceRatio = async () => {
+    return await this.contract.issuanceRatio();
   };
 
   /**
@@ -401,29 +376,6 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param synthKeys {bytes32[]}
-   * @param exchangeFeeRates {uint256[]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setExchangeFeeRateForSynths = async (synthKeys, exchangeFeeRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setExchangeFeeRateForSynths(synthKeys, exchangeFeeRates, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePeriodDuration {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setFeePeriodDuration = async (_feePeriodDuration, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePeriodDuration(_feePeriodDuration, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _integrationProxy {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -486,17 +438,6 @@ function FeePool(contractSettings) {
   this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
     txParams = txParams || {};
     return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _percent {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setTargetThreshold = async (_percent, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setTargetThreshold(_percent, txParams);
   };
 
   /**

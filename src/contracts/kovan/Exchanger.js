@@ -244,20 +244,6 @@ function Exchanger(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _priceDeviationThresholdFactor {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setPriceDeviationThresholdFactor = async (_priceDeviationThresholdFactor, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setPriceDeviationThresholdFactor(
-      _priceDeviationThresholdFactor,
-      txParams
-    );
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _resolver {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -265,17 +251,6 @@ function Exchanger(contractSettings) {
   this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
     return await this.contract.setResolverAndSyncCache(_resolver, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _waitingPeriodSecs {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setWaitingPeriodSecs = async (_waitingPeriodSecs, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
   };
 
   /**

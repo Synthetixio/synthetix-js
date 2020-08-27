@@ -16,9 +16,9 @@ import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
 import RewardsDistribution from './RewardsDistribution';
 import BinaryOptionMarketManager from './BinaryOptionMarketManager';
+import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
-import sUSD from './sUSD';
 import sAUD from './sAUD';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
@@ -76,9 +76,9 @@ export default {
   SystemStatus,
   RewardsDistribution,
   BinaryOptionMarketManager,
+  sUSD,
   sEUR,
   sJPY,
-  sUSD,
   sAUD,
   sGBP,
   sCHF,

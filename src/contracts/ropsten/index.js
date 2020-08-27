@@ -16,9 +16,9 @@ import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
 import RewardsDistribution from './RewardsDistribution';
 import BinaryOptionMarketManager from './BinaryOptionMarketManager';
+import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
-import sUSD from './sUSD';
 import sAUD from './sAUD';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
@@ -38,10 +38,10 @@ import sETC from './sETC';
 import sDASH from './sDASH';
 import sXMR from './sXMR';
 import sADA from './sADA';
-import sCEX from './sCEX';
-import sDEFI from './sDEFI';
 import sFTSE from './sFTSE';
 import sNIKKEI from './sNIKKEI';
+import sCEX from './sCEX';
+import sDEFI from './sDEFI';
 import iBTC from './iBTC';
 import iETH from './iETH';
 import iBNB from './iBNB';
@@ -78,9 +78,9 @@ export default {
   SystemStatus,
   RewardsDistribution,
   BinaryOptionMarketManager,
+  sUSD,
   sEUR,
   sJPY,
-  sUSD,
   sAUD,
   sGBP,
   sCHF,
@@ -100,10 +100,10 @@ export default {
   sDASH,
   sXMR,
   sADA,
-  sCEX,
-  sDEFI,
   sFTSE,
   sNIKKEI,
+  sCEX,
+  sDEFI,
   iBTC,
   iETH,
   iBNB,

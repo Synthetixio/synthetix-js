@@ -216,6 +216,20 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "bool",
+				"name": "enabled",
+				"type": "bool"
+			}
+		],
+		"name": "TradingRewardsEnabled",
+		"type": "event",
+		"signature": "0xe11c1893b6f97decd3ac13637137734a4b75d159e899e5a8abb48470ab0bc4fd"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "waitingPeriodSecs",
 				"type": "uint256"
@@ -918,6 +932,22 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "bool",
+				"name": "_tradingRewardsEnabled",
+				"type": "bool"
+			}
+		],
+		"name": "setTradingRewardsEnabled",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x4641ab66"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "_waitingPeriodSecs",
 				"type": "uint256"
@@ -945,6 +975,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe0e6393d"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "tradingRewardsEnabled",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc193f0d8"
 	},
 	{
 		"constant": true,

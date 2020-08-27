@@ -112,11 +112,23 @@
 				"internalType": "bytes32",
 				"name": "currencyKey",
 				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "initiator",
+				"type": "address"
 			}
 		],
 		"name": "InversePriceFrozen",
 		"type": "event",
-		"signature": "0x4b3d3f51dab37576ab4ca08ebdb81d4a4c587f25df5cc1f9a620a7faff84aba8"
+		"signature": "0x3de98bb945f5841b9e27e10a317b59497fa7aab6bc7ba00461fbb3211b550165"
 	},
 	{
 		"anonymous": false,
@@ -399,6 +411,50 @@
 		"inputs": [
 			{
 				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "canFreezeRate",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x3375fcd1"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "aggregator",
+				"type": "address"
+			}
+		],
+		"name": "currenciesUsingAggregator",
+		"outputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencies",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2678df96"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
 			}
@@ -549,6 +605,22 @@
 		"signature": "0x266da16b"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "freezeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xde02795e"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -677,7 +749,12 @@
 			},
 			{
 				"internalType": "bool",
-				"name": "frozen",
+				"name": "frozenAtUpperLimit",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "frozenAtLowerLimit",
 				"type": "bool"
 			}
 		],
@@ -1241,12 +1318,12 @@
 			},
 			{
 				"internalType": "bool",
-				"name": "freeze",
+				"name": "freezeAtUpperLimit",
 				"type": "bool"
 			},
 			{
 				"internalType": "bool",
-				"name": "freezeAtUpperLimit",
+				"name": "freezeAtLowerLimit",
 				"type": "bool"
 			}
 		],

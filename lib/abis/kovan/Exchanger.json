@@ -333,6 +333,110 @@
 		"signature": "0x6a1c4758"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "exchangeForAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "originator",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "trackingCode",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeOnBehalfWithTracking",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xdfffca76"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "destinationAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "originator",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "trackingCode",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeWithTracking",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x86baa45c"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -643,6 +747,27 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			}
+		],
+		"name": "setLastExchangeRateForSynth",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xce096940"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "contract AddressResolver",
 				"name": "_resolver",
 				"type": "address"
@@ -744,6 +869,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x0b9e31c9"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "tradingRewardsEnabled",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc193f0d8"
 	},
 	{
 		"constant": true,

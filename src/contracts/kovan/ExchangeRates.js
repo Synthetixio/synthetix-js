@@ -89,6 +89,24 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.canFreezeRate = async currencyKey => {
+    return await this.contract.canFreezeRate(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param aggregator {String<EthAddress>}
+   * @returns bytes32[]
+   **/
+  this.currenciesUsingAggregator = async aggregator => {
+    return await this.contract.currenciesUsingAggregator(aggregator);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param  {bytes32}
    * @returns BigNumber
    **/
@@ -160,6 +178,17 @@ function ExchangeRates(contractSettings) {
       roundIdForSrc,
       roundIdForDest
     );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.freezeRate = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.freezeRate(currencyKey, txParams);
   };
 
   /**
@@ -470,8 +499,8 @@ function ExchangeRates(contractSettings) {
    * @param entryPoint {BigNumber}
    * @param upperLimit {BigNumber}
    * @param lowerLimit {BigNumber}
-   * @param freeze {boolean}
    * @param freezeAtUpperLimit {boolean}
+   * @param freezeAtLowerLimit {boolean}
    * @param txParams {TxParams}
   
    **/
@@ -480,8 +509,8 @@ function ExchangeRates(contractSettings) {
     entryPoint,
     upperLimit,
     lowerLimit,
-    freeze,
     freezeAtUpperLimit,
+    freezeAtLowerLimit,
     txParams
   ) => {
     txParams = txParams || {};
@@ -490,8 +519,8 @@ function ExchangeRates(contractSettings) {
       entryPoint,
       upperLimit,
       lowerLimit,
-      freeze,
       freezeAtUpperLimit,
+      freezeAtLowerLimit,
       txParams
     );
   };

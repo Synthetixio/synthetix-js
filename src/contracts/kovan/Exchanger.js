@@ -111,6 +111,76 @@ function Exchanger(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param exchangeForAddress {String<EthAddress>}
+   * @param from {String<EthAddress>}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param originator {String<EthAddress>}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeOnBehalfWithTracking = async (
+    exchangeForAddress,
+    from,
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    originator,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeOnBehalfWithTracking(
+      exchangeForAddress,
+      from,
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      originator,
+      trackingCode,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param destinationAddress {String<EthAddress>}
+   * @param originator {String<EthAddress>}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeWithTracking = async (
+    from,
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    destinationAddress,
+    originator,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeWithTracking(
+      from,
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      destinationAddress,
+      originator,
+      trackingCode,
+      txParams
+    );
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param sourceCurrencyKey {bytes32}
    * @param destinationCurrencyKey {bytes32}
@@ -244,6 +314,18 @@ function Exchanger(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param rate {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setLastExchangeRateForSynth = async (currencyKey, rate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setLastExchangeRateForSynth(currencyKey, rate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _resolver {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -284,6 +366,14 @@ function Exchanger(contractSettings) {
   this.suspendSynthWithInvalidRate = async (currencyKey, txParams) => {
     txParams = txParams || {};
     return await this.contract.suspendSynthWithInvalidRate(currencyKey, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.tradingRewardsEnabled = async () => {
+    return await this.contract.tradingRewardsEnabled();
   };
 
   /**

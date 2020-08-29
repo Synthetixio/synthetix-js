@@ -78,8 +78,8 @@ function Synthetix(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
-  this.anySynthOrSNXRateIsStale = async () => {
-    return await this.contract.anySynthOrSNXRateIsStale();
+  this.anySynthOrSNXRateIsInvalid = async () => {
+    return await this.contract.anySynthOrSNXRateIsInvalid();
   };
 
   /**
@@ -241,6 +241,24 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param trackingCode {bytes32}
+   * @param toCurrencyKey {bytes32}
+   * @param toAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.emitExchangeTracking = async (trackingCode, toCurrencyKey, toAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.emitExchangeTracking(
+      trackingCode,
+      toCurrencyKey,
+      toAmount,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param fromCurrencyKey {bytes32}
    * @param fromAmount {BigNumber}
@@ -312,6 +330,67 @@ function Synthetix(contractSettings) {
       sourceCurrencyKey,
       sourceAmount,
       destinationCurrencyKey,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param exchangeForAddress {String<EthAddress>}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param originator {String<EthAddress>}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeOnBehalfWithTracking = async (
+    exchangeForAddress,
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    originator,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeOnBehalfWithTracking(
+      exchangeForAddress,
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      originator,
+      trackingCode,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param originator {String<EthAddress>}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeWithTracking = async (
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    originator,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeWithTracking(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      originator,
+      trackingCode,
       txParams
     );
   };

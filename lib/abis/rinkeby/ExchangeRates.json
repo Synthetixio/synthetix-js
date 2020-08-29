@@ -12,6 +12,11 @@
 				"type": "address"
 			},
 			{
+				"internalType": "address",
+				"name": "_resolver",
+				"type": "address"
+			},
+			{
 				"internalType": "bytes32[]",
 				"name": "_currencyKeys",
 				"type": "bytes32[]"
@@ -107,11 +112,23 @@
 				"internalType": "bytes32",
 				"name": "currencyKey",
 				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "initiator",
+				"type": "address"
 			}
 		],
 		"name": "InversePriceFrozen",
 		"type": "event",
-		"signature": "0x4b3d3f51dab37576ab4ca08ebdb81d4a4c587f25df5cc1f9a620a7faff84aba8"
+		"signature": "0x3de98bb945f5841b9e27e10a317b59497fa7aab6bc7ba00461fbb3211b550165"
 	},
 	{
 		"anonymous": false,
@@ -174,20 +191,6 @@
 		"name": "RateDeleted",
 		"type": "event",
 		"signature": "0xe69d655565c7ff1353d8eaeea62fb7904fa9696987431ec351be288c865f1ae1"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "rateStalePeriod",
-				"type": "uint256"
-			}
-		],
-		"name": "RateStalePeriodUpdated",
-		"type": "event",
-		"signature": "0x16529d8c407b08938da67de7fa4319199baffce4f5d1971f812cc770b0237e66"
 	},
 	{
 		"anonymous": false,
@@ -261,6 +264,22 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "SELFDESTRUCT_DELAY",
 		"outputs": [
 			{
@@ -329,6 +348,22 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "aggregatorWarningFlags",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4c36b837"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "bytes32",
@@ -358,7 +393,7 @@
 				"type": "bytes32[]"
 			}
 		],
-		"name": "anyRateIsStale",
+		"name": "anyRateIsInvalid",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -369,7 +404,51 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x2d227674"
+		"signature": "0x0a7d36d1"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "canFreezeRate",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x3375fcd1"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "aggregator",
+				"type": "address"
+			}
+		],
+		"name": "currenciesUsingAggregator",
+		"outputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencies",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2678df96"
 	},
 	{
 		"constant": true,
@@ -526,6 +605,22 @@
 		"signature": "0x266da16b"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "freezeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xde02795e"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -585,6 +680,22 @@
 		"signature": "0x109e46a2"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "getResolverAddressesRequired",
+		"outputs": [
+			{
+				"internalType": "bytes32[24]",
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xab49848c"
+	},
+	{
 		"constant": false,
 		"inputs": [],
 		"name": "initiateSelfDestruct",
@@ -638,7 +749,12 @@
 			},
 			{
 				"internalType": "bool",
-				"name": "frozen",
+				"name": "frozenAtUpperLimit",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "frozenAtLowerLimit",
 				"type": "bool"
 			}
 		],
@@ -668,6 +784,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x2ea913d4"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
 	},
 	{
 		"constant": true,
@@ -867,6 +1005,28 @@
 				"type": "bytes32"
 			}
 		],
+		"name": "rateIsFlagged",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x38aa1b99"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
 		"name": "rateIsFrozen",
 		"outputs": [
 			{
@@ -879,6 +1039,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xaf3aea86"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "rateIsInvalid",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2528f0fe"
 	},
 	{
 		"constant": true,
@@ -927,23 +1109,23 @@
 				"type": "bytes32[]"
 			}
 		],
-		"name": "ratesAndStaleForCurrencies",
+		"name": "ratesAndInvalidForCurrencies",
 		"outputs": [
 			{
 				"internalType": "uint256[]",
-				"name": "",
+				"name": "rates",
 				"type": "uint256[]"
 			},
 			{
 				"internalType": "bool",
-				"name": "",
+				"name": "anyRateInvalid",
 				"type": "bool"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xbabcb423"
+		"signature": "0xc8e5bbd5"
 	},
 	{
 		"constant": true,
@@ -1032,6 +1214,44 @@
 		"signature": "0xc8e6f395"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "resolver",
+		"outputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc6c9d828"
+	},
+	{
 		"constant": false,
 		"inputs": [],
 		"name": "selfDestruct",
@@ -1098,12 +1318,12 @@
 			},
 			{
 				"internalType": "bool",
-				"name": "freeze",
+				"name": "freezeAtUpperLimit",
 				"type": "bool"
 			},
 			{
 				"internalType": "bool",
-				"name": "freezeAtUpperLimit",
+				"name": "freezeAtLowerLimit",
 				"type": "bool"
 			}
 		],
@@ -1134,17 +1354,17 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_time",
-				"type": "uint256"
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
+				"type": "address"
 			}
 		],
-		"name": "setRateStalePeriod",
+		"name": "setResolverAndSyncCache",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x79cb657a"
+		"signature": "0x3be99e6f"
 	},
 	{
 		"constant": false,

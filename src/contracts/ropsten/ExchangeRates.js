@@ -18,6 +18,14 @@ function ExchangeRates(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
+    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.SELFDESTRUCT_DELAY = async () => {
     return await this.contract.SELFDESTRUCT_DELAY();
   };
@@ -55,6 +63,14 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.aggregatorWarningFlags = async () => {
+    return await this.contract.aggregatorWarningFlags();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param  {bytes32}
    * @returns String<EthAddress>
    **/
@@ -67,8 +83,26 @@ function ExchangeRates(contractSettings) {
    * @param currencyKeys {bytes32[]}
    * @returns boolean
    **/
-  this.anyRateIsStale = async currencyKeys => {
-    return await this.contract.anyRateIsStale(currencyKeys);
+  this.anyRateIsInvalid = async currencyKeys => {
+    return await this.contract.anyRateIsInvalid(currencyKeys);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.canFreezeRate = async currencyKey => {
+    return await this.contract.canFreezeRate(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param aggregator {String<EthAddress>}
+   * @returns bytes32[]
+   **/
+  this.currenciesUsingAggregator = async aggregator => {
+    return await this.contract.currenciesUsingAggregator(aggregator);
   };
 
   /**
@@ -147,6 +181,17 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.freezeRate = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.freezeRate(currencyKey, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes32}
    * @returns BigNumber
@@ -175,6 +220,14 @@ function ExchangeRates(contractSettings) {
       startingTimestamp,
       timediff
     );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+  this.getResolverAddressesRequired = async () => {
+    return await this.contract.getResolverAddressesRequired();
   };
 
   /**
@@ -211,6 +264,15 @@ function ExchangeRates(contractSettings) {
    **/
   this.invertedKeys = async uint256_1 => {
     return await this.contract.invertedKeys(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.isResolverCached = async _resolver => {
+    return await this.contract.isResolverCached(_resolver);
   };
 
   /**
@@ -299,8 +361,26 @@ function ExchangeRates(contractSettings) {
    * @param currencyKey {bytes32}
    * @returns boolean
    **/
+  this.rateIsFlagged = async currencyKey => {
+    return await this.contract.rateIsFlagged(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
   this.rateIsFrozen = async currencyKey => {
     return await this.contract.rateIsFrozen(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.rateIsInvalid = async currencyKey => {
+    return await this.contract.rateIsInvalid(currencyKey);
   };
 
   /**
@@ -325,8 +405,8 @@ function ExchangeRates(contractSettings) {
    * @param currencyKeys {bytes32[]}
    * @returns Object
    **/
-  this.ratesAndStaleForCurrencies = async currencyKeys => {
-    return await this.contract.ratesAndStaleForCurrencies(currencyKeys);
+  this.ratesAndInvalidForCurrencies = async currencyKeys => {
+    return await this.contract.ratesAndInvalidForCurrencies(currencyKeys);
   };
 
   /**
@@ -371,6 +451,23 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.resolver = async () => {
+    return await this.contract.resolver();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+  this.resolverAddressesRequired = async uint256_1 => {
+    return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -402,8 +499,8 @@ function ExchangeRates(contractSettings) {
    * @param entryPoint {BigNumber}
    * @param upperLimit {BigNumber}
    * @param lowerLimit {BigNumber}
-   * @param freeze {boolean}
    * @param freezeAtUpperLimit {boolean}
+   * @param freezeAtLowerLimit {boolean}
    * @param txParams {TxParams}
   
    **/
@@ -412,8 +509,8 @@ function ExchangeRates(contractSettings) {
     entryPoint,
     upperLimit,
     lowerLimit,
-    freeze,
     freezeAtUpperLimit,
+    freezeAtLowerLimit,
     txParams
   ) => {
     txParams = txParams || {};
@@ -422,8 +519,8 @@ function ExchangeRates(contractSettings) {
       entryPoint,
       upperLimit,
       lowerLimit,
-      freeze,
       freezeAtUpperLimit,
+      freezeAtLowerLimit,
       txParams
     );
   };
@@ -441,13 +538,13 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _time {BigNumber}
+   * @param _resolver {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.setRateStalePeriod = async (_time, txParams) => {
+  this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setRateStalePeriod(_time, txParams);
+    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**

@@ -18,6 +18,14 @@ function Issuer(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32
    **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
   this.LAST_ISSUE_EVENT = async () => {
     return await this.contract.LAST_ISSUE_EVENT();
   };
@@ -28,14 +36,6 @@ function Issuer(contractSettings) {
    **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
     return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_MINIMUM_STAKING_TIME = async () => {
-    return await this.contract.MAX_MINIMUM_STAKING_TIME();
   };
 
   /**
@@ -63,8 +63,8 @@ function Issuer(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
-  this.anySynthOrSNXRateIsStale = async () => {
-    return await this.contract.anySynthOrSNXRateIsStale();
+  this.anySynthOrSNXRateIsInvalid = async () => {
+    return await this.contract.anySynthOrSNXRateIsInvalid();
   };
 
   /**
@@ -172,8 +172,8 @@ function Issuer(contractSettings) {
    * @param _issuer {String<EthAddress>}
    * @returns Object
    **/
-  this.collateralisationRatioAndAnyRatesStale = async _issuer => {
-    return await this.contract.collateralisationRatioAndAnyRatesStale(_issuer);
+  this.collateralisationRatioAndAnyRatesInvalid = async _issuer => {
+    return await this.contract.collateralisationRatioAndAnyRatesInvalid(_issuer);
   };
 
   /**
@@ -201,6 +201,14 @@ function Issuer(contractSettings) {
    **/
   this.isResolverCached = async _resolver => {
     return await this.contract.isResolverCached(_resolver);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.issuanceRatio = async () => {
+    return await this.contract.issuanceRatio();
   };
 
   /**
@@ -361,17 +369,6 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _seconds {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setMinimumStakeTime = async (_seconds, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setMinimumStakeTime(_seconds, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _resolver {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -415,8 +412,8 @@ function Issuer(contractSettings) {
    * @param balance {BigNumber}
    * @returns Object
    **/
-  this.transferableSynthetixAndAnyRateIsStale = async (account, balance) => {
-    return await this.contract.transferableSynthetixAndAnyRateIsStale(account, balance);
+  this.transferableSynthetixAndAnyRateIsInvalid = async (account, balance) => {
+    return await this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
   };
 }
 

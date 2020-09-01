@@ -54,6 +54,8 @@ const contracts = {
   SystemStatus: true,
   RewardsDistribution: true,
   BinaryOptionMarketManager: true,
+  BinaryOptionMarketData: true,
+  SynthUtil: true,
   // the synths will be added on for each network
 };
 

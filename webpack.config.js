@@ -45,6 +45,11 @@ const clientConfig = {
       },
     ],
   },
+  node: {
+    child_process: "empty",
+    fs: "empty",
+    net: "empty"
+  },
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),

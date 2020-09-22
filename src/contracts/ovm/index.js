@@ -20,6 +20,7 @@ import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
 import SystemSettings from './SystemSettings';
 import sUSD from './sUSD';
+import SupplySchedule from './SupplySchedule';
 
 export default {
   Depot,
@@ -44,4 +45,5 @@ export default {
   SynthUtil,
   sUSD,
   SystemSettings,
+  SupplySchedule,
 };

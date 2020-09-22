@@ -57,6 +57,7 @@ const contracts = {
   BinaryOptionMarketData: true,
   SynthUtil: true,
   SystemSettings: true,
+  SupplySchedule: true,
   // the synths will be added on for each network
 };
 

@@ -91,14 +91,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 135);
+/******/ 	return __webpack_require__(__webpack_require__.s = 136);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(130);
+module.exports = __webpack_require__(131);
 
 
 /***/ }),
@@ -1155,7 +1155,7 @@ assert.equal = function assertEqual(l, r, msg) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(69).Buffer;
+    Buffer = __webpack_require__(70).Buffer;
   } catch (e) {
   }
 
@@ -4537,7 +4537,7 @@ assert.equal = function assertEqual(l, r, msg) {
   };
 })( false || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(68)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(69)(module)))
 
 /***/ }),
 /* 10 */
@@ -5449,7 +5449,7 @@ exports.shr64_lo = shr64_lo;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var sha3 = __webpack_require__(70);
+var sha3 = __webpack_require__(71);
 var bytes_1 = __webpack_require__(4);
 function keccak256(data) {
     return '0x' + sha3.keccak_256(bytes_1.arrayify(data));
@@ -5660,13 +5660,11 @@ module.exports = require("crypto");
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
-  var util = __webpack_require__(76);
-  /* istanbul ignore next */
+  var util = __webpack_require__(77);
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
 } catch (e) {
-  /* istanbul ignore next */
-  module.exports = __webpack_require__(77);
+  module.exports = __webpack_require__(78);
 }
 
 
@@ -6035,7 +6033,7 @@ var lang_en_1 = __webpack_require__(45);
 // Automatically register English?
 //import { register } from '../wordlists/wordlist';
 //register(langEn);
-var basex_1 = __webpack_require__(72);
+var basex_1 = __webpack_require__(73);
 var bytes_1 = __webpack_require__(4);
 var bignumber_1 = __webpack_require__(10);
 var utf8_1 = __webpack_require__(6);
@@ -6357,7 +6355,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var elliptic_1 = __webpack_require__(73);
+var elliptic_1 = __webpack_require__(74);
 var address_1 = __webpack_require__(11);
 var bytes_1 = __webpack_require__(4);
 var hash_1 = __webpack_require__(18);
@@ -8444,7 +8442,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var xmlhttprequest_1 = __webpack_require__(107);
+var xmlhttprequest_1 = __webpack_require__(108);
 var base64_1 = __webpack_require__(58);
 var properties_1 = __webpack_require__(5);
 var utf8_1 = __webpack_require__(6);
@@ -10208,7 +10206,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(86);
+  pre = __webpack_require__(87);
 } catch (e) {
   pre = undefined;
 }
@@ -10254,9 +10252,9 @@ var hash = exports;
 
 hash.utils = __webpack_require__(12);
 hash.common = __webpack_require__(22);
-hash.sha = __webpack_require__(80);
-hash.ripemd = __webpack_require__(84);
-hash.hmac = __webpack_require__(85);
+hash.sha = __webpack_require__(81);
+hash.ripemd = __webpack_require__(85);
+hash.hmac = __webpack_require__(86);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -10401,11 +10399,11 @@ module.exports = _getPrototypeOf;
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(132);
+var arrayWithHoles = __webpack_require__(133);
 
-var iterableToArrayLimit = __webpack_require__(133);
+var iterableToArrayLimit = __webpack_require__(134);
 
-var nonIterableRest = __webpack_require__(134);
+var nonIterableRest = __webpack_require__(135);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
@@ -10427,28 +10425,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var contract_1 = __webpack_require__(67);
+var contract_1 = __webpack_require__(68);
 exports.Contract = contract_1.Contract;
 exports.ContractFactory = contract_1.ContractFactory;
 exports.VoidSigner = contract_1.VoidSigner;
 var abstract_signer_1 = __webpack_require__(25);
 exports.Signer = abstract_signer_1.Signer;
-var wallet_1 = __webpack_require__(71);
+var wallet_1 = __webpack_require__(72);
 exports.Wallet = wallet_1.Wallet;
 var constants = __importStar(__webpack_require__(17));
 exports.constants = constants;
 var errors = __importStar(__webpack_require__(3));
 exports.errors = errors;
-var providers = __importStar(__webpack_require__(106));
+var providers = __importStar(__webpack_require__(107));
 exports.providers = providers;
-var utils = __importStar(__webpack_require__(119));
+var utils = __importStar(__webpack_require__(120));
 exports.utils = utils;
-var wordlists = __importStar(__webpack_require__(122));
+var wordlists = __importStar(__webpack_require__(123));
 exports.wordlists = wordlists;
 ////////////////////////
 // Compile-Time Constants
 // This is empty in node, and used by browserify to inject extra goodies
-var shims_1 = __webpack_require__(129);
+var shims_1 = __webpack_require__(130);
 exports.platform = shims_1.platform;
 // This is generated by "npm run dist"
 var _version_1 = __webpack_require__(43);
@@ -11131,9 +11129,9 @@ if (typeof self === 'object') {
 var curve = exports;
 
 curve.base = __webpack_require__(28);
-curve.short = __webpack_require__(75);
-curve.mont = __webpack_require__(78);
-curve.edwards = __webpack_require__(79);
+curve.short = __webpack_require__(76);
+curve.mont = __webpack_require__(79);
+curve.edwards = __webpack_require__(80);
 
 
 /***/ }),
@@ -12235,7 +12233,7 @@ exports.encode = encode;
 /* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var setPrototypeOf = __webpack_require__(64);
+var setPrototypeOf = __webpack_require__(65);
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -12258,9 +12256,9 @@ module.exports = _inherits;
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(65);
+var _typeof = __webpack_require__(66);
 
-var assertThisInitialized = __webpack_require__(66);
+var assertThisInitialized = __webpack_require__(67);
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -12280,6 +12278,12 @@ module.exports = JSON.parse("[{\"inputs\":[{\"internalType\":\"address\",\"name\
 
 /***/ }),
 /* 62 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"constant\":false,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"nominateNewOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x1627540c\"},{\"constant\":true,\"inputs\":[],\"name\":\"DECAY_RATE\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x1de40e49\"},{\"constant\":true,\"inputs\":[],\"name\":\"MAX_MINTER_REWARD\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x22af2bab\"},{\"constant\":true,\"inputs\":[],\"name\":\"SUPPLY_DECAY_START\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x251330f1\"},{\"constant\":true,\"inputs\":[],\"name\":\"TERMINAL_SUPPLY_RATE_ANNUAL\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x25542064\"},{\"constant\":true,\"inputs\":[],\"name\":\"MINT_BUFFER\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x46872a23\"},{\"constant\":true,\"inputs\":[],\"name\":\"isMintable\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x46b45af7\"},{\"constant\":false,\"inputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setMinterReward\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x4ae26521\"},{\"constant\":true,\"inputs\":[{\"name\":\"counter\",\"type\":\"uint256\"}],\"name\":\"tokenDecaySupplyForWeek\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\",\"signature\":\"0x4e070f50\"},{\"constant\":true,\"inputs\":[],\"name\":\"nominatedOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x53a47bb7\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x79ba5097\"},{\"constant\":true,\"inputs\":[],\"name\":\"SUPPLY_DECAY_END\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x7c060557\"},{\"constant\":true,\"inputs\":[],\"name\":\"INFLATION_START_DATE\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x7e1b823f\"},{\"constant\":false,\"inputs\":[{\"name\":\"supplyMinted\",\"type\":\"uint256\"}],\"name\":\"recordMintEvent\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x7e7961d7\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x8da5cb5b\"},{\"constant\":false,\"inputs\":[{\"name\":\"_synthetixProxy\",\"type\":\"address\"}],\"name\":\"setSynthetixProxy\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x95896b76\"},{\"constant\":true,\"inputs\":[],\"name\":\"minterReward\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x9bdd7ac7\"},{\"constant\":true,\"inputs\":[{\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"name\":\"numOfWeeks\",\"type\":\"uint256\"}],\"name\":\"terminalInflationSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\",\"signature\":\"0xb3b2bcc0\"},{\"constant\":true,\"inputs\":[],\"name\":\"INITIAL_WEEKLY_SUPPLY\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xbadef30a\"},{\"constant\":true,\"inputs\":[],\"name\":\"synthetixProxy\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xbdd12482\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastMintEvent\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xbe801f01\"},{\"constant\":true,\"inputs\":[],\"name\":\"mintableSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xcc5c095c\"},{\"constant\":true,\"inputs\":[],\"name\":\"weekCounter\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xd3bd4bde\"},{\"constant\":true,\"inputs\":[],\"name\":\"weeksSinceLastIssuance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdbd3a6a7\"},{\"constant\":true,\"inputs\":[],\"name\":\"MINT_PERIOD_DURATION\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdf5a9fc1\"},{\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"},{\"name\":\"_lastMintEvent\",\"type\":\"uint256\"},{\"name\":\"_currentWeek\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"supplyMinted\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"numberOfWeeksIssued\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"lastMintEvent\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"SupplyMinted\",\"type\":\"event\",\"signature\":\"0x601e517d4811033fed8290c79b7823ce1ab70258da45400fe2391a3c7432edab\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"newRewardAmount\",\"type\":\"uint256\"}],\"name\":\"MinterRewardUpdated\",\"type\":\"event\",\"signature\":\"0x036e0c635f8b7d9314bb6f2a577046108ef0f8b5e3869fbd29fd5a448ed99d30\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"newAddress\",\"type\":\"address\"}],\"name\":\"SynthetixProxyUpdated\",\"type\":\"event\",\"signature\":\"0xf8df0556b7fde3c4b8394eae329aedfa59c6ffd8b532d572a1efcfa3424ca5fc\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerNominated\",\"type\":\"event\",\"signature\":\"0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\",\"signature\":\"0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c\"}]");
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports) {
 
 function _defineProperty(obj, key, value) {
@@ -12300,7 +12304,7 @@ function _defineProperty(obj, key, value) {
 module.exports = _defineProperty;
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -12322,7 +12326,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports) {
 
 function _setPrototypeOf(o, p) {
@@ -12337,7 +12341,7 @@ function _setPrototypeOf(o, p) {
 module.exports = _setPrototypeOf;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
@@ -12359,7 +12363,7 @@ function _typeof(obj) {
 module.exports = _typeof;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports) {
 
 function _assertThisInitialized(self) {
@@ -12373,7 +12377,7 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13094,7 +13098,7 @@ exports.ContractFactory = ContractFactory;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -13122,13 +13126,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = require("buffer");
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 /**
@@ -13609,7 +13613,7 @@ module.exports = require("buffer");
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13639,7 +13643,7 @@ var json_wallet_1 = __webpack_require__(57);
 var keccak256_1 = __webpack_require__(14);
 var properties_1 = __webpack_require__(5);
 var random_bytes_1 = __webpack_require__(38);
-var secretStorage = __importStar(__webpack_require__(101));
+var secretStorage = __importStar(__webpack_require__(102));
 var signing_key_1 = __webpack_require__(39);
 var transaction_1 = __webpack_require__(29);
 // Imported Abstracts
@@ -13800,7 +13804,7 @@ exports.Wallet = Wallet;
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13930,7 +13934,7 @@ exports.Base58 = Base58;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13938,25 +13942,25 @@ exports.Base58 = Base58;
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(74).version;
+elliptic.version = __webpack_require__(75).version;
 elliptic.utils = __webpack_require__(7);
 elliptic.rand = __webpack_require__(49);
 elliptic.curve = __webpack_require__(50);
 elliptic.curves = __webpack_require__(35);
 
 // Protocols
-elliptic.ec = __webpack_require__(87);
-elliptic.eddsa = __webpack_require__(98);
+elliptic.ec = __webpack_require__(88);
+elliptic.eddsa = __webpack_require__(99);
 
-
-/***/ }),
-/* 74 */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"_from\":\"elliptic@6.5.2\",\"_id\":\"elliptic@6.5.2\",\"_inBundle\":false,\"_integrity\":\"sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==\",\"_location\":\"/ethers/elliptic\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"elliptic@6.5.2\",\"name\":\"elliptic\",\"escapedName\":\"elliptic\",\"rawSpec\":\"6.5.2\",\"saveSpec\":null,\"fetchSpec\":\"6.5.2\"},\"_requiredBy\":[\"/ethers\"],\"_resolved\":\"https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz\",\"_shasum\":\"05c5678d7173c049d8ca433552224a495d0e3762\",\"_spec\":\"elliptic@6.5.2\",\"_where\":\"/Users/clementbalestrat/Workspace/synthetix-js/node_modules/ethers\",\"author\":{\"name\":\"Fedor Indutny\",\"email\":\"fedor@indutny.com\"},\"bugs\":{\"url\":\"https://github.com/indutny/elliptic/issues\"},\"bundleDependencies\":false,\"dependencies\":{\"bn.js\":\"^4.4.0\",\"brorand\":\"^1.0.1\",\"hash.js\":\"^1.0.0\",\"hmac-drbg\":\"^1.0.0\",\"inherits\":\"^2.0.1\",\"minimalistic-assert\":\"^1.0.0\",\"minimalistic-crypto-utils\":\"^1.0.0\"},\"deprecated\":false,\"description\":\"EC cryptography\",\"devDependencies\":{\"brfs\":\"^1.4.3\",\"coveralls\":\"^3.0.8\",\"grunt\":\"^1.0.4\",\"grunt-browserify\":\"^5.0.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-connect\":\"^1.0.0\",\"grunt-contrib-copy\":\"^1.0.0\",\"grunt-contrib-uglify\":\"^1.0.1\",\"grunt-mocha-istanbul\":\"^3.0.1\",\"grunt-saucelabs\":\"^9.0.1\",\"istanbul\":\"^0.4.2\",\"jscs\":\"^3.0.7\",\"jshint\":\"^2.10.3\",\"mocha\":\"^6.2.2\"},\"files\":[\"lib\"],\"homepage\":\"https://github.com/indutny/elliptic\",\"keywords\":[\"EC\",\"Elliptic\",\"curve\",\"Cryptography\"],\"license\":\"MIT\",\"main\":\"lib/elliptic.js\",\"name\":\"elliptic\",\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/indutny/elliptic.git\"},\"scripts\":{\"jscs\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"jshint\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"lint\":\"npm run jscs && npm run jshint\",\"test\":\"npm run lint && npm run unit\",\"unit\":\"istanbul test _mocha --reporter=spec test/index.js\",\"version\":\"grunt dist && git add dist/\"},\"version\":\"6.5.2\"}");
 
 /***/ }),
 /* 75 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"_args\":[[\"elliptic@6.5.2\",\"/Users/clementbalestrat/Workspace/synthetix-js\"]],\"_from\":\"elliptic@6.5.2\",\"_id\":\"elliptic@6.5.2\",\"_inBundle\":false,\"_integrity\":\"sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==\",\"_location\":\"/ethers/elliptic\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"elliptic@6.5.2\",\"name\":\"elliptic\",\"escapedName\":\"elliptic\",\"rawSpec\":\"6.5.2\",\"saveSpec\":null,\"fetchSpec\":\"6.5.2\"},\"_requiredBy\":[\"/ethers\"],\"_resolved\":\"https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz\",\"_spec\":\"6.5.2\",\"_where\":\"/Users/clementbalestrat/Workspace/synthetix-js\",\"author\":{\"name\":\"Fedor Indutny\",\"email\":\"fedor@indutny.com\"},\"bugs\":{\"url\":\"https://github.com/indutny/elliptic/issues\"},\"dependencies\":{\"bn.js\":\"^4.4.0\",\"brorand\":\"^1.0.1\",\"hash.js\":\"^1.0.0\",\"hmac-drbg\":\"^1.0.0\",\"inherits\":\"^2.0.1\",\"minimalistic-assert\":\"^1.0.0\",\"minimalistic-crypto-utils\":\"^1.0.0\"},\"description\":\"EC cryptography\",\"devDependencies\":{\"brfs\":\"^1.4.3\",\"coveralls\":\"^3.0.8\",\"grunt\":\"^1.0.4\",\"grunt-browserify\":\"^5.0.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-connect\":\"^1.0.0\",\"grunt-contrib-copy\":\"^1.0.0\",\"grunt-contrib-uglify\":\"^1.0.1\",\"grunt-mocha-istanbul\":\"^3.0.1\",\"grunt-saucelabs\":\"^9.0.1\",\"istanbul\":\"^0.4.2\",\"jscs\":\"^3.0.7\",\"jshint\":\"^2.10.3\",\"mocha\":\"^6.2.2\"},\"files\":[\"lib\"],\"homepage\":\"https://github.com/indutny/elliptic\",\"keywords\":[\"EC\",\"Elliptic\",\"curve\",\"Cryptography\"],\"license\":\"MIT\",\"main\":\"lib/elliptic.js\",\"name\":\"elliptic\",\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/indutny/elliptic.git\"},\"scripts\":{\"jscs\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"jshint\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"lint\":\"npm run jscs && npm run jshint\",\"test\":\"npm run lint && npm run unit\",\"unit\":\"istanbul test _mocha --reporter=spec test/index.js\",\"version\":\"grunt dist && git add dist/\"},\"version\":\"6.5.2\"}");
+
+/***/ }),
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14900,46 +14904,42 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("util");
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
-    if (superCtor) {
-      ctor.super_ = superCtor
-      ctor.prototype = Object.create(superCtor.prototype, {
-        constructor: {
-          value: ctor,
-          enumerable: false,
-          writable: true,
-          configurable: true
-        }
-      })
-    }
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
   };
 } else {
   // old school shim for old browsers
   module.exports = function inherits(ctor, superCtor) {
-    if (superCtor) {
-      ctor.super_ = superCtor
-      var TempCtor = function () {}
-      TempCtor.prototype = superCtor.prototype
-      ctor.prototype = new TempCtor()
-      ctor.prototype.constructor = ctor
-    }
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
   }
 }
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15124,7 +15124,7 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15563,21 +15563,21 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(81);
-exports.sha224 = __webpack_require__(82);
+exports.sha1 = __webpack_require__(82);
+exports.sha224 = __webpack_require__(83);
 exports.sha256 = __webpack_require__(52);
-exports.sha384 = __webpack_require__(83);
+exports.sha384 = __webpack_require__(84);
 exports.sha512 = __webpack_require__(53);
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15658,7 +15658,7 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15695,7 +15695,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15737,7 +15737,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15890,7 +15890,7 @@ var sh = [
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15944,7 +15944,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16730,21 +16730,21 @@ module.exports = {
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(9);
-var HmacDRBG = __webpack_require__(88);
+var HmacDRBG = __webpack_require__(89);
 var utils = __webpack_require__(7);
 var curves = __webpack_require__(35);
 var rand = __webpack_require__(49);
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(96);
-var Signature = __webpack_require__(97);
+var KeyPair = __webpack_require__(97);
+var Signature = __webpack_require__(98);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -16978,13 +16978,13 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(89);
+var hash = __webpack_require__(90);
 var utils = __webpack_require__(48);
 var assert = __webpack_require__(8);
 
@@ -17098,16 +17098,16 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
 
 hash.utils = __webpack_require__(13);
 hash.common = __webpack_require__(23);
-hash.sha = __webpack_require__(90);
-hash.ripemd = __webpack_require__(94);
-hash.hmac = __webpack_require__(95);
+hash.sha = __webpack_require__(91);
+hash.ripemd = __webpack_require__(95);
+hash.hmac = __webpack_require__(96);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -17119,21 +17119,21 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(91);
-exports.sha224 = __webpack_require__(92);
+exports.sha1 = __webpack_require__(92);
+exports.sha224 = __webpack_require__(93);
 exports.sha256 = __webpack_require__(55);
-exports.sha384 = __webpack_require__(93);
+exports.sha384 = __webpack_require__(94);
 exports.sha512 = __webpack_require__(56);
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17214,7 +17214,7 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17251,7 +17251,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17293,7 +17293,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17446,7 +17446,7 @@ var sh = [
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17500,7 +17500,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17625,7 +17625,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17766,7 +17766,7 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17777,8 +17777,8 @@ var curves = __webpack_require__(35);
 var utils = __webpack_require__(7);
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(99);
-var Signature = __webpack_require__(100);
+var KeyPair = __webpack_require__(100);
+var Signature = __webpack_require__(101);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -17891,7 +17891,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17993,7 +17993,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18065,7 +18065,7 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18081,9 +18081,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var aes_js_1 = __importDefault(__webpack_require__(102));
-var scrypt_js_1 = __importDefault(__webpack_require__(103));
-var uuid_1 = __importDefault(__webpack_require__(104));
+var aes_js_1 = __importDefault(__webpack_require__(103));
+var scrypt_js_1 = __importDefault(__webpack_require__(104));
+var uuid_1 = __importDefault(__webpack_require__(105));
 var signing_key_1 = __webpack_require__(39);
 var HDNode = __importStar(__webpack_require__(26));
 var address_1 = __webpack_require__(11);
@@ -18474,7 +18474,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19267,7 +19267,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19716,7 +19716,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //     uuid.js
@@ -19727,7 +19727,7 @@ exports.encrypt = encrypt;
 // Unique ID creation requires a high quality random # generator.  We feature
 // detect to determine the best RNG source, normalizing to a function that
 // returns 128-bits of randomness, since that's what's usually required
-var _rng = __webpack_require__(105);
+var _rng = __webpack_require__(106);
 
 // Maps for number <-> hex string conversion
 var _byteToHex = [];
@@ -19905,7 +19905,7 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rb = __webpack_require__(20).randomBytes;
@@ -19915,7 +19915,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19925,23 +19925,23 @@ var abstract_provider_1 = __webpack_require__(19);
 exports.Provider = abstract_provider_1.Provider;
 var base_provider_1 = __webpack_require__(30);
 exports.BaseProvider = base_provider_1.BaseProvider;
-var etherscan_provider_1 = __webpack_require__(113);
+var etherscan_provider_1 = __webpack_require__(114);
 exports.EtherscanProvider = etherscan_provider_1.EtherscanProvider;
-var fallback_provider_1 = __webpack_require__(114);
+var fallback_provider_1 = __webpack_require__(115);
 exports.FallbackProvider = fallback_provider_1.FallbackProvider;
-var ipc_provider_1 = __webpack_require__(115);
+var ipc_provider_1 = __webpack_require__(116);
 exports.IpcProvider = ipc_provider_1.IpcProvider;
-var infura_provider_1 = __webpack_require__(117);
+var infura_provider_1 = __webpack_require__(118);
 exports.InfuraProvider = infura_provider_1.InfuraProvider;
 var json_rpc_provider_1 = __webpack_require__(33);
 exports.JsonRpcProvider = json_rpc_provider_1.JsonRpcProvider;
 exports.JsonRpcSigner = json_rpc_provider_1.JsonRpcSigner;
-var web3_provider_1 = __webpack_require__(118);
+var web3_provider_1 = __webpack_require__(119);
 exports.Web3Provider = web3_provider_1.Web3Provider;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -19957,9 +19957,9 @@ exports.Web3Provider = web3_provider_1.Web3Provider;
  * @license MIT
  */
 
-var Url = __webpack_require__(108);
-var spawn = __webpack_require__(109).spawn;
-var fs = __webpack_require__(110);
+var Url = __webpack_require__(109);
+var spawn = __webpack_require__(110).spawn;
+var fs = __webpack_require__(111);
 
 exports.XMLHttpRequest = function() {
   "use strict";
@@ -19968,8 +19968,8 @@ exports.XMLHttpRequest = function() {
    * Private variables
    */
   var self = this;
-  var http = __webpack_require__(111);
-  var https = __webpack_require__(112);
+  var http = __webpack_require__(112);
+  var https = __webpack_require__(113);
 
   // Holds http.js objects
   var request;
@@ -20567,37 +20567,37 @@ exports.XMLHttpRequest = function() {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = require("url");
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20951,7 +20951,7 @@ exports.EtherscanProvider = EtherscanProvider;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21069,7 +21069,7 @@ exports.FallbackProvider = FallbackProvider;
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21095,7 +21095,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var net_1 = __importDefault(__webpack_require__(116));
+var net_1 = __importDefault(__webpack_require__(117));
 var json_rpc_provider_1 = __webpack_require__(33);
 var properties_1 = __webpack_require__(5);
 var errors = __importStar(__webpack_require__(3));
@@ -21165,13 +21165,13 @@ exports.IpcProvider = IpcProvider;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21262,7 +21262,7 @@ exports.InfuraProvider = InfuraProvider;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21357,7 +21357,7 @@ exports.Web3Provider = Web3Provider;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21414,7 +21414,7 @@ var keccak256_1 = __webpack_require__(14);
 exports.keccak256 = keccak256_1.keccak256;
 var sha2_1 = __webpack_require__(37);
 exports.sha256 = sha2_1.sha256;
-var solidity_1 = __webpack_require__(120);
+var solidity_1 = __webpack_require__(121);
 exports.solidityKeccak256 = solidity_1.keccak256;
 exports.solidityPack = solidity_1.pack;
 exports.soliditySha256 = solidity_1.sha256;
@@ -21448,7 +21448,7 @@ exports.formatBytes32String = utf8_1.formatBytes32String;
 exports.parseBytes32String = utf8_1.parseBytes32String;
 exports.toUtf8Bytes = utf8_1.toUtf8Bytes;
 exports.toUtf8String = utf8_1.toUtf8String;
-var units_1 = __webpack_require__(121);
+var units_1 = __webpack_require__(122);
 exports.commify = units_1.commify;
 exports.formatEther = units_1.formatEther;
 exports.parseEther = units_1.parseEther;
@@ -21468,7 +21468,7 @@ exports.Wordlist = wordlist_1.Wordlist;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21566,7 +21566,7 @@ exports.sha256 = sha256;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21746,19 +21746,19 @@ exports.parseEther = parseEther;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var lang_en_1 = __webpack_require__(45);
-var lang_es_1 = __webpack_require__(123);
-var lang_fr_1 = __webpack_require__(124);
-var lang_ja_1 = __webpack_require__(125);
-var lang_ko_1 = __webpack_require__(126);
-var lang_it_1 = __webpack_require__(127);
-var lang_zh_1 = __webpack_require__(128);
+var lang_es_1 = __webpack_require__(124);
+var lang_fr_1 = __webpack_require__(125);
+var lang_ja_1 = __webpack_require__(126);
+var lang_ko_1 = __webpack_require__(127);
+var lang_it_1 = __webpack_require__(128);
+var lang_zh_1 = __webpack_require__(129);
 var en = lang_en_1.langEn;
 exports.en = en;
 var es = lang_es_1.langEs;
@@ -21780,7 +21780,7 @@ exports.zh_tw = zh_tw;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21866,7 +21866,7 @@ wordlist_1.register(langEs);
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21951,7 +21951,7 @@ wordlist_1.register(langFr);
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22102,7 +22102,7 @@ wordlist_1.register(langJa);
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22183,7 +22183,7 @@ wordlist_1.register(langKo);
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22233,7 +22233,7 @@ wordlist_1.register(langIt);
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22319,7 +22319,7 @@ wordlist_1.register(langZhTw);
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22330,7 +22330,7 @@ exports.platform = 'node';
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -22357,7 +22357,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(131);
+module.exports = __webpack_require__(132);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -22373,7 +22373,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports) {
 
 /**
@@ -23100,7 +23100,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports) {
 
 function _arrayWithHoles(arr) {
@@ -23110,7 +23110,7 @@ function _arrayWithHoles(arr) {
 module.exports = _arrayWithHoles;
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -23142,7 +23142,7 @@ function _iterableToArrayLimit(arr, i) {
 module.exports = _iterableToArrayLimit;
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -23152,7 +23152,7 @@ function _nonIterableRest() {
 module.exports = _nonIterableRest;
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23197,143 +23197,50 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 
 // CONCATENATED MODULE: ./lib/addresses.js
 var OVM_ADDRESSES = {
-  SafeDecimalMath: '0x0c970660ff800EFB16579F0d249860299FCef624',
-  Math: '0x84439C93391745a9A5100Fa9959d3840c26ce38B',
-  AddressResolver: '0xBcA3101Bb339d5D5c31c75eC34A6Ed878dF147c7',
-  ReadProxyAddressResolver: '0xb02746b5cc13AaF6D12355913953903168Ac40a3',
-  FlexibleStorage: '0x9950f2fBa4ce916A37447Ff44D219f0Af213b04e',
-  SystemSettings: '0x25780EDFE1263bd43f49E3b4E8B5a9A3eDad8c08',
-  SystemStatus: '0x9A159ec6B30DF25eE69675122a72ED99B74fb476',
-  ExchangeRates: '0x19d48c331F7b314b5912894DbDEd928C73e0aA30',
-  RewardEscrow: '0xeA2911c63B5b386a62f1104b249308c6B297a04f',
-  SynthetixEscrow: '0x6f09390fBd848B615f89882314F215a265a8a184',
-  SynthetixState: '0x2a3d4a729fD3276E4aD33a9230296ce404C43D32',
-  ProxyFeePool: '0x83cd4A46740ea3e5979e80F396d8d7dCC7B672B0',
-  DelegateApprovalsEternalStorage: '0x5A44f98d2423eDB84ACf1a5508ad5bed12d3C3E0',
-  DelegateApprovals: '0x21ae0C2Ee190531c4f2a4A174e5B31975B92bd01',
-  Liquidations: '0x65110b20eF2226F07D1B59E0c6E995a2E962f086',
-  EternalStorageLiquidations: '0xD41233F954dcABBFdded786E69c6b4606F3be886',
-  FeePoolEternalStorage: '0xFbaD4D9a6ec4722a74CaC674deBd2BD9D2b8096c',
-  FeePool: '0xC2220a62d5d4b1d733BAbD9a2322cf7A065d2ff7',
-  FeePoolState: '0x38D9959Db5b371f4eE280e1BA434cE7498d3054A',
-  RewardsDistribution: '0xa710E7Bf003c593a9c11aF843b208Ce93989bbb1',
-  SupplySchedule: '0x11732f80467D73a246E7A16F9dFb35d7e502f18D',
-  ProxyERC20: '0xD1C7e034435f562Db6D866deBD0c0c27b4c3F32F',
-  TokenStateSynthetix: '0xdf5edB1Cd91aB224Bf6A54bdbE75A94C10153f87',
-  Synthetix: '0xeE78c526377d356D5F4EcC9D7C317b67bd5F2C87',
-  ProxySynthetix: '0x40E4aAbf03867Ca65d9c040eEE98757A86537CA5',
-  Exchanger: '0x429D1995D73364d97AeD23568FBcAE81251569e8',
-  ExchangeState: '0x5EcCd732e10648b9a5520b21271348b62B17b554',
-  Issuer: '0xEAaF4427a686f496623AB2ef3E54Df75Af33DDf4',
-  TradingRewards: '0xFB4E1B5A0fA66a2684Bde5A637e4F01d19f6372e',
-  EscrowChecker: '0xC060714f54eE5991d323F1232cab0Bb1EE3F8a3d',
-  TokenStatesUSD: '0x68AD31f38a591b9831C11aF48B50Fa0fe68d359e',
-  ProxysUSD: '0x94a4F4404a24a992115b902defC9d8A764EACb81',
-  ProxyERC20sUSD: '0x5d8db4cac4D7A8C9F010a1d658D91647e59Ee5f3',
-  SynthsUSD: '0xb44D2b66d87Da9285a84F1078B81e8D96b7e380E',
-  TokenStatesEUR: '0xd026981937aF45Ab85eBe8B52E3E90B7CDc85Af7',
-  ProxysEUR: '0x017F361345024425d15B3330ed628E2F43CF3514',
-  SynthsEUR: '0x8d40CD96abDF21AfD2D2378dB7e8E0327d74F148',
-  TokenStatesJPY: '0xB70B1cD1d91F3a78070715D25BC2b529103A634D',
-  ProxysJPY: '0x09f350d57e2F455e00A62bfc7278310439d43B9b',
-  SynthsJPY: '0xA362e65F335Fd5d992C68A6eb777cC9Fc7a7351a',
-  TokenStatesAUD: '0x2005d9Af2e625613baad605A7d9450BEFc70ADDB',
-  ProxysAUD: '0x3a63E3c3F89bBa8687Df156e7410e5Ca44D45e1d',
-  SynthsAUD: '0x8B2a6eBb9415030d4370dF159dDb324266b6E454',
-  TokenStatesGBP: '0x9b7a08E56C34E04A76c5789b632dAEB768e1744C',
-  ProxysGBP: '0x1C51A976200D8F7a9A678c2B2f309Cf44D9C1E83',
-  SynthsGBP: '0x09df6e10B35f07b698313a51c3788CA7F7BCcD29',
-  TokenStatesCHF: '0x99673E3B5C5E77F03B09909D4d08C995deCFeAF7',
-  ProxysCHF: '0x559cfd970FA2Dc9C3265e8c3926689aF82F341D0',
-  SynthsCHF: '0xbD50a2df8e1dCab031aDF97D39bdde99682f5589',
-  TokenStatesXAU: '0x7628C09604463796A938948A13Ac5405E397992a',
-  ProxysXAU: '0x72a7502999eb98AFB4017A7e095AfCCF8d73a7a7',
-  SynthsXAU: '0x9E0d48E31E336a52E329F185DD65B72fa945Dce3',
-  TokenStatesXAG: '0xac2324f77f20D2D5A1A2bC5b97a8C22b8cE99195',
-  ProxysXAG: '0x1e224E1A48A8c8A2B6185dA5c08632f1c7440872',
-  SynthsXAG: '0x2554Be396fb56EC5196e9498fFe72DB89C7B62F9',
-  TokenStatesBTC: '0x26067f2691A8596F51A1cE69E633520e448BEd7E',
-  ProxysBTC: '0xf846c70F551A64c66b28c565633Bf03fE2282Bc2',
-  SynthsBTC: '0x9E2f1A034C08032e17Ad583006ECd3f8A6e5B6E6',
-  TokenStatesETH: '0xb4B9eE4c708895CFA3D139e8718F241cC73d3aD8',
-  ProxysETH: '0x958113d2b1A8A49ee669D0C12B3f10DbD9D723ee',
-  SynthsETH: '0x29dae309e77a57805C9ABf5FF457870263D60125',
-  TokenStatesBNB: '0xb933cD29258519b2Db6201ce952392a32A84A04c',
-  ProxysBNB: '0x379C66183eD01f72DEEA101d3713553bC4CE76Bb',
-  SynthsBNB: '0xd4d1aF20BEfe9e562Ac2287518E5E55754274fA4',
-  TokenStatesTRX: '0x6064D1b25594E62944fea5D7A4D4112b8a175f94',
-  ProxysTRX: '0x0D4bFE90734998B8b1d27775e045F71591A07982',
-  SynthsTRX: '0x8012033A0D8aEc6d9Dc39f5c2f4bBAb9De2d7C0F',
-  TokenStatesXTZ: '0xE37274309095D6EaF9f30B0BcD0A04fB4A54ef98',
-  ProxysXTZ: '0x260090f8475363fDEAa8451cC2E8B1D7b88292D9',
-  SynthsXTZ: '0xE4f7ff156746160376794D001A14d2aAD5fD304a',
-  TokenStatesXRP: '0x165dD0c1BcE0B0C4992Cc682E0445f67EB84BEB5',
-  ProxysXRP: '0xB357dc5f357F962E9b9bc88d25a31F073b1f4924',
-  SynthsXRP: '0x6Dd660F1A87F2fE29a12004190f48dF2347bFcC5',
-  TokenStatesLTC: '0xdfEf795e4D5Fa4b899ae595b13bb6D4afBf52Ea3',
-  ProxysLTC: '0x785765b570AFd08854F6d17c0134f662B9A70428',
-  SynthsLTC: '0xAA0834e151Ad790598b46014b9ACFA0317aBA856',
-  TokenStatesLINK: '0x146c56af8Eb8A8236037B20ab1be7B0dA2DB53fb',
-  ProxysLINK: '0x4501C4e9C56A5955fA989a5689E17E37a6807be5',
-  SynthsLINK: '0xF119Dc865c23096c95676E746B6f58f5549FE06d',
-  TokenStatesEOS: '0xBd171b0798Dbd80D8649D9EBd3aaeF4C98A925AB',
-  ProxysEOS: '0x1B69779e45F2eaA1620ABdf87f5Ab72a7Ac807Da',
-  SynthsEOS: '0x0d4938Be85eD1022e4Efba1baF7dBB1Ce1f7244B',
-  TokenStatesBCH: '0xF0154305C415a52CB6a326fC9b4815FE4C864B9e',
-  ProxysBCH: '0xB83a7379f3A4355bc39C1E40f6f56757b93a609F',
-  SynthsBCH: '0x4bf66f3c3C71E8E47033F5e7F90d1E3F63A70b49',
-  TokenStatesETC: '0x34f45716b07d0eaAe140ff1C67569cb3B862446c',
-  ProxysETC: '0x2D99030A6C7698CB84C74fae098a5CA759dAa5ac',
-  SynthsETC: '0x8AbbaaE519142fD525b09eFCA947276504EF5B04',
-  TokenStatesDASH: '0xd0b1eCcCC9215B471565b6a623b12ddd3f5C033E',
-  ProxysDASH: '0xafc27e15fC8CCaf1aff7ed4634B65B5c0AC6A1Cd',
-  SynthsDASH: '0xf297596d0d0E87f63a8b71645f8616360494c636',
-  TokenStatesXMR: '0x53b585280Da9487BE698740eb984F8f8E396d9D1',
-  ProxysXMR: '0x4a7c37580de2f0edfCF8FA79b712Ef370da6Ec8c',
-  SynthsXMR: '0x8Fc1E1A43A5f194cce250A65793275ed91537BEC',
-  TokenStatesADA: '0xe6Aeb4a56580B9545958AFE11c02c954B75A87EA',
-  ProxysADA: '0xa3C8AD194EDBfEC6943360618def25F4a735EA1b',
-  SynthsADA: '0x69a585B847Ac1371771291F166B9d31bBc45BA82',
-  TokenStatesCEX: '0xF5af0afD0d9553CF4433bdFcF0ba0f8C09e035a0',
-  ProxysCEX: '0xb38c3AC8F47538A1D6C5b40d86ec93cad06c9E5E',
-  SynthsCEX: '0x38F3EB20b810f5e33937EBbE3758e00c318D9D0C',
-  TokenStatesDEFI: '0xC1340120c63D55DB98D58243775b0D0Cba4390aB',
-  ProxysDEFI: '0x971e38Cd0b24899bcC4daf83d464be2C6cd6D0b1',
-  SynthsDEFI: '0x40487A1D7696a82bB4AF3a992aF60E7Bd8afC910',
-  TokenStateiBTC: '0x86e6B324404D006b5184E5F02207dEECD7194345',
-  ProxyiBTC: '0x1550d27339169ad12316030c2b74356155fe1280',
-  SynthiBTC: '0x48cB2E21529C0d262431006C860160424c86faD4',
-  TokenStateiETH: '0x1e642e27e6E3eEC67567d2B6F5aD3fb2E4C8950d',
-  ProxyiETH: '0xCE88D9Ee2794DDE700197A27b19fd8C24b7b4cf0',
-  SynthiETH: '0xF958551ABAaAaEa812559007038733583a42Fca8',
-  TokenStateiBNB: '0x59Aa7Ed1Bae7c4B4133ca52fA562E24e52b21BE5',
-  ProxyiBNB: '0xE4631fa4959B4a7f45d9fD034eDb71E301d88A9e',
-  SynthiBNB: '0x94591398467e6d0C236E366fF849B8c6a08BCEC3',
-  TokenStateiTRX: '0x0e4E3b62d41d261751c7F36BCEf6d46203200D68',
-  ProxyiTRX: '0xDcaDf390cC2D5CdD22FB8B27e90C30e9D94E387D',
-  SynthiTRX: '0x513D84884B348bF948d63b2c1432D5cfCA72D417',
-  TokenStateiXTZ: '0x9233b6227876c8aaCF52c5fEF905A216E2Cf0b34',
-  ProxyiXTZ: '0x813c72Bd945580d3c28c1bfFC84Cf3B79C576FFE',
-  SynthiXTZ: '0x85421445798E1ec7D07cf9892d8B18795d0653A9',
-  TokenStateiCEX: '0xdF6bcfE2F9bFA7Ca5c288b91f84aa115a4fE7c09',
-  ProxyiCEX: '0x551dcDc068159C6638C32fc3565C3E2449D82CC9',
-  SynthiCEX: '0xD16DD005512cDdb2e0ae96A7510b89C384EAA822',
-  TokenStateiDEFI: '0xf428E761B10b1733eFF7b1a614eBc386f7Ad2805',
-  ProxyiDEFI: '0x822fA6226188e5f7938B979EbD5d8c1bFa38F247',
-  SynthiDEFI: '0x822c84758bc7F04a0D68563C307942a0E9aB6cb0',
-  TokenStatesFTSE: '0xEd42Bd50c959310039C3863fa38A0757eb053b6A',
-  ProxysFTSE: '0xbb30A4EB81Bb368dc01f3df3256C1D336b45c24f',
-  SynthsFTSE: '0xEF92cDdaEAc53EB9B95dd104bC505A515E06e6fc',
-  TokenStatesNIKKEI: '0xDa2F9fa8c94D2072160673980db645342ff69e89',
-  ProxysNIKKEI: '0x23fF93479f500f10d8bF183929A39DD3e51b09B1',
-  SynthsNIKKEI: '0xbbB9E80790499CF4d9bd4d609120c45f9084e44b',
-  Depot: '0xB6813e96cb3E34569Ce91A9Ed792e8bB8Ea7a920',
-  EtherCollateral: '0x84cc802C40Fa00712326bF04DaaA25EA6E27d7Bc',
-  BinaryOptionMarketFactory: '0xed315e5E226EA0177f2B1cE0ee88de1CBcbEEc40',
-  BinaryOptionMarketManager: '0xA48a7064C756cbfb4Daa7F80523A6e2fe7535De0',
-  SynthUtil: '0xe4310749284c606EC7D8c32f4540dc7014e264A1',
-  DappMaintenance: '0xc6d5dEac70F03946d3E438DaD147B667f0cd22D2',
-  BinaryOptionMarketData: '0x906eD4b904bfA4dfD191EdC1949415846aC01D9f'
+  AddressResolver: '0x4Ca0fc6E50F636811c2261ffE145E8ce0505AA82',
+  BinaryOptionMarketData: '0x1DeFB37D31357c012b91A436E00eE33611b10d8C',
+  BinaryOptionMarketFactory: '0xE6Bfacf98222215D0904466D239058CD41c22ED1',
+  BinaryOptionMarketManager: '0xBE60e7E68DB714B8f5a91185F5DdA806c50A108b',
+  DappMaintenance: '0xA28D0D4751EEE74220dDF470B61510C5fD803073',
+  DelegateApprovals: '0xFdC7EEE2D7730934d98D0A179c4fD7c7F17Ea245',
+  DelegateApprovalsEternalStorage: '0x6B1957705E4122127dfFb969465bF446E05151B9',
+  Depot: '0x82f227D7c40A929F549E7043f3f332122B008Fc2',
+  EscrowChecker: '0x0F3524C523FcC6c5d76A8EaAC146597dc89edFb2',
+  EternalStorageLiquidations: '0x21667Aca48f759698a651B63F322F2B1241CA0C7',
+  EtherCollateral: '0xF503bA8E4064106D2188e916eeDd504DeC065F5c',
+  ExchangeRates: '0x06d8A042821D25A6B2312177825D904D71F4B48a',
+  ExchangeState: '0x09b526878AAD6E3B4780a6580c5725c7131fBF4B',
+  Exchanger: '0xbE54046526139c05262c298EC5cd6E3ebfE7ddd4',
+  FeePool: '0x40E2AD3b6F15b927F435C690a90c99F30dff7197',
+  FeePoolEternalStorage: '0xDD8b688d81627AFC0C3DC34665d509aB670Ee149',
+  FeePoolState: '0xE5dD6D85CB77DD09e3acCfc5A07bA26493A4B46B',
+  FlexibleStorage: '0xc614F012d22605b906a7c2845f42ae16c19868D4',
+  Issuer: '0x310C8193d1dc959B1c9cAA4ED27D2E083Bb5cFcA',
+  Liquidations: '0xf6ea11Ec532047bf21A95AE552910aa21851c103',
+  Math: '0x58d8B6c1C84929EbbE0715dA3b931C1010A23Fde',
+  ProxyERC20: '0xf5DaB7998F105702d4043b065c23662ee97467D0',
+  ProxyERC20sUSD: '0xC420ECC86B12Fb6172a8516895fCb2eF033aBfaE',
+  ProxyFeePool: '0xF54f0F8603A72AAc37a7369BF442c9C558EdB37E',
+  ProxySynthetix: '0x1122f017B9F0C160383FccA8afC07acE2915ED44',
+  ProxysETH: '0x8CC4863Ba808fA22Ff347411F19F057C5F7e84F9',
+  ProxysUSD: '0x8F41257fFC68b5DD3222Dc580960bf8A87956D29',
+  ReadProxyAddressResolver: '0xC47a853740111122c173D76eB6f4012F0015c414',
+  RewardEscrow: '0xF081254660E50cD5F7038030ba6542CfB347039D',
+  RewardsDistribution: '0x08578FcCc18C7bfAF9C3Bd7c21dbC2B32F09590a',
+  SafeDecimalMath: '0xce38A73E1970A67560553587361799699Ebc573F',
+  SupplySchedule: '0x32a49040bBD487b10DA706842d354Fdb00E66A7B',
+  SynthUtil: '0x5Ff739f57A23E4b22EF7f0981723bbAA6377E811',
+  Synthetix: '0x731582b852daADaE68e8F6257Cc13E780Be0AA87',
+  SynthetixEscrow: '0x29Ef20281039F03d4024Ee874870b4d288216904',
+  SynthetixState: '0xb9b5ac91F1fA50DA187F66867945C6d9452a9915',
+  SynthsETH: '0x124c757782352d79302664585a0575BFB300169e',
+  SynthsUSD: '0xa8860e45628884827f24880f130C35c050B2c9D3',
+  SystemSettings: '0x53E9b95419ee9449D1f4a9F81F8849e8e51d60bC',
+  SystemStatus: '0x58d91E4A7A5313C7677292Dc2844df377f4cF259',
+  TokenStateSynthetix: '0x16A45594FA672F436056e7877c8eCFC5014e7bf2',
+  TokenStatesETH: '0xe226233B9864e677221Bf74B39c7Ae99c8C9ADB4',
+  TokenStatesUSD: '0x0D98CD1aD7198Ea3A41D60AE6b9554E9b2A41D77',
+  TradingRewards: '0xE95DD491812Fc0647eBDdB40Cf03Ffcf3db26880'
 };
 /* harmony default export */ var addresses = ({
   108: OVM_ADDRESSES
@@ -55287,7 +55194,666 @@ function sUSD(contractSettings) {
 }
 
 /* harmony default export */ var ovm_sUSD = (sUSD);
+// EXTERNAL MODULE: ./lib/abis/ovm/SupplySchedule.json
+var SupplySchedule = __webpack_require__(62);
+
+// CONCATENATED MODULE: ./src/contracts/ovm/SupplySchedule.js
+
+
+
+
+
+/** @constructor
+ * @param contractSettings {ContractSettings}
+ */
+
+function SupplySchedule_SupplySchedule(contractSettings) {
+  var _this = this;
+
+  this.contractSettings = contractSettings || new src_contractSettings();
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['SupplySchedule'], SupplySchedule, this.contractSettings.signer || this.contractSettings.provider);
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+    **/
+
+  this.nominateNewOwner = /*#__PURE__*/function () {
+    var _ref = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              txParams = txParams || {};
+              _context.next = 3;
+              return _this.contract.nominateNewOwner(_owner, txParams);
+
+            case 3:
+              return _context.abrupt("return", _context.sent);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function (_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.DECAY_RATE = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee2() {
+    return regenerator_default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return _this.contract.DECAY_RATE();
+
+          case 2:
+            return _context2.abrupt("return", _context2.sent);
+
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.MAX_MINTER_REWARD = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee3() {
+    return regenerator_default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return _this.contract.MAX_MINTER_REWARD();
+
+          case 2:
+            return _context3.abrupt("return", _context3.sent);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+
+  this.SUPPLY_DECAY_START = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee4() {
+    return regenerator_default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return _this.contract.SUPPLY_DECAY_START();
+
+          case 2:
+            return _context4.abrupt("return", _context4.sent);
+
+          case 3:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.TERMINAL_SUPPLY_RATE_ANNUAL = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee5() {
+    return regenerator_default.a.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return _this.contract.TERMINAL_SUPPLY_RATE_ANNUAL();
+
+          case 2:
+            return _context5.abrupt("return", _context5.sent);
+
+          case 3:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.MINT_BUFFER = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee6() {
+    return regenerator_default.a.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            _context6.next = 2;
+            return _this.contract.MINT_BUFFER();
+
+          case 2:
+            return _context6.abrupt("return", _context6.sent);
+
+          case 3:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+  this.isMintable = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee7() {
+    return regenerator_default.a.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.next = 2;
+            return _this.contract.isMintable();
+
+          case 2:
+            return _context7.abrupt("return", _context7.sent);
+
+          case 3:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+    **/
+
+  this.setMinterReward = /*#__PURE__*/function () {
+    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(amount, txParams) {
+      return regenerator_default.a.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              txParams = txParams || {};
+              _context8.next = 3;
+              return _this.contract.setMinterReward(amount, txParams);
+
+            case 3:
+              return _context8.abrupt("return", _context8.sent);
+
+            case 4:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
+    }));
+
+    return function (_x3, _x4) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param counter {BigNumber}
+   * @returns BigNumber
+   **/
+
+
+  this.tokenDecaySupplyForWeek = /*#__PURE__*/function () {
+    var _ref9 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9(counter) {
+      return regenerator_default.a.wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
+            case 0:
+              _context9.next = 2;
+              return _this.contract.tokenDecaySupplyForWeek(counter);
+
+            case 2:
+              return _context9.abrupt("return", _context9.sent);
+
+            case 3:
+            case "end":
+              return _context9.stop();
+          }
+        }
+      }, _callee9);
+    }));
+
+    return function (_x5) {
+      return _ref9.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10() {
+    return regenerator_default.a.wrap(function _callee10$(_context10) {
+      while (1) {
+        switch (_context10.prev = _context10.next) {
+          case 0:
+            _context10.next = 2;
+            return _this.contract.nominatedOwner();
+
+          case 2:
+            return _context10.abrupt("return", _context10.sent);
+
+          case 3:
+          case "end":
+            return _context10.stop();
+        }
+      }
+    }, _callee10);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+    **/
+
+  this.acceptOwnership = /*#__PURE__*/function () {
+    var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11(txParams) {
+      return regenerator_default.a.wrap(function _callee11$(_context11) {
+        while (1) {
+          switch (_context11.prev = _context11.next) {
+            case 0:
+              txParams = txParams || {};
+              _context11.next = 3;
+              return _this.contract.acceptOwnership(txParams);
+
+            case 3:
+              return _context11.abrupt("return", _context11.sent);
+
+            case 4:
+            case "end":
+              return _context11.stop();
+          }
+        }
+      }, _callee11);
+    }));
+
+    return function (_x6) {
+      return _ref11.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+
+
+  this.SUPPLY_DECAY_END = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee12() {
+    return regenerator_default.a.wrap(function _callee12$(_context12) {
+      while (1) {
+        switch (_context12.prev = _context12.next) {
+          case 0:
+            _context12.next = 2;
+            return _this.contract.SUPPLY_DECAY_END();
+
+          case 2:
+            return _context12.abrupt("return", _context12.sent);
+
+          case 3:
+          case "end":
+            return _context12.stop();
+        }
+      }
+    }, _callee12);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.INFLATION_START_DATE = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee13() {
+    return regenerator_default.a.wrap(function _callee13$(_context13) {
+      while (1) {
+        switch (_context13.prev = _context13.next) {
+          case 0:
+            _context13.next = 2;
+            return _this.contract.INFLATION_START_DATE();
+
+          case 2:
+            return _context13.abrupt("return", _context13.sent);
+
+          case 3:
+          case "end":
+            return _context13.stop();
+        }
+      }
+    }, _callee13);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param supplyMinted {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+  this.recordMintEvent = /*#__PURE__*/function () {
+    var _ref14 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee14(supplyMinted, txParams) {
+      return regenerator_default.a.wrap(function _callee14$(_context14) {
+        while (1) {
+          switch (_context14.prev = _context14.next) {
+            case 0:
+              txParams = txParams || {};
+              _context14.next = 3;
+              return _this.contract.recordMintEvent(supplyMinted, txParams);
+
+            case 3:
+              return _context14.abrupt("return", _context14.sent);
+
+            case 4:
+            case "end":
+              return _context14.stop();
+          }
+        }
+      }, _callee14);
+    }));
+
+    return function (_x7, _x8) {
+      return _ref14.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee15() {
+    return regenerator_default.a.wrap(function _callee15$(_context15) {
+      while (1) {
+        switch (_context15.prev = _context15.next) {
+          case 0:
+            _context15.next = 2;
+            return _this.contract.owner();
+
+          case 2:
+            return _context15.abrupt("return", _context15.sent);
+
+          case 3:
+          case "end":
+            return _context15.stop();
+        }
+      }
+    }, _callee15);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _synthetixProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+    **/
+
+  this.setSynthetixProxy = /*#__PURE__*/function () {
+    var _ref16 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16(_synthetixProxy, txParams) {
+      return regenerator_default.a.wrap(function _callee16$(_context16) {
+        while (1) {
+          switch (_context16.prev = _context16.next) {
+            case 0:
+              txParams = txParams || {};
+              _context16.next = 3;
+              return _this.contract.setSynthetixProxy(_synthetixProxy, txParams);
+
+            case 3:
+              return _context16.abrupt("return", _context16.sent);
+
+            case 4:
+            case "end":
+              return _context16.stop();
+          }
+        }
+      }, _callee16);
+    }));
+
+    return function (_x9, _x10) {
+      return _ref16.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.minterReward = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17() {
+    return regenerator_default.a.wrap(function _callee17$(_context17) {
+      while (1) {
+        switch (_context17.prev = _context17.next) {
+          case 0:
+            _context17.next = 2;
+            return _this.contract.minterReward();
+
+          case 2:
+            return _context17.abrupt("return", _context17.sent);
+
+          case 3:
+          case "end":
+            return _context17.stop();
+        }
+      }
+    }, _callee17);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param totalSupply {BigNumber}
+   * @param numOfWeeks {BigNumber}
+   * @returns BigNumber
+   **/
+
+  this.terminalInflationSupply = /*#__PURE__*/function () {
+    var _ref18 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18(totalSupply, numOfWeeks) {
+      return regenerator_default.a.wrap(function _callee18$(_context18) {
+        while (1) {
+          switch (_context18.prev = _context18.next) {
+            case 0:
+              _context18.next = 2;
+              return _this.contract.terminalInflationSupply(totalSupply, numOfWeeks);
+
+            case 2:
+              return _context18.abrupt("return", _context18.sent);
+
+            case 3:
+            case "end":
+              return _context18.stop();
+          }
+        }
+      }, _callee18);
+    }));
+
+    return function (_x11, _x12) {
+      return _ref18.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.INITIAL_WEEKLY_SUPPLY = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19() {
+    return regenerator_default.a.wrap(function _callee19$(_context19) {
+      while (1) {
+        switch (_context19.prev = _context19.next) {
+          case 0:
+            _context19.next = 2;
+            return _this.contract.INITIAL_WEEKLY_SUPPLY();
+
+          case 2:
+            return _context19.abrupt("return", _context19.sent);
+
+          case 3:
+          case "end":
+            return _context19.stop();
+        }
+      }
+    }, _callee19);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.synthetixProxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20() {
+    return regenerator_default.a.wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+            _context20.next = 2;
+            return _this.contract.synthetixProxy();
+
+          case 2:
+            return _context20.abrupt("return", _context20.sent);
+
+          case 3:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.lastMintEvent = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21() {
+    return regenerator_default.a.wrap(function _callee21$(_context21) {
+      while (1) {
+        switch (_context21.prev = _context21.next) {
+          case 0:
+            _context21.next = 2;
+            return _this.contract.lastMintEvent();
+
+          case 2:
+            return _context21.abrupt("return", _context21.sent);
+
+          case 3:
+          case "end":
+            return _context21.stop();
+        }
+      }
+    }, _callee21);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.mintableSupply = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22() {
+    return regenerator_default.a.wrap(function _callee22$(_context22) {
+      while (1) {
+        switch (_context22.prev = _context22.next) {
+          case 0:
+            _context22.next = 2;
+            return _this.contract.mintableSupply();
+
+          case 2:
+            return _context22.abrupt("return", _context22.sent);
+
+          case 3:
+          case "end":
+            return _context22.stop();
+        }
+      }
+    }, _callee22);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.weekCounter = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23() {
+    return regenerator_default.a.wrap(function _callee23$(_context23) {
+      while (1) {
+        switch (_context23.prev = _context23.next) {
+          case 0:
+            _context23.next = 2;
+            return _this.contract.weekCounter();
+
+          case 2:
+            return _context23.abrupt("return", _context23.sent);
+
+          case 3:
+          case "end":
+            return _context23.stop();
+        }
+      }
+    }, _callee23);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.weeksSinceLastIssuance = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24() {
+    return regenerator_default.a.wrap(function _callee24$(_context24) {
+      while (1) {
+        switch (_context24.prev = _context24.next) {
+          case 0:
+            _context24.next = 2;
+            return _this.contract.weeksSinceLastIssuance();
+
+          case 2:
+            return _context24.abrupt("return", _context24.sent);
+
+          case 3:
+          case "end":
+            return _context24.stop();
+        }
+      }
+    }, _callee24);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.MINT_PERIOD_DURATION = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25() {
+    return regenerator_default.a.wrap(function _callee25$(_context25) {
+      while (1) {
+        switch (_context25.prev = _context25.next) {
+          case 0:
+            _context25.next = 2;
+            return _this.contract.MINT_PERIOD_DURATION();
+
+          case 2:
+            return _context25.abrupt("return", _context25.sent);
+
+          case 3:
+          case "end":
+            return _context25.stop();
+        }
+      }
+    }, _callee25);
+  }));
+}
+
+/* harmony default export */ var ovm_SupplySchedule = (SupplySchedule_SupplySchedule);
 // CONCATENATED MODULE: ./src/contracts/ovm/index.js
+
 
 
 
@@ -55332,7 +55898,8 @@ function sUSD(contractSettings) {
   BinaryOptionMarketData: ovm_BinaryOptionMarketData,
   SynthUtil: ovm_SynthUtil,
   sUSD: ovm_sUSD,
-  SystemSettings: ovm_SystemSettings
+  SystemSettings: ovm_SystemSettings,
+  SupplySchedule: ovm_SupplySchedule
 });
 // CONCATENATED MODULE: ./src/contracts/index.js
 
@@ -55344,11 +55911,11 @@ var slicedToArray = __webpack_require__(41);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(62);
+var defineProperty = __webpack_require__(63);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(63);
+var createClass = __webpack_require__(64);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // CONCATENATED MODULE: ./src/util/index.js

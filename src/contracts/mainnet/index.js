@@ -18,6 +18,7 @@ import RewardsDistribution from './RewardsDistribution';
 import BinaryOptionMarketManager from './BinaryOptionMarketManager';
 import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
+import EtherCollateralsUSD from './EtherCollateralsUSD';
 import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sAUD from './sAUD';
@@ -65,6 +66,7 @@ export default {
   BinaryOptionMarketManager,
   BinaryOptionMarketData,
   SynthUtil,
+  EtherCollateralsUSD,
   sUSD,
   sEUR,
   sAUD,

@@ -25,11 +25,9 @@ class Util {
    */
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
-    const { Depot, Synth, Synthetix } = contracts[contractSettings.network];
-    this.depot = new Depot(contractSettings);
+    const { Synth, Synthetix } = contracts[contractSettings.network];
     this.synth = new Synth(contractSettings);
     this.synthetix = new Synthetix(contractSettings);
-    this.depotInterface = new Interface(contractSettings.ABIS.Depot);
     this.synthInterface = new Interface(contractSettings.ABIS.Synth);
 
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);

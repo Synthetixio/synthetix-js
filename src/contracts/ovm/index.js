@@ -1,4 +1,3 @@
-import Depot from './Depot';
 import EscrowChecker from './EscrowChecker';
 import ExchangeRates from './ExchangeRates';
 import FeePool from './FeePool';
@@ -15,15 +14,12 @@ import AddressResolver from './AddressResolver';
 import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
 import RewardsDistribution from './RewardsDistribution';
-import BinaryOptionMarketManager from './BinaryOptionMarketManager';
-import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
 import SystemSettings from './SystemSettings';
 import sUSD from './sUSD';
 import SupplySchedule from './SupplySchedule';
 
 export default {
-  Depot,
   EscrowChecker,
   ExchangeRates,
   FeePool,
@@ -40,8 +36,6 @@ export default {
   DelegateApprovals,
   SystemStatus,
   RewardsDistribution,
-  BinaryOptionMarketManager,
-  BinaryOptionMarketData,
   SynthUtil,
   sUSD,
   SystemSettings,

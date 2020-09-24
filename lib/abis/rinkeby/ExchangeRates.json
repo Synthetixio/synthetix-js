@@ -374,7 +374,7 @@
 		"name": "aggregators",
 		"outputs": [
 			{
-				"internalType": "contract AggregatorInterface",
+				"internalType": "contract AggregatorV2V3Interface",
 				"name": "",
 				"type": "address"
 			}
@@ -449,6 +449,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x2678df96"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "currencyKeyDecimals",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb295ad34"
 	},
 	{
 		"constant": true,

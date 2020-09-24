@@ -56,6 +56,7 @@ const contracts = {
   BinaryOptionMarketManager: true,
   BinaryOptionMarketData: true,
   SynthUtil: true,
+  EtherCollateralsUSD: true,
   // the synths will be added on for each network
 };
 

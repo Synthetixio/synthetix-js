@@ -26714,7 +26714,7 @@ var OVM_ADDRESSES = {
   DappMaintenance: '0xab0157eB906a036ee106A3Ede2B14C5b46d7Ad4f'
 };
 /* harmony default export */ var addresses = ({
-  108: OVM_ADDRESSES
+  420: OVM_ADDRESSES
 });
 // CONCATENATED MODULE: ./lib/abis/ovm/EscrowChecker.js
 /* harmony default export */ var EscrowChecker = ([{
@@ -37704,7 +37704,7 @@ var OVM_SYNTHS = [{
   name: 'sUSD'
 }];
 /* harmony default export */ var lib_synths = ({
-  108: OVM_SYNTHS
+  420: OVM_SYNTHS
 });
 // CONCATENATED MODULE: ./src/contractSettings.js
 
@@ -37713,7 +37713,7 @@ var OVM_SYNTHS = [{
 
 
 var SUPPORTED_NETWORKS = {
-  108: 'ovm'
+  420: 'ovm'
 };
 
 var contractSettings_ContractSettings =
@@ -37731,7 +37731,7 @@ function ContractSettings(contractSettings) {
       provider = _contractSettings.provider,
       signer = _contractSettings.signer,
       networkId = _contractSettings.networkId;
-  this.networkId = networkId || 108;
+  this.networkId = networkId || 420;
   this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
   this.provider = provider || Object(ethers["getDefaultProvider"])();
 

@@ -4,7 +4,7 @@ import ABIS from '../lib/abis';
 import synths from '../lib/synths';
 
 const SUPPORTED_NETWORKS = {
-  108: 'ovm',
+  420: 'ovm',
 };
 
 class ContractSettings {
@@ -17,7 +17,7 @@ class ContractSettings {
   constructor(contractSettings) {
     contractSettings = contractSettings || {};
     const { provider, signer, networkId } = contractSettings;
-    this.networkId = networkId || 108;
+    this.networkId = networkId || 420;
     this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
     this.provider = provider || getDefaultProvider();
     if (!provider && networkId) {

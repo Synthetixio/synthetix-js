@@ -36,6 +36,20 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "uint256",
+				"name": "debtSnapshotStaleTime",
+				"type": "uint256"
+			}
+		],
+		"name": "DebtSnapshotStaleTimeUpdated",
+		"type": "event",
+		"signature": "0x9795be9f1478ed09e9e47e67318b8aa7a0c0213170403191099bf7dd435fb4d7"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "bytes32",
 				"name": "synthKey",
 				"type": "bytes32"
@@ -459,6 +473,22 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "debtSnapshotStaleTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xaf5355d8"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "bytes32",
@@ -746,6 +776,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x7bf82305"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_seconds",
+				"type": "uint256"
+			}
+		],
+		"name": "setDebtSnapshotStaleTime",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6190dd7a"
 	},
 	{
 		"constant": false,

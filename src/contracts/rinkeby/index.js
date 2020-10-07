@@ -19,6 +19,7 @@ import BinaryOptionMarketManager from './BinaryOptionMarketManager';
 import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
 import EtherCollateralsUSD from './EtherCollateralsUSD';
+import Liquidations from './Liquidations';
 import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
@@ -82,6 +83,7 @@ export default {
   BinaryOptionMarketData,
   SynthUtil,
   EtherCollateralsUSD,
+  Liquidations,
   sUSD,
   sEUR,
   sJPY,

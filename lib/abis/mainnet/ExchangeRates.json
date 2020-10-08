@@ -944,6 +944,33 @@
 				"internalType": "bytes32",
 				"name": "currencyKey",
 				"type": "bytes32"
+			}
+		],
+		"name": "rateAndInvalid",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isInvalid",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x0c71cd23"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
 			},
 			{
 				"internalType": "uint256",

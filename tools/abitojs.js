@@ -8,7 +8,29 @@ const SUPPORTED_NETWORKS = {
   1: 'mainnet',
   3: 'ropsten',
   4: 'rinkeby',
+  5: 'goerli',
   42: 'kovan',
+};
+
+const DEPLOYMENT_TARGET_ARGS = {
+  mainnet: {
+    network: 'mainnet',
+  },
+  ropsten: {
+    network: 'ropsten',
+  },
+  rinkeby: {
+    network: 'rinkeby',
+  },
+  goerli: {
+    network: 'goerli',
+    path,
+    fs,
+    deploymentPath: path.join(__dirname, '../node_modules/synthetix/publish/deployed/goerli-test'),
+  },
+  kovan: {
+    network: 'kovan',
+  },
 };
 
 /**
@@ -58,6 +80,7 @@ const contracts = {
   SynthUtil: true,
   EtherCollateralsUSD: true,
   Liquidations: true,
+  SecondaryDeposit: true,
   // the synths will be added on for each network
 };
 
@@ -72,8 +95,9 @@ const typeMap = {
 const writeAddressFile = () => {
   const addressDefinitions = Object.values(SUPPORTED_NETWORKS)
     .map(network => {
-      const targets = snx.getTarget({ network });
-
+      console.log(network);
+      console.log(DEPLOYMENT_TARGET_ARGS[network]);
+      const targets = snx.getTarget({ ...DEPLOYMENT_TARGET_ARGS[network] });
       return `
         const ${network.toUpperCase()}_ADDRESSES = {
           ${Object.keys(targets)

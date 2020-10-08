@@ -340,15 +340,6 @@ function ExchangeRates(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes32}
-   * @returns Object
-   **/
-  this.rateAndInvalid = async currencyKey => {
-    return await this.contract.rateAndInvalid(currencyKey);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
    * @param roundId {BigNumber}
    * @returns Object
    **/

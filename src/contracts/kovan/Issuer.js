@@ -24,6 +24,14 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.LAST_ISSUE_EVENT = async () => {
+    return await this.contract.LAST_ISSUE_EVENT();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
@@ -133,33 +141,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.cacheSNXIssuedDebt = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.cacheSNXIssuedDebt(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKeys {bytes32[]}
-   * @returns uint256[]
-   **/
-  this.cachedSNXIssuedDebtForCurrencies = async currencyKeys => {
-    return await this.contract.cachedSNXIssuedDebtForCurrencies(currencyKeys);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns Object
-   **/
-  this.cachedSNXIssuedDebtInfo = async () => {
-    return await this.contract.cachedSNXIssuedDebtInfo();
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns boolean
@@ -197,45 +178,12 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns Object
-   **/
-  this.currentSNXIssuedDebt = async () => {
-    return await this.contract.currentSNXIssuedDebt();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKeys {bytes32[]}
-   * @returns Object
-   **/
-  this.currentSNXIssuedDebtForCurrencies = async currencyKeys => {
-    return await this.contract.currentSNXIssuedDebtForCurrencies(currencyKeys);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
    * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
   this.debtBalanceOf = async (_issuer, currencyKey) => {
     return await this.contract.debtBalanceOf(_issuer, currencyKey);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.debtCacheIsStale = async () => {
-    return await this.contract.debtCacheIsStale();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.debtSnapshotStaleTime = async () => {
-    return await this.contract.debtSnapshotStaleTime();
   };
 
   /**
@@ -383,17 +331,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-  
-   **/
-  this.purgeDebtCacheForSynth = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.purgeDebtCacheForSynth(currencyKey, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
    * @returns Object
@@ -477,29 +414,6 @@ function Issuer(contractSettings) {
    **/
   this.transferableSynthetixAndAnyRateIsInvalid = async (account, balance) => {
     return await this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKeys {bytes32[]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.updateSNXIssuedDebtForCurrencies = async (currencyKeys, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.updateSNXIssuedDebtForCurrencies(currencyKeys, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKeys {bytes32[2]}
-   * @param currencyRates {uint256[2]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.updateSNXIssuedDebtOnExchange = async (currencyKeys, currencyRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.updateSNXIssuedDebtOnExchange(currencyKeys, currencyRates, txParams);
   };
 }
 

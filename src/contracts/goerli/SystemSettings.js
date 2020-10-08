@@ -198,6 +198,14 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.maximumDeposit = async () => {
+    return await this.contract.maximumDeposit();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.minimumStakeTime = async () => {
     return await this.contract.minimumStakeTime();
   };
@@ -338,6 +346,17 @@ function SystemSettings(contractSettings) {
   this.setLiquidationRatio = async (_liquidationRatio, txParams) => {
     txParams = txParams || {};
     return await this.contract.setLiquidationRatio(_liquidationRatio, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _maxDeposit {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMaximumDeposit = async (_maxDeposit, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMaximumDeposit(_maxDeposit, txParams);
   };
 
   /**

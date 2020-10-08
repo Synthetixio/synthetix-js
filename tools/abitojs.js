@@ -131,7 +131,7 @@ const writeAddressFile = () => {
 const writeSynthsFile = () => {
   const synthDefinitions = Object.values(SUPPORTED_NETWORKS)
     .map(network => {
-      const synths = snx.getSynths({ network });
+      const synths = snx.getSynths({ ...DEPLOYMENT_TARGET_ARGS[network] });
 
       return `
         const ${network.toUpperCase()}_SYNTHS = ${util.inspect(synths, {
@@ -170,13 +170,15 @@ const generate = () => {
 
   Object.values(SUPPORTED_NETWORKS).map(network => {
     // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
-    const synthContracts = snx.getSynths({ network }).reduce((memo, { name, subclass }) => {
-      memo[name] = {
-        target: `Proxy${name === 'sUSD' ? 'ERC20sUSD' : name}`,
-        source: subclass || 'Synth',
-      };
-      return memo;
-    }, {});
+    const synthContracts = snx
+      .getSynths({ ...DEPLOYMENT_TARGET_ARGS[network] })
+      .reduce((memo, { name, subclass }) => {
+        memo[name] = {
+          target: `Proxy${name === 'sUSD' ? 'ERC20sUSD' : name}`,
+          source: subclass || 'Synth',
+        };
+        return memo;
+      }, {});
 
     const allContracts = Object.assign({}, contracts, synthContracts);
 
@@ -196,7 +198,7 @@ const generate = () => {
       }
 
       // get the abis from the network's deploy from synthetix
-      const { abi } = snx.getSource({ network, contract: source }) || {};
+      const { abi } = snx.getSource({ ...DEPLOYMENT_TARGET_ARGS[network], contract: source }) || {};
       // some environments might not have an ABI for this contract yet
       if (abi) {
         // track which contracts exist in this netork

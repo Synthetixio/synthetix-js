@@ -18,6 +18,7 @@ import RewardsDistribution from './RewardsDistribution';
 import SynthUtil from './SynthUtil';
 import EtherCollateralsUSD from './EtherCollateralsUSD';
 import Liquidations from './Liquidations';
+import SecondaryDeposit from './SecondaryDeposit';
 import SystemSettings from './SystemSettings';
 import sUSD from './sUSD';
 import sETH from './sETH';
@@ -43,6 +44,7 @@ export default {
   SynthUtil,
   EtherCollateralsUSD,
   Liquidations,
+  SecondaryDeposit,
   SystemSettings,
   sUSD,
   sETH,

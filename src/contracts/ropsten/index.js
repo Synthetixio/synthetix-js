@@ -19,6 +19,7 @@ import BinaryOptionMarketManager from './BinaryOptionMarketManager';
 import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
 import Liquidations from './Liquidations';
+import SystemSettings from './SystemSettings';
 import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
@@ -84,6 +85,7 @@ export default {
   BinaryOptionMarketData,
   SynthUtil,
   Liquidations,
+  SystemSettings,
   sUSD,
   sEUR,
   sJPY,

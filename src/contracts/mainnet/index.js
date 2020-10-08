@@ -20,6 +20,7 @@ import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
 import EtherCollateralsUSD from './EtherCollateralsUSD';
 import Liquidations from './Liquidations';
+import SystemSettings from './SystemSettings';
 import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sAUD from './sAUD';
@@ -69,6 +70,7 @@ export default {
   SynthUtil,
   EtherCollateralsUSD,
   Liquidations,
+  SystemSettings,
   sUSD,
   sEUR,
   sAUD,

@@ -81,6 +81,7 @@ const contracts = {
   EtherCollateralsUSD: true,
   Liquidations: true,
   SecondaryDeposit: true,
+  SystemSettings: true,
   // the synths will be added on for each network
 };
 

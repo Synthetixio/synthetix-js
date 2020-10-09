@@ -33,15 +33,23 @@ function SecondaryDeposit(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.activated = async () => {
+    return await this.contract.activated();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param amount {BigNumber}
+   * @param  {String<EthAddress>}
+   * @param  {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.completeWithdrawal = async (account, amount, txParams) => {
+  this.completeWithdrawal = async (address_1, uint256_1, txParams) => {
     txParams = txParams || {};
-    return await this.contract.completeWithdrawal(account, amount, txParams);
+    return await this.contract.completeWithdrawal(address_1, uint256_1, txParams);
   };
 
   /**
@@ -65,21 +73,13 @@ function SecondaryDeposit(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
+   * @param  {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.initiateWithdrawal = async (amount, txParams) => {
+  this.initiateWithdrawal = async (uint256_1, txParams) => {
     txParams = txParams || {};
-    return await this.contract.initiateWithdrawal(amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.isPrimary = async () => {
-    return await this.contract.isPrimary();
+    return await this.contract.initiateWithdrawal(uint256_1, txParams);
   };
 
   /**
@@ -97,6 +97,17 @@ function SecondaryDeposit(contractSettings) {
    **/
   this.maximumDeposit = async () => {
     return await this.contract.maximumDeposit();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param newDeposit {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.migrateDeposit = async (newDeposit, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.migrateDeposit(newDeposit, txParams);
   };
 
   /**

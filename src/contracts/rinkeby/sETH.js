@@ -222,6 +222,16 @@ function sETH(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.selfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.selfDestruct(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/

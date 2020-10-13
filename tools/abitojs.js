@@ -8,6 +8,7 @@ const SUPPORTED_NETWORKS = {
   1: 'mainnet',
   3: 'ropsten',
   4: 'rinkeby',
+  5: 'goerli',
   42: 'kovan',
 };
 
@@ -58,6 +59,8 @@ const contracts = {
   SynthUtil: true,
   EtherCollateralsUSD: true,
   Liquidations: true,
+  SecondaryDeposit: true,
+  SystemSettings: true,
   // the synths will be added on for each network
 };
 

@@ -5,12 +5,10 @@ const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
 const SUPPORTED_NETWORKS = {
-  1: 'mainnet',
-  3: 'ropsten',
-  4: 'rinkeby',
-  5: 'goerli',
-  42: 'kovan',
+  420: 'ovm',
 };
+
+const DEFAULT_ENV = 'goerli';
 
 /**
  * This module will perform the following actions for all contracts listed
@@ -72,10 +70,17 @@ const typeMap = {
   string: 'String',
 };
 
+const targetConfiguration = {
+  network: DEFAULT_ENV,
+  useOvm: true,
+  path,
+  fs,
+};
+
 const writeAddressFile = () => {
   const addressDefinitions = Object.values(SUPPORTED_NETWORKS)
     .map(network => {
-      const targets = snx.getTarget({ network });
+      const targets = snx.getTarget({ ...targetConfiguration });
 
       return `
         const ${network.toUpperCase()}_ADDRESSES = {
@@ -109,7 +114,7 @@ const writeAddressFile = () => {
 const writeSynthsFile = () => {
   const synthDefinitions = Object.values(SUPPORTED_NETWORKS)
     .map(network => {
-      const synths = snx.getSynths({ network });
+      const synths = snx.getSynths({ ...targetConfiguration });
 
       return `
         const ${network.toUpperCase()}_SYNTHS = ${util.inspect(synths, {
@@ -148,13 +153,15 @@ const generate = () => {
 
   Object.values(SUPPORTED_NETWORKS).map(network => {
     // add the synth contract as well (target addresses are their proxies, and source is the synth contract)
-    const synthContracts = snx.getSynths({ network }).reduce((memo, { name, subclass }) => {
-      memo[name] = {
-        target: `Proxy${name === 'sUSD' ? 'ERC20sUSD' : name}`,
-        source: subclass || 'Synth',
-      };
-      return memo;
-    }, {});
+    const synthContracts = snx
+      .getSynths({ ...targetConfiguration })
+      .reduce((memo, { name, subclass }) => {
+        memo[name] = {
+          target: `Proxy${name === 'sUSD' ? 'ERC20sUSD' : name}`,
+          source: subclass || 'Synth',
+        };
+        return memo;
+      }, {});
 
     const allContracts = Object.assign({}, contracts, synthContracts);
 
@@ -174,7 +181,7 @@ const generate = () => {
       }
 
       // get the abis from the network's deploy from synthetix
-      const { abi } = snx.getSource({ network, contract: source }) || {};
+      const { abi } = snx.getSource({ ...targetConfiguration, contract: source }) || {};
       // some environments might not have an ABI for this contract yet
       if (abi) {
         // track which contracts exist in this netork
@@ -212,7 +219,7 @@ const generate = () => {
     );
 
     // write all ABIs files out for reference
-    writeAllABIFiles(network);
+    writeAllABIFiles(targetConfiguration.network);
   });
 
   writeIndexFile(

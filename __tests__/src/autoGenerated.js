@@ -1,4 +1,6 @@
+import { getDefaultProvider } from 'ethers';
 import * as snx from 'synthetix';
+import { OptimismProvider } from '@eth-optimism/provider';
 import { SynthetixJs } from '../../src/index.node.js';
 import ContractSettings from '../../src/contractSettings';
 import { contracts } from '../../tools/abitojs';
@@ -10,7 +12,8 @@ describe('auto-generated contracts', () => {
     describe(network, () => {
       let snxjs;
       beforeAll(() => {
-        snxjs = new SynthetixJs({ networkId });
+        const provider = new OptimismProvider('https://goerli.optimism.io', getDefaultProvider());
+        snxjs = new SynthetixJs({ networkId, provider });
       });
 
       Object.entries(contracts).forEach(([contract, settings]) => {
@@ -21,7 +24,7 @@ describe('auto-generated contracts', () => {
                 typeof settings === 'object' ? settings.target || contract : contract;
 
               expect(snxjs[contract].contract.address).toEqual(
-                snx.getTarget({ network, contract: targetContract }).address
+                snx.getTarget({ network, contract: targetContract, useOvm: true }).address
               );
             };
           });
@@ -31,7 +34,7 @@ describe('auto-generated contracts', () => {
               const source = typeof settings === 'object' ? settings.source || contract : contract;
 
               expect(snxjs[contract].contract.interface.abi).toEqual(
-                snx.getSource({ network, contract: source }).abi
+                snx.getSource({ network, contract: source, useOvm: true }).abi
               );
             };
           });

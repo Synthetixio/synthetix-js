@@ -19,6 +19,7 @@
   "author": "Synthetix",
   "license": "MIT",
   "dependencies": {
+    "@eth-optimism/provider": "0.0.1-alpha.6",
     "@ledgerhq/hw-app-eth": "4.74.2",
     "@ledgerhq/hw-transport": "4.74.2",
     "@ledgerhq/hw-transport-u2f": "4.74.2",
@@ -29,7 +30,7 @@
     "ethers": "4.0.44",
     "hdkey": "1.1.1",
     "lodash": "4.17.15",
-    "synthetix": "2.30.2-ovm",
+    "synthetix": "^2.30.2-ovm",
     "trezor-connect": "8.1.8",
     "walletlink": "2.0.2"
   },

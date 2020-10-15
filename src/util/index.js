@@ -25,16 +25,17 @@ class Util {
    */
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
-    const { Depot, Synth, Synthetix } = contracts[contractSettings.network];
-    this.depot = new Depot(contractSettings);
+    const { Synth, Synthetix } = contracts[contractSettings.network];
+    // const { Depot, Synth, Synthetix } = contracts[contractSettings.network];
+    // this.depot = new Depot(contractSettings);
     this.synth = new Synth(contractSettings);
     this.synthetix = new Synthetix(contractSettings);
-    this.depotInterface = new Interface(contractSettings.ABIS.Depot);
+    // this.depotInterface = new Interface(contractSettings.ABIS.Depot);
     this.synthInterface = new Interface(contractSettings.ABIS.Synth);
 
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);
     this.getEventLogs = this.getEventLogs.bind(this);
-    this.getLatestConversions = this.getLatestConversions.bind(this);
+    // this.getLatestConversions = this.getLatestConversions.bind(this);
     this.getGasAndSpeedInfo = this.getGasAndSpeedInfo.bind(this);
     this.waitForTransaction = this.waitForTransaction.bind(this);
     this.getGasEstimate = this.getGasEstimate.bind(this);
@@ -142,20 +143,20 @@ class Util {
     }
   }
 
-  async getLatestConversions() {
-    const latestBlockNumber = await this.contractSettings.provider.getBlockNumber();
-    const contractAddr = this.contractSettings.addressList.Depot;
+  // async getLatestConversions() {
+  //   const latestBlockNumber = await this.contractSettings.provider.getBlockNumber();
+  //   const contractAddr = this.contractSettings.addressList.Depot;
 
-    const ExchangeEvent = this.depotInterface.events.Exchange;
-    let events = await this.getEventLogs(contractAddr, ExchangeEvent, latestBlockNumber - 10000);
-    if (events.length < 5) {
-      events = await this.getEventLogs(contractAddr, ExchangeEvent, latestBlockNumber - 100000);
-    }
-    if (!events || !events.length) {
-      return [];
-    }
-    return events.reverse().slice(0, 20);
-  }
+  //   const ExchangeEvent = this.depotInterface.events.Exchange;
+  //   let events = await this.getEventLogs(contractAddr, ExchangeEvent, latestBlockNumber - 10000);
+  //   if (events.length < 5) {
+  //     events = await this.getEventLogs(contractAddr, ExchangeEvent, latestBlockNumber - 100000);
+  //   }
+  //   if (!events || !events.length) {
+  //     return [];
+  //   }
+  //   return events.reverse().slice(0, 20);
+  // }
 
   formatBigNumber(amount, decimals) {
     if (!amount) return '-';
@@ -236,13 +237,13 @@ class Util {
     });
   }
 
-  async getEtherPrice() {
-    return await this.depot.usdToEthPrice();
-  }
+  // async getEtherPrice() {
+  //   return await this.depot.usdToEthPrice();
+  // }
 
-  async getSynthetixPrice() {
-    return await this.depot.usdToSnxPrice();
-  }
+  // async getSynthetixPrice() {
+  //   return await this.depot.usdToSnxPrice();
+  // }
 
   /**
    * Returns the object with estimates for slow, average and fast gas prices and approximate waiting times

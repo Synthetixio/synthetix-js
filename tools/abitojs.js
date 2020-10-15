@@ -59,6 +59,10 @@ const contracts = {
   Liquidations: true,
   SecondaryDeposit: true,
   SystemSettings: true,
+  SupplySchedule: {
+    source: 'FixedSupplySchedule',
+  },
+
   // the synths will be added on for each network
 };
 
@@ -194,11 +198,11 @@ const generate = () => {
         // now only for source contracts in the original contract object
         if (contractName in contracts) {
           // write out ABI files (using ABIs from mainnet deploy)
-          writeABIFileAsJS(network, contractName, abi);
+          writeABIFileAsJS(targetConfiguration.network, contractName, abi);
           abiNetworkIndexFileHeader.push(importStringForIndexFile);
 
           // and track it
-          sourcesInNetwork.push(source);
+          sourcesInNetwork.push(contractName);
         }
 
         // now generate the final JS source
@@ -219,7 +223,7 @@ const generate = () => {
     );
 
     // write all ABIs files out for reference
-    writeAllABIFiles(targetConfiguration.network);
+    writeAllABIFiles(network);
   });
 
   writeIndexFile(
@@ -256,7 +260,7 @@ export default {
 
 const abiCache = {};
 const writeABIFileAsJS = (network, contractName, abi) => {
-  const folder = path.join(__dirname, '..', 'lib', 'abis', network);
+  const folder = path.join(__dirname, '..', 'lib', 'abis', 'ovm');
   if (!fs.existsSync(folder)) {
     fs.mkdirSync(folder);
   }
@@ -269,7 +273,7 @@ const writeABIFileAsJS = (network, contractName, abi) => {
       export default ${contractName};
       `;
   } else {
-    abiCache[content] = `../${network}/${contractName}`;
+    abiCache[content] = `../ovm/${contractName}`;
   }
   fs.writeFile(abiPath, content, err => {
     if (err) {
@@ -285,7 +289,7 @@ const writeAllABIFiles = network => {
   if (!fs.existsSync(folder)) {
     fs.mkdirSync(folder);
   }
-  const sources = snx.getSource({ network });
+  const sources = snx.getSource({ ...targetConfiguration });
 
   for (const [source, { abi }] of Object.entries(sources)) {
     const abiPath = path.join(folder, `${source}.json`);

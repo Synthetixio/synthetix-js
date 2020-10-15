@@ -17,6 +17,7 @@ import SynthUtil from './SynthUtil';
 import Liquidations from './Liquidations';
 import SecondaryDeposit from './SecondaryDeposit';
 import SystemSettings from './SystemSettings';
+import SupplySchedule from './SupplySchedule';
 import sUSD from './sUSD';
 
 export default {
@@ -39,5 +40,6 @@ export default {
   Liquidations,
   SecondaryDeposit,
   SystemSettings,
+  SupplySchedule,
   sUSD,
 };

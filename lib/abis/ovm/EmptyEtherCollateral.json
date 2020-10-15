@@ -1,0 +1,18 @@
+[
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalIssuedSynths",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "pure",
+		"type": "function",
+		"signature": "0xee5f3f5c"
+	}
+]

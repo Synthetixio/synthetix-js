@@ -8,10 +8,10 @@
   "repository": "https://github.com/Synthetixio/synthetix-js",
   "scripts": {
     "test": "jest --runInBand --verbose",
-    "clean-install": "rm ./package-lock.json && rm -rf node_modules/* && npm install",
-    "clear": "$(rm dist/*.js || true) && $(rm src/contracts/*.js || true) && $(rm lib/abis/*.js || true) && $(rm lib/addresses.js || true)",
+    "clean-install": "rimraf ./package-lock.json && rimraf node_modules/* && npm install",
+    "clear": "rimraf dist/*.js && rimraf src/contracts/*.js && rimraf lib/abis/*.js && rimraf lib/addresses.js",
     "lint": "eslint .",
-    "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
+    "format": "prettier --write \"{tools,lib,src,__tests__}/**/*.js\"",
     "abitojs": "node ./tools/abitojs.js",
     "webpack": "webpack --mode=production",
     "build": "npm run clear && npm run abitojs && npm run format && npm run webpack && npm test"
@@ -50,6 +50,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "24.8.0",
     "prettier": "~1.14.2",
+    "rimraf": "^3.0.2",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }

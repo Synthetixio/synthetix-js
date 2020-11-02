@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: 'circleci/node:10.16'
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
     working_directory: null
     steps:
       - checkout

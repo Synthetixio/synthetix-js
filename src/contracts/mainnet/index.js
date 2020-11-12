@@ -29,6 +29,7 @@ import sGBP from './sGBP';
 import sCHF from './sCHF';
 import sXAU from './sXAU';
 import sXAG from './sXAG';
+import sOIL from './sOIL';
 import sBTC from './sBTC';
 import sETH from './sETH';
 import sBNB from './sBNB';
@@ -63,6 +64,7 @@ import iXMR from './iXMR';
 import iADA from './iADA';
 import iCEX from './iCEX';
 import iDEFI from './iDEFI';
+import iOIL from './iOIL';
 
 export default {
   Depot,
@@ -96,6 +98,7 @@ export default {
   sCHF,
   sXAU,
   sXAG,
+  sOIL,
   sBTC,
   sETH,
   sBNB,
@@ -130,4 +133,5 @@ export default {
   iADA,
   iCEX,
   iDEFI,
+  iOIL,
 };

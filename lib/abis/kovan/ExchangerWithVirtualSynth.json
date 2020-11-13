@@ -173,15 +173,21 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
+				"indexed": true,
 				"internalType": "address",
-				"name": "vSynth",
+				"name": "synth",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "recipient",
 				"type": "address"
 			},
 			{
 				"indexed": false,
 				"internalType": "address",
-				"name": "synth",
+				"name": "vSynth",
 				"type": "address"
 			},
 			{
@@ -199,7 +205,7 @@
 		],
 		"name": "VirtualSynthCreated",
 		"type": "event",
-		"signature": "0x47f68e0ab6c1bbb16178594a498a109d966f898464ef4d623b6c0ee4c443bb16"
+		"signature": "0xb5ec76d79549c775883022e4426db5cd36bd5307f216cdb341554c301548ef9f"
 	},
 	{
 		"constant": true,
@@ -495,6 +501,11 @@
 				"internalType": "address",
 				"name": "destinationAddress",
 				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "trackingCode",
+				"type": "bytes32"
 			}
 		],
 		"name": "exchangeWithVirtual",
@@ -513,7 +524,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x7fa26f3b"
+		"signature": "0xf3995224"
 	},
 	{
 		"constant": true,

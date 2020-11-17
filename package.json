@@ -19,7 +19,7 @@
   "author": "Synthetix",
   "license": "MIT",
   "dependencies": {
-    "@eth-optimism/provider": "0.0.1-alpha.6",
+    "@eth-optimism/provider": "0.0.1-alpha.12",
     "@ledgerhq/hw-app-eth": "4.74.2",
     "@ledgerhq/hw-transport": "4.74.2",
     "@ledgerhq/hw-transport-u2f": "4.74.2",

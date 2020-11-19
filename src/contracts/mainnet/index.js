@@ -21,6 +21,8 @@ import SynthUtil from './SynthUtil';
 import EtherCollateralsUSD from './EtherCollateralsUSD';
 import Liquidations from './Liquidations';
 import SystemSettings from './SystemSettings';
+import FuturesMarketManager from './FuturesMarketManager';
+import FuturesMarketData from './FuturesMarketData';
 import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
@@ -90,6 +92,8 @@ export default {
   EtherCollateralsUSD,
   Liquidations,
   SystemSettings,
+  FuturesMarketManager,
+  FuturesMarketData,
   sUSD,
   sEUR,
   sJPY,

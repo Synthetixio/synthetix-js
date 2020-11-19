@@ -155,6 +155,14 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.futuresLiquidationFee = async () => {
+    return await this.contract.futuresLiquidationFee();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns bytes32[24]
    **/
   this.getResolverAddressesRequired = async () => {
@@ -313,6 +321,17 @@ function SystemSettings(contractSettings) {
   this.setFeePeriodDuration = async (_feePeriodDuration, txParams) => {
     txParams = txParams || {};
     return await this.contract.setFeePeriodDuration(_feePeriodDuration, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _sUSD {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFuturesLiquidationFee = async (_sUSD, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFuturesLiquidationFee(_sUSD, txParams);
   };
 
   /**

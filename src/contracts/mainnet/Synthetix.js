@@ -32,14 +32,6 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.SELFDESTRUCT_DELAY = async () => {
-    return await this.contract.SELFDESTRUCT_DELAY();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
   this.TOKEN_NAME = async () => {
@@ -127,6 +119,18 @@ function Synthetix(contractSettings) {
    **/
   this.balanceOf = async account => {
     return await this.contract.balanceOf(account);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param  {String<EthAddress>}
+   * @param  {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnSecondary = async (address_1, uint256_1, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSecondary(address_1, uint256_1, txParams);
   };
 
   /**
@@ -396,29 +400,37 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+  this.exchangeWithVirtual = async (
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeWithVirtual(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      trackingCode,
+      txParams
+    );
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32[24]
    **/
   this.getResolverAddressesRequired = async () => {
     return await this.contract.getResolverAddressesRequired();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.initiateSelfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.initiateSelfDestruct(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.initiationTime = async () => {
-    return await this.contract.initiationTime();
   };
 
   /**
@@ -534,6 +546,29 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param  {String<EthAddress>}
+   * @param  {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.mintSecondary = async (address_1, uint256_1, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.mintSecondary(address_1, uint256_1, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param  {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.mintSecondaryRewards = async (uint256_1, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.mintSecondaryRewards(uint256_1, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
@@ -613,32 +648,6 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.selfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.selfDestruct(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.selfDestructBeneficiary = async () => {
-    return await this.contract.selfDestructBeneficiary();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.selfDestructInitiated = async () => {
-    return await this.contract.selfDestructInitiated();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _integrationProxy {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -679,17 +688,6 @@ function Synthetix(contractSettings) {
   this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
     return await this.contract.setResolverAndSyncCache(_resolver, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _beneficiary {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
   };
 
   /**
@@ -738,16 +736,6 @@ function Synthetix(contractSettings) {
    **/
   this.synthsByAddress = async synthAddress => {
     return await this.contract.synthsByAddress(synthAddress);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.terminateSelfDestruct = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.terminateSelfDestruct(txParams);
   };
 
   /**

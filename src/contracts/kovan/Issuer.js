@@ -52,6 +52,17 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param synthsToAdd {address[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.addSynths = async (synthsToAdd, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.addSynths(synthsToAdd, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -133,33 +144,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.cacheSNXIssuedDebt = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.cacheSNXIssuedDebt(txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKeys {bytes32[]}
-   * @returns uint256[]
-   **/
-  this.cachedSNXIssuedDebtForCurrencies = async currencyKeys => {
-    return await this.contract.cachedSNXIssuedDebtForCurrencies(currencyKeys);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns Object
-   **/
-  this.cachedSNXIssuedDebtInfo = async () => {
-    return await this.contract.cachedSNXIssuedDebtInfo();
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns boolean
@@ -197,23 +181,6 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns Object
-   **/
-  this.currentSNXIssuedDebt = async () => {
-    return await this.contract.currentSNXIssuedDebt();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKeys {bytes32[]}
-   * @returns Object
-   **/
-  this.currentSNXIssuedDebtForCurrencies = async currencyKeys => {
-    return await this.contract.currentSNXIssuedDebtForCurrencies(currencyKeys);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
    * @param currencyKey {bytes32}
    * @returns BigNumber
@@ -224,26 +191,19 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.debtCacheIsStale = async () => {
-    return await this.contract.debtCacheIsStale();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.debtSnapshotStaleTime = async () => {
-    return await this.contract.debtSnapshotStaleTime();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns bytes32[24]
    **/
   this.getResolverAddressesRequired = async () => {
     return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKeys {bytes32[]}
+   * @returns address[]
+   **/
+  this.getSynths = async currencyKeys => {
+    return await this.contract.getSynths(currencyKeys);
   };
 
   /**
@@ -383,17 +343,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-  
-   **/
-  this.purgeDebtCacheForSynth = async (currencyKey, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.purgeDebtCacheForSynth(currencyKey, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
    * @returns Object
@@ -411,6 +360,17 @@ function Issuer(contractSettings) {
   this.removeSynth = async (currencyKey, txParams) => {
     txParams = txParams || {};
     return await this.contract.removeSynth(currencyKey, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKeys {bytes32[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeSynths = async (currencyKeys, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeSynths(currencyKeys, txParams);
   };
 
   /**
@@ -477,29 +437,6 @@ function Issuer(contractSettings) {
    **/
   this.transferableSynthetixAndAnyRateIsInvalid = async (account, balance) => {
     return await this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKeys {bytes32[]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.updateSNXIssuedDebtForCurrencies = async (currencyKeys, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.updateSNXIssuedDebtForCurrencies(currencyKeys, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKeys {bytes32[2]}
-   * @param currencyRates {uint256[2]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.updateSNXIssuedDebtOnExchange = async (currencyKeys, currencyRates, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.updateSNXIssuedDebtOnExchange(currencyKeys, currencyRates, txParams);
   };
 }
 

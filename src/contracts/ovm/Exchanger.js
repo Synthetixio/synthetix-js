@@ -181,6 +181,38 @@ function Exchanger(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param destinationAddress {String<EthAddress>}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+  this.exchangeWithVirtual = async (
+    from,
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    destinationAddress,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeWithVirtual(
+      from,
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      destinationAddress,
+      trackingCode,
+      txParams
+    );
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param sourceCurrencyKey {bytes32}
    * @param destinationCurrencyKey {bytes32}

@@ -110,22 +110,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "LAST_ISSUE_EVENT",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x129e05e6"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "MAX_ADDRESSES_FROM_RESOLVER",
 		"outputs": [
 			{
@@ -164,6 +148,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x849cf588"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "contract ISynth[]",
+				"name": "synthsToAdd",
+				"type": "address[]"
+			}
+		],
+		"name": "addSynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x47a9b6db"
 	},
 	{
 		"constant": true,
@@ -454,6 +454,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "getSynths",
+		"outputs": [
+			{
+				"internalType": "contract ISynth[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x3b6afe40"
 	},
 	{
 		"constant": true,
@@ -769,6 +791,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x0b887dae"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "removeSynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x7168d2c2"
 	},
 	{
 		"constant": true,

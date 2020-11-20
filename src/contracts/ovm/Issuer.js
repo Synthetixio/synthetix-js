@@ -24,14 +24,6 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32
-   **/
-  this.LAST_ISSUE_EVENT = async () => {
-    return await this.contract.LAST_ISSUE_EVENT();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
@@ -57,6 +49,17 @@ function Issuer(contractSettings) {
   this.addSynth = async (synth, txParams) => {
     txParams = txParams || {};
     return await this.contract.addSynth(synth, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param synthsToAdd {address[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.addSynths = async (synthsToAdd, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.addSynths(synthsToAdd, txParams);
   };
 
   /**
@@ -192,6 +195,15 @@ function Issuer(contractSettings) {
    **/
   this.getResolverAddressesRequired = async () => {
     return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKeys {bytes32[]}
+   * @returns address[]
+   **/
+  this.getSynths = async currencyKeys => {
+    return await this.contract.getSynths(currencyKeys);
   };
 
   /**
@@ -348,6 +360,17 @@ function Issuer(contractSettings) {
   this.removeSynth = async (currencyKey, txParams) => {
     txParams = txParams || {};
     return await this.contract.removeSynth(currencyKey, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKeys {bytes32[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.removeSynths = async (currencyKeys, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.removeSynths(currencyKeys, txParams);
   };
 
   /**

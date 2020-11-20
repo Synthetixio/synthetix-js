@@ -57,7 +57,8 @@ const contracts = {
   SynthUtil: true,
   EtherCollateralsUSD: true,
   Liquidations: true,
-  SecondaryDeposit: true,
+  SynthetixBridgeToOptimism: true,
+  SynthetixBridgeToBase: true,
   SystemSettings: true,
   SupplySchedule: {
     source: 'FixedSupplySchedule',

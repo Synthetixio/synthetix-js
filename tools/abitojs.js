@@ -59,7 +59,8 @@ const contracts = {
   SynthUtil: true,
   EtherCollateralsUSD: true,
   Liquidations: true,
-  SecondaryDeposit: true,
+  SynthetixBridgeToOptimism: true,
+  SynthetixBridgeToBase: true,
   SystemSettings: true,
   // the synths will be added on for each network
 };

@@ -122,6 +122,22 @@
 		"signature": "0xda40385d"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "allMarkets",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x375a7cba"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -251,7 +267,7 @@
 		"signature": "0xfe11edc9"
 	},
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "bytes32[]",
@@ -268,7 +284,7 @@
 			}
 		],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x0a347f1a"
 	},

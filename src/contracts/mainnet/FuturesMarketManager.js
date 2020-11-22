@@ -44,6 +44,14 @@ function FuturesMarketManager(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns address[]
+   **/
+  this.allMarkets = async () => {
+    return await this.contract.allMarkets();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param amount {BigNumber}
@@ -104,14 +112,12 @@ function FuturesMarketManager(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
+   * Call (no gas consumed, doesn't require signer)
    * @param assets {bytes32[]}
-   * @param txParams {TxParams}
    * @returns address[]
    **/
-  this.marketsForAssets = async (assets, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.marketsForAssets(assets, txParams);
+  this.marketsForAssets = async assets => {
+    return await this.contract.marketsForAssets(assets);
   };
 
   /**

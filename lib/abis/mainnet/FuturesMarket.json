@@ -28,7 +28,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_maxTotalMargin",
+				"name": "_maxMarketDebt",
 				"type": "uint256"
 			},
 			{
@@ -111,9 +111,9 @@
 				"type": "uint256"
 			}
 		],
-		"name": "MaxMarketSizeUpdated",
+		"name": "MaxMarketDebtUpdated",
 		"type": "event",
-		"signature": "0x24a4c84b7572e894a7b2691752867729ddf67e178d5eed6f173f00b8f38ac739"
+		"signature": "0xd919bdc3e79deaa8a0737499fbce11cd4d7f210feeddef95115c888db23660e8"
 	},
 	{
 		"anonymous": false,
@@ -399,7 +399,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "entryMarginMinusNotionalSkewSum",
+		"name": "entryMarginSumMinusNotionalSkew",
 		"outputs": [
 			{
 				"internalType": "int256",
@@ -410,7 +410,23 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x5ab2c077"
+		"signature": "0xfd3a534b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "entryNotionalSkew",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf542ec4c"
 	},
 	{
 		"constant": true,
@@ -650,7 +666,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "maxTotalMargin",
+		"name": "maxMarketDebt",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -661,7 +677,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x3e3e9a3a"
+		"signature": "0x5c57f6d8"
 	},
 	{
 		"constant": true,
@@ -774,6 +790,11 @@
 		"constant": true,
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
 				"internalType": "int256",
 				"name": "margin",
 				"type": "int256"
@@ -795,7 +816,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xba9c7dcd"
+		"signature": "0x6201a40a"
 	},
 	{
 		"constant": true,
@@ -1104,12 +1125,12 @@
 				"type": "uint256"
 			}
 		],
-		"name": "setMaxMarketSize",
+		"name": "setMaxMarketDebt",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xe461bdbc"
+		"signature": "0x062d8bc7"
 	},
 	{
 		"constant": false,

@@ -23,6 +23,9 @@ import Liquidations from './Liquidations';
 import SystemSettings from './SystemSettings';
 import FuturesMarketManager from './FuturesMarketManager';
 import FuturesMarketData from './FuturesMarketData';
+import FuturesMarketBTC from './FuturesMarketBTC';
+import FuturesMarketETH from './FuturesMarketETH';
+import FuturesMarketLINK from './FuturesMarketLINK';
 import sUSD from './sUSD';
 import sEUR from './sEUR';
 import sJPY from './sJPY';
@@ -94,6 +97,9 @@ export default {
   SystemSettings,
   FuturesMarketManager,
   FuturesMarketData,
+  FuturesMarketBTC,
+  FuturesMarketETH,
+  FuturesMarketLINK,
   sUSD,
   sEUR,
   sJPY,

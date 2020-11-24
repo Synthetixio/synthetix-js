@@ -62,10 +62,16 @@ const contracts = {
   SecondaryDeposit: true,
   SystemSettings: true,
   FuturesMarketManager: true,
-  FuturesMarketBTC: true,
-  FuturesMarketETH: true,
-  FuturesMarketLINK: true,
   FuturesMarketData: true,
+  FuturesMarketBTC: {
+    source: 'FuturesMarket',
+  },
+  FuturesMarketETH: {
+    source: 'FuturesMarket',
+  },
+  FuturesMarketLINK: {
+    source: 'FuturesMarket',
+  },
   // the synths will be added on for each network
 };
 

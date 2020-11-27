@@ -1,0 +1,1011 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor",
+		"signature": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "flags",
+				"type": "address"
+			}
+		],
+		"name": "AggregatorWarningFlagsUpdated",
+		"type": "event",
+		"signature": "0x0f4cbdee769ea02d5757b91905563555cc648fe42fc3ef201e28d97d2bbde965"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newExchangeFeeRate",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeFeeUpdated",
+		"type": "event",
+		"signature": "0xbbdab54f0da6d720d21f53e4d6f5bbe83e5a2f74c1354175140ea74f8e90c77e"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newFeePeriodDuration",
+				"type": "uint256"
+			}
+		],
+		"name": "FeePeriodDurationUpdated",
+		"type": "event",
+		"signature": "0x791bd58dd9719b5eb5ccdd6ec4d5c459b0ab8efcf59b723cf477693c0889eacd"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newRatio",
+				"type": "uint256"
+			}
+		],
+		"name": "IssuanceRatioUpdated",
+		"type": "event",
+		"signature": "0x63b22e09cc3a33e847c063e35f887bd4ea96bc8c0f93f1f8c311e4fa6d885452"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newDelay",
+				"type": "uint256"
+			}
+		],
+		"name": "LiquidationDelayUpdated",
+		"type": "event",
+		"signature": "0x9917e32433edcb65f8982c1b2c26c3469468308456f93cf34b98c1b0459c5398"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newPenalty",
+				"type": "uint256"
+			}
+		],
+		"name": "LiquidationPenaltyUpdated",
+		"type": "event",
+		"signature": "0xbfb22c07314f4682bba789860ceb851eb8cea2d867920332b2a42cf56be5b2e9"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newRatio",
+				"type": "uint256"
+			}
+		],
+		"name": "LiquidationRatioUpdated",
+		"type": "event",
+		"signature": "0x5568be83e5cf7405adf8fb39305e2cdf49c43336606d23c3e0d3fe54e205150a"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "minimumStakeTime",
+				"type": "uint256"
+			}
+		],
+		"name": "MinimumStakeTimeUpdated",
+		"type": "event",
+		"signature": "0x2b0fa66d155c9598699cb6569577f27b95729bbf580268eed39db6bc4e814477"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "oldOwner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnerChanged",
+		"type": "event",
+		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnerNominated",
+		"type": "event",
+		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "threshold",
+				"type": "uint256"
+			}
+		],
+		"name": "PriceDeviationThresholdUpdated",
+		"type": "event",
+		"signature": "0x6e65c7d32a9129ebc4e4e6d755e2a9668753c046f4b128ac8aeb4f3e5446a1e5"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rateStalePeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "RateStalePeriodUpdated",
+		"type": "event",
+		"signature": "0x16529d8c407b08938da67de7fa4319199baffce4f5d1971f812cc770b0237e66"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newTargetThreshold",
+				"type": "uint256"
+			}
+		],
+		"name": "TargetThresholdUpdated",
+		"type": "event",
+		"signature": "0xb2b3a840c101d8e7f0cf8d80d3868976968714347038fe89b36c5031f94dab12"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "enabled",
+				"type": "bool"
+			}
+		],
+		"name": "TradingRewardsEnabled",
+		"type": "event",
+		"signature": "0xe11c1893b6f97decd3ac13637137734a4b75d159e899e5a8abb48470ab0bc4fd"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "waitingPeriodSecs",
+				"type": "uint256"
+			}
+		],
+		"name": "WaitingPeriodSecsUpdated",
+		"type": "event",
+		"signature": "0xc32c92cac11e29883e0fb2d9e38230cc510e3bda48abc270b780de60bb8465f8"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_EXCHANGE_FEE_RATE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfb1b4c7e"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_FEE_PERIOD_DURATION",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf344da67"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ISSUANCE_RATIO",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x657c6dc7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_LIQUIDATION_DELAY",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf1076b25"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_LIQUIDATION_PENALTY",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x085f95cd"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_LIQUIDATION_RATIO",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb2ea7054"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_MINIMUM_STAKE_TIME",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x580a975c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_TARGET_THRESHOLD",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xaf8bc660"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MIN_FEE_PERIOD_DURATION",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd62ae399"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MIN_LIQUIDATION_DELAY",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xadd0989d"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "RATIO_FROM_TARGET_BUFFER",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xa4ce5b71"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "acceptOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x79ba5097"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "aggregatorWarningFlags",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4c36b837"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x967706e9"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "feePeriodDuration",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x22425fa4"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getResolverAddressesRequired",
+		"outputs": [
+			{
+				"internalType": "bytes32[24]",
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "isResolverCached",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x631e1444"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "issuanceRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb410a034"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "liquidationDelay",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xa0cf7451"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "liquidationPenalty",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x23f5589a"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "liquidationRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1775765f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "minimumStakeTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x242df9e1"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "nominateNewOwner",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x1627540c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "nominatedOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8da5cb5b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "priceDeviationThresholdFactor",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x372a395a"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rateStalePeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x0ee4951b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "resolver",
+		"outputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "resolverAddressesRequired",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_flags",
+				"type": "address"
+			}
+		],
+		"name": "setAggregatorWarningFlags",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x7bf82305"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "synthKeys",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "exchangeFeeRates",
+				"type": "uint256[]"
+			}
+		],
+		"name": "setExchangeFeeRateForSynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x28a1170d"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_feePeriodDuration",
+				"type": "uint256"
+			}
+		],
+		"name": "setFeePeriodDuration",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x04c49f2c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_issuanceRatio",
+				"type": "uint256"
+			}
+		],
+		"name": "setIssuanceRatio",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x054be0b7"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "time",
+				"type": "uint256"
+			}
+		],
+		"name": "setLiquidationDelay",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x5e0117d6"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "penalty",
+				"type": "uint256"
+			}
+		],
+		"name": "setLiquidationPenalty",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x2806a743"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_liquidationRatio",
+				"type": "uint256"
+			}
+		],
+		"name": "setLiquidationRatio",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x946ce8cd"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_seconds",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinimumStakeTime",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe9422046"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_priceDeviationThresholdFactor",
+				"type": "uint256"
+			}
+		],
+		"name": "setPriceDeviationThresholdFactor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x1e6e2190"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "period",
+				"type": "uint256"
+			}
+		],
+		"name": "setRateStalePeriod",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x79cb657a"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "setResolverAndSyncCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3be99e6f"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_percent",
+				"type": "uint256"
+			}
+		],
+		"name": "setTargetThreshold",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x2cce0e54"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_tradingRewardsEnabled",
+				"type": "bool"
+			}
+		],
+		"name": "setTradingRewardsEnabled",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x4641ab66"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_waitingPeriodSecs",
+				"type": "uint256"
+			}
+		],
+		"name": "setWaitingPeriodSecs",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x635a3872"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "targetThreshold",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe0e6393d"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "tradingRewardsEnabled",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc193f0d8"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "waitingPeriodSecs",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x89257117"
+	}
+]

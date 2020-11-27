@@ -15,61 +15,13 @@ function RewardsDistribution(contractSettings) {
   );
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.distributionsLength = async () => {
-    return await this.contract.distributionsLength();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.nominateNewOwner = async (_owner, txParams) => {
+  this.acceptOwnership = async txParams => {
     txParams = txParams || {};
-    return await this.contract.nominateNewOwner(_owner, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns Object
-   **/
-  this.distributions = async uint256_1 => {
-    return await this.contract.distributions(uint256_1);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.nominatedOwner = async () => {
-    return await this.contract.nominatedOwner();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.distributeRewards = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.distributeRewards(amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _rewardEscrow {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setRewardEscrow = async (_rewardEscrow, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setRewardEscrow(_rewardEscrow, txParams);
+    return await this.contract.acceptOwnership(txParams);
   };
 
   /**
@@ -85,24 +37,87 @@ function RewardsDistribution(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
-  this.acceptOwnership = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.acceptOwnership(txParams);
+  this.authority = async () => {
+    return await this.contract.authority();
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _authority {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.distributeRewards = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.distributeRewards(amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns Object
+   **/
+  this.distributions = async uint256_1 => {
+    return await this.contract.distributions(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.distributionsLength = async () => {
+    return await this.contract.distributionsLength();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param index {BigNumber}
+   * @param destination {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.editRewardDistribution = async (index, destination, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.editRewardDistribution(index, destination, amount, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.feePoolProxy = async () => {
+    return await this.contract.feePoolProxy();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.setAuthority = async (_authority, txParams) => {
+  this.nominateNewOwner = async (_owner, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setAuthority(_authority, txParams);
+    return await this.contract.nominateNewOwner(_owner, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.nominatedOwner = async () => {
+    return await this.contract.nominatedOwner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.owner = async () => {
+    return await this.contract.owner();
   };
 
   /**
@@ -120,8 +135,41 @@ function RewardsDistribution(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.owner = async () => {
-    return await this.contract.owner();
+  this.rewardEscrow = async () => {
+    return await this.contract.rewardEscrow();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _authority {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAuthority = async (_authority, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAuthority(_authority, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _feePoolProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFeePoolProxy = async (_feePoolProxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFeePoolProxy(_feePoolProxy, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _rewardEscrow {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setRewardEscrow = async (_rewardEscrow, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setRewardEscrow(_rewardEscrow, txParams);
   };
 
   /**
@@ -139,56 +187,8 @@ function RewardsDistribution(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.rewardEscrow = async () => {
-    return await this.contract.rewardEscrow();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
   this.synthetixProxy = async () => {
     return await this.contract.synthetixProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.authority = async () => {
-    return await this.contract.authority();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.feePoolProxy = async () => {
-    return await this.contract.feePoolProxy();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePoolProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setFeePoolProxy = async (_feePoolProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setFeePoolProxy(_feePoolProxy, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param index {BigNumber}
-   * @param destination {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.editRewardDistribution = async (index, destination, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.editRewardDistribution(index, destination, amount, txParams);
   };
 }
 

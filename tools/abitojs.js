@@ -5,10 +5,6 @@ const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
 const SUPPORTED_NETWORKS = {
-  1: 'mainnet',
-  3: 'ropsten',
-  4: 'rinkeby',
-  5: 'goerli',
   42: 'kovan',
 };
 
@@ -59,9 +55,19 @@ const contracts = {
   SynthUtil: true,
   EtherCollateralsUSD: true,
   Liquidations: true,
-  SynthetixBridgeToOptimism: true,
-  SynthetixBridgeToBase: true,
+  SecondaryDeposit: true,
   SystemSettings: true,
+  FuturesMarketManager: true,
+  FuturesMarketData: true,
+  FuturesMarketBTC: {
+    source: 'FuturesMarket',
+  },
+  FuturesMarketETH: {
+    source: 'FuturesMarket',
+  },
+  FuturesMarketLINK: {
+    source: 'FuturesMarket',
+  },
   // the synths will be added on for each network
 };
 

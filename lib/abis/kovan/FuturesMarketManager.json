@@ -8,7 +8,7 @@
 			},
 			{
 				"internalType": "address",
-				"name": "_associatedContract",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
@@ -23,13 +23,27 @@
 			{
 				"indexed": false,
 				"internalType": "address",
-				"name": "associatedContract",
+				"name": "market",
 				"type": "address"
 			}
 		],
-		"name": "AssociatedContractUpdated",
+		"name": "MarketAdded",
 		"type": "event",
-		"signature": "0x73f20cff579e8a4086fa607db83867595f1b6a798e718c0bfa0b94a404128e03"
+		"signature": "0xbc600b1f03d316c479b49930c28e328809316458d5b5dacbb7419df5f6f89647"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "market",
+				"type": "address"
+			}
+		],
+		"name": "MarketRemoved",
+		"type": "event",
+		"signature": "0x59d7b1e52008dc342c9421dadfc773114b914a65682a4e4b53cf60a970df0d77"
 	},
 	{
 		"anonymous": false,
@@ -66,6 +80,22 @@
 		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ADDRESSES_FROM_RESOLVER",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xe3235c91"
+	},
+	{
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",
@@ -79,33 +109,33 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
+				"internalType": "address[]",
+				"name": "marketsToAdd",
+				"type": "address[]"
 			}
 		],
-		"name": "appendDebtLedgerValue",
+		"name": "addMarkets",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x3d31e97b"
+		"signature": "0xda40385d"
 	},
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "associatedContract",
+		"name": "allMarkets",
 		"outputs": [
 			{
-				"internalType": "address",
+				"internalType": "address[]",
 				"name": "",
-				"type": "address"
+				"type": "address[]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xaefc4ccb"
+		"signature": "0x375a7cba"
 	},
 	{
 		"constant": false,
@@ -114,73 +144,46 @@
 				"internalType": "address",
 				"name": "account",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
 			}
 		],
-		"name": "clearIssuanceData",
+		"name": "burnSUSD",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xb16c09f0"
+		"signature": "0x6f9a0ca6"
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "debtLedger",
+		"inputs": [],
+		"name": "getResolverAddressesRequired",
 		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
+				"internalType": "bytes32[24]",
+				"name": "addressesRequired",
+				"type": "bytes32[24]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x08d95cd5"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "debtLedgerLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xcd92eba9"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "decrementTotalIssuerCount",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xba08f299"
+		"signature": "0xab49848c"
 	},
 	{
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "account",
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
 				"type": "address"
 			}
 		],
-		"name": "hasIssued",
+		"name": "isResolverCached",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -191,60 +194,99 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xb992812e"
+		"signature": "0x631e1444"
 	},
 	{
 		"constant": false,
-		"inputs": [],
-		"name": "incrementTotalIssuerCount",
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "issueSUSD",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x1bfba595"
+		"signature": "0xa7b5833f"
 	},
 	{
 		"constant": true,
 		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "marketForAsset",
+		"outputs": [
 			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
 			}
 		],
-		"name": "issuanceData",
-		"outputs": [
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xafbb1217"
+	},
+	{
+		"constant": true,
+		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "initialDebtOwnership",
+				"name": "index",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "debtEntryIndex",
+				"name": "pageSize",
 				"type": "uint256"
+			}
+		],
+		"name": "markets",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x8b3f8088"
+		"signature": "0xfe11edc9"
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "lastDebtLedgerEntry",
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "assets",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "marketsForAssets",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "address[]",
 				"name": "",
-				"type": "uint256"
+				"type": "address[]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x46317712"
+		"signature": "0x0a347f1a"
 	},
 	{
 		"constant": false,
@@ -281,6 +323,22 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "numMarkets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x26e04f9d"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -298,69 +356,107 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_associatedContract",
-				"type": "address"
+				"internalType": "address[]",
+				"name": "marketsToRemove",
+				"type": "address[]"
 			}
 		],
-		"name": "setAssociatedContract",
+		"name": "removeMarkets",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x52f445ca"
+		"signature": "0xbfef7bdf"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "initialDebtOwnership",
-				"type": "uint256"
+				"internalType": "bytes32[]",
+				"name": "assetsToRemove",
+				"type": "bytes32[]"
 			}
 		],
-		"name": "setCurrentIssuanceData",
+		"name": "removeMarketsByAsset",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xa764eb45"
+		"signature": "0x575ceb4b"
 	},
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "setupExpiryTime",
+		"name": "resolver",
 		"outputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04f3bcec"
+	},
+	{
+		"constant": true,
+		"inputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x46ba2d90"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalIssuerCount",
+		"name": "resolverAddressesRequired",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "bytes32",
 				"name": "",
-				"type": "uint256"
+				"type": "bytes32"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x9371bede"
+		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "contract AddressResolver",
+				"name": "_resolver",
+				"type": "address"
+			}
+		],
+		"name": "setResolverAndSyncCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3be99e6f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalDebt",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "debt",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isInvalid",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfc7b9c18"
 	}
 ]

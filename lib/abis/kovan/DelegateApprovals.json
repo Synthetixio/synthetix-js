@@ -1,265 +1,121 @@
 [
 	{
-		"constant": true,
 		"inputs": [
 			{
-				"name": "authoriser",
-				"type": "address"
-			},
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "canIssueFor",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x04872617"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
+				"internalType": "address",
 				"name": "_owner",
 				"type": "address"
+			},
+			{
+				"internalType": "contract EternalStorage",
+				"name": "_eternalStorage",
+				"type": "address"
 			}
 		],
-		"name": "nominateNewOwner",
-		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1627540c"
+		"type": "constructor",
+		"signature": "constructor"
 	},
 	{
-		"constant": true,
+		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "address",
 				"name": "authoriser",
 				"type": "address"
 			},
 			{
+				"indexed": false,
+				"internalType": "address",
 				"name": "delegate",
 				"type": "address"
-			}
-		],
-		"name": "canClaimFor",
-		"outputs": [
+			},
 			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x21f4ae57"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "ISSUE_FOR_ADDRESS",
-		"outputs": [
-			{
-				"name": "",
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "action",
 				"type": "bytes32"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2c70aecf"
+		"name": "Approval",
+		"type": "event",
+		"signature": "0x36a9e0c1da9cdc6d8f4bd4cb261f9ad6a45eb1641a557ead7530fbeff9a26336"
 	},
 	{
-		"constant": false,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "delegate",
+				"indexed": false,
+				"internalType": "address",
+				"name": "newEternalStorage",
 				"type": "address"
 			}
 		],
-		"name": "approveClaimOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4180e5b5"
+		"name": "EternalStorageUpdated",
+		"type": "event",
+		"signature": "0xe3ebe3d58e84fbd094152babb730cf99a14b47f65ed04f35a3bd6356f8161a17"
 	},
 	{
-		"constant": false,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "delegate",
+				"indexed": false,
+				"internalType": "address",
+				"name": "oldOwner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"name": "removeIssueOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x431ce540"
+		"name": "OwnerChanged",
+		"type": "event",
+		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
 	},
 	{
-		"constant": false,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "delegate",
+				"indexed": false,
+				"internalType": "address",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"name": "approveExchangeOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x447fbc63"
+		"name": "OwnerNominated",
+		"type": "event",
+		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "nominatedOwner",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x53a47bb7"
-	},
-	{
-		"constant": false,
+		"anonymous": false,
 		"inputs": [
 			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "removeBurnOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x59cec3d6"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "removeClaimOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x6c8bc9fe"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "removeAllDelegatePowers",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x6f95200b"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "acceptOwnership",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x79ba5097"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
+				"indexed": true,
+				"internalType": "address",
 				"name": "authoriser",
 				"type": "address"
 			},
 			{
+				"indexed": false,
+				"internalType": "address",
 				"name": "delegate",
 				"type": "address"
-			}
-		],
-		"name": "canBurnFor",
-		"outputs": [
+			},
 			{
-				"name": "",
-				"type": "bool"
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "action",
+				"type": "bytes32"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7d3f0ba2"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8da5cb5b"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "eternalStorage",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x98ff9c54"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "approveBurnOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x9c79ce35"
+		"name": "WithdrawApproval",
+		"type": "event",
+		"signature": "0x7e8dc09322ac82342d9dbfd49eb6497fa7ab69ac444f3763a9b8e16530342f41"
 	},
 	{
 		"constant": true,
@@ -267,6 +123,7 @@
 		"name": "APPROVE_ALL",
 		"outputs": [
 			{
+				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
 			}
@@ -277,88 +134,20 @@
 		"signature": "0x9cbc2ebe"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "approveIssueOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x9f61d336"
-	},
-	{
 		"constant": true,
-		"inputs": [
-			{
-				"name": "authoriser",
-				"type": "address"
-			},
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "approvedAll",
+		"inputs": [],
+		"name": "BURN_FOR_ADDRESS",
 		"outputs": [
 			{
+				"internalType": "bytes32",
 				"name": "",
-				"type": "bool"
+				"type": "bytes32"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xb42e0f15"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_eternalStorage",
-				"type": "address"
-			}
-		],
-		"name": "setEternalStorage",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xb5bb5619"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "removeExchangeOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xb9156efa"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "delegate",
-				"type": "address"
-			}
-		],
-		"name": "approveAllDelegatePowers",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xbc87acbf"
+		"signature": "0xe32b3f52"
 	},
 	{
 		"constant": true,
@@ -366,6 +155,7 @@
 		"name": "CLAIM_FOR_ADDRESS",
 		"outputs": [
 			{
+				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
 			}
@@ -381,6 +171,7 @@
 		"name": "EXCHANGE_FOR_ADDRESS",
 		"outputs": [
 			{
+				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
 			}
@@ -393,9 +184,10 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "BURN_FOR_ADDRESS",
+		"name": "ISSUE_FOR_ADDRESS",
 		"outputs": [
 			{
+				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
 			}
@@ -403,16 +195,189 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xe32b3f52"
+		"signature": "0x2c70aecf"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "acceptOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x79ba5097"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveAllDelegatePowers",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xbc87acbf"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveBurnOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x9c79ce35"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveClaimOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x4180e5b5"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveExchangeOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x447fbc63"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approveIssueOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x9f61d336"
 	},
 	{
 		"constant": true,
 		"inputs": [
 			{
+				"internalType": "address",
 				"name": "authoriser",
 				"type": "address"
 			},
 			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "approvedAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb42e0f15"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "canBurnFor",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7d3f0ba2"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "canClaimFor",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x21f4ae57"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "authoriser",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
 				"name": "delegate",
 				"type": "address"
 			}
@@ -420,6 +385,7 @@
 		"name": "canExchangeFor",
 		"outputs": [
 			{
+				"internalType": "bool",
 				"name": "",
 				"type": "bool"
 			}
@@ -430,109 +396,190 @@
 		"signature": "0xfaf431bb"
 	},
 	{
+		"constant": true,
 		"inputs": [
 			{
-				"name": "_owner",
+				"internalType": "address",
+				"name": "authoriser",
 				"type": "address"
 			},
 			{
-				"name": "_eternalStorage",
+				"internalType": "address",
+				"name": "delegate",
+				"type": "address"
+			}
+		],
+		"name": "canIssueFor",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04872617"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "eternalStorage",
+		"outputs": [
+			{
+				"internalType": "contract EternalStorage",
+				"name": "",
 				"type": "address"
 			}
 		],
 		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x98ff9c54"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "nominateNewOwner",
+		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "function",
+		"signature": "0x1627540c"
 	},
 	{
-		"anonymous": false,
+		"constant": true,
+		"inputs": [],
+		"name": "nominatedOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x53a47bb7"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8da5cb5b"
+	},
+	{
+		"constant": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"name": "authoriser",
-				"type": "address"
-			},
-			{
-				"indexed": false,
+				"internalType": "address",
 				"name": "delegate",
 				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "action",
-				"type": "bytes32"
 			}
 		],
-		"name": "Approval",
-		"type": "event",
-		"signature": "0x36a9e0c1da9cdc6d8f4bd4cb261f9ad6a45eb1641a557ead7530fbeff9a26336"
+		"name": "removeAllDelegatePowers",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6f95200b"
 	},
 	{
-		"anonymous": false,
+		"constant": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"name": "authoriser",
-				"type": "address"
-			},
-			{
-				"indexed": false,
+				"internalType": "address",
 				"name": "delegate",
 				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "action",
-				"type": "bytes32"
 			}
 		],
-		"name": "WithdrawApproval",
-		"type": "event",
-		"signature": "0x7e8dc09322ac82342d9dbfd49eb6497fa7ab69ac444f3763a9b8e16530342f41"
+		"name": "removeBurnOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x59cec3d6"
 	},
 	{
-		"anonymous": false,
+		"constant": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"name": "newEternalStorage",
+				"internalType": "address",
+				"name": "delegate",
 				"type": "address"
 			}
 		],
-		"name": "EternalStorageUpdated",
-		"type": "event",
-		"signature": "0xe3ebe3d58e84fbd094152babb730cf99a14b47f65ed04f35a3bd6356f8161a17"
+		"name": "removeClaimOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6c8bc9fe"
 	},
 	{
-		"anonymous": false,
+		"constant": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"name": "newOwner",
+				"internalType": "address",
+				"name": "delegate",
 				"type": "address"
 			}
 		],
-		"name": "OwnerNominated",
-		"type": "event",
-		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+		"name": "removeExchangeOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb9156efa"
 	},
 	{
-		"anonymous": false,
+		"constant": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"name": "oldOwner",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "newOwner",
+				"internalType": "address",
+				"name": "delegate",
 				"type": "address"
 			}
 		],
-		"name": "OwnerChanged",
-		"type": "event",
-		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
+		"name": "removeIssueOnBehalf",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x431ce540"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "contract EternalStorage",
+				"name": "_eternalStorage",
+				"type": "address"
+			}
+		],
+		"name": "setEternalStorage",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb5bb5619"
 	}
 ]

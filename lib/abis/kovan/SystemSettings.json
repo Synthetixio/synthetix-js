@@ -85,6 +85,20 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
+				"name": "sUSD",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesLiquidationFeeUpdated",
+		"type": "event",
+		"signature": "0x2acfde004e9437b5914f6008b56a4a592d4c776e29d6af31d0990a0668a1bfa1"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
 				"name": "newRatio",
 				"type": "uint256"
 			}
@@ -528,6 +542,22 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "futuresLiquidationFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x04e8389f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "getResolverAddressesRequired",
 		"outputs": [
 			{
@@ -829,6 +859,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x04c49f2c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_sUSD",
+				"type": "uint256"
+			}
+		],
+		"name": "setFuturesLiquidationFee",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe5060672"
 	},
 	{
 		"constant": false,

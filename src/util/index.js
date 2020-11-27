@@ -25,12 +25,12 @@ class Util {
    */
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
-    const { Depot, Synth, Synthetix } = contracts[contractSettings.network];
+    const { Depot, MultiCollateralSynth, Synthetix } = contracts[contractSettings.network];
     this.depot = new Depot(contractSettings);
-    this.synth = new Synth(contractSettings);
+    this.synth = new MultiCollateralSynth(contractSettings);
     this.synthetix = new Synthetix(contractSettings);
     this.depotInterface = new Interface(contractSettings.ABIS.Depot);
-    this.synthInterface = new Interface(contractSettings.ABIS.Synth);
+    this.synthInterface = new Interface(contractSettings.ABIS.MultiCollateralSynth);
 
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);
     this.getEventLogs = this.getEventLogs.bind(this);

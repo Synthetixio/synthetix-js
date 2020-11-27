@@ -33,7 +33,7 @@ const contracts = {
   FeePool: {
     target: 'ProxyFeePool',
   },
-  Synth: {
+  MultiCollateralSynth: {
     target: 'ProxyERC20sUSD',
   },
   Synthetix: {
@@ -158,7 +158,7 @@ const generate = () => {
     const synthContracts = snx.getSynths({ network }).reduce((memo, { name, subclass }) => {
       memo[name] = {
         target: `Proxy${name === 'sUSD' ? 'ERC20sUSD' : name}`,
-        source: subclass || 'Synth',
+        source: subclass || 'MulticollateralSynth',
       };
       return memo;
     }, {});

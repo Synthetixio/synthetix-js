@@ -91,14 +91,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 135);
+/******/ 	return __webpack_require__(__webpack_require__.s = 134);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(130);
+module.exports = __webpack_require__(129);
 
 
 /***/ }),
@@ -160,9 +160,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var ethers = __importStar(__webpack_require__(43));
+var ethers = __importStar(__webpack_require__(42));
 exports.ethers = ethers;
-__export(__webpack_require__(43));
+__export(__webpack_require__(42));
 
 
 /***/ }),
@@ -172,7 +172,7 @@ __export(__webpack_require__(43));
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var _version_1 = __webpack_require__(44);
+var _version_1 = __webpack_require__(43);
 // Unknown Error
 exports.UNKNOWN_ERROR = 'UNKNOWN_ERROR';
 // Not implemented
@@ -966,7 +966,7 @@ exports.parseBytes32String = parseBytes32String;
 var utils = exports;
 var BN = __webpack_require__(9);
 var minAssert = __webpack_require__(8);
-var minUtils = __webpack_require__(49);
+var minUtils = __webpack_require__(48);
 
 utils.assert = minAssert;
 utils.toArray = minUtils.toArray;
@@ -1155,7 +1155,7 @@ assert.equal = function assertEqual(l, r, msg) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(69).Buffer;
+    Buffer = __webpack_require__(68).Buffer;
   } catch (e) {
   }
 
@@ -4537,7 +4537,7 @@ assert.equal = function assertEqual(l, r, msg) {
   };
 })( false || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(68)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(67)(module)))
 
 /***/ }),
 /* 10 */
@@ -5449,7 +5449,7 @@ exports.shr64_lo = shr64_lo;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var sha3 = __webpack_require__(70);
+var sha3 = __webpack_require__(69);
 var bytes_1 = __webpack_require__(4);
 function keccak256(data) {
     return '0x' + sha3.keccak_256(bytes_1.arrayify(data));
@@ -5660,13 +5660,13 @@ module.exports = require("crypto");
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
-  var util = __webpack_require__(76);
+  var util = __webpack_require__(75);
   /* istanbul ignore next */
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
 } catch (e) {
   /* istanbul ignore next */
-  module.exports = __webpack_require__(77);
+  module.exports = __webpack_require__(76);
 }
 
 
@@ -6031,19 +6031,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var errors = __importStar(__webpack_require__(3));
 // The English language word list.
 // For additional word lists, please see /src.tc/wordlists/
-var lang_en_1 = __webpack_require__(46);
+var lang_en_1 = __webpack_require__(45);
 // Automatically register English?
 //import { register } from '../wordlists/wordlist';
 //register(langEn);
-var basex_1 = __webpack_require__(72);
+var basex_1 = __webpack_require__(71);
 var bytes_1 = __webpack_require__(4);
 var bignumber_1 = __webpack_require__(10);
 var utf8_1 = __webpack_require__(6);
-var pbkdf2_1 = __webpack_require__(47);
-var hmac_1 = __webpack_require__(48);
+var pbkdf2_1 = __webpack_require__(46);
+var hmac_1 = __webpack_require__(47);
 var properties_1 = __webpack_require__(5);
 var secp256k1_1 = __webpack_require__(27);
-var sha2_1 = __webpack_require__(38);
+var sha2_1 = __webpack_require__(37);
 var N = bignumber_1.bigNumberify("0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141");
 // "Bitcoin seed"
 var MasterSecret = utf8_1.toUtf8Bytes('Bitcoin seed');
@@ -6357,7 +6357,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var elliptic_1 = __webpack_require__(73);
+var elliptic_1 = __webpack_require__(72);
 var address_1 = __webpack_require__(11);
 var bytes_1 = __webpack_require__(4);
 var hash_1 = __webpack_require__(18);
@@ -8444,8 +8444,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var xmlhttprequest_1 = __webpack_require__(107);
-var base64_1 = __webpack_require__(59);
+var xmlhttprequest_1 = __webpack_require__(106);
+var base64_1 = __webpack_require__(58);
 var properties_1 = __webpack_require__(5);
 var utf8_1 = __webpack_require__(6);
 var errors = __importStar(__webpack_require__(3));
@@ -9067,12 +9067,6 @@ exports.JsonRpcProvider = JsonRpcProvider;
 
 /***/ }),
 /* 34 */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_proxy\",\"type\":\"address\"},{\"internalType\":\"contract TokenState\",\"name\":\"_tokenState\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_tokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_tokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_currencyKey\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_resolver\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_multiCollateralKey\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\",\"signature\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\",\"signature\":\"0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Burned\",\"type\":\"event\",\"signature\":\"0x696de425f79f4a40bc6d2122ca50507f0efbeabbff86a84871b7196ab8ea8df7\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Issued\",\"type\":\"event\",\"signature\":\"0xa59f12e354e8cd10bb74c559844c2dd69a5458e31fe56c7594c62ca57480509a\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\",\"signature\":\"0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerNominated\",\"type\":\"event\",\"signature\":\"0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"proxyAddress\",\"type\":\"address\"}],\"name\":\"ProxyUpdated\",\"type\":\"event\",\"signature\":\"0xfc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newTokenState\",\"type\":\"address\"}],\"name\":\"TokenStateUpdated\",\"type\":\"event\",\"signature\":\"0xa538c4dcfe9fb148efee2952bafe34982d2d07d5fbb38ae5b44abf659a46bfd8\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\",\"signature\":\"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\"},{\"constant\":true,\"inputs\":[],\"name\":\"DECIMALS\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x2e0f2625\"},{\"constant\":true,\"inputs\":[],\"name\":\"FEE_ADDRESS\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xeb1edd61\"},{\"constant\":true,\"inputs\":[],\"name\":\"MAX_ADDRESSES_FROM_RESOLVER\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xe3235c91\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x79ba5097\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdd62ed3e\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x095ea7b3\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x70a08231\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x9dc29fac\"},{\"constant\":true,\"inputs\":[],\"name\":\"currencyKey\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdbd06c85\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x313ce567\"},{\"constant\":true,\"inputs\":[],\"name\":\"getResolverAddressesRequired\",\"outputs\":[{\"internalType\":\"bytes32[24]\",\"name\":\"addressesRequired\",\"type\":\"bytes32[24]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xab49848c\"},{\"constant\":true,\"inputs\":[],\"name\":\"integrationProxy\",\"outputs\":[{\"internalType\":\"contract Proxy\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x9cbdaeb6\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"contract AddressResolver\",\"name\":\"_resolver\",\"type\":\"address\"}],\"name\":\"isResolverCached\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x631e1444\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"issue\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x867904b4\"},{\"constant\":true,\"inputs\":[],\"name\":\"messageSender\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xd67bdd25\"},{\"constant\":true,\"inputs\":[],\"name\":\"multiCollateralKey\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xfd92ae77\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x06fdde03\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"nominateNewOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x1627540c\"},{\"constant\":true,\"inputs\":[],\"name\":\"nominatedOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x53a47bb7\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x8da5cb5b\"},{\"constant\":true,\"inputs\":[],\"name\":\"proxy\",\"outputs\":[{\"internalType\":\"contract Proxy\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xec556889\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolver\",\"outputs\":[{\"internalType\":\"contract AddressResolver\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x04f3bcec\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"resolverAddressesRequired\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xc6c9d828\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_integrationProxy\",\"type\":\"address\"}],\"name\":\"setIntegrationProxy\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x131b0ae7\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"setMessageSender\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xbc67f832\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_proxy\",\"type\":\"address\"}],\"name\":\"setProxy\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x97107d6d\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract AddressResolver\",\"name\":\"_resolver\",\"type\":\"address\"}],\"name\":\"setResolverAndSyncCache\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x3be99e6f\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract TokenState\",\"name\":\"_tokenState\",\"type\":\"address\"}],\"name\":\"setTokenState\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x9f769807\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setTotalSupply\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xf7ea7a3d\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x95d89b41\"},{\"constant\":true,\"inputs\":[],\"name\":\"tokenState\",\"outputs\":[{\"internalType\":\"contract TokenState\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xe90dd9e2\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x18160ddd\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xa9059cbb\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferAndSettle\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xb014c3a3\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x23b872dd\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFromAndSettle\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xe73cced3\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"transferableSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xffff51d6\"}]");
-
-/***/ }),
-/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10040,7 +10034,7 @@ exports.defaultAbiCoder = new AbiCoder();
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10048,8 +10042,8 @@ exports.defaultAbiCoder = new AbiCoder();
 
 var curves = exports;
 
-var hash = __webpack_require__(37);
-var curve = __webpack_require__(51);
+var hash = __webpack_require__(36);
+var curve = __webpack_require__(50);
 var utils = __webpack_require__(7);
 
 var assert = utils.assert;
@@ -10214,7 +10208,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(86);
+  pre = __webpack_require__(85);
 } catch (e) {
   pre = undefined;
 }
@@ -10253,16 +10247,16 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
 
 hash.utils = __webpack_require__(12);
 hash.common = __webpack_require__(22);
-hash.sha = __webpack_require__(80);
-hash.ripemd = __webpack_require__(84);
-hash.hmac = __webpack_require__(85);
+hash.sha = __webpack_require__(79);
+hash.ripemd = __webpack_require__(83);
+hash.hmac = __webpack_require__(84);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -10274,7 +10268,7 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10283,7 +10277,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var hash_js_1 = __importDefault(__webpack_require__(37));
+var hash_js_1 = __importDefault(__webpack_require__(36));
 var bytes_1 = __webpack_require__(4);
 function ripemd160(data) {
     return '0x' + (hash_js_1.default.ripemd160().update(bytes_1.arrayify(data)).digest('hex'));
@@ -10300,7 +10294,7 @@ exports.sha512 = sha512;
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10315,7 +10309,7 @@ exports.randomBytes = randomBytes;
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10391,7 +10385,7 @@ exports.SigningKey = SigningKey;
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports) {
 
 function _getPrototypeOf(o) {
@@ -10404,14 +10398,14 @@ function _getPrototypeOf(o) {
 module.exports = _getPrototypeOf;
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(132);
+var arrayWithHoles = __webpack_require__(131);
 
-var iterableToArrayLimit = __webpack_require__(133);
+var iterableToArrayLimit = __webpack_require__(132);
 
-var nonIterableRest = __webpack_require__(134);
+var nonIterableRest = __webpack_require__(133);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
@@ -10420,7 +10414,7 @@ function _slicedToArray(arr, i) {
 module.exports = _slicedToArray;
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10433,31 +10427,31 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var contract_1 = __webpack_require__(67);
+var contract_1 = __webpack_require__(66);
 exports.Contract = contract_1.Contract;
 exports.ContractFactory = contract_1.ContractFactory;
 exports.VoidSigner = contract_1.VoidSigner;
 var abstract_signer_1 = __webpack_require__(25);
 exports.Signer = abstract_signer_1.Signer;
-var wallet_1 = __webpack_require__(71);
+var wallet_1 = __webpack_require__(70);
 exports.Wallet = wallet_1.Wallet;
 var constants = __importStar(__webpack_require__(17));
 exports.constants = constants;
 var errors = __importStar(__webpack_require__(3));
 exports.errors = errors;
-var providers = __importStar(__webpack_require__(106));
+var providers = __importStar(__webpack_require__(105));
 exports.providers = providers;
-var utils = __importStar(__webpack_require__(119));
+var utils = __importStar(__webpack_require__(118));
 exports.utils = utils;
-var wordlists = __importStar(__webpack_require__(122));
+var wordlists = __importStar(__webpack_require__(121));
 exports.wordlists = wordlists;
 ////////////////////////
 // Compile-Time Constants
 // This is empty in node, and used by browserify to inject extra goodies
-var shims_1 = __webpack_require__(129);
+var shims_1 = __webpack_require__(128);
 exports.platform = shims_1.platform;
 // This is generated by "npm run dist"
-var _version_1 = __webpack_require__(44);
+var _version_1 = __webpack_require__(43);
 exports.version = _version_1.version;
 ////////////////////////
 // Helper Functions
@@ -10478,7 +10472,7 @@ exports.getDefaultProvider = getDefaultProvider;
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10488,7 +10482,7 @@ exports.version = "4.0.44";
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10513,7 +10507,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // See: https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
 var address_1 = __webpack_require__(11);
-var abi_coder_1 = __webpack_require__(35);
+var abi_coder_1 = __webpack_require__(34);
 var bignumber_1 = __webpack_require__(10);
 var bytes_1 = __webpack_require__(4);
 var hash_1 = __webpack_require__(18);
@@ -10892,7 +10886,7 @@ exports.Interface = Interface;
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10942,7 +10936,7 @@ wordlist_1.register(langEn);
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10960,7 +10954,7 @@ exports.pbkdf2 = pbkdf2;
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10992,7 +10986,7 @@ exports.computeHmac = computeHmac;
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11057,7 +11051,7 @@ utils.encode = function encode(arr, enc) {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -11128,7 +11122,7 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11137,13 +11131,13 @@ if (typeof self === 'object') {
 var curve = exports;
 
 curve.base = __webpack_require__(28);
-curve.short = __webpack_require__(75);
-curve.mont = __webpack_require__(78);
-curve.edwards = __webpack_require__(79);
+curve.short = __webpack_require__(74);
+curve.mont = __webpack_require__(77);
+curve.edwards = __webpack_require__(78);
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11196,6 +11190,118 @@ function g1_256(x) {
   return rotr32(x, 17) ^ rotr32(x, 19) ^ (x >>> 10);
 }
 exports.g1_256 = g1_256;
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(12);
+var common = __webpack_require__(22);
+var shaCommon = __webpack_require__(51);
+var assert = __webpack_require__(8);
+
+var sum32 = utils.sum32;
+var sum32_4 = utils.sum32_4;
+var sum32_5 = utils.sum32_5;
+var ch32 = shaCommon.ch32;
+var maj32 = shaCommon.maj32;
+var s0_256 = shaCommon.s0_256;
+var s1_256 = shaCommon.s1_256;
+var g0_256 = shaCommon.g0_256;
+var g1_256 = shaCommon.g1_256;
+
+var BlockHash = common.BlockHash;
+
+var sha256_K = [
+  0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
+  0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+  0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3,
+  0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+  0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc,
+  0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+  0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7,
+  0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+  0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,
+  0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+  0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3,
+  0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+  0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5,
+  0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+  0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
+  0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+];
+
+function SHA256() {
+  if (!(this instanceof SHA256))
+    return new SHA256();
+
+  BlockHash.call(this);
+  this.h = [
+    0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+    0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
+  ];
+  this.k = sha256_K;
+  this.W = new Array(64);
+}
+utils.inherits(SHA256, BlockHash);
+module.exports = SHA256;
+
+SHA256.blockSize = 512;
+SHA256.outSize = 256;
+SHA256.hmacStrength = 192;
+SHA256.padLength = 64;
+
+SHA256.prototype._update = function _update(msg, start) {
+  var W = this.W;
+
+  for (var i = 0; i < 16; i++)
+    W[i] = msg[start + i];
+  for (; i < W.length; i++)
+    W[i] = sum32_4(g1_256(W[i - 2]), W[i - 7], g0_256(W[i - 15]), W[i - 16]);
+
+  var a = this.h[0];
+  var b = this.h[1];
+  var c = this.h[2];
+  var d = this.h[3];
+  var e = this.h[4];
+  var f = this.h[5];
+  var g = this.h[6];
+  var h = this.h[7];
+
+  assert(this.k.length === W.length);
+  for (i = 0; i < W.length; i++) {
+    var T1 = sum32_5(h, s1_256(e), ch32(e, f, g), this.k[i], W[i]);
+    var T2 = sum32(s0_256(a), maj32(a, b, c));
+    h = g;
+    g = f;
+    f = e;
+    e = sum32(d, T1);
+    d = c;
+    c = b;
+    b = a;
+    a = sum32(T1, T2);
+  }
+
+  this.h[0] = sum32(this.h[0], a);
+  this.h[1] = sum32(this.h[1], b);
+  this.h[2] = sum32(this.h[2], c);
+  this.h[3] = sum32(this.h[3], d);
+  this.h[4] = sum32(this.h[4], e);
+  this.h[5] = sum32(this.h[5], f);
+  this.h[6] = sum32(this.h[6], g);
+  this.h[7] = sum32(this.h[7], h);
+};
+
+SHA256.prototype._digest = function digest(enc) {
+  if (enc === 'hex')
+    return utils.toHex32(this.h, 'big');
+  else
+    return utils.split32(this.h, 'big');
+};
 
 
 /***/ }),
@@ -11207,118 +11313,6 @@ exports.g1_256 = g1_256;
 
 var utils = __webpack_require__(12);
 var common = __webpack_require__(22);
-var shaCommon = __webpack_require__(52);
-var assert = __webpack_require__(8);
-
-var sum32 = utils.sum32;
-var sum32_4 = utils.sum32_4;
-var sum32_5 = utils.sum32_5;
-var ch32 = shaCommon.ch32;
-var maj32 = shaCommon.maj32;
-var s0_256 = shaCommon.s0_256;
-var s1_256 = shaCommon.s1_256;
-var g0_256 = shaCommon.g0_256;
-var g1_256 = shaCommon.g1_256;
-
-var BlockHash = common.BlockHash;
-
-var sha256_K = [
-  0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
-  0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
-  0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3,
-  0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
-  0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc,
-  0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
-  0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7,
-  0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
-  0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,
-  0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
-  0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3,
-  0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
-  0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5,
-  0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
-  0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
-  0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
-];
-
-function SHA256() {
-  if (!(this instanceof SHA256))
-    return new SHA256();
-
-  BlockHash.call(this);
-  this.h = [
-    0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
-    0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
-  ];
-  this.k = sha256_K;
-  this.W = new Array(64);
-}
-utils.inherits(SHA256, BlockHash);
-module.exports = SHA256;
-
-SHA256.blockSize = 512;
-SHA256.outSize = 256;
-SHA256.hmacStrength = 192;
-SHA256.padLength = 64;
-
-SHA256.prototype._update = function _update(msg, start) {
-  var W = this.W;
-
-  for (var i = 0; i < 16; i++)
-    W[i] = msg[start + i];
-  for (; i < W.length; i++)
-    W[i] = sum32_4(g1_256(W[i - 2]), W[i - 7], g0_256(W[i - 15]), W[i - 16]);
-
-  var a = this.h[0];
-  var b = this.h[1];
-  var c = this.h[2];
-  var d = this.h[3];
-  var e = this.h[4];
-  var f = this.h[5];
-  var g = this.h[6];
-  var h = this.h[7];
-
-  assert(this.k.length === W.length);
-  for (i = 0; i < W.length; i++) {
-    var T1 = sum32_5(h, s1_256(e), ch32(e, f, g), this.k[i], W[i]);
-    var T2 = sum32(s0_256(a), maj32(a, b, c));
-    h = g;
-    g = f;
-    f = e;
-    e = sum32(d, T1);
-    d = c;
-    c = b;
-    b = a;
-    a = sum32(T1, T2);
-  }
-
-  this.h[0] = sum32(this.h[0], a);
-  this.h[1] = sum32(this.h[1], b);
-  this.h[2] = sum32(this.h[2], c);
-  this.h[3] = sum32(this.h[3], d);
-  this.h[4] = sum32(this.h[4], e);
-  this.h[5] = sum32(this.h[5], f);
-  this.h[6] = sum32(this.h[6], g);
-  this.h[7] = sum32(this.h[7], h);
-};
-
-SHA256.prototype._digest = function digest(enc) {
-  if (enc === 'hex')
-    return utils.toHex32(this.h, 'big');
-  else
-    return utils.split32(this.h, 'big');
-};
-
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(12);
-var common = __webpack_require__(22);
 var assert = __webpack_require__(8);
 
 var rotr64_hi = utils.rotr64_hi;
@@ -11648,7 +11642,7 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11704,7 +11698,7 @@ exports.g1_256 = g1_256;
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11712,7 +11706,7 @@ exports.g1_256 = g1_256;
 
 var utils = __webpack_require__(13);
 var common = __webpack_require__(23);
-var shaCommon = __webpack_require__(55);
+var shaCommon = __webpack_require__(54);
 var assert = __webpack_require__(8);
 
 var sum32 = utils.sum32;
@@ -11816,7 +11810,7 @@ SHA256.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12153,7 +12147,7 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12210,7 +12204,7 @@ exports.getJsonWalletAddress = getJsonWalletAddress;
 
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12238,10 +12232,10 @@ exports.encode = encode;
 
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var setPrototypeOf = __webpack_require__(64);
+var setPrototypeOf = __webpack_require__(63);
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -12261,12 +12255,12 @@ function _inherits(subClass, superClass) {
 module.exports = _inherits;
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(65);
+var _typeof = __webpack_require__(64);
 
-var assertThisInitialized = __webpack_require__(66);
+var assertThisInitialized = __webpack_require__(65);
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -12279,7 +12273,7 @@ function _possibleConstructorReturn(self, call) {
 module.exports = _possibleConstructorReturn;
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports) {
 
 function _defineProperty(obj, key, value) {
@@ -12300,7 +12294,7 @@ function _defineProperty(obj, key, value) {
 module.exports = _defineProperty;
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -12322,7 +12316,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports) {
 
 function _setPrototypeOf(o, p) {
@@ -12337,7 +12331,7 @@ function _setPrototypeOf(o, p) {
 module.exports = _setPrototypeOf;
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports) {
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
@@ -12359,7 +12353,7 @@ function _typeof(obj) {
 module.exports = _typeof;
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports) {
 
 function _assertThisInitialized(self) {
@@ -12373,7 +12367,7 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized;
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12398,11 +12392,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var constants_1 = __webpack_require__(17);
 var errors = __importStar(__webpack_require__(3));
-var abi_coder_1 = __webpack_require__(35);
+var abi_coder_1 = __webpack_require__(34);
 var address_1 = __webpack_require__(11);
 var bignumber_1 = __webpack_require__(10);
 var bytes_1 = __webpack_require__(4);
-var interface_1 = __webpack_require__(45);
+var interface_1 = __webpack_require__(44);
 var properties_1 = __webpack_require__(5);
 ///////////////////////////////
 // Imported Abstracts
@@ -13094,7 +13088,7 @@ exports.ContractFactory = ContractFactory;
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -13122,13 +13116,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = require("buffer");
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports) {
 
 /**
@@ -13609,7 +13603,7 @@ module.exports = require("buffer");
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13635,12 +13629,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var bytes_1 = __webpack_require__(4);
 var hash_1 = __webpack_require__(18);
 var hdnode_1 = __webpack_require__(26);
-var json_wallet_1 = __webpack_require__(58);
+var json_wallet_1 = __webpack_require__(57);
 var keccak256_1 = __webpack_require__(14);
 var properties_1 = __webpack_require__(5);
-var random_bytes_1 = __webpack_require__(39);
-var secretStorage = __importStar(__webpack_require__(101));
-var signing_key_1 = __webpack_require__(40);
+var random_bytes_1 = __webpack_require__(38);
+var secretStorage = __importStar(__webpack_require__(100));
+var signing_key_1 = __webpack_require__(39);
 var transaction_1 = __webpack_require__(29);
 // Imported Abstracts
 var abstract_signer_1 = __webpack_require__(25);
@@ -13800,7 +13794,7 @@ exports.Wallet = Wallet;
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13930,7 +13924,7 @@ exports.Base58 = Base58;
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13938,25 +13932,25 @@ exports.Base58 = Base58;
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(74).version;
+elliptic.version = __webpack_require__(73).version;
 elliptic.utils = __webpack_require__(7);
-elliptic.rand = __webpack_require__(50);
-elliptic.curve = __webpack_require__(51);
-elliptic.curves = __webpack_require__(36);
+elliptic.rand = __webpack_require__(49);
+elliptic.curve = __webpack_require__(50);
+elliptic.curves = __webpack_require__(35);
 
 // Protocols
-elliptic.ec = __webpack_require__(87);
-elliptic.eddsa = __webpack_require__(98);
+elliptic.ec = __webpack_require__(86);
+elliptic.eddsa = __webpack_require__(97);
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"_from\":\"elliptic@6.5.2\",\"_id\":\"elliptic@6.5.2\",\"_inBundle\":false,\"_integrity\":\"sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==\",\"_location\":\"/ethers/elliptic\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"elliptic@6.5.2\",\"name\":\"elliptic\",\"escapedName\":\"elliptic\",\"rawSpec\":\"6.5.2\",\"saveSpec\":null,\"fetchSpec\":\"6.5.2\"},\"_requiredBy\":[\"/ethers\"],\"_resolved\":\"https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz\",\"_shasum\":\"05c5678d7173c049d8ca433552224a495d0e3762\",\"_spec\":\"elliptic@6.5.2\",\"_where\":\"/Users/clementbalestrat/Workspace/synthetix-js/node_modules/ethers\",\"author\":{\"name\":\"Fedor Indutny\",\"email\":\"fedor@indutny.com\"},\"bugs\":{\"url\":\"https://github.com/indutny/elliptic/issues\"},\"bundleDependencies\":false,\"dependencies\":{\"bn.js\":\"^4.4.0\",\"brorand\":\"^1.0.1\",\"hash.js\":\"^1.0.0\",\"hmac-drbg\":\"^1.0.0\",\"inherits\":\"^2.0.1\",\"minimalistic-assert\":\"^1.0.0\",\"minimalistic-crypto-utils\":\"^1.0.0\"},\"deprecated\":false,\"description\":\"EC cryptography\",\"devDependencies\":{\"brfs\":\"^1.4.3\",\"coveralls\":\"^3.0.8\",\"grunt\":\"^1.0.4\",\"grunt-browserify\":\"^5.0.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-connect\":\"^1.0.0\",\"grunt-contrib-copy\":\"^1.0.0\",\"grunt-contrib-uglify\":\"^1.0.1\",\"grunt-mocha-istanbul\":\"^3.0.1\",\"grunt-saucelabs\":\"^9.0.1\",\"istanbul\":\"^0.4.2\",\"jscs\":\"^3.0.7\",\"jshint\":\"^2.10.3\",\"mocha\":\"^6.2.2\"},\"files\":[\"lib\"],\"homepage\":\"https://github.com/indutny/elliptic\",\"keywords\":[\"EC\",\"Elliptic\",\"curve\",\"Cryptography\"],\"license\":\"MIT\",\"main\":\"lib/elliptic.js\",\"name\":\"elliptic\",\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/indutny/elliptic.git\"},\"scripts\":{\"jscs\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"jshint\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"lint\":\"npm run jscs && npm run jshint\",\"test\":\"npm run lint && npm run unit\",\"unit\":\"istanbul test _mocha --reporter=spec test/index.js\",\"version\":\"grunt dist && git add dist/\"},\"version\":\"6.5.2\"}");
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14900,13 +14894,13 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = require("util");
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -14939,7 +14933,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15124,7 +15118,7 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15563,21 +15557,21 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(81);
-exports.sha224 = __webpack_require__(82);
-exports.sha256 = __webpack_require__(53);
-exports.sha384 = __webpack_require__(83);
-exports.sha512 = __webpack_require__(54);
+exports.sha1 = __webpack_require__(80);
+exports.sha224 = __webpack_require__(81);
+exports.sha256 = __webpack_require__(52);
+exports.sha384 = __webpack_require__(82);
+exports.sha512 = __webpack_require__(53);
 
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15585,7 +15579,7 @@ exports.sha512 = __webpack_require__(54);
 
 var utils = __webpack_require__(12);
 var common = __webpack_require__(22);
-var shaCommon = __webpack_require__(52);
+var shaCommon = __webpack_require__(51);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -15658,14 +15652,14 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(12);
-var SHA256 = __webpack_require__(53);
+var SHA256 = __webpack_require__(52);
 
 function SHA224() {
   if (!(this instanceof SHA224))
@@ -15695,7 +15689,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15703,7 +15697,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(12);
 
-var SHA512 = __webpack_require__(54);
+var SHA512 = __webpack_require__(53);
 
 function SHA384() {
   if (!(this instanceof SHA384))
@@ -15737,7 +15731,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15890,7 +15884,7 @@ var sh = [
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15944,7 +15938,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16730,21 +16724,21 @@ module.exports = {
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(9);
-var HmacDRBG = __webpack_require__(88);
+var HmacDRBG = __webpack_require__(87);
 var utils = __webpack_require__(7);
-var curves = __webpack_require__(36);
-var rand = __webpack_require__(50);
+var curves = __webpack_require__(35);
+var rand = __webpack_require__(49);
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(96);
-var Signature = __webpack_require__(97);
+var KeyPair = __webpack_require__(95);
+var Signature = __webpack_require__(96);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -16978,14 +16972,14 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(89);
-var utils = __webpack_require__(49);
+var hash = __webpack_require__(88);
+var utils = __webpack_require__(48);
 var assert = __webpack_require__(8);
 
 function HmacDRBG(options) {
@@ -17098,16 +17092,16 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
 
 hash.utils = __webpack_require__(13);
 hash.common = __webpack_require__(23);
-hash.sha = __webpack_require__(90);
-hash.ripemd = __webpack_require__(94);
-hash.hmac = __webpack_require__(95);
+hash.sha = __webpack_require__(89);
+hash.ripemd = __webpack_require__(93);
+hash.hmac = __webpack_require__(94);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -17119,21 +17113,21 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(91);
-exports.sha224 = __webpack_require__(92);
-exports.sha256 = __webpack_require__(56);
-exports.sha384 = __webpack_require__(93);
-exports.sha512 = __webpack_require__(57);
+exports.sha1 = __webpack_require__(90);
+exports.sha224 = __webpack_require__(91);
+exports.sha256 = __webpack_require__(55);
+exports.sha384 = __webpack_require__(92);
+exports.sha512 = __webpack_require__(56);
 
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17141,7 +17135,7 @@ exports.sha512 = __webpack_require__(57);
 
 var utils = __webpack_require__(13);
 var common = __webpack_require__(23);
-var shaCommon = __webpack_require__(55);
+var shaCommon = __webpack_require__(54);
 
 var rotl32 = utils.rotl32;
 var sum32 = utils.sum32;
@@ -17214,14 +17208,14 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(13);
-var SHA256 = __webpack_require__(56);
+var SHA256 = __webpack_require__(55);
 
 function SHA224() {
   if (!(this instanceof SHA224))
@@ -17251,7 +17245,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17259,7 +17253,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 var utils = __webpack_require__(13);
 
-var SHA512 = __webpack_require__(57);
+var SHA512 = __webpack_require__(56);
 
 function SHA384() {
   if (!(this instanceof SHA384))
@@ -17293,7 +17287,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17446,7 +17440,7 @@ var sh = [
 
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17500,7 +17494,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17625,7 +17619,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17766,19 +17760,19 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(37);
-var curves = __webpack_require__(36);
+var hash = __webpack_require__(36);
+var curves = __webpack_require__(35);
 var utils = __webpack_require__(7);
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(99);
-var Signature = __webpack_require__(100);
+var KeyPair = __webpack_require__(98);
+var Signature = __webpack_require__(99);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -17891,7 +17885,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17993,7 +17987,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18065,7 +18059,7 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18081,17 +18075,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var aes_js_1 = __importDefault(__webpack_require__(102));
-var scrypt_js_1 = __importDefault(__webpack_require__(103));
-var uuid_1 = __importDefault(__webpack_require__(104));
-var signing_key_1 = __webpack_require__(40);
+var aes_js_1 = __importDefault(__webpack_require__(101));
+var scrypt_js_1 = __importDefault(__webpack_require__(102));
+var uuid_1 = __importDefault(__webpack_require__(103));
+var signing_key_1 = __webpack_require__(39);
 var HDNode = __importStar(__webpack_require__(26));
 var address_1 = __webpack_require__(11);
 var bytes_1 = __webpack_require__(4);
-var pbkdf2_1 = __webpack_require__(47);
+var pbkdf2_1 = __webpack_require__(46);
 var keccak256_1 = __webpack_require__(14);
 var utf8_1 = __webpack_require__(6);
-var random_bytes_1 = __webpack_require__(39);
+var random_bytes_1 = __webpack_require__(38);
 function looseArrayify(hexString) {
     if (typeof (hexString) === 'string' && hexString.substring(0, 2) !== '0x') {
         hexString = '0x' + hexString;
@@ -18474,7 +18468,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19267,7 +19261,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19716,7 +19710,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //     uuid.js
@@ -19727,7 +19721,7 @@ exports.encrypt = encrypt;
 // Unique ID creation requires a high quality random # generator.  We feature
 // detect to determine the best RNG source, normalizing to a function that
 // returns 128-bits of randomness, since that's what's usually required
-var _rng = __webpack_require__(105);
+var _rng = __webpack_require__(104);
 
 // Maps for number <-> hex string conversion
 var _byteToHex = [];
@@ -19905,7 +19899,7 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rb = __webpack_require__(20).randomBytes;
@@ -19915,7 +19909,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19925,23 +19919,23 @@ var abstract_provider_1 = __webpack_require__(19);
 exports.Provider = abstract_provider_1.Provider;
 var base_provider_1 = __webpack_require__(30);
 exports.BaseProvider = base_provider_1.BaseProvider;
-var etherscan_provider_1 = __webpack_require__(113);
+var etherscan_provider_1 = __webpack_require__(112);
 exports.EtherscanProvider = etherscan_provider_1.EtherscanProvider;
-var fallback_provider_1 = __webpack_require__(114);
+var fallback_provider_1 = __webpack_require__(113);
 exports.FallbackProvider = fallback_provider_1.FallbackProvider;
-var ipc_provider_1 = __webpack_require__(115);
+var ipc_provider_1 = __webpack_require__(114);
 exports.IpcProvider = ipc_provider_1.IpcProvider;
-var infura_provider_1 = __webpack_require__(117);
+var infura_provider_1 = __webpack_require__(116);
 exports.InfuraProvider = infura_provider_1.InfuraProvider;
 var json_rpc_provider_1 = __webpack_require__(33);
 exports.JsonRpcProvider = json_rpc_provider_1.JsonRpcProvider;
 exports.JsonRpcSigner = json_rpc_provider_1.JsonRpcSigner;
-var web3_provider_1 = __webpack_require__(118);
+var web3_provider_1 = __webpack_require__(117);
 exports.Web3Provider = web3_provider_1.Web3Provider;
 
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -19957,9 +19951,9 @@ exports.Web3Provider = web3_provider_1.Web3Provider;
  * @license MIT
  */
 
-var Url = __webpack_require__(108);
-var spawn = __webpack_require__(109).spawn;
-var fs = __webpack_require__(110);
+var Url = __webpack_require__(107);
+var spawn = __webpack_require__(108).spawn;
+var fs = __webpack_require__(109);
 
 exports.XMLHttpRequest = function() {
   "use strict";
@@ -19968,8 +19962,8 @@ exports.XMLHttpRequest = function() {
    * Private variables
    */
   var self = this;
-  var http = __webpack_require__(111);
-  var https = __webpack_require__(112);
+  var http = __webpack_require__(110);
+  var https = __webpack_require__(111);
 
   // Holds http.js objects
   var request;
@@ -20567,37 +20561,37 @@ exports.XMLHttpRequest = function() {
 
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, exports) {
 
 module.exports = require("url");
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20951,7 +20945,7 @@ exports.EtherscanProvider = EtherscanProvider;
 
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21069,7 +21063,7 @@ exports.FallbackProvider = FallbackProvider;
 
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21095,7 +21089,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var net_1 = __importDefault(__webpack_require__(116));
+var net_1 = __importDefault(__webpack_require__(115));
 var json_rpc_provider_1 = __webpack_require__(33);
 var properties_1 = __webpack_require__(5);
 var errors = __importStar(__webpack_require__(3));
@@ -21165,13 +21159,13 @@ exports.IpcProvider = IpcProvider;
 
 
 /***/ }),
-/* 116 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 117 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21262,7 +21256,7 @@ exports.InfuraProvider = InfuraProvider;
 
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21357,7 +21351,7 @@ exports.Web3Provider = Web3Provider;
 
 
 /***/ }),
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21370,7 +21364,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var abi_coder_1 = __webpack_require__(35);
+var abi_coder_1 = __webpack_require__(34);
 exports.AbiCoder = abi_coder_1.AbiCoder;
 exports.defaultAbiCoder = abi_coder_1.defaultAbiCoder;
 exports.formatSignature = abi_coder_1.formatSignature;
@@ -21382,7 +21376,7 @@ exports.getAddress = address_1.getAddress;
 exports.getContractAddress = address_1.getContractAddress;
 exports.getCreate2Address = address_1.getCreate2Address;
 exports.getIcapAddress = address_1.getIcapAddress;
-var base64 = __importStar(__webpack_require__(59));
+var base64 = __importStar(__webpack_require__(58));
 exports.base64 = base64;
 var bignumber_1 = __webpack_require__(10);
 exports.BigNumber = bignumber_1.BigNumber;
@@ -21406,19 +21400,19 @@ exports.id = hash_1.id;
 exports.namehash = hash_1.namehash;
 var HDNode = __importStar(__webpack_require__(26));
 exports.HDNode = HDNode;
-var interface_1 = __webpack_require__(45);
+var interface_1 = __webpack_require__(44);
 exports.Interface = interface_1.Interface;
-var json_wallet_1 = __webpack_require__(58);
+var json_wallet_1 = __webpack_require__(57);
 exports.getJsonWalletAddress = json_wallet_1.getJsonWalletAddress;
 var keccak256_1 = __webpack_require__(14);
 exports.keccak256 = keccak256_1.keccak256;
-var sha2_1 = __webpack_require__(38);
+var sha2_1 = __webpack_require__(37);
 exports.sha256 = sha2_1.sha256;
-var solidity_1 = __webpack_require__(120);
+var solidity_1 = __webpack_require__(119);
 exports.solidityKeccak256 = solidity_1.keccak256;
 exports.solidityPack = solidity_1.pack;
 exports.soliditySha256 = solidity_1.sha256;
-var random_bytes_1 = __webpack_require__(39);
+var random_bytes_1 = __webpack_require__(38);
 exports.randomBytes = random_bytes_1.randomBytes;
 var networks_1 = __webpack_require__(31);
 exports.getNetwork = networks_1.getNetwork;
@@ -21436,7 +21430,7 @@ exports.computePublicKey = secp256k1_1.computePublicKey;
 exports.recoverAddress = secp256k1_1.recoverAddress;
 exports.recoverPublicKey = secp256k1_1.recoverPublicKey;
 exports.verifyMessage = secp256k1_1.verifyMessage;
-var signing_key_1 = __webpack_require__(40);
+var signing_key_1 = __webpack_require__(39);
 exports.SigningKey = signing_key_1.SigningKey;
 var transaction_1 = __webpack_require__(29);
 exports.populateTransaction = transaction_1.populateTransaction;
@@ -21448,7 +21442,7 @@ exports.formatBytes32String = utf8_1.formatBytes32String;
 exports.parseBytes32String = utf8_1.parseBytes32String;
 exports.toUtf8Bytes = utf8_1.toUtf8Bytes;
 exports.toUtf8String = utf8_1.toUtf8String;
-var units_1 = __webpack_require__(121);
+var units_1 = __webpack_require__(120);
 exports.commify = units_1.commify;
 exports.formatEther = units_1.formatEther;
 exports.parseEther = units_1.parseEther;
@@ -21459,7 +21453,7 @@ exports.fetchJson = web_1.fetchJson;
 exports.poll = web_1.poll;
 ////////////////////////
 // Enums
-var hmac_1 = __webpack_require__(48);
+var hmac_1 = __webpack_require__(47);
 exports.SupportedAlgorithms = hmac_1.SupportedAlgorithms;
 var utf8_2 = __webpack_require__(6);
 exports.UnicodeNormalizationForm = utf8_2.UnicodeNormalizationForm;
@@ -21468,7 +21462,7 @@ exports.Wordlist = wordlist_1.Wordlist;
 
 
 /***/ }),
-/* 120 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21478,7 +21472,7 @@ var bignumber_1 = __webpack_require__(10);
 var bytes_1 = __webpack_require__(4);
 var utf8_1 = __webpack_require__(6);
 var keccak256_1 = __webpack_require__(14);
-var sha2_1 = __webpack_require__(38);
+var sha2_1 = __webpack_require__(37);
 var regexBytes = new RegExp("^bytes([0-9]+)$");
 var regexNumber = new RegExp("^(u?int)([0-9]*)$");
 var regexArray = new RegExp("^(.*)\\[([0-9]*)\\]$");
@@ -21566,7 +21560,7 @@ exports.sha256 = sha256;
 
 
 /***/ }),
-/* 121 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21746,19 +21740,19 @@ exports.parseEther = parseEther;
 
 
 /***/ }),
-/* 122 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lang_en_1 = __webpack_require__(46);
-var lang_es_1 = __webpack_require__(123);
-var lang_fr_1 = __webpack_require__(124);
-var lang_ja_1 = __webpack_require__(125);
-var lang_ko_1 = __webpack_require__(126);
-var lang_it_1 = __webpack_require__(127);
-var lang_zh_1 = __webpack_require__(128);
+var lang_en_1 = __webpack_require__(45);
+var lang_es_1 = __webpack_require__(122);
+var lang_fr_1 = __webpack_require__(123);
+var lang_ja_1 = __webpack_require__(124);
+var lang_ko_1 = __webpack_require__(125);
+var lang_it_1 = __webpack_require__(126);
+var lang_zh_1 = __webpack_require__(127);
 var en = lang_en_1.langEn;
 exports.en = en;
 var es = lang_es_1.langEs;
@@ -21780,7 +21774,7 @@ exports.zh_tw = zh_tw;
 
 
 /***/ }),
-/* 123 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21866,7 +21860,7 @@ wordlist_1.register(langEs);
 
 
 /***/ }),
-/* 124 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21951,7 +21945,7 @@ wordlist_1.register(langFr);
 
 
 /***/ }),
-/* 125 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22102,7 +22096,7 @@ wordlist_1.register(langJa);
 
 
 /***/ }),
-/* 126 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22183,7 +22177,7 @@ wordlist_1.register(langKo);
 
 
 /***/ }),
-/* 127 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22233,7 +22227,7 @@ wordlist_1.register(langIt);
 
 
 /***/ }),
-/* 128 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22319,7 +22313,7 @@ wordlist_1.register(langZhTw);
 
 
 /***/ }),
-/* 129 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22330,7 +22324,7 @@ exports.platform = 'node';
 
 
 /***/ }),
-/* 130 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -22357,7 +22351,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(131);
+module.exports = __webpack_require__(130);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -22373,7 +22367,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 131 */
+/* 130 */
 /***/ (function(module, exports) {
 
 /**
@@ -23100,7 +23094,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, exports) {
 
 function _arrayWithHoles(arr) {
@@ -23110,7 +23104,7 @@ function _arrayWithHoles(arr) {
 module.exports = _arrayWithHoles;
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -23142,7 +23136,7 @@ function _iterableToArrayLimit(arr, i) {
 module.exports = _iterableToArrayLimit;
 
 /***/ }),
-/* 134 */
+/* 133 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -23152,7 +23146,7 @@ function _nonIterableRest() {
 module.exports = _nonIterableRest;
 
 /***/ }),
-/* 135 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23173,15 +23167,15 @@ var classCallCheck = __webpack_require__(16);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inherits.js
-var inherits = __webpack_require__(60);
+var inherits = __webpack_require__(59);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(61);
+var possibleConstructorReturn = __webpack_require__(60);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/getPrototypeOf.js
-var getPrototypeOf = __webpack_require__(41);
+var getPrototypeOf = __webpack_require__(40);
 var getPrototypeOf_default = /*#__PURE__*/__webpack_require__.n(getPrototypeOf);
 
 // EXTERNAL MODULE: ./node_modules/ethers/index.js
@@ -25838,6 +25832,730 @@ var KOVAN_ADDRESSES = {
   stateMutability: 'view',
   type: 'function',
   signature: '0x6de813f1'
+}]);
+// CONCATENATED MODULE: ./lib/abis/kovan/MultiCollateralSynth.js
+/* harmony default export */ var kovan_MultiCollateralSynth = ([{
+  inputs: [{
+    internalType: 'address payable',
+    name: '_proxy',
+    type: 'address'
+  }, {
+    internalType: 'contract TokenState',
+    name: '_tokenState',
+    type: 'address'
+  }, {
+    internalType: 'string',
+    name: '_tokenName',
+    type: 'string'
+  }, {
+    internalType: 'string',
+    name: '_tokenSymbol',
+    type: 'string'
+  }, {
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: '_totalSupply',
+    type: 'uint256'
+  }, {
+    internalType: 'address',
+    name: '_resolver',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: '_multiCollateralKey',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'constructor',
+  signature: 'constructor'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'owner',
+    type: 'address'
+  }, {
+    indexed: true,
+    internalType: 'address',
+    name: 'spender',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Approval',
+  type: 'event',
+  signature: '0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Burned',
+  type: 'event',
+  signature: '0x696de425f79f4a40bc6d2122ca50507f0efbeabbff86a84871b7196ab8ea8df7'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Issued',
+  type: 'event',
+  signature: '0xa59f12e354e8cd10bb74c559844c2dd69a5458e31fe56c7594c62ca57480509a'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'oldOwner',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerChanged',
+  type: 'event',
+  signature: '0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerNominated',
+  type: 'event',
+  signature: '0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'proxyAddress',
+    type: 'address'
+  }],
+  name: 'ProxyUpdated',
+  type: 'event',
+  signature: '0xfc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'newTokenState',
+    type: 'address'
+  }],
+  name: 'TokenStateUpdated',
+  type: 'event',
+  signature: '0xa538c4dcfe9fb148efee2952bafe34982d2d07d5fbb38ae5b44abf659a46bfd8'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    indexed: true,
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Transfer',
+  type: 'event',
+  signature: '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'DECIMALS',
+  outputs: [{
+    internalType: 'uint8',
+    name: '',
+    type: 'uint8'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x2e0f2625'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'FEE_ADDRESS',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xeb1edd61'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'MAX_ADDRESSES_FROM_RESOLVER',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xe3235c91'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'acceptOwnership',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x79ba5097'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'owner',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'spender',
+    type: 'address'
+  }],
+  name: 'allowance',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xdd62ed3e'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'spender',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'approve',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x095ea7b3'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'balanceOf',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x70a08231'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burn',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x9dc29fac'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'currencyKey',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xdbd06c85'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'decimals',
+  outputs: [{
+    internalType: 'uint8',
+    name: '',
+    type: 'uint8'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x313ce567'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'getResolverAddressesRequired',
+  outputs: [{
+    internalType: 'bytes32[24]',
+    name: 'addressesRequired',
+    type: 'bytes32[24]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xab49848c'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'integrationProxy',
+  outputs: [{
+    internalType: 'contract Proxy',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x9cbdaeb6'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'contract AddressResolver',
+    name: '_resolver',
+    type: 'address'
+  }],
+  name: 'isResolverCached',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x631e1444'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issue',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x867904b4'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'messageSender',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xd67bdd25'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'multiCollateralKey',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xfd92ae77'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'name',
+  outputs: [{
+    internalType: 'string',
+    name: '',
+    type: 'string'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x06fdde03'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }],
+  name: 'nominateNewOwner',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x1627540c'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nominatedOwner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x53a47bb7'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x8da5cb5b'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'proxy',
+  outputs: [{
+    internalType: 'contract Proxy',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xec556889'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolver',
+  outputs: [{
+    internalType: 'contract AddressResolver',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x04f3bcec'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'resolverAddressesRequired',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xc6c9d828'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address payable',
+    name: '_integrationProxy',
+    type: 'address'
+  }],
+  name: 'setIntegrationProxy',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x131b0ae7'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'sender',
+    type: 'address'
+  }],
+  name: 'setMessageSender',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xbc67f832'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address payable',
+    name: '_proxy',
+    type: 'address'
+  }],
+  name: 'setProxy',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x97107d6d'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'contract AddressResolver',
+    name: '_resolver',
+    type: 'address'
+  }],
+  name: 'setResolverAndSyncCache',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x3be99e6f'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'contract TokenState',
+    name: '_tokenState',
+    type: 'address'
+  }],
+  name: 'setTokenState',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x9f769807'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'setTotalSupply',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xf7ea7a3d'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'symbol',
+  outputs: [{
+    internalType: 'string',
+    name: '',
+    type: 'string'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x95d89b41'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'tokenState',
+  outputs: [{
+    internalType: 'contract TokenState',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xe90dd9e2'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'totalSupply',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x18160ddd'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transfer',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xa9059cbb'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transferAndSettle',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xb014c3a3'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transferFrom',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x23b872dd'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transferFromAndSettle',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xe73cced3'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'transferableSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xffff51d6'
 }]);
 // CONCATENATED MODULE: ./lib/abis/kovan/Synthetix.js
 /* harmony default export */ var kovan_Synthetix = ([{
@@ -36804,11 +37522,13 @@ var KOVAN_ADDRESSES = {
 
 
 
+
 /* harmony default export */ var kovan = ({
   Depot: kovan_Depot,
   EscrowChecker: EscrowChecker,
   ExchangeRates: ExchangeRates,
   FeePool: FeePool,
+  MultiCollateralSynth: kovan_MultiCollateralSynth,
   Synthetix: kovan_Synthetix,
   SynthetixEscrow: SynthetixEscrow,
   SynthetixState: SynthetixState,
@@ -40680,6 +41400,1073 @@ function FeePool_FeePool(contractSettings) {
 }
 
 /* harmony default export */ var kovan_FeePool = (FeePool_FeePool);
+// CONCATENATED MODULE: ./src/contracts/kovan/MultiCollateralSynth.js
+
+
+
+
+
+/** @constructor
+ * @param contractSettings {ContractSettings}
+ */
+
+function MultiCollateralSynth_MultiCollateralSynth(contractSettings) {
+  var _this = this;
+
+  this.contractSettings = contractSettings || new src_contractSettings();
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyERC20sUSD'], kovan_MultiCollateralSynth, this.contractSettings.signer || this.contractSettings.provider);
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+
+  this.DECIMALS = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee() {
+    return regenerator_default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _this.contract.DECIMALS();
+
+          case 2:
+            return _context.abrupt("return", _context.sent);
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.FEE_ADDRESS = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee2() {
+    return regenerator_default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return _this.contract.FEE_ADDRESS();
+
+          case 2:
+            return _context2.abrupt("return", _context2.sent);
+
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.MAX_ADDRESSES_FROM_RESOLVER = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee3() {
+    return regenerator_default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return _this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+
+          case 2:
+            return _context3.abrupt("return", _context3.sent);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.acceptOwnership = /*#__PURE__*/function () {
+    var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee4(txParams) {
+      return regenerator_default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              txParams = txParams || {};
+              _context4.next = 3;
+              return _this.contract.acceptOwnership(txParams);
+
+            case 3:
+              return _context4.abrupt("return", _context4.sent);
+
+            case 4:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }));
+
+    return function (_x) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param owner {String<EthAddress>}
+   * @param spender {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.allowance = /*#__PURE__*/function () {
+    var _ref5 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee5(owner, spender) {
+      return regenerator_default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              _context5.next = 2;
+              return _this.contract.allowance(owner, spender);
+
+            case 2:
+              return _context5.abrupt("return", _context5.sent);
+
+            case 3:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    }));
+
+    return function (_x2, _x3) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param spender {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.approve = /*#__PURE__*/function () {
+    var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee6(spender, value, txParams) {
+      return regenerator_default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              txParams = txParams || {};
+              _context6.next = 3;
+              return _this.contract.approve(spender, value, txParams);
+
+            case 3:
+              return _context6.abrupt("return", _context6.sent);
+
+            case 4:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
+    }));
+
+    return function (_x4, _x5, _x6) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.balanceOf = /*#__PURE__*/function () {
+    var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee7(account) {
+      return regenerator_default.a.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              _context7.next = 2;
+              return _this.contract.balanceOf(account);
+
+            case 2:
+              return _context7.abrupt("return", _context7.sent);
+
+            case 3:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7);
+    }));
+
+    return function (_x7) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.burn = /*#__PURE__*/function () {
+    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(account, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              txParams = txParams || {};
+              _context8.next = 3;
+              return _this.contract.burn(account, amount, txParams);
+
+            case 3:
+              return _context8.abrupt("return", _context8.sent);
+
+            case 4:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
+    }));
+
+    return function (_x8, _x9, _x10) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+
+
+  this.currencyKey = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9() {
+    return regenerator_default.a.wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            _context9.next = 2;
+            return _this.contract.currencyKey();
+
+          case 2:
+            return _context9.abrupt("return", _context9.sent);
+
+          case 3:
+          case "end":
+            return _context9.stop();
+        }
+      }
+    }, _callee9);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Number
+   **/
+
+  this.decimals = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10() {
+    return regenerator_default.a.wrap(function _callee10$(_context10) {
+      while (1) {
+        switch (_context10.prev = _context10.next) {
+          case 0:
+            _context10.next = 2;
+            return _this.contract.decimals();
+
+          case 2:
+            return _context10.abrupt("return", _context10.sent);
+
+          case 3:
+          case "end":
+            return _context10.stop();
+        }
+      }
+    }, _callee10);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[24]
+   **/
+
+  this.getResolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11() {
+    return regenerator_default.a.wrap(function _callee11$(_context11) {
+      while (1) {
+        switch (_context11.prev = _context11.next) {
+          case 0:
+            _context11.next = 2;
+            return _this.contract.getResolverAddressesRequired();
+
+          case 2:
+            return _context11.abrupt("return", _context11.sent);
+
+          case 3:
+          case "end":
+            return _context11.stop();
+        }
+      }
+    }, _callee11);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.integrationProxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee12() {
+    return regenerator_default.a.wrap(function _callee12$(_context12) {
+      while (1) {
+        switch (_context12.prev = _context12.next) {
+          case 0:
+            _context12.next = 2;
+            return _this.contract.integrationProxy();
+
+          case 2:
+            return _context12.abrupt("return", _context12.sent);
+
+          case 3:
+          case "end":
+            return _context12.stop();
+        }
+      }
+    }, _callee12);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _resolver {String<EthAddress>}
+   * @returns boolean
+   **/
+
+  this.isResolverCached = /*#__PURE__*/function () {
+    var _ref13 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee13(_resolver) {
+      return regenerator_default.a.wrap(function _callee13$(_context13) {
+        while (1) {
+          switch (_context13.prev = _context13.next) {
+            case 0:
+              _context13.next = 2;
+              return _this.contract.isResolverCached(_resolver);
+
+            case 2:
+              return _context13.abrupt("return", _context13.sent);
+
+            case 3:
+            case "end":
+              return _context13.stop();
+          }
+        }
+      }, _callee13);
+    }));
+
+    return function (_x11) {
+      return _ref13.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.issue = /*#__PURE__*/function () {
+    var _ref14 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee14(account, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee14$(_context14) {
+        while (1) {
+          switch (_context14.prev = _context14.next) {
+            case 0:
+              txParams = txParams || {};
+              _context14.next = 3;
+              return _this.contract.issue(account, amount, txParams);
+
+            case 3:
+              return _context14.abrupt("return", _context14.sent);
+
+            case 4:
+            case "end":
+              return _context14.stop();
+          }
+        }
+      }, _callee14);
+    }));
+
+    return function (_x12, _x13, _x14) {
+      return _ref14.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.messageSender = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee15() {
+    return regenerator_default.a.wrap(function _callee15$(_context15) {
+      while (1) {
+        switch (_context15.prev = _context15.next) {
+          case 0:
+            _context15.next = 2;
+            return _this.contract.messageSender();
+
+          case 2:
+            return _context15.abrupt("return", _context15.sent);
+
+          case 3:
+          case "end":
+            return _context15.stop();
+        }
+      }
+    }, _callee15);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+
+  this.multiCollateralKey = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16() {
+    return regenerator_default.a.wrap(function _callee16$(_context16) {
+      while (1) {
+        switch (_context16.prev = _context16.next) {
+          case 0:
+            _context16.next = 2;
+            return _this.contract.multiCollateralKey();
+
+          case 2:
+            return _context16.abrupt("return", _context16.sent);
+
+          case 3:
+          case "end":
+            return _context16.stop();
+        }
+      }
+    }, _callee16);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String
+   **/
+
+  this.name = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17() {
+    return regenerator_default.a.wrap(function _callee17$(_context17) {
+      while (1) {
+        switch (_context17.prev = _context17.next) {
+          case 0:
+            _context17.next = 2;
+            return _this.contract.name();
+
+          case 2:
+            return _context17.abrupt("return", _context17.sent);
+
+          case 3:
+          case "end":
+            return _context17.stop();
+        }
+      }
+    }, _callee17);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.nominateNewOwner = /*#__PURE__*/function () {
+    var _ref18 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee18$(_context18) {
+        while (1) {
+          switch (_context18.prev = _context18.next) {
+            case 0:
+              txParams = txParams || {};
+              _context18.next = 3;
+              return _this.contract.nominateNewOwner(_owner, txParams);
+
+            case 3:
+              return _context18.abrupt("return", _context18.sent);
+
+            case 4:
+            case "end":
+              return _context18.stop();
+          }
+        }
+      }, _callee18);
+    }));
+
+    return function (_x15, _x16) {
+      return _ref18.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19() {
+    return regenerator_default.a.wrap(function _callee19$(_context19) {
+      while (1) {
+        switch (_context19.prev = _context19.next) {
+          case 0:
+            _context19.next = 2;
+            return _this.contract.nominatedOwner();
+
+          case 2:
+            return _context19.abrupt("return", _context19.sent);
+
+          case 3:
+          case "end":
+            return _context19.stop();
+        }
+      }
+    }, _callee19);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20() {
+    return regenerator_default.a.wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+            _context20.next = 2;
+            return _this.contract.owner();
+
+          case 2:
+            return _context20.abrupt("return", _context20.sent);
+
+          case 3:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.proxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21() {
+    return regenerator_default.a.wrap(function _callee21$(_context21) {
+      while (1) {
+        switch (_context21.prev = _context21.next) {
+          case 0:
+            _context21.next = 2;
+            return _this.contract.proxy();
+
+          case 2:
+            return _context21.abrupt("return", _context21.sent);
+
+          case 3:
+          case "end":
+            return _context21.stop();
+        }
+      }
+    }, _callee21);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22() {
+    return regenerator_default.a.wrap(function _callee22$(_context22) {
+      while (1) {
+        switch (_context22.prev = _context22.next) {
+          case 0:
+            _context22.next = 2;
+            return _this.contract.resolver();
+
+          case 2:
+            return _context22.abrupt("return", _context22.sent);
+
+          case 3:
+          case "end":
+            return _context22.stop();
+        }
+      }
+    }, _callee22);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns bytes32
+   **/
+
+  this.resolverAddressesRequired = /*#__PURE__*/function () {
+    var _ref23 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23(uint256_1) {
+      return regenerator_default.a.wrap(function _callee23$(_context23) {
+        while (1) {
+          switch (_context23.prev = _context23.next) {
+            case 0:
+              _context23.next = 2;
+              return _this.contract.resolverAddressesRequired(uint256_1);
+
+            case 2:
+              return _context23.abrupt("return", _context23.sent);
+
+            case 3:
+            case "end":
+              return _context23.stop();
+          }
+        }
+      }, _callee23);
+    }));
+
+    return function (_x17) {
+      return _ref23.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _integrationProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setIntegrationProxy = /*#__PURE__*/function () {
+    var _ref24 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24(_integrationProxy, txParams) {
+      return regenerator_default.a.wrap(function _callee24$(_context24) {
+        while (1) {
+          switch (_context24.prev = _context24.next) {
+            case 0:
+              txParams = txParams || {};
+              _context24.next = 3;
+              return _this.contract.setIntegrationProxy(_integrationProxy, txParams);
+
+            case 3:
+              return _context24.abrupt("return", _context24.sent);
+
+            case 4:
+            case "end":
+              return _context24.stop();
+          }
+        }
+      }, _callee24);
+    }));
+
+    return function (_x18, _x19) {
+      return _ref24.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sender {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setMessageSender = /*#__PURE__*/function () {
+    var _ref25 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25(sender, txParams) {
+      return regenerator_default.a.wrap(function _callee25$(_context25) {
+        while (1) {
+          switch (_context25.prev = _context25.next) {
+            case 0:
+              txParams = txParams || {};
+              _context25.next = 3;
+              return _this.contract.setMessageSender(sender, txParams);
+
+            case 3:
+              return _context25.abrupt("return", _context25.sent);
+
+            case 4:
+            case "end":
+              return _context25.stop();
+          }
+        }
+      }, _callee25);
+    }));
+
+    return function (_x20, _x21) {
+      return _ref25.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _proxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setProxy = /*#__PURE__*/function () {
+    var _ref26 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee26(_proxy, txParams) {
+      return regenerator_default.a.wrap(function _callee26$(_context26) {
+        while (1) {
+          switch (_context26.prev = _context26.next) {
+            case 0:
+              txParams = txParams || {};
+              _context26.next = 3;
+              return _this.contract.setProxy(_proxy, txParams);
+
+            case 3:
+              return _context26.abrupt("return", _context26.sent);
+
+            case 4:
+            case "end":
+              return _context26.stop();
+          }
+        }
+      }, _callee26);
+    }));
+
+    return function (_x22, _x23) {
+      return _ref26.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _resolver {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setResolverAndSyncCache = /*#__PURE__*/function () {
+    var _ref27 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee27(_resolver, txParams) {
+      return regenerator_default.a.wrap(function _callee27$(_context27) {
+        while (1) {
+          switch (_context27.prev = _context27.next) {
+            case 0:
+              txParams = txParams || {};
+              _context27.next = 3;
+              return _this.contract.setResolverAndSyncCache(_resolver, txParams);
+
+            case 3:
+              return _context27.abrupt("return", _context27.sent);
+
+            case 4:
+            case "end":
+              return _context27.stop();
+          }
+        }
+      }, _callee27);
+    }));
+
+    return function (_x24, _x25) {
+      return _ref27.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _tokenState {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setTokenState = /*#__PURE__*/function () {
+    var _ref28 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28(_tokenState, txParams) {
+      return regenerator_default.a.wrap(function _callee28$(_context28) {
+        while (1) {
+          switch (_context28.prev = _context28.next) {
+            case 0:
+              txParams = txParams || {};
+              _context28.next = 3;
+              return _this.contract.setTokenState(_tokenState, txParams);
+
+            case 3:
+              return _context28.abrupt("return", _context28.sent);
+
+            case 4:
+            case "end":
+              return _context28.stop();
+          }
+        }
+      }, _callee28);
+    }));
+
+    return function (_x26, _x27) {
+      return _ref28.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setTotalSupply = /*#__PURE__*/function () {
+    var _ref29 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee29(amount, txParams) {
+      return regenerator_default.a.wrap(function _callee29$(_context29) {
+        while (1) {
+          switch (_context29.prev = _context29.next) {
+            case 0:
+              txParams = txParams || {};
+              _context29.next = 3;
+              return _this.contract.setTotalSupply(amount, txParams);
+
+            case 3:
+              return _context29.abrupt("return", _context29.sent);
+
+            case 4:
+            case "end":
+              return _context29.stop();
+          }
+        }
+      }, _callee29);
+    }));
+
+    return function (_x28, _x29) {
+      return _ref29.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String
+   **/
+
+
+  this.symbol = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee30() {
+    return regenerator_default.a.wrap(function _callee30$(_context30) {
+      while (1) {
+        switch (_context30.prev = _context30.next) {
+          case 0:
+            _context30.next = 2;
+            return _this.contract.symbol();
+
+          case 2:
+            return _context30.abrupt("return", _context30.sent);
+
+          case 3:
+          case "end":
+            return _context30.stop();
+        }
+      }
+    }, _callee30);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.tokenState = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee31() {
+    return regenerator_default.a.wrap(function _callee31$(_context31) {
+      while (1) {
+        switch (_context31.prev = _context31.next) {
+          case 0:
+            _context31.next = 2;
+            return _this.contract.tokenState();
+
+          case 2:
+            return _context31.abrupt("return", _context31.sent);
+
+          case 3:
+          case "end":
+            return _context31.stop();
+        }
+      }
+    }, _callee31);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.totalSupply = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32() {
+    return regenerator_default.a.wrap(function _callee32$(_context32) {
+      while (1) {
+        switch (_context32.prev = _context32.next) {
+          case 0:
+            _context32.next = 2;
+            return _this.contract.totalSupply();
+
+          case 2:
+            return _context32.abrupt("return", _context32.sent);
+
+          case 3:
+          case "end":
+            return _context32.stop();
+        }
+      }
+    }, _callee32);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+  this.transfer = /*#__PURE__*/function () {
+    var _ref33 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee33(to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee33$(_context33) {
+        while (1) {
+          switch (_context33.prev = _context33.next) {
+            case 0:
+              txParams = txParams || {};
+              _context33.next = 3;
+              return _this.contract.transfer(to, value, txParams);
+
+            case 3:
+              return _context33.abrupt("return", _context33.sent);
+
+            case 4:
+            case "end":
+              return _context33.stop();
+          }
+        }
+      }, _callee33);
+    }));
+
+    return function (_x30, _x31, _x32) {
+      return _ref33.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.transferAndSettle = /*#__PURE__*/function () {
+    var _ref34 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34(to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee34$(_context34) {
+        while (1) {
+          switch (_context34.prev = _context34.next) {
+            case 0:
+              txParams = txParams || {};
+              _context34.next = 3;
+              return _this.contract.transferAndSettle(to, value, txParams);
+
+            case 3:
+              return _context34.abrupt("return", _context34.sent);
+
+            case 4:
+            case "end":
+              return _context34.stop();
+          }
+        }
+      }, _callee34);
+    }));
+
+    return function (_x33, _x34, _x35) {
+      return _ref34.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.transferFrom = /*#__PURE__*/function () {
+    var _ref35 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35(from, to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee35$(_context35) {
+        while (1) {
+          switch (_context35.prev = _context35.next) {
+            case 0:
+              txParams = txParams || {};
+              _context35.next = 3;
+              return _this.contract.transferFrom(from, to, value, txParams);
+
+            case 3:
+              return _context35.abrupt("return", _context35.sent);
+
+            case 4:
+            case "end":
+              return _context35.stop();
+          }
+        }
+      }, _callee35);
+    }));
+
+    return function (_x36, _x37, _x38, _x39) {
+      return _ref35.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.transferFromAndSettle = /*#__PURE__*/function () {
+    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(from, to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee36$(_context36) {
+        while (1) {
+          switch (_context36.prev = _context36.next) {
+            case 0:
+              txParams = txParams || {};
+              _context36.next = 3;
+              return _this.contract.transferFromAndSettle(from, to, value, txParams);
+
+            case 3:
+              return _context36.abrupt("return", _context36.sent);
+
+            case 4:
+            case "end":
+              return _context36.stop();
+          }
+        }
+      }, _callee36);
+    }));
+
+    return function (_x40, _x41, _x42, _x43) {
+      return _ref36.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.transferableSynths = /*#__PURE__*/function () {
+    var _ref37 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37(account) {
+      return regenerator_default.a.wrap(function _callee37$(_context37) {
+        while (1) {
+          switch (_context37.prev = _context37.next) {
+            case 0:
+              _context37.next = 2;
+              return _this.contract.transferableSynths(account);
+
+            case 2:
+              return _context37.abrupt("return", _context37.sent);
+
+            case 3:
+            case "end":
+              return _context37.stop();
+          }
+        }
+      }, _callee37);
+    }));
+
+    return function (_x44) {
+      return _ref37.apply(this, arguments);
+    };
+  }();
+}
+
+/* harmony default export */ var contracts_kovan_MultiCollateralSynth = (MultiCollateralSynth_MultiCollateralSynth);
 // CONCATENATED MODULE: ./src/contracts/kovan/Synthetix.js
 
 
@@ -59383,9 +61170,6 @@ function FuturesMarketLINK(contractSettings) {
 }
 
 /* harmony default export */ var kovan_FuturesMarketLINK = (FuturesMarketLINK);
-// EXTERNAL MODULE: ./lib/abis/kovan/MultiCollateralSynth.json
-var MultiCollateralSynth = __webpack_require__(34);
-
 // CONCATENATED MODULE: ./src/contracts/kovan/sUSD.js
 
 
@@ -59400,7 +61184,7 @@ function sUSD(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyERC20sUSD'], MultiCollateralSynth, this.contractSettings.signer || this.contractSettings.provider);
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyERC20sUSD'], kovan_MultiCollateralSynth, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns Number
@@ -60467,7 +62251,7 @@ function sETH(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxysETH'], MultiCollateralSynth, this.contractSettings.signer || this.contractSettings.provider);
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxysETH'], kovan_MultiCollateralSynth, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns Number
@@ -61547,11 +63331,13 @@ function sETH(contractSettings) {
 
 
 
+
 /* harmony default export */ var contracts_kovan = ({
   Depot: contracts_kovan_Depot,
   EscrowChecker: kovan_EscrowChecker,
   ExchangeRates: kovan_ExchangeRates,
   FeePool: kovan_FeePool,
+  MultiCollateralSynth: contracts_kovan_MultiCollateralSynth,
   Synthetix: contracts_kovan_Synthetix,
   SynthetixEscrow: kovan_SynthetixEscrow,
   SynthetixState: kovan_SynthetixState,
@@ -61581,15 +63367,15 @@ function sETH(contractSettings) {
   kovan: contracts_kovan
 });
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/slicedToArray.js
-var slicedToArray = __webpack_require__(42);
+var slicedToArray = __webpack_require__(41);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(62);
+var defineProperty = __webpack_require__(61);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(63);
+var createClass = __webpack_require__(62);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // CONCATENATED MODULE: ./src/util/index.js
@@ -61638,13 +63424,13 @@ var util_Util = /*#__PURE__*/function () {
     this.contractSettings = contractSettings;
     var _contracts$contractSe = contracts[contractSettings.network],
         Depot = _contracts$contractSe.Depot,
-        Synth = _contracts$contractSe.Synth,
+        MultiCollateralSynth = _contracts$contractSe.MultiCollateralSynth,
         Synthetix = _contracts$contractSe.Synthetix;
     this.depot = new Depot(contractSettings);
-    this.synth = new Synth(contractSettings);
+    this.synth = new MultiCollateralSynth(contractSettings);
     this.synthetix = new Synthetix(contractSettings);
     this.depotInterface = new Interface(contractSettings.ABIS.Depot);
-    this.synthInterface = new Interface(contractSettings.ABIS.Synth);
+    this.synthInterface = new Interface(contractSettings.ABIS.MultiCollateralSynth);
     this.signAndSendTransaction = this.signAndSendTransaction.bind(this);
     this.getEventLogs = this.getEventLogs.bind(this);
     this.getLatestConversions = this.getLatestConversions.bind(this);

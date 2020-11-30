@@ -2,6 +2,11 @@
 	{
 		"inputs": [
 			{
+				"internalType": "address payable",
+				"name": "_proxy",
+				"type": "address"
+			},
+			{
 				"internalType": "address",
 				"name": "_owner",
 				"type": "address"
@@ -25,11 +30,17 @@
 				"internalType": "address",
 				"name": "market",
 				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "asset",
+				"type": "bytes32"
 			}
 		],
 		"name": "MarketAdded",
 		"type": "event",
-		"signature": "0xbc600b1f03d316c479b49930c28e328809316458d5b5dacbb7419df5f6f89647"
+		"signature": "0x908f8e9f0a0d9367639eed5a8f85df28353adcde390225801841a0c96a0107ec"
 	},
 	{
 		"anonymous": false,
@@ -39,11 +50,17 @@
 				"internalType": "address",
 				"name": "market",
 				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "asset",
+				"type": "bytes32"
 			}
 		],
 		"name": "MarketRemoved",
 		"type": "event",
-		"signature": "0x59d7b1e52008dc342c9421dadfc773114b914a65682a4e4b53cf60a970df0d77"
+		"signature": "0x9f42756b57509e6fd6420d67fa82856a7a585dcbe1b94d92e3dea10e3aa3b469"
 	},
 	{
 		"anonymous": false,
@@ -78,6 +95,20 @@
 		"name": "OwnerNominated",
 		"type": "event",
 		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "proxyAddress",
+				"type": "address"
+			}
+		],
+		"name": "ProxyUpdated",
+		"type": "event",
+		"signature": "0xfc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e"
 	},
 	{
 		"constant": true,
@@ -173,6 +204,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "integrationProxy",
+		"outputs": [
+			{
+				"internalType": "contract Proxy",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9cbdaeb6"
 	},
 	{
 		"constant": true,
@@ -289,6 +336,22 @@
 		"signature": "0x0a347f1a"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "messageSender",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd67bdd25"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -351,6 +414,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x8da5cb5b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "proxy",
+		"outputs": [
+			{
+				"internalType": "contract Proxy",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xec556889"
 	},
 	{
 		"constant": false,
@@ -421,6 +500,54 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xc6c9d828"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_integrationProxy",
+				"type": "address"
+			}
+		],
+		"name": "setIntegrationProxy",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x131b0ae7"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "setMessageSender",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xbc67f832"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_proxy",
+				"type": "address"
+			}
+		],
+		"name": "setProxy",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x97107d6d"
 	},
 	{
 		"constant": false,

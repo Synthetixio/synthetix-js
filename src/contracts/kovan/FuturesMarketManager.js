@@ -73,6 +73,14 @@ function FuturesMarketManager(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.integrationProxy = async () => {
+    return await this.contract.integrationProxy();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param _resolver {String<EthAddress>}
    * @returns boolean
    **/
@@ -121,6 +129,14 @@ function FuturesMarketManager(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.messageSender = async () => {
+    return await this.contract.messageSender();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
@@ -153,6 +169,14 @@ function FuturesMarketManager(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.proxy = async () => {
+    return await this.contract.proxy();
   };
 
   /**
@@ -192,6 +216,39 @@ function FuturesMarketManager(contractSettings) {
    **/
   this.resolverAddressesRequired = async uint256_1 => {
     return await this.contract.resolverAddressesRequired(uint256_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _integrationProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sender {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMessageSender = async (sender, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMessageSender(sender, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _proxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setProxy = async (_proxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setProxy(_proxy, txParams);
   };
 
   /**

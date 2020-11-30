@@ -143,7 +143,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct FuturesMarket.FundingParameters",
+						"internalType": "struct FuturesMarketData.FundingParameters",
 						"name": "fundingParameters",
 						"type": "tuple"
 					},
@@ -302,7 +302,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct FuturesMarket.FundingParameters",
+						"internalType": "struct FuturesMarketData.FundingParameters",
 						"name": "fundingParameters",
 						"type": "tuple"
 					},

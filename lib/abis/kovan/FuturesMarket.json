@@ -2,6 +2,11 @@
 	{
 		"inputs": [
 			{
+				"internalType": "address payable",
+				"name": "_proxy",
+				"type": "address"
+			},
+			{
 				"internalType": "address",
 				"name": "_owner",
 				"type": "address"
@@ -51,88 +56,6 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "fee",
-				"type": "uint256"
-			}
-		],
-		"name": "ExchangeFeeUpdated",
-		"type": "event",
-		"signature": "0xca0fe312a812d26dafe5eeab8fb96d69fbf83e7e5c71b4bb1e6d3f12fa0864d5"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "maxFundingRate",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "maxFundingRateSkew",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "maxFundingRateDelta",
-				"type": "uint256"
-			}
-		],
-		"name": "FundingParametersUpdated",
-		"type": "event",
-		"signature": "0xe57a525c7bde85f829580dcdeb6c9534bda4765ac5a6c2e4a54343cbcf8a3b74"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "leverage",
-				"type": "uint256"
-			}
-		],
-		"name": "MaxLeverageUpdated",
-		"type": "event",
-		"signature": "0xb0f01601e93ad2a8fc4106e97567bc037aa114741705be9d80570fd2afa7bf1b"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "cap",
-				"type": "uint256"
-			}
-		],
-		"name": "MaxMarketDebtUpdated",
-		"type": "event",
-		"signature": "0xd919bdc3e79deaa8a0737499fbce11cd4d7f210feeddef95115c888db23660e8"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "minMargin",
-				"type": "uint256"
-			}
-		],
-		"name": "MinInitialMarginUpdated",
-		"type": "event",
-		"signature": "0xf5958b2492f4eeb807d26adb1e05d927402a2b27ec6b67e98a76def8bf9fbb99"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
 				"indexed": true,
 				"internalType": "address",
 				"name": "account",
@@ -167,12 +90,6 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "fee",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
 				"name": "entryPrice",
 				"type": "uint256"
 			},
@@ -185,7 +102,7 @@
 		],
 		"name": "OrderConfirmed",
 		"type": "event",
-		"signature": "0x60a8f5b575cea3f3176dbc7f270eb58bef926a5386f799e3415a274c538f0f54"
+		"signature": "0x86f56fbce1ddb11b2aed34257a853176bd0440715ca7255ea7dc4aa818c11124"
 	},
 	{
 		"anonymous": false,
@@ -264,6 +181,26 @@
 		"inputs": [
 			{
 				"indexed": true,
+				"internalType": "bytes32",
+				"name": "parameter",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "ParameterUpdated",
+		"type": "event",
+		"signature": "0xfdae04feea64164f7a1003019a92a4460a1d01652e226a7177d695c5017aa912"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
 				"internalType": "address",
 				"name": "account",
 				"type": "address"
@@ -283,13 +220,27 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "liquidationPrice",
+				"name": "price",
 				"type": "uint256"
 			}
 		],
 		"name": "PositionLiquidated",
 		"type": "event",
 		"signature": "0x2424410cd398c5382b21cc84a97b20d023d566344d9a581bbe3dc9b25603faeb"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "proxyAddress",
+				"type": "address"
+			}
+		],
+		"name": "ProxyUpdated",
+		"type": "event",
+		"signature": "0xfc80377ca9c49cc11ae6982f390a42db976d5530af7c43889264b13fbbd7c57e"
 	},
 	{
 		"constant": true,
@@ -507,22 +458,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "exchangeFee",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2ecd3be4"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "fundingLastRecomputed",
 		"outputs": [
 			{
@@ -535,32 +470,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x27b9a236"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "fundingParameters",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "maxFundingRate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxFundingRateSkew",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxFundingRateDelta",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x84924bcd"
 	},
 	{
 		"constant": true,
@@ -599,6 +508,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xab49848c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "integrationProxy",
+		"outputs": [
+			{
+				"internalType": "contract Proxy",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9cbdaeb6"
 	},
 	{
 		"constant": true,
@@ -747,50 +672,18 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "maxLeverage",
+		"name": "messageSender",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "address",
 				"name": "",
-				"type": "uint256"
+				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xae3302c2"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "maxMarketDebt",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x5c57f6d8"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "minInitialMargin",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8f20f2ea"
+		"signature": "0xd67bdd25"
 	},
 	{
 		"constant": true,
@@ -976,6 +869,52 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "parameters",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "exchangeFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxLeverage",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxMarketDebt",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "minInitialMargin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxFundingRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxFundingRateSkew",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxFundingRateDelta",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x89035730"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "pendingOrderValue",
 		"outputs": [
 			{
@@ -1092,6 +1031,22 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "proxy",
+		"outputs": [
+			{
+				"internalType": "contract Proxy",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xec556889"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "address",
@@ -1160,7 +1115,7 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "fee",
+				"name": "exchangeFee",
 				"type": "uint256"
 			}
 		],
@@ -1175,34 +1130,72 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "maxFundingRate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxFundingRateSkew",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxFundingRateDelta",
-				"type": "uint256"
+				"internalType": "address payable",
+				"name": "_integrationProxy",
+				"type": "address"
 			}
 		],
-		"name": "setFundingParameters",
+		"name": "setIntegrationProxy",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x09bf55cb"
+		"signature": "0x131b0ae7"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "leverage",
+				"name": "maxFundingRate",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxFundingRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3ff9fd35"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "maxFundingRateDelta",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxFundingRateDelta",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x71fb5fc9"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "maxFundingRateSkew",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxFundingRateSkew",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x8fc16d1a"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "maxLeverage",
 				"type": "uint256"
 			}
 		],
@@ -1218,7 +1211,7 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "cap",
+				"name": "maxMarketDebt",
 				"type": "uint256"
 			}
 		],
@@ -1233,8 +1226,24 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "setMessageSender",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xbc67f832"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "uint256",
-				"name": "minMargin",
+				"name": "minInitialMargin",
 				"type": "uint256"
 			}
 		],
@@ -1244,6 +1253,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x20edcdb8"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_proxy",
+				"type": "address"
+			}
+		],
+		"name": "setProxy",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x97107d6d"
 	},
 	{
 		"constant": false,

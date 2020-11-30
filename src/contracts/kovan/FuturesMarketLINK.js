@@ -134,24 +134,8 @@ function FuturesMarketLINK(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.exchangeFee = async () => {
-    return await this.contract.exchangeFee();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
   this.fundingLastRecomputed = async () => {
     return await this.contract.fundingLastRecomputed();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns Object
-   **/
-  this.fundingParameters = async () => {
-    return await this.contract.fundingParameters();
   };
 
   /**
@@ -169,6 +153,14 @@ function FuturesMarketLINK(contractSettings) {
    **/
   this.getResolverAddressesRequired = async () => {
     return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.integrationProxy = async () => {
+    return await this.contract.integrationProxy();
   };
 
   /**
@@ -235,26 +227,10 @@ function FuturesMarketLINK(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * @returns String<EthAddress>
    **/
-  this.maxLeverage = async () => {
-    return await this.contract.maxLeverage();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.maxMarketDebt = async () => {
-    return await this.contract.maxMarketDebt();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.minInitialMargin = async () => {
-    return await this.contract.minInitialMargin();
+  this.messageSender = async () => {
+    return await this.contract.messageSender();
   };
 
   /**
@@ -325,6 +301,14 @@ function FuturesMarketLINK(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns Object
+   **/
+  this.parameters = async () => {
+    return await this.contract.parameters();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.pendingOrderValue = async () => {
@@ -367,6 +351,14 @@ function FuturesMarketLINK(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.proxy = async () => {
+    return await this.contract.proxy();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns Object
    **/
@@ -393,69 +385,112 @@ function FuturesMarketLINK(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param fee {BigNumber}
+   * @param exchangeFee {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setExchangeFee = async (fee, txParams) => {
+  this.setExchangeFee = async (exchangeFee, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setExchangeFee(fee, txParams);
+    return await this.contract.setExchangeFee(exchangeFee, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _integrationProxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
    * @param maxFundingRate {BigNumber}
-   * @param maxFundingRateSkew {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMaxFundingRate = async (maxFundingRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMaxFundingRate(maxFundingRate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param maxFundingRateDelta {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setFundingParameters = async (
-    maxFundingRate,
-    maxFundingRateSkew,
-    maxFundingRateDelta,
-    txParams
-  ) => {
+  this.setMaxFundingRateDelta = async (maxFundingRateDelta, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setFundingParameters(
-      maxFundingRate,
-      maxFundingRateSkew,
-      maxFundingRateDelta,
-      txParams
-    );
+    return await this.contract.setMaxFundingRateDelta(maxFundingRateDelta, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param leverage {BigNumber}
+   * @param maxFundingRateSkew {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setMaxLeverage = async (leverage, txParams) => {
+  this.setMaxFundingRateSkew = async (maxFundingRateSkew, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setMaxLeverage(leverage, txParams);
+    return await this.contract.setMaxFundingRateSkew(maxFundingRateSkew, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param cap {BigNumber}
+   * @param maxLeverage {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setMaxMarketDebt = async (cap, txParams) => {
+  this.setMaxLeverage = async (maxLeverage, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setMaxMarketDebt(cap, txParams);
+    return await this.contract.setMaxLeverage(maxLeverage, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param minMargin {BigNumber}
+   * @param maxMarketDebt {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setMinInitialMargin = async (minMargin, txParams) => {
+  this.setMaxMarketDebt = async (maxMarketDebt, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setMinInitialMargin(minMargin, txParams);
+    return await this.contract.setMaxMarketDebt(maxMarketDebt, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sender {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMessageSender = async (sender, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMessageSender(sender, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param minInitialMargin {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMinInitialMargin = async (minInitialMargin, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMinInitialMargin(minInitialMargin, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _proxy {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setProxy = async (_proxy, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setProxy(_proxy, txParams);
   };
 
   /**

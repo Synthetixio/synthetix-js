@@ -9,7 +9,7 @@ function FuturesMarketETH(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['FuturesMarketETH'],
+    this.contractSettings.addressList['ProxyFuturesMarketETH'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

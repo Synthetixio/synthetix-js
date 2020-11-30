@@ -9,7 +9,7 @@ function FuturesMarketManager(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['FuturesMarketManager'],
+    this.contractSettings.addressList['ProxyFuturesMarketManager'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

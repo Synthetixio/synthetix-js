@@ -56745,7 +56745,7 @@ function FuturesMarketManager_FuturesMarketManager(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['FuturesMarketManager'], FuturesMarketManager, this.contractSettings.signer || this.contractSettings.provider);
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyFuturesMarketManager'], FuturesMarketManager, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -57788,7 +57788,7 @@ function FuturesMarketBTC(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['FuturesMarketBTC'], FuturesMarket, this.contractSettings.signer || this.contractSettings.provider);
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyFuturesMarketBTC'], FuturesMarket, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -59365,7 +59365,7 @@ function FuturesMarketETH(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['FuturesMarketETH'], FuturesMarket, this.contractSettings.signer || this.contractSettings.provider);
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyFuturesMarketETH'], FuturesMarket, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
@@ -60942,7 +60942,7 @@ function FuturesMarketLINK(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['FuturesMarketLINK'], FuturesMarket, this.contractSettings.signer || this.contractSettings.provider);
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['ProxyFuturesMarketLINK'], FuturesMarket, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber

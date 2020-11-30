@@ -9,7 +9,7 @@ function FuturesMarketBTC(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['FuturesMarketBTC'],
+    this.contractSettings.addressList['ProxyFuturesMarketBTC'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );

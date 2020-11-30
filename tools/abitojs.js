@@ -57,16 +57,21 @@ const contracts = {
   Liquidations: true,
   SecondaryDeposit: true,
   SystemSettings: true,
-  FuturesMarketManager: true,
+  FuturesMarketManager: {
+    target: 'ProxyFuturesMarketManager',
+  },
   FuturesMarketData: true,
   FuturesMarketBTC: {
     source: 'FuturesMarket',
+    target: 'ProxyFuturesMarketBTC',
   },
   FuturesMarketETH: {
     source: 'FuturesMarket',
+    target: 'ProxyFuturesMarketETH',
   },
   FuturesMarketLINK: {
     source: 'FuturesMarket',
+    target: 'ProxyFuturesMarketLINK',
   },
   // the synths will be added on for each network
 };

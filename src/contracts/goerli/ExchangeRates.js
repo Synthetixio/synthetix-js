@@ -23,6 +23,14 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.SELFDESTRUCT_DELAY = async () => {
+    return await this.contract.SELFDESTRUCT_DELAY();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -229,6 +237,24 @@ function ExchangeRates(contractSettings) {
    **/
   this.getResolverAddressesRequired = async () => {
     return await this.contract.getResolverAddressesRequired();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.initiateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.initiateSelfDestruct(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.initiationTime = async () => {
+    return await this.contract.initiationTime();
   };
 
   /**
@@ -460,12 +486,29 @@ function ExchangeRates(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {bytes32}
-   * @returns BigNumber
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
    **/
-  this.roundFrozen = async bytes32_1 => {
-    return await this.contract.roundFrozen(bytes32_1);
+  this.selfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.selfDestruct(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.selfDestructBeneficiary = async () => {
+    return await this.contract.selfDestructBeneficiary();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.selfDestructInitiated = async () => {
+    return await this.contract.selfDestructInitiated();
   };
 
   /**
@@ -520,6 +563,27 @@ function ExchangeRates(contractSettings) {
   this.setResolverAndSyncCache = async (_resolver, txParams) => {
     txParams = txParams || {};
     return await this.contract.setResolverAndSyncCache(_resolver, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _beneficiary {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.terminateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.terminateSelfDestruct(txParams);
   };
 
   /**

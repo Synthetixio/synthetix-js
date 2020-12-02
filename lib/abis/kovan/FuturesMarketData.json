@@ -557,6 +557,11 @@
 								"type": "bool"
 							},
 							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
 								"internalType": "int256",
 								"name": "margin",
 								"type": "int256"
@@ -668,6 +673,11 @@
 								"internalType": "bool",
 								"name": "pending",
 								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
 							},
 							{
 								"internalType": "int256",

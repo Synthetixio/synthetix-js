@@ -23235,14 +23235,14 @@ var KOVAN_ADDRESSES = {
   ProxyFuturesMarketManager: '0x4634b65420a640c5A88d0ac74685304c052F394f',
   FuturesMarketManager: '0x0106A6A0EeA9415C98AD72302855877ff015c8B9',
   ProxyFuturesMarketBTC: '0xa4f81967b5E84f424b874482CfAD5F4048d27F7B',
-  FuturesMarketBTC: '0x853C074F9b11E3911d0aB1922f362EfC5610AcFf',
+  FuturesMarketBTC: '0x55A895F492f46c00422b41df580274919eF35BD1',
   ProxyFuturesMarketETH: '0x5f8CF32356F4b13A45326BE52fa7589Da2480dD5',
-  FuturesMarketETH: '0xaa6F3Ea5E7Cc2702439ed63deDe1d7DD45Ec55e3',
+  FuturesMarketETH: '0x70d1853133caaCFbe8C1bfa53de1772bC63e1772',
   ProxyFuturesMarketLINK: '0x068819fD3ba3f4022b72C3dc61DCc251A9B68A46',
-  FuturesMarketLINK: '0x900BBf4Cf985ED31E668bC5eE52f0E633394367A',
+  FuturesMarketLINK: '0xAD1733b8bb95A77deC4F9d02e9BD8cc99f9e581c',
   SynthUtil: '0xbF2905D085E5f2396A9ec33cac8d0A8Bc7fe6a64',
   DappMaintenance: '0x11a3F3Ca4315e917F737EE4f6d85093CDb8a38C0',
-  FuturesMarketData: '0xcd3A06675f584B6Fb1B952FAb3d4bc4C0AdB10Ab'
+  FuturesMarketData: '0xA046e4f72222878DaC23114a21254De81Df30dA8'
 };
 /* harmony default export */ var addresses = ({
   42: KOVAN_ADDRESSES
@@ -36388,6 +36388,10 @@ var KOVAN_ADDRESSES = {
         name: 'pending',
         type: 'bool'
       }, {
+        internalType: 'uint256',
+        name: 'id',
+        type: 'uint256'
+      }, {
         internalType: 'int256',
         name: 'margin',
         type: 'int256'
@@ -36475,6 +36479,10 @@ var KOVAN_ADDRESSES = {
         internalType: 'bool',
         name: 'pending',
         type: 'bool'
+      }, {
+        internalType: 'uint256',
+        name: 'id',
+        type: 'uint256'
       }, {
         internalType: 'int256',
         name: 'margin',
@@ -36606,16 +36614,26 @@ var KOVAN_ADDRESSES = {
   anonymous: false,
   inputs: [{
     indexed: true,
+    internalType: 'uint256',
+    name: 'id',
+    type: 'uint256'
+  }, {
+    indexed: true,
     internalType: 'address',
     name: 'account',
     type: 'address'
   }],
   name: 'OrderCancelled',
   type: 'event',
-  signature: '0x6b8212b205b721ddcff41db420898b1132d4f1400798c1770b4e3c52498c05ef'
+  signature: '0xc0362da6f2ff36b382b34aec0814f6b3cdf89f5ef282a1d1f114d0c0b036d596'
 }, {
   anonymous: false,
   inputs: [{
+    indexed: true,
+    internalType: 'uint256',
+    name: 'id',
+    type: 'uint256'
+  }, {
     indexed: true,
     internalType: 'address',
     name: 'account',
@@ -36643,10 +36661,15 @@ var KOVAN_ADDRESSES = {
   }],
   name: 'OrderConfirmed',
   type: 'event',
-  signature: '0x86f56fbce1ddb11b2aed34257a853176bd0440715ca7255ea7dc4aa818c11124'
+  signature: '0x55f6a89928f948149fc34782f45f1b499f9984416041887639250dafeb7ca3d3'
 }, {
   anonymous: false,
   inputs: [{
+    indexed: true,
+    internalType: 'uint256',
+    name: 'id',
+    type: 'uint256'
+  }, {
     indexed: true,
     internalType: 'address',
     name: 'account',
@@ -36674,7 +36697,7 @@ var KOVAN_ADDRESSES = {
   }],
   name: 'OrderSubmitted',
   type: 'event',
-  signature: '0xbc0f4a6c775328ead0a534bfa9109b877aa2f216e3d89a293b0899f110a535c6'
+  signature: '0x53f0cf6372d0489816502ea53c5bb63a67d7643b6c458cd6e5535f6bc83a9a84'
 }, {
   anonymous: false,
   inputs: [{
@@ -37221,6 +37244,10 @@ var KOVAN_ADDRESSES = {
     internalType: 'bool',
     name: 'pending',
     type: 'bool'
+  }, {
+    internalType: 'uint256',
+    name: 'id',
+    type: 'uint256'
   }, {
     internalType: 'int256',
     name: 'margin',

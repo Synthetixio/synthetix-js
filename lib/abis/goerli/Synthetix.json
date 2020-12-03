@@ -220,6 +220,55 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newBeneficiary",
+				"type": "address"
+			}
+		],
+		"name": "SelfDestructBeneficiaryUpdated",
+		"type": "event",
+		"signature": "0xd5da63a0b864b315bc04128dedbc93888c8529ee6cf47ce664dc204339228c53"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "selfDestructDelay",
+				"type": "uint256"
+			}
+		],
+		"name": "SelfDestructInitiated",
+		"type": "event",
+		"signature": "0xcbd94ca75b8dc45c9d80c77e851670e78843c0d75180cb81db3e2158228fa9a6"
+	},
+	{
+		"anonymous": false,
+		"inputs": [],
+		"name": "SelfDestructTerminated",
+		"type": "event",
+		"signature": "0x6adcc7125002935e0aa31697538ebbd65cfddf20431eb6ecdcfc3e238bfd082c"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "beneficiary",
+				"type": "address"
+			}
+		],
+		"name": "SelfDestructed",
+		"type": "event",
+		"signature": "0x8a09e1677ced846cb537dc2b172043bd05a1a81ad7e0033a7ef8ba762df990b7"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": true,
 				"internalType": "address",
 				"name": "account",
@@ -331,6 +380,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe3235c91"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "SELFDESTRUCT_DELAY",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xa461fc82"
 	},
 	{
 		"constant": true,
@@ -969,48 +1034,6 @@
 		"signature": "0x30ead760"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "sourceCurrencyKey",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "sourceAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "destinationCurrencyKey",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "trackingCode",
-				"type": "bytes32"
-			}
-		],
-		"name": "exchangeWithVirtual",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "amountReceived",
-				"type": "uint256"
-			},
-			{
-				"internalType": "contract IVirtualSynth",
-				"name": "vSynth",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x0e30963c"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "getResolverAddressesRequired",
@@ -1025,6 +1048,32 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xab49848c"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "initiateSelfDestruct",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xbd32aa44"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "initiationTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x17c70de4"
 	},
 	{
 		"constant": true,
@@ -1252,22 +1301,6 @@
 		"signature": "0x666ed4f1"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "mintSecondaryRewards",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xd8a1f76f"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "name",
@@ -1435,6 +1468,48 @@
 	},
 	{
 		"constant": false,
+		"inputs": [],
+		"name": "selfDestruct",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x9cb8a26a"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "selfDestructBeneficiary",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc58aaae6"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "selfDestructInitiated",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb8225dec"
+	},
+	{
+		"constant": false,
 		"inputs": [
 			{
 				"internalType": "address payable",
@@ -1496,6 +1571,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x3be99e6f"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_beneficiary",
+				"type": "address"
+			}
+		],
+		"name": "setSelfDestructBeneficiary",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x20714f88"
 	},
 	{
 		"constant": false,
@@ -1604,6 +1695,16 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x16b2213f"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "terminateSelfDestruct",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3278c960"
 	},
 	{
 		"constant": true,

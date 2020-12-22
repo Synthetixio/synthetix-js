@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/mainnet/Synth';
+import abi from '../../../lib/abis/mainnet/MultiCollateralSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -36,6 +36,14 @@ function sBTC(contractSettings) {
    **/
   this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
     return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.SELFDESTRUCT_DELAY = async () => {
+    return await this.contract.SELFDESTRUCT_DELAY();
   };
 
   /**
@@ -116,6 +124,24 @@ function sBTC(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.initiateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.initiateSelfDestruct(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.initiationTime = async () => {
+    return await this.contract.initiationTime();
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -150,6 +176,14 @@ function sBTC(contractSettings) {
    **/
   this.messageSender = async () => {
     return await this.contract.messageSender();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.multiCollateralKey = async () => {
+    return await this.contract.multiCollateralKey();
   };
 
   /**
@@ -214,6 +248,32 @@ function sBTC(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.selfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.selfDestruct(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.selfDestructBeneficiary = async () => {
+    return await this.contract.selfDestructBeneficiary();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.selfDestructInitiated = async () => {
+    return await this.contract.selfDestructInitiated();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _integrationProxy {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -258,6 +318,17 @@ function sBTC(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _beneficiary {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSelfDestructBeneficiary = async (_beneficiary, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSelfDestructBeneficiary(_beneficiary, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _tokenState {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -287,6 +358,16 @@ function sBTC(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.terminateSelfDestruct = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.terminateSelfDestruct(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -303,7 +384,6 @@ function sBTC(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -328,7 +408,6 @@ function sBTC(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}

@@ -17,6 +17,26 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			}
+		],
+		"name": "AddressImported",
+		"type": "event",
+		"signature": "0xefe884cc7f82a6cf3cf68f64221519dcf96b5cae9048e1bb008ee32cd05aaa91"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "address",
 				"name": "oldOwner",
 				"type": "address"
@@ -55,6 +75,33 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x79ba5097"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "names",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "address[]",
+				"name": "destinations",
+				"type": "address[]"
+			}
+		],
+		"name": "areAddressesImported",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9f42102f"
 	},
 	{
 		"constant": true,
@@ -168,6 +215,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x8da5cb5b"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "contract MixinResolver[]",
+				"name": "destinations",
+				"type": "address[]"
+			}
+		],
+		"name": "rebuildCaches",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x766f7815"
 	},
 	{
 		"constant": true,

@@ -66,6 +66,20 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "canOpenLoans",
+				"type": "bool"
+			}
+		],
+		"name": "CanOpenLoansUpdated",
+		"type": "event",
+		"signature": "0x261991749e1b2436706a31bde8bf184bb37fe21e303709b78d3b881afacadaa2"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": true,
 				"internalType": "address",
 				"name": "account",
@@ -484,7 +498,12 @@
 		"inputs": [
 			{
 				"internalType": "bytes32[]",
-				"name": "_synthNames",
+				"name": "_synthNamesInResolver",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "_synthKeys",
 				"type": "bytes32[]"
 			}
 		],
@@ -493,7 +512,34 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xf57ccd23"
+		"signature": "0x23d60e2e"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "_synthNamesInResolver",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "_synthKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "areSynthsAndCurrenciesSet",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x72e18b6a"
 	},
 	{
 		"constant": true,
@@ -1105,16 +1151,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x90abb4d9"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "setCurrencies",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x401a2a87"
 	},
 	{
 		"constant": false,

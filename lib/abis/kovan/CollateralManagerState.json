@@ -305,6 +305,28 @@
 		"signature": "0xaf07aa9d"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currency",
+				"type": "bytes32"
+			}
+		],
+		"name": "getShortRatesLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xa0356f6e"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{

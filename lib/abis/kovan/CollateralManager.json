@@ -292,8 +292,13 @@
 		"inputs": [
 			{
 				"internalType": "bytes32[2][]",
-				"name": "synthWithInverse",
+				"name": "requiredSynthAndInverseNamesInResolver",
 				"type": "bytes32[2][]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "synthKeys",
+				"type": "bytes32[]"
 			}
 		],
 		"name": "addShortableSynths",
@@ -301,24 +306,19 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xd14665dc"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "addShortableSynthsToState",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x75b6483b"
+		"signature": "0xc88b412e"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
 				"internalType": "bytes32[]",
-				"name": "synths",
+				"name": "synthNamesInResolver",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "synthKeys",
 				"type": "bytes32[]"
 			}
 		],
@@ -327,17 +327,61 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xf57ccd23"
+		"signature": "0x23d60e2e"
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "addSynthsToFlexibleStorage",
-		"outputs": [],
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "requiredSynthNamesInResolver",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "synthKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "areShortableSynthsSet",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x5e2e88cf"
+		"signature": "0x93a72fbe"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "requiredSynthNamesInResolver",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "synthKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "areSynthsAndCurrenciesSet",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x72e18b6a"
 	},
 	{
 		"constant": true,
@@ -469,7 +513,7 @@
 	{
 		"constant": false,
 		"inputs": [],
-		"name": "getLoanId",
+		"name": "getNewLoanId",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -480,7 +524,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x54840526"
+		"signature": "0xb3b46732"
 	},
 	{
 		"constant": true,
@@ -592,6 +636,28 @@
 		"constant": true,
 		"inputs": [
 			{
+				"internalType": "address[]",
+				"name": "collaterals",
+				"type": "address[]"
+			}
+		],
+		"name": "hasAllCollaterals",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x744d646e"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "collateral",
 				"type": "address"
@@ -667,6 +733,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x2af64bd3"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "isSynthManaged",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x8471db13"
 	},
 	{
 		"constant": true,
@@ -835,6 +923,11 @@
 				"internalType": "bytes32[]",
 				"name": "synths",
 				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "synthKeys",
+				"type": "bytes32[]"
 			}
 		],
 		"name": "removeSynths",
@@ -842,7 +935,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x7168d2c2"
+		"signature": "0x710388d1"
 	},
 	{
 		"constant": true,
@@ -1015,6 +1108,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xf0e740c3"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "synthsByKey",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x38245377"
 	},
 	{
 		"constant": true,

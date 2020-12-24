@@ -53,20 +53,20 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "recoverAddress",
-				"type": "address"
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
 			}
 		],
-		"name": "EtherRecovered",
+		"name": "CacheUpdated",
 		"type": "event",
-		"signature": "0x8e274e42262a7f013b700b35c2b4629ccce1702f8fe83f8dfb7eacbb26a4382c"
+		"signature": "0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68"
 	},
 	{
 		"anonymous": false,
@@ -261,22 +261,6 @@
 		"name": "UnassignedRewardTokensRecovered",
 		"type": "event",
 		"signature": "0x14e7312259d4851b8b6742ace55ac44b31d7929a6b2998b35ba22445859e5ee3"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ADDRESSES_FROM_RESOLVER",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe3235c91"
 	},
 	{
 		"constant": false,
@@ -551,22 +535,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getResolverAddressesRequired",
-		"outputs": [
-			{
-				"internalType": "bytes32[24]",
-				"name": "addressesRequired",
-				"type": "bytes32[24]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xab49848c"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "getRewardsToken",
 		"outputs": [
 			{
@@ -625,13 +593,7 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "contract AddressResolver",
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
+		"inputs": [],
 		"name": "isResolverCached",
 		"outputs": [
 			{
@@ -643,7 +605,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x631e1444"
+		"signature": "0x2af64bd3"
 	},
 	{
 		"constant": true,
@@ -727,6 +689,16 @@
 	},
 	{
 		"constant": false,
+		"inputs": [],
+		"name": "rebuildCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x74185360"
+	},
+	{
+		"constant": false,
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -766,22 +738,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xae934a7a"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "recoverAddress",
-				"type": "address"
-			}
-		],
-		"name": "recoverEther",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x52d5999f"
 	},
 	{
 		"constant": false,
@@ -838,25 +794,19 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
+		"inputs": [],
 		"name": "resolverAddressesRequired",
 		"outputs": [
 			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
+				"internalType": "bytes32[]",
+				"name": "addresses",
+				"type": "bytes32[]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xc6c9d828"
+		"signature": "0x899ffef4"
 	},
 	{
 		"constant": false,
@@ -889,21 +839,5 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x3dbf12fa"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "contract AddressResolver",
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"name": "setResolverAndSyncCache",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3be99e6f"
 	}
 ]

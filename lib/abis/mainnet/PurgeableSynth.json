@@ -97,6 +97,26 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			}
+		],
+		"name": "CacheUpdated",
+		"type": "event",
+		"signature": "0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": true,
 				"internalType": "address",
 				"name": "account",
@@ -254,22 +274,6 @@
 		"signature": "0xeb1edd61"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ADDRESSES_FROM_RESOLVER",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe3235c91"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",
@@ -411,22 +415,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getResolverAddressesRequired",
-		"outputs": [
-			{
-				"internalType": "bytes32[24]",
-				"name": "addressesRequired",
-				"type": "bytes32[24]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xab49848c"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "integrationProxy",
 		"outputs": [
 			{
@@ -442,13 +430,7 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "contract AddressResolver",
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
+		"inputs": [],
 		"name": "isResolverCached",
 		"outputs": [
 			{
@@ -460,7 +442,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x631e1444"
+		"signature": "0x2af64bd3"
 	},
 	{
 		"constant": false,
@@ -612,6 +594,16 @@
 		"signature": "0xab593079"
 	},
 	{
+		"constant": false,
+		"inputs": [],
+		"name": "rebuildCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x74185360"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "resolver",
@@ -629,25 +621,19 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
+		"inputs": [],
 		"name": "resolverAddressesRequired",
 		"outputs": [
 			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
+				"internalType": "bytes32[]",
+				"name": "addresses",
+				"type": "bytes32[]"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xc6c9d828"
+		"signature": "0x899ffef4"
 	},
 	{
 		"constant": false,
@@ -696,22 +682,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x97107d6d"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "contract AddressResolver",
-				"name": "_resolver",
-				"type": "address"
-			}
-		],
-		"name": "setResolverAndSyncCache",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3be99e6f"
 	},
 	{
 		"constant": false,

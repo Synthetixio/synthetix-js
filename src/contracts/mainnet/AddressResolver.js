@@ -26,6 +26,16 @@ function AddressResolver(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param names {bytes32[]}
+   * @param destinations {address[]}
+   * @returns boolean
+   **/
+  this.areAddressesImported = async (names, destinations) => {
+    return await this.contract.areAddressesImported(names, destinations);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param name {bytes32}
    * @returns String<EthAddress>
    **/
@@ -79,6 +89,17 @@ function AddressResolver(contractSettings) {
    **/
   this.owner = async () => {
     return await this.contract.owner();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param destinations {address[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.rebuildCaches = async (destinations, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.rebuildCaches(destinations, txParams);
   };
 
   /**

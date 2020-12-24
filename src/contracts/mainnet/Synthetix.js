@@ -24,14 +24,6 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
-    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
   this.TOKEN_NAME = async () => {
@@ -427,14 +419,6 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddressesRequired = async () => {
-    return await this.contract.getResolverAddressesRequired();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
   this.integrationProxy = async () => {
@@ -443,11 +427,10 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _resolver {String<EthAddress>}
    * @returns boolean
    **/
-  this.isResolverCached = async _resolver => {
-    return await this.contract.isResolverCached(_resolver);
+  this.isResolverCached = async () => {
+    return await this.contract.isResolverCached();
   };
 
   /**
@@ -612,6 +595,16 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.rebuildCache = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.rebuildCache(txParams);
+  };
+
+  /**
    * The remaining synths an issuer can issue against their total synthetix balance.<br>
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
@@ -631,11 +624,10 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
+   * @returns bytes32[]
    **/
-  this.resolverAddressesRequired = async uint256_1 => {
-    return await this.contract.resolverAddressesRequired(uint256_1);
+  this.resolverAddressesRequired = async () => {
+    return await this.contract.resolverAddressesRequired();
   };
 
   /**
@@ -677,17 +669,6 @@ function Synthetix(contractSettings) {
   this.setProxy = async (_proxy, txParams) => {
     txParams = txParams || {};
     return await this.contract.setProxy(_proxy, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolverAndSyncCache = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**

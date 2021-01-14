@@ -1199,6 +1199,16 @@
 	{
 		"constant": false,
 		"inputs": [],
+		"name": "migrateEscrowBalanceToRewardEscrowV2",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x6b76222f"
+	},
+	{
+		"constant": false,
+		"inputs": [],
 		"name": "mint",
 		"outputs": [
 			{

@@ -91,14 +91,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 137);
+/******/ 	return __webpack_require__(__webpack_require__.s = 138);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(132);
+module.exports = __webpack_require__(133);
 
 
 /***/ }),
@@ -1155,7 +1155,7 @@ assert.equal = function assertEqual(l, r, msg) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(71).Buffer;
+    Buffer = __webpack_require__(72).Buffer;
   } catch (e) {
   }
 
@@ -4537,7 +4537,7 @@ assert.equal = function assertEqual(l, r, msg) {
   };
 })( false || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(70)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(71)(module)))
 
 /***/ }),
 /* 10 */
@@ -5449,7 +5449,7 @@ exports.shr64_lo = shr64_lo;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var sha3 = __webpack_require__(72);
+var sha3 = __webpack_require__(73);
 var bytes_1 = __webpack_require__(4);
 function keccak256(data) {
     return '0x' + sha3.keccak_256(bytes_1.arrayify(data));
@@ -5660,11 +5660,11 @@ module.exports = require("crypto");
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
-  var util = __webpack_require__(78);
+  var util = __webpack_require__(79);
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
 } catch (e) {
-  module.exports = __webpack_require__(79);
+  module.exports = __webpack_require__(80);
 }
 
 
@@ -6033,7 +6033,7 @@ var lang_en_1 = __webpack_require__(45);
 // Automatically register English?
 //import { register } from '../wordlists/wordlist';
 //register(langEn);
-var basex_1 = __webpack_require__(74);
+var basex_1 = __webpack_require__(75);
 var bytes_1 = __webpack_require__(4);
 var bignumber_1 = __webpack_require__(10);
 var utf8_1 = __webpack_require__(6);
@@ -6355,7 +6355,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var elliptic_1 = __webpack_require__(75);
+var elliptic_1 = __webpack_require__(76);
 var address_1 = __webpack_require__(11);
 var bytes_1 = __webpack_require__(4);
 var hash_1 = __webpack_require__(18);
@@ -8442,7 +8442,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var xmlhttprequest_1 = __webpack_require__(109);
+var xmlhttprequest_1 = __webpack_require__(110);
 var base64_1 = __webpack_require__(58);
 var properties_1 = __webpack_require__(5);
 var utf8_1 = __webpack_require__(6);
@@ -10206,7 +10206,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(88);
+  pre = __webpack_require__(89);
 } catch (e) {
   pre = undefined;
 }
@@ -10252,9 +10252,9 @@ var hash = exports;
 
 hash.utils = __webpack_require__(12);
 hash.common = __webpack_require__(22);
-hash.sha = __webpack_require__(82);
-hash.ripemd = __webpack_require__(86);
-hash.hmac = __webpack_require__(87);
+hash.sha = __webpack_require__(83);
+hash.ripemd = __webpack_require__(87);
+hash.hmac = __webpack_require__(88);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -10399,11 +10399,11 @@ module.exports = _getPrototypeOf;
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(134);
+var arrayWithHoles = __webpack_require__(135);
 
-var iterableToArrayLimit = __webpack_require__(135);
+var iterableToArrayLimit = __webpack_require__(136);
 
-var nonIterableRest = __webpack_require__(136);
+var nonIterableRest = __webpack_require__(137);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
@@ -10425,28 +10425,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var contract_1 = __webpack_require__(69);
+var contract_1 = __webpack_require__(70);
 exports.Contract = contract_1.Contract;
 exports.ContractFactory = contract_1.ContractFactory;
 exports.VoidSigner = contract_1.VoidSigner;
 var abstract_signer_1 = __webpack_require__(25);
 exports.Signer = abstract_signer_1.Signer;
-var wallet_1 = __webpack_require__(73);
+var wallet_1 = __webpack_require__(74);
 exports.Wallet = wallet_1.Wallet;
 var constants = __importStar(__webpack_require__(17));
 exports.constants = constants;
 var errors = __importStar(__webpack_require__(3));
 exports.errors = errors;
-var providers = __importStar(__webpack_require__(108));
+var providers = __importStar(__webpack_require__(109));
 exports.providers = providers;
-var utils = __importStar(__webpack_require__(121));
+var utils = __importStar(__webpack_require__(122));
 exports.utils = utils;
-var wordlists = __importStar(__webpack_require__(124));
+var wordlists = __importStar(__webpack_require__(125));
 exports.wordlists = wordlists;
 ////////////////////////
 // Compile-Time Constants
 // This is empty in node, and used by browserify to inject extra goodies
-var shims_1 = __webpack_require__(131);
+var shims_1 = __webpack_require__(132);
 exports.platform = shims_1.platform;
 // This is generated by "npm run dist"
 var _version_1 = __webpack_require__(43);
@@ -11129,9 +11129,9 @@ if (typeof self === 'object') {
 var curve = exports;
 
 curve.base = __webpack_require__(28);
-curve.short = __webpack_require__(77);
-curve.mont = __webpack_require__(80);
-curve.edwards = __webpack_require__(81);
+curve.short = __webpack_require__(78);
+curve.mont = __webpack_require__(81);
+curve.edwards = __webpack_require__(82);
 
 
 /***/ }),
@@ -12233,7 +12233,7 @@ exports.encode = encode;
 /* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var setPrototypeOf = __webpack_require__(66);
+var setPrototypeOf = __webpack_require__(67);
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -12256,9 +12256,9 @@ module.exports = _inherits;
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(67);
+var _typeof = __webpack_require__(68);
 
-var assertThisInitialized = __webpack_require__(68);
+var assertThisInitialized = __webpack_require__(69);
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -12286,10 +12286,16 @@ module.exports = JSON.parse("[{\"inputs\":[{\"internalType\":\"address payable\"
 /* 63 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_resolver\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\",\"signature\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"}],\"name\":\"CacheUpdated\",\"type\":\"event\",\"signature\":\"0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\",\"signature\":\"0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerNominated\",\"type\":\"event\",\"signature\":\"0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"synth\",\"type\":\"address\"}],\"name\":\"SynthAdded\",\"type\":\"event\",\"signature\":\"0x0a2b6ebf143b3e9fcd67e17748ad315174746100c27228468b2c98c302c62884\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"synth\",\"type\":\"address\"}],\"name\":\"SynthRemoved\",\"type\":\"event\",\"signature\":\"0x6166f5c475cc1cd535c6cdf14a6d5edb811e34117031fc2863392a136eb655d0\"},{\"constant\":true,\"inputs\":[],\"name\":\"CONTRACT_NAME\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x614d08f8\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x79ba5097\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ISynth\",\"name\":\"synth\",\"type\":\"address\"}],\"name\":\"addSynth\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x849cf588\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ISynth[]\",\"name\":\"synthsToAdd\",\"type\":\"address[]\"}],\"name\":\"addSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x47a9b6db\"},{\"constant\":true,\"inputs\":[],\"name\":\"anySynthOrSNXRateIsInvalid\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"anyRateInvalid\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x4e99bda9\"},{\"constant\":true,\"inputs\":[],\"name\":\"availableCurrencyKeys\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x72cb051f\"},{\"constant\":true,\"inputs\":[],\"name\":\"availableSynthCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdbf63340\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"availableSynths\",\"outputs\":[{\"internalType\":\"contract ISynth\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x835e119c\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xb06e8c65\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"burnForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnSynthsOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x9a5154b4\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"burnSynthsToTarget\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x497d704a\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"burnForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"burnSynthsToTargetOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x2b3f41aa\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"canBurnSynths\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xbff4fdfc\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"collateral\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xa5fdc5de\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"collateralisationRatio\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"cratio\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xa311c7c2\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"collateralisationRatioAndAnyRatesInvalid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"cratio\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"anyRateIsInvalid\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xae3bbbbb\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"}],\"name\":\"debtBalanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"debtBalance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xd37c4d8b\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"currencyKeys\",\"type\":\"bytes32[]\"}],\"name\":\"getSynths\",\"outputs\":[{\"internalType\":\"contract ISynth[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x3b6afe40\"},{\"constant\":true,\"inputs\":[],\"name\":\"isResolverCached\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x2af64bd3\"},{\"constant\":true,\"inputs\":[],\"name\":\"issuanceRatio\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xb410a034\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"issueMaxSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xc8977132\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"issueForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"issueMaxSynthsOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xfd864ccf\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"issueSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x042e0688\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"issueForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"issueSynthsOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x44ec6b62\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"lastIssueEvent\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdd3d2b2e\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"susdAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"liquidator\",\"type\":\"address\"}],\"name\":\"liquidateDelinquentAccount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalRedeemed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountToLiquidate\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xa63c4df4\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"maxIssuableSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x05b3c1c9\"},{\"constant\":true,\"inputs\":[],\"name\":\"minimumStakeTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x242df9e1\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"nominateNewOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x1627540c\"},{\"constant\":true,\"inputs\":[],\"name\":\"nominatedOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x53a47bb7\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x8da5cb5b\"},{\"constant\":false,\"inputs\":[],\"name\":\"rebuildCache\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x74185360\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"remainingIssuableSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maxIssuable\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"alreadyIssued\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSystemDebt\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x1137aedf\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"}],\"name\":\"removeSynth\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x0b887dae\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"currencyKeys\",\"type\":\"bytes32[]\"}],\"name\":\"removeSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x7168d2c2\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolver\",\"outputs\":[{\"internalType\":\"contract AddressResolver\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x04f3bcec\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolverAddressesRequired\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"addresses\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x899ffef4\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"synths\",\"outputs\":[{\"internalType\":\"contract ISynth\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x32608039\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"synthsByAddress\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x16b2213f\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"internalType\":\"bool\",\"name\":\"excludeEtherCollateral\",\"type\":\"bool\"}],\"name\":\"totalIssuedSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalIssued\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x7b1001b7\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"name\":\"transferableSynthetixAndAnyRateIsInvalid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"transferable\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"anyRateIsInvalid\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x6bed0415\"}]");
+module.exports = JSON.parse("[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_resolver\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\",\"signature\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"accountToMerge\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"destinationAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"escrowAmountMerged\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"entryIDs\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"AccountMerged\",\"type\":\"event\",\"signature\":\"0x48d567deaa7db90f8a443344e519ca8906521ffe118e1df43e89a3c257963f7c\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newDuration\",\"type\":\"uint256\"}],\"name\":\"AccountMergingDurationUpdated\",\"type\":\"event\",\"signature\":\"0x723c43349da7aeae47190396f2e2fbe6bedb46b9e9705bc5b908d65bc7a1e0e6\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"endTime\",\"type\":\"uint256\"}],\"name\":\"AccountMergingStarted\",\"type\":\"event\",\"signature\":\"0xceade2b9bc02350b17075c94bb699508b89ed2752f501ea42024b1bb5fd34445\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"}],\"name\":\"CacheUpdated\",\"type\":\"event\",\"signature\":\"0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newDuration\",\"type\":\"uint256\"}],\"name\":\"MaxAccountMergingDurationUpdated\",\"type\":\"event\",\"signature\":\"0xe829efae5d8a2f7163f46c23a8190bf14625c1e446561ca0f5cf279ab7c8015e\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newDuration\",\"type\":\"uint256\"}],\"name\":\"MaxEscrowDurationUpdated\",\"type\":\"event\",\"signature\":\"0x6b92bd20c4b2e6861047ba7209ddc78d538419aae187d0df46716b827b8997a4\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"}],\"name\":\"NominateAccountToMerge\",\"type\":\"event\",\"signature\":\"0xcf51776bb16e5780edcca2e64a9ba8a9c7d5d00a6699cbd7606e465361ba4852\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\",\"signature\":\"0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerNominated\",\"type\":\"event\",\"signature\":\"0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Vested\",\"type\":\"event\",\"signature\":\"0xfbeff59d2bfda0d79ea8a29f8c57c66d48c7a13eabbdb90908d9115ec41c9dc6\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"entryID\",\"type\":\"uint256\"}],\"name\":\"VestingEntryCreated\",\"type\":\"event\",\"signature\":\"0x2cc016694185d38abbe28d9e9baea2e9d95a321ae43475e5ea7b643756840bc0\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x79ba5097\"},{\"constant\":true,\"inputs\":[],\"name\":\"accountMergingDuration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x910a326d\"},{\"constant\":true,\"inputs\":[],\"name\":\"accountMergingIsOpen\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x05662986\"},{\"constant\":true,\"inputs\":[],\"name\":\"accountMergingStartTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x0fcdefb7\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"accountVestingEntryIDs\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xae582549\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"appendVestingEntry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x1bb47b44\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x70a08231\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"name\":\"burnForMigration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint64\",\"name\":\"endTime\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"escrowAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct VestingEntries.VestingEntry[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x80d46f58\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deposit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"createEscrowEntry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xa0416ed3\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pageSize\",\"type\":\"uint256\"}],\"name\":\"getAccountVestingEntryIDs\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xeac62489\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"entryID\",\"type\":\"uint256\"}],\"name\":\"getVestingEntry\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"endTime\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"escrowAmount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x6154c343\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"entryID\",\"type\":\"uint256\"}],\"name\":\"getVestingEntryClaimable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x30104c5f\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"entryIDs\",\"type\":\"uint256[]\"}],\"name\":\"getVestingQuantity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"total\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x6dc05bd3\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pageSize\",\"type\":\"uint256\"}],\"name\":\"getVestingSchedules\",\"outputs\":[{\"components\":[{\"internalType\":\"uint64\",\"name\":\"endTime\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"escrowAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"entryID\",\"type\":\"uint256\"}],\"internalType\":\"struct VestingEntries.VestingEntryWithID[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x773ab39f\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"escrowedAmount\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint64\",\"name\":\"endTime\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"escrowAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct VestingEntries.VestingEntry[]\",\"name\":\"vestingEntries\",\"type\":\"tuple[]\"}],\"name\":\"importVestingEntries\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xcd7b43dd\"},{\"constant\":true,\"inputs\":[],\"name\":\"isResolverCached\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x2af64bd3\"},{\"constant\":true,\"inputs\":[],\"name\":\"maxAccountMergingDuration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x37088ffc\"},{\"constant\":true,\"inputs\":[],\"name\":\"max_duration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x5eb8cf25\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"accountToMerge\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"entryIDs\",\"type\":\"uint256[]\"}],\"name\":\"mergeAccount\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xf0b882ba\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"name\":\"migrateAccountEscrowBalances\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xb95375bd\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"migrateVestingSchedule\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x7839b92f\"},{\"constant\":true,\"inputs\":[],\"name\":\"nextEntryId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xe6b2cf6c\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"nominateAccountToMerge\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x7cc1d756\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"nominateNewOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x1627540c\"},{\"constant\":true,\"inputs\":[],\"name\":\"nominatedOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x53a47bb7\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"nominatedReceiver\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x73307e40\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"numVestingEntries\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x204b676a\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x8da5cb5b\"},{\"constant\":false,\"inputs\":[],\"name\":\"rebuildCache\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x74185360\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolver\",\"outputs\":[{\"internalType\":\"contract AddressResolver\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x04f3bcec\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolverAddressesRequired\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"addresses\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x899ffef4\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"setAccountMergingDuration\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x7993e699\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"setMaxAccountMergingWindow\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x018c6c55\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"}],\"name\":\"setMaxEscrowDuration\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x4525aabc\"},{\"constant\":true,\"inputs\":[],\"name\":\"setupExpiryTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x46ba2d90\"},{\"constant\":false,\"inputs\":[],\"name\":\"startMergingWindow\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x178c5655\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"totalEscrowedAccountBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x326a3cfb\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalEscrowedBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x71e780f3\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"totalVestedAccountBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x227d517a\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"entryIDs\",\"type\":\"uint256[]\"}],\"name\":\"vest\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x34c7fec9\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"vestingSchedules\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"endTime\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"escrowAmount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x45626bd6\"}]");
 
 /***/ }),
 /* 64 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_resolver\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\",\"signature\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"}],\"name\":\"CacheUpdated\",\"type\":\"event\",\"signature\":\"0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\",\"signature\":\"0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerNominated\",\"type\":\"event\",\"signature\":\"0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"synth\",\"type\":\"address\"}],\"name\":\"SynthAdded\",\"type\":\"event\",\"signature\":\"0x0a2b6ebf143b3e9fcd67e17748ad315174746100c27228468b2c98c302c62884\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"synth\",\"type\":\"address\"}],\"name\":\"SynthRemoved\",\"type\":\"event\",\"signature\":\"0x6166f5c475cc1cd535c6cdf14a6d5edb811e34117031fc2863392a136eb655d0\"},{\"constant\":true,\"inputs\":[],\"name\":\"CONTRACT_NAME\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x614d08f8\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x79ba5097\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ISynth\",\"name\":\"synth\",\"type\":\"address\"}],\"name\":\"addSynth\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x849cf588\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ISynth[]\",\"name\":\"synthsToAdd\",\"type\":\"address[]\"}],\"name\":\"addSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x47a9b6db\"},{\"constant\":true,\"inputs\":[],\"name\":\"anySynthOrSNXRateIsInvalid\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"anyRateInvalid\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x4e99bda9\"},{\"constant\":true,\"inputs\":[],\"name\":\"availableCurrencyKeys\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x72cb051f\"},{\"constant\":true,\"inputs\":[],\"name\":\"availableSynthCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdbf63340\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"availableSynths\",\"outputs\":[{\"internalType\":\"contract ISynth\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x835e119c\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xb06e8c65\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"burnForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnSynthsOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x9a5154b4\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"burnSynthsToTarget\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x497d704a\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"burnForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"burnSynthsToTargetOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x2b3f41aa\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"canBurnSynths\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xbff4fdfc\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"collateral\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xa5fdc5de\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"collateralisationRatio\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"cratio\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xa311c7c2\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"collateralisationRatioAndAnyRatesInvalid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"cratio\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"anyRateIsInvalid\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xae3bbbbb\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"}],\"name\":\"debtBalanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"debtBalance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xd37c4d8b\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"currencyKeys\",\"type\":\"bytes32[]\"}],\"name\":\"getSynths\",\"outputs\":[{\"internalType\":\"contract ISynth[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x3b6afe40\"},{\"constant\":true,\"inputs\":[],\"name\":\"isResolverCached\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x2af64bd3\"},{\"constant\":true,\"inputs\":[],\"name\":\"issuanceRatio\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xb410a034\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"issueMaxSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xc8977132\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"issueForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"}],\"name\":\"issueMaxSynthsOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xfd864ccf\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"issueSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x042e0688\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"issueForAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"issueSynthsOnBehalf\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x44ec6b62\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"lastIssueEvent\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0xdd3d2b2e\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"susdAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"liquidator\",\"type\":\"address\"}],\"name\":\"liquidateDelinquentAccount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalRedeemed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountToLiquidate\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0xa63c4df4\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"maxIssuableSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x05b3c1c9\"},{\"constant\":true,\"inputs\":[],\"name\":\"minimumStakeTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x242df9e1\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"nominateNewOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x1627540c\"},{\"constant\":true,\"inputs\":[],\"name\":\"nominatedOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x53a47bb7\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x8da5cb5b\"},{\"constant\":false,\"inputs\":[],\"name\":\"rebuildCache\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x74185360\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_issuer\",\"type\":\"address\"}],\"name\":\"remainingIssuableSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maxIssuable\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"alreadyIssued\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSystemDebt\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x1137aedf\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"}],\"name\":\"removeSynth\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x0b887dae\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"currencyKeys\",\"type\":\"bytes32[]\"}],\"name\":\"removeSynths\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"signature\":\"0x7168d2c2\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolver\",\"outputs\":[{\"internalType\":\"contract AddressResolver\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x04f3bcec\"},{\"constant\":true,\"inputs\":[],\"name\":\"resolverAddressesRequired\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"addresses\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x899ffef4\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"synths\",\"outputs\":[{\"internalType\":\"contract ISynth\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x32608039\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"synthsByAddress\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x16b2213f\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"internalType\":\"bool\",\"name\":\"excludeEtherCollateral\",\"type\":\"bool\"}],\"name\":\"totalIssuedSynths\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalIssued\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x7b1001b7\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"name\":\"transferableSynthetixAndAnyRateIsInvalid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"transferable\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"anyRateIsInvalid\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\",\"signature\":\"0x6bed0415\"}]");
+
+/***/ }),
+/* 65 */
 /***/ (function(module, exports) {
 
 function _defineProperty(obj, key, value) {
@@ -12310,7 +12316,7 @@ function _defineProperty(obj, key, value) {
 module.exports = _defineProperty;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -12332,7 +12338,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports) {
 
 function _setPrototypeOf(o, p) {
@@ -12347,7 +12353,7 @@ function _setPrototypeOf(o, p) {
 module.exports = _setPrototypeOf;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports) {
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
@@ -12369,7 +12375,7 @@ function _typeof(obj) {
 module.exports = _typeof;
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 function _assertThisInitialized(self) {
@@ -12383,7 +12389,7 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized;
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13104,7 +13110,7 @@ exports.ContractFactory = ContractFactory;
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -13132,13 +13138,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("buffer");
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports) {
 
 /**
@@ -13619,7 +13625,7 @@ module.exports = require("buffer");
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13649,7 +13655,7 @@ var json_wallet_1 = __webpack_require__(57);
 var keccak256_1 = __webpack_require__(14);
 var properties_1 = __webpack_require__(5);
 var random_bytes_1 = __webpack_require__(38);
-var secretStorage = __importStar(__webpack_require__(103));
+var secretStorage = __importStar(__webpack_require__(104));
 var signing_key_1 = __webpack_require__(39);
 var transaction_1 = __webpack_require__(29);
 // Imported Abstracts
@@ -13810,7 +13816,7 @@ exports.Wallet = Wallet;
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13940,7 +13946,7 @@ exports.Base58 = Base58;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13948,25 +13954,25 @@ exports.Base58 = Base58;
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(76).version;
+elliptic.version = __webpack_require__(77).version;
 elliptic.utils = __webpack_require__(7);
 elliptic.rand = __webpack_require__(49);
 elliptic.curve = __webpack_require__(50);
 elliptic.curves = __webpack_require__(35);
 
 // Protocols
-elliptic.ec = __webpack_require__(89);
-elliptic.eddsa = __webpack_require__(100);
+elliptic.ec = __webpack_require__(90);
+elliptic.eddsa = __webpack_require__(101);
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"_args\":[[\"elliptic@6.5.2\",\"/Users/clementbalestrat/Workspace/synthetix-js\"]],\"_from\":\"elliptic@6.5.2\",\"_id\":\"elliptic@6.5.2\",\"_inBundle\":false,\"_integrity\":\"sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==\",\"_location\":\"/ethers/elliptic\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"elliptic@6.5.2\",\"name\":\"elliptic\",\"escapedName\":\"elliptic\",\"rawSpec\":\"6.5.2\",\"saveSpec\":null,\"fetchSpec\":\"6.5.2\"},\"_requiredBy\":[\"/ethers\"],\"_resolved\":\"https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz\",\"_spec\":\"6.5.2\",\"_where\":\"/Users/clementbalestrat/Workspace/synthetix-js\",\"author\":{\"name\":\"Fedor Indutny\",\"email\":\"fedor@indutny.com\"},\"bugs\":{\"url\":\"https://github.com/indutny/elliptic/issues\"},\"dependencies\":{\"bn.js\":\"^4.4.0\",\"brorand\":\"^1.0.1\",\"hash.js\":\"^1.0.0\",\"hmac-drbg\":\"^1.0.0\",\"inherits\":\"^2.0.1\",\"minimalistic-assert\":\"^1.0.0\",\"minimalistic-crypto-utils\":\"^1.0.0\"},\"description\":\"EC cryptography\",\"devDependencies\":{\"brfs\":\"^1.4.3\",\"coveralls\":\"^3.0.8\",\"grunt\":\"^1.0.4\",\"grunt-browserify\":\"^5.0.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-connect\":\"^1.0.0\",\"grunt-contrib-copy\":\"^1.0.0\",\"grunt-contrib-uglify\":\"^1.0.1\",\"grunt-mocha-istanbul\":\"^3.0.1\",\"grunt-saucelabs\":\"^9.0.1\",\"istanbul\":\"^0.4.2\",\"jscs\":\"^3.0.7\",\"jshint\":\"^2.10.3\",\"mocha\":\"^6.2.2\"},\"files\":[\"lib\"],\"homepage\":\"https://github.com/indutny/elliptic\",\"keywords\":[\"EC\",\"Elliptic\",\"curve\",\"Cryptography\"],\"license\":\"MIT\",\"main\":\"lib/elliptic.js\",\"name\":\"elliptic\",\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/indutny/elliptic.git\"},\"scripts\":{\"jscs\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"jshint\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"lint\":\"npm run jscs && npm run jshint\",\"test\":\"npm run lint && npm run unit\",\"unit\":\"istanbul test _mocha --reporter=spec test/index.js\",\"version\":\"grunt dist && git add dist/\"},\"version\":\"6.5.2\"}");
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14910,13 +14916,13 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("util");
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -14945,7 +14951,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15130,7 +15136,7 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15569,21 +15575,21 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(83);
-exports.sha224 = __webpack_require__(84);
+exports.sha1 = __webpack_require__(84);
+exports.sha224 = __webpack_require__(85);
 exports.sha256 = __webpack_require__(52);
-exports.sha384 = __webpack_require__(85);
+exports.sha384 = __webpack_require__(86);
 exports.sha512 = __webpack_require__(53);
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15664,7 +15670,7 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15701,7 +15707,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15743,7 +15749,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15896,7 +15902,7 @@ var sh = [
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15950,7 +15956,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16736,21 +16742,21 @@ module.exports = {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(9);
-var HmacDRBG = __webpack_require__(90);
+var HmacDRBG = __webpack_require__(91);
 var utils = __webpack_require__(7);
 var curves = __webpack_require__(35);
 var rand = __webpack_require__(49);
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(98);
-var Signature = __webpack_require__(99);
+var KeyPair = __webpack_require__(99);
+var Signature = __webpack_require__(100);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -16984,13 +16990,13 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var hash = __webpack_require__(91);
+var hash = __webpack_require__(92);
 var utils = __webpack_require__(48);
 var assert = __webpack_require__(8);
 
@@ -17104,16 +17110,16 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
 
 hash.utils = __webpack_require__(13);
 hash.common = __webpack_require__(23);
-hash.sha = __webpack_require__(92);
-hash.ripemd = __webpack_require__(96);
-hash.hmac = __webpack_require__(97);
+hash.sha = __webpack_require__(93);
+hash.ripemd = __webpack_require__(97);
+hash.hmac = __webpack_require__(98);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -17125,21 +17131,21 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(93);
-exports.sha224 = __webpack_require__(94);
+exports.sha1 = __webpack_require__(94);
+exports.sha224 = __webpack_require__(95);
 exports.sha256 = __webpack_require__(55);
-exports.sha384 = __webpack_require__(95);
+exports.sha384 = __webpack_require__(96);
 exports.sha512 = __webpack_require__(56);
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17220,7 +17226,7 @@ SHA1.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17257,7 +17263,7 @@ SHA224.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17299,7 +17305,7 @@ SHA384.prototype._digest = function digest(enc) {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17452,7 +17458,7 @@ var sh = [
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17506,7 +17512,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17631,7 +17637,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17772,7 +17778,7 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17783,8 +17789,8 @@ var curves = __webpack_require__(35);
 var utils = __webpack_require__(7);
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(101);
-var Signature = __webpack_require__(102);
+var KeyPair = __webpack_require__(102);
+var Signature = __webpack_require__(103);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -17897,7 +17903,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17999,7 +18005,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18071,7 +18077,7 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18087,9 +18093,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var aes_js_1 = __importDefault(__webpack_require__(104));
-var scrypt_js_1 = __importDefault(__webpack_require__(105));
-var uuid_1 = __importDefault(__webpack_require__(106));
+var aes_js_1 = __importDefault(__webpack_require__(105));
+var scrypt_js_1 = __importDefault(__webpack_require__(106));
+var uuid_1 = __importDefault(__webpack_require__(107));
 var signing_key_1 = __webpack_require__(39);
 var HDNode = __importStar(__webpack_require__(26));
 var address_1 = __webpack_require__(11);
@@ -18480,7 +18486,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19273,7 +19279,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19722,7 +19728,7 @@ exports.encrypt = encrypt;
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //     uuid.js
@@ -19733,7 +19739,7 @@ exports.encrypt = encrypt;
 // Unique ID creation requires a high quality random # generator.  We feature
 // detect to determine the best RNG source, normalizing to a function that
 // returns 128-bits of randomness, since that's what's usually required
-var _rng = __webpack_require__(107);
+var _rng = __webpack_require__(108);
 
 // Maps for number <-> hex string conversion
 var _byteToHex = [];
@@ -19911,7 +19917,7 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rb = __webpack_require__(20).randomBytes;
@@ -19921,7 +19927,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19931,23 +19937,23 @@ var abstract_provider_1 = __webpack_require__(19);
 exports.Provider = abstract_provider_1.Provider;
 var base_provider_1 = __webpack_require__(30);
 exports.BaseProvider = base_provider_1.BaseProvider;
-var etherscan_provider_1 = __webpack_require__(115);
+var etherscan_provider_1 = __webpack_require__(116);
 exports.EtherscanProvider = etherscan_provider_1.EtherscanProvider;
-var fallback_provider_1 = __webpack_require__(116);
+var fallback_provider_1 = __webpack_require__(117);
 exports.FallbackProvider = fallback_provider_1.FallbackProvider;
-var ipc_provider_1 = __webpack_require__(117);
+var ipc_provider_1 = __webpack_require__(118);
 exports.IpcProvider = ipc_provider_1.IpcProvider;
-var infura_provider_1 = __webpack_require__(119);
+var infura_provider_1 = __webpack_require__(120);
 exports.InfuraProvider = infura_provider_1.InfuraProvider;
 var json_rpc_provider_1 = __webpack_require__(33);
 exports.JsonRpcProvider = json_rpc_provider_1.JsonRpcProvider;
 exports.JsonRpcSigner = json_rpc_provider_1.JsonRpcSigner;
-var web3_provider_1 = __webpack_require__(120);
+var web3_provider_1 = __webpack_require__(121);
 exports.Web3Provider = web3_provider_1.Web3Provider;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -19963,9 +19969,9 @@ exports.Web3Provider = web3_provider_1.Web3Provider;
  * @license MIT
  */
 
-var Url = __webpack_require__(110);
-var spawn = __webpack_require__(111).spawn;
-var fs = __webpack_require__(112);
+var Url = __webpack_require__(111);
+var spawn = __webpack_require__(112).spawn;
+var fs = __webpack_require__(113);
 
 exports.XMLHttpRequest = function() {
   "use strict";
@@ -19974,8 +19980,8 @@ exports.XMLHttpRequest = function() {
    * Private variables
    */
   var self = this;
-  var http = __webpack_require__(113);
-  var https = __webpack_require__(114);
+  var http = __webpack_require__(114);
+  var https = __webpack_require__(115);
 
   // Holds http.js objects
   var request;
@@ -20573,37 +20579,37 @@ exports.XMLHttpRequest = function() {
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = require("url");
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20957,7 +20963,7 @@ exports.EtherscanProvider = EtherscanProvider;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21075,7 +21081,7 @@ exports.FallbackProvider = FallbackProvider;
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21101,7 +21107,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var net_1 = __importDefault(__webpack_require__(118));
+var net_1 = __importDefault(__webpack_require__(119));
 var json_rpc_provider_1 = __webpack_require__(33);
 var properties_1 = __webpack_require__(5);
 var errors = __importStar(__webpack_require__(3));
@@ -21171,13 +21177,13 @@ exports.IpcProvider = IpcProvider;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21268,7 +21274,7 @@ exports.InfuraProvider = InfuraProvider;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21363,7 +21369,7 @@ exports.Web3Provider = Web3Provider;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21420,7 +21426,7 @@ var keccak256_1 = __webpack_require__(14);
 exports.keccak256 = keccak256_1.keccak256;
 var sha2_1 = __webpack_require__(37);
 exports.sha256 = sha2_1.sha256;
-var solidity_1 = __webpack_require__(122);
+var solidity_1 = __webpack_require__(123);
 exports.solidityKeccak256 = solidity_1.keccak256;
 exports.solidityPack = solidity_1.pack;
 exports.soliditySha256 = solidity_1.sha256;
@@ -21454,7 +21460,7 @@ exports.formatBytes32String = utf8_1.formatBytes32String;
 exports.parseBytes32String = utf8_1.parseBytes32String;
 exports.toUtf8Bytes = utf8_1.toUtf8Bytes;
 exports.toUtf8String = utf8_1.toUtf8String;
-var units_1 = __webpack_require__(123);
+var units_1 = __webpack_require__(124);
 exports.commify = units_1.commify;
 exports.formatEther = units_1.formatEther;
 exports.parseEther = units_1.parseEther;
@@ -21474,7 +21480,7 @@ exports.Wordlist = wordlist_1.Wordlist;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21572,7 +21578,7 @@ exports.sha256 = sha256;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21752,19 +21758,19 @@ exports.parseEther = parseEther;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var lang_en_1 = __webpack_require__(45);
-var lang_es_1 = __webpack_require__(125);
-var lang_fr_1 = __webpack_require__(126);
-var lang_ja_1 = __webpack_require__(127);
-var lang_ko_1 = __webpack_require__(128);
-var lang_it_1 = __webpack_require__(129);
-var lang_zh_1 = __webpack_require__(130);
+var lang_es_1 = __webpack_require__(126);
+var lang_fr_1 = __webpack_require__(127);
+var lang_ja_1 = __webpack_require__(128);
+var lang_ko_1 = __webpack_require__(129);
+var lang_it_1 = __webpack_require__(130);
+var lang_zh_1 = __webpack_require__(131);
 var en = lang_en_1.langEn;
 exports.en = en;
 var es = lang_es_1.langEs;
@@ -21786,7 +21792,7 @@ exports.zh_tw = zh_tw;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21872,7 +21878,7 @@ wordlist_1.register(langEs);
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21957,7 +21963,7 @@ wordlist_1.register(langFr);
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22108,7 +22114,7 @@ wordlist_1.register(langJa);
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22189,7 +22195,7 @@ wordlist_1.register(langKo);
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22239,7 +22245,7 @@ wordlist_1.register(langIt);
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22325,7 +22331,7 @@ wordlist_1.register(langZhTw);
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22336,7 +22342,7 @@ exports.platform = 'node';
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -22363,7 +22369,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(133);
+module.exports = __webpack_require__(134);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -22379,7 +22385,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 /**
@@ -23106,7 +23112,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 function _arrayWithHoles(arr) {
@@ -23116,7 +23122,7 @@ function _arrayWithHoles(arr) {
 module.exports = _arrayWithHoles;
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -23148,7 +23154,7 @@ function _iterableToArrayLimit(arr, i) {
 module.exports = _iterableToArrayLimit;
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -23158,7 +23164,7 @@ function _nonIterableRest() {
 module.exports = _nonIterableRest;
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27646,19 +27652,15 @@ var OVM_ADDRESSES = {
   type: 'function',
   signature: '0x9371bede'
 }]);
-// CONCATENATED MODULE: ./lib/abis/ovm/RewardEscrow.js
-/* harmony default export */ var RewardEscrow = ([{
+// CONCATENATED MODULE: ./lib/abis/ovm/RewardEscrowV2.js
+/* harmony default export */ var RewardEscrowV2 = ([{
   inputs: [{
     internalType: 'address',
     name: '_owner',
     type: 'address'
   }, {
-    internalType: 'contract ISynthetix',
-    name: '_synthetix',
-    type: 'address'
-  }, {
-    internalType: 'contract IFeePool',
-    name: '_feePool',
+    internalType: 'address',
+    name: '_resolver',
     type: 'address'
   }],
   payable: false,
@@ -27668,14 +27670,115 @@ var OVM_ADDRESSES = {
 }, {
   anonymous: false,
   inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'accountToMerge',
+    type: 'address'
+  }, {
     indexed: false,
     internalType: 'address',
-    name: 'newFeePool',
+    name: 'destinationAddress',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'escrowAmountMerged',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'uint256[]',
+    name: 'entryIDs',
+    type: 'uint256[]'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'time',
+    type: 'uint256'
+  }],
+  name: 'AccountMerged',
+  type: 'event',
+  signature: '0x48d567deaa7db90f8a443344e519ca8906521ffe118e1df43e89a3c257963f7c'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newDuration',
+    type: 'uint256'
+  }],
+  name: 'AccountMergingDurationUpdated',
+  type: 'event',
+  signature: '0x723c43349da7aeae47190396f2e2fbe6bedb46b9e9705bc5b908d65bc7a1e0e6'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'time',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'endTime',
+    type: 'uint256'
+  }],
+  name: 'AccountMergingStarted',
+  type: 'event',
+  signature: '0xceade2b9bc02350b17075c94bb699508b89ed2752f501ea42024b1bb5fd34445'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'name',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'destination',
     type: 'address'
   }],
-  name: 'FeePoolUpdated',
+  name: 'CacheUpdated',
   type: 'event',
-  signature: '0x6d1d088acfe4f30d6014f6f693c61c16258f9784a6ed8439b2c59213eecb6295'
+  signature: '0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newDuration',
+    type: 'uint256'
+  }],
+  name: 'MaxAccountMergingDurationUpdated',
+  type: 'event',
+  signature: '0xe829efae5d8a2f7163f46c23a8190bf14625c1e446561ca0f5cf279ab7c8015e'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newDuration',
+    type: 'uint256'
+  }],
+  name: 'MaxEscrowDurationUpdated',
+  type: 'event',
+  signature: '0x6b92bd20c4b2e6861047ba7209ddc78d538419aae187d0df46716b827b8997a4'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }],
+  name: 'NominateAccountToMerge',
+  type: 'event',
+  signature: '0xcf51776bb16e5780edcca2e64a9ba8a9c7d5d00a6699cbd7606e465361ba4852'
 }, {
   anonymous: false,
   inputs: [{
@@ -27703,17 +27806,6 @@ var OVM_ADDRESSES = {
   name: 'OwnerNominated',
   type: 'event',
   signature: '0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newSynthetix',
-    type: 'address'
-  }],
-  name: 'SynthetixUpdated',
-  type: 'event',
-  signature: '0x46e9c68bd7831071bdd478f1ae4c4a52463961a9d620383a0a121dbfc0e0f06d'
 }, {
   anonymous: false,
   inputs: [{
@@ -27752,23 +27844,20 @@ var OVM_ADDRESSES = {
     internalType: 'uint256',
     name: 'value',
     type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'duration',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'entryID',
+    type: 'uint256'
   }],
   name: 'VestingEntryCreated',
   type: 'event',
-  signature: '0xedd34dc5a5ea12bd847909801d0660781b50e26c7f4cec3c7b308f1ea410635c'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'MAX_VESTING_ENTRIES',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function',
-  signature: '0xd0cc82e3'
+  signature: '0x2cc016694185d38abbe28d9e9baea2e9d95a321ae43475e5ea7b643756840bc0'
 }, {
   constant: false,
   inputs: [],
@@ -27779,6 +27868,66 @@ var OVM_ADDRESSES = {
   type: 'function',
   signature: '0x79ba5097'
 }, {
+  constant: true,
+  inputs: [],
+  name: 'accountMergingDuration',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x910a326d'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'accountMergingIsOpen',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x05662986'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'accountMergingStartTime',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x0fcdefb7'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'accountVestingEntryIDs',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xae582549'
+}, {
   constant: false,
   inputs: [{
     internalType: 'address',
@@ -27788,13 +27937,17 @@ var OVM_ADDRESSES = {
     internalType: 'uint256',
     name: 'quantity',
     type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'duration',
+    type: 'uint256'
   }],
   name: 'appendVestingEntry',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
   type: 'function',
-  signature: '0xb5ddb9c7'
+  signature: '0x1bb47b44'
 }, {
   constant: true,
   inputs: [{
@@ -27813,103 +27966,60 @@ var OVM_ADDRESSES = {
   type: 'function',
   signature: '0x70a08231'
 }, {
-  constant: true,
+  constant: false,
   inputs: [{
     internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'checkAccountSchedule',
-  outputs: [{
-    internalType: 'uint256[520]',
-    name: '',
-    type: 'uint256[520]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function',
-  signature: '0x449d0eb1'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'feePool',
-  outputs: [{
-    internalType: 'contract IFeePool',
     name: '',
     type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function',
-  signature: '0xae2e933b'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'getNextVestingEntry',
-  outputs: [{
-    internalType: 'uint256[2]',
+  }, {
+    internalType: 'uint256[]',
     name: '',
-    type: 'uint256[2]'
+    type: 'uint256[]'
   }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function',
-  signature: '0x2f5bb661'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'getNextVestingIndex',
+  name: 'burnForMigration',
   outputs: [{
     internalType: 'uint256',
     name: '',
     type: 'uint256'
+  }, {
+    components: [{
+      internalType: 'uint64',
+      name: 'endTime',
+      type: 'uint64'
+    }, {
+      internalType: 'uint256',
+      name: 'escrowAmount',
+      type: 'uint256'
+    }],
+    internalType: 'struct VestingEntries.VestingEntry[]',
+    name: '',
+    type: 'tuple[]'
   }],
   payable: false,
-  stateMutability: 'view',
+  stateMutability: 'nonpayable',
   type: 'function',
-  signature: '0x19e740c0'
+  signature: '0x80d46f58'
 }, {
-  constant: true,
+  constant: false,
   inputs: [{
     internalType: 'address',
-    name: 'account',
+    name: 'beneficiary',
     type: 'address'
-  }],
-  name: 'getNextVestingQuantity',
-  outputs: [{
+  }, {
     internalType: 'uint256',
-    name: '',
+    name: 'deposit',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'duration',
     type: 'uint256'
   }],
+  name: 'createEscrowEntry',
+  outputs: [],
   payable: false,
-  stateMutability: 'view',
+  stateMutability: 'nonpayable',
   type: 'function',
-  signature: '0x97f46527'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'getNextVestingTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function',
-  signature: '0x6b3905c4'
+  signature: '0xa0416ed3'
 }, {
   constant: true,
   inputs: [{
@@ -27920,17 +28030,88 @@ var OVM_ADDRESSES = {
     internalType: 'uint256',
     name: 'index',
     type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'pageSize',
+    type: 'uint256'
+  }],
+  name: 'getAccountVestingEntryIDs',
+  outputs: [{
+    internalType: 'uint256[]',
+    name: '',
+    type: 'uint256[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xeac62489'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'entryID',
+    type: 'uint256'
+  }],
+  name: 'getVestingEntry',
+  outputs: [{
+    internalType: 'uint64',
+    name: 'endTime',
+    type: 'uint64'
+  }, {
+    internalType: 'uint256',
+    name: 'escrowAmount',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x6154c343'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'entryID',
+    type: 'uint256'
+  }],
+  name: 'getVestingEntryClaimable',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x30104c5f'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256[]',
+    name: 'entryIDs',
+    type: 'uint256[]'
   }],
   name: 'getVestingQuantity',
   outputs: [{
     internalType: 'uint256',
-    name: '',
+    name: 'total',
     type: 'uint256'
   }],
   payable: false,
   stateMutability: 'view',
   type: 'function',
-  signature: '0xee1d036c'
+  signature: '0x6dc05bd3'
 }, {
   constant: true,
   inputs: [{
@@ -27941,29 +28122,81 @@ var OVM_ADDRESSES = {
     internalType: 'uint256',
     name: 'index',
     type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'pageSize',
+    type: 'uint256'
   }],
-  name: 'getVestingScheduleEntry',
+  name: 'getVestingSchedules',
   outputs: [{
-    internalType: 'uint256[2]',
+    components: [{
+      internalType: 'uint64',
+      name: 'endTime',
+      type: 'uint64'
+    }, {
+      internalType: 'uint256',
+      name: 'escrowAmount',
+      type: 'uint256'
+    }, {
+      internalType: 'uint256',
+      name: 'entryID',
+      type: 'uint256'
+    }],
+    internalType: 'struct VestingEntries.VestingEntryWithID[]',
     name: '',
-    type: 'uint256[2]'
+    type: 'tuple[]'
   }],
   payable: false,
   stateMutability: 'view',
   type: 'function',
-  signature: '0xda7bd3e9'
+  signature: '0x773ab39f'
 }, {
-  constant: true,
+  constant: false,
   inputs: [{
     internalType: 'address',
     name: 'account',
     type: 'address'
   }, {
     internalType: 'uint256',
-    name: 'index',
+    name: 'escrowedAmount',
     type: 'uint256'
+  }, {
+    components: [{
+      internalType: 'uint64',
+      name: 'endTime',
+      type: 'uint64'
+    }, {
+      internalType: 'uint256',
+      name: 'escrowAmount',
+      type: 'uint256'
+    }],
+    internalType: 'struct VestingEntries.VestingEntry[]',
+    name: 'vestingEntries',
+    type: 'tuple[]'
   }],
-  name: 'getVestingTime',
+  name: 'importVestingEntries',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xcd7b43dd'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'isResolverCached',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x2af64bd3'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'maxAccountMergingDuration',
   outputs: [{
     internalType: 'uint256',
     name: '',
@@ -27972,7 +28205,97 @@ var OVM_ADDRESSES = {
   payable: false,
   stateMutability: 'view',
   type: 'function',
-  signature: '0x9b217f90'
+  signature: '0x37088ffc'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'max_duration',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x5eb8cf25'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'accountToMerge',
+    type: 'address'
+  }, {
+    internalType: 'uint256[]',
+    name: 'entryIDs',
+    type: 'uint256[]'
+  }],
+  name: 'mergeAccount',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xf0b882ba'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address[]',
+    name: '',
+    type: 'address[]'
+  }, {
+    internalType: 'uint256[]',
+    name: '',
+    type: 'uint256[]'
+  }, {
+    internalType: 'uint256[]',
+    name: '',
+    type: 'uint256[]'
+  }],
+  name: 'migrateAccountEscrowBalances',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0xb95375bd'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  name: 'migrateVestingSchedule',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x7839b92f'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nextEntryId',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0xe6b2cf6c'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'nominateAccountToMerge',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x7cc1d756'
 }, {
   constant: false,
   inputs: [{
@@ -27999,6 +28322,23 @@ var OVM_ADDRESSES = {
   stateMutability: 'view',
   type: 'function',
   signature: '0x53a47bb7'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  name: 'nominatedReceiver',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x73307e40'
 }, {
   constant: true,
   inputs: [{
@@ -28031,43 +28371,100 @@ var OVM_ADDRESSES = {
   signature: '0x8da5cb5b'
 }, {
   constant: false,
-  inputs: [{
-    internalType: 'contract IFeePool',
-    name: '_feePool',
-    type: 'address'
-  }],
-  name: 'setFeePool',
+  inputs: [],
+  name: 'rebuildCache',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
   type: 'function',
-  signature: '0x19db2228'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract ISynthetix',
-    name: '_synthetix',
-    type: 'address'
-  }],
-  name: 'setSynthetix',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function',
-  signature: '0xfec9f9da'
+  signature: '0x74185360'
 }, {
   constant: true,
   inputs: [],
-  name: 'synthetix',
+  name: 'resolver',
   outputs: [{
-    internalType: 'contract ISynthetix',
+    internalType: 'contract AddressResolver',
     name: '',
     type: 'address'
   }],
   payable: false,
   stateMutability: 'view',
   type: 'function',
-  signature: '0x759b5225'
+  signature: '0x04f3bcec'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolverAddressesRequired',
+  outputs: [{
+    internalType: 'bytes32[]',
+    name: 'addresses',
+    type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x899ffef4'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'duration',
+    type: 'uint256'
+  }],
+  name: 'setAccountMergingDuration',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x7993e699'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'duration',
+    type: 'uint256'
+  }],
+  name: 'setMaxAccountMergingWindow',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x018c6c55'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'duration',
+    type: 'uint256'
+  }],
+  name: 'setMaxEscrowDuration',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x4525aabc'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'setupExpiryTime',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function',
+  signature: '0x46ba2d90'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'startMergingWindow',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function',
+  signature: '0x178c5655'
 }, {
   constant: true,
   inputs: [{
@@ -28117,13 +28514,17 @@ var OVM_ADDRESSES = {
   signature: '0x227d517a'
 }, {
   constant: false,
-  inputs: [],
+  inputs: [{
+    internalType: 'uint256[]',
+    name: 'entryIDs',
+    type: 'uint256[]'
+  }],
   name: 'vest',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
   type: 'function',
-  signature: '0x458efde3'
+  signature: '0x34c7fec9'
 }, {
   constant: true,
   inputs: [{
@@ -28134,21 +28535,21 @@ var OVM_ADDRESSES = {
     internalType: 'uint256',
     name: '',
     type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
   }],
   name: 'vestingSchedules',
   outputs: [{
+    internalType: 'uint64',
+    name: 'endTime',
+    type: 'uint64'
+  }, {
     internalType: 'uint256',
-    name: '',
+    name: 'escrowAmount',
     type: 'uint256'
   }],
   payable: false,
   stateMutability: 'view',
   type: 'function',
-  signature: '0x45e5441f'
+  signature: '0x45626bd6'
 }]);
 // CONCATENATED MODULE: ./lib/abis/ovm/DappMaintenance.js
 /* harmony default export */ var DappMaintenance = ([{
@@ -33187,7 +33588,7 @@ var OVM_ADDRESSES = {
   Synthetix: ovm_Synthetix,
   SynthetixEscrow: SynthetixEscrow,
   SynthetixState: SynthetixState,
-  RewardEscrow: RewardEscrow,
+  RewardEscrowV2: RewardEscrowV2,
   DappMaintenance: DappMaintenance,
   Exchanger: Exchanger,
   Issuer: Issuer,
@@ -40014,7 +40415,10 @@ function SynthetixState_SynthetixState(contractSettings) {
 }
 
 /* harmony default export */ var ovm_SynthetixState = (SynthetixState_SynthetixState);
-// CONCATENATED MODULE: ./src/contracts/ovm/RewardEscrow.js
+// EXTERNAL MODULE: ./lib/abis/ovm/ImportableRewardEscrowV2.json
+var ImportableRewardEscrowV2 = __webpack_require__(63);
+
+// CONCATENATED MODULE: ./src/contracts/ovm/RewardEscrowV2.js
 
 
 
@@ -40024,145 +40428,126 @@ function SynthetixState_SynthetixState(contractSettings) {
  * @param contractSettings {ContractSettings}
  */
 
-function RewardEscrow_RewardEscrow(contractSettings) {
+function RewardEscrowV2_RewardEscrowV2(contractSettings) {
   var _this = this;
 
   this.contractSettings = contractSettings || new src_contractSettings();
-  this.contract = new ethers["Contract"](this.contractSettings.addressList['RewardEscrow'], RewardEscrow, this.contractSettings.signer || this.contractSettings.provider);
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-
-  this.MAX_VESTING_ENTRIES = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee() {
-    return regenerator_default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return _this.contract.MAX_VESTING_ENTRIES();
-
-          case 2:
-            return _context.abrupt("return", _context.sent);
-
-          case 3:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
+  this.contract = new ethers["Contract"](this.contractSettings.addressList['RewardEscrowV2'], ImportableRewardEscrowV2, this.contractSettings.signer || this.contractSettings.provider);
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
-  
-   **/
+    **/
 
   this.acceptOwnership = /*#__PURE__*/function () {
-    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee2(txParams) {
-      return regenerator_default.a.wrap(function _callee2$(_context2) {
+    var _ref = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee(txParams) {
+      return regenerator_default.a.wrap(function _callee$(_context) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context.prev = _context.next) {
             case 0:
               txParams = txParams || {};
-              _context2.next = 3;
+              _context.next = 3;
               return _this.contract.acceptOwnership(txParams);
 
             case 3:
-              return _context2.abrupt("return", _context2.sent);
+              return _context.abrupt("return", _context.sent);
 
             case 4:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
         }
-      }, _callee2);
+      }, _callee);
     }));
 
     return function (_x) {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param quantity {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.appendVestingEntry = /*#__PURE__*/function () {
-    var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee3(account, quantity, txParams) {
-      return regenerator_default.a.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              txParams = txParams || {};
-              _context3.next = 3;
-              return _this.contract.appendVestingEntry(account, quantity, txParams);
-
-            case 3:
-              return _context3.abrupt("return", _context3.sent);
-
-            case 4:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }));
-
-    return function (_x2, _x3, _x4) {
-      return _ref3.apply(this, arguments);
+      return _ref.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
 
 
-  this.balanceOf = /*#__PURE__*/function () {
-    var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee4(account) {
-      return regenerator_default.a.wrap(function _callee4$(_context4) {
-        while (1) {
-          switch (_context4.prev = _context4.next) {
-            case 0:
-              _context4.next = 2;
-              return _this.contract.balanceOf(account);
+  this.accountMergingDuration = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee2() {
+    return regenerator_default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return _this.contract.accountMergingDuration();
 
-            case 2:
-              return _context4.abrupt("return", _context4.sent);
+          case 2:
+            return _context2.abrupt("return", _context2.sent);
 
-            case 3:
-            case "end":
-              return _context4.stop();
-          }
+          case 3:
+          case "end":
+            return _context2.stop();
         }
-      }, _callee4);
-    }));
-
-    return function (_x5) {
-      return _ref4.apply(this, arguments);
-    };
-  }();
+      }
+    }, _callee2);
+  }));
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns uint256[520]
+   * @returns boolean
    **/
 
+  this.accountMergingIsOpen = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee3() {
+    return regenerator_default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return _this.contract.accountMergingIsOpen();
 
-  this.checkAccountSchedule = /*#__PURE__*/function () {
-    var _ref5 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee5(account) {
+          case 2:
+            return _context3.abrupt("return", _context3.sent);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.accountMergingStartTime = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee4() {
+    return regenerator_default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return _this.contract.accountMergingStartTime();
+
+          case 2:
+            return _context4.abrupt("return", _context4.sent);
+
+          case 3:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @param  {BigNumber}
+   * @returns BigNumber
+   **/
+
+  this.accountVestingEntryIDs = /*#__PURE__*/function () {
+    var _ref5 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee5(address_1, uint256_1) {
       return regenerator_default.a.wrap(function _callee5$(_context5) {
         while (1) {
           switch (_context5.prev = _context5.next) {
             case 0:
               _context5.next = 2;
-              return _this.contract.checkAccountSchedule(account);
+              return _this.contract.accountVestingEntryIDs(address_1, uint256_1);
 
             case 2:
               return _context5.abrupt("return", _context5.sent);
@@ -40175,48 +40560,59 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee5);
     }));
 
-    return function (_x6) {
+    return function (_x2, _x3) {
       return _ref5.apply(this, arguments);
     };
   }();
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param quantity {BigNumber}
+   * @param duration {BigNumber}
+   * @param txParams {TxParams}
+    **/
 
 
-  this.feePool = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee6() {
-    return regenerator_default.a.wrap(function _callee6$(_context6) {
-      while (1) {
-        switch (_context6.prev = _context6.next) {
-          case 0:
-            _context6.next = 2;
-            return _this.contract.feePool();
+  this.appendVestingEntry = /*#__PURE__*/function () {
+    var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee6(account, quantity, duration, txParams) {
+      return regenerator_default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              txParams = txParams || {};
+              _context6.next = 3;
+              return _this.contract.appendVestingEntry(account, quantity, duration, txParams);
 
-          case 2:
-            return _context6.abrupt("return", _context6.sent);
+            case 3:
+              return _context6.abrupt("return", _context6.sent);
 
-          case 3:
-          case "end":
-            return _context6.stop();
+            case 4:
+            case "end":
+              return _context6.stop();
+          }
         }
-      }
-    }, _callee6);
-  }));
+      }, _callee6);
+    }));
+
+    return function (_x4, _x5, _x6, _x7) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns uint256[2]
+   * @returns BigNumber
    **/
 
-  this.getNextVestingEntry = /*#__PURE__*/function () {
+
+  this.balanceOf = /*#__PURE__*/function () {
     var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee7(account) {
       return regenerator_default.a.wrap(function _callee7$(_context7) {
         while (1) {
           switch (_context7.prev = _context7.next) {
             case 0:
               _context7.next = 2;
-              return _this.contract.getNextVestingEntry(account);
+              return _this.contract.balanceOf(account);
 
             case 2:
               return _context7.abrupt("return", _context7.sent);
@@ -40229,30 +40625,33 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee7);
     }));
 
-    return function (_x7) {
+    return function (_x8) {
       return _ref7.apply(this, arguments);
     };
   }();
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns BigNumber
+   * Transaction (consumes gas, requires signer)
+   * @param  {String<EthAddress>}
+   * @param  {uint256[]}
+   * @param txParams {TxParams}
+   * @returns Object
    **/
 
 
-  this.getNextVestingIndex = /*#__PURE__*/function () {
-    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(account) {
+  this.burnForMigration = /*#__PURE__*/function () {
+    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(address_1, uint256_1, txParams) {
       return regenerator_default.a.wrap(function _callee8$(_context8) {
         while (1) {
           switch (_context8.prev = _context8.next) {
             case 0:
-              _context8.next = 2;
-              return _this.contract.getNextVestingIndex(account);
-
-            case 2:
-              return _context8.abrupt("return", _context8.sent);
+              txParams = txParams || {};
+              _context8.next = 3;
+              return _this.contract.burnForMigration(address_1, uint256_1, txParams);
 
             case 3:
+              return _context8.abrupt("return", _context8.sent);
+
+            case 4:
             case "end":
               return _context8.stop();
           }
@@ -40260,30 +40659,33 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee8);
     }));
 
-    return function (_x8) {
+    return function (_x9, _x10, _x11) {
       return _ref8.apply(this, arguments);
     };
   }();
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns BigNumber
-   **/
+   * Transaction (consumes gas, requires signer)
+   * @param beneficiary {String<EthAddress>}
+   * @param deposit {BigNumber}
+   * @param duration {BigNumber}
+   * @param txParams {TxParams}
+    **/
 
 
-  this.getNextVestingQuantity = /*#__PURE__*/function () {
-    var _ref9 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9(account) {
+  this.createEscrowEntry = /*#__PURE__*/function () {
+    var _ref9 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9(beneficiary, deposit, duration, txParams) {
       return regenerator_default.a.wrap(function _callee9$(_context9) {
         while (1) {
           switch (_context9.prev = _context9.next) {
             case 0:
-              _context9.next = 2;
-              return _this.contract.getNextVestingQuantity(account);
-
-            case 2:
-              return _context9.abrupt("return", _context9.sent);
+              txParams = txParams || {};
+              _context9.next = 3;
+              return _this.contract.createEscrowEntry(beneficiary, deposit, duration, txParams);
 
             case 3:
+              return _context9.abrupt("return", _context9.sent);
+
+            case 4:
             case "end":
               return _context9.stop();
           }
@@ -40291,25 +40693,27 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee9);
     }));
 
-    return function (_x9) {
+    return function (_x12, _x13, _x14, _x15) {
       return _ref9.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns BigNumber
+   * @param index {BigNumber}
+   * @param pageSize {BigNumber}
+   * @returns uint256[]
    **/
 
 
-  this.getNextVestingTime = /*#__PURE__*/function () {
-    var _ref10 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10(account) {
+  this.getAccountVestingEntryIDs = /*#__PURE__*/function () {
+    var _ref10 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10(account, index, pageSize) {
       return regenerator_default.a.wrap(function _callee10$(_context10) {
         while (1) {
           switch (_context10.prev = _context10.next) {
             case 0:
               _context10.next = 2;
-              return _this.contract.getNextVestingTime(account);
+              return _this.contract.getAccountVestingEntryIDs(account, index, pageSize);
 
             case 2:
               return _context10.abrupt("return", _context10.sent);
@@ -40322,26 +40726,26 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee10);
     }));
 
-    return function (_x10) {
+    return function (_x16, _x17, _x18) {
       return _ref10.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @param index {BigNumber}
-   * @returns BigNumber
+   * @param entryID {BigNumber}
+   * @returns Object
    **/
 
 
-  this.getVestingQuantity = /*#__PURE__*/function () {
-    var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11(account, index) {
+  this.getVestingEntry = /*#__PURE__*/function () {
+    var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11(account, entryID) {
       return regenerator_default.a.wrap(function _callee11$(_context11) {
         while (1) {
           switch (_context11.prev = _context11.next) {
             case 0:
               _context11.next = 2;
-              return _this.contract.getVestingQuantity(account, index);
+              return _this.contract.getVestingEntry(account, entryID);
 
             case 2:
               return _context11.abrupt("return", _context11.sent);
@@ -40354,26 +40758,26 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee11);
     }));
 
-    return function (_x11, _x12) {
+    return function (_x19, _x20) {
       return _ref11.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @param index {BigNumber}
-   * @returns uint256[2]
+   * @param entryID {BigNumber}
+   * @returns BigNumber
    **/
 
 
-  this.getVestingScheduleEntry = /*#__PURE__*/function () {
-    var _ref12 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee12(account, index) {
+  this.getVestingEntryClaimable = /*#__PURE__*/function () {
+    var _ref12 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee12(account, entryID) {
       return regenerator_default.a.wrap(function _callee12$(_context12) {
         while (1) {
           switch (_context12.prev = _context12.next) {
             case 0:
               _context12.next = 2;
-              return _this.contract.getVestingScheduleEntry(account, index);
+              return _this.contract.getVestingEntryClaimable(account, entryID);
 
             case 2:
               return _context12.abrupt("return", _context12.sent);
@@ -40386,26 +40790,26 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee12);
     }));
 
-    return function (_x13, _x14) {
+    return function (_x21, _x22) {
       return _ref12.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @param index {BigNumber}
+   * @param entryIDs {uint256[]}
    * @returns BigNumber
    **/
 
 
-  this.getVestingTime = /*#__PURE__*/function () {
-    var _ref13 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee13(account, index) {
+  this.getVestingQuantity = /*#__PURE__*/function () {
+    var _ref13 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee13(account, entryIDs) {
       return regenerator_default.a.wrap(function _callee13$(_context13) {
         while (1) {
           switch (_context13.prev = _context13.next) {
             case 0:
               _context13.next = 2;
-              return _this.contract.getVestingTime(account, index);
+              return _this.contract.getVestingQuantity(account, entryIDs);
 
             case 2:
               return _context13.abrupt("return", _context13.sent);
@@ -40418,32 +40822,32 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee13);
     }));
 
-    return function (_x15, _x16) {
+    return function (_x23, _x24) {
       return _ref13.apply(this, arguments);
     };
   }();
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param index {BigNumber}
+   * @param pageSize {BigNumber}
+   * @returns tuple[]
    **/
 
 
-  this.nominateNewOwner = /*#__PURE__*/function () {
-    var _ref14 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee14(_owner, txParams) {
+  this.getVestingSchedules = /*#__PURE__*/function () {
+    var _ref14 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee14(account, index, pageSize) {
       return regenerator_default.a.wrap(function _callee14$(_context14) {
         while (1) {
           switch (_context14.prev = _context14.next) {
             case 0:
-              txParams = txParams || {};
-              _context14.next = 3;
-              return _this.contract.nominateNewOwner(_owner, txParams);
+              _context14.next = 2;
+              return _this.contract.getVestingSchedules(account, index, pageSize);
 
-            case 3:
+            case 2:
               return _context14.abrupt("return", _context14.sent);
 
-            case 4:
+            case 3:
             case "end":
               return _context14.stop();
           }
@@ -40451,77 +40855,80 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee14);
     }));
 
-    return function (_x17, _x18) {
+    return function (_x25, _x26, _x27) {
       return _ref14.apply(this, arguments);
     };
   }();
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-
-
-  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee15() {
-    return regenerator_default.a.wrap(function _callee15$(_context15) {
-      while (1) {
-        switch (_context15.prev = _context15.next) {
-          case 0:
-            _context15.next = 2;
-            return _this.contract.nominatedOwner();
-
-          case 2:
-            return _context15.abrupt("return", _context15.sent);
-
-          case 3:
-          case "end":
-            return _context15.stop();
-        }
-      }
-    }, _callee15);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
+   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @returns BigNumber
-   **/
+   * @param escrowedAmount {BigNumber}
+   * @param vestingEntries {tuple[]}
+   * @param txParams {TxParams}
+    **/
 
-  this.numVestingEntries = /*#__PURE__*/function () {
-    var _ref16 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16(account) {
-      return regenerator_default.a.wrap(function _callee16$(_context16) {
+
+  this.importVestingEntries = /*#__PURE__*/function () {
+    var _ref15 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee15(account, escrowedAmount, vestingEntries, txParams) {
+      return regenerator_default.a.wrap(function _callee15$(_context15) {
         while (1) {
-          switch (_context16.prev = _context16.next) {
+          switch (_context15.prev = _context15.next) {
             case 0:
-              _context16.next = 2;
-              return _this.contract.numVestingEntries(account);
-
-            case 2:
-              return _context16.abrupt("return", _context16.sent);
+              txParams = txParams || {};
+              _context15.next = 3;
+              return _this.contract.importVestingEntries(account, escrowedAmount, vestingEntries, txParams);
 
             case 3:
+              return _context15.abrupt("return", _context15.sent);
+
+            case 4:
             case "end":
-              return _context16.stop();
+              return _context15.stop();
           }
         }
-      }, _callee16);
+      }, _callee15);
     }));
 
-    return function (_x19) {
-      return _ref16.apply(this, arguments);
+    return function (_x28, _x29, _x30, _x31) {
+      return _ref15.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @returns boolean
    **/
 
 
-  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17() {
+  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16() {
+    return regenerator_default.a.wrap(function _callee16$(_context16) {
+      while (1) {
+        switch (_context16.prev = _context16.next) {
+          case 0:
+            _context16.next = 2;
+            return _this.contract.isResolverCached();
+
+          case 2:
+            return _context16.abrupt("return", _context16.sent);
+
+          case 3:
+          case "end":
+            return _context16.stop();
+        }
+      }
+    }, _callee16);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.maxAccountMergingDuration = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17() {
     return regenerator_default.a.wrap(function _callee17$(_context17) {
       while (1) {
         switch (_context17.prev = _context17.next) {
           case 0:
             _context17.next = 2;
-            return _this.contract.owner();
+            return _this.contract.maxAccountMergingDuration();
 
           case 2:
             return _context17.abrupt("return", _context17.sent);
@@ -40534,54 +40941,44 @@ function RewardEscrow_RewardEscrow(contractSettings) {
     }, _callee17);
   }));
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _feePool {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
 
-  this.setFeePool = /*#__PURE__*/function () {
-    var _ref18 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18(_feePool, txParams) {
-      return regenerator_default.a.wrap(function _callee18$(_context18) {
-        while (1) {
-          switch (_context18.prev = _context18.next) {
-            case 0:
-              txParams = txParams || {};
-              _context18.next = 3;
-              return _this.contract.setFeePool(_feePool, txParams);
+  this.max_duration = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18() {
+    return regenerator_default.a.wrap(function _callee18$(_context18) {
+      while (1) {
+        switch (_context18.prev = _context18.next) {
+          case 0:
+            _context18.next = 2;
+            return _this.contract.max_duration();
 
-            case 3:
-              return _context18.abrupt("return", _context18.sent);
+          case 2:
+            return _context18.abrupt("return", _context18.sent);
 
-            case 4:
-            case "end":
-              return _context18.stop();
-          }
+          case 3:
+          case "end":
+            return _context18.stop();
         }
-      }, _callee18);
-    }));
-
-    return function (_x20, _x21) {
-      return _ref18.apply(this, arguments);
-    };
-  }();
+      }
+    }, _callee18);
+  }));
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _synthetix {String<EthAddress>}
+   * @param accountToMerge {String<EthAddress>}
+   * @param entryIDs {uint256[]}
    * @param txParams {TxParams}
-  
-   **/
+    **/
 
-
-  this.setSynthetix = /*#__PURE__*/function () {
-    var _ref19 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19(_synthetix, txParams) {
+  this.mergeAccount = /*#__PURE__*/function () {
+    var _ref19 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19(accountToMerge, entryIDs, txParams) {
       return regenerator_default.a.wrap(function _callee19$(_context19) {
         while (1) {
           switch (_context19.prev = _context19.next) {
             case 0:
               txParams = txParams || {};
               _context19.next = 3;
-              return _this.contract.setSynthetix(_synthetix, txParams);
+              return _this.contract.mergeAccount(accountToMerge, entryIDs, txParams);
 
             case 3:
               return _context19.abrupt("return", _context19.sent);
@@ -40594,53 +40991,65 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee19);
     }));
 
-    return function (_x22, _x23) {
+    return function (_x32, _x33, _x34) {
       return _ref19.apply(this, arguments);
     };
   }();
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
+   * Transaction (consumes gas, requires signer)
+   * @param  {address[]}
+   * @param  {uint256[]}
+   * @param  {uint256[]}
+   * @param txParams {TxParams}
+    **/
 
 
-  this.synthetix = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20() {
-    return regenerator_default.a.wrap(function _callee20$(_context20) {
-      while (1) {
-        switch (_context20.prev = _context20.next) {
-          case 0:
-            _context20.next = 2;
-            return _this.contract.synthetix();
+  this.migrateAccountEscrowBalances = /*#__PURE__*/function () {
+    var _ref20 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20(address_1, uint256_1, uint256_2, txParams) {
+      return regenerator_default.a.wrap(function _callee20$(_context20) {
+        while (1) {
+          switch (_context20.prev = _context20.next) {
+            case 0:
+              txParams = txParams || {};
+              _context20.next = 3;
+              return _this.contract.migrateAccountEscrowBalances(address_1, uint256_1, uint256_2, txParams);
 
-          case 2:
-            return _context20.abrupt("return", _context20.sent);
+            case 3:
+              return _context20.abrupt("return", _context20.sent);
 
-          case 3:
-          case "end":
-            return _context20.stop();
+            case 4:
+            case "end":
+              return _context20.stop();
+          }
         }
-      }
-    }, _callee20);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns BigNumber
-   **/
+      }, _callee20);
+    }));
 
-  this.totalEscrowedAccountBalance = /*#__PURE__*/function () {
-    var _ref21 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21(address_1) {
+    return function (_x35, _x36, _x37, _x38) {
+      return _ref20.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param  {String<EthAddress>}
+   * @param txParams {TxParams}
+    **/
+
+
+  this.migrateVestingSchedule = /*#__PURE__*/function () {
+    var _ref21 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21(address_1, txParams) {
       return regenerator_default.a.wrap(function _callee21$(_context21) {
         while (1) {
           switch (_context21.prev = _context21.next) {
             case 0:
-              _context21.next = 2;
-              return _this.contract.totalEscrowedAccountBalance(address_1);
-
-            case 2:
-              return _context21.abrupt("return", _context21.sent);
+              txParams = txParams || {};
+              _context21.next = 3;
+              return _this.contract.migrateVestingSchedule(address_1, txParams);
 
             case 3:
+              return _context21.abrupt("return", _context21.sent);
+
+            case 4:
             case "end":
               return _context21.stop();
           }
@@ -40648,7 +41057,7 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee21);
     }));
 
-    return function (_x24) {
+    return function (_x39, _x40) {
       return _ref21.apply(this, arguments);
     };
   }();
@@ -40658,13 +41067,13 @@ function RewardEscrow_RewardEscrow(contractSettings) {
    **/
 
 
-  this.totalEscrowedBalance = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22() {
+  this.nextEntryId = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22() {
     return regenerator_default.a.wrap(function _callee22$(_context22) {
       while (1) {
         switch (_context22.prev = _context22.next) {
           case 0:
             _context22.next = 2;
-            return _this.contract.totalEscrowedBalance();
+            return _this.contract.nextEntryId();
 
           case 2:
             return _context22.abrupt("return", _context22.sent);
@@ -40677,24 +41086,25 @@ function RewardEscrow_RewardEscrow(contractSettings) {
     }, _callee22);
   }));
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns BigNumber
-   **/
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param txParams {TxParams}
+    **/
 
-  this.totalVestedAccountBalance = /*#__PURE__*/function () {
-    var _ref23 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23(address_1) {
+  this.nominateAccountToMerge = /*#__PURE__*/function () {
+    var _ref23 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23(account, txParams) {
       return regenerator_default.a.wrap(function _callee23$(_context23) {
         while (1) {
           switch (_context23.prev = _context23.next) {
             case 0:
-              _context23.next = 2;
-              return _this.contract.totalVestedAccountBalance(address_1);
-
-            case 2:
-              return _context23.abrupt("return", _context23.sent);
+              txParams = txParams || {};
+              _context23.next = 3;
+              return _this.contract.nominateAccountToMerge(account, txParams);
 
             case 3:
+              return _context23.abrupt("return", _context23.sent);
+
+            case 4:
             case "end":
               return _context23.stop();
           }
@@ -40702,26 +41112,26 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee23);
     }));
 
-    return function (_x25) {
+    return function (_x41, _x42) {
       return _ref23.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
    * @param txParams {TxParams}
-  
-   **/
+    **/
 
 
-  this.vest = /*#__PURE__*/function () {
-    var _ref24 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24(txParams) {
+  this.nominateNewOwner = /*#__PURE__*/function () {
+    var _ref24 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24(_owner, txParams) {
       return regenerator_default.a.wrap(function _callee24$(_context24) {
         while (1) {
           switch (_context24.prev = _context24.next) {
             case 0:
               txParams = txParams || {};
               _context24.next = 3;
-              return _this.contract.vest(txParams);
+              return _this.contract.nominateNewOwner(_owner, txParams);
 
             case 3:
               return _context24.abrupt("return", _context24.sent);
@@ -40734,46 +41144,497 @@ function RewardEscrow_RewardEscrow(contractSettings) {
       }, _callee24);
     }));
 
-    return function (_x26) {
+    return function (_x43, _x44) {
       return _ref24.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25() {
+    return regenerator_default.a.wrap(function _callee25$(_context25) {
+      while (1) {
+        switch (_context25.prev = _context25.next) {
+          case 0:
+            _context25.next = 2;
+            return _this.contract.nominatedOwner();
+
+          case 2:
+            return _context25.abrupt("return", _context25.sent);
+
+          case 3:
+          case "end":
+            return _context25.stop();
+        }
+      }
+    }, _callee25);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns String<EthAddress>
+   **/
+
+  this.nominatedReceiver = /*#__PURE__*/function () {
+    var _ref26 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee26(address_1) {
+      return regenerator_default.a.wrap(function _callee26$(_context26) {
+        while (1) {
+          switch (_context26.prev = _context26.next) {
+            case 0:
+              _context26.next = 2;
+              return _this.contract.nominatedReceiver(address_1);
+
+            case 2:
+              return _context26.abrupt("return", _context26.sent);
+
+            case 3:
+            case "end":
+              return _context26.stop();
+          }
+        }
+      }, _callee26);
+    }));
+
+    return function (_x45) {
+      return _ref26.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.numVestingEntries = /*#__PURE__*/function () {
+    var _ref27 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee27(account) {
+      return regenerator_default.a.wrap(function _callee27$(_context27) {
+        while (1) {
+          switch (_context27.prev = _context27.next) {
+            case 0:
+              _context27.next = 2;
+              return _this.contract.numVestingEntries(account);
+
+            case 2:
+              return _context27.abrupt("return", _context27.sent);
+
+            case 3:
+            case "end":
+              return _context27.stop();
+          }
+        }
+      }, _callee27);
+    }));
+
+    return function (_x46) {
+      return _ref27.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28() {
+    return regenerator_default.a.wrap(function _callee28$(_context28) {
+      while (1) {
+        switch (_context28.prev = _context28.next) {
+          case 0:
+            _context28.next = 2;
+            return _this.contract.owner();
+
+          case 2:
+            return _context28.abrupt("return", _context28.sent);
+
+          case 3:
+          case "end":
+            return _context28.stop();
+        }
+      }
+    }, _callee28);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+    **/
+
+  this.rebuildCache = /*#__PURE__*/function () {
+    var _ref29 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee29(txParams) {
+      return regenerator_default.a.wrap(function _callee29$(_context29) {
+        while (1) {
+          switch (_context29.prev = _context29.next) {
+            case 0:
+              txParams = txParams || {};
+              _context29.next = 3;
+              return _this.contract.rebuildCache(txParams);
+
+            case 3:
+              return _context29.abrupt("return", _context29.sent);
+
+            case 4:
+            case "end":
+              return _context29.stop();
+          }
+        }
+      }, _callee29);
+    }));
+
+    return function (_x47) {
+      return _ref29.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee30() {
+    return regenerator_default.a.wrap(function _callee30$(_context30) {
+      while (1) {
+        switch (_context30.prev = _context30.next) {
+          case 0:
+            _context30.next = 2;
+            return _this.contract.resolver();
+
+          case 2:
+            return _context30.abrupt("return", _context30.sent);
+
+          case 3:
+          case "end":
+            return _context30.stop();
+        }
+      }
+    }, _callee30);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[]
+   **/
+
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee31() {
+    return regenerator_default.a.wrap(function _callee31$(_context31) {
+      while (1) {
+        switch (_context31.prev = _context31.next) {
+          case 0:
+            _context31.next = 2;
+            return _this.contract.resolverAddressesRequired();
+
+          case 2:
+            return _context31.abrupt("return", _context31.sent);
+
+          case 3:
+          case "end":
+            return _context31.stop();
+        }
+      }
+    }, _callee31);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param duration {BigNumber}
+   * @param txParams {TxParams}
+    **/
+
+  this.setAccountMergingDuration = /*#__PURE__*/function () {
+    var _ref32 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32(duration, txParams) {
+      return regenerator_default.a.wrap(function _callee32$(_context32) {
+        while (1) {
+          switch (_context32.prev = _context32.next) {
+            case 0:
+              txParams = txParams || {};
+              _context32.next = 3;
+              return _this.contract.setAccountMergingDuration(duration, txParams);
+
+            case 3:
+              return _context32.abrupt("return", _context32.sent);
+
+            case 4:
+            case "end":
+              return _context32.stop();
+          }
+        }
+      }, _callee32);
+    }));
+
+    return function (_x48, _x49) {
+      return _ref32.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param duration {BigNumber}
+   * @param txParams {TxParams}
+    **/
+
+
+  this.setMaxAccountMergingWindow = /*#__PURE__*/function () {
+    var _ref33 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee33(duration, txParams) {
+      return regenerator_default.a.wrap(function _callee33$(_context33) {
+        while (1) {
+          switch (_context33.prev = _context33.next) {
+            case 0:
+              txParams = txParams || {};
+              _context33.next = 3;
+              return _this.contract.setMaxAccountMergingWindow(duration, txParams);
+
+            case 3:
+              return _context33.abrupt("return", _context33.sent);
+
+            case 4:
+            case "end":
+              return _context33.stop();
+          }
+        }
+      }, _callee33);
+    }));
+
+    return function (_x50, _x51) {
+      return _ref33.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param duration {BigNumber}
+   * @param txParams {TxParams}
+    **/
+
+
+  this.setMaxEscrowDuration = /*#__PURE__*/function () {
+    var _ref34 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34(duration, txParams) {
+      return regenerator_default.a.wrap(function _callee34$(_context34) {
+        while (1) {
+          switch (_context34.prev = _context34.next) {
+            case 0:
+              txParams = txParams || {};
+              _context34.next = 3;
+              return _this.contract.setMaxEscrowDuration(duration, txParams);
+
+            case 3:
+              return _context34.abrupt("return", _context34.sent);
+
+            case 4:
+            case "end":
+              return _context34.stop();
+          }
+        }
+      }, _callee34);
+    }));
+
+    return function (_x52, _x53) {
+      return _ref34.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.setupExpiryTime = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35() {
+    return regenerator_default.a.wrap(function _callee35$(_context35) {
+      while (1) {
+        switch (_context35.prev = _context35.next) {
+          case 0:
+            _context35.next = 2;
+            return _this.contract.setupExpiryTime();
+
+          case 2:
+            return _context35.abrupt("return", _context35.sent);
+
+          case 3:
+          case "end":
+            return _context35.stop();
+        }
+      }
+    }, _callee35);
+  }));
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+    **/
+
+  this.startMergingWindow = /*#__PURE__*/function () {
+    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(txParams) {
+      return regenerator_default.a.wrap(function _callee36$(_context36) {
+        while (1) {
+          switch (_context36.prev = _context36.next) {
+            case 0:
+              txParams = txParams || {};
+              _context36.next = 3;
+              return _this.contract.startMergingWindow(txParams);
+
+            case 3:
+              return _context36.abrupt("return", _context36.sent);
+
+            case 4:
+            case "end":
+              return _context36.stop();
+          }
+        }
+      }, _callee36);
+    }));
+
+    return function (_x54) {
+      return _ref36.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.totalEscrowedAccountBalance = /*#__PURE__*/function () {
+    var _ref37 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37(address_1) {
+      return regenerator_default.a.wrap(function _callee37$(_context37) {
+        while (1) {
+          switch (_context37.prev = _context37.next) {
+            case 0:
+              _context37.next = 2;
+              return _this.contract.totalEscrowedAccountBalance(address_1);
+
+            case 2:
+              return _context37.abrupt("return", _context37.sent);
+
+            case 3:
+            case "end":
+              return _context37.stop();
+          }
+        }
+      }, _callee37);
+    }));
+
+    return function (_x55) {
+      return _ref37.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.totalEscrowedBalance = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38() {
+    return regenerator_default.a.wrap(function _callee38$(_context38) {
+      while (1) {
+        switch (_context38.prev = _context38.next) {
+          case 0:
+            _context38.next = 2;
+            return _this.contract.totalEscrowedBalance();
+
+          case 2:
+            return _context38.abrupt("return", _context38.sent);
+
+          case 3:
+          case "end":
+            return _context38.stop();
+        }
+      }
+    }, _callee38);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+  this.totalVestedAccountBalance = /*#__PURE__*/function () {
+    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(address_1) {
+      return regenerator_default.a.wrap(function _callee39$(_context39) {
+        while (1) {
+          switch (_context39.prev = _context39.next) {
+            case 0:
+              _context39.next = 2;
+              return _this.contract.totalVestedAccountBalance(address_1);
+
+            case 2:
+              return _context39.abrupt("return", _context39.sent);
+
+            case 3:
+            case "end":
+              return _context39.stop();
+          }
+        }
+      }, _callee39);
+    }));
+
+    return function (_x56) {
+      return _ref39.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param entryIDs {uint256[]}
+   * @param txParams {TxParams}
+    **/
+
+
+  this.vest = /*#__PURE__*/function () {
+    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(entryIDs, txParams) {
+      return regenerator_default.a.wrap(function _callee40$(_context40) {
+        while (1) {
+          switch (_context40.prev = _context40.next) {
+            case 0:
+              txParams = txParams || {};
+              _context40.next = 3;
+              return _this.contract.vest(entryIDs, txParams);
+
+            case 3:
+              return _context40.abrupt("return", _context40.sent);
+
+            case 4:
+            case "end":
+              return _context40.stop();
+          }
+        }
+      }, _callee40);
+    }));
+
+    return function (_x57, _x58) {
+      return _ref40.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {String<EthAddress>}
    * @param  {BigNumber}
-   * @param  {BigNumber}
-   * @returns BigNumber
+   * @returns Object
    **/
 
 
   this.vestingSchedules = /*#__PURE__*/function () {
-    var _ref25 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25(address_1, uint256_1, uint256_2) {
-      return regenerator_default.a.wrap(function _callee25$(_context25) {
+    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(address_1, uint256_1) {
+      return regenerator_default.a.wrap(function _callee41$(_context41) {
         while (1) {
-          switch (_context25.prev = _context25.next) {
+          switch (_context41.prev = _context41.next) {
             case 0:
-              _context25.next = 2;
-              return _this.contract.vestingSchedules(address_1, uint256_1, uint256_2);
+              _context41.next = 2;
+              return _this.contract.vestingSchedules(address_1, uint256_1);
 
             case 2:
-              return _context25.abrupt("return", _context25.sent);
+              return _context41.abrupt("return", _context41.sent);
 
             case 3:
             case "end":
-              return _context25.stop();
+              return _context41.stop();
           }
         }
-      }, _callee25);
+      }, _callee41);
     }));
 
-    return function (_x27, _x28, _x29) {
-      return _ref25.apply(this, arguments);
+    return function (_x59, _x60) {
+      return _ref41.apply(this, arguments);
     };
   }();
 }
 
-/* harmony default export */ var ovm_RewardEscrow = (RewardEscrow_RewardEscrow);
+/* harmony default export */ var ovm_RewardEscrowV2 = (RewardEscrowV2_RewardEscrowV2);
 // CONCATENATED MODULE: ./src/contracts/ovm/DappMaintenance.js
 
 
@@ -41918,7 +42779,7 @@ function Exchanger_Exchanger(contractSettings) {
 
 /* harmony default export */ var ovm_Exchanger = (Exchanger_Exchanger);
 // EXTERNAL MODULE: ./lib/abis/ovm/IssuerWithoutLiquidations.json
-var IssuerWithoutLiquidations = __webpack_require__(63);
+var IssuerWithoutLiquidations = __webpack_require__(64);
 
 // CONCATENATED MODULE: ./src/contracts/ovm/Issuer.js
 
@@ -49256,7 +50117,7 @@ function sUSD(contractSettings) {
   Synthetix: contracts_ovm_Synthetix,
   SynthetixEscrow: ovm_SynthetixEscrow,
   SynthetixState: ovm_SynthetixState,
-  RewardEscrow: ovm_RewardEscrow,
+  RewardEscrowV2: ovm_RewardEscrowV2,
   DappMaintenance: ovm_DappMaintenance,
   Exchanger: ovm_Exchanger,
   Issuer: ovm_Issuer,
@@ -49280,11 +50141,11 @@ var slicedToArray = __webpack_require__(41);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(64);
+var defineProperty = __webpack_require__(65);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(65);
+var createClass = __webpack_require__(66);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // CONCATENATED MODULE: ./src/util/index.js

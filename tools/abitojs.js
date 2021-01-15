@@ -46,7 +46,9 @@ const contracts = {
   },
   SynthetixEscrow: true,
   SynthetixState: true,
-  RewardEscrow: true,
+  RewardEscrowV2: {
+    source: 'ImportableRewardEscrowV2',
+  },
   DappMaintenance: true,
   Exchanger: true,
   EtherCollateral: true,

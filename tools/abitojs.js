@@ -8,7 +8,7 @@ const SUPPORTED_NETWORKS = {
   420: 'ovm',
 };
 
-const DEFAULT_ENV = 'kovan';
+const DEFAULT_ENV = 'mainnet';
 
 /**
  * This module will perform the following actions for all contracts listed

@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/ovm/ExchangeRates';
+import abi from '../../../lib/abis/ovm/ExchangeRatesWithoutInvPricing';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -13,14 +13,6 @@ function ExchangeRates(contractSettings) {
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
-    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
-  };
 
   /**
    * Transaction (consumes gas, requires signer)
@@ -81,11 +73,11 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
+   * @param  {bytes32}
    * @returns boolean
    **/
-  this.canFreezeRate = async currencyKey => {
-    return await this.contract.canFreezeRate(currencyKey);
+  this.canFreezeRate = async bytes32_1 => {
+    return await this.contract.canFreezeRate(bytes32_1);
   };
 
   /**
@@ -183,13 +175,13 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
+   * @param  {bytes32}
    * @param txParams {TxParams}
   
    **/
-  this.freezeRate = async (currencyKey, txParams) => {
+  this.freezeRate = async (bytes32_1, txParams) => {
     txParams = txParams || {};
-    return await this.contract.freezeRate(currencyKey, txParams);
+    return await this.contract.freezeRate(bytes32_1, txParams);
   };
 
   /**
@@ -225,14 +217,6 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddressesRequired = async () => {
-    return await this.contract.getResolverAddressesRequired();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param  {bytes32}
    * @returns Object
    **/
@@ -251,11 +235,10 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _resolver {String<EthAddress>}
    * @returns boolean
    **/
-  this.isResolverCached = async _resolver => {
-    return await this.contract.isResolverCached(_resolver);
+  this.isResolverCached = async () => {
+    return await this.contract.isResolverCached();
   };
 
   /**
@@ -359,11 +342,11 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
+   * @param  {bytes32}
    * @returns boolean
    **/
-  this.rateIsFrozen = async currencyKey => {
-    return await this.contract.rateIsFrozen(currencyKey);
+  this.rateIsFrozen = async bytes32_1 => {
+    return await this.contract.rateIsFrozen(bytes32_1);
   };
 
   /**
@@ -422,6 +405,16 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.rebuildCache = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.rebuildCache(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param currencyKey {bytes32}
    * @param txParams {TxParams}
   
@@ -433,13 +426,13 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
+   * @param  {bytes32}
    * @param txParams {TxParams}
   
    **/
-  this.removeInversePricing = async (currencyKey, txParams) => {
+  this.removeInversePricing = async (bytes32_1, txParams) => {
     txParams = txParams || {};
-    return await this.contract.removeInversePricing(currencyKey, txParams);
+    return await this.contract.removeInversePricing(bytes32_1, txParams);
   };
 
   /**
@@ -452,11 +445,10 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
+   * @returns bytes32[]
    **/
-  this.resolverAddressesRequired = async uint256_1 => {
-    return await this.contract.resolverAddressesRequired(uint256_1);
+  this.resolverAddressesRequired = async () => {
+    return await this.contract.resolverAddressesRequired();
   };
 
   /**
@@ -470,32 +462,32 @@ function ExchangeRates(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param entryPoint {BigNumber}
-   * @param upperLimit {BigNumber}
-   * @param lowerLimit {BigNumber}
-   * @param freezeAtUpperLimit {boolean}
-   * @param freezeAtLowerLimit {boolean}
+   * @param  {bytes32}
+   * @param  {BigNumber}
+   * @param  {BigNumber}
+   * @param  {BigNumber}
+   * @param  {boolean}
+   * @param  {boolean}
    * @param txParams {TxParams}
   
    **/
   this.setInversePricing = async (
-    currencyKey,
-    entryPoint,
-    upperLimit,
-    lowerLimit,
-    freezeAtUpperLimit,
-    freezeAtLowerLimit,
+    bytes32_1,
+    uint256_1,
+    uint256_2,
+    uint256_3,
+    bool_1,
+    bool_2,
     txParams
   ) => {
     txParams = txParams || {};
     return await this.contract.setInversePricing(
-      currencyKey,
-      entryPoint,
-      upperLimit,
-      lowerLimit,
-      freezeAtUpperLimit,
-      freezeAtLowerLimit,
+      bytes32_1,
+      uint256_1,
+      uint256_2,
+      uint256_3,
+      bool_1,
+      bool_2,
       txParams
     );
   };
@@ -509,17 +501,6 @@ function ExchangeRates(contractSettings) {
   this.setOracle = async (_oracle, txParams) => {
     txParams = txParams || {};
     return await this.contract.setOracle(_oracle, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolverAndSyncCache = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**

@@ -15,14 +15,6 @@ function SynthetixBridgeToBase(contractSettings) {
   );
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
-    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -33,11 +25,44 @@ function SynthetixBridgeToBase(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param depositAmount {BigNumber}
+   * @param txParams {TxParams}
+  
    **/
-  this.getResolverAddressesRequired = async () => {
-    return await this.contract.getResolverAddressesRequired();
+  this.completeDeposit = async (account, depositAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.completeDeposit(account, depositAmount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param escrowedAmount {BigNumber}
+   * @param vestingEntries {tuple[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.completeEscrowMigration = async (account, escrowedAmount, vestingEntries, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.completeEscrowMigration(
+      account,
+      escrowedAmount,
+      vestingEntries,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.completeRewardDeposit = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.completeRewardDeposit(amount, txParams);
   };
 
   /**
@@ -53,34 +78,10 @@ function SynthetixBridgeToBase(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _resolver {String<EthAddress>}
    * @returns boolean
    **/
-  this.isResolverCached = async _resolver => {
-    return await this.contract.isResolverCached(_resolver);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.mintSecondaryFromDeposit = async (account, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.mintSecondaryFromDeposit(account, amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.mintSecondaryFromDepositForRewards = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.mintSecondaryFromDepositForRewards(amount, txParams);
+  this.isResolverCached = async () => {
+    return await this.contract.isResolverCached();
   };
 
   /**
@@ -111,6 +112,16 @@ function SynthetixBridgeToBase(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.rebuildCache = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.rebuildCache(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -120,22 +131,10 @@ function SynthetixBridgeToBase(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
+   * @returns bytes32[]
    **/
-  this.resolverAddressesRequired = async uint256_1 => {
-    return await this.contract.resolverAddressesRequired(uint256_1);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolverAndSyncCache = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
+  this.resolverAddressesRequired = async () => {
+    return await this.contract.resolverAddressesRequired();
   };
 }
 

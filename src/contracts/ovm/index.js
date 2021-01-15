@@ -17,7 +17,6 @@ import SynthUtil from './SynthUtil';
 import Liquidations from './Liquidations';
 import SynthetixBridgeToBase from './SynthetixBridgeToBase';
 import SystemSettings from './SystemSettings';
-import SupplySchedule from './SupplySchedule';
 import sUSD from './sUSD';
 
 export default {
@@ -40,6 +39,5 @@ export default {
   Liquidations,
   SynthetixBridgeToBase,
   SystemSettings,
-  SupplySchedule,
   sUSD,
 };

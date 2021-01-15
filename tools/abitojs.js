@@ -8,7 +8,7 @@ const SUPPORTED_NETWORKS = {
   420: 'ovm',
 };
 
-const DEFAULT_ENV = 'goerli';
+const DEFAULT_ENV = 'kovan';
 
 /**
  * This module will perform the following actions for all contracts listed
@@ -31,7 +31,9 @@ const DEFAULT_ENV = 'goerli';
 const contracts = {
   Depot: true,
   EscrowChecker: true,
-  ExchangeRates: true,
+  ExchangeRates: {
+    source: 'ExchangeRatesWithoutInvPricing',
+  },
   FeePool: {
     target: 'ProxyFeePool',
   },
@@ -40,6 +42,7 @@ const contracts = {
   },
   Synthetix: {
     target: 'ProxyERC20',
+    source: 'MintableSynthetix',
   },
   SynthetixEscrow: true,
   SynthetixState: true,
@@ -47,7 +50,9 @@ const contracts = {
   DappMaintenance: true,
   Exchanger: true,
   EtherCollateral: true,
-  Issuer: true,
+  Issuer: {
+    source: 'IssuerWithoutLiquidations',
+  },
   AddressResolver: true,
   DelegateApprovals: true,
   SystemStatus: true,
@@ -60,9 +65,6 @@ const contracts = {
   SynthetixBridgeToOptimism: true,
   SynthetixBridgeToBase: true,
   SystemSettings: true,
-  SupplySchedule: {
-    source: 'FixedSupplySchedule',
-  },
 
   // the synths will be added on for each network
 };

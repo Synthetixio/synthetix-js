@@ -18,8 +18,8 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
-  this.MAX_ADDRESSES_FROM_RESOLVER = async () => {
-    return await this.contract.MAX_ADDRESSES_FROM_RESOLVER();
+  this.MAX_CROSS_DOMAIN_GAS_LIMIT = async () => {
+    return await this.contract.MAX_CROSS_DOMAIN_GAS_LIMIT();
   };
 
   /**
@@ -90,6 +90,14 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MIN_CROSS_DOMAIN_GAS_LIMIT = async () => {
+    return await this.contract.MIN_CROSS_DOMAIN_GAS_LIMIT();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MIN_FEE_PERIOD_DURATION = async () => {
     return await this.contract.MIN_FEE_PERIOD_DURATION();
   };
@@ -130,6 +138,15 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param gasLimitType {Number}
+   * @returns BigNumber
+   **/
+  this.crossDomainMessageGasLimit = async gasLimitType => {
+    return await this.contract.crossDomainMessageGasLimit(gasLimitType);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.debtSnapshotStaleTime = async () => {
@@ -155,19 +172,10 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[24]
-   **/
-  this.getResolverAddressesRequired = async () => {
-    return await this.contract.getResolverAddressesRequired();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _resolver {String<EthAddress>}
    * @returns boolean
    **/
-  this.isResolverCached = async _resolver => {
-    return await this.contract.isResolverCached(_resolver);
+  this.isResolverCached = async () => {
+    return await this.contract.isResolverCached();
   };
 
   /**
@@ -200,14 +208,6 @@ function SystemSettings(contractSettings) {
    **/
   this.liquidationRatio = async () => {
     return await this.contract.liquidationRatio();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.maximumDeposit = async () => {
-    return await this.contract.maximumDeposit();
   };
 
   /**
@@ -262,6 +262,16 @@ function SystemSettings(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.rebuildCache = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.rebuildCache(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -271,11 +281,10 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param  {BigNumber}
-   * @returns bytes32
+   * @returns bytes32[]
    **/
-  this.resolverAddressesRequired = async uint256_1 => {
-    return await this.contract.resolverAddressesRequired(uint256_1);
+  this.resolverAddressesRequired = async () => {
+    return await this.contract.resolverAddressesRequired();
   };
 
   /**
@@ -287,6 +296,26 @@ function SystemSettings(contractSettings) {
   this.setAggregatorWarningFlags = async (_flags, txParams) => {
     txParams = txParams || {};
     return await this.contract.setAggregatorWarningFlags(_flags, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _gasLimitType {Number}
+   * @param _crossDomainMessageGasLimit {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCrossDomainMessageGasLimit = async (
+    _gasLimitType,
+    _crossDomainMessageGasLimit,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.setCrossDomainMessageGasLimit(
+      _gasLimitType,
+      _crossDomainMessageGasLimit,
+      txParams
+    );
   };
 
   /**
@@ -369,17 +398,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _maxDeposit {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setMaximumDeposit = async (_maxDeposit, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setMaximumDeposit(_maxDeposit, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _seconds {BigNumber}
    * @param txParams {TxParams}
   
@@ -412,17 +430,6 @@ function SystemSettings(contractSettings) {
   this.setRateStalePeriod = async (period, txParams) => {
     txParams = txParams || {};
     return await this.contract.setRateStalePeriod(period, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _resolver {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setResolverAndSyncCache = async (_resolver, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setResolverAndSyncCache(_resolver, txParams);
   };
 
   /**

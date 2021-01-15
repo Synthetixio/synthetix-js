@@ -521,6 +521,16 @@ function Synthetix(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
+  
+   **/
+  this.migrateEscrowBalanceToRewardEscrowV2 = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
    * @returns boolean
    **/
   this.mint = async txParams => {

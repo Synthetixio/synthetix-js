@@ -18,6 +18,14 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MAX_CROSS_DOMAIN_GAS_LIMIT = async () => {
+    return await this.contract.MAX_CROSS_DOMAIN_GAS_LIMIT();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MAX_EXCHANGE_FEE_RATE = async () => {
     return await this.contract.MAX_EXCHANGE_FEE_RATE();
   };
@@ -82,6 +90,14 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MIN_CROSS_DOMAIN_GAS_LIMIT = async () => {
+    return await this.contract.MIN_CROSS_DOMAIN_GAS_LIMIT();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MIN_FEE_PERIOD_DURATION = async () => {
     return await this.contract.MIN_FEE_PERIOD_DURATION();
   };
@@ -122,10 +138,11 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param gasLimitType {Number}
    * @returns BigNumber
    **/
-  this.crossDomainMessageGasLimit = async () => {
-    return await this.contract.crossDomainMessageGasLimit();
+  this.crossDomainMessageGasLimit = async gasLimitType => {
+    return await this.contract.crossDomainMessageGasLimit(gasLimitType);
   };
 
   /**
@@ -283,13 +300,22 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _gasLimitType {Number}
    * @param _crossDomainMessageGasLimit {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setCrossDomainMessageGasLimit = async (_crossDomainMessageGasLimit, txParams) => {
+  this.setCrossDomainMessageGasLimit = async (
+    _gasLimitType,
+    _crossDomainMessageGasLimit,
+    txParams
+  ) => {
     txParams = txParams || {};
-    return await this.contract.setCrossDomainMessageGasLimit(_crossDomainMessageGasLimit, txParams);
+    return await this.contract.setCrossDomainMessageGasLimit(
+      _gasLimitType,
+      _crossDomainMessageGasLimit,
+      txParams
+    );
   };
 
   /**

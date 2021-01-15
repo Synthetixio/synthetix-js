@@ -35,16 +35,6 @@
 				"internalType": "uint256",
 				"name": "_minCollateral",
 				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_underlyingContract",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "decimals",
-				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -1140,50 +1130,6 @@
 		"signature": "0x899ffef4"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "collateral",
-				"type": "uint256"
-			}
-		],
-		"name": "scaleDownCollateral",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "scaledDown",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xb094f2c4"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "collateral",
-				"type": "uint256"
-			}
-		],
-		"name": "scaleUpCollateral",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "scaledUp",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x883a2209"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -1344,38 +1290,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x38245377"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "underlyingContract",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x10cfe906"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "underlyingContractDecimals",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x3cc3ffc7"
 	},
 	{
 		"constant": false,

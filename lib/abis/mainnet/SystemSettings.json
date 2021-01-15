@@ -56,6 +56,12 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
+				"name": "gasLimitType",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "newLimit",
 				"type": "uint256"
@@ -63,7 +69,7 @@
 		],
 		"name": "CrossDomainMessageGasLimitChanged",
 		"type": "event",
-		"signature": "0xcc41f635caf801d02ec495cd73b332a74862cdb43e423a550c9e4d8effb156fb"
+		"signature": "0xbf62a396f632016f0e0cffedb18ee9be41a161c79cee3b64736b0c97a924554a"
 	},
 	{
 		"anonymous": false,
@@ -290,6 +296,22 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "MAX_CROSS_DOMAIN_GAS_LIMIT",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc58c9ae4"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "MAX_EXCHANGE_FEE_RATE",
 		"outputs": [
 			{
@@ -418,6 +440,22 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "MIN_CROSS_DOMAIN_GAS_LIMIT",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x7ce2cc7f"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "MIN_FEE_PERIOD_DURATION",
 		"outputs": [
 			{
@@ -491,7 +529,13 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
+				"name": "gasLimitType",
+				"type": "uint8"
+			}
+		],
 		"name": "crossDomainMessageGasLimit",
 		"outputs": [
 			{
@@ -503,7 +547,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xd1f57368"
+		"signature": "0x038e47fe"
 	},
 	{
 		"constant": true,
@@ -797,6 +841,11 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
+				"name": "_gasLimitType",
+				"type": "uint8"
+			},
+			{
 				"internalType": "uint256",
 				"name": "_crossDomainMessageGasLimit",
 				"type": "uint256"
@@ -807,7 +856,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x0286d274"
+		"signature": "0xdc8f4a1b"
 	},
 	{
 		"constant": false,

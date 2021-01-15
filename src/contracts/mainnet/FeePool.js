@@ -60,18 +60,6 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param quantity {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.appendVestingEntry = async (account, quantity, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.appendVestingEntry(account, quantity, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
    * @returns boolean
    **/

@@ -7,8 +7,6 @@ import PrivateKey from '../lib/signers/privateKeySigner';
 
 class SynthetixJsBase {
   constructor(contractSettings, signers = { PrivateKey }) {
-    // prevent warnings about "Multiple definitions" for transfer* function from Synth contract
-    ethers.errors.setLogLevel('error');
     contractSettings = new ContractSettings(contractSettings);
     this.signers = signers;
     this.contractSettings = contractSettings;

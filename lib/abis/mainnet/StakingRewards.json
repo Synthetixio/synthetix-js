@@ -653,6 +653,22 @@
 		"signature": "0x18160ddd"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"name": "updatePeriodFinish",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x556f6e6b"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{

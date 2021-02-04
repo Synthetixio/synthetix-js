@@ -40,11 +40,16 @@ import sXRP from './sXRP';
 import sLTC from './sLTC';
 import sLINK from './sLINK';
 import sEOS from './sEOS';
-import sBCH from './sBCH';
 import sETC from './sETC';
 import sDASH from './sDASH';
 import sXMR from './sXMR';
 import sADA from './sADA';
+import sAAVE from './sAAVE';
+import sUNI from './sUNI';
+import sYFI from './sYFI';
+import sDOT from './sDOT';
+import sREN from './sREN';
+import sCOMP from './sCOMP';
 import sFTSE from './sFTSE';
 import sNIKKEI from './sNIKKEI';
 import sCEX from './sCEX';
@@ -58,7 +63,6 @@ import iXRP from './iXRP';
 import iLINK from './iLINK';
 import iLTC from './iLTC';
 import iEOS from './iEOS';
-import iBCH from './iBCH';
 import iETC from './iETC';
 import iDASH from './iDASH';
 import iXMR from './iXMR';
@@ -66,6 +70,12 @@ import iADA from './iADA';
 import iCEX from './iCEX';
 import iDEFI from './iDEFI';
 import iOIL from './iOIL';
+import iAAVE from './iAAVE';
+import iUNI from './iUNI';
+import iYFI from './iYFI';
+import iDOT from './iDOT';
+import iREN from './iREN';
+import iCOMP from './iCOMP';
 
 export default {
   Depot,
@@ -110,11 +120,16 @@ export default {
   sLTC,
   sLINK,
   sEOS,
-  sBCH,
   sETC,
   sDASH,
   sXMR,
   sADA,
+  sAAVE,
+  sUNI,
+  sYFI,
+  sDOT,
+  sREN,
+  sCOMP,
   sFTSE,
   sNIKKEI,
   sCEX,
@@ -128,7 +143,6 @@ export default {
   iLINK,
   iLTC,
   iEOS,
-  iBCH,
   iETC,
   iDASH,
   iXMR,
@@ -136,4 +150,10 @@ export default {
   iCEX,
   iDEFI,
   iOIL,
+  iAAVE,
+  iUNI,
+  iYFI,
+  iDOT,
+  iREN,
+  iCOMP,
 };

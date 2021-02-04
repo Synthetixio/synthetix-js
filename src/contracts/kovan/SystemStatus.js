@@ -42,6 +42,14 @@ function SystemStatus(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32
    **/
+  this.SECTION_SYNTH_EXCHANGE = async () => {
+    return await this.contract.SECTION_SYNTH_EXCHANGE();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
   this.SECTION_SYSTEM = async () => {
     return await this.contract.SECTION_SYSTEM();
   };
@@ -80,6 +88,15 @@ function SystemStatus(contractSettings) {
    **/
   this.exchangeSuspension = async () => {
     return await this.contract.exchangeSuspension();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param synths {bytes32[]}
+   * @returns Object
+   **/
+  this.getSynthExchangeSuspensions = async synths => {
+    return await this.contract.getSynthExchangeSuspensions(synths);
   };
 
   /**
@@ -144,6 +161,19 @@ function SystemStatus(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param destinationCurrencyKey {bytes32}
+  
+   **/
+  this.requireExchangeBetweenSynthsAllowed = async (sourceCurrencyKey, destinationCurrencyKey) => {
+    return await this.contract.requireExchangeBetweenSynthsAllowed(
+      sourceCurrencyKey,
+      destinationCurrencyKey
+    );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
   
    **/
   this.requireIssuanceActive = async () => {
@@ -157,6 +187,15 @@ function SystemStatus(contractSettings) {
    **/
   this.requireSynthActive = async currencyKey => {
     return await this.contract.requireSynthActive(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+  
+   **/
+  this.requireSynthExchangeActive = async currencyKey => {
+    return await this.contract.requireSynthExchangeActive(currencyKey);
   };
 
   /**
@@ -210,6 +249,39 @@ function SystemStatus(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeSynthExchange = async (currencyKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.resumeSynthExchange(currencyKey, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKeys {bytes32[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeSynths = async (currencyKeys, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.resumeSynths(currencyKeys, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKeys {bytes32[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeSynthsExchange = async (currencyKeys, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.resumeSynthsExchange(currencyKeys, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
@@ -254,6 +326,42 @@ function SystemStatus(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param reason {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendSynthExchange = async (currencyKey, reason, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendSynthExchange(currencyKey, reason, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKeys {bytes32[]}
+   * @param reason {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendSynths = async (currencyKeys, reason, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendSynths(currencyKeys, reason, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKeys {bytes32[]}
+   * @param reason {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendSynthsExchange = async (currencyKeys, reason, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendSynthsExchange(currencyKeys, reason, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param reason {BigNumber}
    * @param txParams {TxParams}
   
@@ -261,6 +369,15 @@ function SystemStatus(contractSettings) {
   this.suspendSystem = async (reason, txParams) => {
     txParams = txParams || {};
     return await this.contract.suspendSystem(reason, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns Object
+   **/
+  this.synthExchangeSuspension = async bytes32_1 => {
+    return await this.contract.synthExchangeSuspension(bytes32_1);
   };
 
   /**
@@ -296,6 +413,26 @@ function SystemStatus(contractSettings) {
       account,
       canSuspend,
       canResume,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sections {bytes32[]}
+   * @param accounts {address[]}
+   * @param canSuspends {bool[]}
+   * @param canResumes {bool[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.updateAccessControls = async (sections, accounts, canSuspends, canResumes, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.updateAccessControls(
+      sections,
+      accounts,
+      canSuspends,
+      canResumes,
       txParams
     );
   };

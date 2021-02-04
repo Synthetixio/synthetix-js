@@ -39,7 +39,6 @@ import sXRP from './sXRP';
 import sLTC from './sLTC';
 import sLINK from './sLINK';
 import sEOS from './sEOS';
-import sBCH from './sBCH';
 import sETC from './sETC';
 import sDASH from './sDASH';
 import sXMR from './sXMR';
@@ -55,7 +54,6 @@ import iXRP from './iXRP';
 import iLINK from './iLINK';
 import iLTC from './iLTC';
 import iEOS from './iEOS';
-import iBCH from './iBCH';
 import iETC from './iETC';
 import iDASH from './iDASH';
 import iXMR from './iXMR';
@@ -105,7 +103,6 @@ export default {
   sLTC,
   sLINK,
   sEOS,
-  sBCH,
   sETC,
   sDASH,
   sXMR,
@@ -121,7 +118,6 @@ export default {
   iLINK,
   iLTC,
   iEOS,
-  iBCH,
   iETC,
   iDASH,
   iXMR,

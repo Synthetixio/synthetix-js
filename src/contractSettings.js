@@ -3,11 +3,11 @@ import ABIS from '../lib/abis';
 import synths from '../lib/synths';
 
 const SUPPORTED_NETWORKS = {
-  420: 'ovm',
+  10: 'ovm',
 };
 
 const DEFAULT_ENV = {
-  420: 'goerli',
+  1: 'mainnet',
 };
 
 class ContractSettings {
@@ -20,7 +20,7 @@ class ContractSettings {
   constructor(contractSettings) {
     contractSettings = contractSettings || {};
     const { provider, signer } = contractSettings;
-    this.networkId = 420;
+    this.networkId = 10;
     this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
     this.provider = provider;
     this.signer = signer;

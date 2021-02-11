@@ -5,7 +5,7 @@ const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
 const SUPPORTED_NETWORKS = {
-  420: 'ovm',
+  10: 'ovm',
 };
 
 const DEFAULT_ENV = 'mainnet';

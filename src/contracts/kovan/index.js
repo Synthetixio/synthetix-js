@@ -43,6 +43,7 @@ import sETC from './sETC';
 import sDASH from './sDASH';
 import sXMR from './sXMR';
 import sADA from './sADA';
+import sTSLA from './sTSLA';
 import sCEX from './sCEX';
 import sDEFI from './sDEFI';
 import iBTC from './iBTC';
@@ -107,6 +108,7 @@ export default {
   sDASH,
   sXMR,
   sADA,
+  sTSLA,
   sCEX,
   sDEFI,
   iBTC,

@@ -52,6 +52,7 @@ import sREN from './sREN';
 import sCOMP from './sCOMP';
 import sFTSE from './sFTSE';
 import sNIKKEI from './sNIKKEI';
+import sTSLA from './sTSLA';
 import sCEX from './sCEX';
 import sDEFI from './sDEFI';
 import iBTC from './iBTC';
@@ -132,6 +133,7 @@ export default {
   sCOMP,
   sFTSE,
   sNIKKEI,
+  sTSLA,
   sCEX,
   sDEFI,
   iBTC,

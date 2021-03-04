@@ -1,14 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
+const _camelCase = require('lodash/camelCase');
 const snx = require('synthetix');
 const docsDescriptions = require('../lib/docSrc/descriptions');
 
 const SUPPORTED_NETWORKS = {
-  420: 'ovm',
+  10: 'mainnetOvm',
+  69: 'kovanOvm',
 };
 
-const DEFAULT_ENV = 'mainnet';
+const DEFAULT_ENV = 'mainnetOvm';
 
 /**
  * This module will perform the following actions for all contracts listed
@@ -92,7 +94,7 @@ const writeAddressFile = () => {
       const targets = snx.getTarget({ ...targetConfiguration });
 
       return `
-        const ${network.toUpperCase()}_ADDRESSES = {
+        const ${network.toUpperCase().replace(/\-/g, '_')}_ADDRESSES = {
           ${Object.keys(targets)
             .map(name => `${name}: '${targets[name].address}'`)
             .join(',\n')}
@@ -103,7 +105,10 @@ const writeAddressFile = () => {
   const exportFooter = `
     export default {
     ${Object.entries(SUPPORTED_NETWORKS)
-      .map(([networkId, network]) => `${networkId}: ${network.toUpperCase()}_ADDRESSES`)
+      .map(
+        ([networkId, network]) =>
+          `${networkId}: ${network.toUpperCase().replace(/\-/g, '_')}_ADDRESSES`
+      )
       .join(', ')}
     };`;
 
@@ -126,7 +131,7 @@ const writeSynthsFile = () => {
       const synths = snx.getSynths({ ...targetConfiguration });
 
       return `
-        const ${network.toUpperCase()}_SYNTHS = ${util.inspect(synths, {
+        const ${network.toUpperCase().replace(/\-/g, '_')}_SYNTHS = ${util.inspect(synths, {
         showHidden: false,
         depth: null,
       })}
@@ -137,7 +142,10 @@ const writeSynthsFile = () => {
   const exportFooter = `
     export default {
     ${Object.entries(SUPPORTED_NETWORKS)
-      .map(([networkId, network]) => `${networkId}: ${network.toUpperCase()}_SYNTHS`)
+      .map(
+        ([networkId, network]) =>
+          `${networkId}: ${network.toUpperCase().replace(/\-/g, '_')}_SYNTHS`
+      )
       .join(', ')}
     };`;
 
@@ -174,7 +182,7 @@ const generate = () => {
 
     const allContracts = Object.assign({}, contracts, synthContracts);
 
-    const importStringForHeaders = `import ${network} from './${network}';`;
+    const importStringForHeaders = `import ${_camelCase(network)} from './${network}';`;
     indexFileHeader.push(importStringForHeaders);
 
     const srcNetworkIndexFileHeader = [];
@@ -265,12 +273,12 @@ export default {
 
 const abiCache = {};
 const writeABIFileAsJS = (network, contractName, abi) => {
-  const folder = path.join(__dirname, '..', 'lib', 'abis', 'ovm');
+  const folder = path.join(__dirname, '..', 'lib', 'abis', network);
   if (!fs.existsSync(folder)) {
     fs.mkdirSync(folder);
   }
   const abiPath = path.join(folder, `${contractName}.js`);
-  let content = `export default ${util.inspect(abi, { showHidden: false, depth: null })};`;
+  let content = `export default ${contractName};`; // ${util.inspect(abi, { showHidden: false, depth: null })}
 
   // don't rewrite the same file if it already exists, just import it
   if (content in abiCache) {
@@ -278,7 +286,7 @@ const writeABIFileAsJS = (network, contractName, abi) => {
       export default ${contractName};
       `;
   } else {
-    abiCache[content] = `../ovm/${contractName}`;
+    abiCache[content] = `./${contractName}`;
   }
   fs.writeFile(abiPath, content, err => {
     if (err) {

@@ -3,12 +3,12 @@ import ABIS from '../lib/abis';
 import synths from '../lib/synths';
 
 const SUPPORTED_NETWORKS = {
-  10: 'ovm',
-  69: 'kovan-ovm',
+  10: 'mainnetOvm',
+  69: 'kovanOvm',
 };
 
 const DEFAULT_ENV = {
-  10: 'mainnet',
+  10: 'mainnetOvm',
 };
 
 class ContractSettings {

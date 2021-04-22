@@ -51,9 +51,17 @@ import sYFI from './sYFI';
 import sDOT from './sDOT';
 import sREN from './sREN';
 import sCOMP from './sCOMP';
+import s1INCH from './s1INCH';
+import sRUNE from './sRUNE';
 import sFTSE from './sFTSE';
 import sNIKKEI from './sNIKKEI';
 import sTSLA from './sTSLA';
+import sCRV from './sCRV';
+import sAAPL from './sAAPL';
+import sFB from './sFB';
+import sGOOG from './sGOOG';
+import sNFLX from './sNFLX';
+import sAMZN from './sAMZN';
 import sCEX from './sCEX';
 import sDEFI from './sDEFI';
 import iBTC from './iBTC';
@@ -133,9 +141,17 @@ export default {
   sDOT,
   sREN,
   sCOMP,
+  s1INCH,
+  sRUNE,
   sFTSE,
   sNIKKEI,
   sTSLA,
+  sCRV,
+  sAAPL,
+  sFB,
+  sGOOG,
+  sNFLX,
+  sAMZN,
   sCEX,
   sDEFI,
   iBTC,

@@ -62,6 +62,8 @@ import sFB from './sFB';
 import sGOOG from './sGOOG';
 import sNFLX from './sNFLX';
 import sAMZN from './sAMZN';
+import sCOIN from './sCOIN';
+import sMSFT from './sMSFT';
 import sCEX from './sCEX';
 import sDEFI from './sDEFI';
 import iBTC from './iBTC';
@@ -152,6 +154,8 @@ export default {
   sGOOG,
   sNFLX,
   sAMZN,
+  sCOIN,
+  sMSFT,
   sCEX,
   sDEFI,
   iBTC,

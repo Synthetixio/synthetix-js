@@ -25,23 +25,14 @@ function SynthetixBridgeToOptimism(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.activated = async () => {
-    return await this.contract.activated();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.completeWithdrawal = async (account, amount, txParams) => {
+  this.deposit = async (amount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.completeWithdrawal(account, amount, txParams);
+    return await this.contract.deposit(amount, txParams);
   };
 
   /**
@@ -58,35 +49,56 @@ function SynthetixBridgeToOptimism(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param depositAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.initiateDeposit = async (depositAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.initiateDeposit(depositAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param entryIDs {uint256[][]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.initiateEscrowMigration = async (entryIDs, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.initiateEscrowMigration(entryIDs, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.initiateRewardDeposit = async (amount, txParams) => {
+  this.depositReward = async (amount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.initiateRewardDeposit(amount, txParams);
+    return await this.contract.depositReward(amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.depositTo = async (to, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.depositTo(to, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param to {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.finalizeWithdrawal = async (to, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.finalizeWithdrawal(to, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param token {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.forwardTokensToEscrow = async (token, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.forwardTokensToEscrow(token, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.initiationActive = async () => {
+    return await this.contract.initiationActive();
   };
 
   /**
@@ -99,13 +111,13 @@ function SynthetixBridgeToOptimism(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param newBridge {String<EthAddress>}
+   * @param entryIDs {uint256[][]}
    * @param txParams {TxParams}
   
    **/
-  this.migrateBridge = async (newBridge, txParams) => {
+  this.migrateEscrow = async (entryIDs, txParams) => {
     txParams = txParams || {};
-    return await this.contract.migrateBridge(newBridge, txParams);
+    return await this.contract.migrateEscrow(entryIDs, txParams);
   };
 
   /**
@@ -170,6 +182,26 @@ function SynthetixBridgeToOptimism(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeInitiation = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.resumeInitiation(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendInitiation = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.suspendInitiation(txParams);
   };
 }
 

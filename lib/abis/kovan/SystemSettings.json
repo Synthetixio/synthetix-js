@@ -90,6 +90,48 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			}
+		],
+		"name": "EtherWrapperBurnFeeRateUpdated",
+		"type": "event",
+		"signature": "0x1c97c2e8b44aa487062d3e92ce52ac814b35191f4799fd2d5a3f36c67f1d9d4a"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "maxETH",
+				"type": "uint256"
+			}
+		],
+		"name": "EtherWrapperMaxETHUpdated",
+		"type": "event",
+		"signature": "0x8086de8bfec0a6cd9a9213caef7ee137a59e4d8da145de163dc3f244dacddc68"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			}
+		],
+		"name": "EtherWrapperMintFeeRateUpdated",
+		"type": "event",
+		"signature": "0x19ef86e0422ac5c02afdc7b9f91f468ccc5e9b785bf7c158e01357e8503a819b"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "bytes32",
 				"name": "synthKey",
 				"type": "bytes32"
@@ -308,6 +350,38 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xc58c9ae4"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ETHER_WRAPPER_BURN_FEE_RATE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x6022aac5"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ETHER_WRAPPER_MINT_FEE_RATE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xdafd2daf"
 	},
 	{
 		"constant": true,
@@ -564,6 +638,54 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xaf5355d8"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "etherWrapperBurnFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x922fef08"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "etherWrapperMaxETH",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbcf7eeac"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "etherWrapperMintFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x0f27b788"
 	},
 	{
 		"constant": true,
@@ -873,6 +995,54 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x6190dd7a"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_rate",
+				"type": "uint256"
+			}
+		],
+		"name": "setEtherWrapperBurnFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe7894da1"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_maxETH",
+				"type": "uint256"
+			}
+		],
+		"name": "setEtherWrapperMaxETH",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xcc754a4c"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_rate",
+				"type": "uint256"
+			}
+		],
+		"name": "setEtherWrapperMintFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x75aca321"
 	},
 	{
 		"constant": false,

@@ -300,6 +300,11 @@
 				"type": "uint256[]"
 			},
 			{
+				"internalType": "uint256",
+				"name": "excludedDebt",
+				"type": "uint256"
+			},
+			{
 				"internalType": "bool",
 				"name": "anyRateIsInvalid",
 				"type": "bool"
@@ -457,6 +462,27 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xe3476cd4"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalNonSnxBackedDebt",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "excludedDebt",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isInvalid",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2992dba2"
 	},
 	{
 		"constant": false,

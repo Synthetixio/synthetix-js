@@ -26,6 +26,22 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MAX_ETHER_WRAPPER_BURN_FEE_RATE = async () => {
+    return await this.contract.MAX_ETHER_WRAPPER_BURN_FEE_RATE();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ETHER_WRAPPER_MINT_FEE_RATE = async () => {
+    return await this.contract.MAX_ETHER_WRAPPER_MINT_FEE_RATE();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MAX_EXCHANGE_FEE_RATE = async () => {
     return await this.contract.MAX_EXCHANGE_FEE_RATE();
   };
@@ -151,6 +167,30 @@ function SystemSettings(contractSettings) {
    **/
   this.debtSnapshotStaleTime = async () => {
     return await this.contract.debtSnapshotStaleTime();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.etherWrapperBurnFeeRate = async () => {
+    return await this.contract.etherWrapperBurnFeeRate();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.etherWrapperMaxETH = async () => {
+    return await this.contract.etherWrapperMaxETH();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.etherWrapperMintFeeRate = async () => {
+    return await this.contract.etherWrapperMintFeeRate();
   };
 
   /**
@@ -327,6 +367,39 @@ function SystemSettings(contractSettings) {
   this.setDebtSnapshotStaleTime = async (_seconds, txParams) => {
     txParams = txParams || {};
     return await this.contract.setDebtSnapshotStaleTime(_seconds, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _rate {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setEtherWrapperBurnFeeRate = async (_rate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setEtherWrapperBurnFeeRate(_rate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _maxETH {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setEtherWrapperMaxETH = async (_maxETH, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setEtherWrapperMaxETH(_maxETH, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _rate {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setEtherWrapperMintFeeRate = async (_rate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setEtherWrapperMintFeeRate(_rate, txParams);
   };
 
   /**

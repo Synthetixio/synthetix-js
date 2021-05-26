@@ -1,3 +1,5 @@
+**This library is now deprecated.** Please use https://github.com/Synthetixio/js-monorepo/tree/master/packages/contracts-interface from our new monorepo.
+
 # SynthetixJs library
 
 [![CircleCI](https://circleci.com/gh/Synthetixio/synthetix-js.svg?style=svg)](https://circleci.com/gh/Synthetixio/synthetix-js) [![npm version](https://badge.fury.io/js/synthetix-js.svg)](https://badge.fury.io/js/synthetix-js)

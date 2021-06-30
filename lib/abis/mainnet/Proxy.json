@@ -33,6 +33,7 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "contract Proxyable",
 				"name": "_target",
 				"type": "address"
 			}
@@ -140,6 +141,7 @@
 		"name": "target",
 		"outputs": [
 			{
+				"internalType": "contract Proxyable",
 				"name": "",
 				"type": "address"
 			}
@@ -170,6 +172,7 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "contract Proxyable",
 				"name": "newTarget",
 				"type": "address"
 			}

@@ -16,6 +16,14 @@ function Synthetix(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns Number
    **/
   this.DECIMALS = async () => {
@@ -240,15 +248,17 @@ function Synthetix(contractSettings) {
    * @param trackingCode {bytes32}
    * @param toCurrencyKey {bytes32}
    * @param toAmount {BigNumber}
+   * @param fee {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.emitExchangeTracking = async (trackingCode, toCurrencyKey, toAmount, txParams) => {
+  this.emitExchangeTracking = async (trackingCode, toCurrencyKey, toAmount, fee, txParams) => {
     txParams = txParams || {};
     return await this.contract.emitExchangeTracking(
       trackingCode,
       toCurrencyKey,
       toAmount,
+      fee,
       txParams
     );
   };
@@ -336,7 +346,7 @@ function Synthetix(contractSettings) {
    * @param sourceCurrencyKey {bytes32}
    * @param sourceAmount {BigNumber}
    * @param destinationCurrencyKey {bytes32}
-   * @param originator {String<EthAddress>}
+   * @param rewardAddress {String<EthAddress>}
    * @param trackingCode {bytes32}
    * @param txParams {TxParams}
    * @returns BigNumber
@@ -346,7 +356,7 @@ function Synthetix(contractSettings) {
     sourceCurrencyKey,
     sourceAmount,
     destinationCurrencyKey,
-    originator,
+    rewardAddress,
     trackingCode,
     txParams
   ) => {
@@ -356,7 +366,7 @@ function Synthetix(contractSettings) {
       sourceCurrencyKey,
       sourceAmount,
       destinationCurrencyKey,
-      originator,
+      rewardAddress,
       trackingCode,
       txParams
     );
@@ -367,7 +377,7 @@ function Synthetix(contractSettings) {
    * @param sourceCurrencyKey {bytes32}
    * @param sourceAmount {BigNumber}
    * @param destinationCurrencyKey {bytes32}
-   * @param originator {String<EthAddress>}
+   * @param rewardAddress {String<EthAddress>}
    * @param trackingCode {bytes32}
    * @param txParams {TxParams}
    * @returns BigNumber
@@ -376,7 +386,7 @@ function Synthetix(contractSettings) {
     sourceCurrencyKey,
     sourceAmount,
     destinationCurrencyKey,
-    originator,
+    rewardAddress,
     trackingCode,
     txParams
   ) => {
@@ -385,7 +395,36 @@ function Synthetix(contractSettings) {
       sourceCurrencyKey,
       sourceAmount,
       destinationCurrencyKey,
-      originator,
+      rewardAddress,
+      trackingCode,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param rewardAddress {String<EthAddress>}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeWithTrackingForInitiator = async (
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    rewardAddress,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeWithTrackingForInitiator(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      rewardAddress,
       trackingCode,
       txParams
     );

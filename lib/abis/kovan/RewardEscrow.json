@@ -18,6 +18,7 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "contract IFeePool",
 				"name": "_feePool",
 				"type": "address"
 			}
@@ -263,6 +264,7 @@
 		"name": "synthetix",
 		"outputs": [
 			{
+				"internalType": "contract ISynthetix",
 				"name": "",
 				"type": "address"
 			}
@@ -442,6 +444,7 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "contract ISynthetix",
 				"name": "_synthetix",
 				"type": "address"
 			}

@@ -114,6 +114,22 @@
 		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "CONTRACT_NAME",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x614d08f8"
+	},
+	{
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",

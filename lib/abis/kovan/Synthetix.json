@@ -182,11 +182,17 @@
 				"internalType": "uint256",
 				"name": "toAmount",
 				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "fee",
+				"type": "uint256"
 			}
 		],
 		"name": "ExchangeTracking",
 		"type": "event",
-		"signature": "0x9b39fce028952c685c9c73b2f5f825f8e369fbdaca2bec73c4abb52c2abc123c"
+		"signature": "0x598db110c31345e2c4418fa8a5d4e125f3526f24b214150e19d76e5889ed120b"
 	},
 	{
 		"anonymous": false,
@@ -319,6 +325,22 @@
 		"name": "Transfer",
 		"type": "event",
 		"signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "CONTRACT_NAME",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x614d08f8"
 	},
 	{
 		"constant": true,
@@ -764,6 +786,11 @@
 				"internalType": "uint256",
 				"name": "toAmount",
 				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fee",
+				"type": "uint256"
 			}
 		],
 		"name": "emitExchangeTracking",
@@ -771,7 +798,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xddd03a3f"
+		"signature": "0x2d3169eb"
 	},
 	{
 		"constant": false,
@@ -908,7 +935,7 @@
 			},
 			{
 				"internalType": "address",
-				"name": "originator",
+				"name": "rewardAddress",
 				"type": "address"
 			},
 			{
@@ -950,7 +977,7 @@
 			},
 			{
 				"internalType": "address",
-				"name": "originator",
+				"name": "rewardAddress",
 				"type": "address"
 			},
 			{
@@ -971,6 +998,48 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x30ead760"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "rewardAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "trackingCode",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeWithTrackingForInitiator",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x5af090ef"
 	},
 	{
 		"constant": false,

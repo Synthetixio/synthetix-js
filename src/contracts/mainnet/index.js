@@ -15,8 +15,6 @@ import AddressResolver from './AddressResolver';
 import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
 import RewardsDistribution from './RewardsDistribution';
-import BinaryOptionMarketManager from './BinaryOptionMarketManager';
-import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
 import EtherCollateralsUSD from './EtherCollateralsUSD';
 import Liquidations from './Liquidations';
@@ -107,8 +105,6 @@ export default {
   DelegateApprovals,
   SystemStatus,
   RewardsDistribution,
-  BinaryOptionMarketManager,
-  BinaryOptionMarketData,
   SynthUtil,
   EtherCollateralsUSD,
   Liquidations,

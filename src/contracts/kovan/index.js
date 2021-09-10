@@ -9,16 +9,12 @@ import SynthetixState from './SynthetixState';
 import RewardEscrow from './RewardEscrow';
 import DappMaintenance from './DappMaintenance';
 import Exchanger from './Exchanger';
-import EtherCollateral from './EtherCollateral';
 import Issuer from './Issuer';
 import AddressResolver from './AddressResolver';
 import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
 import RewardsDistribution from './RewardsDistribution';
-import BinaryOptionMarketManager from './BinaryOptionMarketManager';
-import BinaryOptionMarketData from './BinaryOptionMarketData';
 import SynthUtil from './SynthUtil';
-import EtherCollateralsUSD from './EtherCollateralsUSD';
 import Liquidations from './Liquidations';
 import SynthetixBridgeToOptimism from './SynthetixBridgeToOptimism';
 import SystemSettings from './SystemSettings';
@@ -51,7 +47,6 @@ import iBTC from './iBTC';
 import iETH from './iETH';
 import iBNB from './iBNB';
 import iTRX from './iTRX';
-import iXTZ from './iXTZ';
 import iXRP from './iXRP';
 import iLINK from './iLINK';
 import iLTC from './iLTC';
@@ -75,16 +70,12 @@ export default {
   RewardEscrow,
   DappMaintenance,
   Exchanger,
-  EtherCollateral,
   Issuer,
   AddressResolver,
   DelegateApprovals,
   SystemStatus,
   RewardsDistribution,
-  BinaryOptionMarketManager,
-  BinaryOptionMarketData,
   SynthUtil,
-  EtherCollateralsUSD,
   Liquidations,
   SynthetixBridgeToOptimism,
   SystemSettings,
@@ -117,7 +108,6 @@ export default {
   iETH,
   iBNB,
   iTRX,
-  iXTZ,
   iXRP,
   iLINK,
   iLTC,

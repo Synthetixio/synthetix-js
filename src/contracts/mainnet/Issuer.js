@@ -89,6 +89,19 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param deprecatedSynthProxy {String<EthAddress>}
+   * @param account {String<EthAddress>}
+   * @param balance {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnForRedemption = async (deprecatedSynthProxy, account, balance, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnForRedemption(deprecatedSynthProxy, account, balance, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -403,11 +416,11 @@ function Issuer(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes32}
-   * @param excludeEtherCollateral {boolean}
+   * @param excludeOtherCollateral {boolean}
    * @returns BigNumber
    **/
-  this.totalIssuedSynths = async (currencyKey, excludeEtherCollateral) => {
-    return await this.contract.totalIssuedSynths(currencyKey, excludeEtherCollateral);
+  this.totalIssuedSynths = async (currencyKey, excludeOtherCollateral) => {
+    return await this.contract.totalIssuedSynths(currencyKey, excludeOtherCollateral);
   };
 
   /**

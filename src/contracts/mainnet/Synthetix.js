@@ -791,8 +791,8 @@ function Synthetix(contractSettings) {
    * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.totalIssuedSynthsExcludeEtherCollateral = async currencyKey => {
-    return await this.contract.totalIssuedSynthsExcludeEtherCollateral(currencyKey);
+  this.totalIssuedSynthsExcludeOtherCollateral = async currencyKey => {
+    return await this.contract.totalIssuedSynthsExcludeOtherCollateral(currencyKey);
   };
 
   /**

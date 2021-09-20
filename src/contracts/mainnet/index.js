@@ -25,65 +25,13 @@ import sAUD from './sAUD';
 import sGBP from './sGBP';
 import sCHF from './sCHF';
 import sKRW from './sKRW';
-import sXAU from './sXAU';
-import sXAG from './sXAG';
-import sOIL from './sOIL';
 import sBTC from './sBTC';
 import sETH from './sETH';
-import sBNB from './sBNB';
-import sTRX from './sTRX';
-import sXTZ from './sXTZ';
-import sXRP from './sXRP';
-import sLTC from './sLTC';
 import sLINK from './sLINK';
-import sEOS from './sEOS';
-import sETC from './sETC';
-import sDASH from './sDASH';
-import sXMR from './sXMR';
 import sADA from './sADA';
 import sAAVE from './sAAVE';
-import sUNI from './sUNI';
-import sYFI from './sYFI';
 import sDOT from './sDOT';
-import sREN from './sREN';
-import sCOMP from './sCOMP';
-import s1INCH from './s1INCH';
-import sRUNE from './sRUNE';
-import sFTSE from './sFTSE';
-import sNIKKEI from './sNIKKEI';
-import sTSLA from './sTSLA';
-import sCRV from './sCRV';
-import sAAPL from './sAAPL';
-import sFB from './sFB';
-import sGOOG from './sGOOG';
-import sNFLX from './sNFLX';
-import sAMZN from './sAMZN';
-import sCOIN from './sCOIN';
-import sMSFT from './sMSFT';
-import sCEX from './sCEX';
 import sDEFI from './sDEFI';
-import iBTC from './iBTC';
-import iETH from './iETH';
-import iBNB from './iBNB';
-import iTRX from './iTRX';
-import iXTZ from './iXTZ';
-import iXRP from './iXRP';
-import iLINK from './iLINK';
-import iLTC from './iLTC';
-import iEOS from './iEOS';
-import iETC from './iETC';
-import iDASH from './iDASH';
-import iXMR from './iXMR';
-import iADA from './iADA';
-import iCEX from './iCEX';
-import iDEFI from './iDEFI';
-import iOIL from './iOIL';
-import iAAVE from './iAAVE';
-import iUNI from './iUNI';
-import iYFI from './iYFI';
-import iDOT from './iDOT';
-import iREN from './iREN';
-import iCOMP from './iCOMP';
 
 export default {
   Depot,
@@ -113,63 +61,11 @@ export default {
   sGBP,
   sCHF,
   sKRW,
-  sXAU,
-  sXAG,
-  sOIL,
   sBTC,
   sETH,
-  sBNB,
-  sTRX,
-  sXTZ,
-  sXRP,
-  sLTC,
   sLINK,
-  sEOS,
-  sETC,
-  sDASH,
-  sXMR,
   sADA,
   sAAVE,
-  sUNI,
-  sYFI,
   sDOT,
-  sREN,
-  sCOMP,
-  s1INCH,
-  sRUNE,
-  sFTSE,
-  sNIKKEI,
-  sTSLA,
-  sCRV,
-  sAAPL,
-  sFB,
-  sGOOG,
-  sNFLX,
-  sAMZN,
-  sCOIN,
-  sMSFT,
-  sCEX,
   sDEFI,
-  iBTC,
-  iETH,
-  iBNB,
-  iTRX,
-  iXTZ,
-  iXRP,
-  iLINK,
-  iLTC,
-  iEOS,
-  iETC,
-  iDASH,
-  iXMR,
-  iADA,
-  iCEX,
-  iDEFI,
-  iOIL,
-  iAAVE,
-  iUNI,
-  iYFI,
-  iDOT,
-  iREN,
-  iCOMP,
 };

@@ -530,6 +530,21 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "int256",
+				"name": "amount",
+				"type": "int256"
+			}
+		],
+		"name": "updateCachedsUSDDebt",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "bool",
 				"name": "currentlyInvalid",
 				"type": "bool"

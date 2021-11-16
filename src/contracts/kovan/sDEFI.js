@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/kovan/PurgeableSynth';
+import abi from '../../../lib/abis/kovan/MultiCollateralSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -13,6 +13,14 @@ function sDEFI(contractSettings) {
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -101,14 +109,6 @@ function sDEFI(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.integrationProxy = async () => {
-    return await this.contract.integrationProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.isResolverCached = async () => {
@@ -125,14 +125,6 @@ function sDEFI(contractSettings) {
   this.issue = async (account, amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.issue(account, amount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.maxSupplyToPurgeInUSD = async () => {
-    return await this.contract.maxSupplyToPurgeInUSD();
   };
 
   /**
@@ -188,17 +180,6 @@ function sDEFI(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param addresses {address[]}
-   * @param txParams {TxParams}
-  
-   **/
-  this.purge = async (addresses, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.purge(addresses, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
@@ -221,17 +202,6 @@ function sDEFI(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _integrationProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
   };
 
   /**

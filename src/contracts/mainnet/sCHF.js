@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/mainnet/Synth';
+import abi from '../../../lib/abis/mainnet/MultiCollateralSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -13,6 +13,14 @@ function sCHF(contractSettings) {
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -284,7 +292,6 @@ function sCHF(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -309,7 +316,6 @@ function sCHF(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}

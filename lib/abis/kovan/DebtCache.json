@@ -330,6 +330,27 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "excludedIssuedDebts",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "excludedDebts",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "isResolverCached",
 		"outputs": [
@@ -407,6 +428,26 @@
 		"constant": false,
 		"inputs": [],
 		"name": "rebuildCache",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "int256",
+				"name": "delta",
+				"type": "int256"
+			}
+		],
+		"name": "recordExcludedDebtChange",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

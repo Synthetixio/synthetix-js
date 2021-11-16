@@ -1,6 +1,6 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/kovan/Synth';
+import abi from '../../../lib/abis/kovan/MultiCollateralSynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
@@ -13,6 +13,14 @@ function sEUR(contractSettings) {
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
 
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -97,14 +105,6 @@ function sEUR(contractSettings) {
    **/
   this.decimals = async () => {
     return await this.contract.decimals();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.integrationProxy = async () => {
-    return await this.contract.integrationProxy();
   };
 
   /**
@@ -206,17 +206,6 @@ function sEUR(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _integrationProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param sender {String<EthAddress>}
    * @param txParams {TxParams}
   
@@ -284,7 +273,6 @@ function sEUR(contractSettings) {
   };
 
   /**
-   * Override ERC20 transfer function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -309,7 +297,6 @@ function sEUR(contractSettings) {
   };
 
   /**
-   * Override ERC20 transferFrom function in order to subtract the transaction fee and send it to the fee pool for SNX holders to claim.<br>
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param to {String<EthAddress>}

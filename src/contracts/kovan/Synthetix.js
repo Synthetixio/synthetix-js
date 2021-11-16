@@ -220,6 +220,38 @@ function Synthetix(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
+   * @param fromCurrencyKey {bytes32}
+   * @param fromAmount {BigNumber}
+   * @param toCurrencyKey {bytes32}
+   * @param toAmount {BigNumber}
+   * @param toAddress {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.emitAtomicSynthExchange = async (
+    account,
+    fromCurrencyKey,
+    fromAmount,
+    toCurrencyKey,
+    toAmount,
+    toAddress,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.emitAtomicSynthExchange(
+      account,
+      fromCurrencyKey,
+      fromAmount,
+      toCurrencyKey,
+      toAmount,
+      toAddress,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
    * @param currencyKey {bytes32}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -310,6 +342,32 @@ function Synthetix(contractSettings) {
       sourceCurrencyKey,
       sourceAmount,
       destinationCurrencyKey,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param sourceCurrencyKey {bytes32}
+   * @param sourceAmount {BigNumber}
+   * @param destinationCurrencyKey {bytes32}
+   * @param trackingCode {bytes32}
+   * @param txParams {TxParams}
+   * @returns BigNumber
+   **/
+  this.exchangeAtomically = async (
+    sourceCurrencyKey,
+    sourceAmount,
+    destinationCurrencyKey,
+    trackingCode,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.exchangeAtomically(
+      sourceCurrencyKey,
+      sourceAmount,
+      destinationCurrencyKey,
+      trackingCode,
       txParams
     );
   };
@@ -454,14 +512,6 @@ function Synthetix(contractSettings) {
       trackingCode,
       txParams
     );
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.integrationProxy = async () => {
-    return await this.contract.integrationProxy();
   };
 
   /**
@@ -685,17 +735,6 @@ function Synthetix(contractSettings) {
    **/
   this.sUSD = async () => {
     return await this.contract.sUSD();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _integrationProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
   };
 
   /**

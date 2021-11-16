@@ -391,21 +391,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "integrationProxy",
-		"outputs": [
-			{
-				"internalType": "contract Proxy",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "isResolverCached",
 		"outputs": [
 			{
@@ -565,21 +550,6 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_integrationProxy",
-				"type": "address"
-			}
-		],
-		"name": "setIntegrationProxy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

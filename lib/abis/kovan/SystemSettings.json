@@ -14,8 +14,7 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,
@@ -28,8 +27,128 @@
 			}
 		],
 		"name": "AggregatorWarningFlagsUpdated",
-		"type": "event",
-		"signature": "0x0f4cbdee769ea02d5757b91905563555cc648fe42fc3ef201e28d97d2bbde965"
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "equivalent",
+				"type": "address"
+			}
+		],
+		"name": "AtomicEquivalentForDexPricingUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newExchangeFeeRate",
+				"type": "uint256"
+			}
+		],
+		"name": "AtomicExchangeFeeUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newMaxVolume",
+				"type": "uint256"
+			}
+		],
+		"name": "AtomicMaxVolumePerBlockUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newBuffer",
+				"type": "uint256"
+			}
+		],
+		"name": "AtomicPriceBufferUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newWindow",
+				"type": "uint256"
+			}
+		],
+		"name": "AtomicTwapWindowUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newVolatilityConsiderationWindow",
+				"type": "uint256"
+			}
+		],
+		"name": "AtomicVolatilityConsiderationWindowUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newVolatilityUpdateThreshold",
+				"type": "uint256"
+			}
+		],
+		"name": "AtomicVolatilityUpdateThresholdUpdated",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -48,8 +167,33 @@
 			}
 		],
 		"name": "CacheUpdated",
-		"type": "event",
-		"signature": "0x88a93678a3692f6789d9546fc621bf7234b101ddb7d4fe479455112831b8aa68"
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "collapseFeeRate",
+				"type": "uint256"
+			}
+		],
+		"name": "CollapseFeeRateUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "newCollateralManager",
+				"type": "address"
+			}
+		],
+		"name": "CollateralManagerUpdated",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -68,8 +212,7 @@
 			}
 		],
 		"name": "CrossDomainMessageGasLimitChanged",
-		"type": "event",
-		"signature": "0xbf62a396f632016f0e0cffedb18ee9be41a161c79cee3b64736b0c97a924554a"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -82,8 +225,7 @@
 			}
 		],
 		"name": "DebtSnapshotStaleTimeUpdated",
-		"type": "event",
-		"signature": "0x9795be9f1478ed09e9e47e67318b8aa7a0c0213170403191099bf7dd435fb4d7"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -96,8 +238,7 @@
 			}
 		],
 		"name": "EtherWrapperBurnFeeRateUpdated",
-		"type": "event",
-		"signature": "0x1c97c2e8b44aa487062d3e92ce52ac814b35191f4799fd2d5a3f36c67f1d9d4a"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -110,8 +251,7 @@
 			}
 		],
 		"name": "EtherWrapperMaxETHUpdated",
-		"type": "event",
-		"signature": "0x8086de8bfec0a6cd9a9213caef7ee137a59e4d8da145de163dc3f244dacddc68"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -124,8 +264,7 @@
 			}
 		],
 		"name": "EtherWrapperMintFeeRateUpdated",
-		"type": "event",
-		"signature": "0x19ef86e0422ac5c02afdc7b9f91f468ccc5e9b785bf7c158e01357e8503a819b"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -144,8 +283,7 @@
 			}
 		],
 		"name": "ExchangeFeeUpdated",
-		"type": "event",
-		"signature": "0xbbdab54f0da6d720d21f53e4d6f5bbe83e5a2f74c1354175140ea74f8e90c77e"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -158,8 +296,20 @@
 			}
 		],
 		"name": "FeePeriodDurationUpdated",
-		"type": "event",
-		"signature": "0x791bd58dd9719b5eb5ccdd6ec4d5c459b0ab8efcf59b723cf477693c0889eacd"
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "interactionDelay",
+				"type": "uint256"
+			}
+		],
+		"name": "InteractionDelayUpdated",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -172,8 +322,7 @@
 			}
 		],
 		"name": "IssuanceRatioUpdated",
-		"type": "event",
-		"signature": "0x63b22e09cc3a33e847c063e35f887bd4ea96bc8c0f93f1f8c311e4fa6d885452"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -186,8 +335,7 @@
 			}
 		],
 		"name": "LiquidationDelayUpdated",
-		"type": "event",
-		"signature": "0x9917e32433edcb65f8982c1b2c26c3469468308456f93cf34b98c1b0459c5398"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -200,8 +348,7 @@
 			}
 		],
 		"name": "LiquidationPenaltyUpdated",
-		"type": "event",
-		"signature": "0xbfb22c07314f4682bba789860ceb851eb8cea2d867920332b2a42cf56be5b2e9"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -214,8 +361,20 @@
 			}
 		],
 		"name": "LiquidationRatioUpdated",
-		"type": "event",
-		"signature": "0x5568be83e5cf7405adf8fb39305e2cdf49c43336606d23c3e0d3fe54e205150a"
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "minCratio",
+				"type": "uint256"
+			}
+		],
+		"name": "MinCratioRatioUpdated",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -228,8 +387,7 @@
 			}
 		],
 		"name": "MinimumStakeTimeUpdated",
-		"type": "event",
-		"signature": "0x2b0fa66d155c9598699cb6569577f27b95729bbf580268eed39db6bc4e814477"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -248,8 +406,7 @@
 			}
 		],
 		"name": "OwnerChanged",
-		"type": "event",
-		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -262,8 +419,7 @@
 			}
 		],
 		"name": "OwnerNominated",
-		"type": "event",
-		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -276,8 +432,7 @@
 			}
 		],
 		"name": "PriceDeviationThresholdUpdated",
-		"type": "event",
-		"signature": "0x6e65c7d32a9129ebc4e4e6d755e2a9668753c046f4b128ac8aeb4f3e5446a1e5"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -290,8 +445,7 @@
 			}
 		],
 		"name": "RateStalePeriodUpdated",
-		"type": "event",
-		"signature": "0x16529d8c407b08938da67de7fa4319199baffce4f5d1971f812cc770b0237e66"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -304,8 +458,7 @@
 			}
 		],
 		"name": "TargetThresholdUpdated",
-		"type": "event",
-		"signature": "0xb2b3a840c101d8e7f0cf8d80d3868976968714347038fe89b36c5031f94dab12"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -318,8 +471,7 @@
 			}
 		],
 		"name": "TradingRewardsEnabled",
-		"type": "event",
-		"signature": "0xe11c1893b6f97decd3ac13637137734a4b75d159e899e5a8abb48470ab0bc4fd"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -332,8 +484,124 @@
 			}
 		],
 		"name": "WaitingPeriodSecsUpdated",
-		"type": "event",
-		"signature": "0xc32c92cac11e29883e0fb2d9e38230cc510e3bda48abc270b780de60bb8465f8"
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "wrapper",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "rate",
+				"type": "int256"
+			}
+		],
+		"name": "WrapperBurnFeeRateUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "wrapper",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "maxTokenAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "WrapperMaxTokenAmountUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "wrapper",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "rate",
+				"type": "int256"
+			}
+		],
+		"name": "WrapperMintFeeRateUpdated",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "CONTRACT_NAME",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ATOMIC_TWAP_WINDOW",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_ATOMIC_VOLUME_PER_BLOCK",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -348,40 +616,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xc58c9ae4"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ETHER_WRAPPER_BURN_FEE_RATE",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x6022aac5"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ETHER_WRAPPER_MINT_FEE_RATE",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xdafd2daf"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -396,8 +631,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xfb1b4c7e"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -412,8 +646,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf344da67"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -428,8 +661,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x657c6dc7"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -444,8 +676,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf1076b25"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -460,8 +691,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x085f95cd"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -476,8 +706,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xb2ea7054"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -492,8 +721,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x580a975c"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -508,8 +736,67 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xaf8bc660"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_WRAPPER_BURN_FEE_RATE",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_WRAPPER_MINT_FEE_RATE",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MIN_ATOMIC_TWAP_WINDOW",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MIN_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -524,8 +811,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7ce2cc7f"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -540,8 +826,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xd62ae399"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -556,8 +841,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xadd0989d"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -572,8 +856,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa4ce5b71"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -582,8 +865,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x79ba5097"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -598,8 +880,184 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x4c36b837"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "atomicEquivalentForDexPricing",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "atomicExchangeFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "atomicMaxVolumePerBlock",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "atomicPriceBuffer",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "atomicTwapWindow",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "atomicVolatilityConsiderationWindow",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "atomicVolatilityUpdateThreshold",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "collateral",
+				"type": "address"
+			}
+		],
+		"name": "collapseFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "collateral",
+				"type": "address"
+			}
+		],
+		"name": "collateralManager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -620,8 +1078,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x038e47fe"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -636,8 +1093,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xaf5355d8"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -652,8 +1108,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x922fef08"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -668,8 +1123,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xbcf7eeac"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -684,8 +1138,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x0f27b788"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -706,8 +1159,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x967706e9"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -722,8 +1174,28 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x22425fa4"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "collateral",
+				"type": "address"
+			}
+		],
+		"name": "interactionDelay",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -738,8 +1210,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2af64bd3"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -754,8 +1225,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xb410a034"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -770,8 +1240,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa0cf7451"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -786,8 +1255,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x23f5589a"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -802,8 +1270,28 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x1775765f"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "collateral",
+				"type": "address"
+			}
+		],
+		"name": "minCratio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -818,8 +1306,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x242df9e1"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -834,8 +1321,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1627540c"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -850,8 +1336,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x53a47bb7"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -866,8 +1351,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8da5cb5b"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -882,8 +1366,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x372a395a"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -898,8 +1381,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x0ee4951b"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -908,8 +1390,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x74185360"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -924,8 +1405,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x04f3bcec"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -940,8 +1420,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x899ffef4"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -956,8 +1435,177 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x7bf82305"
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "_equivalent",
+				"type": "address"
+			}
+		],
+		"name": "setAtomicEquivalentForDexPricing",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_exchangeFeeRate",
+				"type": "uint256"
+			}
+		],
+		"name": "setAtomicExchangeFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_maxVolume",
+				"type": "uint256"
+			}
+		],
+		"name": "setAtomicMaxVolumePerBlock",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_buffer",
+				"type": "uint256"
+			}
+		],
+		"name": "setAtomicPriceBuffer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_window",
+				"type": "uint256"
+			}
+		],
+		"name": "setAtomicTwapWindow",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_window",
+				"type": "uint256"
+			}
+		],
+		"name": "setAtomicVolatilityConsiderationWindow",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_threshold",
+				"type": "uint256"
+			}
+		],
+		"name": "setAtomicVolatilityUpdateThreshold",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_collateral",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_collapseFeeRate",
+				"type": "uint256"
+			}
+		],
+		"name": "setCollapseFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_collateral",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_newCollateralManager",
+				"type": "address"
+			}
+		],
+		"name": "setCollateralManager",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -977,8 +1625,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xdc8f4a1b"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -993,8 +1640,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x6190dd7a"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1009,8 +1655,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe7894da1"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1025,8 +1670,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xcc754a4c"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1041,8 +1685,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x75aca321"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1062,8 +1705,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x28a1170d"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1078,8 +1720,27 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x04c49f2c"
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_collateral",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_interactionDelay",
+				"type": "uint256"
+			}
+		],
+		"name": "setInteractionDelay",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1094,8 +1755,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x054be0b7"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1110,8 +1770,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x5e0117d6"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1126,8 +1785,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x2806a743"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1142,8 +1800,27 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x946ce8cd"
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_collateral",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_minCratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinCratio",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1158,8 +1835,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe9422046"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1174,8 +1850,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1e6e2190"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1190,8 +1865,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x79cb657a"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1206,8 +1880,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x2cce0e54"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1222,8 +1895,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4641ab66"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1238,8 +1910,67 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x635a3872"
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_wrapper",
+				"type": "address"
+			},
+			{
+				"internalType": "int256",
+				"name": "_rate",
+				"type": "int256"
+			}
+		],
+		"name": "setWrapperBurnFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_wrapper",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maxTokenAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "setWrapperMaxTokenAmount",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_wrapper",
+				"type": "address"
+			},
+			{
+				"internalType": "int256",
+				"name": "_rate",
+				"type": "int256"
+			}
+		],
+		"name": "setWrapperMintFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -1254,8 +1985,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe0e6393d"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -1270,8 +2000,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xc193f0d8"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -1286,7 +2015,69 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x89257117"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "wrapper",
+				"type": "address"
+			}
+		],
+		"name": "wrapperBurnFeeRate",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "wrapper",
+				"type": "address"
+			}
+		],
+		"name": "wrapperMaxTokenAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "wrapper",
+				"type": "address"
+			}
+		],
+		"name": "wrapperMintFeeRate",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]

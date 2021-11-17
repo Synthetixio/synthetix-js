@@ -109,14 +109,6 @@ function sLINK(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.integrationProxy = async () => {
-    return await this.contract.integrationProxy();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.isResolverCached = async () => {
@@ -210,17 +202,6 @@ function sLINK(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _integrationProxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setIntegrationProxy = async (_integrationProxy, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
   };
 
   /**

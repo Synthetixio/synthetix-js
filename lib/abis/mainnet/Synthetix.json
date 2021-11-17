@@ -91,6 +91,49 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "fromCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "fromAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "toCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "toAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "toAddress",
+				"type": "address"
+			}
+		],
+		"name": "AtomicSynthExchange",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": false,
 				"internalType": "bytes32",
 				"name": "name",
@@ -693,6 +736,46 @@
 			},
 			{
 				"internalType": "bytes32",
+				"name": "fromCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fromAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "toCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "toAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "toAddress",
+				"type": "address"
+			}
+		],
+		"name": "emitAtomicSynthExchange",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
 				"name": "currencyKey",
 				"type": "bytes32"
 			},
@@ -823,6 +906,42 @@
 			}
 		],
 		"name": "exchange",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "trackingCode",
+				"type": "bytes32"
+			}
+		],
+		"name": "exchangeAtomically",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1037,21 +1156,6 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "integrationProxy",
-		"outputs": [
-			{
-				"internalType": "contract Proxy",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1428,21 +1532,6 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_integrationProxy",
-				"type": "address"
-			}
-		],
-		"name": "setIntegrationProxy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

@@ -16,26 +16,42 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ATOMIC_TWAP_WINDOW = async () => {
+    return await this.contract.MAX_ATOMIC_TWAP_WINDOW();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW = async () => {
+    return await this.contract.MAX_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MAX_ATOMIC_VOLUME_PER_BLOCK = async () => {
+    return await this.contract.MAX_ATOMIC_VOLUME_PER_BLOCK();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.MAX_CROSS_DOMAIN_GAS_LIMIT = async () => {
     return await this.contract.MAX_CROSS_DOMAIN_GAS_LIMIT();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ETHER_WRAPPER_BURN_FEE_RATE = async () => {
-    return await this.contract.MAX_ETHER_WRAPPER_BURN_FEE_RATE();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ETHER_WRAPPER_MINT_FEE_RATE = async () => {
-    return await this.contract.MAX_ETHER_WRAPPER_MINT_FEE_RATE();
   };
 
   /**
@@ -104,6 +120,38 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns int256
+   **/
+  this.MAX_WRAPPER_BURN_FEE_RATE = async () => {
+    return await this.contract.MAX_WRAPPER_BURN_FEE_RATE();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns int256
+   **/
+  this.MAX_WRAPPER_MINT_FEE_RATE = async () => {
+    return await this.contract.MAX_WRAPPER_MINT_FEE_RATE();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MIN_ATOMIC_TWAP_WINDOW = async () => {
+    return await this.contract.MIN_ATOMIC_TWAP_WINDOW();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.MIN_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW = async () => {
+    return await this.contract.MIN_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.MIN_CROSS_DOMAIN_GAS_LIMIT = async () => {
@@ -150,6 +198,85 @@ function SystemSettings(contractSettings) {
    **/
   this.aggregatorWarningFlags = async () => {
     return await this.contract.aggregatorWarningFlags();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns String<EthAddress>
+   **/
+  this.atomicEquivalentForDexPricing = async currencyKey => {
+    return await this.contract.atomicEquivalentForDexPricing(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.atomicExchangeFeeRate = async currencyKey => {
+    return await this.contract.atomicExchangeFeeRate(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.atomicMaxVolumePerBlock = async () => {
+    return await this.contract.atomicMaxVolumePerBlock();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.atomicPriceBuffer = async currencyKey => {
+    return await this.contract.atomicPriceBuffer(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.atomicTwapWindow = async () => {
+    return await this.contract.atomicTwapWindow();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.atomicVolatilityConsiderationWindow = async currencyKey => {
+    return await this.contract.atomicVolatilityConsiderationWindow(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.atomicVolatilityUpdateThreshold = async currencyKey => {
+    return await this.contract.atomicVolatilityUpdateThreshold(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param collateral {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.collapseFeeRate = async collateral => {
+    return await this.contract.collapseFeeRate(collateral);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param collateral {String<EthAddress>}
+   * @returns String<EthAddress>
+   **/
+  this.collateralManager = async collateral => {
+    return await this.contract.collateralManager(collateral);
   };
 
   /**
@@ -212,6 +339,15 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param collateral {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.interactionDelay = async collateral => {
+    return await this.contract.interactionDelay(collateral);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
   this.isResolverCached = async () => {
@@ -248,6 +384,15 @@ function SystemSettings(contractSettings) {
    **/
   this.liquidationRatio = async () => {
     return await this.contract.liquidationRatio();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param collateral {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.minCratio = async collateral => {
+    return await this.contract.minCratio(collateral);
   };
 
   /**
@@ -340,6 +485,124 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _equivalent {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicEquivalentForDexPricing = async (_currencyKey, _equivalent, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicEquivalentForDexPricing(
+      _currencyKey,
+      _equivalent,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _exchangeFeeRate {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicExchangeFeeRate = async (_currencyKey, _exchangeFeeRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicExchangeFeeRate(_currencyKey, _exchangeFeeRate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _maxVolume {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicMaxVolumePerBlock = async (_maxVolume, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicMaxVolumePerBlock(_maxVolume, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _buffer {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicPriceBuffer = async (_currencyKey, _buffer, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicPriceBuffer(_currencyKey, _buffer, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _window {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicTwapWindow = async (_window, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicTwapWindow(_window, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _window {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicVolatilityConsiderationWindow = async (_currencyKey, _window, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicVolatilityConsiderationWindow(
+      _currencyKey,
+      _window,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _threshold {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAtomicVolatilityUpdateThreshold = async (_currencyKey, _threshold, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAtomicVolatilityUpdateThreshold(
+      _currencyKey,
+      _threshold,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _collateral {String<EthAddress>}
+   * @param _collapseFeeRate {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCollapseFeeRate = async (_collateral, _collapseFeeRate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCollapseFeeRate(_collateral, _collapseFeeRate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _collateral {String<EthAddress>}
+   * @param _newCollateralManager {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCollateralManager = async (_collateral, _newCollateralManager, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCollateralManager(_collateral, _newCollateralManager, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _gasLimitType {Number}
    * @param _crossDomainMessageGasLimit {BigNumber}
    * @param txParams {TxParams}
@@ -427,6 +690,18 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _collateral {String<EthAddress>}
+   * @param _interactionDelay {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setInteractionDelay = async (_collateral, _interactionDelay, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setInteractionDelay(_collateral, _interactionDelay, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _issuanceRatio {BigNumber}
    * @param txParams {TxParams}
   
@@ -467,6 +742,18 @@ function SystemSettings(contractSettings) {
   this.setLiquidationRatio = async (_liquidationRatio, txParams) => {
     txParams = txParams || {};
     return await this.contract.setLiquidationRatio(_liquidationRatio, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _collateral {String<EthAddress>}
+   * @param _minCratio {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMinCratio = async (_collateral, _minCratio, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMinCratio(_collateral, _minCratio, txParams);
   };
 
   /**
@@ -539,6 +826,42 @@ function SystemSettings(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _rate {int256}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setWrapperBurnFeeRate = async (_wrapper, _rate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _maxTokenAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setWrapperMaxTokenAmount = async (_wrapper, _maxTokenAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _rate {int256}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setWrapperMintFeeRate = async (_wrapper, _rate, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
@@ -560,6 +883,33 @@ function SystemSettings(contractSettings) {
    **/
   this.waitingPeriodSecs = async () => {
     return await this.contract.waitingPeriodSecs();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns int256
+   **/
+  this.wrapperBurnFeeRate = async wrapper => {
+    return await this.contract.wrapperBurnFeeRate(wrapper);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.wrapperMaxTokenAmount = async wrapper => {
+    return await this.contract.wrapperMaxTokenAmount(wrapper);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns int256
+   **/
+  this.wrapperMintFeeRate = async wrapper => {
+    return await this.contract.wrapperMintFeeRate(wrapper);
   };
 }
 

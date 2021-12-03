@@ -23459,7 +23459,7 @@ var KOVAN_ADDRESSES = {
   EtherWrapper: '0x44Af736495544a726ED15CB0EBe2d87a6bCC1832',
   NativeEtherWrapper: '0x5814d3c40a5A951EFdb4A37Bd93f4407450Cd424',
   SynthRedeemer: '0xFa01a0494913b150Dd37CbE1fF775B08f108dEEa',
-  WrapperFactory: '0xDE390c23De4cb2c9CC2e50c28f22A8b5f947b748',
+  WrapperFactory: '0x6B4D3e213e10d9238c1a1A87E493687cc2eb1DD0',
   OwnerRelayOnEthereum: '0x05e8467f623FA90FEfb99259e7e3283667f1A390'
 };
 /* harmony default export */ var addresses = ({

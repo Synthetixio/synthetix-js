@@ -23,166 +23,6 @@ function SystemSettings(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ATOMIC_TWAP_WINDOW = async () => {
-    return await this.contract.MAX_ATOMIC_TWAP_WINDOW();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW = async () => {
-    return await this.contract.MAX_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ATOMIC_VOLUME_PER_BLOCK = async () => {
-    return await this.contract.MAX_ATOMIC_VOLUME_PER_BLOCK();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_CROSS_DOMAIN_GAS_LIMIT = async () => {
-    return await this.contract.MAX_CROSS_DOMAIN_GAS_LIMIT();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_EXCHANGE_FEE_RATE = async () => {
-    return await this.contract.MAX_EXCHANGE_FEE_RATE();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_FEE_PERIOD_DURATION = async () => {
-    return await this.contract.MAX_FEE_PERIOD_DURATION();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_ISSUANCE_RATIO = async () => {
-    return await this.contract.MAX_ISSUANCE_RATIO();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_LIQUIDATION_DELAY = async () => {
-    return await this.contract.MAX_LIQUIDATION_DELAY();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_LIQUIDATION_PENALTY = async () => {
-    return await this.contract.MAX_LIQUIDATION_PENALTY();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_LIQUIDATION_RATIO = async () => {
-    return await this.contract.MAX_LIQUIDATION_RATIO();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_MINIMUM_STAKE_TIME = async () => {
-    return await this.contract.MAX_MINIMUM_STAKE_TIME();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_TARGET_THRESHOLD = async () => {
-    return await this.contract.MAX_TARGET_THRESHOLD();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns int256
-   **/
-  this.MAX_WRAPPER_BURN_FEE_RATE = async () => {
-    return await this.contract.MAX_WRAPPER_BURN_FEE_RATE();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns int256
-   **/
-  this.MAX_WRAPPER_MINT_FEE_RATE = async () => {
-    return await this.contract.MAX_WRAPPER_MINT_FEE_RATE();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MIN_ATOMIC_TWAP_WINDOW = async () => {
-    return await this.contract.MIN_ATOMIC_TWAP_WINDOW();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MIN_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW = async () => {
-    return await this.contract.MIN_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MIN_CROSS_DOMAIN_GAS_LIMIT = async () => {
-    return await this.contract.MIN_CROSS_DOMAIN_GAS_LIMIT();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MIN_FEE_PERIOD_DURATION = async () => {
-    return await this.contract.MIN_FEE_PERIOD_DURATION();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MIN_LIQUIDATION_DELAY = async () => {
-    return await this.contract.MIN_LIQUIDATION_DELAY();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.RATIO_FROM_TARGET_BUFFER = async () => {
-    return await this.contract.RATIO_FROM_TARGET_BUFFER();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -272,15 +112,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param collateral {String<EthAddress>}
-   * @returns String<EthAddress>
-   **/
-  this.collateralManager = async collateral => {
-    return await this.contract.collateralManager(collateral);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param gasLimitType {Number}
    * @returns BigNumber
    **/
@@ -322,11 +153,43 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.exchangeDynamicFeeRounds = async () => {
+    return await this.contract.exchangeDynamicFeeRounds();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.exchangeDynamicFeeThreshold = async () => {
+    return await this.contract.exchangeDynamicFeeThreshold();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.exchangeDynamicFeeWeightDecay = async () => {
+    return await this.contract.exchangeDynamicFeeWeightDecay();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
   this.exchangeFeeRate = async currencyKey => {
     return await this.contract.exchangeFeeRate(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.exchangeMaxDynamicFee = async () => {
+    return await this.contract.exchangeMaxDynamicFee();
   };
 
   /**
@@ -384,15 +247,6 @@ function SystemSettings(contractSettings) {
    **/
   this.liquidationRatio = async () => {
     return await this.contract.liquidationRatio();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param collateral {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.minCratio = async collateral => {
-    return await this.contract.minCratio(collateral);
   };
 
   /**
@@ -591,18 +445,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _collateral {String<EthAddress>}
-   * @param _newCollateralManager {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setCollateralManager = async (_collateral, _newCollateralManager, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setCollateralManager(_collateral, _newCollateralManager, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _gasLimitType {Number}
    * @param _crossDomainMessageGasLimit {BigNumber}
    * @param txParams {TxParams}
@@ -667,6 +509,39 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param rounds {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeDynamicFeeRounds = async (rounds, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeDynamicFeeRounds(rounds, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param threshold {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeDynamicFeeThreshold = async (threshold, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeDynamicFeeThreshold(threshold, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param weightDecay {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeDynamicFeeWeightDecay = async (weightDecay, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeDynamicFeeWeightDecay(weightDecay, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param synthKeys {bytes32[]}
    * @param exchangeFeeRates {uint256[]}
    * @param txParams {TxParams}
@@ -675,6 +550,17 @@ function SystemSettings(contractSettings) {
   this.setExchangeFeeRateForSynths = async (synthKeys, exchangeFeeRates, txParams) => {
     txParams = txParams || {};
     return await this.contract.setExchangeFeeRateForSynths(synthKeys, exchangeFeeRates, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param maxFee {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExchangeMaxDynamicFee = async (maxFee, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExchangeMaxDynamicFee(maxFee, txParams);
   };
 
   /**
@@ -702,13 +588,13 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _issuanceRatio {BigNumber}
+   * @param ratio {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setIssuanceRatio = async (_issuanceRatio, txParams) => {
+  this.setIssuanceRatio = async (ratio, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setIssuanceRatio(_issuanceRatio, txParams);
+    return await this.contract.setIssuanceRatio(ratio, txParams);
   };
 
   /**
@@ -742,18 +628,6 @@ function SystemSettings(contractSettings) {
   this.setLiquidationRatio = async (_liquidationRatio, txParams) => {
     txParams = txParams || {};
     return await this.contract.setLiquidationRatio(_liquidationRatio, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _collateral {String<EthAddress>}
-   * @param _minCratio {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setMinCratio = async (_collateral, _minCratio, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setMinCratio(_collateral, _minCratio, txParams);
   };
 
   /**
@@ -794,13 +668,13 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _percent {BigNumber}
+   * @param percent {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.setTargetThreshold = async (_percent, txParams) => {
+  this.setTargetThreshold = async (percent, txParams) => {
     txParams = txParams || {};
-    return await this.contract.setTargetThreshold(_percent, txParams);
+    return await this.contract.setTargetThreshold(percent, txParams);
   };
 
   /**

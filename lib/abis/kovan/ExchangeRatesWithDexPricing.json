@@ -8,23 +8,8 @@
 			},
 			{
 				"internalType": "address",
-				"name": "_oracle",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
 				"name": "_resolver",
 				"type": "address"
-			},
-			{
-				"internalType": "bytes32[]",
-				"name": "_currencyKeys",
-				"type": "bytes32[]"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "_newRates",
-				"type": "uint256[]"
 			}
 		],
 		"payable": false,
@@ -107,19 +92,6 @@
 			{
 				"indexed": false,
 				"internalType": "address",
-				"name": "newOracle",
-				"type": "address"
-			}
-		],
-		"name": "OracleUpdated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "address",
 				"name": "oldOwner",
 				"type": "address"
 			},
@@ -144,38 +116,6 @@
 			}
 		],
 		"name": "OwnerNominated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "RateDeleted",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "bytes32[]",
-				"name": "currencyKeys",
-				"type": "bytes32[]"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256[]",
-				"name": "newRates",
-				"type": "uint256[]"
-			}
-		],
-		"name": "RatesUpdated",
 		"type": "event"
 	},
 	{
@@ -289,6 +229,32 @@
 			}
 		],
 		"name": "anyRateIsInvalid",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "roundIds",
+				"type": "uint256[]"
+			}
+		],
+		"name": "anyRateIsInvalidAtRound",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -439,42 +405,6 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"name": "currentRoundForRate",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "deleteRate",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -639,11 +569,21 @@
 				"type": "uint256"
 			}
 		],
-		"name": "effectiveValueAtRound",
+		"name": "effectiveValueAndRatesAtRound",
 		"outputs": [
 			{
 				"internalType": "uint256",
 				"name": "value",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "destinationRate",
 				"type": "uint256"
 			}
 		],
@@ -784,21 +724,6 @@
 		"constant": true,
 		"inputs": [],
 		"name": "nominatedOwner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "oracle",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -1045,6 +970,11 @@
 				"internalType": "uint256",
 				"name": "numRounds",
 				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "roundId",
+				"type": "uint256"
 			}
 		],
 		"name": "ratesAndUpdatedTimeForCurrencyLastNRounds",
@@ -1155,21 +1085,6 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_oracle",
-				"type": "address"
-			}
-		],
-		"name": "setOracle",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -1188,37 +1103,6 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32[]",
-				"name": "currencyKeys",
-				"type": "bytes32[]"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "newRates",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "uint256",
-				"name": "timeSent",
-				"type": "uint256"
-			}
-		],
-		"name": "updateRates",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

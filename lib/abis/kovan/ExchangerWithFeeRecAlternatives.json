@@ -311,6 +311,37 @@
 		"type": "function"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "dynamicFeeRateForExchange",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "feeRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "tooVolatile",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -466,8 +497,13 @@
 		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "exchangeFeeRate",
+				"name": "feeRate",
 				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "tooVolatile",
+				"type": "bool"
 			}
 		],
 		"payable": false,

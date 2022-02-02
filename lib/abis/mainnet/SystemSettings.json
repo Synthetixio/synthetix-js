@@ -187,19 +187,6 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "newCollateralManager",
-				"type": "address"
-			}
-		],
-		"name": "CollateralManagerUpdated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
 				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
 				"name": "gasLimitType",
 				"type": "uint8"
@@ -271,6 +258,45 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "uint256",
+				"name": "dynamicFeeRounds",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeDynamicFeeRoundsUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "dynamicFeeThreshold",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeDynamicFeeThresholdUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "dynamicFeeWeightDecay",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeDynamicFeeWeightDecayUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "bytes32",
 				"name": "synthKey",
 				"type": "bytes32"
@@ -283,6 +309,19 @@
 			}
 		],
 		"name": "ExchangeFeeUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "maxDynamicFee",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeMaxDynamicFeeUpdated",
 		"type": "event"
 	},
 	{
@@ -361,19 +400,6 @@
 			}
 		],
 		"name": "LiquidationRatioUpdated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "minCratio",
-				"type": "uint256"
-			}
-		],
-		"name": "MinCratioRatioUpdated",
 		"type": "event"
 	},
 	{
@@ -552,306 +578,6 @@
 				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ATOMIC_TWAP_WINDOW",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ATOMIC_VOLUME_PER_BLOCK",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_CROSS_DOMAIN_GAS_LIMIT",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_EXCHANGE_FEE_RATE",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_FEE_PERIOD_DURATION",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_ISSUANCE_RATIO",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_LIQUIDATION_DELAY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_LIQUIDATION_PENALTY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_LIQUIDATION_RATIO",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_MINIMUM_STAKE_TIME",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_TARGET_THRESHOLD",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_WRAPPER_BURN_FEE_RATE",
-		"outputs": [
-			{
-				"internalType": "int256",
-				"name": "",
-				"type": "int256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_WRAPPER_MINT_FEE_RATE",
-		"outputs": [
-			{
-				"internalType": "int256",
-				"name": "",
-				"type": "int256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MIN_ATOMIC_TWAP_WINDOW",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MIN_ATOMIC_VOLATILITY_CONSIDERATION_WINDOW",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MIN_CROSS_DOMAIN_GAS_LIMIT",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MIN_FEE_PERIOD_DURATION",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MIN_LIQUIDATION_DELAY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "RATIO_FROM_TARGET_BUFFER",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -1042,27 +768,6 @@
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "collateral",
-				"type": "address"
-			}
-		],
-		"name": "collateralManager",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
 				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
 				"name": "gasLimitType",
 				"type": "uint8"
@@ -1142,6 +847,51 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "exchangeDynamicFeeRounds",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "exchangeDynamicFeeThreshold",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "exchangeDynamicFeeWeightDecay",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "bytes32",
@@ -1150,6 +900,21 @@
 			}
 		],
 		"name": "exchangeFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "exchangeMaxDynamicFee",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1261,27 +1026,6 @@
 		"constant": true,
 		"inputs": [],
 		"name": "liquidationRatio",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "collateral",
-				"type": "address"
-			}
-		],
-		"name": "minCratio",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1591,26 +1335,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_collateral",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_newCollateralManager",
-				"type": "address"
-			}
-		],
-		"name": "setCollateralManager",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
 				"name": "_gasLimitType",
 				"type": "uint8"
@@ -1691,6 +1415,51 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "rounds",
+				"type": "uint256"
+			}
+		],
+		"name": "setExchangeDynamicFeeRounds",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "threshold",
+				"type": "uint256"
+			}
+		],
+		"name": "setExchangeDynamicFeeThreshold",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "weightDecay",
+				"type": "uint256"
+			}
+		],
+		"name": "setExchangeDynamicFeeWeightDecay",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "bytes32[]",
 				"name": "synthKeys",
 				"type": "bytes32[]"
@@ -1702,6 +1471,21 @@
 			}
 		],
 		"name": "setExchangeFeeRateForSynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "maxFee",
+				"type": "uint256"
+			}
+		],
+		"name": "setExchangeMaxDynamicFee",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -1747,7 +1531,7 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_issuanceRatio",
+				"name": "ratio",
 				"type": "uint256"
 			}
 		],
@@ -1806,26 +1590,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_collateral",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_minCratio",
-				"type": "uint256"
-			}
-		],
-		"name": "setMinCratio",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "_seconds",
 				"type": "uint256"
@@ -1872,7 +1636,7 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_percent",
+				"name": "percent",
 				"type": "uint256"
 			}
 		],

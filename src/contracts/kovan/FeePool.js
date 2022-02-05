@@ -50,24 +50,6 @@ function FeePool(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param debtRatio {BigNumber}
-   * @param debtEntryIndex {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.appendAccountIssuanceRecord = async (account, debtRatio, debtEntryIndex, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.appendAccountIssuanceRecord(
-      account,
-      debtRatio,
-      debtEntryIndex,
-      txParams
-    );
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
    * @returns boolean
    **/
@@ -154,7 +136,6 @@ function FeePool(contractSettings) {
    * Transaction (consumes gas, requires signer)
    * @param feePeriodIndex {BigNumber}
    * @param feePeriodId {BigNumber}
-   * @param startingDebtIndex {BigNumber}
    * @param startTime {BigNumber}
    * @param feesToDistribute {BigNumber}
    * @param feesClaimed {BigNumber}
@@ -166,7 +147,6 @@ function FeePool(contractSettings) {
   this.importFeePeriod = async (
     feePeriodIndex,
     feePeriodId,
-    startingDebtIndex,
     startTime,
     feesToDistribute,
     feesClaimed,
@@ -178,7 +158,6 @@ function FeePool(contractSettings) {
     return await this.contract.importFeePeriod(
       feePeriodIndex,
       feePeriodId,
-      startingDebtIndex,
       startTime,
       feesToDistribute,
       feesClaimed,

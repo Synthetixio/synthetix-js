@@ -82,6 +82,37 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "debtRatio",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "debtEntryIndex",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "feePeriodStartingDebtIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "IssuanceDebtRatioEntry",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": false,
 				"internalType": "address",
 				"name": "oldOwner",
@@ -172,6 +203,31 @@
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "debtRatio",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "debtEntryIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "appendAccountIssuanceRecord",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -361,6 +417,11 @@
 			},
 			{
 				"internalType": "uint256",
+				"name": "startingDebtIndex",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "startTime",
 				"type": "uint256"
 			},
@@ -544,7 +605,7 @@
 			},
 			{
 				"internalType": "uint64",
-				"name": "unused",
+				"name": "startingDebtIndex",
 				"type": "uint64"
 			},
 			{

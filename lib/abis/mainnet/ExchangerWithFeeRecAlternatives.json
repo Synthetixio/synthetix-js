@@ -497,13 +497,8 @@
 		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "feeRate",
+				"name": "",
 				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "tooVolatile",
-				"type": "bool"
 			}
 		],
 		"payable": false,

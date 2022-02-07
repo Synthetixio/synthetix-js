@@ -396,17 +396,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param periodId {uint128}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setCurrentPeriodId = async (periodId, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setCurrentPeriodId(periodId, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {bytes32}
    * @returns String<EthAddress>

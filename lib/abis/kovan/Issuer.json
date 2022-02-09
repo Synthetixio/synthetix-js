@@ -815,6 +815,21 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint128",
+				"name": "periodId",
+				"type": "uint128"
+			}
+		],
+		"name": "setCurrentPeriodId",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{

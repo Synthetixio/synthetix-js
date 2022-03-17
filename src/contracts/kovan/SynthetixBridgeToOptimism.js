@@ -26,6 +26,18 @@ function SynthetixBridgeToOptimism(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param snxBackedAmount {BigNumber}
+   * @param totalDebtShares {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.closeFeePeriod = async (snxBackedAmount, totalDebtShares, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.closeFeePeriod(snxBackedAmount, totalDebtShares, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param amount {BigNumber}
    * @param txParams {TxParams}
   

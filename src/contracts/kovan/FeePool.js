@@ -49,6 +49,22 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Object
+   **/
+  this.allNetworksDebtSharesSupply = async () => {
+    return await this.contract.allNetworksDebtSharesSupply();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Object
+   **/
+  this.allNetworksSnxBackedDebt = async () => {
+    return await this.contract.allNetworksSnxBackedDebt();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
    * @returns boolean
@@ -77,6 +93,22 @@ function FeePool(contractSettings) {
   this.closeCurrentFeePeriod = async txParams => {
     txParams = txParams || {};
     return await this.contract.closeCurrentFeePeriod(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param allNetworksSnxBackedDebt {BigNumber}
+   * @param allNetworksDebtSharesSupply {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.closeSecondary = async (allNetworksSnxBackedDebt, allNetworksDebtSharesSupply, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.closeSecondary(
+      allNetworksSnxBackedDebt,
+      allNetworksDebtSharesSupply,
+      txParams
+    );
   };
 
   /**

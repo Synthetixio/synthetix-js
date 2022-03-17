@@ -16,6 +16,14 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.CIRCUIT_BREAKER_SUSPENSION_REASON = async () => {
+    return await this.contract.CIRCUIT_BREAKER_SUSPENSION_REASON();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns bytes32
    **/
   this.CONTRACT_NAME = async () => {
@@ -52,6 +60,14 @@ function Issuer(contractSettings) {
   this.addSynths = async (synthsToAdd, txParams) => {
     txParams = txParams || {};
     return await this.contract.addSynths(synthsToAdd, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Object
+   **/
+  this.allNetworksDebtInfo = async () => {
+    return await this.contract.allNetworksDebtInfo();
   };
 
   /**
@@ -269,6 +285,14 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.lastDebtRatio = async () => {
+    return await this.contract.lastDebtRatio();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
@@ -404,6 +428,17 @@ function Issuer(contractSettings) {
   this.setCurrentPeriodId = async (periodId, txParams) => {
     txParams = txParams || {};
     return await this.contract.setCurrentPeriodId(periodId, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param ratio {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setLastDebtRatio = async (ratio, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setLastDebtRatio(ratio, txParams);
   };
 
   /**

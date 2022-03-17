@@ -9,8 +9,7 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor",
-		"signature": "constructor"
+		"type": "constructor"
 	},
 	{
 		"anonymous": false,
@@ -41,8 +40,7 @@
 			}
 		],
 		"name": "AccessControlUpdated",
-		"type": "event",
-		"signature": "0x95bad30f8fe717e4a02906d7b05a6f90698c7135cd053e5b6d5239146b4c40d1"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -55,8 +53,7 @@
 			}
 		],
 		"name": "ExchangeResumed",
-		"type": "event",
-		"signature": "0x07966fe79d35c7abf1f3b2ad9970ea24cae0f11406e283e848e3e6608ae3c214"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -69,8 +66,71 @@
 			}
 		],
 		"name": "ExchangeSuspended",
-		"type": "event",
-		"signature": "0x078773069a9216cdb6acaa7b184785f12f62048c7ce8b7ede1bad6785de16b22"
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "marketKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesMarketResumed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "marketKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesMarketSuspended",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesResumed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesSuspended",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -83,8 +143,7 @@
 			}
 		],
 		"name": "IssuanceResumed",
-		"type": "event",
-		"signature": "0x0f1a80395faba9a11017f830db5f90ad6525a1621dbfb2cbc2b6679ba5716837"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -97,8 +156,7 @@
 			}
 		],
 		"name": "IssuanceSuspended",
-		"type": "event",
-		"signature": "0xee8bf45d6e3141aa521ae4f0d05dfefe0327a3f23a9fbae6a64680458b34ebb8"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -117,8 +175,7 @@
 			}
 		],
 		"name": "OwnerChanged",
-		"type": "event",
-		"signature": "0xb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -131,8 +188,7 @@
 			}
 		],
 		"name": "OwnerNominated",
-		"type": "event",
-		"signature": "0x906a1c6bd7e3091ea86693dd029a831c19049ce77f1dce2ce0bab1cacbabce22"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -151,8 +207,7 @@
 			}
 		],
 		"name": "SynthExchangeResumed",
-		"type": "event",
-		"signature": "0x91037f810fbf9c3c6d5573650d27de6b5e8d2187698822700d4524102472bc08"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -171,8 +226,7 @@
 			}
 		],
 		"name": "SynthExchangeSuspended",
-		"type": "event",
-		"signature": "0xcea0da706e9f2a6a1cb56cdab42ac548791339f1710deadf814f15fc0a6a7114"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -191,8 +245,7 @@
 			}
 		],
 		"name": "SynthResumed",
-		"type": "event",
-		"signature": "0x691b6c9654fa1f01847f7e98a061557ca10378bb9670782b60ed13891703d220"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -211,8 +264,7 @@
 			}
 		],
 		"name": "SynthSuspended",
-		"type": "event",
-		"signature": "0x9cca506f9028bbcc0d976db0eaf80dfe6a6d7cadd99024edd88f690e1eda5541"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -225,8 +277,7 @@
 			}
 		],
 		"name": "SystemResumed",
-		"type": "event",
-		"signature": "0xb392a95118344e8edff8eff56183afb4bb0240310c406a0fc1217d2755c66d8f"
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -239,8 +290,7 @@
 			}
 		],
 		"name": "SystemSuspended",
-		"type": "event",
-		"signature": "0x86b7ed06c3a2c3763514d475ced33f9ac8b1bb8f028ded18de0100b7678f3c4f"
+		"type": "event"
 	},
 	{
 		"constant": true,
@@ -255,8 +305,22 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf1616207"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "SECTION_FUTURES",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -271,8 +335,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x4abdb44d"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -287,8 +350,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf44d1e0b"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -303,8 +365,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xa55ce9c5"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -319,8 +380,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x12bde514"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -335,8 +395,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x9f8a95ba"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -345,8 +404,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x79ba5097"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -377,8 +435,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x20f2bf00"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -398,8 +455,79 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf8b4b084"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "futuresMarketSuspension",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "suspended",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint248",
+				"name": "reason",
+				"type": "uint248"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "futuresSuspension",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "suspended",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint248",
+				"name": "reason",
+				"type": "uint248"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "marketKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "getFuturesMarketSuspensions",
+		"outputs": [
+			{
+				"internalType": "bool[]",
+				"name": "suspensions",
+				"type": "bool[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "reasons",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -425,8 +553,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe665edf0"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -452,8 +579,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xb9a49869"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -468,8 +594,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2e8d0b9e"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -489,8 +614,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2366245e"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -505,8 +629,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1627540c"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -521,8 +644,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x53a47bb7"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -537,8 +659,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8da5cb5b"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -547,8 +668,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7118d431"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -568,8 +688,31 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x1ce00ba2"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "requireFuturesActive",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "marketKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "requireFuturesMarketActive",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -578,8 +721,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7c312541"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -594,8 +736,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x42a28e21"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -610,8 +751,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xda5917ae"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -631,8 +771,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x6132eba4"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -641,8 +780,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x086dabd1"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -651,8 +789,46 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xf405f65a"
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "resumeFutures",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "marketKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "resumeFuturesMarket",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "marketKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "resumeFuturesMarkets",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -661,8 +837,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x67a280b2"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -677,8 +852,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x94c79f74"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -693,8 +867,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x6309a10c"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -709,8 +882,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xde1b8851"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -725,8 +897,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x69eaced2"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -735,8 +906,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x157c51d3"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -751,8 +921,62 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1588e817"
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "suspendFutures",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "marketKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "suspendFuturesMarket",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "marketKeys",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "suspendFuturesMarkets",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -767,8 +991,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x396e258e"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -788,8 +1011,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xabc0bb6e"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -809,8 +1031,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4a661850"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -830,8 +1051,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x7fe9b23d"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -851,8 +1071,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1cba727c"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -867,8 +1086,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe470df58"
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -894,8 +1112,28 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xe91e6918"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "synthSuspended",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -921,8 +1159,22 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7243bc2c"
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "systemSuspended",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"constant": true,
@@ -942,8 +1194,7 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2dd8afdb"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -973,8 +1224,7 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x48bf1971"
+		"type": "function"
 	},
 	{
 		"constant": false,
@@ -1004,7 +1254,6 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x517d60c6"
+		"type": "function"
 	}
 ]

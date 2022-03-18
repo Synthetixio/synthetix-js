@@ -223,21 +223,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "CIRCUIT_BREAKER_SUSPENSION_REASON",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "CONTRACT_NAME",
 		"outputs": [
 			{
@@ -674,7 +659,7 @@
 		"inputs": [
 			{
 				"internalType": "bytes32",
-				"name": "",
+				"name": "currencyKey",
 				"type": "bytes32"
 			}
 		],
@@ -780,21 +765,6 @@
 		"constant": false,
 		"inputs": [],
 		"name": "rebuildCache",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32[]",
-				"name": "currencyKeys",
-				"type": "bytes32[]"
-			}
-		],
-		"name": "resetLastExchangeRate",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

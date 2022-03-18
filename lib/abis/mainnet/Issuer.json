@@ -108,6 +108,21 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "CIRCUIT_BREAKER_SUSPENSION_REASON",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "CONTRACT_NAME",
 		"outputs": [
 			{
@@ -157,6 +172,31 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "allNetworksDebtInfo",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "debt",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sharesSupply",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isStale",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -578,6 +618,21 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "lastDebtRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "address",
@@ -824,6 +879,21 @@
 			}
 		],
 		"name": "setCurrentPeriodId",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "ratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setLastDebtRatio",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

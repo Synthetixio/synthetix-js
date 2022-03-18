@@ -15,6 +15,14 @@ function SynthetixBridgeToOptimism(contractSettings) {
   );
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -22,6 +30,18 @@ function SynthetixBridgeToOptimism(contractSettings) {
   this.acceptOwnership = async txParams => {
     txParams = txParams || {};
     return await this.contract.acceptOwnership(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param snxBackedAmount {BigNumber}
+   * @param totalDebtShares {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.closeFeePeriod = async (snxBackedAmount, totalDebtShares, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.closeFeePeriod(snxBackedAmount, totalDebtShares, txParams);
   };
 
   /**

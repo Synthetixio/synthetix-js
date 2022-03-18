@@ -18,8 +18,24 @@ function SystemStatus(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32
    **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
   this.SECTION_EXCHANGE = async () => {
     return await this.contract.SECTION_EXCHANGE();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.SECTION_FUTURES = async () => {
+    return await this.contract.SECTION_FUTURES();
   };
 
   /**
@@ -88,6 +104,32 @@ function SystemStatus(contractSettings) {
    **/
   this.exchangeSuspension = async () => {
     return await this.contract.exchangeSuspension();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
+   * @returns Object
+   **/
+  this.futuresMarketSuspension = async bytes32_1 => {
+    return await this.contract.futuresMarketSuspension(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns Object
+   **/
+  this.futuresSuspension = async () => {
+    return await this.contract.futuresSuspension();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param marketKeys {bytes32[]}
+   * @returns Object
+   **/
+  this.getFuturesMarketSuspensions = async marketKeys => {
+    return await this.contract.getFuturesMarketSuspensions(marketKeys);
   };
 
   /**
@@ -176,6 +218,23 @@ function SystemStatus(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
   
    **/
+  this.requireFuturesActive = async () => {
+    return await this.contract.requireFuturesActive();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param marketKey {bytes32}
+  
+   **/
+  this.requireFuturesMarketActive = async marketKey => {
+    return await this.contract.requireFuturesMarketActive(marketKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+  
+   **/
   this.requireIssuanceActive = async () => {
     return await this.contract.requireIssuanceActive();
   };
@@ -224,6 +283,38 @@ function SystemStatus(contractSettings) {
   this.resumeExchange = async txParams => {
     txParams = txParams || {};
     return await this.contract.resumeExchange(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeFutures = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.resumeFutures(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param marketKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeFuturesMarket = async (marketKey, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.resumeFuturesMarket(marketKey, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param marketKeys {bytes32[]}
+   * @param txParams {TxParams}
+  
+   **/
+  this.resumeFuturesMarkets = async (marketKeys, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.resumeFuturesMarkets(marketKeys, txParams);
   };
 
   /**
@@ -307,6 +398,41 @@ function SystemStatus(contractSettings) {
    * @param txParams {TxParams}
   
    **/
+  this.suspendFutures = async (reason, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendFutures(reason, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param marketKey {bytes32}
+   * @param reason {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendFuturesMarket = async (marketKey, reason, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendFuturesMarket(marketKey, reason, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param marketKeys {bytes32[]}
+   * @param reason {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.suspendFuturesMarkets = async (marketKeys, reason, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.suspendFuturesMarkets(marketKeys, reason, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param reason {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
   this.suspendIssuance = async (reason, txParams) => {
     txParams = txParams || {};
     return await this.contract.suspendIssuance(reason, txParams);
@@ -382,11 +508,28 @@ function SystemStatus(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.synthSuspended = async currencyKey => {
+    return await this.contract.synthSuspended(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param  {bytes32}
    * @returns Object
    **/
   this.synthSuspension = async bytes32_1 => {
     return await this.contract.synthSuspension(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.systemSuspended = async () => {
+    return await this.contract.systemSuspended();
   };
 
   /**

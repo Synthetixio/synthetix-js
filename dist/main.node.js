@@ -50542,6 +50542,7 @@ var MAINNET_SYNTHS = [{
     category: 'crypto',
     sign: '',
     description: 'Aave',
+    feed: '0x547a514d5e3769680Ce22B2361c10Ea13619e8a9',
     units: 4.1634,
     weight: 11
   }, {
@@ -50563,6 +50564,7 @@ var MAINNET_SYNTHS = [{
     category: 'crypto',
     sign: '',
     description: 'Synthetix Network Token',
+    feed: '0xDC3EA94CD0AC27d9A86C180091e7f78C683d3699',
     units: 92.2672,
     weight: 8
   }, {
@@ -50684,6 +50686,7 @@ var GOERLI_SYNTHS = [{
   category: 'crypto',
   sign: 'Ξ',
   description: 'Ether',
+  feed: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419',
   name: 'sETH',
   subclass: 'MultiCollateralSynth'
 }];
@@ -50792,6 +50795,7 @@ var KOVAN_SYNTHS = [{
     category: 'crypto',
     sign: '',
     description: 'Aave',
+    feed: '0x547a514d5e3769680Ce22B2361c10Ea13619e8a9',
     units: 4.72,
     weight: 15
   }, {
@@ -50806,6 +50810,7 @@ var KOVAN_SYNTHS = [{
     category: 'crypto',
     sign: '',
     description: 'Synthetix Network Token',
+    feed: '0x31f93DA9823d737b7E44bdee0DF389Fe62Fd1AcD',
     units: 87.2,
     weight: 15
   }, {

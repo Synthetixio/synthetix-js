@@ -294,6 +294,15 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.pureChainlinkPriceForAtomicSwapsEnabled = async currencyKey => {
+    return await this.contract.pureChainlinkPriceForAtomicSwapsEnabled(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.rateStalePeriod = async () => {
@@ -651,6 +660,22 @@ function SystemSettings(contractSettings) {
     txParams = txParams || {};
     return await this.contract.setPriceDeviationThresholdFactor(
       _priceDeviationThresholdFactor,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _enabled {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setPureChainlinkPriceForAtomicSwapsEnabled = async (_currencyKey, _enabled, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setPureChainlinkPriceForAtomicSwapsEnabled(
+      _currencyKey,
+      _enabled,
       txParams
     );
   };

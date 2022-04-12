@@ -939,6 +939,11 @@
 				"internalType": "bytes32",
 				"name": "trackingCode",
 				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "minAmount",
+				"type": "uint256"
 			}
 		],
 		"name": "exchangeAtomically",

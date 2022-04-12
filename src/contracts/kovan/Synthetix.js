@@ -352,6 +352,7 @@ function Synthetix(contractSettings) {
    * @param sourceAmount {BigNumber}
    * @param destinationCurrencyKey {bytes32}
    * @param trackingCode {bytes32}
+   * @param minAmount {BigNumber}
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
@@ -360,6 +361,7 @@ function Synthetix(contractSettings) {
     sourceAmount,
     destinationCurrencyKey,
     trackingCode,
+    minAmount,
     txParams
   ) => {
     txParams = txParams || {};
@@ -368,6 +370,7 @@ function Synthetix(contractSettings) {
       sourceAmount,
       destinationCurrencyKey,
       trackingCode,
+      minAmount,
       txParams
     );
   };

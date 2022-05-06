@@ -121,6 +121,15 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.crossSynthTransferEnabled = async currencyKey => {
+    return await this.contract.crossSynthTransferEnabled(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.debtSnapshotStaleTime = async () => {
@@ -470,6 +479,18 @@ function SystemSettings(contractSettings) {
       _crossDomainMessageGasLimit,
       txParams
     );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _value {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCrossSynthTransferEnabled = async (_currencyKey, _value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCrossSynthTransferEnabled(_currencyKey, _value, txParams);
   };
 
   /**

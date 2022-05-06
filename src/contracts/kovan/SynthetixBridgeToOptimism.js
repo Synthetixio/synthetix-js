@@ -15,6 +15,14 @@ function SynthetixBridgeToOptimism(contractSettings) {
   );
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+  this.CONTRACT_NAME = async () => {
+    return await this.contract.CONTRACT_NAME();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -84,6 +92,19 @@ function SynthetixBridgeToOptimism(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param destination {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.finalizeSynthTransfer = async (currencyKey, destination, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.finalizeSynthTransfer(currencyKey, destination, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -103,6 +124,19 @@ function SynthetixBridgeToOptimism(contractSettings) {
   this.forwardTokensToEscrow = async (token, txParams) => {
     txParams = txParams || {};
     return await this.contract.forwardTokensToEscrow(token, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param destination {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.initiateSynthTransfer = async (currencyKey, destination, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.initiateSynthTransfer(currencyKey, destination, amount, txParams);
   };
 
   /**
@@ -214,6 +248,22 @@ function SynthetixBridgeToOptimism(contractSettings) {
   this.suspendInitiation = async txParams => {
     txParams = txParams || {};
     return await this.contract.suspendInitiation(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.synthTransferReceived = async () => {
+    return await this.contract.synthTransferReceived();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.synthTransferSent = async () => {
+    return await this.contract.synthTransferSent();
   };
 }
 

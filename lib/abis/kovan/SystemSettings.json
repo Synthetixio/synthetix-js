@@ -206,6 +206,25 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "CrossSynthTransferEnabledUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "debtSnapshotStaleTime",
 				"type": "uint256"
@@ -806,6 +825,27 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "crossSynthTransferEnabled",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "debtSnapshotStaleTime",
 		"outputs": [
@@ -1386,6 +1426,26 @@
 			}
 		],
 		"name": "setCrossDomainMessageGasLimit",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "setCrossSynthTransferEnabled",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

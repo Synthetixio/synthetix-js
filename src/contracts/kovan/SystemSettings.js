@@ -68,15 +68,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.atomicPriceBuffer = async currencyKey => {
-    return await this.contract.atomicPriceBuffer(currencyKey);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.atomicTwapWindow = async () => {
@@ -112,20 +103,20 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.crossChainSynthTransferEnabled = async currencyKey => {
+    return await this.contract.crossChainSynthTransferEnabled(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param gasLimitType {Number}
    * @returns BigNumber
    **/
   this.crossDomainMessageGasLimit = async gasLimitType => {
     return await this.contract.crossDomainMessageGasLimit(gasLimitType);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.crossSynthTransferEnabled = async currencyKey => {
-    return await this.contract.crossSynthTransferEnabled(currencyKey);
   };
 
   /**
@@ -396,18 +387,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _buffer {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setAtomicPriceBuffer = async (_currencyKey, _buffer, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setAtomicPriceBuffer(_currencyKey, _buffer, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _window {BigNumber}
    * @param txParams {TxParams}
   
@@ -463,6 +442,18 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _value {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCrossChainSynthTransferEnabled = async (_currencyKey, _value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCrossChainSynthTransferEnabled(_currencyKey, _value, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _gasLimitType {Number}
    * @param _crossDomainMessageGasLimit {BigNumber}
    * @param txParams {TxParams}
@@ -479,18 +470,6 @@ function SystemSettings(contractSettings) {
       _crossDomainMessageGasLimit,
       txParams
     );
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _value {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setCrossSynthTransferEnabled = async (_currencyKey, _value, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setCrossSynthTransferEnabled(_currencyKey, _value, txParams);
   };
 
   /**

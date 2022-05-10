@@ -390,7 +390,13 @@
 			}
 		],
 		"name": "burnSynthsWithoutDebt",
-		"outputs": [],
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "rateInvalid",
+				"type": "bool"
+			}
+		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -661,7 +667,13 @@
 			}
 		],
 		"name": "issueSynthsWithoutDebt",
-		"outputs": [],
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "rateInvalid",
+				"type": "bool"
+			}
+		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"

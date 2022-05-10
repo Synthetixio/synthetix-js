@@ -85,25 +85,6 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "bytes32",
-				"name": "synthKey",
-				"type": "bytes32"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "newBuffer",
-				"type": "uint256"
-			}
-		],
-		"name": "AtomicPriceBufferUpdated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
 				"internalType": "uint256",
 				"name": "newWindow",
 				"type": "uint256"
@@ -187,6 +168,25 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "CrossChainSynthTransferEnabledUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
 				"name": "gasLimitType",
 				"type": "uint8"
@@ -199,25 +199,6 @@
 			}
 		],
 		"name": "CrossDomainMessageGasLimitChanged",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "bytes32",
-				"name": "synthKey",
-				"type": "bytes32"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "CrossSynthTransferEnabledUpdated",
 		"type": "event"
 	},
 	{
@@ -705,27 +686,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "atomicPriceBuffer",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
 		"inputs": [],
 		"name": "atomicTwapWindow",
 		"outputs": [
@@ -806,12 +766,12 @@
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
-				"name": "gasLimitType",
-				"type": "uint8"
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
 			}
 		],
-		"name": "crossDomainMessageGasLimit",
+		"name": "crossChainSynthTransferEnabled",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -827,12 +787,12 @@
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
+				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
+				"name": "gasLimitType",
+				"type": "uint8"
 			}
 		],
-		"name": "crossSynthTransferEnabled",
+		"name": "crossDomainMessageGasLimit",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1320,26 +1280,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "_currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_buffer",
-				"type": "uint256"
-			}
-		],
-		"name": "setAtomicPriceBuffer",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "_window",
 				"type": "uint256"
@@ -1415,6 +1355,26 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "setCrossChainSynthTransferEnabled",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "enum MixinSystemSettings.CrossDomainMessageGasLimits",
 				"name": "_gasLimitType",
 				"type": "uint8"
@@ -1426,26 +1386,6 @@
 			}
 		],
 		"name": "setCrossDomainMessageGasLimit",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "_currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "setCrossSynthTransferEnabled",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

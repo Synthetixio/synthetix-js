@@ -170,7 +170,7 @@ function Issuer(contractSettings) {
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
-  
+   * @returns boolean
    **/
   this.burnSynthsWithoutDebt = async (currencyKey, from, amount, txParams) => {
     txParams = txParams || {};
@@ -302,7 +302,7 @@ function Issuer(contractSettings) {
    * @param to {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
-  
+   * @returns boolean
    **/
   this.issueSynthsWithoutDebt = async (currencyKey, to, amount, txParams) => {
     txParams = txParams || {};

@@ -118,6 +118,56 @@
 	},
 	{
 		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "FinalizeSynthTransfer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "InitiateSynthTransfer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
 		"inputs": [],
 		"name": "InitiationResumed",
 		"type": "event"
@@ -210,7 +260,7 @@
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "pure",
 		"type": "function"
 	},
 	{
@@ -316,6 +366,31 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "finalizeSynthTransfer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "to",
 				"type": "address"
@@ -342,6 +417,31 @@
 			}
 		],
 		"name": "forwardTokensToEscrow",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "initiateSynthTransfer",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -507,6 +607,36 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "synthTransferReceived",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "synthTransferSent",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]

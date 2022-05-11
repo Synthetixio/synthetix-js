@@ -85,25 +85,6 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "bytes32",
-				"name": "synthKey",
-				"type": "bytes32"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "newBuffer",
-				"type": "uint256"
-			}
-		],
-		"name": "AtomicPriceBufferUpdated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
 				"internalType": "uint256",
 				"name": "newWindow",
 				"type": "uint256"
@@ -180,6 +161,25 @@
 			}
 		],
 		"name": "CollapseFeeRateUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "CrossChainSynthTransferEnabledUpdated",
 		"type": "event"
 	},
 	{
@@ -465,6 +465,25 @@
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "bytes32",
+				"name": "synthKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "enabled",
+				"type": "bool"
+			}
+		],
+		"name": "PureChainlinkPriceForAtomicSwapsEnabledUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "rateStalePeriod",
 				"type": "uint256"
@@ -667,27 +686,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "atomicPriceBuffer",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
 		"inputs": [],
 		"name": "atomicTwapWindow",
 		"outputs": [
@@ -753,6 +751,27 @@
 			}
 		],
 		"name": "collapseFeeRate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "crossChainSynthTransferEnabled",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1114,6 +1133,27 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "pureChainlinkPriceForAtomicSwapsEnabled",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "rateStalePeriod",
 		"outputs": [
@@ -1240,26 +1280,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "_currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_buffer",
-				"type": "uint256"
-			}
-		],
-		"name": "setAtomicPriceBuffer",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "_window",
 				"type": "uint256"
@@ -1326,6 +1346,26 @@
 			}
 		],
 		"name": "setCollapseFeeRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "setCrossChainSynthTransferEnabled",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -1611,6 +1651,26 @@
 			}
 		],
 		"name": "setPriceDeviationThresholdFactor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bool",
+				"name": "_enabled",
+				"type": "bool"
+			}
+		],
+		"name": "setPureChainlinkPriceForAtomicSwapsEnabled",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

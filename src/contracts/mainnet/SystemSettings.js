@@ -68,15 +68,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-  this.atomicPriceBuffer = async currencyKey => {
-    return await this.contract.atomicPriceBuffer(currencyKey);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.atomicTwapWindow = async () => {
@@ -108,6 +99,15 @@ function SystemSettings(contractSettings) {
    **/
   this.collapseFeeRate = async collateral => {
     return await this.contract.collapseFeeRate(collateral);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+  this.crossChainSynthTransferEnabled = async currencyKey => {
+    return await this.contract.crossChainSynthTransferEnabled(currencyKey);
   };
 
   /**
@@ -294,6 +294,15 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+  this.pureChainlinkPriceForAtomicSwapsEnabled = async currencyKey => {
+    return await this.contract.pureChainlinkPriceForAtomicSwapsEnabled(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.rateStalePeriod = async () => {
@@ -378,18 +387,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _buffer {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setAtomicPriceBuffer = async (_currencyKey, _buffer, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setAtomicPriceBuffer(_currencyKey, _buffer, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _window {BigNumber}
    * @param txParams {TxParams}
   
@@ -441,6 +438,18 @@ function SystemSettings(contractSettings) {
   this.setCollapseFeeRate = async (_collateral, _collapseFeeRate, txParams) => {
     txParams = txParams || {};
     return await this.contract.setCollapseFeeRate(_collateral, _collapseFeeRate, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _value {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCrossChainSynthTransferEnabled = async (_currencyKey, _value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCrossChainSynthTransferEnabled(_currencyKey, _value, txParams);
   };
 
   /**
@@ -651,6 +660,22 @@ function SystemSettings(contractSettings) {
     txParams = txParams || {};
     return await this.contract.setPriceDeviationThresholdFactor(
       _priceDeviationThresholdFactor,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _enabled {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setPureChainlinkPriceForAtomicSwapsEnabled = async (_currencyKey, _enabled, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setPureChainlinkPriceForAtomicSwapsEnabled(
+      _currencyKey,
+      _enabled,
       txParams
     );
   };

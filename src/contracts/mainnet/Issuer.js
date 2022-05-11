@@ -165,6 +165,19 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.burnSynthsWithoutDebt = async (currencyKey, from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnSynthsWithoutDebt(currencyKey, from, amount, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns boolean
@@ -281,6 +294,19 @@ function Issuer(contractSettings) {
   this.issueSynthsOnBehalf = async (issueForAddress, from, amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.issueSynthsOnBehalf(issueForAddress, from, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param to {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.issueSynthsWithoutDebt = async (currencyKey, to, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issueSynthsWithoutDebt(currencyKey, to, amount, txParams);
   };
 
   /**

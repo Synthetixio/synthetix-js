@@ -23211,7 +23211,7 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 var MAINNET_ADDRESSES = {
   Depot: '0xE1f64079aDa6Ef07b03982Ca34f1dD7152AA3b86',
   EscrowChecker: '0x3b399e00AFd8201ACf8A5a0EcCF1C47d8D5E41da',
-  ExchangeRates: '0x6fA9E5923CBFDD39F0B625Bf1350Ffb50D5006b9',
+  ExchangeRates: '0xb4dc5ced63C2918c89E491D19BF1C0e92845de7C',
   FeePool: '0x3B2f389AeE480238A49E3A9985cd6815370712eB',
   ProxyFeePool: '0xb440DD674e1243644791a4AdfE3A2AbB0A92d309',
   ProxysAUD: '0xF48e200EAF9906362BB1442fca31e0835773b8B4',
@@ -23224,7 +23224,7 @@ var MAINNET_ADDRESSES = {
   ProxyERC20sUSD: '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51',
   ProxySynthetix: '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F',
   SafeDecimalMath: '0x84D626B2BB4D0F064067e4BF80FCe7055d8F3E7B',
-  Synthetix: '0xE95A536cF5C7384FF1ef54819Dc54E03d0FF1979',
+  Synthetix: '0x639032d3900875a4cf4960aD6b9ee441657aA93C',
   SynthetixEscrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   SynthetixState: '0x4b9Ca5607f1fF8019c1C6A3c2f0CC8de622D5B82',
   SynthsAUD: '0xC4546bDd93cDAADA6994e84Fb6F2722C620B019C',
@@ -23260,9 +23260,9 @@ var MAINNET_ADDRESSES = {
   SynthsDEFI: '0xf533aeEe48f0e04E30c2F6A1f19FbB675469a124',
   Math: '0x385e1Eb2FF28F4A637DA2C9971F8CAF5F5b1E77c',
   AddressResolver: '0x823bE81bbF96BEc0e25CA13170F5AaCb5B79ba83',
-  Exchanger: '0x74E9a032B04D9732E826eECFC5c7A1C183602FB1',
+  Exchanger: '0x9aB91BdCE9ae5D66d7d925699743Fa3A503c8eb8',
   ExchangeState: '0x545973f28950f50fc6c7F52AAb4Ad214A27C0564',
-  Issuer: '0xf48F8D49Ad04C0DaA612470A91e760b3d9Fa8f88',
+  Issuer: '0x7808bFD6e20AFE2d82b159590Ca5635b6263Db3F',
   IssuanceEternalStorage: '0x631E93A0fb06B5eC6d52c0A2D89a3f9672d6Ba64',
   SystemStatus: '0x696c905F8F8c006cA46e9808fE7e00049507798F',
   DelegateApprovalsEternalStorage: '0x8F586F063ffbb89b186C8e604FC6614766f9C9d1',
@@ -23282,7 +23282,7 @@ var MAINNET_ADDRESSES = {
   SynthUtil: '0x81Aee4EA48f678E172640fB5813cf7A96AFaF6C3',
   DappMaintenance: '0xAb0B2f1Cf979cdbF4676251F35353eC5AF2732Dd',
   FlexibleStorage: '0xc757aCBa3c0506218b3022266a9DC7F3612d85f5',
-  SystemSettings: '0x68938Be4c72A77891E99B198F4d31C5582018b40',
+  SystemSettings: '0xA4339a001c87e2C79B2d8A50D38c16cf12F3D6EE',
   TradingRewards: '0x62922670313bf6b41C580143d1f6C173C5C20019',
   DebtCache: '0x1620Aa736939597891C1940CF0d28b82566F9390',
   CollateralManagerState: '0x573E5105c4B92416D1544A188F1bf77d442Bb52d',
@@ -23295,7 +23295,7 @@ var MAINNET_ADDRESSES = {
   CollateralShort: '0x1F2c3a1046c32729862fcB038369696e3273a516',
   StakingRewardssEURCurve: '0xc0d8994Cd78eE1980885DF1A0C5470fC977b5cFe',
   RewardEscrowV2: '0xDA4eF8520b1A57D7d63f1E249606D1A459698876',
-  SynthetixBridgeToOptimism: '0xc51f137e19F1ae6944887388FD12b2b6dFD12594',
+  SynthetixBridgeToOptimism: '0x39Ea01a0298C315d149a490E34B59Dbf2EC7e48F',
   ShortingRewardssETH: '0x12DC1273915A16ab8BD47bA7866B240c253e4c12',
   ShortingRewardssBTC: '0xCed4055b47cfD0421f3727a35F69CE659c8bAF7a',
   TokenStatesAAVE: '0x9BcED8A8E3Ad81c9b146FFC880358f734A06f7c0',
@@ -23325,7 +23325,7 @@ var MAINNET_ADDRESSES = {
   TokenStatesETHBTC: '0x042A7A0022A7695454ac5Be77a4860e50c9683fC',
   ProxysETHBTC: '0x104eDF1da359506548BFc7c25bA1E28C16a70235',
   SynthsETHBTC: '0x6DF798ec713b33BE823b917F27820f2aA0cf7662',
-  SystemSettingsLib: '0xa62F71D599Ec6179B4f6569adD69ffC7E1A7a1c5',
+  SystemSettingsLib: '0x5DABae966208192e5c3028A7480392337014Ed8E',
   SynthetixDebtShare: '0x89FCb32F29e509cc42d0C8b6f058C993013A843F',
   SignedSafeDecimalMath: '0x728A2B79Cad691531CC1146eF802617FF50c7095',
   OneNetAggregatorIssuedSynths: '0xcf1405b18dBCEA2893Abe635c88359C75878B9e1',
@@ -27372,6 +27372,10 @@ var KOVAN_ADDRESSES = {
     internalType: 'bytes32',
     name: 'trackingCode',
     type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'minAmount',
+    type: 'uint256'
   }],
   name: 'exchangeAtomically',
   outputs: [{
@@ -30477,6 +30481,30 @@ var KOVAN_ADDRESSES = {
   stateMutability: 'nonpayable',
   type: 'function'
 }, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynthsWithoutDebt',
+  outputs: [{
+    internalType: 'bool',
+    name: 'rateInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
   constant: true,
   inputs: [{
     internalType: 'address',
@@ -30665,6 +30693,30 @@ var KOVAN_ADDRESSES = {
   }],
   name: 'issueSynthsOnBehalf',
   outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynthsWithoutDebt',
+  outputs: [{
+    internalType: 'bool',
+    name: 'rateInvalid',
+    type: 'bool'
+  }],
   payable: false,
   stateMutability: 'nonpayable',
   type: 'function'
@@ -33550,6 +33602,46 @@ var KOVAN_ADDRESSES = {
   type: 'event'
 }, {
   anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: true,
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'FinalizeSynthTransfer',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: true,
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'InitiateSynthTransfer',
+  type: 'event'
+}, {
+  anonymous: false,
   inputs: [],
   name: 'InitiationResumed',
   type: 'event'
@@ -33623,7 +33715,7 @@ var KOVAN_ADDRESSES = {
     type: 'bytes32'
   }],
   payable: false,
-  stateMutability: 'view',
+  stateMutability: 'pure',
   type: 'function'
 }, {
   constant: false,
@@ -33708,6 +33800,26 @@ var KOVAN_ADDRESSES = {
 }, {
   constant: false,
   inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'finalizeSynthTransfer',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
     internalType: 'address',
     name: 'to',
     type: 'address'
@@ -33729,6 +33841,26 @@ var KOVAN_ADDRESSES = {
     type: 'address'
   }],
   name: 'forwardTokensToEscrow',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'initiateSynthTransfer',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
@@ -33865,6 +33997,30 @@ var KOVAN_ADDRESSES = {
   payable: false,
   stateMutability: 'nonpayable',
   type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'synthTransferReceived',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'synthTransferSent',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
 }]);
 // CONCATENATED MODULE: ./lib/abis/mainnet/SystemSettings.js
 /* harmony default export */ var SystemSettings = ([{
@@ -33934,21 +34090,6 @@ var KOVAN_ADDRESSES = {
   anonymous: false,
   inputs: [{
     indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newBuffer',
-    type: 'uint256'
-  }],
-  name: 'AtomicPriceBufferUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
     internalType: 'uint256',
     name: 'newWindow',
     type: 'uint256'
@@ -34009,6 +34150,21 @@ var KOVAN_ADDRESSES = {
     type: 'uint256'
   }],
   name: 'CollapseFeeRateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'CrossChainSynthTransferEnabledUpdated',
   type: 'event'
 }, {
   anonymous: false,
@@ -34229,6 +34385,21 @@ var KOVAN_ADDRESSES = {
   anonymous: false,
   inputs: [{
     indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'bool',
+    name: 'enabled',
+    type: 'bool'
+  }],
+  name: 'PureChainlinkPriceForAtomicSwapsEnabledUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
     internalType: 'uint256',
     name: 'rateStalePeriod',
     type: 'uint256'
@@ -34388,22 +34559,6 @@ var KOVAN_ADDRESSES = {
   type: 'function'
 }, {
   constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicPriceBuffer',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
   inputs: [],
   name: 'atomicTwapWindow',
   outputs: [{
@@ -34454,6 +34609,22 @@ var KOVAN_ADDRESSES = {
     type: 'address'
   }],
   name: 'collapseFeeRate',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'crossChainSynthTransferEnabled',
   outputs: [{
     internalType: 'uint256',
     name: '',
@@ -34740,6 +34911,22 @@ var KOVAN_ADDRESSES = {
   type: 'function'
 }, {
   constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'pureChainlinkPriceForAtomicSwapsEnabled',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
   inputs: [],
   name: 'rateStalePeriod',
   outputs: [{
@@ -34841,22 +35028,6 @@ var KOVAN_ADDRESSES = {
 }, {
   constant: false,
   inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_buffer',
-    type: 'uint256'
-  }],
-  name: 'setAtomicPriceBuffer',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
     internalType: 'uint256',
     name: '_window',
     type: 'uint256'
@@ -34910,6 +35081,22 @@ var KOVAN_ADDRESSES = {
     type: 'uint256'
   }],
   name: 'setCollapseFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: '_value',
+    type: 'uint256'
+  }],
+  name: 'setCrossChainSynthTransferEnabled',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
@@ -35138,6 +35325,22 @@ var KOVAN_ADDRESSES = {
     type: 'uint256'
   }],
   name: 'setPriceDeviationThresholdFactor',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'bool',
+    name: '_enabled',
+    type: 'bool'
+  }],
+  name: 'setPureChainlinkPriceForAtomicSwapsEnabled',
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
@@ -48080,1448 +48283,8 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Synth = (mainnet_Synth);
 // CONCATENATED MODULE: ./lib/abis/kovan/Synthetix.js
-/* harmony default export */ var kovan_Synthetix = ([{
-  inputs: [{
-    internalType: 'address payable',
-    name: '_proxy',
-    type: 'address'
-  }, {
-    internalType: 'contract TokenState',
-    name: '_tokenState',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_totalSupply',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'snxRedeemed',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amountLiquidated',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'liquidator',
-    type: 'address'
-  }],
-  name: 'AccountLiquidated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'owner',
-    type: 'address'
-  }, {
-    indexed: true,
-    internalType: 'address',
-    name: 'spender',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'Approval',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'AtomicSynthExchange',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'ExchangeRebate',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'ExchangeReclaim',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'fee',
-    type: 'uint256'
-  }],
-  name: 'ExchangeTracking',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'proxyAddress',
-    type: 'address'
-  }],
-  name: 'ProxyUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'SynthExchange',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newTokenState',
-    type: 'address'
-  }],
-  name: 'TokenStateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    indexed: true,
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'Transfer',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'DECIMALS',
-  outputs: [{
-    internalType: 'uint8',
-    name: '',
-    type: 'uint8'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'TOKEN_NAME',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'TOKEN_SYMBOL',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'spender',
-    type: 'address'
-  }],
-  name: 'allowance',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'anySynthOrSNXRateIsInvalid',
-  outputs: [{
-    internalType: 'bool',
-    name: 'anyRateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'spender',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'approve',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableCurrencyKeys',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: '',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableSynthCount',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'index',
-    type: 'uint256'
-  }],
-  name: 'availableSynths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'balanceOf',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'burnSecondary',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'burnSynthsToTarget',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }],
-  name: 'burnSynthsToTargetOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'collateral',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'debtBalanceOf',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'decimals',
-  outputs: [{
-    internalType: 'uint8',
-    name: '',
-    type: 'uint8'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'emitAtomicSynthExchange',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'emitExchangeRebate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'emitExchangeReclaim',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }, {
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'fee',
-    type: 'uint256'
-  }],
-  name: 'emitExchangeTracking',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'emitSynthExchange',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }],
-  name: 'exchange',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'minAmount',
-    type: 'uint256'
-  }],
-  name: 'exchangeAtomically',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'exchangeForAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }],
-  name: 'exchangeOnBehalf',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'exchangeForAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'rewardAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeOnBehalfWithTracking',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'rewardAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeWithTracking',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'rewardAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeWithTrackingForInitiator',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeWithVirtual',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }, {
-    internalType: 'contract IVirtualSynth',
-    name: 'vSynth',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'isWaitingPeriod',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'issueMaxSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }],
-  name: 'issueMaxSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'susdAmount',
-    type: 'uint256'
-  }],
-  name: 'liquidateDelinquentAccount',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'maxIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'maxIssuable',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'messageSender',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'migrateEscrowBalanceToRewardEscrowV2',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'mint',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'mintSecondary',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'mintSecondaryRewards',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'name',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'proxy',
-  outputs: [{
-    internalType: 'contract Proxy',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'remainingIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'maxIssuable',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'alreadyIssued',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'totalSystemDebt',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'sUSD',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'sender',
-    type: 'address'
-  }],
-  name: 'setMessageSender',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address payable',
-    name: '_proxy',
-    type: 'address'
-  }],
-  name: 'setProxy',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract TokenState',
-    name: '_tokenState',
-    type: 'address'
-  }],
-  name: 'setTokenState',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'settle',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'reclaimed',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'refunded',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'numEntriesSettled',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'symbol',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'synths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'synthAddress',
-    type: 'address'
-  }],
-  name: 'synthsByAddress',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'tokenState',
-  outputs: [{
-    internalType: 'contract TokenState',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'totalIssuedSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'totalIssuedSynthsExcludeOtherCollateral',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'totalSupply',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'transfer',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'transferFrom',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'transferableSynthetix',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'transferable',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_Synthetix = (mainnet_Synthetix);
 // CONCATENATED MODULE: ./lib/abis/kovan/SynthetixEscrow.js
 /* harmony default export */ var kovan_SynthetixEscrow = ([{
   constant: false,
@@ -50377,842 +49140,8 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Exchanger = (Exchanger);
 // CONCATENATED MODULE: ./lib/abis/kovan/Issuer.js
-/* harmony default export */ var kovan_Issuer = ([{
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'SynthAdded',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'SynthRemoved',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CIRCUIT_BREAKER_SUSPENSION_REASON',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract ISynth',
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'addSynth',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract ISynth[]',
-    name: 'synthsToAdd',
-    type: 'address[]'
-  }],
-  name: 'addSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'allNetworksDebtInfo',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'debt',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'sharesSupply',
-    type: 'uint256'
-  }, {
-    internalType: 'bool',
-    name: 'isStale',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'anySynthOrSNXRateIsInvalid',
-  outputs: [{
-    internalType: 'bool',
-    name: 'anyRateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableCurrencyKeys',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: '',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableSynthCount',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'availableSynths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'deprecatedSynthProxy',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'balance',
-    type: 'uint256'
-  }],
-  name: 'burnForRedemption',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'burnSynthsToTarget',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'burnSynthsToTargetOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynthsWithoutDebt',
-  outputs: [{
-    internalType: 'bool',
-    name: 'rateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'canBurnSynths',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'collateral',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'cratio',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatioAndAnyRatesInvalid',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'cratio',
-    type: 'uint256'
-  }, {
-    internalType: 'bool',
-    name: 'anyRateIsInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'debtBalanceOf',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'debtBalance',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32[]',
-    name: 'currencyKeys',
-    type: 'bytes32[]'
-  }],
-  name: 'getSynths',
-  outputs: [{
-    internalType: 'contract ISynth[]',
-    name: '',
-    type: 'address[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'issuanceRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'issueMaxSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'issueMaxSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynthsWithoutDebt',
-  outputs: [{
-    internalType: 'bool',
-    name: 'rateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'lastDebtRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'lastIssueEvent',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'susdAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: 'liquidator',
-    type: 'address'
-  }],
-  name: 'liquidateDelinquentAccount',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'totalRedeemed',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'amountToLiquidate',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'maxIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'minimumStakeTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'remainingIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'maxIssuable',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'alreadyIssued',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'totalSystemDebt',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'removeSynth',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32[]',
-    name: 'currencyKeys',
-    type: 'bytes32[]'
-  }],
-  name: 'removeSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint128',
-    name: 'periodId',
-    type: 'uint128'
-  }],
-  name: 'setCurrentPeriodId',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'ratio',
-    type: 'uint256'
-  }],
-  name: 'setLastDebtRatio',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  name: 'synths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  name: 'synthsByAddress',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bool',
-    name: 'excludeOtherCollateral',
-    type: 'bool'
-  }],
-  name: 'totalIssuedSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'totalIssued',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'balance',
-    type: 'uint256'
-  }],
-  name: 'transferableSynthetixAndAnyRateIsInvalid',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'transferable',
-    type: 'uint256'
-  }, {
-    internalType: 'bool',
-    name: 'anyRateIsInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_Issuer = (Issuer);
 // CONCATENATED MODULE: ./lib/abis/kovan/AddressResolver.js
 
 /* harmony default export */ var kovan_AddressResolver = (AddressResolver);
@@ -52232,2024 +50161,11 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Liquidations = (Liquidations);
 // CONCATENATED MODULE: ./lib/abis/kovan/SynthetixBridgeToOptimism.js
-/* harmony default export */ var kovan_SynthetixBridgeToOptimism = ([{
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: '_from',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: '_to',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: '_amount',
-    type: 'uint256'
-  }],
-  name: 'DepositInitiated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'escrowedAccountBalance',
-    type: 'uint256'
-  }, {
-    components: [{
-      internalType: 'uint64',
-      name: 'endTime',
-      type: 'uint64'
-    }, {
-      internalType: 'uint256',
-      name: 'escrowAmount',
-      type: 'uint256'
-    }],
-    indexed: false,
-    internalType: 'struct VestingEntries.VestingEntry[]',
-    name: 'vestingEntries',
-    type: 'tuple[]'
-  }],
-  name: 'ExportedVestingEntries',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'snxBackedDebt',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'totalDebtShares',
-    type: 'uint256'
-  }],
-  name: 'FeePeriodClosed',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: true,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'FinalizeSynthTransfer',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: true,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'InitiateSynthTransfer',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [],
-  name: 'InitiationResumed',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [],
-  name: 'InitiationSuspended',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'RewardDepositInitiated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: '_to',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: '_amount',
-    type: 'uint256'
-  }],
-  name: 'WithdrawalFinalized',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'pure',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'snxBackedAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'totalDebtShares',
-    type: 'uint256'
-  }],
-  name: 'closeFeePeriod',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'deposit',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'depositAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256[][]',
-    name: 'entryIDs',
-    type: 'uint256[][]'
-  }],
-  name: 'depositAndMigrateEscrow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'depositReward',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'depositTo',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'finalizeSynthTransfer',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'finalizeWithdrawal',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'token',
-    type: 'address'
-  }],
-  name: 'forwardTokensToEscrow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'initiateSynthTransfer',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'initiationActive',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256[][]',
-    name: 'entryIDs',
-    type: 'uint256[][]'
-  }],
-  name: 'migrateEscrow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'notifyRewardAmount',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'resumeInitiation',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'suspendInitiation',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'synthTransferReceived',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'synthTransferSent',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_SynthetixBridgeToOptimism = (SynthetixBridgeToOptimism);
 // CONCATENATED MODULE: ./lib/abis/kovan/SystemSettings.js
-/* harmony default export */ var kovan_SystemSettings = ([{
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'flags',
-    type: 'address'
-  }],
-  name: 'AggregatorWarningFlagsUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'equivalent',
-    type: 'address'
-  }],
-  name: 'AtomicEquivalentForDexPricingUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newExchangeFeeRate',
-    type: 'uint256'
-  }],
-  name: 'AtomicExchangeFeeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newMaxVolume',
-    type: 'uint256'
-  }],
-  name: 'AtomicMaxVolumePerBlockUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newWindow',
-    type: 'uint256'
-  }],
-  name: 'AtomicTwapWindowUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newVolatilityConsiderationWindow',
-    type: 'uint256'
-  }],
-  name: 'AtomicVolatilityConsiderationWindowUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newVolatilityUpdateThreshold',
-    type: 'uint256'
-  }],
-  name: 'AtomicVolatilityUpdateThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'collapseFeeRate',
-    type: 'uint256'
-  }],
-  name: 'CollapseFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'CrossChainSynthTransferEnabledUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
-    name: 'gasLimitType',
-    type: 'uint8'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newLimit',
-    type: 'uint256'
-  }],
-  name: 'CrossDomainMessageGasLimitChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'debtSnapshotStaleTime',
-    type: 'uint256'
-  }],
-  name: 'DebtSnapshotStaleTimeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'rate',
-    type: 'uint256'
-  }],
-  name: 'EtherWrapperBurnFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'maxETH',
-    type: 'uint256'
-  }],
-  name: 'EtherWrapperMaxETHUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'rate',
-    type: 'uint256'
-  }],
-  name: 'EtherWrapperMintFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'dynamicFeeRounds',
-    type: 'uint256'
-  }],
-  name: 'ExchangeDynamicFeeRoundsUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'dynamicFeeThreshold',
-    type: 'uint256'
-  }],
-  name: 'ExchangeDynamicFeeThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'dynamicFeeWeightDecay',
-    type: 'uint256'
-  }],
-  name: 'ExchangeDynamicFeeWeightDecayUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newExchangeFeeRate',
-    type: 'uint256'
-  }],
-  name: 'ExchangeFeeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'maxDynamicFee',
-    type: 'uint256'
-  }],
-  name: 'ExchangeMaxDynamicFeeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newFeePeriodDuration',
-    type: 'uint256'
-  }],
-  name: 'FeePeriodDurationUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'interactionDelay',
-    type: 'uint256'
-  }],
-  name: 'InteractionDelayUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newRatio',
-    type: 'uint256'
-  }],
-  name: 'IssuanceRatioUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newDelay',
-    type: 'uint256'
-  }],
-  name: 'LiquidationDelayUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newPenalty',
-    type: 'uint256'
-  }],
-  name: 'LiquidationPenaltyUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newRatio',
-    type: 'uint256'
-  }],
-  name: 'LiquidationRatioUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'minimumStakeTime',
-    type: 'uint256'
-  }],
-  name: 'MinimumStakeTimeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'threshold',
-    type: 'uint256'
-  }],
-  name: 'PriceDeviationThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'bool',
-    name: 'enabled',
-    type: 'bool'
-  }],
-  name: 'PureChainlinkPriceForAtomicSwapsEnabledUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'rateStalePeriod',
-    type: 'uint256'
-  }],
-  name: 'RateStalePeriodUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newTargetThreshold',
-    type: 'uint256'
-  }],
-  name: 'TargetThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bool',
-    name: 'enabled',
-    type: 'bool'
-  }],
-  name: 'TradingRewardsEnabled',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'waitingPeriodSecs',
-    type: 'uint256'
-  }],
-  name: 'WaitingPeriodSecsUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'int256',
-    name: 'rate',
-    type: 'int256'
-  }],
-  name: 'WrapperBurnFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'maxTokenAmount',
-    type: 'uint256'
-  }],
-  name: 'WrapperMaxTokenAmountUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'int256',
-    name: 'rate',
-    type: 'int256'
-  }],
-  name: 'WrapperMintFeeRateUpdated',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'aggregatorWarningFlags',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicEquivalentForDexPricing',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicExchangeFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'atomicMaxVolumePerBlock',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'atomicTwapWindow',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicVolatilityConsiderationWindow',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicVolatilityUpdateThreshold',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'collateral',
-    type: 'address'
-  }],
-  name: 'collapseFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'crossChainSynthTransferEnabled',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
-    name: 'gasLimitType',
-    type: 'uint8'
-  }],
-  name: 'crossDomainMessageGasLimit',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'debtSnapshotStaleTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'etherWrapperBurnFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'etherWrapperMaxETH',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'etherWrapperMintFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeDynamicFeeRounds',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeDynamicFeeThreshold',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeDynamicFeeWeightDecay',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'exchangeFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeMaxDynamicFee',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'feePeriodDuration',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'collateral',
-    type: 'address'
-  }],
-  name: 'interactionDelay',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'issuanceRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationDelay',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationPenalty',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'minimumStakeTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'priceDeviationThresholdFactor',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'pureChainlinkPriceForAtomicSwapsEnabled',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'rateStalePeriod',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_flags',
-    type: 'address'
-  }],
-  name: 'setAggregatorWarningFlags',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: '_equivalent',
-    type: 'address'
-  }],
-  name: 'setAtomicEquivalentForDexPricing',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_exchangeFeeRate',
-    type: 'uint256'
-  }],
-  name: 'setAtomicExchangeFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_maxVolume',
-    type: 'uint256'
-  }],
-  name: 'setAtomicMaxVolumePerBlock',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_window',
-    type: 'uint256'
-  }],
-  name: 'setAtomicTwapWindow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_window',
-    type: 'uint256'
-  }],
-  name: 'setAtomicVolatilityConsiderationWindow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_threshold',
-    type: 'uint256'
-  }],
-  name: 'setAtomicVolatilityUpdateThreshold',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_collateral',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_collapseFeeRate',
-    type: 'uint256'
-  }],
-  name: 'setCollapseFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_value',
-    type: 'uint256'
-  }],
-  name: 'setCrossChainSynthTransferEnabled',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
-    name: '_gasLimitType',
-    type: 'uint8'
-  }, {
-    internalType: 'uint256',
-    name: '_crossDomainMessageGasLimit',
-    type: 'uint256'
-  }],
-  name: 'setCrossDomainMessageGasLimit',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_seconds',
-    type: 'uint256'
-  }],
-  name: 'setDebtSnapshotStaleTime',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_rate',
-    type: 'uint256'
-  }],
-  name: 'setEtherWrapperBurnFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_maxETH',
-    type: 'uint256'
-  }],
-  name: 'setEtherWrapperMaxETH',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_rate',
-    type: 'uint256'
-  }],
-  name: 'setEtherWrapperMintFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'rounds',
-    type: 'uint256'
-  }],
-  name: 'setExchangeDynamicFeeRounds',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'threshold',
-    type: 'uint256'
-  }],
-  name: 'setExchangeDynamicFeeThreshold',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'weightDecay',
-    type: 'uint256'
-  }],
-  name: 'setExchangeDynamicFeeWeightDecay',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32[]',
-    name: 'synthKeys',
-    type: 'bytes32[]'
-  }, {
-    internalType: 'uint256[]',
-    name: 'exchangeFeeRates',
-    type: 'uint256[]'
-  }],
-  name: 'setExchangeFeeRateForSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'maxFee',
-    type: 'uint256'
-  }],
-  name: 'setExchangeMaxDynamicFee',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_feePeriodDuration',
-    type: 'uint256'
-  }],
-  name: 'setFeePeriodDuration',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_collateral',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_interactionDelay',
-    type: 'uint256'
-  }],
-  name: 'setInteractionDelay',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'ratio',
-    type: 'uint256'
-  }],
-  name: 'setIssuanceRatio',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'time',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationDelay',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'penalty',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationPenalty',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_liquidationRatio',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationRatio',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_seconds',
-    type: 'uint256'
-  }],
-  name: 'setMinimumStakeTime',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_priceDeviationThresholdFactor',
-    type: 'uint256'
-  }],
-  name: 'setPriceDeviationThresholdFactor',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bool',
-    name: '_enabled',
-    type: 'bool'
-  }],
-  name: 'setPureChainlinkPriceForAtomicSwapsEnabled',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'period',
-    type: 'uint256'
-  }],
-  name: 'setRateStalePeriod',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'percent',
-    type: 'uint256'
-  }],
-  name: 'setTargetThreshold',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bool',
-    name: '_tradingRewardsEnabled',
-    type: 'bool'
-  }],
-  name: 'setTradingRewardsEnabled',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_waitingPeriodSecs',
-    type: 'uint256'
-  }],
-  name: 'setWaitingPeriodSecs',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_wrapper',
-    type: 'address'
-  }, {
-    internalType: 'int256',
-    name: '_rate',
-    type: 'int256'
-  }],
-  name: 'setWrapperBurnFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_wrapper',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_maxTokenAmount',
-    type: 'uint256'
-  }],
-  name: 'setWrapperMaxTokenAmount',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_wrapper',
-    type: 'address'
-  }, {
-    internalType: 'int256',
-    name: '_rate',
-    type: 'int256'
-  }],
-  name: 'setWrapperMintFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'targetThreshold',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'tradingRewardsEnabled',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'waitingPeriodSecs',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }],
-  name: 'wrapperBurnFeeRate',
-  outputs: [{
-    internalType: 'int256',
-    name: '',
-    type: 'int256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }],
-  name: 'wrapperMaxTokenAmount',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }],
-  name: 'wrapperMintFeeRate',
-  outputs: [{
-    internalType: 'int256',
-    name: '',
-    type: 'int256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_SystemSettings = (SystemSettings);
 // CONCATENATED MODULE: ./lib/abis/kovan/index.js
 
 
@@ -60399,20 +56315,21 @@ function Synthetix_Synthetix(contractSettings) {
    * @param sourceAmount {BigNumber}
    * @param destinationCurrencyKey {bytes32}
    * @param trackingCode {bytes32}
+   * @param minAmount {BigNumber}
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
 
 
   this.exchangeAtomically = /*#__PURE__*/function () {
-    var _ref28 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28(sourceCurrencyKey, sourceAmount, destinationCurrencyKey, trackingCode, txParams) {
+    var _ref28 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28(sourceCurrencyKey, sourceAmount, destinationCurrencyKey, trackingCode, minAmount, txParams) {
       return regenerator_default.a.wrap(function _callee28$(_context28) {
         while (1) {
           switch (_context28.prev = _context28.next) {
             case 0:
               txParams = txParams || {};
               _context28.next = 3;
-              return _this.contract.exchangeAtomically(sourceCurrencyKey, sourceAmount, destinationCurrencyKey, trackingCode, txParams);
+              return _this.contract.exchangeAtomically(sourceCurrencyKey, sourceAmount, destinationCurrencyKey, trackingCode, minAmount, txParams);
 
             case 3:
               return _context28.abrupt("return", _context28.sent);
@@ -60425,7 +56342,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee28);
     }));
 
-    return function (_x55, _x56, _x57, _x58, _x59) {
+    return function (_x55, _x56, _x57, _x58, _x59, _x60) {
       return _ref28.apply(this, arguments);
     };
   }();
@@ -60461,7 +56378,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee29);
     }));
 
-    return function (_x60, _x61, _x62, _x63, _x64) {
+    return function (_x61, _x62, _x63, _x64, _x65) {
       return _ref29.apply(this, arguments);
     };
   }();
@@ -60499,7 +56416,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee30);
     }));
 
-    return function (_x65, _x66, _x67, _x68, _x69, _x70, _x71) {
+    return function (_x66, _x67, _x68, _x69, _x70, _x71, _x72) {
       return _ref30.apply(this, arguments);
     };
   }();
@@ -60536,7 +56453,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee31);
     }));
 
-    return function (_x72, _x73, _x74, _x75, _x76, _x77) {
+    return function (_x73, _x74, _x75, _x76, _x77, _x78) {
       return _ref31.apply(this, arguments);
     };
   }();
@@ -60573,7 +56490,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee32);
     }));
 
-    return function (_x78, _x79, _x80, _x81, _x82, _x83) {
+    return function (_x79, _x80, _x81, _x82, _x83, _x84) {
       return _ref32.apply(this, arguments);
     };
   }();
@@ -60609,7 +56526,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee33);
     }));
 
-    return function (_x84, _x85, _x86, _x87, _x88) {
+    return function (_x85, _x86, _x87, _x88, _x89) {
       return _ref33.apply(this, arguments);
     };
   }();
@@ -60663,7 +56580,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee35);
     }));
 
-    return function (_x89) {
+    return function (_x90) {
       return _ref35.apply(this, arguments);
     };
   }();
@@ -60696,7 +56613,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee36);
     }));
 
-    return function (_x90) {
+    return function (_x91) {
       return _ref36.apply(this, arguments);
     };
   }();
@@ -60729,7 +56646,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee37);
     }));
 
-    return function (_x91, _x92) {
+    return function (_x92, _x93) {
       return _ref37.apply(this, arguments);
     };
   }();
@@ -60763,7 +56680,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee38);
     }));
 
-    return function (_x93, _x94) {
+    return function (_x94, _x95) {
       return _ref38.apply(this, arguments);
     };
   }();
@@ -60797,7 +56714,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee39);
     }));
 
-    return function (_x95, _x96, _x97) {
+    return function (_x96, _x97, _x98) {
       return _ref39.apply(this, arguments);
     };
   }();
@@ -60831,7 +56748,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee40);
     }));
 
-    return function (_x98, _x99, _x100) {
+    return function (_x99, _x100, _x101) {
       return _ref40.apply(this, arguments);
     };
   }();
@@ -60863,7 +56780,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee41);
     }));
 
-    return function (_x101) {
+    return function (_x102) {
       return _ref41.apply(this, arguments);
     };
   }();
@@ -60918,7 +56835,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee43);
     }));
 
-    return function (_x102) {
+    return function (_x103) {
       return _ref43.apply(this, arguments);
     };
   }();
@@ -60950,7 +56867,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee44);
     }));
 
-    return function (_x103) {
+    return function (_x104) {
       return _ref44.apply(this, arguments);
     };
   }();
@@ -60984,7 +56901,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee45);
     }));
 
-    return function (_x104, _x105, _x106) {
+    return function (_x105, _x106, _x107) {
       return _ref45.apply(this, arguments);
     };
   }();
@@ -61017,7 +56934,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x107, _x108) {
+    return function (_x108, _x109) {
       return _ref46.apply(this, arguments);
     };
   }();
@@ -61073,7 +56990,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee48);
     }));
 
-    return function (_x109, _x110) {
+    return function (_x110, _x111) {
       return _ref48.apply(this, arguments);
     };
   }();
@@ -61174,7 +57091,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee52);
     }));
 
-    return function (_x111) {
+    return function (_x112) {
       return _ref52.apply(this, arguments);
     };
   }();
@@ -61206,7 +57123,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee53);
     }));
 
-    return function (_x112) {
+    return function (_x113) {
       return _ref53.apply(this, arguments);
     };
   }();
@@ -61308,7 +57225,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee57);
     }));
 
-    return function (_x113, _x114) {
+    return function (_x114, _x115) {
       return _ref57.apply(this, arguments);
     };
   }();
@@ -61341,7 +57258,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee58);
     }));
 
-    return function (_x115, _x116) {
+    return function (_x116, _x117) {
       return _ref58.apply(this, arguments);
     };
   }();
@@ -61374,7 +57291,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee59);
     }));
 
-    return function (_x117, _x118) {
+    return function (_x118, _x119) {
       return _ref59.apply(this, arguments);
     };
   }();
@@ -61407,7 +57324,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee60);
     }));
 
-    return function (_x119, _x120) {
+    return function (_x120, _x121) {
       return _ref60.apply(this, arguments);
     };
   }();
@@ -61461,7 +57378,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee62);
     }));
 
-    return function (_x121) {
+    return function (_x122) {
       return _ref62.apply(this, arguments);
     };
   }();
@@ -61492,7 +57409,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee63);
     }));
 
-    return function (_x122) {
+    return function (_x123) {
       return _ref63.apply(this, arguments);
     };
   }();
@@ -61547,7 +57464,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee65);
     }));
 
-    return function (_x123) {
+    return function (_x124) {
       return _ref65.apply(this, arguments);
     };
   }();
@@ -61578,7 +57495,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee66);
     }));
 
-    return function (_x124) {
+    return function (_x125) {
       return _ref66.apply(this, arguments);
     };
   }();
@@ -61636,7 +57553,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee68);
     }));
 
-    return function (_x125, _x126, _x127) {
+    return function (_x126, _x127, _x128) {
       return _ref68.apply(this, arguments);
     };
   }();
@@ -61672,7 +57589,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee69);
     }));
 
-    return function (_x128, _x129, _x130, _x131) {
+    return function (_x129, _x130, _x131, _x132) {
       return _ref69.apply(this, arguments);
     };
   }();
@@ -61704,7 +57621,7 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee70);
     }));
 
-    return function (_x132) {
+    return function (_x133) {
       return _ref70.apply(this, arguments);
     };
   }();
@@ -65561,25 +61478,29 @@ function Issuer_Issuer(contractSettings) {
     };
   }();
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
    * @returns boolean
    **/
 
 
-  this.canBurnSynths = /*#__PURE__*/function () {
-    var _ref16 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16(account) {
+  this.burnSynthsWithoutDebt = /*#__PURE__*/function () {
+    var _ref16 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16(currencyKey, from, amount, txParams) {
       return regenerator_default.a.wrap(function _callee16$(_context16) {
         while (1) {
           switch (_context16.prev = _context16.next) {
             case 0:
-              _context16.next = 2;
-              return _this.contract.canBurnSynths(account);
-
-            case 2:
-              return _context16.abrupt("return", _context16.sent);
+              txParams = txParams || {};
+              _context16.next = 3;
+              return _this.contract.burnSynthsWithoutDebt(currencyKey, from, amount, txParams);
 
             case 3:
+              return _context16.abrupt("return", _context16.sent);
+
+            case 4:
             case "end":
               return _context16.stop();
           }
@@ -65587,25 +61508,25 @@ function Issuer_Issuer(contractSettings) {
       }, _callee16);
     }));
 
-    return function (_x23) {
+    return function (_x23, _x24, _x25, _x26) {
       return _ref16.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns BigNumber
+   * @returns boolean
    **/
 
 
-  this.collateral = /*#__PURE__*/function () {
+  this.canBurnSynths = /*#__PURE__*/function () {
     var _ref17 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17(account) {
       return regenerator_default.a.wrap(function _callee17$(_context17) {
         while (1) {
           switch (_context17.prev = _context17.next) {
             case 0:
               _context17.next = 2;
-              return _this.contract.collateral(account);
+              return _this.contract.canBurnSynths(account);
 
             case 2:
               return _context17.abrupt("return", _context17.sent);
@@ -65618,25 +61539,25 @@ function Issuer_Issuer(contractSettings) {
       }, _callee17);
     }));
 
-    return function (_x24) {
+    return function (_x27) {
       return _ref17.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
+   * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
 
 
-  this.collateralisationRatio = /*#__PURE__*/function () {
-    var _ref18 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18(_issuer) {
+  this.collateral = /*#__PURE__*/function () {
+    var _ref18 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18(account) {
       return regenerator_default.a.wrap(function _callee18$(_context18) {
         while (1) {
           switch (_context18.prev = _context18.next) {
             case 0:
               _context18.next = 2;
-              return _this.contract.collateralisationRatio(_issuer);
+              return _this.contract.collateral(account);
 
             case 2:
               return _context18.abrupt("return", _context18.sent);
@@ -65649,25 +61570,25 @@ function Issuer_Issuer(contractSettings) {
       }, _callee18);
     }));
 
-    return function (_x25) {
+    return function (_x28) {
       return _ref18.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
-   * @returns Object
+   * @returns BigNumber
    **/
 
 
-  this.collateralisationRatioAndAnyRatesInvalid = /*#__PURE__*/function () {
+  this.collateralisationRatio = /*#__PURE__*/function () {
     var _ref19 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19(_issuer) {
       return regenerator_default.a.wrap(function _callee19$(_context19) {
         while (1) {
           switch (_context19.prev = _context19.next) {
             case 0:
               _context19.next = 2;
-              return _this.contract.collateralisationRatioAndAnyRatesInvalid(_issuer);
+              return _this.contract.collateralisationRatio(_issuer);
 
             case 2:
               return _context19.abrupt("return", _context19.sent);
@@ -65680,26 +61601,25 @@ function Issuer_Issuer(contractSettings) {
       }, _callee19);
     }));
 
-    return function (_x26) {
+    return function (_x29) {
       return _ref19.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
+   * @returns Object
    **/
 
 
-  this.debtBalanceOf = /*#__PURE__*/function () {
-    var _ref20 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20(_issuer, currencyKey) {
+  this.collateralisationRatioAndAnyRatesInvalid = /*#__PURE__*/function () {
+    var _ref20 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20(_issuer) {
       return regenerator_default.a.wrap(function _callee20$(_context20) {
         while (1) {
           switch (_context20.prev = _context20.next) {
             case 0:
               _context20.next = 2;
-              return _this.contract.debtBalanceOf(_issuer, currencyKey);
+              return _this.contract.collateralisationRatioAndAnyRatesInvalid(_issuer);
 
             case 2:
               return _context20.abrupt("return", _context20.sent);
@@ -65712,25 +61632,26 @@ function Issuer_Issuer(contractSettings) {
       }, _callee20);
     }));
 
-    return function (_x27, _x28) {
+    return function (_x30) {
       return _ref20.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKeys {bytes32[]}
-   * @returns address[]
+   * @param _issuer {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
    **/
 
 
-  this.getSynths = /*#__PURE__*/function () {
-    var _ref21 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21(currencyKeys) {
+  this.debtBalanceOf = /*#__PURE__*/function () {
+    var _ref21 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21(_issuer, currencyKey) {
       return regenerator_default.a.wrap(function _callee21$(_context21) {
         while (1) {
           switch (_context21.prev = _context21.next) {
             case 0:
               _context21.next = 2;
-              return _this.contract.getSynths(currencyKeys);
+              return _this.contract.debtBalanceOf(_issuer, currencyKey);
 
             case 2:
               return _context21.abrupt("return", _context21.sent);
@@ -65743,8 +61664,39 @@ function Issuer_Issuer(contractSettings) {
       }, _callee21);
     }));
 
-    return function (_x29) {
+    return function (_x31, _x32) {
       return _ref21.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKeys {bytes32[]}
+   * @returns address[]
+   **/
+
+
+  this.getSynths = /*#__PURE__*/function () {
+    var _ref22 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22(currencyKeys) {
+      return regenerator_default.a.wrap(function _callee22$(_context22) {
+        while (1) {
+          switch (_context22.prev = _context22.next) {
+            case 0:
+              _context22.next = 2;
+              return _this.contract.getSynths(currencyKeys);
+
+            case 2:
+              return _context22.abrupt("return", _context22.sent);
+
+            case 3:
+            case "end":
+              return _context22.stop();
+          }
+        }
+      }, _callee22);
+    }));
+
+    return function (_x33) {
+      return _ref22.apply(this, arguments);
     };
   }();
   /**
@@ -65753,36 +61705,13 @@ function Issuer_Issuer(contractSettings) {
    **/
 
 
-  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22() {
-    return regenerator_default.a.wrap(function _callee22$(_context22) {
-      while (1) {
-        switch (_context22.prev = _context22.next) {
-          case 0:
-            _context22.next = 2;
-            return _this.contract.isResolverCached();
-
-          case 2:
-            return _context22.abrupt("return", _context22.sent);
-
-          case 3:
-          case "end":
-            return _context22.stop();
-        }
-      }
-    }, _callee22);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-
-  this.issuanceRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23() {
+  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23() {
     return regenerator_default.a.wrap(function _callee23$(_context23) {
       while (1) {
         switch (_context23.prev = _context23.next) {
           case 0:
             _context23.next = 2;
-            return _this.contract.issuanceRatio();
+            return _this.contract.isResolverCached();
 
           case 2:
             return _context23.abrupt("return", _context23.sent);
@@ -65795,6 +61724,29 @@ function Issuer_Issuer(contractSettings) {
     }, _callee23);
   }));
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.issuanceRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24() {
+    return regenerator_default.a.wrap(function _callee24$(_context24) {
+      while (1) {
+        switch (_context24.prev = _context24.next) {
+          case 0:
+            _context24.next = 2;
+            return _this.contract.issuanceRatio();
+
+          case 2:
+            return _context24.abrupt("return", _context24.sent);
+
+          case 3:
+          case "end":
+            return _context24.stop();
+        }
+      }
+    }, _callee24);
+  }));
+  /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param txParams {TxParams}
@@ -65802,48 +61754,14 @@ function Issuer_Issuer(contractSettings) {
    **/
 
   this.issueMaxSynths = /*#__PURE__*/function () {
-    var _ref24 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24(from, txParams) {
-      return regenerator_default.a.wrap(function _callee24$(_context24) {
-        while (1) {
-          switch (_context24.prev = _context24.next) {
-            case 0:
-              txParams = txParams || {};
-              _context24.next = 3;
-              return _this.contract.issueMaxSynths(from, txParams);
-
-            case 3:
-              return _context24.abrupt("return", _context24.sent);
-
-            case 4:
-            case "end":
-              return _context24.stop();
-          }
-        }
-      }, _callee24);
-    }));
-
-    return function (_x30, _x31) {
-      return _ref24.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.issueMaxSynthsOnBehalf = /*#__PURE__*/function () {
-    var _ref25 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25(issueForAddress, from, txParams) {
+    var _ref25 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25(from, txParams) {
       return regenerator_default.a.wrap(function _callee25$(_context25) {
         while (1) {
           switch (_context25.prev = _context25.next) {
             case 0:
               txParams = txParams || {};
               _context25.next = 3;
-              return _this.contract.issueMaxSynthsOnBehalf(issueForAddress, from, txParams);
+              return _this.contract.issueMaxSynths(from, txParams);
 
             case 3:
               return _context25.abrupt("return", _context25.sent);
@@ -65856,28 +61774,28 @@ function Issuer_Issuer(contractSettings) {
       }, _callee25);
     }));
 
-    return function (_x32, _x33, _x34) {
+    return function (_x34, _x35) {
       return _ref25.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
+   * @param issueForAddress {String<EthAddress>}
    * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.issueSynths = /*#__PURE__*/function () {
-    var _ref26 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee26(from, amount, txParams) {
+  this.issueMaxSynthsOnBehalf = /*#__PURE__*/function () {
+    var _ref26 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee26(issueForAddress, from, txParams) {
       return regenerator_default.a.wrap(function _callee26$(_context26) {
         while (1) {
           switch (_context26.prev = _context26.next) {
             case 0:
               txParams = txParams || {};
               _context26.next = 3;
-              return _this.contract.issueSynths(from, amount, txParams);
+              return _this.contract.issueMaxSynthsOnBehalf(issueForAddress, from, txParams);
 
             case 3:
               return _context26.abrupt("return", _context26.sent);
@@ -65890,8 +61808,42 @@ function Issuer_Issuer(contractSettings) {
       }, _callee26);
     }));
 
-    return function (_x35, _x36, _x37) {
+    return function (_x36, _x37, _x38) {
       return _ref26.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.issueSynths = /*#__PURE__*/function () {
+    var _ref27 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee27(from, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee27$(_context27) {
+        while (1) {
+          switch (_context27.prev = _context27.next) {
+            case 0:
+              txParams = txParams || {};
+              _context27.next = 3;
+              return _this.contract.issueSynths(from, amount, txParams);
+
+            case 3:
+              return _context27.abrupt("return", _context27.sent);
+
+            case 4:
+            case "end":
+              return _context27.stop();
+          }
+        }
+      }, _callee27);
+    }));
+
+    return function (_x39, _x40, _x41) {
+      return _ref27.apply(this, arguments);
     };
   }();
   /**
@@ -65905,28 +61857,63 @@ function Issuer_Issuer(contractSettings) {
 
 
   this.issueSynthsOnBehalf = /*#__PURE__*/function () {
-    var _ref27 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee27(issueForAddress, from, amount, txParams) {
-      return regenerator_default.a.wrap(function _callee27$(_context27) {
+    var _ref28 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28(issueForAddress, from, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee28$(_context28) {
         while (1) {
-          switch (_context27.prev = _context27.next) {
+          switch (_context28.prev = _context28.next) {
             case 0:
               txParams = txParams || {};
-              _context27.next = 3;
+              _context28.next = 3;
               return _this.contract.issueSynthsOnBehalf(issueForAddress, from, amount, txParams);
 
             case 3:
-              return _context27.abrupt("return", _context27.sent);
+              return _context28.abrupt("return", _context28.sent);
 
             case 4:
             case "end":
-              return _context27.stop();
+              return _context28.stop();
           }
         }
-      }, _callee27);
+      }, _callee28);
     }));
 
-    return function (_x38, _x39, _x40, _x41) {
-      return _ref27.apply(this, arguments);
+    return function (_x42, _x43, _x44, _x45) {
+      return _ref28.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param to {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.issueSynthsWithoutDebt = /*#__PURE__*/function () {
+    var _ref29 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee29(currencyKey, to, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee29$(_context29) {
+        while (1) {
+          switch (_context29.prev = _context29.next) {
+            case 0:
+              txParams = txParams || {};
+              _context29.next = 3;
+              return _this.contract.issueSynthsWithoutDebt(currencyKey, to, amount, txParams);
+
+            case 3:
+              return _context29.abrupt("return", _context29.sent);
+
+            case 4:
+            case "end":
+              return _context29.stop();
+          }
+        }
+      }, _callee29);
+    }));
+
+    return function (_x46, _x47, _x48, _x49) {
+      return _ref29.apply(this, arguments);
     };
   }();
   /**
@@ -65935,23 +61922,23 @@ function Issuer_Issuer(contractSettings) {
    **/
 
 
-  this.lastDebtRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28() {
-    return regenerator_default.a.wrap(function _callee28$(_context28) {
+  this.lastDebtRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee30() {
+    return regenerator_default.a.wrap(function _callee30$(_context30) {
       while (1) {
-        switch (_context28.prev = _context28.next) {
+        switch (_context30.prev = _context30.next) {
           case 0:
-            _context28.next = 2;
+            _context30.next = 2;
             return _this.contract.lastDebtRatio();
 
           case 2:
-            return _context28.abrupt("return", _context28.sent);
+            return _context30.abrupt("return", _context30.sent);
 
           case 3:
           case "end":
-            return _context28.stop();
+            return _context30.stop();
         }
       }
-    }, _callee28);
+    }, _callee30);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -65960,27 +61947,27 @@ function Issuer_Issuer(contractSettings) {
    **/
 
   this.lastIssueEvent = /*#__PURE__*/function () {
-    var _ref29 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee29(account) {
-      return regenerator_default.a.wrap(function _callee29$(_context29) {
+    var _ref31 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee31(account) {
+      return regenerator_default.a.wrap(function _callee31$(_context31) {
         while (1) {
-          switch (_context29.prev = _context29.next) {
+          switch (_context31.prev = _context31.next) {
             case 0:
-              _context29.next = 2;
+              _context31.next = 2;
               return _this.contract.lastIssueEvent(account);
 
             case 2:
-              return _context29.abrupt("return", _context29.sent);
+              return _context31.abrupt("return", _context31.sent);
 
             case 3:
             case "end":
-              return _context29.stop();
+              return _context31.stop();
           }
         }
-      }, _callee29);
+      }, _callee31);
     }));
 
-    return function (_x42) {
-      return _ref29.apply(this, arguments);
+    return function (_x50) {
+      return _ref31.apply(this, arguments);
     };
   }();
   /**
@@ -65994,28 +61981,28 @@ function Issuer_Issuer(contractSettings) {
 
 
   this.liquidateDelinquentAccount = /*#__PURE__*/function () {
-    var _ref30 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee30(account, susdAmount, liquidator, txParams) {
-      return regenerator_default.a.wrap(function _callee30$(_context30) {
+    var _ref32 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32(account, susdAmount, liquidator, txParams) {
+      return regenerator_default.a.wrap(function _callee32$(_context32) {
         while (1) {
-          switch (_context30.prev = _context30.next) {
+          switch (_context32.prev = _context32.next) {
             case 0:
               txParams = txParams || {};
-              _context30.next = 3;
+              _context32.next = 3;
               return _this.contract.liquidateDelinquentAccount(account, susdAmount, liquidator, txParams);
 
             case 3:
-              return _context30.abrupt("return", _context30.sent);
+              return _context32.abrupt("return", _context32.sent);
 
             case 4:
             case "end":
-              return _context30.stop();
+              return _context32.stop();
           }
         }
-      }, _callee30);
+      }, _callee32);
     }));
 
-    return function (_x43, _x44, _x45, _x46) {
-      return _ref30.apply(this, arguments);
+    return function (_x51, _x52, _x53, _x54) {
+      return _ref32.apply(this, arguments);
     };
   }();
   /**
@@ -66026,27 +62013,27 @@ function Issuer_Issuer(contractSettings) {
 
 
   this.maxIssuableSynths = /*#__PURE__*/function () {
-    var _ref31 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee31(_issuer) {
-      return regenerator_default.a.wrap(function _callee31$(_context31) {
+    var _ref33 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee33(_issuer) {
+      return regenerator_default.a.wrap(function _callee33$(_context33) {
         while (1) {
-          switch (_context31.prev = _context31.next) {
+          switch (_context33.prev = _context33.next) {
             case 0:
-              _context31.next = 2;
+              _context33.next = 2;
               return _this.contract.maxIssuableSynths(_issuer);
 
             case 2:
-              return _context31.abrupt("return", _context31.sent);
+              return _context33.abrupt("return", _context33.sent);
 
             case 3:
             case "end":
-              return _context31.stop();
+              return _context33.stop();
           }
         }
-      }, _callee31);
+      }, _callee33);
     }));
 
-    return function (_x47) {
-      return _ref31.apply(this, arguments);
+    return function (_x55) {
+      return _ref33.apply(this, arguments);
     };
   }();
   /**
@@ -66055,69 +62042,13 @@ function Issuer_Issuer(contractSettings) {
    **/
 
 
-  this.minimumStakeTime = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32() {
-    return regenerator_default.a.wrap(function _callee32$(_context32) {
-      while (1) {
-        switch (_context32.prev = _context32.next) {
-          case 0:
-            _context32.next = 2;
-            return _this.contract.minimumStakeTime();
-
-          case 2:
-            return _context32.abrupt("return", _context32.sent);
-
-          case 3:
-          case "end":
-            return _context32.stop();
-        }
-      }
-    }, _callee32);
-  }));
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-  this.nominateNewOwner = /*#__PURE__*/function () {
-    var _ref33 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee33(_owner, txParams) {
-      return regenerator_default.a.wrap(function _callee33$(_context33) {
-        while (1) {
-          switch (_context33.prev = _context33.next) {
-            case 0:
-              txParams = txParams || {};
-              _context33.next = 3;
-              return _this.contract.nominateNewOwner(_owner, txParams);
-
-            case 3:
-              return _context33.abrupt("return", _context33.sent);
-
-            case 4:
-            case "end":
-              return _context33.stop();
-          }
-        }
-      }, _callee33);
-    }));
-
-    return function (_x48, _x49) {
-      return _ref33.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-
-
-  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34() {
+  this.minimumStakeTime = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34() {
     return regenerator_default.a.wrap(function _callee34$(_context34) {
       while (1) {
         switch (_context34.prev = _context34.next) {
           case 0:
             _context34.next = 2;
-            return _this.contract.nominatedOwner();
+            return _this.contract.minimumStakeTime();
 
           case 2:
             return _context34.abrupt("return", _context34.sent);
@@ -66130,27 +62061,83 @@ function Issuer_Issuer(contractSettings) {
     }, _callee34);
   }));
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.nominateNewOwner = /*#__PURE__*/function () {
+    var _ref35 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee35$(_context35) {
+        while (1) {
+          switch (_context35.prev = _context35.next) {
+            case 0:
+              txParams = txParams || {};
+              _context35.next = 3;
+              return _this.contract.nominateNewOwner(_owner, txParams);
+
+            case 3:
+              return _context35.abrupt("return", _context35.sent);
+
+            case 4:
+            case "end":
+              return _context35.stop();
+          }
+        }
+      }, _callee35);
+    }));
+
+    return function (_x56, _x57) {
+      return _ref35.apply(this, arguments);
+    };
+  }();
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
 
-  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35() {
-    return regenerator_default.a.wrap(function _callee35$(_context35) {
+
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36() {
+    return regenerator_default.a.wrap(function _callee36$(_context36) {
       while (1) {
-        switch (_context35.prev = _context35.next) {
+        switch (_context36.prev = _context36.next) {
           case 0:
-            _context35.next = 2;
-            return _this.contract.owner();
+            _context36.next = 2;
+            return _this.contract.nominatedOwner();
 
           case 2:
-            return _context35.abrupt("return", _context35.sent);
+            return _context36.abrupt("return", _context36.sent);
 
           case 3:
           case "end":
-            return _context35.stop();
+            return _context36.stop();
         }
       }
-    }, _callee35);
+    }, _callee36);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37() {
+    return regenerator_default.a.wrap(function _callee37$(_context37) {
+      while (1) {
+        switch (_context37.prev = _context37.next) {
+          case 0:
+            _context37.next = 2;
+            return _this.contract.owner();
+
+          case 2:
+            return _context37.abrupt("return", _context37.sent);
+
+          case 3:
+          case "end":
+            return _context37.stop();
+        }
+      }
+    }, _callee37);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -66159,78 +62146,14 @@ function Issuer_Issuer(contractSettings) {
    **/
 
   this.rebuildCache = /*#__PURE__*/function () {
-    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(txParams) {
-      return regenerator_default.a.wrap(function _callee36$(_context36) {
-        while (1) {
-          switch (_context36.prev = _context36.next) {
-            case 0:
-              txParams = txParams || {};
-              _context36.next = 3;
-              return _this.contract.rebuildCache(txParams);
-
-            case 3:
-              return _context36.abrupt("return", _context36.sent);
-
-            case 4:
-            case "end":
-              return _context36.stop();
-          }
-        }
-      }, _callee36);
-    }));
-
-    return function (_x50) {
-      return _ref36.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _issuer {String<EthAddress>}
-   * @returns Object
-   **/
-
-
-  this.remainingIssuableSynths = /*#__PURE__*/function () {
-    var _ref37 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37(_issuer) {
-      return regenerator_default.a.wrap(function _callee37$(_context37) {
-        while (1) {
-          switch (_context37.prev = _context37.next) {
-            case 0:
-              _context37.next = 2;
-              return _this.contract.remainingIssuableSynths(_issuer);
-
-            case 2:
-              return _context37.abrupt("return", _context37.sent);
-
-            case 3:
-            case "end":
-              return _context37.stop();
-          }
-        }
-      }, _callee37);
-    }));
-
-    return function (_x51) {
-      return _ref37.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.removeSynth = /*#__PURE__*/function () {
-    var _ref38 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38(currencyKey, txParams) {
+    var _ref38 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38(txParams) {
       return regenerator_default.a.wrap(function _callee38$(_context38) {
         while (1) {
           switch (_context38.prev = _context38.next) {
             case 0:
               txParams = txParams || {};
               _context38.next = 3;
-              return _this.contract.removeSynth(currencyKey, txParams);
+              return _this.contract.rebuildCache(txParams);
 
             case 3:
               return _context38.abrupt("return", _context38.sent);
@@ -66243,8 +62166,72 @@ function Issuer_Issuer(contractSettings) {
       }, _callee38);
     }));
 
-    return function (_x52, _x53) {
+    return function (_x58) {
       return _ref38.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _issuer {String<EthAddress>}
+   * @returns Object
+   **/
+
+
+  this.remainingIssuableSynths = /*#__PURE__*/function () {
+    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(_issuer) {
+      return regenerator_default.a.wrap(function _callee39$(_context39) {
+        while (1) {
+          switch (_context39.prev = _context39.next) {
+            case 0:
+              _context39.next = 2;
+              return _this.contract.remainingIssuableSynths(_issuer);
+
+            case 2:
+              return _context39.abrupt("return", _context39.sent);
+
+            case 3:
+            case "end":
+              return _context39.stop();
+          }
+        }
+      }, _callee39);
+    }));
+
+    return function (_x59) {
+      return _ref39.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.removeSynth = /*#__PURE__*/function () {
+    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(currencyKey, txParams) {
+      return regenerator_default.a.wrap(function _callee40$(_context40) {
+        while (1) {
+          switch (_context40.prev = _context40.next) {
+            case 0:
+              txParams = txParams || {};
+              _context40.next = 3;
+              return _this.contract.removeSynth(currencyKey, txParams);
+
+            case 3:
+              return _context40.abrupt("return", _context40.sent);
+
+            case 4:
+            case "end":
+              return _context40.stop();
+          }
+        }
+      }, _callee40);
+    }));
+
+    return function (_x60, _x61) {
+      return _ref40.apply(this, arguments);
     };
   }();
   /**
@@ -66256,28 +62243,28 @@ function Issuer_Issuer(contractSettings) {
 
 
   this.removeSynths = /*#__PURE__*/function () {
-    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(currencyKeys, txParams) {
-      return regenerator_default.a.wrap(function _callee39$(_context39) {
+    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(currencyKeys, txParams) {
+      return regenerator_default.a.wrap(function _callee41$(_context41) {
         while (1) {
-          switch (_context39.prev = _context39.next) {
+          switch (_context41.prev = _context41.next) {
             case 0:
               txParams = txParams || {};
-              _context39.next = 3;
+              _context41.next = 3;
               return _this.contract.removeSynths(currencyKeys, txParams);
 
             case 3:
-              return _context39.abrupt("return", _context39.sent);
+              return _context41.abrupt("return", _context41.sent);
 
             case 4:
             case "end":
-              return _context39.stop();
+              return _context41.stop();
           }
         }
-      }, _callee39);
+      }, _callee41);
     }));
 
-    return function (_x54, _x55) {
-      return _ref39.apply(this, arguments);
+    return function (_x62, _x63) {
+      return _ref41.apply(this, arguments);
     };
   }();
   /**
@@ -66286,46 +62273,46 @@ function Issuer_Issuer(contractSettings) {
    **/
 
 
-  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40() {
-    return regenerator_default.a.wrap(function _callee40$(_context40) {
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42() {
+    return regenerator_default.a.wrap(function _callee42$(_context42) {
       while (1) {
-        switch (_context40.prev = _context40.next) {
+        switch (_context42.prev = _context42.next) {
           case 0:
-            _context40.next = 2;
+            _context42.next = 2;
             return _this.contract.resolver();
 
           case 2:
-            return _context40.abrupt("return", _context40.sent);
+            return _context42.abrupt("return", _context42.sent);
 
           case 3:
           case "end":
-            return _context40.stop();
+            return _context42.stop();
         }
       }
-    }, _callee40);
+    }, _callee42);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32[]
    **/
 
-  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41() {
-    return regenerator_default.a.wrap(function _callee41$(_context41) {
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43() {
+    return regenerator_default.a.wrap(function _callee43$(_context43) {
       while (1) {
-        switch (_context41.prev = _context41.next) {
+        switch (_context43.prev = _context43.next) {
           case 0:
-            _context41.next = 2;
+            _context43.next = 2;
             return _this.contract.resolverAddressesRequired();
 
           case 2:
-            return _context41.abrupt("return", _context41.sent);
+            return _context43.abrupt("return", _context43.sent);
 
           case 3:
           case "end":
-            return _context41.stop();
+            return _context43.stop();
         }
       }
-    }, _callee41);
+    }, _callee43);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -66335,28 +62322,28 @@ function Issuer_Issuer(contractSettings) {
    **/
 
   this.setCurrentPeriodId = /*#__PURE__*/function () {
-    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(periodId, txParams) {
-      return regenerator_default.a.wrap(function _callee42$(_context42) {
+    var _ref44 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44(periodId, txParams) {
+      return regenerator_default.a.wrap(function _callee44$(_context44) {
         while (1) {
-          switch (_context42.prev = _context42.next) {
+          switch (_context44.prev = _context44.next) {
             case 0:
               txParams = txParams || {};
-              _context42.next = 3;
+              _context44.next = 3;
               return _this.contract.setCurrentPeriodId(periodId, txParams);
 
             case 3:
-              return _context42.abrupt("return", _context42.sent);
+              return _context44.abrupt("return", _context44.sent);
 
             case 4:
             case "end":
-              return _context42.stop();
+              return _context44.stop();
           }
         }
-      }, _callee42);
+      }, _callee44);
     }));
 
-    return function (_x56, _x57) {
-      return _ref42.apply(this, arguments);
+    return function (_x64, _x65) {
+      return _ref44.apply(this, arguments);
     };
   }();
   /**
@@ -66368,28 +62355,28 @@ function Issuer_Issuer(contractSettings) {
 
 
   this.setLastDebtRatio = /*#__PURE__*/function () {
-    var _ref43 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43(ratio, txParams) {
-      return regenerator_default.a.wrap(function _callee43$(_context43) {
+    var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(ratio, txParams) {
+      return regenerator_default.a.wrap(function _callee45$(_context45) {
         while (1) {
-          switch (_context43.prev = _context43.next) {
+          switch (_context45.prev = _context45.next) {
             case 0:
               txParams = txParams || {};
-              _context43.next = 3;
+              _context45.next = 3;
               return _this.contract.setLastDebtRatio(ratio, txParams);
 
             case 3:
-              return _context43.abrupt("return", _context43.sent);
+              return _context45.abrupt("return", _context45.sent);
 
             case 4:
             case "end":
-              return _context43.stop();
+              return _context45.stop();
           }
         }
-      }, _callee43);
+      }, _callee45);
     }));
 
-    return function (_x58, _x59) {
-      return _ref43.apply(this, arguments);
+    return function (_x66, _x67) {
+      return _ref45.apply(this, arguments);
     };
   }();
   /**
@@ -66400,76 +62387,13 @@ function Issuer_Issuer(contractSettings) {
 
 
   this.synths = /*#__PURE__*/function () {
-    var _ref44 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44(bytes32_1) {
-      return regenerator_default.a.wrap(function _callee44$(_context44) {
-        while (1) {
-          switch (_context44.prev = _context44.next) {
-            case 0:
-              _context44.next = 2;
-              return _this.contract.synths(bytes32_1);
-
-            case 2:
-              return _context44.abrupt("return", _context44.sent);
-
-            case 3:
-            case "end":
-              return _context44.stop();
-          }
-        }
-      }, _callee44);
-    }));
-
-    return function (_x60) {
-      return _ref44.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns bytes32
-   **/
-
-
-  this.synthsByAddress = /*#__PURE__*/function () {
-    var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(address_1) {
-      return regenerator_default.a.wrap(function _callee45$(_context45) {
-        while (1) {
-          switch (_context45.prev = _context45.next) {
-            case 0:
-              _context45.next = 2;
-              return _this.contract.synthsByAddress(address_1);
-
-            case 2:
-              return _context45.abrupt("return", _context45.sent);
-
-            case 3:
-            case "end":
-              return _context45.stop();
-          }
-        }
-      }, _callee45);
-    }));
-
-    return function (_x61) {
-      return _ref45.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @param excludeOtherCollateral {boolean}
-   * @returns BigNumber
-   **/
-
-
-  this.totalIssuedSynths = /*#__PURE__*/function () {
-    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(currencyKey, excludeOtherCollateral) {
+    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(bytes32_1) {
       return regenerator_default.a.wrap(function _callee46$(_context46) {
         while (1) {
           switch (_context46.prev = _context46.next) {
             case 0:
               _context46.next = 2;
-              return _this.contract.totalIssuedSynths(currencyKey, excludeOtherCollateral);
+              return _this.contract.synths(bytes32_1);
 
             case 2:
               return _context46.abrupt("return", _context46.sent);
@@ -66482,26 +62406,25 @@ function Issuer_Issuer(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x62, _x63) {
+    return function (_x68) {
       return _ref46.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @param balance {BigNumber}
-   * @returns Object
+   * @param  {String<EthAddress>}
+   * @returns bytes32
    **/
 
 
-  this.transferableSynthetixAndAnyRateIsInvalid = /*#__PURE__*/function () {
-    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(account, balance) {
+  this.synthsByAddress = /*#__PURE__*/function () {
+    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(address_1) {
       return regenerator_default.a.wrap(function _callee47$(_context47) {
         while (1) {
           switch (_context47.prev = _context47.next) {
             case 0:
               _context47.next = 2;
-              return _this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
+              return _this.contract.synthsByAddress(address_1);
 
             case 2:
               return _context47.abrupt("return", _context47.sent);
@@ -66514,8 +62437,72 @@ function Issuer_Issuer(contractSettings) {
       }, _callee47);
     }));
 
-    return function (_x64, _x65) {
+    return function (_x69) {
       return _ref47.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @param excludeOtherCollateral {boolean}
+   * @returns BigNumber
+   **/
+
+
+  this.totalIssuedSynths = /*#__PURE__*/function () {
+    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(currencyKey, excludeOtherCollateral) {
+      return regenerator_default.a.wrap(function _callee48$(_context48) {
+        while (1) {
+          switch (_context48.prev = _context48.next) {
+            case 0:
+              _context48.next = 2;
+              return _this.contract.totalIssuedSynths(currencyKey, excludeOtherCollateral);
+
+            case 2:
+              return _context48.abrupt("return", _context48.sent);
+
+            case 3:
+            case "end":
+              return _context48.stop();
+          }
+        }
+      }, _callee48);
+    }));
+
+    return function (_x70, _x71) {
+      return _ref48.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param balance {BigNumber}
+   * @returns Object
+   **/
+
+
+  this.transferableSynthetixAndAnyRateIsInvalid = /*#__PURE__*/function () {
+    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(account, balance) {
+      return regenerator_default.a.wrap(function _callee49$(_context49) {
+        while (1) {
+          switch (_context49.prev = _context49.next) {
+            case 0:
+              _context49.next = 2;
+              return _this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
+
+            case 2:
+              return _context49.abrupt("return", _context49.sent);
+
+            case 3:
+            case "end":
+              return _context49.stop();
+          }
+        }
+      }, _callee49);
+    }));
+
+    return function (_x72, _x73) {
+      return _ref49.apply(this, arguments);
     };
   }();
 }
@@ -70911,22 +66898,23 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param to {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @param destination {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.finalizeWithdrawal = /*#__PURE__*/function () {
-    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(to, amount, txParams) {
+  this.finalizeSynthTransfer = /*#__PURE__*/function () {
+    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(currencyKey, destination, amount, txParams) {
       return regenerator_default.a.wrap(function _callee8$(_context8) {
         while (1) {
           switch (_context8.prev = _context8.next) {
             case 0:
               txParams = txParams || {};
               _context8.next = 3;
-              return _this.contract.finalizeWithdrawal(to, amount, txParams);
+              return _this.contract.finalizeSynthTransfer(currencyKey, destination, amount, txParams);
 
             case 3:
               return _context8.abrupt("return", _context8.sent);
@@ -70939,27 +66927,28 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
       }, _callee8);
     }));
 
-    return function (_x15, _x16, _x17) {
+    return function (_x15, _x16, _x17, _x18) {
       return _ref8.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param token {String<EthAddress>}
+   * @param to {String<EthAddress>}
+   * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.forwardTokensToEscrow = /*#__PURE__*/function () {
-    var _ref9 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9(token, txParams) {
+  this.finalizeWithdrawal = /*#__PURE__*/function () {
+    var _ref9 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9(to, amount, txParams) {
       return regenerator_default.a.wrap(function _callee9$(_context9) {
         while (1) {
           switch (_context9.prev = _context9.next) {
             case 0:
               txParams = txParams || {};
               _context9.next = 3;
-              return _this.contract.forwardTokensToEscrow(token, txParams);
+              return _this.contract.finalizeWithdrawal(to, amount, txParams);
 
             case 3:
               return _context9.abrupt("return", _context9.sent);
@@ -70972,8 +66961,76 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
       }, _callee9);
     }));
 
-    return function (_x18, _x19) {
+    return function (_x19, _x20, _x21) {
       return _ref9.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param token {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.forwardTokensToEscrow = /*#__PURE__*/function () {
+    var _ref10 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10(token, txParams) {
+      return regenerator_default.a.wrap(function _callee10$(_context10) {
+        while (1) {
+          switch (_context10.prev = _context10.next) {
+            case 0:
+              txParams = txParams || {};
+              _context10.next = 3;
+              return _this.contract.forwardTokensToEscrow(token, txParams);
+
+            case 3:
+              return _context10.abrupt("return", _context10.sent);
+
+            case 4:
+            case "end":
+              return _context10.stop();
+          }
+        }
+      }, _callee10);
+    }));
+
+    return function (_x22, _x23) {
+      return _ref10.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param destination {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.initiateSynthTransfer = /*#__PURE__*/function () {
+    var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11(currencyKey, destination, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee11$(_context11) {
+        while (1) {
+          switch (_context11.prev = _context11.next) {
+            case 0:
+              txParams = txParams || {};
+              _context11.next = 3;
+              return _this.contract.initiateSynthTransfer(currencyKey, destination, amount, txParams);
+
+            case 3:
+              return _context11.abrupt("return", _context11.sent);
+
+            case 4:
+            case "end":
+              return _context11.stop();
+          }
+        }
+      }, _callee11);
+    }));
+
+    return function (_x24, _x25, _x26, _x27) {
+      return _ref11.apply(this, arguments);
     };
   }();
   /**
@@ -70982,46 +67039,46 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
    **/
 
 
-  this.initiationActive = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10() {
-    return regenerator_default.a.wrap(function _callee10$(_context10) {
+  this.initiationActive = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee12() {
+    return regenerator_default.a.wrap(function _callee12$(_context12) {
       while (1) {
-        switch (_context10.prev = _context10.next) {
+        switch (_context12.prev = _context12.next) {
           case 0:
-            _context10.next = 2;
+            _context12.next = 2;
             return _this.contract.initiationActive();
 
           case 2:
-            return _context10.abrupt("return", _context10.sent);
+            return _context12.abrupt("return", _context12.sent);
 
           case 3:
           case "end":
-            return _context10.stop();
+            return _context12.stop();
         }
       }
-    }, _callee10);
+    }, _callee12);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
 
-  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11() {
-    return regenerator_default.a.wrap(function _callee11$(_context11) {
+  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee13() {
+    return regenerator_default.a.wrap(function _callee13$(_context13) {
       while (1) {
-        switch (_context11.prev = _context11.next) {
+        switch (_context13.prev = _context13.next) {
           case 0:
-            _context11.next = 2;
+            _context13.next = 2;
             return _this.contract.isResolverCached();
 
           case 2:
-            return _context11.abrupt("return", _context11.sent);
+            return _context13.abrupt("return", _context13.sent);
 
           case 3:
           case "end":
-            return _context11.stop();
+            return _context13.stop();
         }
       }
-    }, _callee11);
+    }, _callee13);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -71031,28 +67088,28 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
    **/
 
   this.migrateEscrow = /*#__PURE__*/function () {
-    var _ref12 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee12(entryIDs, txParams) {
-      return regenerator_default.a.wrap(function _callee12$(_context12) {
+    var _ref14 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee14(entryIDs, txParams) {
+      return regenerator_default.a.wrap(function _callee14$(_context14) {
         while (1) {
-          switch (_context12.prev = _context12.next) {
+          switch (_context14.prev = _context14.next) {
             case 0:
               txParams = txParams || {};
-              _context12.next = 3;
+              _context14.next = 3;
               return _this.contract.migrateEscrow(entryIDs, txParams);
 
             case 3:
-              return _context12.abrupt("return", _context12.sent);
+              return _context14.abrupt("return", _context14.sent);
 
             case 4:
             case "end":
-              return _context12.stop();
+              return _context14.stop();
           }
         }
-      }, _callee12);
+      }, _callee14);
     }));
 
-    return function (_x20, _x21) {
-      return _ref12.apply(this, arguments);
+    return function (_x28, _x29) {
+      return _ref14.apply(this, arguments);
     };
   }();
   /**
@@ -71064,70 +67121,14 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
 
 
   this.nominateNewOwner = /*#__PURE__*/function () {
-    var _ref13 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee13(_owner, txParams) {
-      return regenerator_default.a.wrap(function _callee13$(_context13) {
-        while (1) {
-          switch (_context13.prev = _context13.next) {
-            case 0:
-              txParams = txParams || {};
-              _context13.next = 3;
-              return _this.contract.nominateNewOwner(_owner, txParams);
-
-            case 3:
-              return _context13.abrupt("return", _context13.sent);
-
-            case 4:
-            case "end":
-              return _context13.stop();
-          }
-        }
-      }, _callee13);
-    }));
-
-    return function (_x22, _x23) {
-      return _ref13.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-
-
-  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee14() {
-    return regenerator_default.a.wrap(function _callee14$(_context14) {
-      while (1) {
-        switch (_context14.prev = _context14.next) {
-          case 0:
-            _context14.next = 2;
-            return _this.contract.nominatedOwner();
-
-          case 2:
-            return _context14.abrupt("return", _context14.sent);
-
-          case 3:
-          case "end":
-            return _context14.stop();
-        }
-      }
-    }, _callee14);
-  }));
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-
-  this.notifyRewardAmount = /*#__PURE__*/function () {
-    var _ref15 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee15(amount, txParams) {
+    var _ref15 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee15(_owner, txParams) {
       return regenerator_default.a.wrap(function _callee15$(_context15) {
         while (1) {
           switch (_context15.prev = _context15.next) {
             case 0:
               txParams = txParams || {};
               _context15.next = 3;
-              return _this.contract.notifyRewardAmount(amount, txParams);
+              return _this.contract.nominateNewOwner(_owner, txParams);
 
             case 3:
               return _context15.abrupt("return", _context15.sent);
@@ -71140,7 +67141,7 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
       }, _callee15);
     }));
 
-    return function (_x24, _x25) {
+    return function (_x30, _x31) {
       return _ref15.apply(this, arguments);
     };
   }();
@@ -71150,13 +67151,13 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
    **/
 
 
-  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16() {
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee16() {
     return regenerator_default.a.wrap(function _callee16$(_context16) {
       while (1) {
         switch (_context16.prev = _context16.next) {
           case 0:
             _context16.next = 2;
-            return _this.contract.owner();
+            return _this.contract.nominatedOwner();
 
           case 2:
             return _context16.abrupt("return", _context16.sent);
@@ -71170,19 +67171,20 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
   }));
   /**
    * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
-  this.rebuildCache = /*#__PURE__*/function () {
-    var _ref17 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17(txParams) {
+  this.notifyRewardAmount = /*#__PURE__*/function () {
+    var _ref17 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee17(amount, txParams) {
       return regenerator_default.a.wrap(function _callee17$(_context17) {
         while (1) {
           switch (_context17.prev = _context17.next) {
             case 0:
               txParams = txParams || {};
               _context17.next = 3;
-              return _this.contract.rebuildCache(txParams);
+              return _this.contract.notifyRewardAmount(amount, txParams);
 
             case 3:
               return _context17.abrupt("return", _context17.sent);
@@ -71195,7 +67197,7 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
       }, _callee17);
     }));
 
-    return function (_x26) {
+    return function (_x32, _x33) {
       return _ref17.apply(this, arguments);
     };
   }();
@@ -71205,13 +67207,13 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
    **/
 
 
-  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18() {
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee18() {
     return regenerator_default.a.wrap(function _callee18$(_context18) {
       while (1) {
         switch (_context18.prev = _context18.next) {
           case 0:
             _context18.next = 2;
-            return _this.contract.resolver();
+            return _this.contract.owner();
 
           case 2:
             return _context18.abrupt("return", _context18.sent);
@@ -71224,27 +67226,82 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
     }, _callee18);
   }));
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+
+  this.rebuildCache = /*#__PURE__*/function () {
+    var _ref19 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19(txParams) {
+      return regenerator_default.a.wrap(function _callee19$(_context19) {
+        while (1) {
+          switch (_context19.prev = _context19.next) {
+            case 0:
+              txParams = txParams || {};
+              _context19.next = 3;
+              return _this.contract.rebuildCache(txParams);
+
+            case 3:
+              return _context19.abrupt("return", _context19.sent);
+
+            case 4:
+            case "end":
+              return _context19.stop();
+          }
+        }
+      }, _callee19);
+    }));
+
+    return function (_x34) {
+      return _ref19.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20() {
+    return regenerator_default.a.wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+            _context20.next = 2;
+            return _this.contract.resolver();
+
+          case 2:
+            return _context20.abrupt("return", _context20.sent);
+
+          case 3:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20);
+  }));
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns bytes32[]
    **/
 
-  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee19() {
-    return regenerator_default.a.wrap(function _callee19$(_context19) {
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21() {
+    return regenerator_default.a.wrap(function _callee21$(_context21) {
       while (1) {
-        switch (_context19.prev = _context19.next) {
+        switch (_context21.prev = _context21.next) {
           case 0:
-            _context19.next = 2;
+            _context21.next = 2;
             return _this.contract.resolverAddressesRequired();
 
           case 2:
-            return _context19.abrupt("return", _context19.sent);
+            return _context21.abrupt("return", _context21.sent);
 
           case 3:
           case "end":
-            return _context19.stop();
+            return _context21.stop();
         }
       }
-    }, _callee19);
+    }, _callee21);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -71253,28 +67310,28 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
    **/
 
   this.resumeInitiation = /*#__PURE__*/function () {
-    var _ref20 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee20(txParams) {
-      return regenerator_default.a.wrap(function _callee20$(_context20) {
+    var _ref22 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee22(txParams) {
+      return regenerator_default.a.wrap(function _callee22$(_context22) {
         while (1) {
-          switch (_context20.prev = _context20.next) {
+          switch (_context22.prev = _context22.next) {
             case 0:
               txParams = txParams || {};
-              _context20.next = 3;
+              _context22.next = 3;
               return _this.contract.resumeInitiation(txParams);
 
             case 3:
-              return _context20.abrupt("return", _context20.sent);
+              return _context22.abrupt("return", _context22.sent);
 
             case 4:
             case "end":
-              return _context20.stop();
+              return _context22.stop();
           }
         }
-      }, _callee20);
+      }, _callee22);
     }));
 
-    return function (_x27) {
-      return _ref20.apply(this, arguments);
+    return function (_x35) {
+      return _ref22.apply(this, arguments);
     };
   }();
   /**
@@ -71285,30 +67342,77 @@ function SynthetixBridgeToOptimism_SynthetixBridgeToOptimism(contractSettings) {
 
 
   this.suspendInitiation = /*#__PURE__*/function () {
-    var _ref21 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee21(txParams) {
-      return regenerator_default.a.wrap(function _callee21$(_context21) {
+    var _ref23 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23(txParams) {
+      return regenerator_default.a.wrap(function _callee23$(_context23) {
         while (1) {
-          switch (_context21.prev = _context21.next) {
+          switch (_context23.prev = _context23.next) {
             case 0:
               txParams = txParams || {};
-              _context21.next = 3;
+              _context23.next = 3;
               return _this.contract.suspendInitiation(txParams);
 
             case 3:
-              return _context21.abrupt("return", _context21.sent);
+              return _context23.abrupt("return", _context23.sent);
 
             case 4:
             case "end":
-              return _context21.stop();
+              return _context23.stop();
           }
         }
-      }, _callee21);
+      }, _callee23);
     }));
 
-    return function (_x28) {
-      return _ref21.apply(this, arguments);
+    return function (_x36) {
+      return _ref23.apply(this, arguments);
     };
   }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+
+  this.synthTransferReceived = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24() {
+    return regenerator_default.a.wrap(function _callee24$(_context24) {
+      while (1) {
+        switch (_context24.prev = _context24.next) {
+          case 0:
+            _context24.next = 2;
+            return _this.contract.synthTransferReceived();
+
+          case 2:
+            return _context24.abrupt("return", _context24.sent);
+
+          case 3:
+          case "end":
+            return _context24.stop();
+        }
+      }
+    }, _callee24);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.synthTransferSent = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25() {
+    return regenerator_default.a.wrap(function _callee25$(_context25) {
+      while (1) {
+        switch (_context25.prev = _context25.next) {
+          case 0:
+            _context25.next = 2;
+            return _this.contract.synthTransferSent();
+
+          case 2:
+            return _context25.abrupt("return", _context25.sent);
+
+          case 3:
+          case "end":
+            return _context25.stop();
+        }
+      }
+    }, _callee25);
+  }));
 }
 
 /* harmony default export */ var mainnet_SynthetixBridgeToOptimism = (SynthetixBridgeToOptimism_SynthetixBridgeToOptimism);
@@ -71492,57 +67596,26 @@ function SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
 
-  this.atomicPriceBuffer = /*#__PURE__*/function () {
-    var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee7(currencyKey) {
-      return regenerator_default.a.wrap(function _callee7$(_context7) {
-        while (1) {
-          switch (_context7.prev = _context7.next) {
-            case 0:
-              _context7.next = 2;
-              return _this.contract.atomicPriceBuffer(currencyKey);
-
-            case 2:
-              return _context7.abrupt("return", _context7.sent);
-
-            case 3:
-            case "end":
-              return _context7.stop();
-          }
-        }
-      }, _callee7);
-    }));
-
-    return function (_x4) {
-      return _ref7.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-
-
-  this.atomicTwapWindow = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8() {
-    return regenerator_default.a.wrap(function _callee8$(_context8) {
+  this.atomicTwapWindow = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee7() {
+    return regenerator_default.a.wrap(function _callee7$(_context7) {
       while (1) {
-        switch (_context8.prev = _context8.next) {
+        switch (_context7.prev = _context7.next) {
           case 0:
-            _context8.next = 2;
+            _context7.next = 2;
             return _this.contract.atomicTwapWindow();
 
           case 2:
-            return _context8.abrupt("return", _context8.sent);
+            return _context7.abrupt("return", _context7.sent);
 
           case 3:
           case "end":
-            return _context8.stop();
+            return _context7.stop();
         }
       }
-    }, _callee8);
+    }, _callee7);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -71551,13 +67624,44 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
   this.atomicVolatilityConsiderationWindow = /*#__PURE__*/function () {
+    var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee8(currencyKey) {
+      return regenerator_default.a.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              _context8.next = 2;
+              return _this.contract.atomicVolatilityConsiderationWindow(currencyKey);
+
+            case 2:
+              return _context8.abrupt("return", _context8.sent);
+
+            case 3:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8);
+    }));
+
+    return function (_x4) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+
+
+  this.atomicVolatilityUpdateThreshold = /*#__PURE__*/function () {
     var _ref9 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee9(currencyKey) {
       return regenerator_default.a.wrap(function _callee9$(_context9) {
         while (1) {
           switch (_context9.prev = _context9.next) {
             case 0:
               _context9.next = 2;
-              return _this.contract.atomicVolatilityConsiderationWindow(currencyKey);
+              return _this.contract.atomicVolatilityUpdateThreshold(currencyKey);
 
             case 2:
               return _context9.abrupt("return", _context9.sent);
@@ -71576,19 +67680,19 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
+   * @param collateral {String<EthAddress>}
    * @returns BigNumber
    **/
 
 
-  this.atomicVolatilityUpdateThreshold = /*#__PURE__*/function () {
-    var _ref10 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10(currencyKey) {
+  this.collapseFeeRate = /*#__PURE__*/function () {
+    var _ref10 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee10(collateral) {
       return regenerator_default.a.wrap(function _callee10$(_context10) {
         while (1) {
           switch (_context10.prev = _context10.next) {
             case 0:
               _context10.next = 2;
-              return _this.contract.atomicVolatilityUpdateThreshold(currencyKey);
+              return _this.contract.collapseFeeRate(collateral);
 
             case 2:
               return _context10.abrupt("return", _context10.sent);
@@ -71607,19 +67711,19 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param collateral {String<EthAddress>}
+   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
 
 
-  this.collapseFeeRate = /*#__PURE__*/function () {
-    var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11(collateral) {
+  this.crossChainSynthTransferEnabled = /*#__PURE__*/function () {
+    var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee11(currencyKey) {
       return regenerator_default.a.wrap(function _callee11$(_context11) {
         while (1) {
           switch (_context11.prev = _context11.next) {
             case 0:
               _context11.next = 2;
-              return _this.contract.collapseFeeRate(collateral);
+              return _this.contract.crossChainSynthTransferEnabled(currencyKey);
 
             case 2:
               return _context11.abrupt("return", _context11.sent);
@@ -72179,26 +68283,57 @@ function SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+
+  this.pureChainlinkPriceForAtomicSwapsEnabled = /*#__PURE__*/function () {
+    var _ref34 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34(currencyKey) {
+      return regenerator_default.a.wrap(function _callee34$(_context34) {
+        while (1) {
+          switch (_context34.prev = _context34.next) {
+            case 0:
+              _context34.next = 2;
+              return _this.contract.pureChainlinkPriceForAtomicSwapsEnabled(currencyKey);
+
+            case 2:
+              return _context34.abrupt("return", _context34.sent);
+
+            case 3:
+            case "end":
+              return _context34.stop();
+          }
+        }
+      }, _callee34);
+    }));
+
+    return function (_x13) {
+      return _ref34.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
 
-  this.rateStalePeriod = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34() {
-    return regenerator_default.a.wrap(function _callee34$(_context34) {
+
+  this.rateStalePeriod = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35() {
+    return regenerator_default.a.wrap(function _callee35$(_context35) {
       while (1) {
-        switch (_context34.prev = _context34.next) {
+        switch (_context35.prev = _context35.next) {
           case 0:
-            _context34.next = 2;
+            _context35.next = 2;
             return _this.contract.rateStalePeriod();
 
           case 2:
-            return _context34.abrupt("return", _context34.sent);
+            return _context35.abrupt("return", _context35.sent);
 
           case 3:
           case "end":
-            return _context34.stop();
+            return _context35.stop();
         }
       }
-    }, _callee34);
+    }, _callee35);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -72207,28 +68342,28 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
   this.rebuildCache = /*#__PURE__*/function () {
-    var _ref35 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35(txParams) {
-      return regenerator_default.a.wrap(function _callee35$(_context35) {
+    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(txParams) {
+      return regenerator_default.a.wrap(function _callee36$(_context36) {
         while (1) {
-          switch (_context35.prev = _context35.next) {
+          switch (_context36.prev = _context36.next) {
             case 0:
               txParams = txParams || {};
-              _context35.next = 3;
+              _context36.next = 3;
               return _this.contract.rebuildCache(txParams);
 
             case 3:
-              return _context35.abrupt("return", _context35.sent);
+              return _context36.abrupt("return", _context36.sent);
 
             case 4:
             case "end":
-              return _context35.stop();
+              return _context36.stop();
           }
         }
-      }, _callee35);
+      }, _callee36);
     }));
 
-    return function (_x13) {
-      return _ref35.apply(this, arguments);
+    return function (_x14) {
+      return _ref36.apply(this, arguments);
     };
   }();
   /**
@@ -72237,36 +68372,13 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
 
-  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36() {
-    return regenerator_default.a.wrap(function _callee36$(_context36) {
-      while (1) {
-        switch (_context36.prev = _context36.next) {
-          case 0:
-            _context36.next = 2;
-            return _this.contract.resolver();
-
-          case 2:
-            return _context36.abrupt("return", _context36.sent);
-
-          case 3:
-          case "end":
-            return _context36.stop();
-        }
-      }
-    }, _callee36);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[]
-   **/
-
-  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37() {
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37() {
     return regenerator_default.a.wrap(function _callee37$(_context37) {
       while (1) {
         switch (_context37.prev = _context37.next) {
           case 0:
             _context37.next = 2;
-            return _this.contract.resolverAddressesRequired();
+            return _this.contract.resolver();
 
           case 2:
             return _context37.abrupt("return", _context37.sent);
@@ -72279,6 +68391,29 @@ function SystemSettings_SystemSettings(contractSettings) {
     }, _callee37);
   }));
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[]
+   **/
+
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38() {
+    return regenerator_default.a.wrap(function _callee38$(_context38) {
+      while (1) {
+        switch (_context38.prev = _context38.next) {
+          case 0:
+            _context38.next = 2;
+            return _this.contract.resolverAddressesRequired();
+
+          case 2:
+            return _context38.abrupt("return", _context38.sent);
+
+          case 3:
+          case "end":
+            return _context38.stop();
+        }
+      }
+    }, _callee38);
+  }));
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _flags {String<EthAddress>}
    * @param txParams {TxParams}
@@ -72286,48 +68421,14 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
   this.setAggregatorWarningFlags = /*#__PURE__*/function () {
-    var _ref38 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38(_flags, txParams) {
-      return regenerator_default.a.wrap(function _callee38$(_context38) {
-        while (1) {
-          switch (_context38.prev = _context38.next) {
-            case 0:
-              txParams = txParams || {};
-              _context38.next = 3;
-              return _this.contract.setAggregatorWarningFlags(_flags, txParams);
-
-            case 3:
-              return _context38.abrupt("return", _context38.sent);
-
-            case 4:
-            case "end":
-              return _context38.stop();
-          }
-        }
-      }, _callee38);
-    }));
-
-    return function (_x14, _x15) {
-      return _ref38.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _equivalent {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.setAtomicEquivalentForDexPricing = /*#__PURE__*/function () {
-    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(_currencyKey, _equivalent, txParams) {
+    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(_flags, txParams) {
       return regenerator_default.a.wrap(function _callee39$(_context39) {
         while (1) {
           switch (_context39.prev = _context39.next) {
             case 0:
               txParams = txParams || {};
               _context39.next = 3;
-              return _this.contract.setAtomicEquivalentForDexPricing(_currencyKey, _equivalent, txParams);
+              return _this.contract.setAggregatorWarningFlags(_flags, txParams);
 
             case 3:
               return _context39.abrupt("return", _context39.sent);
@@ -72340,28 +68441,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee39);
     }));
 
-    return function (_x16, _x17, _x18) {
+    return function (_x15, _x16) {
       return _ref39.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
    * @param _currencyKey {bytes32}
-   * @param _exchangeFeeRate {BigNumber}
+   * @param _equivalent {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setAtomicExchangeFeeRate = /*#__PURE__*/function () {
-    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(_currencyKey, _exchangeFeeRate, txParams) {
+  this.setAtomicEquivalentForDexPricing = /*#__PURE__*/function () {
+    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(_currencyKey, _equivalent, txParams) {
       return regenerator_default.a.wrap(function _callee40$(_context40) {
         while (1) {
           switch (_context40.prev = _context40.next) {
             case 0:
               txParams = txParams || {};
               _context40.next = 3;
-              return _this.contract.setAtomicExchangeFeeRate(_currencyKey, _exchangeFeeRate, txParams);
+              return _this.contract.setAtomicEquivalentForDexPricing(_currencyKey, _equivalent, txParams);
 
             case 3:
               return _context40.abrupt("return", _context40.sent);
@@ -72374,27 +68475,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee40);
     }));
 
-    return function (_x19, _x20, _x21) {
+    return function (_x17, _x18, _x19) {
       return _ref40.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _maxVolume {BigNumber}
+   * @param _currencyKey {bytes32}
+   * @param _exchangeFeeRate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setAtomicMaxVolumePerBlock = /*#__PURE__*/function () {
-    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(_maxVolume, txParams) {
+  this.setAtomicExchangeFeeRate = /*#__PURE__*/function () {
+    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(_currencyKey, _exchangeFeeRate, txParams) {
       return regenerator_default.a.wrap(function _callee41$(_context41) {
         while (1) {
           switch (_context41.prev = _context41.next) {
             case 0:
               txParams = txParams || {};
               _context41.next = 3;
-              return _this.contract.setAtomicMaxVolumePerBlock(_maxVolume, txParams);
+              return _this.contract.setAtomicExchangeFeeRate(_currencyKey, _exchangeFeeRate, txParams);
 
             case 3:
               return _context41.abrupt("return", _context41.sent);
@@ -72407,28 +68509,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee41);
     }));
 
-    return function (_x22, _x23) {
+    return function (_x20, _x21, _x22) {
       return _ref41.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _buffer {BigNumber}
+   * @param _maxVolume {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setAtomicPriceBuffer = /*#__PURE__*/function () {
-    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(_currencyKey, _buffer, txParams) {
+  this.setAtomicMaxVolumePerBlock = /*#__PURE__*/function () {
+    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(_maxVolume, txParams) {
       return regenerator_default.a.wrap(function _callee42$(_context42) {
         while (1) {
           switch (_context42.prev = _context42.next) {
             case 0:
               txParams = txParams || {};
               _context42.next = 3;
-              return _this.contract.setAtomicPriceBuffer(_currencyKey, _buffer, txParams);
+              return _this.contract.setAtomicMaxVolumePerBlock(_maxVolume, txParams);
 
             case 3:
               return _context42.abrupt("return", _context42.sent);
@@ -72441,7 +68542,7 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee42);
     }));
 
-    return function (_x24, _x25, _x26) {
+    return function (_x23, _x24) {
       return _ref42.apply(this, arguments);
     };
   }();
@@ -72474,7 +68575,7 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee43);
     }));
 
-    return function (_x27, _x28) {
+    return function (_x25, _x26) {
       return _ref43.apply(this, arguments);
     };
   }();
@@ -72508,7 +68609,7 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee44);
     }));
 
-    return function (_x29, _x30, _x31) {
+    return function (_x27, _x28, _x29) {
       return _ref44.apply(this, arguments);
     };
   }();
@@ -72542,7 +68643,7 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee45);
     }));
 
-    return function (_x32, _x33, _x34) {
+    return function (_x30, _x31, _x32) {
       return _ref45.apply(this, arguments);
     };
   }();
@@ -72576,28 +68677,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x35, _x36, _x37) {
+    return function (_x33, _x34, _x35) {
       return _ref46.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _gasLimitType {Number}
-   * @param _crossDomainMessageGasLimit {BigNumber}
+   * @param _currencyKey {bytes32}
+   * @param _value {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setCrossDomainMessageGasLimit = /*#__PURE__*/function () {
-    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(_gasLimitType, _crossDomainMessageGasLimit, txParams) {
+  this.setCrossChainSynthTransferEnabled = /*#__PURE__*/function () {
+    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(_currencyKey, _value, txParams) {
       return regenerator_default.a.wrap(function _callee47$(_context47) {
         while (1) {
           switch (_context47.prev = _context47.next) {
             case 0:
               txParams = txParams || {};
               _context47.next = 3;
-              return _this.contract.setCrossDomainMessageGasLimit(_gasLimitType, _crossDomainMessageGasLimit, txParams);
+              return _this.contract.setCrossChainSynthTransferEnabled(_currencyKey, _value, txParams);
 
             case 3:
               return _context47.abrupt("return", _context47.sent);
@@ -72610,27 +68711,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee47);
     }));
 
-    return function (_x38, _x39, _x40) {
+    return function (_x36, _x37, _x38) {
       return _ref47.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _seconds {BigNumber}
+   * @param _gasLimitType {Number}
+   * @param _crossDomainMessageGasLimit {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setDebtSnapshotStaleTime = /*#__PURE__*/function () {
-    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(_seconds, txParams) {
+  this.setCrossDomainMessageGasLimit = /*#__PURE__*/function () {
+    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(_gasLimitType, _crossDomainMessageGasLimit, txParams) {
       return regenerator_default.a.wrap(function _callee48$(_context48) {
         while (1) {
           switch (_context48.prev = _context48.next) {
             case 0:
               txParams = txParams || {};
               _context48.next = 3;
-              return _this.contract.setDebtSnapshotStaleTime(_seconds, txParams);
+              return _this.contract.setCrossDomainMessageGasLimit(_gasLimitType, _crossDomainMessageGasLimit, txParams);
 
             case 3:
               return _context48.abrupt("return", _context48.sent);
@@ -72643,27 +68745,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee48);
     }));
 
-    return function (_x41, _x42) {
+    return function (_x39, _x40, _x41) {
       return _ref48.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _rate {BigNumber}
+   * @param _seconds {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setEtherWrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(_rate, txParams) {
+  this.setDebtSnapshotStaleTime = /*#__PURE__*/function () {
+    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(_seconds, txParams) {
       return regenerator_default.a.wrap(function _callee49$(_context49) {
         while (1) {
           switch (_context49.prev = _context49.next) {
             case 0:
               txParams = txParams || {};
               _context49.next = 3;
-              return _this.contract.setEtherWrapperBurnFeeRate(_rate, txParams);
+              return _this.contract.setDebtSnapshotStaleTime(_seconds, txParams);
 
             case 3:
               return _context49.abrupt("return", _context49.sent);
@@ -72676,27 +68778,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee49);
     }));
 
-    return function (_x43, _x44) {
+    return function (_x42, _x43) {
       return _ref49.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _maxETH {BigNumber}
+   * @param _rate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setEtherWrapperMaxETH = /*#__PURE__*/function () {
-    var _ref50 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50(_maxETH, txParams) {
+  this.setEtherWrapperBurnFeeRate = /*#__PURE__*/function () {
+    var _ref50 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50(_rate, txParams) {
       return regenerator_default.a.wrap(function _callee50$(_context50) {
         while (1) {
           switch (_context50.prev = _context50.next) {
             case 0:
               txParams = txParams || {};
               _context50.next = 3;
-              return _this.contract.setEtherWrapperMaxETH(_maxETH, txParams);
+              return _this.contract.setEtherWrapperBurnFeeRate(_rate, txParams);
 
             case 3:
               return _context50.abrupt("return", _context50.sent);
@@ -72709,27 +68811,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee50);
     }));
 
-    return function (_x45, _x46) {
+    return function (_x44, _x45) {
       return _ref50.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _rate {BigNumber}
+   * @param _maxETH {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setEtherWrapperMintFeeRate = /*#__PURE__*/function () {
-    var _ref51 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51(_rate, txParams) {
+  this.setEtherWrapperMaxETH = /*#__PURE__*/function () {
+    var _ref51 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51(_maxETH, txParams) {
       return regenerator_default.a.wrap(function _callee51$(_context51) {
         while (1) {
           switch (_context51.prev = _context51.next) {
             case 0:
               txParams = txParams || {};
               _context51.next = 3;
-              return _this.contract.setEtherWrapperMintFeeRate(_rate, txParams);
+              return _this.contract.setEtherWrapperMaxETH(_maxETH, txParams);
 
             case 3:
               return _context51.abrupt("return", _context51.sent);
@@ -72742,27 +68844,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee51);
     }));
 
-    return function (_x47, _x48) {
+    return function (_x46, _x47) {
       return _ref51.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param rounds {BigNumber}
+   * @param _rate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeDynamicFeeRounds = /*#__PURE__*/function () {
-    var _ref52 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52(rounds, txParams) {
+  this.setEtherWrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref52 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52(_rate, txParams) {
       return regenerator_default.a.wrap(function _callee52$(_context52) {
         while (1) {
           switch (_context52.prev = _context52.next) {
             case 0:
               txParams = txParams || {};
               _context52.next = 3;
-              return _this.contract.setExchangeDynamicFeeRounds(rounds, txParams);
+              return _this.contract.setEtherWrapperMintFeeRate(_rate, txParams);
 
             case 3:
               return _context52.abrupt("return", _context52.sent);
@@ -72775,27 +68877,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee52);
     }));
 
-    return function (_x49, _x50) {
+    return function (_x48, _x49) {
       return _ref52.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param threshold {BigNumber}
+   * @param rounds {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeDynamicFeeThreshold = /*#__PURE__*/function () {
-    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(threshold, txParams) {
+  this.setExchangeDynamicFeeRounds = /*#__PURE__*/function () {
+    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(rounds, txParams) {
       return regenerator_default.a.wrap(function _callee53$(_context53) {
         while (1) {
           switch (_context53.prev = _context53.next) {
             case 0:
               txParams = txParams || {};
               _context53.next = 3;
-              return _this.contract.setExchangeDynamicFeeThreshold(threshold, txParams);
+              return _this.contract.setExchangeDynamicFeeRounds(rounds, txParams);
 
             case 3:
               return _context53.abrupt("return", _context53.sent);
@@ -72808,27 +68910,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee53);
     }));
 
-    return function (_x51, _x52) {
+    return function (_x50, _x51) {
       return _ref53.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param weightDecay {BigNumber}
+   * @param threshold {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeDynamicFeeWeightDecay = /*#__PURE__*/function () {
-    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(weightDecay, txParams) {
+  this.setExchangeDynamicFeeThreshold = /*#__PURE__*/function () {
+    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(threshold, txParams) {
       return regenerator_default.a.wrap(function _callee54$(_context54) {
         while (1) {
           switch (_context54.prev = _context54.next) {
             case 0:
               txParams = txParams || {};
               _context54.next = 3;
-              return _this.contract.setExchangeDynamicFeeWeightDecay(weightDecay, txParams);
+              return _this.contract.setExchangeDynamicFeeThreshold(threshold, txParams);
 
             case 3:
               return _context54.abrupt("return", _context54.sent);
@@ -72841,28 +68943,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee54);
     }));
 
-    return function (_x53, _x54) {
+    return function (_x52, _x53) {
       return _ref54.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param synthKeys {bytes32[]}
-   * @param exchangeFeeRates {uint256[]}
+   * @param weightDecay {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeFeeRateForSynths = /*#__PURE__*/function () {
-    var _ref55 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55(synthKeys, exchangeFeeRates, txParams) {
+  this.setExchangeDynamicFeeWeightDecay = /*#__PURE__*/function () {
+    var _ref55 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55(weightDecay, txParams) {
       return regenerator_default.a.wrap(function _callee55$(_context55) {
         while (1) {
           switch (_context55.prev = _context55.next) {
             case 0:
               txParams = txParams || {};
               _context55.next = 3;
-              return _this.contract.setExchangeFeeRateForSynths(synthKeys, exchangeFeeRates, txParams);
+              return _this.contract.setExchangeDynamicFeeWeightDecay(weightDecay, txParams);
 
             case 3:
               return _context55.abrupt("return", _context55.sent);
@@ -72875,27 +68976,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee55);
     }));
 
-    return function (_x55, _x56, _x57) {
+    return function (_x54, _x55) {
       return _ref55.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param maxFee {BigNumber}
+   * @param synthKeys {bytes32[]}
+   * @param exchangeFeeRates {uint256[]}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeMaxDynamicFee = /*#__PURE__*/function () {
-    var _ref56 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56(maxFee, txParams) {
+  this.setExchangeFeeRateForSynths = /*#__PURE__*/function () {
+    var _ref56 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56(synthKeys, exchangeFeeRates, txParams) {
       return regenerator_default.a.wrap(function _callee56$(_context56) {
         while (1) {
           switch (_context56.prev = _context56.next) {
             case 0:
               txParams = txParams || {};
               _context56.next = 3;
-              return _this.contract.setExchangeMaxDynamicFee(maxFee, txParams);
+              return _this.contract.setExchangeFeeRateForSynths(synthKeys, exchangeFeeRates, txParams);
 
             case 3:
               return _context56.abrupt("return", _context56.sent);
@@ -72908,27 +69010,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee56);
     }));
 
-    return function (_x58, _x59) {
+    return function (_x56, _x57, _x58) {
       return _ref56.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _feePeriodDuration {BigNumber}
+   * @param maxFee {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setFeePeriodDuration = /*#__PURE__*/function () {
-    var _ref57 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57(_feePeriodDuration, txParams) {
+  this.setExchangeMaxDynamicFee = /*#__PURE__*/function () {
+    var _ref57 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57(maxFee, txParams) {
       return regenerator_default.a.wrap(function _callee57$(_context57) {
         while (1) {
           switch (_context57.prev = _context57.next) {
             case 0:
               txParams = txParams || {};
               _context57.next = 3;
-              return _this.contract.setFeePeriodDuration(_feePeriodDuration, txParams);
+              return _this.contract.setExchangeMaxDynamicFee(maxFee, txParams);
 
             case 3:
               return _context57.abrupt("return", _context57.sent);
@@ -72941,28 +69043,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee57);
     }));
 
-    return function (_x60, _x61) {
+    return function (_x59, _x60) {
       return _ref57.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _collateral {String<EthAddress>}
-   * @param _interactionDelay {BigNumber}
+   * @param _feePeriodDuration {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setInteractionDelay = /*#__PURE__*/function () {
-    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(_collateral, _interactionDelay, txParams) {
+  this.setFeePeriodDuration = /*#__PURE__*/function () {
+    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(_feePeriodDuration, txParams) {
       return regenerator_default.a.wrap(function _callee58$(_context58) {
         while (1) {
           switch (_context58.prev = _context58.next) {
             case 0:
               txParams = txParams || {};
               _context58.next = 3;
-              return _this.contract.setInteractionDelay(_collateral, _interactionDelay, txParams);
+              return _this.contract.setFeePeriodDuration(_feePeriodDuration, txParams);
 
             case 3:
               return _context58.abrupt("return", _context58.sent);
@@ -72975,27 +69076,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee58);
     }));
 
-    return function (_x62, _x63, _x64) {
+    return function (_x61, _x62) {
       return _ref58.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param ratio {BigNumber}
+   * @param _collateral {String<EthAddress>}
+   * @param _interactionDelay {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setIssuanceRatio = /*#__PURE__*/function () {
-    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(ratio, txParams) {
+  this.setInteractionDelay = /*#__PURE__*/function () {
+    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(_collateral, _interactionDelay, txParams) {
       return regenerator_default.a.wrap(function _callee59$(_context59) {
         while (1) {
           switch (_context59.prev = _context59.next) {
             case 0:
               txParams = txParams || {};
               _context59.next = 3;
-              return _this.contract.setIssuanceRatio(ratio, txParams);
+              return _this.contract.setInteractionDelay(_collateral, _interactionDelay, txParams);
 
             case 3:
               return _context59.abrupt("return", _context59.sent);
@@ -73008,27 +69110,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee59);
     }));
 
-    return function (_x65, _x66) {
+    return function (_x63, _x64, _x65) {
       return _ref59.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param time {BigNumber}
+   * @param ratio {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setLiquidationDelay = /*#__PURE__*/function () {
-    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(time, txParams) {
+  this.setIssuanceRatio = /*#__PURE__*/function () {
+    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(ratio, txParams) {
       return regenerator_default.a.wrap(function _callee60$(_context60) {
         while (1) {
           switch (_context60.prev = _context60.next) {
             case 0:
               txParams = txParams || {};
               _context60.next = 3;
-              return _this.contract.setLiquidationDelay(time, txParams);
+              return _this.contract.setIssuanceRatio(ratio, txParams);
 
             case 3:
               return _context60.abrupt("return", _context60.sent);
@@ -73041,27 +69143,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee60);
     }));
 
-    return function (_x67, _x68) {
+    return function (_x66, _x67) {
       return _ref60.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param penalty {BigNumber}
+   * @param time {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setLiquidationPenalty = /*#__PURE__*/function () {
-    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(penalty, txParams) {
+  this.setLiquidationDelay = /*#__PURE__*/function () {
+    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(time, txParams) {
       return regenerator_default.a.wrap(function _callee61$(_context61) {
         while (1) {
           switch (_context61.prev = _context61.next) {
             case 0:
               txParams = txParams || {};
               _context61.next = 3;
-              return _this.contract.setLiquidationPenalty(penalty, txParams);
+              return _this.contract.setLiquidationDelay(time, txParams);
 
             case 3:
               return _context61.abrupt("return", _context61.sent);
@@ -73074,27 +69176,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee61);
     }));
 
-    return function (_x69, _x70) {
+    return function (_x68, _x69) {
       return _ref61.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _liquidationRatio {BigNumber}
+   * @param penalty {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setLiquidationRatio = /*#__PURE__*/function () {
-    var _ref62 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62(_liquidationRatio, txParams) {
+  this.setLiquidationPenalty = /*#__PURE__*/function () {
+    var _ref62 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62(penalty, txParams) {
       return regenerator_default.a.wrap(function _callee62$(_context62) {
         while (1) {
           switch (_context62.prev = _context62.next) {
             case 0:
               txParams = txParams || {};
               _context62.next = 3;
-              return _this.contract.setLiquidationRatio(_liquidationRatio, txParams);
+              return _this.contract.setLiquidationPenalty(penalty, txParams);
 
             case 3:
               return _context62.abrupt("return", _context62.sent);
@@ -73107,27 +69209,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee62);
     }));
 
-    return function (_x71, _x72) {
+    return function (_x70, _x71) {
       return _ref62.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _seconds {BigNumber}
+   * @param _liquidationRatio {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setMinimumStakeTime = /*#__PURE__*/function () {
-    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(_seconds, txParams) {
+  this.setLiquidationRatio = /*#__PURE__*/function () {
+    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(_liquidationRatio, txParams) {
       return regenerator_default.a.wrap(function _callee63$(_context63) {
         while (1) {
           switch (_context63.prev = _context63.next) {
             case 0:
               txParams = txParams || {};
               _context63.next = 3;
-              return _this.contract.setMinimumStakeTime(_seconds, txParams);
+              return _this.contract.setLiquidationRatio(_liquidationRatio, txParams);
 
             case 3:
               return _context63.abrupt("return", _context63.sent);
@@ -73140,27 +69242,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee63);
     }));
 
-    return function (_x73, _x74) {
+    return function (_x72, _x73) {
       return _ref63.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _priceDeviationThresholdFactor {BigNumber}
+   * @param _seconds {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setPriceDeviationThresholdFactor = /*#__PURE__*/function () {
-    var _ref64 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64(_priceDeviationThresholdFactor, txParams) {
+  this.setMinimumStakeTime = /*#__PURE__*/function () {
+    var _ref64 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64(_seconds, txParams) {
       return regenerator_default.a.wrap(function _callee64$(_context64) {
         while (1) {
           switch (_context64.prev = _context64.next) {
             case 0:
               txParams = txParams || {};
               _context64.next = 3;
-              return _this.contract.setPriceDeviationThresholdFactor(_priceDeviationThresholdFactor, txParams);
+              return _this.contract.setMinimumStakeTime(_seconds, txParams);
 
             case 3:
               return _context64.abrupt("return", _context64.sent);
@@ -73173,27 +69275,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee64);
     }));
 
-    return function (_x75, _x76) {
+    return function (_x74, _x75) {
       return _ref64.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param period {BigNumber}
+   * @param _priceDeviationThresholdFactor {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setRateStalePeriod = /*#__PURE__*/function () {
-    var _ref65 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65(period, txParams) {
+  this.setPriceDeviationThresholdFactor = /*#__PURE__*/function () {
+    var _ref65 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65(_priceDeviationThresholdFactor, txParams) {
       return regenerator_default.a.wrap(function _callee65$(_context65) {
         while (1) {
           switch (_context65.prev = _context65.next) {
             case 0:
               txParams = txParams || {};
               _context65.next = 3;
-              return _this.contract.setRateStalePeriod(period, txParams);
+              return _this.contract.setPriceDeviationThresholdFactor(_priceDeviationThresholdFactor, txParams);
 
             case 3:
               return _context65.abrupt("return", _context65.sent);
@@ -73206,27 +69308,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee65);
     }));
 
-    return function (_x77, _x78) {
+    return function (_x76, _x77) {
       return _ref65.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param percent {BigNumber}
+   * @param _currencyKey {bytes32}
+   * @param _enabled {boolean}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTargetThreshold = /*#__PURE__*/function () {
-    var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(percent, txParams) {
+  this.setPureChainlinkPriceForAtomicSwapsEnabled = /*#__PURE__*/function () {
+    var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(_currencyKey, _enabled, txParams) {
       return regenerator_default.a.wrap(function _callee66$(_context66) {
         while (1) {
           switch (_context66.prev = _context66.next) {
             case 0:
               txParams = txParams || {};
               _context66.next = 3;
-              return _this.contract.setTargetThreshold(percent, txParams);
+              return _this.contract.setPureChainlinkPriceForAtomicSwapsEnabled(_currencyKey, _enabled, txParams);
 
             case 3:
               return _context66.abrupt("return", _context66.sent);
@@ -73239,27 +69342,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee66);
     }));
 
-    return function (_x79, _x80) {
+    return function (_x78, _x79, _x80) {
       return _ref66.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _tradingRewardsEnabled {boolean}
+   * @param period {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTradingRewardsEnabled = /*#__PURE__*/function () {
-    var _ref67 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67(_tradingRewardsEnabled, txParams) {
+  this.setRateStalePeriod = /*#__PURE__*/function () {
+    var _ref67 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67(period, txParams) {
       return regenerator_default.a.wrap(function _callee67$(_context67) {
         while (1) {
           switch (_context67.prev = _context67.next) {
             case 0:
               txParams = txParams || {};
               _context67.next = 3;
-              return _this.contract.setTradingRewardsEnabled(_tradingRewardsEnabled, txParams);
+              return _this.contract.setRateStalePeriod(period, txParams);
 
             case 3:
               return _context67.abrupt("return", _context67.sent);
@@ -73278,21 +69381,21 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _waitingPeriodSecs {BigNumber}
+   * @param percent {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWaitingPeriodSecs = /*#__PURE__*/function () {
-    var _ref68 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68(_waitingPeriodSecs, txParams) {
+  this.setTargetThreshold = /*#__PURE__*/function () {
+    var _ref68 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68(percent, txParams) {
       return regenerator_default.a.wrap(function _callee68$(_context68) {
         while (1) {
           switch (_context68.prev = _context68.next) {
             case 0:
               txParams = txParams || {};
               _context68.next = 3;
-              return _this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
+              return _this.contract.setTargetThreshold(percent, txParams);
 
             case 3:
               return _context68.abrupt("return", _context68.sent);
@@ -73311,22 +69414,21 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _wrapper {String<EthAddress>}
-   * @param _rate {int256}
+   * @param _tradingRewardsEnabled {boolean}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(_wrapper, _rate, txParams) {
+  this.setTradingRewardsEnabled = /*#__PURE__*/function () {
+    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(_tradingRewardsEnabled, txParams) {
       return regenerator_default.a.wrap(function _callee69$(_context69) {
         while (1) {
           switch (_context69.prev = _context69.next) {
             case 0:
               txParams = txParams || {};
               _context69.next = 3;
-              return _this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
+              return _this.contract.setTradingRewardsEnabled(_tradingRewardsEnabled, txParams);
 
             case 3:
               return _context69.abrupt("return", _context69.sent);
@@ -73339,28 +69441,27 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee69);
     }));
 
-    return function (_x85, _x86, _x87) {
+    return function (_x85, _x86) {
       return _ref69.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _wrapper {String<EthAddress>}
-   * @param _maxTokenAmount {BigNumber}
+   * @param _waitingPeriodSecs {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperMaxTokenAmount = /*#__PURE__*/function () {
-    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(_wrapper, _maxTokenAmount, txParams) {
+  this.setWaitingPeriodSecs = /*#__PURE__*/function () {
+    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(_waitingPeriodSecs, txParams) {
       return regenerator_default.a.wrap(function _callee70$(_context70) {
         while (1) {
           switch (_context70.prev = _context70.next) {
             case 0:
               txParams = txParams || {};
               _context70.next = 3;
-              return _this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
+              return _this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
 
             case 3:
               return _context70.abrupt("return", _context70.sent);
@@ -73373,7 +69474,7 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee70);
     }));
 
-    return function (_x88, _x89, _x90) {
+    return function (_x87, _x88) {
       return _ref70.apply(this, arguments);
     };
   }();
@@ -73386,7 +69487,7 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
 
-  this.setWrapperMintFeeRate = /*#__PURE__*/function () {
+  this.setWrapperBurnFeeRate = /*#__PURE__*/function () {
     var _ref71 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee71(_wrapper, _rate, txParams) {
       return regenerator_default.a.wrap(function _callee71$(_context71) {
         while (1) {
@@ -73394,7 +69495,7 @@ function SystemSettings_SystemSettings(contractSettings) {
             case 0:
               txParams = txParams || {};
               _context71.next = 3;
-              return _this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+              return _this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
 
             case 3:
               return _context71.abrupt("return", _context71.sent);
@@ -73407,8 +69508,76 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee71);
     }));
 
-    return function (_x91, _x92, _x93) {
+    return function (_x89, _x90, _x91) {
       return _ref71.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _maxTokenAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWrapperMaxTokenAmount = /*#__PURE__*/function () {
+    var _ref72 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee72(_wrapper, _maxTokenAmount, txParams) {
+      return regenerator_default.a.wrap(function _callee72$(_context72) {
+        while (1) {
+          switch (_context72.prev = _context72.next) {
+            case 0:
+              txParams = txParams || {};
+              _context72.next = 3;
+              return _this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
+
+            case 3:
+              return _context72.abrupt("return", _context72.sent);
+
+            case 4:
+            case "end":
+              return _context72.stop();
+          }
+        }
+      }, _callee72);
+    }));
+
+    return function (_x92, _x93, _x94) {
+      return _ref72.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _rate {int256}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref73 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee73(_wrapper, _rate, txParams) {
+      return regenerator_default.a.wrap(function _callee73$(_context73) {
+        while (1) {
+          switch (_context73.prev = _context73.next) {
+            case 0:
+              txParams = txParams || {};
+              _context73.next = 3;
+              return _this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+
+            case 3:
+              return _context73.abrupt("return", _context73.sent);
+
+            case 4:
+            case "end":
+              return _context73.stop();
+          }
+        }
+      }, _callee73);
+    }));
+
+    return function (_x95, _x96, _x97) {
+      return _ref73.apply(this, arguments);
     };
   }();
   /**
@@ -73417,59 +69586,13 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
 
-  this.targetThreshold = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee72() {
-    return regenerator_default.a.wrap(function _callee72$(_context72) {
-      while (1) {
-        switch (_context72.prev = _context72.next) {
-          case 0:
-            _context72.next = 2;
-            return _this.contract.targetThreshold();
-
-          case 2:
-            return _context72.abrupt("return", _context72.sent);
-
-          case 3:
-          case "end":
-            return _context72.stop();
-        }
-      }
-    }, _callee72);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-
-  this.tradingRewardsEnabled = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee73() {
-    return regenerator_default.a.wrap(function _callee73$(_context73) {
-      while (1) {
-        switch (_context73.prev = _context73.next) {
-          case 0:
-            _context73.next = 2;
-            return _this.contract.tradingRewardsEnabled();
-
-          case 2:
-            return _context73.abrupt("return", _context73.sent);
-
-          case 3:
-          case "end":
-            return _context73.stop();
-        }
-      }
-    }, _callee73);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-
-  this.waitingPeriodSecs = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee74() {
+  this.targetThreshold = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee74() {
     return regenerator_default.a.wrap(function _callee74$(_context74) {
       while (1) {
         switch (_context74.prev = _context74.next) {
           case 0:
             _context74.next = 2;
-            return _this.contract.waitingPeriodSecs();
+            return _this.contract.targetThreshold();
 
           case 2:
             return _context74.abrupt("return", _context74.sent);
@@ -73483,80 +69606,64 @@ function SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+  this.tradingRewardsEnabled = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee75() {
+    return regenerator_default.a.wrap(function _callee75$(_context75) {
+      while (1) {
+        switch (_context75.prev = _context75.next) {
+          case 0:
+            _context75.next = 2;
+            return _this.contract.tradingRewardsEnabled();
+
+          case 2:
+            return _context75.abrupt("return", _context75.sent);
+
+          case 3:
+          case "end":
+            return _context75.stop();
+        }
+      }
+    }, _callee75);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.waitingPeriodSecs = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee76() {
+    return regenerator_default.a.wrap(function _callee76$(_context76) {
+      while (1) {
+        switch (_context76.prev = _context76.next) {
+          case 0:
+            _context76.next = 2;
+            return _this.contract.waitingPeriodSecs();
+
+          case 2:
+            return _context76.abrupt("return", _context76.sent);
+
+          case 3:
+          case "end":
+            return _context76.stop();
+        }
+      }
+    }, _callee76);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param wrapper {String<EthAddress>}
    * @returns int256
    **/
 
   this.wrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref75 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee75(wrapper) {
-      return regenerator_default.a.wrap(function _callee75$(_context75) {
-        while (1) {
-          switch (_context75.prev = _context75.next) {
-            case 0:
-              _context75.next = 2;
-              return _this.contract.wrapperBurnFeeRate(wrapper);
-
-            case 2:
-              return _context75.abrupt("return", _context75.sent);
-
-            case 3:
-            case "end":
-              return _context75.stop();
-          }
-        }
-      }, _callee75);
-    }));
-
-    return function (_x94) {
-      return _ref75.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param wrapper {String<EthAddress>}
-   * @returns BigNumber
-   **/
-
-
-  this.wrapperMaxTokenAmount = /*#__PURE__*/function () {
-    var _ref76 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee76(wrapper) {
-      return regenerator_default.a.wrap(function _callee76$(_context76) {
-        while (1) {
-          switch (_context76.prev = _context76.next) {
-            case 0:
-              _context76.next = 2;
-              return _this.contract.wrapperMaxTokenAmount(wrapper);
-
-            case 2:
-              return _context76.abrupt("return", _context76.sent);
-
-            case 3:
-            case "end":
-              return _context76.stop();
-          }
-        }
-      }, _callee76);
-    }));
-
-    return function (_x95) {
-      return _ref76.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param wrapper {String<EthAddress>}
-   * @returns int256
-   **/
-
-
-  this.wrapperMintFeeRate = /*#__PURE__*/function () {
     var _ref77 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee77(wrapper) {
       return regenerator_default.a.wrap(function _callee77$(_context77) {
         while (1) {
           switch (_context77.prev = _context77.next) {
             case 0:
               _context77.next = 2;
-              return _this.contract.wrapperMintFeeRate(wrapper);
+              return _this.contract.wrapperBurnFeeRate(wrapper);
 
             case 2:
               return _context77.abrupt("return", _context77.sent);
@@ -73569,8 +69676,70 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee77);
     }));
 
-    return function (_x96) {
+    return function (_x98) {
       return _ref77.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.wrapperMaxTokenAmount = /*#__PURE__*/function () {
+    var _ref78 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee78(wrapper) {
+      return regenerator_default.a.wrap(function _callee78$(_context78) {
+        while (1) {
+          switch (_context78.prev = _context78.next) {
+            case 0:
+              _context78.next = 2;
+              return _this.contract.wrapperMaxTokenAmount(wrapper);
+
+            case 2:
+              return _context78.abrupt("return", _context78.sent);
+
+            case 3:
+            case "end":
+              return _context78.stop();
+          }
+        }
+      }, _callee78);
+    }));
+
+    return function (_x99) {
+      return _ref78.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns int256
+   **/
+
+
+  this.wrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref79 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee79(wrapper) {
+      return regenerator_default.a.wrap(function _callee79$(_context79) {
+        while (1) {
+          switch (_context79.prev = _context79.next) {
+            case 0:
+              _context79.next = 2;
+              return _this.contract.wrapperMintFeeRate(wrapper);
+
+            case 2:
+              return _context79.abrupt("return", _context79.sent);
+
+            case 3:
+            case "end":
+              return _context79.stop();
+          }
+        }
+      }, _callee79);
+    }));
+
+    return function (_x100) {
+      return _ref79.apply(this, arguments);
     };
   }();
 }

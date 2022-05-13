@@ -23394,7 +23394,7 @@ var KOVAN_ADDRESSES = {
   ProxyERC20sUSD: '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51',
   ProxySynthetix: '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F',
   SafeDecimalMath: '0x1A60E2E2A8BE0BC2B6381dd31Fd3fD5F9A28dE4c',
-  Synthetix: '0x6b27e4554f2FEFc04F4bd9AE0D2A77f348d12cfA',
+  Synthetix: '0x2bAf929DBff85A8148D339EA122c8dcbd055F30a',
   SynthetixEscrow: '0x548c18a49a66Ad1238e17824C18B0b9Be35fB604',
   SynthetixState: '0xAfcBC491B67c01B40f6c077EF53488876a0a0D6E',
   SynthsAUD: '0xaf103dFe9ADa5964E2cb3114B7bB8BC191CAF426',
@@ -23431,9 +23431,9 @@ var KOVAN_ADDRESSES = {
   SynthsDEFI: '0xA86F796336C821340619174dB7B46c4d492AF2A4',
   Math: '0x2cAaB90c2D4328E32baB3e2fAdf84cEd1DD229F6',
   AddressResolver: '0x84f87E3636Aa9cC1080c07E6C61aDfDCc23c0db6',
-  Exchanger: '0x8e08BF90B979698AdB6d722E9e27263f36366414',
+  Exchanger: '0xb9713D033DF6190D941F169cDEDc1C69B5314e72',
   ExchangeState: '0xa3F59b8E28cABC4411198dDa2e65C380BD5d6Dfe',
-  Issuer: '0x1991bEA1eB08a78701F3330934B2301Fc6520AbA',
+  Issuer: '0x923F8f53c9BD1f0C84745394E47ea31c5949eF96',
   IssuanceEternalStorage: '0xe66000ee63050461Fe930E6F5A3456A735dC86A1',
   DelegateApprovalsEternalStorage: '0x3C11FE34E416eDA134D30f7550f2986BDF8B5c08',
   SystemStatus: '0x648727A32112e6C233c1c5d8d57A9AA736FfB18B',
@@ -23443,7 +23443,7 @@ var KOVAN_ADDRESSES = {
   SynthUtil: '0xC88AE3be40CAa09CD16Db5816e6145E0E929c93c',
   DappMaintenance: '0x28B624Ef2284749AEBF3dA3c7f5E287F716D1935',
   FlexibleStorage: '0xB1751e5EdE811288cE2fc4c65aaCA17A955366be',
-  SystemSettings: '0x1FEdC443D6c05475310fC62E5d4bf5c431cd06B6',
+  SystemSettings: '0x6d9edCbC275a3664f04E68d7fc1466858C683b90',
   TradingRewards: '0xBBfAd9112203b943f26320B330B75BABF6e2aF2a',
   DebtCache: '0xF7440b98b0DC9B54BFae68288a11C48dabFE7D07',
   CollateralManagerState: '0x8D65Ed88D6162a2b3B5F71c45D433d4aeAc93065',
@@ -23471,13 +23471,15 @@ var KOVAN_ADDRESSES = {
   SynthRedeemer: '0xFa01a0494913b150Dd37CbE1fF775B08f108dEEa',
   WrapperFactory: '0x6B4D3e213e10d9238c1a1A87E493687cc2eb1DD0',
   OwnerRelayOnEthereum: '0x05e8467f623FA90FEfb99259e7e3283667f1A390',
-  SystemSettingsLib: '0xB023d49Fc98eB2f955fA1dF2B2868bFf62C671E6',
+  SystemSettingsLib: '0x47F08D263d759D150bc61BE5D72337EbD45Fb559',
   SynthetixDebtShare: '0x0f46148D93b52e2B503fE84897609913Cba42B7A',
   SignedSafeDecimalMath: '0xCEFd89A03BD594287316Da4B4f060104c8B271E0',
   OneNetAggregatorIssuedSynths: '0x126576EB6B604D734621629Deea7F951E55Fcc00',
   OneNetAggregatorDebtRatio: '0x1636e633fe03CAD6a0459b557D2C74A2210c5Cd6',
   ExchangeCircuitBreaker: '0x4bd5B027679E630e11BE8F34a0354ee88c3e84db',
-  FuturesMarketManager: '0x012A86834cd1600dC405fa1C7022425a484E34ea'
+  FuturesMarketManager: '0x012A86834cd1600dC405fa1C7022425a484E34ea',
+  Liquidator: '0x54a67c86994790DABde8D294E5C052863Ffe5Cd1',
+  LiquidatorRewards: '0x9c333F576BbAb9aC0F2585aaaa7A094EF72F5696'
 };
 /* harmony default export */ var addresses = ({
   1: MAINNET_ADDRESSES,
@@ -48283,8 +48285,1456 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Synth = (mainnet_Synth);
 // CONCATENATED MODULE: ./lib/abis/kovan/Synthetix.js
-
-/* harmony default export */ var kovan_Synthetix = (mainnet_Synthetix);
+/* harmony default export */ var kovan_Synthetix = ([{
+  inputs: [{
+    internalType: 'address payable',
+    name: '_proxy',
+    type: 'address'
+  }, {
+    internalType: 'contract TokenState',
+    name: '_tokenState',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '_totalSupply',
+    type: 'uint256'
+  }, {
+    internalType: 'address',
+    name: '_resolver',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'constructor'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'snxRedeemed',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'amountLiquidated',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'liquidator',
+    type: 'address'
+  }],
+  name: 'AccountLiquidated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'owner',
+    type: 'address'
+  }, {
+    indexed: true,
+    internalType: 'address',
+    name: 'spender',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Approval',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'fromCurrencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'fromAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'toCurrencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'toAddress',
+    type: 'address'
+  }],
+  name: 'AtomicSynthExchange',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'name',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }],
+  name: 'CacheUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'ExchangeRebate',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'ExchangeReclaim',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'toCurrencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'fee',
+    type: 'uint256'
+  }],
+  name: 'ExchangeTracking',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'oldOwner',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerChanged',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerNominated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'proxyAddress',
+    type: 'address'
+  }],
+  name: 'ProxyUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'fromCurrencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'fromAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'toCurrencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'toAddress',
+    type: 'address'
+  }],
+  name: 'SynthExchange',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'newTokenState',
+    type: 'address'
+  }],
+  name: 'TokenStateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: true,
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    indexed: true,
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'Transfer',
+  type: 'event'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'CONTRACT_NAME',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'DECIMALS',
+  outputs: [{
+    internalType: 'uint8',
+    name: '',
+    type: 'uint8'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'TOKEN_NAME',
+  outputs: [{
+    internalType: 'string',
+    name: '',
+    type: 'string'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'TOKEN_SYMBOL',
+  outputs: [{
+    internalType: 'string',
+    name: '',
+    type: 'string'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'acceptOwnership',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'owner',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'spender',
+    type: 'address'
+  }],
+  name: 'allowance',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'anySynthOrSNXRateIsInvalid',
+  outputs: [{
+    internalType: 'bool',
+    name: 'anyRateInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'spender',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'approve',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'availableCurrencyKeys',
+  outputs: [{
+    internalType: 'bytes32[]',
+    name: '',
+    type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'availableSynthCount',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'index',
+    type: 'uint256'
+  }],
+  name: 'availableSynths',
+  outputs: [{
+    internalType: 'contract ISynth',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'balanceOf',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'burnSecondary',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'burnForAddress',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynthsOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'burnSynthsToTarget',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'burnForAddress',
+    type: 'address'
+  }],
+  name: 'burnSynthsToTargetOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'collateral',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '_issuer',
+    type: 'address'
+  }],
+  name: 'collateralisationRatio',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'debtBalanceOf',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'decimals',
+  outputs: [{
+    internalType: 'uint8',
+    name: '',
+    type: 'uint8'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'fromCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'fromAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'toCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'address',
+    name: 'toAddress',
+    type: 'address'
+  }],
+  name: 'emitAtomicSynthExchange',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'emitExchangeRebate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'emitExchangeReclaim',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }, {
+    internalType: 'bytes32',
+    name: 'toCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'fee',
+    type: 'uint256'
+  }],
+  name: 'emitExchangeTracking',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'fromCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'fromAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'toCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'toAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'address',
+    name: 'toAddress',
+    type: 'address'
+  }],
+  name: 'emitSynthExchange',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }],
+  name: 'exchange',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'minAmount',
+    type: 'uint256'
+  }],
+  name: 'exchangeAtomically',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'exchangeForAddress',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }],
+  name: 'exchangeOnBehalf',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'exchangeForAddress',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'rewardAddress',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }],
+  name: 'exchangeOnBehalfWithTracking',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'rewardAddress',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }],
+  name: 'exchangeWithTracking',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'rewardAddress',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }],
+  name: 'exchangeWithTrackingForInitiator',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'sourceCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: 'sourceAmount',
+    type: 'uint256'
+  }, {
+    internalType: 'bytes32',
+    name: 'destinationCurrencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'bytes32',
+    name: 'trackingCode',
+    type: 'bytes32'
+  }],
+  name: 'exchangeWithVirtual',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'amountReceived',
+    type: 'uint256'
+  }, {
+    internalType: 'contract IVirtualSynth',
+    name: 'vSynth',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'isResolverCached',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'isWaitingPeriod',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'issueMaxSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'issueForAddress',
+    type: 'address'
+  }],
+  name: 'issueMaxSynthsOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'issueForAddress',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynthsOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'liquidateDelinquentAccount',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'liquidateSelf',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'maxIssuableSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'maxIssuable',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'messageSender',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'migrateEscrowBalanceToRewardEscrowV2',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'mint',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'mintSecondary',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'mintSecondaryRewards',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'name',
+  outputs: [{
+    internalType: 'string',
+    name: '',
+    type: 'string'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }],
+  name: 'nominateNewOwner',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nominatedOwner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'proxy',
+  outputs: [{
+    internalType: 'contract Proxy',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'rebuildCache',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'remainingIssuableSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'maxIssuable',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'alreadyIssued',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'totalSystemDebt',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolver',
+  outputs: [{
+    internalType: 'contract AddressResolver',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolverAddressesRequired',
+  outputs: [{
+    internalType: 'bytes32[]',
+    name: 'addresses',
+    type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'sUSD',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'sender',
+    type: 'address'
+  }],
+  name: 'setMessageSender',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address payable',
+    name: '_proxy',
+    type: 'address'
+  }],
+  name: 'setProxy',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'contract TokenState',
+    name: '_tokenState',
+    type: 'address'
+  }],
+  name: 'setTokenState',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'settle',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'reclaimed',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'refunded',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'numEntriesSettled',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'symbol',
+  outputs: [{
+    internalType: 'string',
+    name: '',
+    type: 'string'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'synths',
+  outputs: [{
+    internalType: 'contract ISynth',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'synthAddress',
+    type: 'address'
+  }],
+  name: 'synthsByAddress',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'tokenState',
+  outputs: [{
+    internalType: 'contract TokenState',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'totalIssuedSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'totalIssuedSynthsExcludeOtherCollateral',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'totalSupply',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transfer',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'transferFrom',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'transferableSynthetix',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'transferable',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}]);
 // CONCATENATED MODULE: ./lib/abis/kovan/SynthetixEscrow.js
 /* harmony default export */ var kovan_SynthetixEscrow = ([{
   constant: false,
@@ -49140,8 +50590,838 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Exchanger = (Exchanger);
 // CONCATENATED MODULE: ./lib/abis/kovan/Issuer.js
-
-/* harmony default export */ var kovan_Issuer = (Issuer);
+/* harmony default export */ var kovan_Issuer = ([{
+  inputs: [{
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: '_resolver',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'constructor'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'name',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }],
+  name: 'CacheUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'oldOwner',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerChanged',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerNominated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'synth',
+    type: 'address'
+  }],
+  name: 'SynthAdded',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'synth',
+    type: 'address'
+  }],
+  name: 'SynthRemoved',
+  type: 'event'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'CIRCUIT_BREAKER_SUSPENSION_REASON',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'CONTRACT_NAME',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'acceptOwnership',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'contract ISynth',
+    name: 'synth',
+    type: 'address'
+  }],
+  name: 'addSynth',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'contract ISynth[]',
+    name: 'synthsToAdd',
+    type: 'address[]'
+  }],
+  name: 'addSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'allNetworksDebtInfo',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'debt',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'sharesSupply',
+    type: 'uint256'
+  }, {
+    internalType: 'bool',
+    name: 'isStale',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'anySynthOrSNXRateIsInvalid',
+  outputs: [{
+    internalType: 'bool',
+    name: 'anyRateInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'availableCurrencyKeys',
+  outputs: [{
+    internalType: 'bytes32[]',
+    name: '',
+    type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'availableSynthCount',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  name: 'availableSynths',
+  outputs: [{
+    internalType: 'contract ISynth',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'deprecatedSynthProxy',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'balance',
+    type: 'uint256'
+  }],
+  name: 'burnForRedemption',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'burnForAddress',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynthsOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }],
+  name: 'burnSynthsToTarget',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'burnForAddress',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }],
+  name: 'burnSynthsToTargetOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'burnSynthsWithoutDebt',
+  outputs: [{
+    internalType: 'bool',
+    name: 'rateInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'canBurnSynths',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'collateral',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '_issuer',
+    type: 'address'
+  }],
+  name: 'collateralisationRatio',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'cratio',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '_issuer',
+    type: 'address'
+  }],
+  name: 'collateralisationRatioAndAnyRatesInvalid',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'cratio',
+    type: 'uint256'
+  }, {
+    internalType: 'bool',
+    name: 'anyRateIsInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '_issuer',
+    type: 'address'
+  }, {
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'debtBalanceOf',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'debtBalance',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32[]',
+    name: 'currencyKeys',
+    type: 'bytes32[]'
+  }],
+  name: 'getSynths',
+  outputs: [{
+    internalType: 'contract ISynth[]',
+    name: '',
+    type: 'address[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'isResolverCached',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'issuanceRatio',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }],
+  name: 'issueMaxSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'issueForAddress',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }],
+  name: 'issueMaxSynthsOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'issueForAddress',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: 'from',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynthsOnBehalf',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: 'to',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'issueSynthsWithoutDebt',
+  outputs: [{
+    internalType: 'bool',
+    name: 'rateInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'lastDebtRatio',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }],
+  name: 'lastIssueEvent',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'bool',
+    name: 'isSelfLiquidation',
+    type: 'bool'
+  }],
+  name: 'liquidateAccount',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'totalRedeemed',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'amountToLiquidate',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '_issuer',
+    type: 'address'
+  }],
+  name: 'maxIssuableSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'minimumStakeTime',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }],
+  name: 'nominateNewOwner',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nominatedOwner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'rebuildCache',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '_issuer',
+    type: 'address'
+  }],
+  name: 'remainingIssuableSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'maxIssuable',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'alreadyIssued',
+    type: 'uint256'
+  }, {
+    internalType: 'uint256',
+    name: 'totalSystemDebt',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'removeSynth',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32[]',
+    name: 'currencyKeys',
+    type: 'bytes32[]'
+  }],
+  name: 'removeSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolver',
+  outputs: [{
+    internalType: 'contract AddressResolver',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolverAddressesRequired',
+  outputs: [{
+    internalType: 'bytes32[]',
+    name: 'addresses',
+    type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint128',
+    name: 'periodId',
+    type: 'uint128'
+  }],
+  name: 'setCurrentPeriodId',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'ratio',
+    type: 'uint256'
+  }],
+  name: 'setLastDebtRatio',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  name: 'synths',
+  outputs: [{
+    internalType: 'contract ISynth',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  name: 'synthsByAddress',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'bool',
+    name: 'excludeOtherCollateral',
+    type: 'bool'
+  }],
+  name: 'totalIssuedSynths',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'totalIssued',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'account',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'balance',
+    type: 'uint256'
+  }],
+  name: 'transferableSynthetixAndAnyRateIsInvalid',
+  outputs: [{
+    internalType: 'uint256',
+    name: 'transferable',
+    type: 'uint256'
+  }, {
+    internalType: 'bool',
+    name: 'anyRateIsInvalid',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}]);
 // CONCATENATED MODULE: ./lib/abis/kovan/AddressResolver.js
 
 /* harmony default export */ var kovan_AddressResolver = (AddressResolver);
@@ -50164,8 +52444,1645 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_SynthetixBridgeToOptimism = (SynthetixBridgeToOptimism);
 // CONCATENATED MODULE: ./lib/abis/kovan/SystemSettings.js
-
-/* harmony default export */ var kovan_SystemSettings = (SystemSettings);
+/* harmony default export */ var kovan_SystemSettings = ([{
+  inputs: [{
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }, {
+    internalType: 'address',
+    name: '_resolver',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'constructor'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'flags',
+    type: 'address'
+  }],
+  name: 'AggregatorWarningFlagsUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'equivalent',
+    type: 'address'
+  }],
+  name: 'AtomicEquivalentForDexPricingUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newExchangeFeeRate',
+    type: 'uint256'
+  }],
+  name: 'AtomicExchangeFeeUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newMaxVolume',
+    type: 'uint256'
+  }],
+  name: 'AtomicMaxVolumePerBlockUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newWindow',
+    type: 'uint256'
+  }],
+  name: 'AtomicTwapWindowUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newVolatilityConsiderationWindow',
+    type: 'uint256'
+  }],
+  name: 'AtomicVolatilityConsiderationWindowUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newVolatilityUpdateThreshold',
+    type: 'uint256'
+  }],
+  name: 'AtomicVolatilityUpdateThresholdUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'name',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'destination',
+    type: 'address'
+  }],
+  name: 'CacheUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'collapseFeeRate',
+    type: 'uint256'
+  }],
+  name: 'CollapseFeeRateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'value',
+    type: 'uint256'
+  }],
+  name: 'CrossChainSynthTransferEnabledUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
+    name: 'gasLimitType',
+    type: 'uint8'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newLimit',
+    type: 'uint256'
+  }],
+  name: 'CrossDomainMessageGasLimitChanged',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'debtSnapshotStaleTime',
+    type: 'uint256'
+  }],
+  name: 'DebtSnapshotStaleTimeUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'rate',
+    type: 'uint256'
+  }],
+  name: 'EtherWrapperBurnFeeRateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'maxETH',
+    type: 'uint256'
+  }],
+  name: 'EtherWrapperMaxETHUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'rate',
+    type: 'uint256'
+  }],
+  name: 'EtherWrapperMintFeeRateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'dynamicFeeRounds',
+    type: 'uint256'
+  }],
+  name: 'ExchangeDynamicFeeRoundsUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'dynamicFeeThreshold',
+    type: 'uint256'
+  }],
+  name: 'ExchangeDynamicFeeThresholdUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'dynamicFeeWeightDecay',
+    type: 'uint256'
+  }],
+  name: 'ExchangeDynamicFeeWeightDecayUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newExchangeFeeRate',
+    type: 'uint256'
+  }],
+  name: 'ExchangeFeeUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'maxDynamicFee',
+    type: 'uint256'
+  }],
+  name: 'ExchangeMaxDynamicFeeUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newFeePeriodDuration',
+    type: 'uint256'
+  }],
+  name: 'FeePeriodDurationUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newReward',
+    type: 'uint256'
+  }],
+  name: 'FlagRewardUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'interactionDelay',
+    type: 'uint256'
+  }],
+  name: 'InteractionDelayUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newRatio',
+    type: 'uint256'
+  }],
+  name: 'IssuanceRatioUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newReward',
+    type: 'uint256'
+  }],
+  name: 'LiquidateRewardUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newDelay',
+    type: 'uint256'
+  }],
+  name: 'LiquidationDelayUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newDuration',
+    type: 'uint256'
+  }],
+  name: 'LiquidationEscrowDurationUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newPenalty',
+    type: 'uint256'
+  }],
+  name: 'LiquidationPenaltyUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newRatio',
+    type: 'uint256'
+  }],
+  name: 'LiquidationRatioUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'minimumStakeTime',
+    type: 'uint256'
+  }],
+  name: 'MinimumStakeTimeUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'oldOwner',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerChanged',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'newOwner',
+    type: 'address'
+  }],
+  name: 'OwnerNominated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'threshold',
+    type: 'uint256'
+  }],
+  name: 'PriceDeviationThresholdUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bytes32',
+    name: 'synthKey',
+    type: 'bytes32'
+  }, {
+    indexed: false,
+    internalType: 'bool',
+    name: 'enabled',
+    type: 'bool'
+  }],
+  name: 'PureChainlinkPriceForAtomicSwapsEnabledUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'rateStalePeriod',
+    type: 'uint256'
+  }],
+  name: 'RateStalePeriodUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newPenalty',
+    type: 'uint256'
+  }],
+  name: 'SelfLiquidationPenaltyUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'newTargetThreshold',
+    type: 'uint256'
+  }],
+  name: 'TargetThresholdUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'bool',
+    name: 'enabled',
+    type: 'bool'
+  }],
+  name: 'TradingRewardsEnabled',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
+    name: 'waitingPeriodSecs',
+    type: 'uint256'
+  }],
+  name: 'WaitingPeriodSecsUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'wrapper',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'int256',
+    name: 'rate',
+    type: 'int256'
+  }],
+  name: 'WrapperBurnFeeRateUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'wrapper',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'uint256',
+    name: 'maxTokenAmount',
+    type: 'uint256'
+  }],
+  name: 'WrapperMaxTokenAmountUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'address',
+    name: 'wrapper',
+    type: 'address'
+  }, {
+    indexed: false,
+    internalType: 'int256',
+    name: 'rate',
+    type: 'int256'
+  }],
+  name: 'WrapperMintFeeRateUpdated',
+  type: 'event'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'CONTRACT_NAME',
+  outputs: [{
+    internalType: 'bytes32',
+    name: '',
+    type: 'bytes32'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'acceptOwnership',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'aggregatorWarningFlags',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'atomicEquivalentForDexPricing',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'atomicExchangeFeeRate',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'atomicMaxVolumePerBlock',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'atomicTwapWindow',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'atomicVolatilityConsiderationWindow',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'atomicVolatilityUpdateThreshold',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'collateral',
+    type: 'address'
+  }],
+  name: 'collapseFeeRate',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'crossChainSynthTransferEnabled',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
+    name: 'gasLimitType',
+    type: 'uint8'
+  }],
+  name: 'crossDomainMessageGasLimit',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'debtSnapshotStaleTime',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'etherWrapperBurnFeeRate',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'etherWrapperMaxETH',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'etherWrapperMintFeeRate',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'exchangeDynamicFeeRounds',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'exchangeDynamicFeeThreshold',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'exchangeDynamicFeeWeightDecay',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'exchangeFeeRate',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'exchangeMaxDynamicFee',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'feePeriodDuration',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'flagReward',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'collateral',
+    type: 'address'
+  }],
+  name: 'interactionDelay',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'isResolverCached',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'issuanceRatio',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'liquidateReward',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'liquidationDelay',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'liquidationEscrowDuration',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'liquidationPenalty',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'liquidationRatio',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'minimumStakeTime',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_owner',
+    type: 'address'
+  }],
+  name: 'nominateNewOwner',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'nominatedOwner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'owner',
+  outputs: [{
+    internalType: 'address',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'priceDeviationThresholdFactor',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'bytes32',
+    name: 'currencyKey',
+    type: 'bytes32'
+  }],
+  name: 'pureChainlinkPriceForAtomicSwapsEnabled',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'rateStalePeriod',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [],
+  name: 'rebuildCache',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolver',
+  outputs: [{
+    internalType: 'contract AddressResolver',
+    name: '',
+    type: 'address'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'resolverAddressesRequired',
+  outputs: [{
+    internalType: 'bytes32[]',
+    name: 'addresses',
+    type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'selfLiquidationPenalty',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_flags',
+    type: 'address'
+  }],
+  name: 'setAggregatorWarningFlags',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'address',
+    name: '_equivalent',
+    type: 'address'
+  }],
+  name: 'setAtomicEquivalentForDexPricing',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: '_exchangeFeeRate',
+    type: 'uint256'
+  }],
+  name: 'setAtomicExchangeFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_maxVolume',
+    type: 'uint256'
+  }],
+  name: 'setAtomicMaxVolumePerBlock',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_window',
+    type: 'uint256'
+  }],
+  name: 'setAtomicTwapWindow',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: '_window',
+    type: 'uint256'
+  }],
+  name: 'setAtomicVolatilityConsiderationWindow',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: '_threshold',
+    type: 'uint256'
+  }],
+  name: 'setAtomicVolatilityUpdateThreshold',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_collateral',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '_collapseFeeRate',
+    type: 'uint256'
+  }],
+  name: 'setCollapseFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'uint256',
+    name: '_value',
+    type: 'uint256'
+  }],
+  name: 'setCrossChainSynthTransferEnabled',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
+    name: '_gasLimitType',
+    type: 'uint8'
+  }, {
+    internalType: 'uint256',
+    name: '_crossDomainMessageGasLimit',
+    type: 'uint256'
+  }],
+  name: 'setCrossDomainMessageGasLimit',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_seconds',
+    type: 'uint256'
+  }],
+  name: 'setDebtSnapshotStaleTime',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_rate',
+    type: 'uint256'
+  }],
+  name: 'setEtherWrapperBurnFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_maxETH',
+    type: 'uint256'
+  }],
+  name: 'setEtherWrapperMaxETH',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_rate',
+    type: 'uint256'
+  }],
+  name: 'setEtherWrapperMintFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'rounds',
+    type: 'uint256'
+  }],
+  name: 'setExchangeDynamicFeeRounds',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'threshold',
+    type: 'uint256'
+  }],
+  name: 'setExchangeDynamicFeeThreshold',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'weightDecay',
+    type: 'uint256'
+  }],
+  name: 'setExchangeDynamicFeeWeightDecay',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32[]',
+    name: 'synthKeys',
+    type: 'bytes32[]'
+  }, {
+    internalType: 'uint256[]',
+    name: 'exchangeFeeRates',
+    type: 'uint256[]'
+  }],
+  name: 'setExchangeFeeRateForSynths',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'maxFee',
+    type: 'uint256'
+  }],
+  name: 'setExchangeMaxDynamicFee',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_feePeriodDuration',
+    type: 'uint256'
+  }],
+  name: 'setFeePeriodDuration',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'reward',
+    type: 'uint256'
+  }],
+  name: 'setFlagReward',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_collateral',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '_interactionDelay',
+    type: 'uint256'
+  }],
+  name: 'setInteractionDelay',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'ratio',
+    type: 'uint256'
+  }],
+  name: 'setIssuanceRatio',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'reward',
+    type: 'uint256'
+  }],
+  name: 'setLiquidateReward',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'time',
+    type: 'uint256'
+  }],
+  name: 'setLiquidationDelay',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'duration',
+    type: 'uint256'
+  }],
+  name: 'setLiquidationEscrowDuration',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'penalty',
+    type: 'uint256'
+  }],
+  name: 'setLiquidationPenalty',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_liquidationRatio',
+    type: 'uint256'
+  }],
+  name: 'setLiquidationRatio',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_seconds',
+    type: 'uint256'
+  }],
+  name: 'setMinimumStakeTime',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_priceDeviationThresholdFactor',
+    type: 'uint256'
+  }],
+  name: 'setPriceDeviationThresholdFactor',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bytes32',
+    name: '_currencyKey',
+    type: 'bytes32'
+  }, {
+    internalType: 'bool',
+    name: '_enabled',
+    type: 'bool'
+  }],
+  name: 'setPureChainlinkPriceForAtomicSwapsEnabled',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'period',
+    type: 'uint256'
+  }],
+  name: 'setRateStalePeriod',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'penalty',
+    type: 'uint256'
+  }],
+  name: 'setSelfLiquidationPenalty',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'percent',
+    type: 'uint256'
+  }],
+  name: 'setTargetThreshold',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'bool',
+    name: '_tradingRewardsEnabled',
+    type: 'bool'
+  }],
+  name: 'setTradingRewardsEnabled',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: '_waitingPeriodSecs',
+    type: 'uint256'
+  }],
+  name: 'setWaitingPeriodSecs',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_wrapper',
+    type: 'address'
+  }, {
+    internalType: 'int256',
+    name: '_rate',
+    type: 'int256'
+  }],
+  name: 'setWrapperBurnFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_wrapper',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: '_maxTokenAmount',
+    type: 'uint256'
+  }],
+  name: 'setWrapperMaxTokenAmount',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: '_wrapper',
+    type: 'address'
+  }, {
+    internalType: 'int256',
+    name: '_rate',
+    type: 'int256'
+  }],
+  name: 'setWrapperMintFeeRate',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'targetThreshold',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'tradingRewardsEnabled',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'waitingPeriodSecs',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'wrapper',
+    type: 'address'
+  }],
+  name: 'wrapperBurnFeeRate',
+  outputs: [{
+    internalType: 'int256',
+    name: '',
+    type: 'int256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'wrapper',
+    type: 'address'
+  }],
+  name: 'wrapperMaxTokenAmount',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [{
+    internalType: 'address',
+    name: 'wrapper',
+    type: 'address'
+  }],
+  name: 'wrapperMintFeeRate',
+  outputs: [{
+    internalType: 'int256',
+    name: '',
+    type: 'int256'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}]);
 // CONCATENATED MODULE: ./lib/abis/kovan/index.js
 
 
@@ -113025,21 +116942,20 @@ function kovan_Synthetix_Synthetix(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @param susdAmount {BigNumber}
    * @param txParams {TxParams}
    * @returns boolean
    **/
 
 
   this.liquidateDelinquentAccount = /*#__PURE__*/function () {
-    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(account, susdAmount, txParams) {
+    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(account, txParams) {
       return regenerator_default.a.wrap(function _callee40$(_context40) {
         while (1) {
           switch (_context40.prev = _context40.next) {
             case 0:
               txParams = txParams || {};
               _context40.next = 3;
-              return _this.contract.liquidateDelinquentAccount(account, susdAmount, txParams);
+              return _this.contract.liquidateDelinquentAccount(account, txParams);
 
             case 3:
               return _context40.abrupt("return", _context40.sent);
@@ -113052,8 +116968,40 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee40);
     }));
 
-    return function (_x99, _x100, _x101) {
+    return function (_x99, _x100) {
       return _ref40.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.liquidateSelf = /*#__PURE__*/function () {
+    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(txParams) {
+      return regenerator_default.a.wrap(function _callee41$(_context41) {
+        while (1) {
+          switch (_context41.prev = _context41.next) {
+            case 0:
+              txParams = txParams || {};
+              _context41.next = 3;
+              return _this.contract.liquidateSelf(txParams);
+
+            case 3:
+              return _context41.abrupt("return", _context41.sent);
+
+            case 4:
+            case "end":
+              return _context41.stop();
+          }
+        }
+      }, _callee41);
+    }));
+
+    return function (_x101) {
+      return _ref41.apply(this, arguments);
     };
   }();
   /**
@@ -113065,27 +117013,27 @@ function kovan_Synthetix_Synthetix(contractSettings) {
 
 
   this.maxIssuableSynths = /*#__PURE__*/function () {
-    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(account) {
-      return regenerator_default.a.wrap(function _callee41$(_context41) {
+    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(account) {
+      return regenerator_default.a.wrap(function _callee42$(_context42) {
         while (1) {
-          switch (_context41.prev = _context41.next) {
+          switch (_context42.prev = _context42.next) {
             case 0:
-              _context41.next = 2;
+              _context42.next = 2;
               return _this.contract.maxIssuableSynths(account);
 
             case 2:
-              return _context41.abrupt("return", _context41.sent);
+              return _context42.abrupt("return", _context42.sent);
 
             case 3:
             case "end":
-              return _context41.stop();
+              return _context42.stop();
           }
         }
-      }, _callee41);
+      }, _callee42);
     }));
 
     return function (_x102) {
-      return _ref41.apply(this, arguments);
+      return _ref42.apply(this, arguments);
     };
   }();
   /**
@@ -113094,23 +117042,23 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.messageSender = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42() {
-    return regenerator_default.a.wrap(function _callee42$(_context42) {
+  this.messageSender = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43() {
+    return regenerator_default.a.wrap(function _callee43$(_context43) {
       while (1) {
-        switch (_context42.prev = _context42.next) {
+        switch (_context43.prev = _context43.next) {
           case 0:
-            _context42.next = 2;
+            _context43.next = 2;
             return _this.contract.messageSender();
 
           case 2:
-            return _context42.abrupt("return", _context42.sent);
+            return _context43.abrupt("return", _context43.sent);
 
           case 3:
           case "end":
-            return _context42.stop();
+            return _context43.stop();
         }
       }
-    }, _callee42);
+    }, _callee43);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -113119,38 +117067,6 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
   this.migrateEscrowBalanceToRewardEscrowV2 = /*#__PURE__*/function () {
-    var _ref43 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43(txParams) {
-      return regenerator_default.a.wrap(function _callee43$(_context43) {
-        while (1) {
-          switch (_context43.prev = _context43.next) {
-            case 0:
-              txParams = txParams || {};
-              _context43.next = 3;
-              return _this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
-
-            case 3:
-              return _context43.abrupt("return", _context43.sent);
-
-            case 4:
-            case "end":
-              return _context43.stop();
-          }
-        }
-      }, _callee43);
-    }));
-
-    return function (_x103) {
-      return _ref43.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-
-
-  this.mint = /*#__PURE__*/function () {
     var _ref44 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44(txParams) {
       return regenerator_default.a.wrap(function _callee44$(_context44) {
         while (1) {
@@ -113158,7 +117074,7 @@ function kovan_Synthetix_Synthetix(contractSettings) {
             case 0:
               txParams = txParams || {};
               _context44.next = 3;
-              return _this.contract.mint(txParams);
+              return _this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
 
             case 3:
               return _context44.abrupt("return", _context44.sent);
@@ -113171,28 +117087,26 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee44);
     }));
 
-    return function (_x104) {
+    return function (_x103) {
       return _ref44.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param  {String<EthAddress>}
-   * @param  {BigNumber}
    * @param txParams {TxParams}
-  
+   * @returns boolean
    **/
 
 
-  this.mintSecondary = /*#__PURE__*/function () {
-    var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(address_1, uint256_1, txParams) {
+  this.mint = /*#__PURE__*/function () {
+    var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(txParams) {
       return regenerator_default.a.wrap(function _callee45$(_context45) {
         while (1) {
           switch (_context45.prev = _context45.next) {
             case 0:
               txParams = txParams || {};
               _context45.next = 3;
-              return _this.contract.mintSecondary(address_1, uint256_1, txParams);
+              return _this.contract.mint(txParams);
 
             case 3:
               return _context45.abrupt("return", _context45.sent);
@@ -113205,27 +117119,28 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee45);
     }));
 
-    return function (_x105, _x106, _x107) {
+    return function (_x104) {
       return _ref45.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
+   * @param  {String<EthAddress>}
    * @param  {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.mintSecondaryRewards = /*#__PURE__*/function () {
-    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(uint256_1, txParams) {
+  this.mintSecondary = /*#__PURE__*/function () {
+    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(address_1, uint256_1, txParams) {
       return regenerator_default.a.wrap(function _callee46$(_context46) {
         while (1) {
           switch (_context46.prev = _context46.next) {
             case 0:
               txParams = txParams || {};
               _context46.next = 3;
-              return _this.contract.mintSecondaryRewards(uint256_1, txParams);
+              return _this.contract.mintSecondary(address_1, uint256_1, txParams);
 
             case 3:
               return _context46.abrupt("return", _context46.sent);
@@ -113238,8 +117153,41 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x108, _x109) {
+    return function (_x105, _x106, _x107) {
       return _ref46.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param  {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.mintSecondaryRewards = /*#__PURE__*/function () {
+    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(uint256_1, txParams) {
+      return regenerator_default.a.wrap(function _callee47$(_context47) {
+        while (1) {
+          switch (_context47.prev = _context47.next) {
+            case 0:
+              txParams = txParams || {};
+              _context47.next = 3;
+              return _this.contract.mintSecondaryRewards(uint256_1, txParams);
+
+            case 3:
+              return _context47.abrupt("return", _context47.sent);
+
+            case 4:
+            case "end":
+              return _context47.stop();
+          }
+        }
+      }, _callee47);
+    }));
+
+    return function (_x108, _x109) {
+      return _ref47.apply(this, arguments);
     };
   }();
   /**
@@ -113248,23 +117196,23 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.name = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47() {
-    return regenerator_default.a.wrap(function _callee47$(_context47) {
+  this.name = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48() {
+    return regenerator_default.a.wrap(function _callee48$(_context48) {
       while (1) {
-        switch (_context47.prev = _context47.next) {
+        switch (_context48.prev = _context48.next) {
           case 0:
-            _context47.next = 2;
+            _context48.next = 2;
             return _this.contract.name();
 
           case 2:
-            return _context47.abrupt("return", _context47.sent);
+            return _context48.abrupt("return", _context48.sent);
 
           case 3:
           case "end":
-            return _context47.stop();
+            return _context48.stop();
         }
       }
-    }, _callee47);
+    }, _callee48);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -113274,28 +117222,28 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
   this.nominateNewOwner = /*#__PURE__*/function () {
-    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(_owner, txParams) {
-      return regenerator_default.a.wrap(function _callee48$(_context48) {
+    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee49$(_context49) {
         while (1) {
-          switch (_context48.prev = _context48.next) {
+          switch (_context49.prev = _context49.next) {
             case 0:
               txParams = txParams || {};
-              _context48.next = 3;
+              _context49.next = 3;
               return _this.contract.nominateNewOwner(_owner, txParams);
 
             case 3:
-              return _context48.abrupt("return", _context48.sent);
+              return _context49.abrupt("return", _context49.sent);
 
             case 4:
             case "end":
-              return _context48.stop();
+              return _context49.stop();
           }
         }
-      }, _callee48);
+      }, _callee49);
     }));
 
     return function (_x110, _x111) {
-      return _ref48.apply(this, arguments);
+      return _ref49.apply(this, arguments);
     };
   }();
   /**
@@ -113304,36 +117252,13 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49() {
-    return regenerator_default.a.wrap(function _callee49$(_context49) {
-      while (1) {
-        switch (_context49.prev = _context49.next) {
-          case 0:
-            _context49.next = 2;
-            return _this.contract.nominatedOwner();
-
-          case 2:
-            return _context49.abrupt("return", _context49.sent);
-
-          case 3:
-          case "end":
-            return _context49.stop();
-        }
-      }
-    }, _callee49);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-
-  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50() {
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50() {
     return regenerator_default.a.wrap(function _callee50$(_context50) {
       while (1) {
         switch (_context50.prev = _context50.next) {
           case 0:
             _context50.next = 2;
-            return _this.contract.owner();
+            return _this.contract.nominatedOwner();
 
           case 2:
             return _context50.abrupt("return", _context50.sent);
@@ -113350,13 +117275,13 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    * @returns String<EthAddress>
    **/
 
-  this.proxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51() {
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51() {
     return regenerator_default.a.wrap(function _callee51$(_context51) {
       while (1) {
         switch (_context51.prev = _context51.next) {
           case 0:
             _context51.next = 2;
-            return _this.contract.proxy();
+            return _this.contract.owner();
 
           case 2:
             return _context51.abrupt("return", _context51.sent);
@@ -113369,34 +117294,57 @@ function kovan_Synthetix_Synthetix(contractSettings) {
     }, _callee51);
   }));
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.proxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52() {
+    return regenerator_default.a.wrap(function _callee52$(_context52) {
+      while (1) {
+        switch (_context52.prev = _context52.next) {
+          case 0:
+            _context52.next = 2;
+            return _this.contract.proxy();
+
+          case 2:
+            return _context52.abrupt("return", _context52.sent);
+
+          case 3:
+          case "end":
+            return _context52.stop();
+        }
+      }
+    }, _callee52);
+  }));
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
 
   this.rebuildCache = /*#__PURE__*/function () {
-    var _ref52 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52(txParams) {
-      return regenerator_default.a.wrap(function _callee52$(_context52) {
+    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(txParams) {
+      return regenerator_default.a.wrap(function _callee53$(_context53) {
         while (1) {
-          switch (_context52.prev = _context52.next) {
+          switch (_context53.prev = _context53.next) {
             case 0:
               txParams = txParams || {};
-              _context52.next = 3;
+              _context53.next = 3;
               return _this.contract.rebuildCache(txParams);
 
             case 3:
-              return _context52.abrupt("return", _context52.sent);
+              return _context53.abrupt("return", _context53.sent);
 
             case 4:
             case "end":
-              return _context52.stop();
+              return _context53.stop();
           }
         }
-      }, _callee52);
+      }, _callee53);
     }));
 
     return function (_x112) {
-      return _ref52.apply(this, arguments);
+      return _ref53.apply(this, arguments);
     };
   }();
   /**
@@ -113408,27 +117356,27 @@ function kovan_Synthetix_Synthetix(contractSettings) {
 
 
   this.remainingIssuableSynths = /*#__PURE__*/function () {
-    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(account) {
-      return regenerator_default.a.wrap(function _callee53$(_context53) {
+    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(account) {
+      return regenerator_default.a.wrap(function _callee54$(_context54) {
         while (1) {
-          switch (_context53.prev = _context53.next) {
+          switch (_context54.prev = _context54.next) {
             case 0:
-              _context53.next = 2;
+              _context54.next = 2;
               return _this.contract.remainingIssuableSynths(account);
 
             case 2:
-              return _context53.abrupt("return", _context53.sent);
+              return _context54.abrupt("return", _context54.sent);
 
             case 3:
             case "end":
-              return _context53.stop();
+              return _context54.stop();
           }
         }
-      }, _callee53);
+      }, _callee54);
     }));
 
     return function (_x113) {
-      return _ref53.apply(this, arguments);
+      return _ref54.apply(this, arguments);
     };
   }();
   /**
@@ -113437,36 +117385,13 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54() {
-    return regenerator_default.a.wrap(function _callee54$(_context54) {
-      while (1) {
-        switch (_context54.prev = _context54.next) {
-          case 0:
-            _context54.next = 2;
-            return _this.contract.resolver();
-
-          case 2:
-            return _context54.abrupt("return", _context54.sent);
-
-          case 3:
-          case "end":
-            return _context54.stop();
-        }
-      }
-    }, _callee54);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[]
-   **/
-
-  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55() {
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55() {
     return regenerator_default.a.wrap(function _callee55$(_context55) {
       while (1) {
         switch (_context55.prev = _context55.next) {
           case 0:
             _context55.next = 2;
-            return _this.contract.resolverAddressesRequired();
+            return _this.contract.resolver();
 
           case 2:
             return _context55.abrupt("return", _context55.sent);
@@ -113480,16 +117405,16 @@ function kovan_Synthetix_Synthetix(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32
+   * @returns bytes32[]
    **/
 
-  this.sUSD = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56() {
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56() {
     return regenerator_default.a.wrap(function _callee56$(_context56) {
       while (1) {
         switch (_context56.prev = _context56.next) {
           case 0:
             _context56.next = 2;
-            return _this.contract.sUSD();
+            return _this.contract.resolverAddressesRequired();
 
           case 2:
             return _context56.abrupt("return", _context56.sent);
@@ -113502,6 +117427,29 @@ function kovan_Synthetix_Synthetix(contractSettings) {
     }, _callee56);
   }));
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+
+  this.sUSD = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57() {
+    return regenerator_default.a.wrap(function _callee57$(_context57) {
+      while (1) {
+        switch (_context57.prev = _context57.next) {
+          case 0:
+            _context57.next = 2;
+            return _this.contract.sUSD();
+
+          case 2:
+            return _context57.abrupt("return", _context57.sent);
+
+          case 3:
+          case "end":
+            return _context57.stop();
+        }
+      }
+    }, _callee57);
+  }));
+  /**
    * Transaction (consumes gas, requires signer)
    * @param sender {String<EthAddress>}
    * @param txParams {TxParams}
@@ -113509,47 +117457,14 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
   this.setMessageSender = /*#__PURE__*/function () {
-    var _ref57 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57(sender, txParams) {
-      return regenerator_default.a.wrap(function _callee57$(_context57) {
-        while (1) {
-          switch (_context57.prev = _context57.next) {
-            case 0:
-              txParams = txParams || {};
-              _context57.next = 3;
-              return _this.contract.setMessageSender(sender, txParams);
-
-            case 3:
-              return _context57.abrupt("return", _context57.sent);
-
-            case 4:
-            case "end":
-              return _context57.stop();
-          }
-        }
-      }, _callee57);
-    }));
-
-    return function (_x114, _x115) {
-      return _ref57.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _proxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.setProxy = /*#__PURE__*/function () {
-    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(_proxy, txParams) {
+    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(sender, txParams) {
       return regenerator_default.a.wrap(function _callee58$(_context58) {
         while (1) {
           switch (_context58.prev = _context58.next) {
             case 0:
               txParams = txParams || {};
               _context58.next = 3;
-              return _this.contract.setProxy(_proxy, txParams);
+              return _this.contract.setMessageSender(sender, txParams);
 
             case 3:
               return _context58.abrupt("return", _context58.sent);
@@ -113562,27 +117477,27 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee58);
     }));
 
-    return function (_x116, _x117) {
+    return function (_x114, _x115) {
       return _ref58.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _tokenState {String<EthAddress>}
+   * @param _proxy {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTokenState = /*#__PURE__*/function () {
-    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(_tokenState, txParams) {
+  this.setProxy = /*#__PURE__*/function () {
+    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(_proxy, txParams) {
       return regenerator_default.a.wrap(function _callee59$(_context59) {
         while (1) {
           switch (_context59.prev = _context59.next) {
             case 0:
               txParams = txParams || {};
               _context59.next = 3;
-              return _this.contract.setTokenState(_tokenState, txParams);
+              return _this.contract.setProxy(_proxy, txParams);
 
             case 3:
               return _context59.abrupt("return", _context59.sent);
@@ -113595,27 +117510,27 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee59);
     }));
 
-    return function (_x118, _x119) {
+    return function (_x116, _x117) {
       return _ref59.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
+   * @param _tokenState {String<EthAddress>}
    * @param txParams {TxParams}
-   * @returns Object
+  
    **/
 
 
-  this.settle = /*#__PURE__*/function () {
-    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(currencyKey, txParams) {
+  this.setTokenState = /*#__PURE__*/function () {
+    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(_tokenState, txParams) {
       return regenerator_default.a.wrap(function _callee60$(_context60) {
         while (1) {
           switch (_context60.prev = _context60.next) {
             case 0:
               txParams = txParams || {};
               _context60.next = 3;
-              return _this.contract.settle(currencyKey, txParams);
+              return _this.contract.setTokenState(_tokenState, txParams);
 
             case 3:
               return _context60.abrupt("return", _context60.sent);
@@ -113628,8 +117543,41 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee60);
     }));
 
-    return function (_x120, _x121) {
+    return function (_x118, _x119) {
       return _ref60.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+
+
+  this.settle = /*#__PURE__*/function () {
+    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(currencyKey, txParams) {
+      return regenerator_default.a.wrap(function _callee61$(_context61) {
+        while (1) {
+          switch (_context61.prev = _context61.next) {
+            case 0:
+              txParams = txParams || {};
+              _context61.next = 3;
+              return _this.contract.settle(currencyKey, txParams);
+
+            case 3:
+              return _context61.abrupt("return", _context61.sent);
+
+            case 4:
+            case "end":
+              return _context61.stop();
+          }
+        }
+      }, _callee61);
+    }));
+
+    return function (_x120, _x121) {
+      return _ref61.apply(this, arguments);
     };
   }();
   /**
@@ -113638,23 +117586,23 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.symbol = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61() {
-    return regenerator_default.a.wrap(function _callee61$(_context61) {
+  this.symbol = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62() {
+    return regenerator_default.a.wrap(function _callee62$(_context62) {
       while (1) {
-        switch (_context61.prev = _context61.next) {
+        switch (_context62.prev = _context62.next) {
           case 0:
-            _context61.next = 2;
+            _context62.next = 2;
             return _this.contract.symbol();
 
           case 2:
-            return _context61.abrupt("return", _context61.sent);
+            return _context62.abrupt("return", _context62.sent);
 
           case 3:
           case "end":
-            return _context61.stop();
+            return _context62.stop();
         }
       }
-    }, _callee61);
+    }, _callee62);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -113663,44 +117611,13 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
   this.synths = /*#__PURE__*/function () {
-    var _ref62 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62(currencyKey) {
-      return regenerator_default.a.wrap(function _callee62$(_context62) {
-        while (1) {
-          switch (_context62.prev = _context62.next) {
-            case 0:
-              _context62.next = 2;
-              return _this.contract.synths(currencyKey);
-
-            case 2:
-              return _context62.abrupt("return", _context62.sent);
-
-            case 3:
-            case "end":
-              return _context62.stop();
-          }
-        }
-      }, _callee62);
-    }));
-
-    return function (_x122) {
-      return _ref62.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param synthAddress {String<EthAddress>}
-   * @returns bytes32
-   **/
-
-
-  this.synthsByAddress = /*#__PURE__*/function () {
-    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(synthAddress) {
+    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(currencyKey) {
       return regenerator_default.a.wrap(function _callee63$(_context63) {
         while (1) {
           switch (_context63.prev = _context63.next) {
             case 0:
               _context63.next = 2;
-              return _this.contract.synthsByAddress(synthAddress);
+              return _this.contract.synths(currencyKey);
 
             case 2:
               return _context63.abrupt("return", _context63.sent);
@@ -113713,8 +117630,39 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee63);
     }));
 
-    return function (_x123) {
+    return function (_x122) {
       return _ref63.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param synthAddress {String<EthAddress>}
+   * @returns bytes32
+   **/
+
+
+  this.synthsByAddress = /*#__PURE__*/function () {
+    var _ref64 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64(synthAddress) {
+      return regenerator_default.a.wrap(function _callee64$(_context64) {
+        while (1) {
+          switch (_context64.prev = _context64.next) {
+            case 0:
+              _context64.next = 2;
+              return _this.contract.synthsByAddress(synthAddress);
+
+            case 2:
+              return _context64.abrupt("return", _context64.sent);
+
+            case 3:
+            case "end":
+              return _context64.stop();
+          }
+        }
+      }, _callee64);
+    }));
+
+    return function (_x123) {
+      return _ref64.apply(this, arguments);
     };
   }();
   /**
@@ -113723,23 +117671,23 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.tokenState = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64() {
-    return regenerator_default.a.wrap(function _callee64$(_context64) {
+  this.tokenState = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65() {
+    return regenerator_default.a.wrap(function _callee65$(_context65) {
       while (1) {
-        switch (_context64.prev = _context64.next) {
+        switch (_context65.prev = _context65.next) {
           case 0:
-            _context64.next = 2;
+            _context65.next = 2;
             return _this.contract.tokenState();
 
           case 2:
-            return _context64.abrupt("return", _context64.sent);
+            return _context65.abrupt("return", _context65.sent);
 
           case 3:
           case "end":
-            return _context64.stop();
+            return _context65.stop();
         }
       }
-    }, _callee64);
+    }, _callee65);
   }));
   /**
    * Total amount of synths issued by the system, priced in currencyKey.<br>
@@ -113749,44 +117697,13 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
   this.totalIssuedSynths = /*#__PURE__*/function () {
-    var _ref65 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65(currencyKey) {
-      return regenerator_default.a.wrap(function _callee65$(_context65) {
-        while (1) {
-          switch (_context65.prev = _context65.next) {
-            case 0:
-              _context65.next = 2;
-              return _this.contract.totalIssuedSynths(currencyKey);
-
-            case 2:
-              return _context65.abrupt("return", _context65.sent);
-
-            case 3:
-            case "end":
-              return _context65.stop();
-          }
-        }
-      }, _callee65);
-    }));
-
-    return function (_x124) {
-      return _ref65.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-
-
-  this.totalIssuedSynthsExcludeOtherCollateral = /*#__PURE__*/function () {
     var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(currencyKey) {
       return regenerator_default.a.wrap(function _callee66$(_context66) {
         while (1) {
           switch (_context66.prev = _context66.next) {
             case 0:
               _context66.next = 2;
-              return _this.contract.totalIssuedSynthsExcludeOtherCollateral(currencyKey);
+              return _this.contract.totalIssuedSynths(currencyKey);
 
             case 2:
               return _context66.abrupt("return", _context66.sent);
@@ -113799,8 +117716,39 @@ function kovan_Synthetix_Synthetix(contractSettings) {
       }, _callee66);
     }));
 
-    return function (_x125) {
+    return function (_x124) {
       return _ref66.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+
+
+  this.totalIssuedSynthsExcludeOtherCollateral = /*#__PURE__*/function () {
+    var _ref67 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67(currencyKey) {
+      return regenerator_default.a.wrap(function _callee67$(_context67) {
+        while (1) {
+          switch (_context67.prev = _context67.next) {
+            case 0:
+              _context67.next = 2;
+              return _this.contract.totalIssuedSynthsExcludeOtherCollateral(currencyKey);
+
+            case 2:
+              return _context67.abrupt("return", _context67.sent);
+
+            case 3:
+            case "end":
+              return _context67.stop();
+          }
+        }
+      }, _callee67);
+    }));
+
+    return function (_x125) {
+      return _ref67.apply(this, arguments);
     };
   }();
   /**
@@ -113809,23 +117757,23 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.totalSupply = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67() {
-    return regenerator_default.a.wrap(function _callee67$(_context67) {
+  this.totalSupply = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68() {
+    return regenerator_default.a.wrap(function _callee68$(_context68) {
       while (1) {
-        switch (_context67.prev = _context67.next) {
+        switch (_context68.prev = _context68.next) {
           case 0:
-            _context67.next = 2;
+            _context68.next = 2;
             return _this.contract.totalSupply();
 
           case 2:
-            return _context67.abrupt("return", _context67.sent);
+            return _context68.abrupt("return", _context68.sent);
 
           case 3:
           case "end":
-            return _context67.stop();
+            return _context68.stop();
         }
       }
-    }, _callee67);
+    }, _callee68);
   }));
   /**
    * ERC20 transfer function.<br>
@@ -113837,28 +117785,28 @@ function kovan_Synthetix_Synthetix(contractSettings) {
    **/
 
   this.transfer = /*#__PURE__*/function () {
-    var _ref68 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68(to, value, txParams) {
-      return regenerator_default.a.wrap(function _callee68$(_context68) {
+    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee69$(_context69) {
         while (1) {
-          switch (_context68.prev = _context68.next) {
+          switch (_context69.prev = _context69.next) {
             case 0:
               txParams = txParams || {};
-              _context68.next = 3;
+              _context69.next = 3;
               return _this.contract.transfer(to, value, txParams);
 
             case 3:
-              return _context68.abrupt("return", _context68.sent);
+              return _context69.abrupt("return", _context69.sent);
 
             case 4:
             case "end":
-              return _context68.stop();
+              return _context69.stop();
           }
         }
-      }, _callee68);
+      }, _callee69);
     }));
 
     return function (_x126, _x127, _x128) {
-      return _ref68.apply(this, arguments);
+      return _ref69.apply(this, arguments);
     };
   }();
   /**
@@ -113873,28 +117821,28 @@ function kovan_Synthetix_Synthetix(contractSettings) {
 
 
   this.transferFrom = /*#__PURE__*/function () {
-    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(from, to, value, txParams) {
-      return regenerator_default.a.wrap(function _callee69$(_context69) {
+    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(from, to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee70$(_context70) {
         while (1) {
-          switch (_context69.prev = _context69.next) {
+          switch (_context70.prev = _context70.next) {
             case 0:
               txParams = txParams || {};
-              _context69.next = 3;
+              _context70.next = 3;
               return _this.contract.transferFrom(from, to, value, txParams);
 
             case 3:
-              return _context69.abrupt("return", _context69.sent);
+              return _context70.abrupt("return", _context70.sent);
 
             case 4:
             case "end":
-              return _context69.stop();
+              return _context70.stop();
           }
         }
-      }, _callee69);
+      }, _callee70);
     }));
 
     return function (_x129, _x130, _x131, _x132) {
-      return _ref69.apply(this, arguments);
+      return _ref70.apply(this, arguments);
     };
   }();
   /**
@@ -113906,27 +117854,27 @@ function kovan_Synthetix_Synthetix(contractSettings) {
 
 
   this.transferableSynthetix = /*#__PURE__*/function () {
-    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(account) {
-      return regenerator_default.a.wrap(function _callee70$(_context70) {
+    var _ref71 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee71(account) {
+      return regenerator_default.a.wrap(function _callee71$(_context71) {
         while (1) {
-          switch (_context70.prev = _context70.next) {
+          switch (_context71.prev = _context71.next) {
             case 0:
-              _context70.next = 2;
+              _context71.next = 2;
               return _this.contract.transferableSynthetix(account);
 
             case 2:
-              return _context70.abrupt("return", _context70.sent);
+              return _context71.abrupt("return", _context71.sent);
 
             case 3:
             case "end":
-              return _context70.stop();
+              return _context71.stop();
           }
         }
-      }, _callee70);
+      }, _callee71);
     }));
 
     return function (_x133) {
-      return _ref70.apply(this, arguments);
+      return _ref71.apply(this, arguments);
     };
   }();
 }
@@ -118232,22 +122180,21 @@ function kovan_Issuer_Issuer(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @param susdAmount {BigNumber}
-   * @param liquidator {String<EthAddress>}
+   * @param isSelfLiquidation {boolean}
    * @param txParams {TxParams}
    * @returns Object
    **/
 
 
-  this.liquidateDelinquentAccount = /*#__PURE__*/function () {
-    var _ref32 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32(account, susdAmount, liquidator, txParams) {
+  this.liquidateAccount = /*#__PURE__*/function () {
+    var _ref32 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32(account, isSelfLiquidation, txParams) {
       return regenerator_default.a.wrap(function _callee32$(_context32) {
         while (1) {
           switch (_context32.prev = _context32.next) {
             case 0:
               txParams = txParams || {};
               _context32.next = 3;
-              return _this.contract.liquidateDelinquentAccount(account, susdAmount, liquidator, txParams);
+              return _this.contract.liquidateAccount(account, isSelfLiquidation, txParams);
 
             case 3:
               return _context32.abrupt("return", _context32.sent);
@@ -118260,7 +122207,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee32);
     }));
 
-    return function (_x51, _x52, _x53, _x54) {
+    return function (_x51, _x52, _x53) {
       return _ref32.apply(this, arguments);
     };
   }();
@@ -118291,7 +122238,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee33);
     }));
 
-    return function (_x55) {
+    return function (_x54) {
       return _ref33.apply(this, arguments);
     };
   }();
@@ -118347,7 +122294,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee35);
     }));
 
-    return function (_x56, _x57) {
+    return function (_x55, _x56) {
       return _ref35.apply(this, arguments);
     };
   }();
@@ -118425,7 +122372,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee38);
     }));
 
-    return function (_x58) {
+    return function (_x57) {
       return _ref38.apply(this, arguments);
     };
   }();
@@ -118456,7 +122403,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee39);
     }));
 
-    return function (_x59) {
+    return function (_x58) {
       return _ref39.apply(this, arguments);
     };
   }();
@@ -118489,7 +122436,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee40);
     }));
 
-    return function (_x60, _x61) {
+    return function (_x59, _x60) {
       return _ref40.apply(this, arguments);
     };
   }();
@@ -118522,7 +122469,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee41);
     }));
 
-    return function (_x62, _x63) {
+    return function (_x61, _x62) {
       return _ref41.apply(this, arguments);
     };
   }();
@@ -118601,7 +122548,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee44);
     }));
 
-    return function (_x64, _x65) {
+    return function (_x63, _x64) {
       return _ref44.apply(this, arguments);
     };
   }();
@@ -118634,7 +122581,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee45);
     }));
 
-    return function (_x66, _x67) {
+    return function (_x65, _x66) {
       return _ref45.apply(this, arguments);
     };
   }();
@@ -118665,7 +122612,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x68) {
+    return function (_x67) {
       return _ref46.apply(this, arguments);
     };
   }();
@@ -118696,7 +122643,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee47);
     }));
 
-    return function (_x69) {
+    return function (_x68) {
       return _ref47.apply(this, arguments);
     };
   }();
@@ -118728,7 +122675,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee48);
     }));
 
-    return function (_x70, _x71) {
+    return function (_x69, _x70) {
       return _ref48.apply(this, arguments);
     };
   }();
@@ -118760,7 +122707,7 @@ function kovan_Issuer_Issuer(contractSettings) {
       }, _callee49);
     }));
 
-    return function (_x72, _x73) {
+    return function (_x71, _x72) {
       return _ref49.apply(this, arguments);
     };
   }();
@@ -124248,32 +128195,55 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.flagReward = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23() {
+    return regenerator_default.a.wrap(function _callee23$(_context23) {
+      while (1) {
+        switch (_context23.prev = _context23.next) {
+          case 0:
+            _context23.next = 2;
+            return _this.contract.flagReward();
+
+          case 2:
+            return _context23.abrupt("return", _context23.sent);
+
+          case 3:
+          case "end":
+            return _context23.stop();
+        }
+      }
+    }, _callee23);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param collateral {String<EthAddress>}
    * @returns BigNumber
    **/
 
   this.interactionDelay = /*#__PURE__*/function () {
-    var _ref23 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee23(collateral) {
-      return regenerator_default.a.wrap(function _callee23$(_context23) {
+    var _ref24 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24(collateral) {
+      return regenerator_default.a.wrap(function _callee24$(_context24) {
         while (1) {
-          switch (_context23.prev = _context23.next) {
+          switch (_context24.prev = _context24.next) {
             case 0:
-              _context23.next = 2;
+              _context24.next = 2;
               return _this.contract.interactionDelay(collateral);
 
             case 2:
-              return _context23.abrupt("return", _context23.sent);
+              return _context24.abrupt("return", _context24.sent);
 
             case 3:
             case "end":
-              return _context23.stop();
+              return _context24.stop();
           }
         }
-      }, _callee23);
+      }, _callee24);
     }));
 
     return function (_x10) {
-      return _ref23.apply(this, arguments);
+      return _ref24.apply(this, arguments);
     };
   }();
   /**
@@ -124282,36 +128252,13 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    **/
 
 
-  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee24() {
-    return regenerator_default.a.wrap(function _callee24$(_context24) {
-      while (1) {
-        switch (_context24.prev = _context24.next) {
-          case 0:
-            _context24.next = 2;
-            return _this.contract.isResolverCached();
-
-          case 2:
-            return _context24.abrupt("return", _context24.sent);
-
-          case 3:
-          case "end":
-            return _context24.stop();
-        }
-      }
-    }, _callee24);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-
-  this.issuanceRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25() {
+  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee25() {
     return regenerator_default.a.wrap(function _callee25$(_context25) {
       while (1) {
         switch (_context25.prev = _context25.next) {
           case 0:
             _context25.next = 2;
-            return _this.contract.issuanceRatio();
+            return _this.contract.isResolverCached();
 
           case 2:
             return _context25.abrupt("return", _context25.sent);
@@ -124328,13 +128275,13 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    * @returns BigNumber
    **/
 
-  this.liquidationDelay = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee26() {
+  this.issuanceRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee26() {
     return regenerator_default.a.wrap(function _callee26$(_context26) {
       while (1) {
         switch (_context26.prev = _context26.next) {
           case 0:
             _context26.next = 2;
-            return _this.contract.liquidationDelay();
+            return _this.contract.issuanceRatio();
 
           case 2:
             return _context26.abrupt("return", _context26.sent);
@@ -124351,13 +128298,13 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    * @returns BigNumber
    **/
 
-  this.liquidationPenalty = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee27() {
+  this.liquidateReward = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee27() {
     return regenerator_default.a.wrap(function _callee27$(_context27) {
       while (1) {
         switch (_context27.prev = _context27.next) {
           case 0:
             _context27.next = 2;
-            return _this.contract.liquidationPenalty();
+            return _this.contract.liquidateReward();
 
           case 2:
             return _context27.abrupt("return", _context27.sent);
@@ -124374,13 +128321,13 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    * @returns BigNumber
    **/
 
-  this.liquidationRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28() {
+  this.liquidationDelay = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee28() {
     return regenerator_default.a.wrap(function _callee28$(_context28) {
       while (1) {
         switch (_context28.prev = _context28.next) {
           case 0:
             _context28.next = 2;
-            return _this.contract.liquidationRatio();
+            return _this.contract.liquidationDelay();
 
           case 2:
             return _context28.abrupt("return", _context28.sent);
@@ -124397,13 +128344,13 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    * @returns BigNumber
    **/
 
-  this.minimumStakeTime = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee29() {
+  this.liquidationEscrowDuration = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee29() {
     return regenerator_default.a.wrap(function _callee29$(_context29) {
       while (1) {
         switch (_context29.prev = _context29.next) {
           case 0:
             _context29.next = 2;
-            return _this.contract.minimumStakeTime();
+            return _this.contract.liquidationEscrowDuration();
 
           case 2:
             return _context29.abrupt("return", _context29.sent);
@@ -124416,50 +128363,40 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
     }, _callee29);
   }));
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _owner {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
 
-  this.nominateNewOwner = /*#__PURE__*/function () {
-    var _ref30 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee30(_owner, txParams) {
-      return regenerator_default.a.wrap(function _callee30$(_context30) {
-        while (1) {
-          switch (_context30.prev = _context30.next) {
-            case 0:
-              txParams = txParams || {};
-              _context30.next = 3;
-              return _this.contract.nominateNewOwner(_owner, txParams);
+  this.liquidationPenalty = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee30() {
+    return regenerator_default.a.wrap(function _callee30$(_context30) {
+      while (1) {
+        switch (_context30.prev = _context30.next) {
+          case 0:
+            _context30.next = 2;
+            return _this.contract.liquidationPenalty();
 
-            case 3:
-              return _context30.abrupt("return", _context30.sent);
+          case 2:
+            return _context30.abrupt("return", _context30.sent);
 
-            case 4:
-            case "end":
-              return _context30.stop();
-          }
+          case 3:
+          case "end":
+            return _context30.stop();
         }
-      }, _callee30);
-    }));
-
-    return function (_x11, _x12) {
-      return _ref30.apply(this, arguments);
-    };
-  }();
+      }
+    }, _callee30);
+  }));
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @returns BigNumber
    **/
 
-
-  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee31() {
+  this.liquidationRatio = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee31() {
     return regenerator_default.a.wrap(function _callee31$(_context31) {
       while (1) {
         switch (_context31.prev = _context31.next) {
           case 0:
             _context31.next = 2;
-            return _this.contract.nominatedOwner();
+            return _this.contract.liquidationRatio();
 
           case 2:
             return _context31.abrupt("return", _context31.sent);
@@ -124473,16 +128410,16 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @returns BigNumber
    **/
 
-  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32() {
+  this.minimumStakeTime = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee32() {
     return regenerator_default.a.wrap(function _callee32$(_context32) {
       while (1) {
         switch (_context32.prev = _context32.next) {
           case 0:
             _context32.next = 2;
-            return _this.contract.owner();
+            return _this.contract.minimumStakeTime();
 
           case 2:
             return _context32.abrupt("return", _context32.sent);
@@ -124495,71 +128432,73 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
     }, _callee32);
   }));
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * Transaction (consumes gas, requires signer)
+   * @param _owner {String<EthAddress>}
+   * @param txParams {TxParams}
+  
    **/
 
-  this.priceDeviationThresholdFactor = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee33() {
-    return regenerator_default.a.wrap(function _callee33$(_context33) {
-      while (1) {
-        switch (_context33.prev = _context33.next) {
-          case 0:
-            _context33.next = 2;
-            return _this.contract.priceDeviationThresholdFactor();
-
-          case 2:
-            return _context33.abrupt("return", _context33.sent);
-
-          case 3:
-          case "end":
-            return _context33.stop();
-        }
-      }
-    }, _callee33);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns boolean
-   **/
-
-  this.pureChainlinkPriceForAtomicSwapsEnabled = /*#__PURE__*/function () {
-    var _ref34 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34(currencyKey) {
-      return regenerator_default.a.wrap(function _callee34$(_context34) {
+  this.nominateNewOwner = /*#__PURE__*/function () {
+    var _ref33 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee33(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee33$(_context33) {
         while (1) {
-          switch (_context34.prev = _context34.next) {
+          switch (_context33.prev = _context33.next) {
             case 0:
-              _context34.next = 2;
-              return _this.contract.pureChainlinkPriceForAtomicSwapsEnabled(currencyKey);
-
-            case 2:
-              return _context34.abrupt("return", _context34.sent);
+              txParams = txParams || {};
+              _context33.next = 3;
+              return _this.contract.nominateNewOwner(_owner, txParams);
 
             case 3:
+              return _context33.abrupt("return", _context33.sent);
+
+            case 4:
             case "end":
-              return _context34.stop();
+              return _context33.stop();
           }
         }
-      }, _callee34);
+      }, _callee33);
     }));
 
-    return function (_x13) {
-      return _ref34.apply(this, arguments);
+    return function (_x11, _x12) {
+      return _ref33.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
+   * @returns String<EthAddress>
    **/
 
 
-  this.rateStalePeriod = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35() {
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34() {
+    return regenerator_default.a.wrap(function _callee34$(_context34) {
+      while (1) {
+        switch (_context34.prev = _context34.next) {
+          case 0:
+            _context34.next = 2;
+            return _this.contract.nominatedOwner();
+
+          case 2:
+            return _context34.abrupt("return", _context34.sent);
+
+          case 3:
+          case "end":
+            return _context34.stop();
+        }
+      }
+    }, _callee34);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35() {
     return regenerator_default.a.wrap(function _callee35$(_context35) {
       while (1) {
         switch (_context35.prev = _context35.next) {
           case 0:
             _context35.next = 2;
-            return _this.contract.rateStalePeriod();
+            return _this.contract.owner();
 
           case 2:
             return _context35.abrupt("return", _context35.sent);
@@ -124572,72 +128511,71 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
     }, _callee35);
   }));
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
    **/
 
-  this.rebuildCache = /*#__PURE__*/function () {
-    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(txParams) {
-      return regenerator_default.a.wrap(function _callee36$(_context36) {
+  this.priceDeviationThresholdFactor = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36() {
+    return regenerator_default.a.wrap(function _callee36$(_context36) {
+      while (1) {
+        switch (_context36.prev = _context36.next) {
+          case 0:
+            _context36.next = 2;
+            return _this.contract.priceDeviationThresholdFactor();
+
+          case 2:
+            return _context36.abrupt("return", _context36.sent);
+
+          case 3:
+          case "end":
+            return _context36.stop();
+        }
+      }
+    }, _callee36);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns boolean
+   **/
+
+  this.pureChainlinkPriceForAtomicSwapsEnabled = /*#__PURE__*/function () {
+    var _ref37 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37(currencyKey) {
+      return regenerator_default.a.wrap(function _callee37$(_context37) {
         while (1) {
-          switch (_context36.prev = _context36.next) {
+          switch (_context37.prev = _context37.next) {
             case 0:
-              txParams = txParams || {};
-              _context36.next = 3;
-              return _this.contract.rebuildCache(txParams);
+              _context37.next = 2;
+              return _this.contract.pureChainlinkPriceForAtomicSwapsEnabled(currencyKey);
+
+            case 2:
+              return _context37.abrupt("return", _context37.sent);
 
             case 3:
-              return _context36.abrupt("return", _context36.sent);
-
-            case 4:
             case "end":
-              return _context36.stop();
+              return _context37.stop();
           }
         }
-      }, _callee36);
+      }, _callee37);
     }));
 
-    return function (_x14) {
-      return _ref36.apply(this, arguments);
+    return function (_x13) {
+      return _ref37.apply(this, arguments);
     };
   }();
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
+   * @returns BigNumber
    **/
 
 
-  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37() {
-    return regenerator_default.a.wrap(function _callee37$(_context37) {
-      while (1) {
-        switch (_context37.prev = _context37.next) {
-          case 0:
-            _context37.next = 2;
-            return _this.contract.resolver();
-
-          case 2:
-            return _context37.abrupt("return", _context37.sent);
-
-          case 3:
-          case "end":
-            return _context37.stop();
-        }
-      }
-    }, _callee37);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[]
-   **/
-
-  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38() {
+  this.rateStalePeriod = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38() {
     return regenerator_default.a.wrap(function _callee38$(_context38) {
       while (1) {
         switch (_context38.prev = _context38.next) {
           case 0:
             _context38.next = 2;
-            return _this.contract.resolverAddressesRequired();
+            return _this.contract.rateStalePeriod();
 
           case 2:
             return _context38.abrupt("return", _context38.sent);
@@ -124651,20 +128589,19 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _flags {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
 
-  this.setAggregatorWarningFlags = /*#__PURE__*/function () {
-    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(_flags, txParams) {
+  this.rebuildCache = /*#__PURE__*/function () {
+    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(txParams) {
       return regenerator_default.a.wrap(function _callee39$(_context39) {
         while (1) {
           switch (_context39.prev = _context39.next) {
             case 0:
               txParams = txParams || {};
               _context39.next = 3;
-              return _this.contract.setAggregatorWarningFlags(_flags, txParams);
+              return _this.contract.rebuildCache(txParams);
 
             case 3:
               return _context39.abrupt("return", _context39.sent);
@@ -124677,128 +128614,96 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee39);
     }));
 
-    return function (_x15, _x16) {
+    return function (_x14) {
       return _ref39.apply(this, arguments);
     };
   }();
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _equivalent {String<EthAddress>}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
    **/
 
 
-  this.setAtomicEquivalentForDexPricing = /*#__PURE__*/function () {
-    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(_currencyKey, _equivalent, txParams) {
-      return regenerator_default.a.wrap(function _callee40$(_context40) {
-        while (1) {
-          switch (_context40.prev = _context40.next) {
-            case 0:
-              txParams = txParams || {};
-              _context40.next = 3;
-              return _this.contract.setAtomicEquivalentForDexPricing(_currencyKey, _equivalent, txParams);
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40() {
+    return regenerator_default.a.wrap(function _callee40$(_context40) {
+      while (1) {
+        switch (_context40.prev = _context40.next) {
+          case 0:
+            _context40.next = 2;
+            return _this.contract.resolver();
 
-            case 3:
-              return _context40.abrupt("return", _context40.sent);
+          case 2:
+            return _context40.abrupt("return", _context40.sent);
 
-            case 4:
-            case "end":
-              return _context40.stop();
-          }
+          case 3:
+          case "end":
+            return _context40.stop();
         }
-      }, _callee40);
-    }));
+      }
+    }, _callee40);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32[]
+   **/
 
-    return function (_x17, _x18, _x19) {
-      return _ref40.apply(this, arguments);
-    };
-  }();
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41() {
+    return regenerator_default.a.wrap(function _callee41$(_context41) {
+      while (1) {
+        switch (_context41.prev = _context41.next) {
+          case 0:
+            _context41.next = 2;
+            return _this.contract.resolverAddressesRequired();
+
+          case 2:
+            return _context41.abrupt("return", _context41.sent);
+
+          case 3:
+          case "end":
+            return _context41.stop();
+        }
+      }
+    }, _callee41);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.selfLiquidationPenalty = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42() {
+    return regenerator_default.a.wrap(function _callee42$(_context42) {
+      while (1) {
+        switch (_context42.prev = _context42.next) {
+          case 0:
+            _context42.next = 2;
+            return _this.contract.selfLiquidationPenalty();
+
+          case 2:
+            return _context42.abrupt("return", _context42.sent);
+
+          case 3:
+          case "end":
+            return _context42.stop();
+        }
+      }
+    }, _callee42);
+  }));
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _exchangeFeeRate {BigNumber}
+   * @param _flags {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
 
-
-  this.setAtomicExchangeFeeRate = /*#__PURE__*/function () {
-    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(_currencyKey, _exchangeFeeRate, txParams) {
-      return regenerator_default.a.wrap(function _callee41$(_context41) {
-        while (1) {
-          switch (_context41.prev = _context41.next) {
-            case 0:
-              txParams = txParams || {};
-              _context41.next = 3;
-              return _this.contract.setAtomicExchangeFeeRate(_currencyKey, _exchangeFeeRate, txParams);
-
-            case 3:
-              return _context41.abrupt("return", _context41.sent);
-
-            case 4:
-            case "end":
-              return _context41.stop();
-          }
-        }
-      }, _callee41);
-    }));
-
-    return function (_x20, _x21, _x22) {
-      return _ref41.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _maxVolume {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.setAtomicMaxVolumePerBlock = /*#__PURE__*/function () {
-    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(_maxVolume, txParams) {
-      return regenerator_default.a.wrap(function _callee42$(_context42) {
-        while (1) {
-          switch (_context42.prev = _context42.next) {
-            case 0:
-              txParams = txParams || {};
-              _context42.next = 3;
-              return _this.contract.setAtomicMaxVolumePerBlock(_maxVolume, txParams);
-
-            case 3:
-              return _context42.abrupt("return", _context42.sent);
-
-            case 4:
-            case "end":
-              return _context42.stop();
-          }
-        }
-      }, _callee42);
-    }));
-
-    return function (_x23, _x24) {
-      return _ref42.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _window {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.setAtomicTwapWindow = /*#__PURE__*/function () {
-    var _ref43 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43(_window, txParams) {
+  this.setAggregatorWarningFlags = /*#__PURE__*/function () {
+    var _ref43 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43(_flags, txParams) {
       return regenerator_default.a.wrap(function _callee43$(_context43) {
         while (1) {
           switch (_context43.prev = _context43.next) {
             case 0:
               txParams = txParams || {};
               _context43.next = 3;
-              return _this.contract.setAtomicTwapWindow(_window, txParams);
+              return _this.contract.setAggregatorWarningFlags(_flags, txParams);
 
             case 3:
               return _context43.abrupt("return", _context43.sent);
@@ -124811,28 +128716,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee43);
     }));
 
-    return function (_x25, _x26) {
+    return function (_x15, _x16) {
       return _ref43.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
    * @param _currencyKey {bytes32}
-   * @param _window {BigNumber}
+   * @param _equivalent {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setAtomicVolatilityConsiderationWindow = /*#__PURE__*/function () {
-    var _ref44 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44(_currencyKey, _window, txParams) {
+  this.setAtomicEquivalentForDexPricing = /*#__PURE__*/function () {
+    var _ref44 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44(_currencyKey, _equivalent, txParams) {
       return regenerator_default.a.wrap(function _callee44$(_context44) {
         while (1) {
           switch (_context44.prev = _context44.next) {
             case 0:
               txParams = txParams || {};
               _context44.next = 3;
-              return _this.contract.setAtomicVolatilityConsiderationWindow(_currencyKey, _window, txParams);
+              return _this.contract.setAtomicEquivalentForDexPricing(_currencyKey, _equivalent, txParams);
 
             case 3:
               return _context44.abrupt("return", _context44.sent);
@@ -124845,28 +128750,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee44);
     }));
 
-    return function (_x27, _x28, _x29) {
+    return function (_x17, _x18, _x19) {
       return _ref44.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
    * @param _currencyKey {bytes32}
-   * @param _threshold {BigNumber}
+   * @param _exchangeFeeRate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setAtomicVolatilityUpdateThreshold = /*#__PURE__*/function () {
-    var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(_currencyKey, _threshold, txParams) {
+  this.setAtomicExchangeFeeRate = /*#__PURE__*/function () {
+    var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(_currencyKey, _exchangeFeeRate, txParams) {
       return regenerator_default.a.wrap(function _callee45$(_context45) {
         while (1) {
           switch (_context45.prev = _context45.next) {
             case 0:
               txParams = txParams || {};
               _context45.next = 3;
-              return _this.contract.setAtomicVolatilityUpdateThreshold(_currencyKey, _threshold, txParams);
+              return _this.contract.setAtomicExchangeFeeRate(_currencyKey, _exchangeFeeRate, txParams);
 
             case 3:
               return _context45.abrupt("return", _context45.sent);
@@ -124879,28 +128784,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee45);
     }));
 
-    return function (_x30, _x31, _x32) {
+    return function (_x20, _x21, _x22) {
       return _ref45.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _collateral {String<EthAddress>}
-   * @param _collapseFeeRate {BigNumber}
+   * @param _maxVolume {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setCollapseFeeRate = /*#__PURE__*/function () {
-    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(_collateral, _collapseFeeRate, txParams) {
+  this.setAtomicMaxVolumePerBlock = /*#__PURE__*/function () {
+    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(_maxVolume, txParams) {
       return regenerator_default.a.wrap(function _callee46$(_context46) {
         while (1) {
           switch (_context46.prev = _context46.next) {
             case 0:
               txParams = txParams || {};
               _context46.next = 3;
-              return _this.contract.setCollapseFeeRate(_collateral, _collapseFeeRate, txParams);
+              return _this.contract.setAtomicMaxVolumePerBlock(_maxVolume, txParams);
 
             case 3:
               return _context46.abrupt("return", _context46.sent);
@@ -124913,28 +128817,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x33, _x34, _x35) {
+    return function (_x23, _x24) {
       return _ref46.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _value {BigNumber}
+   * @param _window {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setCrossChainSynthTransferEnabled = /*#__PURE__*/function () {
-    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(_currencyKey, _value, txParams) {
+  this.setAtomicTwapWindow = /*#__PURE__*/function () {
+    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(_window, txParams) {
       return regenerator_default.a.wrap(function _callee47$(_context47) {
         while (1) {
           switch (_context47.prev = _context47.next) {
             case 0:
               txParams = txParams || {};
               _context47.next = 3;
-              return _this.contract.setCrossChainSynthTransferEnabled(_currencyKey, _value, txParams);
+              return _this.contract.setAtomicTwapWindow(_window, txParams);
 
             case 3:
               return _context47.abrupt("return", _context47.sent);
@@ -124947,28 +128850,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee47);
     }));
 
-    return function (_x36, _x37, _x38) {
+    return function (_x25, _x26) {
       return _ref47.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _gasLimitType {Number}
-   * @param _crossDomainMessageGasLimit {BigNumber}
+   * @param _currencyKey {bytes32}
+   * @param _window {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setCrossDomainMessageGasLimit = /*#__PURE__*/function () {
-    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(_gasLimitType, _crossDomainMessageGasLimit, txParams) {
+  this.setAtomicVolatilityConsiderationWindow = /*#__PURE__*/function () {
+    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(_currencyKey, _window, txParams) {
       return regenerator_default.a.wrap(function _callee48$(_context48) {
         while (1) {
           switch (_context48.prev = _context48.next) {
             case 0:
               txParams = txParams || {};
               _context48.next = 3;
-              return _this.contract.setCrossDomainMessageGasLimit(_gasLimitType, _crossDomainMessageGasLimit, txParams);
+              return _this.contract.setAtomicVolatilityConsiderationWindow(_currencyKey, _window, txParams);
 
             case 3:
               return _context48.abrupt("return", _context48.sent);
@@ -124981,27 +128884,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee48);
     }));
 
-    return function (_x39, _x40, _x41) {
+    return function (_x27, _x28, _x29) {
       return _ref48.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _seconds {BigNumber}
+   * @param _currencyKey {bytes32}
+   * @param _threshold {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setDebtSnapshotStaleTime = /*#__PURE__*/function () {
-    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(_seconds, txParams) {
+  this.setAtomicVolatilityUpdateThreshold = /*#__PURE__*/function () {
+    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(_currencyKey, _threshold, txParams) {
       return regenerator_default.a.wrap(function _callee49$(_context49) {
         while (1) {
           switch (_context49.prev = _context49.next) {
             case 0:
               txParams = txParams || {};
               _context49.next = 3;
-              return _this.contract.setDebtSnapshotStaleTime(_seconds, txParams);
+              return _this.contract.setAtomicVolatilityUpdateThreshold(_currencyKey, _threshold, txParams);
 
             case 3:
               return _context49.abrupt("return", _context49.sent);
@@ -125014,27 +128918,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee49);
     }));
 
-    return function (_x42, _x43) {
+    return function (_x30, _x31, _x32) {
       return _ref49.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _rate {BigNumber}
+   * @param _collateral {String<EthAddress>}
+   * @param _collapseFeeRate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setEtherWrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref50 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50(_rate, txParams) {
+  this.setCollapseFeeRate = /*#__PURE__*/function () {
+    var _ref50 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50(_collateral, _collapseFeeRate, txParams) {
       return regenerator_default.a.wrap(function _callee50$(_context50) {
         while (1) {
           switch (_context50.prev = _context50.next) {
             case 0:
               txParams = txParams || {};
               _context50.next = 3;
-              return _this.contract.setEtherWrapperBurnFeeRate(_rate, txParams);
+              return _this.contract.setCollapseFeeRate(_collateral, _collapseFeeRate, txParams);
 
             case 3:
               return _context50.abrupt("return", _context50.sent);
@@ -125047,27 +128952,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee50);
     }));
 
-    return function (_x44, _x45) {
+    return function (_x33, _x34, _x35) {
       return _ref50.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _maxETH {BigNumber}
+   * @param _currencyKey {bytes32}
+   * @param _value {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setEtherWrapperMaxETH = /*#__PURE__*/function () {
-    var _ref51 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51(_maxETH, txParams) {
+  this.setCrossChainSynthTransferEnabled = /*#__PURE__*/function () {
+    var _ref51 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51(_currencyKey, _value, txParams) {
       return regenerator_default.a.wrap(function _callee51$(_context51) {
         while (1) {
           switch (_context51.prev = _context51.next) {
             case 0:
               txParams = txParams || {};
               _context51.next = 3;
-              return _this.contract.setEtherWrapperMaxETH(_maxETH, txParams);
+              return _this.contract.setCrossChainSynthTransferEnabled(_currencyKey, _value, txParams);
 
             case 3:
               return _context51.abrupt("return", _context51.sent);
@@ -125080,27 +128986,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee51);
     }));
 
-    return function (_x46, _x47) {
+    return function (_x36, _x37, _x38) {
       return _ref51.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _rate {BigNumber}
+   * @param _gasLimitType {Number}
+   * @param _crossDomainMessageGasLimit {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setEtherWrapperMintFeeRate = /*#__PURE__*/function () {
-    var _ref52 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52(_rate, txParams) {
+  this.setCrossDomainMessageGasLimit = /*#__PURE__*/function () {
+    var _ref52 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52(_gasLimitType, _crossDomainMessageGasLimit, txParams) {
       return regenerator_default.a.wrap(function _callee52$(_context52) {
         while (1) {
           switch (_context52.prev = _context52.next) {
             case 0:
               txParams = txParams || {};
               _context52.next = 3;
-              return _this.contract.setEtherWrapperMintFeeRate(_rate, txParams);
+              return _this.contract.setCrossDomainMessageGasLimit(_gasLimitType, _crossDomainMessageGasLimit, txParams);
 
             case 3:
               return _context52.abrupt("return", _context52.sent);
@@ -125113,27 +129020,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee52);
     }));
 
-    return function (_x48, _x49) {
+    return function (_x39, _x40, _x41) {
       return _ref52.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param rounds {BigNumber}
+   * @param _seconds {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeDynamicFeeRounds = /*#__PURE__*/function () {
-    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(rounds, txParams) {
+  this.setDebtSnapshotStaleTime = /*#__PURE__*/function () {
+    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(_seconds, txParams) {
       return regenerator_default.a.wrap(function _callee53$(_context53) {
         while (1) {
           switch (_context53.prev = _context53.next) {
             case 0:
               txParams = txParams || {};
               _context53.next = 3;
-              return _this.contract.setExchangeDynamicFeeRounds(rounds, txParams);
+              return _this.contract.setDebtSnapshotStaleTime(_seconds, txParams);
 
             case 3:
               return _context53.abrupt("return", _context53.sent);
@@ -125146,27 +129053,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee53);
     }));
 
-    return function (_x50, _x51) {
+    return function (_x42, _x43) {
       return _ref53.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param threshold {BigNumber}
+   * @param _rate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeDynamicFeeThreshold = /*#__PURE__*/function () {
-    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(threshold, txParams) {
+  this.setEtherWrapperBurnFeeRate = /*#__PURE__*/function () {
+    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(_rate, txParams) {
       return regenerator_default.a.wrap(function _callee54$(_context54) {
         while (1) {
           switch (_context54.prev = _context54.next) {
             case 0:
               txParams = txParams || {};
               _context54.next = 3;
-              return _this.contract.setExchangeDynamicFeeThreshold(threshold, txParams);
+              return _this.contract.setEtherWrapperBurnFeeRate(_rate, txParams);
 
             case 3:
               return _context54.abrupt("return", _context54.sent);
@@ -125179,27 +129086,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee54);
     }));
 
-    return function (_x52, _x53) {
+    return function (_x44, _x45) {
       return _ref54.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param weightDecay {BigNumber}
+   * @param _maxETH {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeDynamicFeeWeightDecay = /*#__PURE__*/function () {
-    var _ref55 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55(weightDecay, txParams) {
+  this.setEtherWrapperMaxETH = /*#__PURE__*/function () {
+    var _ref55 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55(_maxETH, txParams) {
       return regenerator_default.a.wrap(function _callee55$(_context55) {
         while (1) {
           switch (_context55.prev = _context55.next) {
             case 0:
               txParams = txParams || {};
               _context55.next = 3;
-              return _this.contract.setExchangeDynamicFeeWeightDecay(weightDecay, txParams);
+              return _this.contract.setEtherWrapperMaxETH(_maxETH, txParams);
 
             case 3:
               return _context55.abrupt("return", _context55.sent);
@@ -125212,28 +129119,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee55);
     }));
 
-    return function (_x54, _x55) {
+    return function (_x46, _x47) {
       return _ref55.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param synthKeys {bytes32[]}
-   * @param exchangeFeeRates {uint256[]}
+   * @param _rate {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeFeeRateForSynths = /*#__PURE__*/function () {
-    var _ref56 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56(synthKeys, exchangeFeeRates, txParams) {
+  this.setEtherWrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref56 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56(_rate, txParams) {
       return regenerator_default.a.wrap(function _callee56$(_context56) {
         while (1) {
           switch (_context56.prev = _context56.next) {
             case 0:
               txParams = txParams || {};
               _context56.next = 3;
-              return _this.contract.setExchangeFeeRateForSynths(synthKeys, exchangeFeeRates, txParams);
+              return _this.contract.setEtherWrapperMintFeeRate(_rate, txParams);
 
             case 3:
               return _context56.abrupt("return", _context56.sent);
@@ -125246,27 +129152,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee56);
     }));
 
-    return function (_x56, _x57, _x58) {
+    return function (_x48, _x49) {
       return _ref56.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param maxFee {BigNumber}
+   * @param rounds {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setExchangeMaxDynamicFee = /*#__PURE__*/function () {
-    var _ref57 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57(maxFee, txParams) {
+  this.setExchangeDynamicFeeRounds = /*#__PURE__*/function () {
+    var _ref57 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57(rounds, txParams) {
       return regenerator_default.a.wrap(function _callee57$(_context57) {
         while (1) {
           switch (_context57.prev = _context57.next) {
             case 0:
               txParams = txParams || {};
               _context57.next = 3;
-              return _this.contract.setExchangeMaxDynamicFee(maxFee, txParams);
+              return _this.contract.setExchangeDynamicFeeRounds(rounds, txParams);
 
             case 3:
               return _context57.abrupt("return", _context57.sent);
@@ -125279,27 +129185,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee57);
     }));
 
-    return function (_x59, _x60) {
+    return function (_x50, _x51) {
       return _ref57.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _feePeriodDuration {BigNumber}
+   * @param threshold {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setFeePeriodDuration = /*#__PURE__*/function () {
-    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(_feePeriodDuration, txParams) {
+  this.setExchangeDynamicFeeThreshold = /*#__PURE__*/function () {
+    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(threshold, txParams) {
       return regenerator_default.a.wrap(function _callee58$(_context58) {
         while (1) {
           switch (_context58.prev = _context58.next) {
             case 0:
               txParams = txParams || {};
               _context58.next = 3;
-              return _this.contract.setFeePeriodDuration(_feePeriodDuration, txParams);
+              return _this.contract.setExchangeDynamicFeeThreshold(threshold, txParams);
 
             case 3:
               return _context58.abrupt("return", _context58.sent);
@@ -125312,28 +129218,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee58);
     }));
 
-    return function (_x61, _x62) {
+    return function (_x52, _x53) {
       return _ref58.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _collateral {String<EthAddress>}
-   * @param _interactionDelay {BigNumber}
+   * @param weightDecay {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setInteractionDelay = /*#__PURE__*/function () {
-    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(_collateral, _interactionDelay, txParams) {
+  this.setExchangeDynamicFeeWeightDecay = /*#__PURE__*/function () {
+    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(weightDecay, txParams) {
       return regenerator_default.a.wrap(function _callee59$(_context59) {
         while (1) {
           switch (_context59.prev = _context59.next) {
             case 0:
               txParams = txParams || {};
               _context59.next = 3;
-              return _this.contract.setInteractionDelay(_collateral, _interactionDelay, txParams);
+              return _this.contract.setExchangeDynamicFeeWeightDecay(weightDecay, txParams);
 
             case 3:
               return _context59.abrupt("return", _context59.sent);
@@ -125346,27 +129251,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee59);
     }));
 
-    return function (_x63, _x64, _x65) {
+    return function (_x54, _x55) {
       return _ref59.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param ratio {BigNumber}
+   * @param synthKeys {bytes32[]}
+   * @param exchangeFeeRates {uint256[]}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setIssuanceRatio = /*#__PURE__*/function () {
-    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(ratio, txParams) {
+  this.setExchangeFeeRateForSynths = /*#__PURE__*/function () {
+    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(synthKeys, exchangeFeeRates, txParams) {
       return regenerator_default.a.wrap(function _callee60$(_context60) {
         while (1) {
           switch (_context60.prev = _context60.next) {
             case 0:
               txParams = txParams || {};
               _context60.next = 3;
-              return _this.contract.setIssuanceRatio(ratio, txParams);
+              return _this.contract.setExchangeFeeRateForSynths(synthKeys, exchangeFeeRates, txParams);
 
             case 3:
               return _context60.abrupt("return", _context60.sent);
@@ -125379,27 +129285,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee60);
     }));
 
-    return function (_x66, _x67) {
+    return function (_x56, _x57, _x58) {
       return _ref60.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param time {BigNumber}
+   * @param maxFee {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setLiquidationDelay = /*#__PURE__*/function () {
-    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(time, txParams) {
+  this.setExchangeMaxDynamicFee = /*#__PURE__*/function () {
+    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(maxFee, txParams) {
       return regenerator_default.a.wrap(function _callee61$(_context61) {
         while (1) {
           switch (_context61.prev = _context61.next) {
             case 0:
               txParams = txParams || {};
               _context61.next = 3;
-              return _this.contract.setLiquidationDelay(time, txParams);
+              return _this.contract.setExchangeMaxDynamicFee(maxFee, txParams);
 
             case 3:
               return _context61.abrupt("return", _context61.sent);
@@ -125412,27 +129318,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee61);
     }));
 
-    return function (_x68, _x69) {
+    return function (_x59, _x60) {
       return _ref61.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param penalty {BigNumber}
+   * @param _feePeriodDuration {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setLiquidationPenalty = /*#__PURE__*/function () {
-    var _ref62 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62(penalty, txParams) {
+  this.setFeePeriodDuration = /*#__PURE__*/function () {
+    var _ref62 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62(_feePeriodDuration, txParams) {
       return regenerator_default.a.wrap(function _callee62$(_context62) {
         while (1) {
           switch (_context62.prev = _context62.next) {
             case 0:
               txParams = txParams || {};
               _context62.next = 3;
-              return _this.contract.setLiquidationPenalty(penalty, txParams);
+              return _this.contract.setFeePeriodDuration(_feePeriodDuration, txParams);
 
             case 3:
               return _context62.abrupt("return", _context62.sent);
@@ -125445,27 +129351,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee62);
     }));
 
-    return function (_x70, _x71) {
+    return function (_x61, _x62) {
       return _ref62.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _liquidationRatio {BigNumber}
+   * @param reward {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setLiquidationRatio = /*#__PURE__*/function () {
-    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(_liquidationRatio, txParams) {
+  this.setFlagReward = /*#__PURE__*/function () {
+    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(reward, txParams) {
       return regenerator_default.a.wrap(function _callee63$(_context63) {
         while (1) {
           switch (_context63.prev = _context63.next) {
             case 0:
               txParams = txParams || {};
               _context63.next = 3;
-              return _this.contract.setLiquidationRatio(_liquidationRatio, txParams);
+              return _this.contract.setFlagReward(reward, txParams);
 
             case 3:
               return _context63.abrupt("return", _context63.sent);
@@ -125478,27 +129384,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee63);
     }));
 
-    return function (_x72, _x73) {
+    return function (_x63, _x64) {
       return _ref63.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _seconds {BigNumber}
+   * @param _collateral {String<EthAddress>}
+   * @param _interactionDelay {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setMinimumStakeTime = /*#__PURE__*/function () {
-    var _ref64 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64(_seconds, txParams) {
+  this.setInteractionDelay = /*#__PURE__*/function () {
+    var _ref64 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64(_collateral, _interactionDelay, txParams) {
       return regenerator_default.a.wrap(function _callee64$(_context64) {
         while (1) {
           switch (_context64.prev = _context64.next) {
             case 0:
               txParams = txParams || {};
               _context64.next = 3;
-              return _this.contract.setMinimumStakeTime(_seconds, txParams);
+              return _this.contract.setInteractionDelay(_collateral, _interactionDelay, txParams);
 
             case 3:
               return _context64.abrupt("return", _context64.sent);
@@ -125511,27 +129418,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee64);
     }));
 
-    return function (_x74, _x75) {
+    return function (_x65, _x66, _x67) {
       return _ref64.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _priceDeviationThresholdFactor {BigNumber}
+   * @param ratio {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setPriceDeviationThresholdFactor = /*#__PURE__*/function () {
-    var _ref65 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65(_priceDeviationThresholdFactor, txParams) {
+  this.setIssuanceRatio = /*#__PURE__*/function () {
+    var _ref65 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65(ratio, txParams) {
       return regenerator_default.a.wrap(function _callee65$(_context65) {
         while (1) {
           switch (_context65.prev = _context65.next) {
             case 0:
               txParams = txParams || {};
               _context65.next = 3;
-              return _this.contract.setPriceDeviationThresholdFactor(_priceDeviationThresholdFactor, txParams);
+              return _this.contract.setIssuanceRatio(ratio, txParams);
 
             case 3:
               return _context65.abrupt("return", _context65.sent);
@@ -125544,28 +129451,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee65);
     }));
 
-    return function (_x76, _x77) {
+    return function (_x68, _x69) {
       return _ref65.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _currencyKey {bytes32}
-   * @param _enabled {boolean}
+   * @param reward {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setPureChainlinkPriceForAtomicSwapsEnabled = /*#__PURE__*/function () {
-    var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(_currencyKey, _enabled, txParams) {
+  this.setLiquidateReward = /*#__PURE__*/function () {
+    var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(reward, txParams) {
       return regenerator_default.a.wrap(function _callee66$(_context66) {
         while (1) {
           switch (_context66.prev = _context66.next) {
             case 0:
               txParams = txParams || {};
               _context66.next = 3;
-              return _this.contract.setPureChainlinkPriceForAtomicSwapsEnabled(_currencyKey, _enabled, txParams);
+              return _this.contract.setLiquidateReward(reward, txParams);
 
             case 3:
               return _context66.abrupt("return", _context66.sent);
@@ -125578,27 +129484,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee66);
     }));
 
-    return function (_x78, _x79, _x80) {
+    return function (_x70, _x71) {
       return _ref66.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param period {BigNumber}
+   * @param time {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setRateStalePeriod = /*#__PURE__*/function () {
-    var _ref67 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67(period, txParams) {
+  this.setLiquidationDelay = /*#__PURE__*/function () {
+    var _ref67 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67(time, txParams) {
       return regenerator_default.a.wrap(function _callee67$(_context67) {
         while (1) {
           switch (_context67.prev = _context67.next) {
             case 0:
               txParams = txParams || {};
               _context67.next = 3;
-              return _this.contract.setRateStalePeriod(period, txParams);
+              return _this.contract.setLiquidationDelay(time, txParams);
 
             case 3:
               return _context67.abrupt("return", _context67.sent);
@@ -125611,27 +129517,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee67);
     }));
 
-    return function (_x81, _x82) {
+    return function (_x72, _x73) {
       return _ref67.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param percent {BigNumber}
+   * @param duration {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTargetThreshold = /*#__PURE__*/function () {
-    var _ref68 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68(percent, txParams) {
+  this.setLiquidationEscrowDuration = /*#__PURE__*/function () {
+    var _ref68 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68(duration, txParams) {
       return regenerator_default.a.wrap(function _callee68$(_context68) {
         while (1) {
           switch (_context68.prev = _context68.next) {
             case 0:
               txParams = txParams || {};
               _context68.next = 3;
-              return _this.contract.setTargetThreshold(percent, txParams);
+              return _this.contract.setLiquidationEscrowDuration(duration, txParams);
 
             case 3:
               return _context68.abrupt("return", _context68.sent);
@@ -125644,27 +129550,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee68);
     }));
 
-    return function (_x83, _x84) {
+    return function (_x74, _x75) {
       return _ref68.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _tradingRewardsEnabled {boolean}
+   * @param penalty {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTradingRewardsEnabled = /*#__PURE__*/function () {
-    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(_tradingRewardsEnabled, txParams) {
+  this.setLiquidationPenalty = /*#__PURE__*/function () {
+    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(penalty, txParams) {
       return regenerator_default.a.wrap(function _callee69$(_context69) {
         while (1) {
           switch (_context69.prev = _context69.next) {
             case 0:
               txParams = txParams || {};
               _context69.next = 3;
-              return _this.contract.setTradingRewardsEnabled(_tradingRewardsEnabled, txParams);
+              return _this.contract.setLiquidationPenalty(penalty, txParams);
 
             case 3:
               return _context69.abrupt("return", _context69.sent);
@@ -125677,27 +129583,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee69);
     }));
 
-    return function (_x85, _x86) {
+    return function (_x76, _x77) {
       return _ref69.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _waitingPeriodSecs {BigNumber}
+   * @param _liquidationRatio {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWaitingPeriodSecs = /*#__PURE__*/function () {
-    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(_waitingPeriodSecs, txParams) {
+  this.setLiquidationRatio = /*#__PURE__*/function () {
+    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(_liquidationRatio, txParams) {
       return regenerator_default.a.wrap(function _callee70$(_context70) {
         while (1) {
           switch (_context70.prev = _context70.next) {
             case 0:
               txParams = txParams || {};
               _context70.next = 3;
-              return _this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
+              return _this.contract.setLiquidationRatio(_liquidationRatio, txParams);
 
             case 3:
               return _context70.abrupt("return", _context70.sent);
@@ -125710,28 +129616,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee70);
     }));
 
-    return function (_x87, _x88) {
+    return function (_x78, _x79) {
       return _ref70.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _wrapper {String<EthAddress>}
-   * @param _rate {int256}
+   * @param _seconds {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref71 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee71(_wrapper, _rate, txParams) {
+  this.setMinimumStakeTime = /*#__PURE__*/function () {
+    var _ref71 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee71(_seconds, txParams) {
       return regenerator_default.a.wrap(function _callee71$(_context71) {
         while (1) {
           switch (_context71.prev = _context71.next) {
             case 0:
               txParams = txParams || {};
               _context71.next = 3;
-              return _this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
+              return _this.contract.setMinimumStakeTime(_seconds, txParams);
 
             case 3:
               return _context71.abrupt("return", _context71.sent);
@@ -125744,28 +129649,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee71);
     }));
 
-    return function (_x89, _x90, _x91) {
+    return function (_x80, _x81) {
       return _ref71.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _wrapper {String<EthAddress>}
-   * @param _maxTokenAmount {BigNumber}
+   * @param _priceDeviationThresholdFactor {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperMaxTokenAmount = /*#__PURE__*/function () {
-    var _ref72 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee72(_wrapper, _maxTokenAmount, txParams) {
+  this.setPriceDeviationThresholdFactor = /*#__PURE__*/function () {
+    var _ref72 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee72(_priceDeviationThresholdFactor, txParams) {
       return regenerator_default.a.wrap(function _callee72$(_context72) {
         while (1) {
           switch (_context72.prev = _context72.next) {
             case 0:
               txParams = txParams || {};
               _context72.next = 3;
-              return _this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
+              return _this.contract.setPriceDeviationThresholdFactor(_priceDeviationThresholdFactor, txParams);
 
             case 3:
               return _context72.abrupt("return", _context72.sent);
@@ -125778,28 +129682,28 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee72);
     }));
 
-    return function (_x92, _x93, _x94) {
+    return function (_x82, _x83) {
       return _ref72.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _wrapper {String<EthAddress>}
-   * @param _rate {int256}
+   * @param _currencyKey {bytes32}
+   * @param _enabled {boolean}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperMintFeeRate = /*#__PURE__*/function () {
-    var _ref73 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee73(_wrapper, _rate, txParams) {
+  this.setPureChainlinkPriceForAtomicSwapsEnabled = /*#__PURE__*/function () {
+    var _ref73 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee73(_currencyKey, _enabled, txParams) {
       return regenerator_default.a.wrap(function _callee73$(_context73) {
         while (1) {
           switch (_context73.prev = _context73.next) {
             case 0:
               txParams = txParams || {};
               _context73.next = 3;
-              return _this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+              return _this.contract.setPureChainlinkPriceForAtomicSwapsEnabled(_currencyKey, _enabled, txParams);
 
             case 3:
               return _context73.abrupt("return", _context73.sent);
@@ -125812,8 +129716,275 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
       }, _callee73);
     }));
 
-    return function (_x95, _x96, _x97) {
+    return function (_x84, _x85, _x86) {
       return _ref73.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param period {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setRateStalePeriod = /*#__PURE__*/function () {
+    var _ref74 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee74(period, txParams) {
+      return regenerator_default.a.wrap(function _callee74$(_context74) {
+        while (1) {
+          switch (_context74.prev = _context74.next) {
+            case 0:
+              txParams = txParams || {};
+              _context74.next = 3;
+              return _this.contract.setRateStalePeriod(period, txParams);
+
+            case 3:
+              return _context74.abrupt("return", _context74.sent);
+
+            case 4:
+            case "end":
+              return _context74.stop();
+          }
+        }
+      }, _callee74);
+    }));
+
+    return function (_x87, _x88) {
+      return _ref74.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param penalty {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setSelfLiquidationPenalty = /*#__PURE__*/function () {
+    var _ref75 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee75(penalty, txParams) {
+      return regenerator_default.a.wrap(function _callee75$(_context75) {
+        while (1) {
+          switch (_context75.prev = _context75.next) {
+            case 0:
+              txParams = txParams || {};
+              _context75.next = 3;
+              return _this.contract.setSelfLiquidationPenalty(penalty, txParams);
+
+            case 3:
+              return _context75.abrupt("return", _context75.sent);
+
+            case 4:
+            case "end":
+              return _context75.stop();
+          }
+        }
+      }, _callee75);
+    }));
+
+    return function (_x89, _x90) {
+      return _ref75.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param percent {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setTargetThreshold = /*#__PURE__*/function () {
+    var _ref76 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee76(percent, txParams) {
+      return regenerator_default.a.wrap(function _callee76$(_context76) {
+        while (1) {
+          switch (_context76.prev = _context76.next) {
+            case 0:
+              txParams = txParams || {};
+              _context76.next = 3;
+              return _this.contract.setTargetThreshold(percent, txParams);
+
+            case 3:
+              return _context76.abrupt("return", _context76.sent);
+
+            case 4:
+            case "end":
+              return _context76.stop();
+          }
+        }
+      }, _callee76);
+    }));
+
+    return function (_x91, _x92) {
+      return _ref76.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _tradingRewardsEnabled {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setTradingRewardsEnabled = /*#__PURE__*/function () {
+    var _ref77 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee77(_tradingRewardsEnabled, txParams) {
+      return regenerator_default.a.wrap(function _callee77$(_context77) {
+        while (1) {
+          switch (_context77.prev = _context77.next) {
+            case 0:
+              txParams = txParams || {};
+              _context77.next = 3;
+              return _this.contract.setTradingRewardsEnabled(_tradingRewardsEnabled, txParams);
+
+            case 3:
+              return _context77.abrupt("return", _context77.sent);
+
+            case 4:
+            case "end":
+              return _context77.stop();
+          }
+        }
+      }, _callee77);
+    }));
+
+    return function (_x93, _x94) {
+      return _ref77.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _waitingPeriodSecs {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWaitingPeriodSecs = /*#__PURE__*/function () {
+    var _ref78 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee78(_waitingPeriodSecs, txParams) {
+      return regenerator_default.a.wrap(function _callee78$(_context78) {
+        while (1) {
+          switch (_context78.prev = _context78.next) {
+            case 0:
+              txParams = txParams || {};
+              _context78.next = 3;
+              return _this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
+
+            case 3:
+              return _context78.abrupt("return", _context78.sent);
+
+            case 4:
+            case "end":
+              return _context78.stop();
+          }
+        }
+      }, _callee78);
+    }));
+
+    return function (_x95, _x96) {
+      return _ref78.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _rate {int256}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWrapperBurnFeeRate = /*#__PURE__*/function () {
+    var _ref79 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee79(_wrapper, _rate, txParams) {
+      return regenerator_default.a.wrap(function _callee79$(_context79) {
+        while (1) {
+          switch (_context79.prev = _context79.next) {
+            case 0:
+              txParams = txParams || {};
+              _context79.next = 3;
+              return _this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
+
+            case 3:
+              return _context79.abrupt("return", _context79.sent);
+
+            case 4:
+            case "end":
+              return _context79.stop();
+          }
+        }
+      }, _callee79);
+    }));
+
+    return function (_x97, _x98, _x99) {
+      return _ref79.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _maxTokenAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWrapperMaxTokenAmount = /*#__PURE__*/function () {
+    var _ref80 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee80(_wrapper, _maxTokenAmount, txParams) {
+      return regenerator_default.a.wrap(function _callee80$(_context80) {
+        while (1) {
+          switch (_context80.prev = _context80.next) {
+            case 0:
+              txParams = txParams || {};
+              _context80.next = 3;
+              return _this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
+
+            case 3:
+              return _context80.abrupt("return", _context80.sent);
+
+            case 4:
+            case "end":
+              return _context80.stop();
+          }
+        }
+      }, _callee80);
+    }));
+
+    return function (_x100, _x101, _x102) {
+      return _ref80.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _rate {int256}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref81 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee81(_wrapper, _rate, txParams) {
+      return regenerator_default.a.wrap(function _callee81$(_context81) {
+        while (1) {
+          switch (_context81.prev = _context81.next) {
+            case 0:
+              txParams = txParams || {};
+              _context81.next = 3;
+              return _this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+
+            case 3:
+              return _context81.abrupt("return", _context81.sent);
+
+            case 4:
+            case "end":
+              return _context81.stop();
+          }
+        }
+      }, _callee81);
+    }));
+
+    return function (_x103, _x104, _x105) {
+      return _ref81.apply(this, arguments);
     };
   }();
   /**
@@ -125822,69 +129993,69 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    **/
 
 
-  this.targetThreshold = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee74() {
-    return regenerator_default.a.wrap(function _callee74$(_context74) {
+  this.targetThreshold = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee82() {
+    return regenerator_default.a.wrap(function _callee82$(_context82) {
       while (1) {
-        switch (_context74.prev = _context74.next) {
+        switch (_context82.prev = _context82.next) {
           case 0:
-            _context74.next = 2;
+            _context82.next = 2;
             return _this.contract.targetThreshold();
 
           case 2:
-            return _context74.abrupt("return", _context74.sent);
+            return _context82.abrupt("return", _context82.sent);
 
           case 3:
           case "end":
-            return _context74.stop();
+            return _context82.stop();
         }
       }
-    }, _callee74);
+    }, _callee82);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
 
-  this.tradingRewardsEnabled = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee75() {
-    return regenerator_default.a.wrap(function _callee75$(_context75) {
+  this.tradingRewardsEnabled = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee83() {
+    return regenerator_default.a.wrap(function _callee83$(_context83) {
       while (1) {
-        switch (_context75.prev = _context75.next) {
+        switch (_context83.prev = _context83.next) {
           case 0:
-            _context75.next = 2;
+            _context83.next = 2;
             return _this.contract.tradingRewardsEnabled();
 
           case 2:
-            return _context75.abrupt("return", _context75.sent);
+            return _context83.abrupt("return", _context83.sent);
 
           case 3:
           case "end":
-            return _context75.stop();
+            return _context83.stop();
         }
       }
-    }, _callee75);
+    }, _callee83);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
 
-  this.waitingPeriodSecs = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee76() {
-    return regenerator_default.a.wrap(function _callee76$(_context76) {
+  this.waitingPeriodSecs = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee84() {
+    return regenerator_default.a.wrap(function _callee84$(_context84) {
       while (1) {
-        switch (_context76.prev = _context76.next) {
+        switch (_context84.prev = _context84.next) {
           case 0:
-            _context76.next = 2;
+            _context84.next = 2;
             return _this.contract.waitingPeriodSecs();
 
           case 2:
-            return _context76.abrupt("return", _context76.sent);
+            return _context84.abrupt("return", _context84.sent);
 
           case 3:
           case "end":
-            return _context76.stop();
+            return _context84.stop();
         }
       }
-    }, _callee76);
+    }, _callee84);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -125893,27 +130064,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
    **/
 
   this.wrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref77 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee77(wrapper) {
-      return regenerator_default.a.wrap(function _callee77$(_context77) {
+    var _ref85 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee85(wrapper) {
+      return regenerator_default.a.wrap(function _callee85$(_context85) {
         while (1) {
-          switch (_context77.prev = _context77.next) {
+          switch (_context85.prev = _context85.next) {
             case 0:
-              _context77.next = 2;
+              _context85.next = 2;
               return _this.contract.wrapperBurnFeeRate(wrapper);
 
             case 2:
-              return _context77.abrupt("return", _context77.sent);
+              return _context85.abrupt("return", _context85.sent);
 
             case 3:
             case "end":
-              return _context77.stop();
+              return _context85.stop();
           }
         }
-      }, _callee77);
+      }, _callee85);
     }));
 
-    return function (_x98) {
-      return _ref77.apply(this, arguments);
+    return function (_x106) {
+      return _ref85.apply(this, arguments);
     };
   }();
   /**
@@ -125924,27 +130095,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
 
 
   this.wrapperMaxTokenAmount = /*#__PURE__*/function () {
-    var _ref78 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee78(wrapper) {
-      return regenerator_default.a.wrap(function _callee78$(_context78) {
+    var _ref86 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee86(wrapper) {
+      return regenerator_default.a.wrap(function _callee86$(_context86) {
         while (1) {
-          switch (_context78.prev = _context78.next) {
+          switch (_context86.prev = _context86.next) {
             case 0:
-              _context78.next = 2;
+              _context86.next = 2;
               return _this.contract.wrapperMaxTokenAmount(wrapper);
 
             case 2:
-              return _context78.abrupt("return", _context78.sent);
+              return _context86.abrupt("return", _context86.sent);
 
             case 3:
             case "end":
-              return _context78.stop();
+              return _context86.stop();
           }
         }
-      }, _callee78);
+      }, _callee86);
     }));
 
-    return function (_x99) {
-      return _ref78.apply(this, arguments);
+    return function (_x107) {
+      return _ref86.apply(this, arguments);
     };
   }();
   /**
@@ -125955,27 +130126,27 @@ function kovan_SystemSettings_SystemSettings(contractSettings) {
 
 
   this.wrapperMintFeeRate = /*#__PURE__*/function () {
-    var _ref79 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee79(wrapper) {
-      return regenerator_default.a.wrap(function _callee79$(_context79) {
+    var _ref87 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee87(wrapper) {
+      return regenerator_default.a.wrap(function _callee87$(_context87) {
         while (1) {
-          switch (_context79.prev = _context79.next) {
+          switch (_context87.prev = _context87.next) {
             case 0:
-              _context79.next = 2;
+              _context87.next = 2;
               return _this.contract.wrapperMintFeeRate(wrapper);
 
             case 2:
-              return _context79.abrupt("return", _context79.sent);
+              return _context87.abrupt("return", _context87.sent);
 
             case 3:
             case "end":
-              return _context79.stop();
+              return _context87.stop();
           }
         }
-      }, _callee79);
+      }, _callee87);
     }));
 
-    return function (_x100) {
-      return _ref79.apply(this, arguments);
+    return function (_x108) {
+      return _ref87.apply(this, arguments);
     };
   }();
 }

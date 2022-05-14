@@ -583,13 +583,22 @@ function Synthetix(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
-   * @param susdAmount {BigNumber}
    * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.liquidateDelinquentAccount = async (account, susdAmount, txParams) => {
+  this.liquidateDelinquentAccount = async (account, txParams) => {
     txParams = txParams || {};
-    return await this.contract.liquidateDelinquentAccount(account, susdAmount, txParams);
+    return await this.contract.liquidateDelinquentAccount(account, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.liquidateSelf = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.liquidateSelf(txParams);
   };
 
   /**

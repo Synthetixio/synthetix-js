@@ -723,17 +723,12 @@
 				"type": "address"
 			},
 			{
-				"internalType": "uint256",
-				"name": "susdAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "liquidator",
-				"type": "address"
+				"internalType": "bool",
+				"name": "isSelfLiquidation",
+				"type": "bool"
 			}
 		],
-		"name": "liquidateDelinquentAccount",
+		"name": "liquidateAccount",
 		"outputs": [
 			{
 				"internalType": "uint256",

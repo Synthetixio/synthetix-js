@@ -343,6 +343,19 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
+				"name": "newReward",
+				"type": "uint256"
+			}
+		],
+		"name": "FlagRewardUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
 				"name": "interactionDelay",
 				"type": "uint256"
 			}
@@ -369,11 +382,37 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
+				"name": "newReward",
+				"type": "uint256"
+			}
+		],
+		"name": "LiquidateRewardUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
 				"name": "newDelay",
 				"type": "uint256"
 			}
 		],
 		"name": "LiquidationDelayUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newDuration",
+				"type": "uint256"
+			}
+		],
+		"name": "LiquidationEscrowDurationUpdated",
 		"type": "event"
 	},
 	{
@@ -490,6 +529,19 @@
 			}
 		],
 		"name": "RateStalePeriodUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newPenalty",
+				"type": "uint256"
+			}
+		],
+		"name": "SelfLiquidationPenaltyUpdated",
 		"type": "event"
 	},
 	{
@@ -962,6 +1014,21 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "flagReward",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "address",
@@ -1014,7 +1081,37 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "liquidateReward",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "liquidationDelay",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "liquidationEscrowDuration",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1200,6 +1297,21 @@
 				"internalType": "bytes32[]",
 				"name": "addresses",
 				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "selfLiquidationPenalty",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -1550,6 +1662,21 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "reward",
+				"type": "uint256"
+			}
+		],
+		"name": "setFlagReward",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "_collateral",
 				"type": "address"
@@ -1586,11 +1713,41 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "reward",
+				"type": "uint256"
+			}
+		],
+		"name": "setLiquidateReward",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "time",
 				"type": "uint256"
 			}
 		],
 		"name": "setLiquidationDelay",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			}
+		],
+		"name": "setLiquidationEscrowDuration",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -1686,6 +1843,21 @@
 			}
 		],
 		"name": "setRateStalePeriod",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "penalty",
+				"type": "uint256"
+			}
+		],
+		"name": "setSelfLiquidationPenalty",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

@@ -202,6 +202,14 @@ function SystemSettings(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.flagReward = async () => {
+    return await this.contract.flagReward();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param collateral {String<EthAddress>}
    * @returns BigNumber
    **/
@@ -229,8 +237,24 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.liquidateReward = async () => {
+    return await this.contract.liquidateReward();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.liquidationDelay = async () => {
     return await this.contract.liquidationDelay();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.liquidationEscrowDuration = async () => {
+    return await this.contract.liquidationEscrowDuration();
   };
 
   /**
@@ -333,6 +357,14 @@ function SystemSettings(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.selfLiquidationPenalty = async () => {
+    return await this.contract.selfLiquidationPenalty();
   };
 
   /**
@@ -585,6 +617,17 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param reward {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setFlagReward = async (reward, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setFlagReward(reward, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _collateral {String<EthAddress>}
    * @param _interactionDelay {BigNumber}
    * @param txParams {TxParams}
@@ -608,6 +651,17 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param reward {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setLiquidateReward = async (reward, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setLiquidateReward(reward, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param time {BigNumber}
    * @param txParams {TxParams}
   
@@ -615,6 +669,17 @@ function SystemSettings(contractSettings) {
   this.setLiquidationDelay = async (time, txParams) => {
     txParams = txParams || {};
     return await this.contract.setLiquidationDelay(time, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param duration {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setLiquidationEscrowDuration = async (duration, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setLiquidationEscrowDuration(duration, txParams);
   };
 
   /**
@@ -689,6 +754,17 @@ function SystemSettings(contractSettings) {
   this.setRateStalePeriod = async (period, txParams) => {
     txParams = txParams || {};
     return await this.contract.setRateStalePeriod(period, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param penalty {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSelfLiquidationPenalty = async (penalty, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSelfLiquidationPenalty(penalty, txParams);
   };
 
   /**

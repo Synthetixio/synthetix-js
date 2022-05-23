@@ -518,6 +518,17 @@ function Synthetix(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.initializeLiquidatorRewardsRestitution = async (amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.initializeLiquidatorRewardsRestitution(amount, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
@@ -739,6 +750,14 @@ function Synthetix(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+  this.restituted = async () => {
+    return await this.contract.restituted();
   };
 
   /**

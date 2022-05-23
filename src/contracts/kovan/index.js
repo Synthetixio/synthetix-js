@@ -15,7 +15,6 @@ import DelegateApprovals from './DelegateApprovals';
 import SystemStatus from './SystemStatus';
 import RewardsDistribution from './RewardsDistribution';
 import SynthUtil from './SynthUtil';
-import Liquidations from './Liquidations';
 import SynthetixBridgeToOptimism from './SynthetixBridgeToOptimism';
 import SystemSettings from './SystemSettings';
 import sUSD from './sUSD';
@@ -48,7 +47,6 @@ export default {
   SystemStatus,
   RewardsDistribution,
   SynthUtil,
-  Liquidations,
   SynthetixBridgeToOptimism,
   SystemSettings,
   sUSD,

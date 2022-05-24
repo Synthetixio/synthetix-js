@@ -23224,7 +23224,7 @@ var MAINNET_ADDRESSES = {
   ProxyERC20sUSD: '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51',
   ProxySynthetix: '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F',
   SafeDecimalMath: '0x84D626B2BB4D0F064067e4BF80FCe7055d8F3E7B',
-  Synthetix: '0x931933807c4c808657b6016f9e539486e7B5d374',
+  Synthetix: '0x7F30336E0e01bEe8dD1C641bD793400f82d080cf',
   SynthetixEscrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   SynthetixState: '0x4b9Ca5607f1fF8019c1C6A3c2f0CC8de622D5B82',
   SynthsAUD: '0xC4546bDd93cDAADA6994e84Fb6F2722C620B019C',
@@ -27547,6 +27547,18 @@ var KOVAN_ADDRESSES = {
   stateMutability: 'nonpayable',
   type: 'function'
 }, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'initializeLiquidatorRewardsRestitution',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
   constant: true,
   inputs: [],
   name: 'isResolverCached',
@@ -27838,6 +27850,18 @@ var KOVAN_ADDRESSES = {
     internalType: 'bytes32[]',
     name: 'addresses',
     type: 'bytes32[]'
+  }],
+  payable: false,
+  stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'restituted',
+  outputs: [{
+    internalType: 'bool',
+    name: '',
+    type: 'bool'
   }],
   payable: false,
   stateMutability: 'view',
@@ -48032,1480 +48056,8 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Synth = (mainnet_Synth);
 // CONCATENATED MODULE: ./lib/abis/kovan/Synthetix.js
-/* harmony default export */ var kovan_Synthetix = ([{
-  inputs: [{
-    internalType: 'address payable',
-    name: '_proxy',
-    type: 'address'
-  }, {
-    internalType: 'contract TokenState',
-    name: '_tokenState',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_totalSupply',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'snxRedeemed',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amountLiquidated',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'liquidator',
-    type: 'address'
-  }],
-  name: 'AccountLiquidated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'owner',
-    type: 'address'
-  }, {
-    indexed: true,
-    internalType: 'address',
-    name: 'spender',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'Approval',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'AtomicSynthExchange',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'ExchangeRebate',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'ExchangeReclaim',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'fee',
-    type: 'uint256'
-  }],
-  name: 'ExchangeTracking',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'proxyAddress',
-    type: 'address'
-  }],
-  name: 'ProxyUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'SynthExchange',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newTokenState',
-    type: 'address'
-  }],
-  name: 'TokenStateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: true,
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    indexed: true,
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'Transfer',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'DECIMALS',
-  outputs: [{
-    internalType: 'uint8',
-    name: '',
-    type: 'uint8'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'TOKEN_NAME',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'TOKEN_SYMBOL',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'spender',
-    type: 'address'
-  }],
-  name: 'allowance',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'anySynthOrSNXRateIsInvalid',
-  outputs: [{
-    internalType: 'bool',
-    name: 'anyRateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'spender',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'approve',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableCurrencyKeys',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: '',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableSynthCount',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'index',
-    type: 'uint256'
-  }],
-  name: 'availableSynths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'balanceOf',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'burnSecondary',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'burnSynthsToTarget',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }],
-  name: 'burnSynthsToTargetOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'collateral',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'debtBalanceOf',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'decimals',
-  outputs: [{
-    internalType: 'uint8',
-    name: '',
-    type: 'uint8'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'emitAtomicSynthExchange',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'emitExchangeRebate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'emitExchangeReclaim',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }, {
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'fee',
-    type: 'uint256'
-  }],
-  name: 'emitExchangeTracking',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'fromCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'fromAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'toCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'toAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'address',
-    name: 'toAddress',
-    type: 'address'
-  }],
-  name: 'emitSynthExchange',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }],
-  name: 'exchange',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'minAmount',
-    type: 'uint256'
-  }],
-  name: 'exchangeAtomically',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'exchangeForAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }],
-  name: 'exchangeOnBehalf',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'exchangeForAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'rewardAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeOnBehalfWithTracking',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'rewardAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeWithTracking',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'rewardAddress',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeWithTrackingForInitiator',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'sourceCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: 'sourceAmount',
-    type: 'uint256'
-  }, {
-    internalType: 'bytes32',
-    name: 'destinationCurrencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bytes32',
-    name: 'trackingCode',
-    type: 'bytes32'
-  }],
-  name: 'exchangeWithVirtual',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'amountReceived',
-    type: 'uint256'
-  }, {
-    internalType: 'contract IVirtualSynth',
-    name: 'vSynth',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'initializeLiquidatorRewardsRestitution',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'isWaitingPeriod',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'issueMaxSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }],
-  name: 'issueMaxSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'liquidateDelinquentAccount',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'liquidateSelf',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'maxIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'maxIssuable',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'messageSender',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'migrateEscrowBalanceToRewardEscrowV2',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'mint',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'mintSecondary',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'mintSecondaryRewards',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'name',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'proxy',
-  outputs: [{
-    internalType: 'contract Proxy',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'remainingIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'maxIssuable',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'alreadyIssued',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'totalSystemDebt',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'restituted',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'sUSD',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'sender',
-    type: 'address'
-  }],
-  name: 'setMessageSender',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address payable',
-    name: '_proxy',
-    type: 'address'
-  }],
-  name: 'setProxy',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract TokenState',
-    name: '_tokenState',
-    type: 'address'
-  }],
-  name: 'setTokenState',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'settle',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'reclaimed',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'refunded',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'numEntriesSettled',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'symbol',
-  outputs: [{
-    internalType: 'string',
-    name: '',
-    type: 'string'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'synths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'synthAddress',
-    type: 'address'
-  }],
-  name: 'synthsByAddress',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'tokenState',
-  outputs: [{
-    internalType: 'contract TokenState',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'totalIssuedSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'totalIssuedSynthsExcludeOtherCollateral',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'totalSupply',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'transfer',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'transferFrom',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'transferableSynthetix',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'transferable',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_Synthetix = (mainnet_Synthetix);
 // CONCATENATED MODULE: ./lib/abis/kovan/SynthetixEscrow.js
 /* harmony default export */ var kovan_SynthetixEscrow = ([{
   constant: false,
@@ -57747,28 +56299,61 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.initializeLiquidatorRewardsRestitution = /*#__PURE__*/function () {
+    var _ref34 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34(amount, txParams) {
+      return regenerator_default.a.wrap(function _callee34$(_context34) {
+        while (1) {
+          switch (_context34.prev = _context34.next) {
+            case 0:
+              txParams = txParams || {};
+              _context34.next = 3;
+              return _this.contract.initializeLiquidatorRewardsRestitution(amount, txParams);
+
+            case 3:
+              return _context34.abrupt("return", _context34.sent);
+
+            case 4:
+            case "end":
+              return _context34.stop();
+          }
+        }
+      }, _callee34);
+    }));
+
+    return function (_x90, _x91) {
+      return _ref34.apply(this, arguments);
+    };
+  }();
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
 
 
-  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee34() {
-    return regenerator_default.a.wrap(function _callee34$(_context34) {
+  this.isResolverCached = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35() {
+    return regenerator_default.a.wrap(function _callee35$(_context35) {
       while (1) {
-        switch (_context34.prev = _context34.next) {
+        switch (_context35.prev = _context35.next) {
           case 0:
-            _context34.next = 2;
+            _context35.next = 2;
             return _this.contract.isResolverCached();
 
           case 2:
-            return _context34.abrupt("return", _context34.sent);
+            return _context35.abrupt("return", _context35.sent);
 
           case 3:
           case "end":
-            return _context34.stop();
+            return _context35.stop();
         }
       }
-    }, _callee34);
+    }, _callee35);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -57777,27 +56362,27 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
   this.isWaitingPeriod = /*#__PURE__*/function () {
-    var _ref35 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee35(currencyKey) {
-      return regenerator_default.a.wrap(function _callee35$(_context35) {
+    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(currencyKey) {
+      return regenerator_default.a.wrap(function _callee36$(_context36) {
         while (1) {
-          switch (_context35.prev = _context35.next) {
+          switch (_context36.prev = _context36.next) {
             case 0:
-              _context35.next = 2;
+              _context36.next = 2;
               return _this.contract.isWaitingPeriod(currencyKey);
 
             case 2:
-              return _context35.abrupt("return", _context35.sent);
+              return _context36.abrupt("return", _context36.sent);
 
             case 3:
             case "end":
-              return _context35.stop();
+              return _context36.stop();
           }
         }
-      }, _callee35);
+      }, _callee36);
     }));
 
-    return function (_x90) {
-      return _ref35.apply(this, arguments);
+    return function (_x92) {
+      return _ref36.apply(this, arguments);
     };
   }();
   /**
@@ -57809,47 +56394,14 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.issueMaxSynths = /*#__PURE__*/function () {
-    var _ref36 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee36(txParams) {
-      return regenerator_default.a.wrap(function _callee36$(_context36) {
-        while (1) {
-          switch (_context36.prev = _context36.next) {
-            case 0:
-              txParams = txParams || {};
-              _context36.next = 3;
-              return _this.contract.issueMaxSynths(txParams);
-
-            case 3:
-              return _context36.abrupt("return", _context36.sent);
-
-            case 4:
-            case "end":
-              return _context36.stop();
-          }
-        }
-      }, _callee36);
-    }));
-
-    return function (_x91) {
-      return _ref36.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.issueMaxSynthsOnBehalf = /*#__PURE__*/function () {
-    var _ref37 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37(issueForAddress, txParams) {
+    var _ref37 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee37(txParams) {
       return regenerator_default.a.wrap(function _callee37$(_context37) {
         while (1) {
           switch (_context37.prev = _context37.next) {
             case 0:
               txParams = txParams || {};
               _context37.next = 3;
-              return _this.contract.issueMaxSynthsOnBehalf(issueForAddress, txParams);
+              return _this.contract.issueMaxSynths(txParams);
 
             case 3:
               return _context37.abrupt("return", _context37.sent);
@@ -57862,28 +56414,27 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee37);
     }));
 
-    return function (_x92, _x93) {
+    return function (_x93) {
       return _ref37.apply(this, arguments);
     };
   }();
   /**
-   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
    * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
+   * @param issueForAddress {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.issueSynths = /*#__PURE__*/function () {
-    var _ref38 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38(amount, txParams) {
+  this.issueMaxSynthsOnBehalf = /*#__PURE__*/function () {
+    var _ref38 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee38(issueForAddress, txParams) {
       return regenerator_default.a.wrap(function _callee38$(_context38) {
         while (1) {
           switch (_context38.prev = _context38.next) {
             case 0:
               txParams = txParams || {};
               _context38.next = 3;
-              return _this.contract.issueSynths(amount, txParams);
+              return _this.contract.issueMaxSynthsOnBehalf(issueForAddress, txParams);
 
             case 3:
               return _context38.abrupt("return", _context38.sent);
@@ -57901,23 +56452,23 @@ function Synthetix_Synthetix(contractSettings) {
     };
   }();
   /**
+   * Issuance is only allowed if the synthetix price isn't stale. Amount should be larger than 0., Issue synths against the sender's SNX.<br>
    * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.issueSynthsOnBehalf = /*#__PURE__*/function () {
-    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(issueForAddress, amount, txParams) {
+  this.issueSynths = /*#__PURE__*/function () {
+    var _ref39 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee39(amount, txParams) {
       return regenerator_default.a.wrap(function _callee39$(_context39) {
         while (1) {
           switch (_context39.prev = _context39.next) {
             case 0:
               txParams = txParams || {};
               _context39.next = 3;
-              return _this.contract.issueSynthsOnBehalf(issueForAddress, amount, txParams);
+              return _this.contract.issueSynths(amount, txParams);
 
             case 3:
               return _context39.abrupt("return", _context39.sent);
@@ -57930,27 +56481,28 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee39);
     }));
 
-    return function (_x96, _x97, _x98) {
+    return function (_x96, _x97) {
       return _ref39.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
+   * @param issueForAddress {String<EthAddress>}
+   * @param amount {BigNumber}
    * @param txParams {TxParams}
-   * @returns boolean
+  
    **/
 
 
-  this.liquidateDelinquentAccount = /*#__PURE__*/function () {
-    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(account, txParams) {
+  this.issueSynthsOnBehalf = /*#__PURE__*/function () {
+    var _ref40 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee40(issueForAddress, amount, txParams) {
       return regenerator_default.a.wrap(function _callee40$(_context40) {
         while (1) {
           switch (_context40.prev = _context40.next) {
             case 0:
               txParams = txParams || {};
               _context40.next = 3;
-              return _this.contract.liquidateDelinquentAccount(account, txParams);
+              return _this.contract.issueSynthsOnBehalf(issueForAddress, amount, txParams);
 
             case 3:
               return _context40.abrupt("return", _context40.sent);
@@ -57963,26 +56515,27 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee40);
     }));
 
-    return function (_x99, _x100) {
+    return function (_x98, _x99, _x100) {
       return _ref40.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
    * @param txParams {TxParams}
    * @returns boolean
    **/
 
 
-  this.liquidateSelf = /*#__PURE__*/function () {
-    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(txParams) {
+  this.liquidateDelinquentAccount = /*#__PURE__*/function () {
+    var _ref41 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee41(account, txParams) {
       return regenerator_default.a.wrap(function _callee41$(_context41) {
         while (1) {
           switch (_context41.prev = _context41.next) {
             case 0:
               txParams = txParams || {};
               _context41.next = 3;
-              return _this.contract.liquidateSelf(txParams);
+              return _this.contract.liquidateDelinquentAccount(account, txParams);
 
             case 3:
               return _context41.abrupt("return", _context41.sent);
@@ -57995,8 +56548,40 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee41);
     }));
 
-    return function (_x101) {
+    return function (_x101, _x102) {
       return _ref41.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+
+
+  this.liquidateSelf = /*#__PURE__*/function () {
+    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(txParams) {
+      return regenerator_default.a.wrap(function _callee42$(_context42) {
+        while (1) {
+          switch (_context42.prev = _context42.next) {
+            case 0:
+              txParams = txParams || {};
+              _context42.next = 3;
+              return _this.contract.liquidateSelf(txParams);
+
+            case 3:
+              return _context42.abrupt("return", _context42.sent);
+
+            case 4:
+            case "end":
+              return _context42.stop();
+          }
+        }
+      }, _callee42);
+    }));
+
+    return function (_x103) {
+      return _ref42.apply(this, arguments);
     };
   }();
   /**
@@ -58008,27 +56593,27 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.maxIssuableSynths = /*#__PURE__*/function () {
-    var _ref42 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee42(account) {
-      return regenerator_default.a.wrap(function _callee42$(_context42) {
+    var _ref43 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43(account) {
+      return regenerator_default.a.wrap(function _callee43$(_context43) {
         while (1) {
-          switch (_context42.prev = _context42.next) {
+          switch (_context43.prev = _context43.next) {
             case 0:
-              _context42.next = 2;
+              _context43.next = 2;
               return _this.contract.maxIssuableSynths(account);
 
             case 2:
-              return _context42.abrupt("return", _context42.sent);
+              return _context43.abrupt("return", _context43.sent);
 
             case 3:
             case "end":
-              return _context42.stop();
+              return _context43.stop();
           }
         }
-      }, _callee42);
+      }, _callee43);
     }));
 
-    return function (_x102) {
-      return _ref42.apply(this, arguments);
+    return function (_x104) {
+      return _ref43.apply(this, arguments);
     };
   }();
   /**
@@ -58037,23 +56622,23 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.messageSender = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee43() {
-    return regenerator_default.a.wrap(function _callee43$(_context43) {
+  this.messageSender = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44() {
+    return regenerator_default.a.wrap(function _callee44$(_context44) {
       while (1) {
-        switch (_context43.prev = _context43.next) {
+        switch (_context44.prev = _context44.next) {
           case 0:
-            _context43.next = 2;
+            _context44.next = 2;
             return _this.contract.messageSender();
 
           case 2:
-            return _context43.abrupt("return", _context43.sent);
+            return _context44.abrupt("return", _context44.sent);
 
           case 3:
           case "end":
-            return _context43.stop();
+            return _context44.stop();
         }
       }
-    }, _callee43);
+    }, _callee44);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -58062,38 +56647,6 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
   this.migrateEscrowBalanceToRewardEscrowV2 = /*#__PURE__*/function () {
-    var _ref44 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee44(txParams) {
-      return regenerator_default.a.wrap(function _callee44$(_context44) {
-        while (1) {
-          switch (_context44.prev = _context44.next) {
-            case 0:
-              txParams = txParams || {};
-              _context44.next = 3;
-              return _this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
-
-            case 3:
-              return _context44.abrupt("return", _context44.sent);
-
-            case 4:
-            case "end":
-              return _context44.stop();
-          }
-        }
-      }, _callee44);
-    }));
-
-    return function (_x103) {
-      return _ref44.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-
-
-  this.mint = /*#__PURE__*/function () {
     var _ref45 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee45(txParams) {
       return regenerator_default.a.wrap(function _callee45$(_context45) {
         while (1) {
@@ -58101,7 +56654,7 @@ function Synthetix_Synthetix(contractSettings) {
             case 0:
               txParams = txParams || {};
               _context45.next = 3;
-              return _this.contract.mint(txParams);
+              return _this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
 
             case 3:
               return _context45.abrupt("return", _context45.sent);
@@ -58114,28 +56667,26 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee45);
     }));
 
-    return function (_x104) {
+    return function (_x105) {
       return _ref45.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param  {String<EthAddress>}
-   * @param  {BigNumber}
    * @param txParams {TxParams}
-  
+   * @returns boolean
    **/
 
 
-  this.mintSecondary = /*#__PURE__*/function () {
-    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(address_1, uint256_1, txParams) {
+  this.mint = /*#__PURE__*/function () {
+    var _ref46 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee46(txParams) {
       return regenerator_default.a.wrap(function _callee46$(_context46) {
         while (1) {
           switch (_context46.prev = _context46.next) {
             case 0:
               txParams = txParams || {};
               _context46.next = 3;
-              return _this.contract.mintSecondary(address_1, uint256_1, txParams);
+              return _this.contract.mint(txParams);
 
             case 3:
               return _context46.abrupt("return", _context46.sent);
@@ -58148,27 +56699,28 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee46);
     }));
 
-    return function (_x105, _x106, _x107) {
+    return function (_x106) {
       return _ref46.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
+   * @param  {String<EthAddress>}
    * @param  {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.mintSecondaryRewards = /*#__PURE__*/function () {
-    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(uint256_1, txParams) {
+  this.mintSecondary = /*#__PURE__*/function () {
+    var _ref47 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee47(address_1, uint256_1, txParams) {
       return regenerator_default.a.wrap(function _callee47$(_context47) {
         while (1) {
           switch (_context47.prev = _context47.next) {
             case 0:
               txParams = txParams || {};
               _context47.next = 3;
-              return _this.contract.mintSecondaryRewards(uint256_1, txParams);
+              return _this.contract.mintSecondary(address_1, uint256_1, txParams);
 
             case 3:
               return _context47.abrupt("return", _context47.sent);
@@ -58181,8 +56733,41 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee47);
     }));
 
-    return function (_x108, _x109) {
+    return function (_x107, _x108, _x109) {
       return _ref47.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param  {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.mintSecondaryRewards = /*#__PURE__*/function () {
+    var _ref48 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48(uint256_1, txParams) {
+      return regenerator_default.a.wrap(function _callee48$(_context48) {
+        while (1) {
+          switch (_context48.prev = _context48.next) {
+            case 0:
+              txParams = txParams || {};
+              _context48.next = 3;
+              return _this.contract.mintSecondaryRewards(uint256_1, txParams);
+
+            case 3:
+              return _context48.abrupt("return", _context48.sent);
+
+            case 4:
+            case "end":
+              return _context48.stop();
+          }
+        }
+      }, _callee48);
+    }));
+
+    return function (_x110, _x111) {
+      return _ref48.apply(this, arguments);
     };
   }();
   /**
@@ -58191,23 +56776,23 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.name = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee48() {
-    return regenerator_default.a.wrap(function _callee48$(_context48) {
+  this.name = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49() {
+    return regenerator_default.a.wrap(function _callee49$(_context49) {
       while (1) {
-        switch (_context48.prev = _context48.next) {
+        switch (_context49.prev = _context49.next) {
           case 0:
-            _context48.next = 2;
+            _context49.next = 2;
             return _this.contract.name();
 
           case 2:
-            return _context48.abrupt("return", _context48.sent);
+            return _context49.abrupt("return", _context49.sent);
 
           case 3:
           case "end":
-            return _context48.stop();
+            return _context49.stop();
         }
       }
-    }, _callee48);
+    }, _callee49);
   }));
   /**
    * Transaction (consumes gas, requires signer)
@@ -58217,28 +56802,28 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
   this.nominateNewOwner = /*#__PURE__*/function () {
-    var _ref49 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee49(_owner, txParams) {
-      return regenerator_default.a.wrap(function _callee49$(_context49) {
+    var _ref50 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50(_owner, txParams) {
+      return regenerator_default.a.wrap(function _callee50$(_context50) {
         while (1) {
-          switch (_context49.prev = _context49.next) {
+          switch (_context50.prev = _context50.next) {
             case 0:
               txParams = txParams || {};
-              _context49.next = 3;
+              _context50.next = 3;
               return _this.contract.nominateNewOwner(_owner, txParams);
 
             case 3:
-              return _context49.abrupt("return", _context49.sent);
+              return _context50.abrupt("return", _context50.sent);
 
             case 4:
             case "end":
-              return _context49.stop();
+              return _context50.stop();
           }
         }
-      }, _callee49);
+      }, _callee50);
     }));
 
-    return function (_x110, _x111) {
-      return _ref49.apply(this, arguments);
+    return function (_x112, _x113) {
+      return _ref50.apply(this, arguments);
     };
   }();
   /**
@@ -58247,36 +56832,13 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50() {
-    return regenerator_default.a.wrap(function _callee50$(_context50) {
-      while (1) {
-        switch (_context50.prev = _context50.next) {
-          case 0:
-            _context50.next = 2;
-            return _this.contract.nominatedOwner();
-
-          case 2:
-            return _context50.abrupt("return", _context50.sent);
-
-          case 3:
-          case "end":
-            return _context50.stop();
-        }
-      }
-    }, _callee50);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-
-  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51() {
+  this.nominatedOwner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee51() {
     return regenerator_default.a.wrap(function _callee51$(_context51) {
       while (1) {
         switch (_context51.prev = _context51.next) {
           case 0:
             _context51.next = 2;
-            return _this.contract.owner();
+            return _this.contract.nominatedOwner();
 
           case 2:
             return _context51.abrupt("return", _context51.sent);
@@ -58293,13 +56855,13 @@ function Synthetix_Synthetix(contractSettings) {
    * @returns String<EthAddress>
    **/
 
-  this.proxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52() {
+  this.owner = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee52() {
     return regenerator_default.a.wrap(function _callee52$(_context52) {
       while (1) {
         switch (_context52.prev = _context52.next) {
           case 0:
             _context52.next = 2;
-            return _this.contract.proxy();
+            return _this.contract.owner();
 
           case 2:
             return _context52.abrupt("return", _context52.sent);
@@ -58312,34 +56874,57 @@ function Synthetix_Synthetix(contractSettings) {
     }, _callee52);
   }));
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+  this.proxy = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53() {
+    return regenerator_default.a.wrap(function _callee53$(_context53) {
+      while (1) {
+        switch (_context53.prev = _context53.next) {
+          case 0:
+            _context53.next = 2;
+            return _this.contract.proxy();
+
+          case 2:
+            return _context53.abrupt("return", _context53.sent);
+
+          case 3:
+          case "end":
+            return _context53.stop();
+        }
+      }
+    }, _callee53);
+  }));
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
 
   this.rebuildCache = /*#__PURE__*/function () {
-    var _ref53 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee53(txParams) {
-      return regenerator_default.a.wrap(function _callee53$(_context53) {
+    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(txParams) {
+      return regenerator_default.a.wrap(function _callee54$(_context54) {
         while (1) {
-          switch (_context53.prev = _context53.next) {
+          switch (_context54.prev = _context54.next) {
             case 0:
               txParams = txParams || {};
-              _context53.next = 3;
+              _context54.next = 3;
               return _this.contract.rebuildCache(txParams);
 
             case 3:
-              return _context53.abrupt("return", _context53.sent);
+              return _context54.abrupt("return", _context54.sent);
 
             case 4:
             case "end":
-              return _context53.stop();
+              return _context54.stop();
           }
         }
-      }, _callee53);
+      }, _callee54);
     }));
 
-    return function (_x112) {
-      return _ref53.apply(this, arguments);
+    return function (_x114) {
+      return _ref54.apply(this, arguments);
     };
   }();
   /**
@@ -58351,27 +56936,27 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.remainingIssuableSynths = /*#__PURE__*/function () {
-    var _ref54 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee54(account) {
-      return regenerator_default.a.wrap(function _callee54$(_context54) {
+    var _ref55 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55(account) {
+      return regenerator_default.a.wrap(function _callee55$(_context55) {
         while (1) {
-          switch (_context54.prev = _context54.next) {
+          switch (_context55.prev = _context55.next) {
             case 0:
-              _context54.next = 2;
+              _context55.next = 2;
               return _this.contract.remainingIssuableSynths(account);
 
             case 2:
-              return _context54.abrupt("return", _context54.sent);
+              return _context55.abrupt("return", _context55.sent);
 
             case 3:
             case "end":
-              return _context54.stop();
+              return _context55.stop();
           }
         }
-      }, _callee54);
+      }, _callee55);
     }));
 
-    return function (_x113) {
-      return _ref54.apply(this, arguments);
+    return function (_x115) {
+      return _ref55.apply(this, arguments);
     };
   }();
   /**
@@ -58380,36 +56965,13 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee55() {
-    return regenerator_default.a.wrap(function _callee55$(_context55) {
-      while (1) {
-        switch (_context55.prev = _context55.next) {
-          case 0:
-            _context55.next = 2;
-            return _this.contract.resolver();
-
-          case 2:
-            return _context55.abrupt("return", _context55.sent);
-
-          case 3:
-          case "end":
-            return _context55.stop();
-        }
-      }
-    }, _callee55);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32[]
-   **/
-
-  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56() {
+  this.resolver = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee56() {
     return regenerator_default.a.wrap(function _callee56$(_context56) {
       while (1) {
         switch (_context56.prev = _context56.next) {
           case 0:
             _context56.next = 2;
-            return _this.contract.resolverAddressesRequired();
+            return _this.contract.resolver();
 
           case 2:
             return _context56.abrupt("return", _context56.sent);
@@ -58423,16 +56985,16 @@ function Synthetix_Synthetix(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns bytes32
+   * @returns bytes32[]
    **/
 
-  this.sUSD = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57() {
+  this.resolverAddressesRequired = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee57() {
     return regenerator_default.a.wrap(function _callee57$(_context57) {
       while (1) {
         switch (_context57.prev = _context57.next) {
           case 0:
             _context57.next = 2;
-            return _this.contract.sUSD();
+            return _this.contract.resolverAddressesRequired();
 
           case 2:
             return _context57.abrupt("return", _context57.sent);
@@ -58445,6 +57007,52 @@ function Synthetix_Synthetix(contractSettings) {
     }, _callee57);
   }));
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+  this.restituted = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58() {
+    return regenerator_default.a.wrap(function _callee58$(_context58) {
+      while (1) {
+        switch (_context58.prev = _context58.next) {
+          case 0:
+            _context58.next = 2;
+            return _this.contract.restituted();
+
+          case 2:
+            return _context58.abrupt("return", _context58.sent);
+
+          case 3:
+          case "end":
+            return _context58.stop();
+        }
+      }
+    }, _callee58);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns bytes32
+   **/
+
+  this.sUSD = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59() {
+    return regenerator_default.a.wrap(function _callee59$(_context59) {
+      while (1) {
+        switch (_context59.prev = _context59.next) {
+          case 0:
+            _context59.next = 2;
+            return _this.contract.sUSD();
+
+          case 2:
+            return _context59.abrupt("return", _context59.sent);
+
+          case 3:
+          case "end":
+            return _context59.stop();
+        }
+      }
+    }, _callee59);
+  }));
+  /**
    * Transaction (consumes gas, requires signer)
    * @param sender {String<EthAddress>}
    * @param txParams {TxParams}
@@ -58452,80 +57060,14 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
   this.setMessageSender = /*#__PURE__*/function () {
-    var _ref58 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee58(sender, txParams) {
-      return regenerator_default.a.wrap(function _callee58$(_context58) {
-        while (1) {
-          switch (_context58.prev = _context58.next) {
-            case 0:
-              txParams = txParams || {};
-              _context58.next = 3;
-              return _this.contract.setMessageSender(sender, txParams);
-
-            case 3:
-              return _context58.abrupt("return", _context58.sent);
-
-            case 4:
-            case "end":
-              return _context58.stop();
-          }
-        }
-      }, _callee58);
-    }));
-
-    return function (_x114, _x115) {
-      return _ref58.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _proxy {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.setProxy = /*#__PURE__*/function () {
-    var _ref59 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee59(_proxy, txParams) {
-      return regenerator_default.a.wrap(function _callee59$(_context59) {
-        while (1) {
-          switch (_context59.prev = _context59.next) {
-            case 0:
-              txParams = txParams || {};
-              _context59.next = 3;
-              return _this.contract.setProxy(_proxy, txParams);
-
-            case 3:
-              return _context59.abrupt("return", _context59.sent);
-
-            case 4:
-            case "end":
-              return _context59.stop();
-          }
-        }
-      }, _callee59);
-    }));
-
-    return function (_x116, _x117) {
-      return _ref59.apply(this, arguments);
-    };
-  }();
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _tokenState {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-
-
-  this.setTokenState = /*#__PURE__*/function () {
-    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(_tokenState, txParams) {
+    var _ref60 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee60(sender, txParams) {
       return regenerator_default.a.wrap(function _callee60$(_context60) {
         while (1) {
           switch (_context60.prev = _context60.next) {
             case 0:
               txParams = txParams || {};
               _context60.next = 3;
-              return _this.contract.setTokenState(_tokenState, txParams);
+              return _this.contract.setMessageSender(sender, txParams);
 
             case 3:
               return _context60.abrupt("return", _context60.sent);
@@ -58538,27 +57080,27 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee60);
     }));
 
-    return function (_x118, _x119) {
+    return function (_x116, _x117) {
       return _ref60.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param currencyKey {bytes32}
+   * @param _proxy {String<EthAddress>}
    * @param txParams {TxParams}
-   * @returns Object
+  
    **/
 
 
-  this.settle = /*#__PURE__*/function () {
-    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(currencyKey, txParams) {
+  this.setProxy = /*#__PURE__*/function () {
+    var _ref61 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee61(_proxy, txParams) {
       return regenerator_default.a.wrap(function _callee61$(_context61) {
         while (1) {
           switch (_context61.prev = _context61.next) {
             case 0:
               txParams = txParams || {};
               _context61.next = 3;
-              return _this.contract.settle(currencyKey, txParams);
+              return _this.contract.setProxy(_proxy, txParams);
 
             case 3:
               return _context61.abrupt("return", _context61.sent);
@@ -58571,8 +57113,74 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee61);
     }));
 
-    return function (_x120, _x121) {
+    return function (_x118, _x119) {
       return _ref61.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _tokenState {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setTokenState = /*#__PURE__*/function () {
+    var _ref62 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62(_tokenState, txParams) {
+      return regenerator_default.a.wrap(function _callee62$(_context62) {
+        while (1) {
+          switch (_context62.prev = _context62.next) {
+            case 0:
+              txParams = txParams || {};
+              _context62.next = 3;
+              return _this.contract.setTokenState(_tokenState, txParams);
+
+            case 3:
+              return _context62.abrupt("return", _context62.sent);
+
+            case 4:
+            case "end":
+              return _context62.stop();
+          }
+        }
+      }, _callee62);
+    }));
+
+    return function (_x120, _x121) {
+      return _ref62.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param currencyKey {bytes32}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+
+
+  this.settle = /*#__PURE__*/function () {
+    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(currencyKey, txParams) {
+      return regenerator_default.a.wrap(function _callee63$(_context63) {
+        while (1) {
+          switch (_context63.prev = _context63.next) {
+            case 0:
+              txParams = txParams || {};
+              _context63.next = 3;
+              return _this.contract.settle(currencyKey, txParams);
+
+            case 3:
+              return _context63.abrupt("return", _context63.sent);
+
+            case 4:
+            case "end":
+              return _context63.stop();
+          }
+        }
+      }, _callee63);
+    }));
+
+    return function (_x122, _x123) {
+      return _ref63.apply(this, arguments);
     };
   }();
   /**
@@ -58581,23 +57189,23 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.symbol = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee62() {
-    return regenerator_default.a.wrap(function _callee62$(_context62) {
+  this.symbol = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64() {
+    return regenerator_default.a.wrap(function _callee64$(_context64) {
       while (1) {
-        switch (_context62.prev = _context62.next) {
+        switch (_context64.prev = _context64.next) {
           case 0:
-            _context62.next = 2;
+            _context64.next = 2;
             return _this.contract.symbol();
 
           case 2:
-            return _context62.abrupt("return", _context62.sent);
+            return _context64.abrupt("return", _context64.sent);
 
           case 3:
           case "end":
-            return _context62.stop();
+            return _context64.stop();
         }
       }
-    }, _callee62);
+    }, _callee64);
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
@@ -58606,27 +57214,27 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
   this.synths = /*#__PURE__*/function () {
-    var _ref63 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee63(currencyKey) {
-      return regenerator_default.a.wrap(function _callee63$(_context63) {
+    var _ref65 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65(currencyKey) {
+      return regenerator_default.a.wrap(function _callee65$(_context65) {
         while (1) {
-          switch (_context63.prev = _context63.next) {
+          switch (_context65.prev = _context65.next) {
             case 0:
-              _context63.next = 2;
+              _context65.next = 2;
               return _this.contract.synths(currencyKey);
 
             case 2:
-              return _context63.abrupt("return", _context63.sent);
+              return _context65.abrupt("return", _context65.sent);
 
             case 3:
             case "end":
-              return _context63.stop();
+              return _context65.stop();
           }
         }
-      }, _callee63);
+      }, _callee65);
     }));
 
-    return function (_x122) {
-      return _ref63.apply(this, arguments);
+    return function (_x124) {
+      return _ref65.apply(this, arguments);
     };
   }();
   /**
@@ -58637,68 +57245,13 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.synthsByAddress = /*#__PURE__*/function () {
-    var _ref64 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee64(synthAddress) {
-      return regenerator_default.a.wrap(function _callee64$(_context64) {
-        while (1) {
-          switch (_context64.prev = _context64.next) {
-            case 0:
-              _context64.next = 2;
-              return _this.contract.synthsByAddress(synthAddress);
-
-            case 2:
-              return _context64.abrupt("return", _context64.sent);
-
-            case 3:
-            case "end":
-              return _context64.stop();
-          }
-        }
-      }, _callee64);
-    }));
-
-    return function (_x123) {
-      return _ref64.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-
-
-  this.tokenState = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee65() {
-    return regenerator_default.a.wrap(function _callee65$(_context65) {
-      while (1) {
-        switch (_context65.prev = _context65.next) {
-          case 0:
-            _context65.next = 2;
-            return _this.contract.tokenState();
-
-          case 2:
-            return _context65.abrupt("return", _context65.sent);
-
-          case 3:
-          case "end":
-            return _context65.stop();
-        }
-      }
-    }, _callee65);
-  }));
-  /**
-   * Total amount of synths issued by the system, priced in currencyKey.<br>
-   * Call (no gas consumed, doesn't require signer)
-   * @param currencyKey {bytes32}
-   * @returns BigNumber
-   **/
-
-  this.totalIssuedSynths = /*#__PURE__*/function () {
-    var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(currencyKey) {
+    var _ref66 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee66(synthAddress) {
       return regenerator_default.a.wrap(function _callee66$(_context66) {
         while (1) {
           switch (_context66.prev = _context66.next) {
             case 0:
               _context66.next = 2;
-              return _this.contract.totalIssuedSynths(currencyKey);
+              return _this.contract.synthsByAddress(synthAddress);
 
             case 2:
               return _context66.abrupt("return", _context66.sent);
@@ -58711,8 +57264,63 @@ function Synthetix_Synthetix(contractSettings) {
       }, _callee66);
     }));
 
-    return function (_x124) {
+    return function (_x125) {
       return _ref66.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+
+
+  this.tokenState = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67() {
+    return regenerator_default.a.wrap(function _callee67$(_context67) {
+      while (1) {
+        switch (_context67.prev = _context67.next) {
+          case 0:
+            _context67.next = 2;
+            return _this.contract.tokenState();
+
+          case 2:
+            return _context67.abrupt("return", _context67.sent);
+
+          case 3:
+          case "end":
+            return _context67.stop();
+        }
+      }
+    }, _callee67);
+  }));
+  /**
+   * Total amount of synths issued by the system, priced in currencyKey.<br>
+   * Call (no gas consumed, doesn't require signer)
+   * @param currencyKey {bytes32}
+   * @returns BigNumber
+   **/
+
+  this.totalIssuedSynths = /*#__PURE__*/function () {
+    var _ref68 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68(currencyKey) {
+      return regenerator_default.a.wrap(function _callee68$(_context68) {
+        while (1) {
+          switch (_context68.prev = _context68.next) {
+            case 0:
+              _context68.next = 2;
+              return _this.contract.totalIssuedSynths(currencyKey);
+
+            case 2:
+              return _context68.abrupt("return", _context68.sent);
+
+            case 3:
+            case "end":
+              return _context68.stop();
+          }
+        }
+      }, _callee68);
+    }));
+
+    return function (_x126) {
+      return _ref68.apply(this, arguments);
     };
   }();
   /**
@@ -58723,27 +57331,27 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.totalIssuedSynthsExcludeOtherCollateral = /*#__PURE__*/function () {
-    var _ref67 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee67(currencyKey) {
-      return regenerator_default.a.wrap(function _callee67$(_context67) {
+    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(currencyKey) {
+      return regenerator_default.a.wrap(function _callee69$(_context69) {
         while (1) {
-          switch (_context67.prev = _context67.next) {
+          switch (_context69.prev = _context69.next) {
             case 0:
-              _context67.next = 2;
+              _context69.next = 2;
               return _this.contract.totalIssuedSynthsExcludeOtherCollateral(currencyKey);
 
             case 2:
-              return _context67.abrupt("return", _context67.sent);
+              return _context69.abrupt("return", _context69.sent);
 
             case 3:
             case "end":
-              return _context67.stop();
+              return _context69.stop();
           }
         }
-      }, _callee67);
+      }, _callee69);
     }));
 
-    return function (_x125) {
-      return _ref67.apply(this, arguments);
+    return function (_x127) {
+      return _ref69.apply(this, arguments);
     };
   }();
   /**
@@ -58752,23 +57360,23 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
 
-  this.totalSupply = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee68() {
-    return regenerator_default.a.wrap(function _callee68$(_context68) {
+  this.totalSupply = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70() {
+    return regenerator_default.a.wrap(function _callee70$(_context70) {
       while (1) {
-        switch (_context68.prev = _context68.next) {
+        switch (_context70.prev = _context70.next) {
           case 0:
-            _context68.next = 2;
+            _context70.next = 2;
             return _this.contract.totalSupply();
 
           case 2:
-            return _context68.abrupt("return", _context68.sent);
+            return _context70.abrupt("return", _context70.sent);
 
           case 3:
           case "end":
-            return _context68.stop();
+            return _context70.stop();
         }
       }
-    }, _callee68);
+    }, _callee70);
   }));
   /**
    * ERC20 transfer function.<br>
@@ -58780,28 +57388,28 @@ function Synthetix_Synthetix(contractSettings) {
    **/
 
   this.transfer = /*#__PURE__*/function () {
-    var _ref69 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee69(to, value, txParams) {
-      return regenerator_default.a.wrap(function _callee69$(_context69) {
+    var _ref71 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee71(to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee71$(_context71) {
         while (1) {
-          switch (_context69.prev = _context69.next) {
+          switch (_context71.prev = _context71.next) {
             case 0:
               txParams = txParams || {};
-              _context69.next = 3;
+              _context71.next = 3;
               return _this.contract.transfer(to, value, txParams);
 
             case 3:
-              return _context69.abrupt("return", _context69.sent);
+              return _context71.abrupt("return", _context71.sent);
 
             case 4:
             case "end":
-              return _context69.stop();
+              return _context71.stop();
           }
         }
-      }, _callee69);
+      }, _callee71);
     }));
 
-    return function (_x126, _x127, _x128) {
-      return _ref69.apply(this, arguments);
+    return function (_x128, _x129, _x130) {
+      return _ref71.apply(this, arguments);
     };
   }();
   /**
@@ -58816,28 +57424,28 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.transferFrom = /*#__PURE__*/function () {
-    var _ref70 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee70(from, to, value, txParams) {
-      return regenerator_default.a.wrap(function _callee70$(_context70) {
+    var _ref72 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee72(from, to, value, txParams) {
+      return regenerator_default.a.wrap(function _callee72$(_context72) {
         while (1) {
-          switch (_context70.prev = _context70.next) {
+          switch (_context72.prev = _context72.next) {
             case 0:
               txParams = txParams || {};
-              _context70.next = 3;
+              _context72.next = 3;
               return _this.contract.transferFrom(from, to, value, txParams);
 
             case 3:
-              return _context70.abrupt("return", _context70.sent);
+              return _context72.abrupt("return", _context72.sent);
 
             case 4:
             case "end":
-              return _context70.stop();
+              return _context72.stop();
           }
         }
-      }, _callee70);
+      }, _callee72);
     }));
 
-    return function (_x129, _x130, _x131, _x132) {
-      return _ref70.apply(this, arguments);
+    return function (_x131, _x132, _x133, _x134) {
+      return _ref72.apply(this, arguments);
     };
   }();
   /**
@@ -58849,27 +57457,27 @@ function Synthetix_Synthetix(contractSettings) {
 
 
   this.transferableSynthetix = /*#__PURE__*/function () {
-    var _ref71 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee71(account) {
-      return regenerator_default.a.wrap(function _callee71$(_context71) {
+    var _ref73 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee73(account) {
+      return regenerator_default.a.wrap(function _callee73$(_context73) {
         while (1) {
-          switch (_context71.prev = _context71.next) {
+          switch (_context73.prev = _context73.next) {
             case 0:
-              _context71.next = 2;
+              _context73.next = 2;
               return _this.contract.transferableSynthetix(account);
 
             case 2:
-              return _context71.abrupt("return", _context71.sent);
+              return _context73.abrupt("return", _context73.sent);
 
             case 3:
             case "end":
-              return _context71.stop();
+              return _context73.stop();
           }
         }
-      }, _callee71);
+      }, _callee73);
     }));
 
-    return function (_x133) {
-      return _ref71.apply(this, arguments);
+    return function (_x135) {
+      return _ref73.apply(this, arguments);
     };
   }();
 }

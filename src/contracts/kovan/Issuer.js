@@ -498,6 +498,18 @@ function Issuer(contractSettings) {
   this.transferableSynthetixAndAnyRateIsInvalid = async (account, balance) => {
     return await this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
   };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param short {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.upgradeCollateralShort = async (short, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.upgradeCollateralShort(short, amount, txParams);
+  };
 }
 
 export default Issuer;

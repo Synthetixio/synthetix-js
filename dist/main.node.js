@@ -23224,16 +23224,16 @@ var MAINNET_ADDRESSES = {
   ProxyERC20sUSD: '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51',
   ProxySynthetix: '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F',
   SafeDecimalMath: '0x84D626B2BB4D0F064067e4BF80FCe7055d8F3E7B',
-  Synthetix: '0x7F30336E0e01bEe8dD1C641bD793400f82d080cf',
+  Synthetix: '0x08F30Ecf2C15A783083ab9D5b9211c22388d0564',
   SynthetixEscrow: '0x971e78e0C92392A4E39099835cF7E6aB535b2227',
   SynthetixState: '0x4b9Ca5607f1fF8019c1C6A3c2f0CC8de622D5B82',
-  SynthsAUD: '0xC4546bDd93cDAADA6994e84Fb6F2722C620B019C',
-  SynthsBTC: '0x18FcC34bdEaaF9E3b69D2500343527c0c995b1d6',
-  SynthsCHF: '0xCC83a57B080a4c7C86F0bB892Bc180C8C7F8791d',
-  SynthsEUR: '0x1b06a00Df0B27E7871E753720D4917a7D1aac68b',
-  SynthsGBP: '0xAE7A2C1e326e59f2dB2132652115a59E8Adb5eBf',
-  SynthsJPY: '0xB82f11f3168Ece7D56fe6a5679567948090de7C5',
-  SynthsUSD: '0x7df9b3f8f1C011D8BD707430e97E747479DD532a',
+  SynthsAUD: '0xfb020CA7f4e8C4a5bBBe060f59a249c6275d2b69',
+  SynthsBTC: '0x1cB004a8e84a5CE95C1fF895EE603BaC8EC506c7',
+  SynthsCHF: '0xBb5b03E920cF702De5A3bA9Fc1445aF4B3919c88',
+  SynthsEUR: '0xa8E31E3C38aDD6052A9407298FAEB8fD393A6cF9',
+  SynthsGBP: '0xdc883b9d9Ee16f74bE08826E68dF4C9D9d26e8bD',
+  SynthsJPY: '0xE1cc2332852B2Ac0dA59A1f9D3051829f4eF3c1C',
+  SynthsUSD: '0x10A5F7D9D65bCc2734763444D4940a31b109275f',
   TokenStatesAUD: '0xCb29D2cf2C65d3Be1d00F07f3441390432D55203',
   TokenStatesBTC: '0x4F6296455F8d754c19821cF1EC8FeBF2cD456E67',
   TokenStatesCHF: '0x52496fE8a4feaEFe14d9433E00D48E6929c13deC',
@@ -23244,7 +23244,7 @@ var MAINNET_ADDRESSES = {
   TokenStateSynthetix: '0x5b1b5fEa1b99D83aD479dF0C222F0492385381dD',
   TokenStatesETH: '0x34A5ef81d18F3a305aE9C2d7DF42beef4c79031c',
   ProxysETH: '0x5e74C9036fb86BD7eCdcb084a0673EFc32eA31cb',
-  SynthsETH: '0x4FB63c954Ef07EC74335Bb53835026C75DD91dC6',
+  SynthsETH: '0x5D4C724BFe3a228Ff0E29125Ac1571FE093700a4',
   RewardEscrow: '0xb671F2210B1F6621A2607EA63E6B2DC3e2464d1F',
   FeePoolState: '0x11164F6a47C3f8472D19b9aDd516Fc780cb7Ee02',
   SupplySchedule: '0x8d203C458d536Fe0F97e9f741bC231EaC8cd91cf',
@@ -23254,21 +23254,21 @@ var MAINNET_ADDRESSES = {
   RewardsDistribution: '0x29C295B046a73Cde593f21f63091B072d407e3F2',
   TokenStatesLINK: '0x577D4a7395c6A5f46d9981a5F83fa7294926aBB0',
   ProxysLINK: '0xbBC455cb4F1B9e4bFC4B73970d360c8f032EfEE6',
-  SynthsLINK: '0xe08518bA3d2467F7cA50eFE68AA00C5f78D4f3D6',
+  SynthsLINK: '0xDF69bC4541b86Aa4c5A470B4347E730c38b2c3B2',
   TokenStatesDEFI: '0x7Ac2D37098a65B0f711CFfA3be635F1E6aCacFaB',
   ProxysDEFI: '0xe1aFe1Fd76Fd88f78cBf599ea1846231B8bA3B6B',
-  SynthsDEFI: '0xf533aeEe48f0e04E30c2F6A1f19FbB675469a124',
+  SynthsDEFI: '0x918b1dbf0917FdD74D03fB9434915E2ECEc89286',
   Math: '0x385e1Eb2FF28F4A637DA2C9971F8CAF5F5b1E77c',
   AddressResolver: '0x823bE81bbF96BEc0e25CA13170F5AaCb5B79ba83',
   Exchanger: '0xD64D83829D92B5bdA881f6f61A4e4E27Fc185387',
   ExchangeState: '0x545973f28950f50fc6c7F52AAb4Ad214A27C0564',
-  Issuer: '0x0689b1F72930Eb25cACB99f790d2778E713a2c33',
+  Issuer: '0xE5CC99EFA57943F4EA0cE6bed265318697748649',
   IssuanceEternalStorage: '0x631E93A0fb06B5eC6d52c0A2D89a3f9672d6Ba64',
   SystemStatus: '0x696c905F8F8c006cA46e9808fE7e00049507798F',
   DelegateApprovalsEternalStorage: '0x8F586F063ffbb89b186C8e604FC6614766f9C9d1',
   TokenStatesADA: '0x9956c5019a24fbd5B506AD070b771577bAc5c343',
   ProxysADA: '0xe36E2D3c7c34281FA3bC737950a68571736880A1',
-  SynthsADA: '0xB34F4d7c207D8979D05EDb0F63f174764Bd67825',
+  SynthsADA: '0x91b82d62Ff322b8e02b86f33E9A99a813437830d',
   ReadProxyAddressResolver: '0x4E3b31eB0E5CB73641EE1E65E7dCEFe520bA3ef2',
   StakingRewardsSNXBalancer: '0xFBaEdde70732540cE2B11A8AC58Eb2dC0D69dE10',
   StakingRewardsiETH: '0x3f27c540ADaE3a9E8c875C61e3B970b559d7F65d',
@@ -23298,14 +23298,14 @@ var MAINNET_ADDRESSES = {
   ShortingRewardssBTC: '0xCed4055b47cfD0421f3727a35F69CE659c8bAF7a',
   TokenStatesAAVE: '0x9BcED8A8E3Ad81c9b146FFC880358f734A06f7c0',
   ProxysAAVE: '0xd2dF355C19471c8bd7D8A3aa27Ff4e26A21b4076',
-  SynthsAAVE: '0x95aE43E5E96314E4afffcf19D9419111cd11169e',
+  SynthsAAVE: '0x942Eb6e8c029EB22103743C99985aF4F4515a559',
   TokenStatesDOT: '0x73B1a2643507Cd30F11Dfcf2D974f4373E5BC077',
   ProxysDOT: '0x1715AC0743102BF5Cd58EfBB6Cf2dC2685d967b6',
-  SynthsDOT: '0x27b45A4208b87A899009f45888139882477Acea5',
+  SynthsDOT: '0x75A0c1597137AA36B40b6a515D997F9a6c6eefEB',
   StakingRewardssTSLABalancer: '0xF0de877F2F9E7A60767f9BA662F10751566AD01c',
   TokenStatesKRW: '0x93B6e9FbBd2c32a0DC3C2B943B7C3CBC2fE23730',
   ProxysKRW: '0x269895a3dF4D73b077Fc823dD6dA1B95f72Aaf9B',
-  SynthsKRW: '0x527637bE27640d6C3e751d24DC67129A6d13E11C',
+  SynthsKRW: '0xdAe6C79c46aB3B280Ca28259000695529cbD1339',
   VirtualSynthMastercopy: '0xf02ce48fD47D7FA1B7a45a0444805d320D035775',
   StakingRewardssFBBalancer: '0x26Fa0665660c1D3a3666584669511d3c66Ad37Cb',
   StakingRewardssAAPLBalancer: '0x7af65f1740c0eB816A27FD808EaF6Ab09F6Fa646',
@@ -23322,7 +23322,7 @@ var MAINNET_ADDRESSES = {
   OwnerRelayOnEthereum: '0x0e16A6876210841577b233C4165d7B7EdF640b8a',
   TokenStatesETHBTC: '0x042A7A0022A7695454ac5Be77a4860e50c9683fC',
   ProxysETHBTC: '0x104eDF1da359506548BFc7c25bA1E28C16a70235',
-  SynthsETHBTC: '0x6DF798ec713b33BE823b917F27820f2aA0cf7662',
+  SynthsETHBTC: '0x07C1E81C345A7c58d7c24072EFc5D929BD0647AD',
   SystemSettingsLib: '0x307bDCE0A68C612a17BaE8d929f36402d7c94CFA',
   SynthetixDebtShare: '0x89FCb32F29e509cc42d0C8b6f058C993013A843F',
   SignedSafeDecimalMath: '0x728A2B79Cad691531CC1146eF802617FF50c7095',
@@ -31047,6 +31047,22 @@ var KOVAN_ADDRESSES = {
   }],
   payable: false,
   stateMutability: 'view',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'address',
+    name: 'short',
+    type: 'address'
+  }, {
+    internalType: 'uint256',
+    name: 'amount',
+    type: 'uint256'
+  }],
+  name: 'upgradeCollateralShort',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
   type: 'function'
 }]);
 // CONCATENATED MODULE: ./lib/abis/mainnet/AddressResolver.js
@@ -48913,854 +48929,8 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_Exchanger = (Exchanger);
 // CONCATENATED MODULE: ./lib/abis/kovan/Issuer.js
-/* harmony default export */ var kovan_Issuer = ([{
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'SynthAdded',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'SynthRemoved',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CIRCUIT_BREAKER_SUSPENSION_REASON',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract ISynth',
-    name: 'synth',
-    type: 'address'
-  }],
-  name: 'addSynth',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'contract ISynth[]',
-    name: 'synthsToAdd',
-    type: 'address[]'
-  }],
-  name: 'addSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'allNetworksDebtInfo',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'debt',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'sharesSupply',
-    type: 'uint256'
-  }, {
-    internalType: 'bool',
-    name: 'isStale',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'anySynthOrSNXRateIsInvalid',
-  outputs: [{
-    internalType: 'bool',
-    name: 'anyRateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableCurrencyKeys',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: '',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'availableSynthCount',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  name: 'availableSynths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'deprecatedSynthProxy',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'balance',
-    type: 'uint256'
-  }],
-  name: 'burnForRedemption',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'burnSynthsToTarget',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'burnForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'burnSynthsToTargetOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'burnSynthsWithoutDebt',
-  outputs: [{
-    internalType: 'bool',
-    name: 'rateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'canBurnSynths',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'collateral',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'cratio',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'collateralisationRatioAndAnyRatesInvalid',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'cratio',
-    type: 'uint256'
-  }, {
-    internalType: 'bool',
-    name: 'anyRateIsInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }, {
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'debtBalanceOf',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'debtBalance',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32[]',
-    name: 'currencyKeys',
-    type: 'bytes32[]'
-  }],
-  name: 'getSynths',
-  outputs: [{
-    internalType: 'contract ISynth[]',
-    name: '',
-    type: 'address[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'issuanceRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'issueMaxSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }],
-  name: 'issueMaxSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'issueForAddress',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: 'from',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynthsOnBehalf',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: 'to',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'issueSynthsWithoutDebt',
-  outputs: [{
-    internalType: 'bool',
-    name: 'rateInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'lastDebtRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }],
-  name: 'lastIssueEvent',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'bool',
-    name: 'isSelfLiquidation',
-    type: 'bool'
-  }],
-  name: 'liquidateAccount',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'totalRedeemed',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'amountToLiquidate',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'maxIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'minimumStakeTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '_issuer',
-    type: 'address'
-  }],
-  name: 'remainingIssuableSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'maxIssuable',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'alreadyIssued',
-    type: 'uint256'
-  }, {
-    internalType: 'uint256',
-    name: 'totalSystemDebt',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'removeSynth',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32[]',
-    name: 'currencyKeys',
-    type: 'bytes32[]'
-  }],
-  name: 'removeSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint128',
-    name: 'periodId',
-    type: 'uint128'
-  }],
-  name: 'setCurrentPeriodId',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'ratio',
-    type: 'uint256'
-  }],
-  name: 'setLastDebtRatio',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  name: 'synths',
-  outputs: [{
-    internalType: 'contract ISynth',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  name: 'synthsByAddress',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bool',
-    name: 'excludeOtherCollateral',
-    type: 'bool'
-  }],
-  name: 'totalIssuedSynths',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'totalIssued',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'account',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'balance',
-    type: 'uint256'
-  }],
-  name: 'transferableSynthetixAndAnyRateIsInvalid',
-  outputs: [{
-    internalType: 'uint256',
-    name: 'transferable',
-    type: 'uint256'
-  }, {
-    internalType: 'bool',
-    name: 'anyRateIsInvalid',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: 'short',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: 'amount',
-    type: 'uint256'
-  }],
-  name: 'upgradeCollateralShort',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_Issuer = (Issuer);
 // CONCATENATED MODULE: ./lib/abis/kovan/AddressResolver.js
 
 /* harmony default export */ var kovan_AddressResolver = (AddressResolver);
@@ -63203,6 +62373,40 @@ function Issuer_Issuer(contractSettings) {
 
     return function (_x71, _x72) {
       return _ref49.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param short {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.upgradeCollateralShort = /*#__PURE__*/function () {
+    var _ref50 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee50(short, amount, txParams) {
+      return regenerator_default.a.wrap(function _callee50$(_context50) {
+        while (1) {
+          switch (_context50.prev = _context50.next) {
+            case 0:
+              txParams = txParams || {};
+              _context50.next = 3;
+              return _this.contract.upgradeCollateralShort(short, amount, txParams);
+
+            case 3:
+              return _context50.abrupt("return", _context50.sent);
+
+            case 4:
+            case "end":
+              return _context50.stop();
+          }
+        }
+      }, _callee50);
+    }));
+
+    return function (_x73, _x74, _x75) {
+      return _ref50.apply(this, arguments);
     };
   }();
 }

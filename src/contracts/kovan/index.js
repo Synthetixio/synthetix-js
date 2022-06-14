@@ -27,7 +27,6 @@ import sCHF from './sCHF';
 import sBTC from './sBTC';
 import sETH from './sETH';
 import sLINK from './sLINK';
-import sDEFI from './sDEFI';
 
 export default {
   Depot,
@@ -59,5 +58,4 @@ export default {
   sBTC,
   sETH,
   sLINK,
-  sDEFI,
 };

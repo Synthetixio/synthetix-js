@@ -31,7 +31,6 @@ import sADA from './sADA';
 import sAAVE from './sAAVE';
 import sDOT from './sDOT';
 import sETHBTC from './sETHBTC';
-import sDEFI from './sDEFI';
 
 export default {
   Depot,
@@ -67,5 +66,4 @@ export default {
   sAAVE,
   sDOT,
   sETHBTC,
-  sDEFI,
 };

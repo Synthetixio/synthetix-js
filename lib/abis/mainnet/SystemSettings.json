@@ -550,6 +550,19 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
+				"name": "newPenalty",
+				"type": "uint256"
+			}
+		],
+		"name": "SnxLiquidationPenaltyUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
 				"name": "newTargetThreshold",
 				"type": "uint256"
 			}
@@ -1868,6 +1881,21 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "penalty",
+				"type": "uint256"
+			}
+		],
+		"name": "setSnxLiquidationPenalty",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "percent",
 				"type": "uint256"
 			}
@@ -1966,6 +1994,21 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "snxLiquidationPenalty",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{

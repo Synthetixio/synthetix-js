@@ -769,6 +769,17 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param penalty {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setSnxLiquidationPenalty = async (penalty, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setSnxLiquidationPenalty(penalty, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param percent {BigNumber}
    * @param txParams {TxParams}
   
@@ -834,6 +845,14 @@ function SystemSettings(contractSettings) {
   this.setWrapperMintFeeRate = async (_wrapper, _rate, txParams) => {
     txParams = txParams || {};
     return await this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.snxLiquidationPenalty = async () => {
+    return await this.contract.snxLiquidationPenalty();
   };
 
   /**

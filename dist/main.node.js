@@ -23259,7 +23259,7 @@ var MAINNET_ADDRESSES = {
   AddressResolver: '0x823bE81bbF96BEc0e25CA13170F5AaCb5B79ba83',
   Exchanger: '0xD64D83829D92B5bdA881f6f61A4e4E27Fc185387',
   ExchangeState: '0x545973f28950f50fc6c7F52AAb4Ad214A27C0564',
-  Issuer: '0xE5CC99EFA57943F4EA0cE6bed265318697748649',
+  Issuer: '0xc9380E4A1570cce7b99eeD107aC42C754c4CE3Bf',
   IssuanceEternalStorage: '0x631E93A0fb06B5eC6d52c0A2D89a3f9672d6Ba64',
   SystemStatus: '0x696c905F8F8c006cA46e9808fE7e00049507798F',
   DelegateApprovalsEternalStorage: '0x8F586F063ffbb89b186C8e604FC6614766f9C9d1',
@@ -23277,7 +23277,7 @@ var MAINNET_ADDRESSES = {
   SynthUtil: '0x81Aee4EA48f678E172640fB5813cf7A96AFaF6C3',
   DappMaintenance: '0xAb0B2f1Cf979cdbF4676251F35353eC5AF2732Dd',
   FlexibleStorage: '0xc757aCBa3c0506218b3022266a9DC7F3612d85f5',
-  SystemSettings: '0xdD3c1c64402A679e8D709FcCf606BD77eE12b567',
+  SystemSettings: '0x5ad055A1F8C936FB0deb7024f1539Bb3eAA8dc3E',
   TradingRewards: '0x62922670313bf6b41C580143d1f6C173C5C20019',
   DebtCache: '0x1620Aa736939597891C1940CF0d28b82566F9390',
   CollateralManagerState: '0x573E5105c4B92416D1544A188F1bf77d442Bb52d',
@@ -23320,7 +23320,7 @@ var MAINNET_ADDRESSES = {
   TokenStatesETHBTC: '0x042A7A0022A7695454ac5Be77a4860e50c9683fC',
   ProxysETHBTC: '0x104eDF1da359506548BFc7c25bA1E28C16a70235',
   SynthsETHBTC: '0x07C1E81C345A7c58d7c24072EFc5D929BD0647AD',
-  SystemSettingsLib: '0x307bDCE0A68C612a17BaE8d929f36402d7c94CFA',
+  SystemSettingsLib: '0x4A9a8B1B596Fe1096cD75a588fD559968ca64259',
   SynthetixDebtShare: '0x89FCb32F29e509cc42d0C8b6f058C993013A843F',
   SignedSafeDecimalMath: '0x728A2B79Cad691531CC1146eF802617FF50c7095',
   OneNetAggregatorIssuedSynths: '0xcf1405b18dBCEA2893Abe635c88359C75878B9e1',
@@ -34102,6 +34102,16 @@ var KOVAN_ADDRESSES = {
   inputs: [{
     indexed: false,
     internalType: 'uint256',
+    name: 'newPenalty',
+    type: 'uint256'
+  }],
+  name: 'SnxLiquidationPenaltyUpdated',
+  type: 'event'
+}, {
+  anonymous: false,
+  inputs: [{
+    indexed: false,
+    internalType: 'uint256',
     name: 'newTargetThreshold',
     type: 'uint256'
   }],
@@ -35148,6 +35158,18 @@ var KOVAN_ADDRESSES = {
   constant: false,
   inputs: [{
     internalType: 'uint256',
+    name: 'penalty',
+    type: 'uint256'
+  }],
+  name: 'setSnxLiquidationPenalty',
+  outputs: [],
+  payable: false,
+  stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: false,
+  inputs: [{
+    internalType: 'uint256',
     name: 'percent',
     type: 'uint256'
   }],
@@ -35227,6 +35249,18 @@ var KOVAN_ADDRESSES = {
   outputs: [],
   payable: false,
   stateMutability: 'nonpayable',
+  type: 'function'
+}, {
+  constant: true,
+  inputs: [],
+  name: 'snxLiquidationPenalty',
+  outputs: [{
+    internalType: 'uint256',
+    name: '',
+    type: 'uint256'
+  }],
+  payable: false,
+  stateMutability: 'view',
   type: 'function'
 }, {
   constant: true,
@@ -49946,1679 +49980,8 @@ var KOVAN_ADDRESSES = {
 
 /* harmony default export */ var kovan_SynthetixBridgeToOptimism = (SynthetixBridgeToOptimism);
 // CONCATENATED MODULE: ./lib/abis/kovan/SystemSettings.js
-/* harmony default export */ var kovan_SystemSettings = ([{
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }, {
-    internalType: 'address',
-    name: '_resolver',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'constructor'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'flags',
-    type: 'address'
-  }],
-  name: 'AggregatorWarningFlagsUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'equivalent',
-    type: 'address'
-  }],
-  name: 'AtomicEquivalentForDexPricingUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newExchangeFeeRate',
-    type: 'uint256'
-  }],
-  name: 'AtomicExchangeFeeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newMaxVolume',
-    type: 'uint256'
-  }],
-  name: 'AtomicMaxVolumePerBlockUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newWindow',
-    type: 'uint256'
-  }],
-  name: 'AtomicTwapWindowUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newVolatilityConsiderationWindow',
-    type: 'uint256'
-  }],
-  name: 'AtomicVolatilityConsiderationWindowUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newVolatilityUpdateThreshold',
-    type: 'uint256'
-  }],
-  name: 'AtomicVolatilityUpdateThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'name',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'destination',
-    type: 'address'
-  }],
-  name: 'CacheUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'collapseFeeRate',
-    type: 'uint256'
-  }],
-  name: 'CollapseFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'value',
-    type: 'uint256'
-  }],
-  name: 'CrossChainSynthTransferEnabledUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
-    name: 'gasLimitType',
-    type: 'uint8'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newLimit',
-    type: 'uint256'
-  }],
-  name: 'CrossDomainMessageGasLimitChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'debtSnapshotStaleTime',
-    type: 'uint256'
-  }],
-  name: 'DebtSnapshotStaleTimeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'rate',
-    type: 'uint256'
-  }],
-  name: 'EtherWrapperBurnFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'maxETH',
-    type: 'uint256'
-  }],
-  name: 'EtherWrapperMaxETHUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'rate',
-    type: 'uint256'
-  }],
-  name: 'EtherWrapperMintFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'dynamicFeeRounds',
-    type: 'uint256'
-  }],
-  name: 'ExchangeDynamicFeeRoundsUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'dynamicFeeThreshold',
-    type: 'uint256'
-  }],
-  name: 'ExchangeDynamicFeeThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'dynamicFeeWeightDecay',
-    type: 'uint256'
-  }],
-  name: 'ExchangeDynamicFeeWeightDecayUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newExchangeFeeRate',
-    type: 'uint256'
-  }],
-  name: 'ExchangeFeeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'maxDynamicFee',
-    type: 'uint256'
-  }],
-  name: 'ExchangeMaxDynamicFeeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newFeePeriodDuration',
-    type: 'uint256'
-  }],
-  name: 'FeePeriodDurationUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newReward',
-    type: 'uint256'
-  }],
-  name: 'FlagRewardUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'interactionDelay',
-    type: 'uint256'
-  }],
-  name: 'InteractionDelayUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newRatio',
-    type: 'uint256'
-  }],
-  name: 'IssuanceRatioUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newReward',
-    type: 'uint256'
-  }],
-  name: 'LiquidateRewardUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newDelay',
-    type: 'uint256'
-  }],
-  name: 'LiquidationDelayUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newDuration',
-    type: 'uint256'
-  }],
-  name: 'LiquidationEscrowDurationUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newPenalty',
-    type: 'uint256'
-  }],
-  name: 'LiquidationPenaltyUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newRatio',
-    type: 'uint256'
-  }],
-  name: 'LiquidationRatioUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'minimumStakeTime',
-    type: 'uint256'
-  }],
-  name: 'MinimumStakeTimeUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'oldOwner',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerChanged',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'newOwner',
-    type: 'address'
-  }],
-  name: 'OwnerNominated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'threshold',
-    type: 'uint256'
-  }],
-  name: 'PriceDeviationThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bytes32',
-    name: 'synthKey',
-    type: 'bytes32'
-  }, {
-    indexed: false,
-    internalType: 'bool',
-    name: 'enabled',
-    type: 'bool'
-  }],
-  name: 'PureChainlinkPriceForAtomicSwapsEnabledUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'rateStalePeriod',
-    type: 'uint256'
-  }],
-  name: 'RateStalePeriodUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newPenalty',
-    type: 'uint256'
-  }],
-  name: 'SelfLiquidationPenaltyUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newPenalty',
-    type: 'uint256'
-  }],
-  name: 'SnxLiquidationPenaltyUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'newTargetThreshold',
-    type: 'uint256'
-  }],
-  name: 'TargetThresholdUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'bool',
-    name: 'enabled',
-    type: 'bool'
-  }],
-  name: 'TradingRewardsEnabled',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'uint256',
-    name: 'waitingPeriodSecs',
-    type: 'uint256'
-  }],
-  name: 'WaitingPeriodSecsUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'int256',
-    name: 'rate',
-    type: 'int256'
-  }],
-  name: 'WrapperBurnFeeRateUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'uint256',
-    name: 'maxTokenAmount',
-    type: 'uint256'
-  }],
-  name: 'WrapperMaxTokenAmountUpdated',
-  type: 'event'
-}, {
-  anonymous: false,
-  inputs: [{
-    indexed: false,
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }, {
-    indexed: false,
-    internalType: 'int256',
-    name: 'rate',
-    type: 'int256'
-  }],
-  name: 'WrapperMintFeeRateUpdated',
-  type: 'event'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'CONTRACT_NAME',
-  outputs: [{
-    internalType: 'bytes32',
-    name: '',
-    type: 'bytes32'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'acceptOwnership',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'aggregatorWarningFlags',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicEquivalentForDexPricing',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicExchangeFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'atomicMaxVolumePerBlock',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'atomicTwapWindow',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicVolatilityConsiderationWindow',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'atomicVolatilityUpdateThreshold',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'collateral',
-    type: 'address'
-  }],
-  name: 'collapseFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'crossChainSynthTransferEnabled',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
-    name: 'gasLimitType',
-    type: 'uint8'
-  }],
-  name: 'crossDomainMessageGasLimit',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'debtSnapshotStaleTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'etherWrapperBurnFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'etherWrapperMaxETH',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'etherWrapperMintFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeDynamicFeeRounds',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeDynamicFeeThreshold',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeDynamicFeeWeightDecay',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'exchangeFeeRate',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'exchangeMaxDynamicFee',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'feePeriodDuration',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'flagReward',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'collateral',
-    type: 'address'
-  }],
-  name: 'interactionDelay',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'isResolverCached',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'issuanceRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidateReward',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationDelay',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationEscrowDuration',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationPenalty',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'liquidationRatio',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'minimumStakeTime',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_owner',
-    type: 'address'
-  }],
-  name: 'nominateNewOwner',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'nominatedOwner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'owner',
-  outputs: [{
-    internalType: 'address',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'priceDeviationThresholdFactor',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'bytes32',
-    name: 'currencyKey',
-    type: 'bytes32'
-  }],
-  name: 'pureChainlinkPriceForAtomicSwapsEnabled',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'rateStalePeriod',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [],
-  name: 'rebuildCache',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolver',
-  outputs: [{
-    internalType: 'contract AddressResolver',
-    name: '',
-    type: 'address'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'resolverAddressesRequired',
-  outputs: [{
-    internalType: 'bytes32[]',
-    name: 'addresses',
-    type: 'bytes32[]'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'selfLiquidationPenalty',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_flags',
-    type: 'address'
-  }],
-  name: 'setAggregatorWarningFlags',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'address',
-    name: '_equivalent',
-    type: 'address'
-  }],
-  name: 'setAtomicEquivalentForDexPricing',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_exchangeFeeRate',
-    type: 'uint256'
-  }],
-  name: 'setAtomicExchangeFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_maxVolume',
-    type: 'uint256'
-  }],
-  name: 'setAtomicMaxVolumePerBlock',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_window',
-    type: 'uint256'
-  }],
-  name: 'setAtomicTwapWindow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_window',
-    type: 'uint256'
-  }],
-  name: 'setAtomicVolatilityConsiderationWindow',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_threshold',
-    type: 'uint256'
-  }],
-  name: 'setAtomicVolatilityUpdateThreshold',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_collateral',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_collapseFeeRate',
-    type: 'uint256'
-  }],
-  name: 'setCollapseFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'uint256',
-    name: '_value',
-    type: 'uint256'
-  }],
-  name: 'setCrossChainSynthTransferEnabled',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'enum MixinSystemSettings.CrossDomainMessageGasLimits',
-    name: '_gasLimitType',
-    type: 'uint8'
-  }, {
-    internalType: 'uint256',
-    name: '_crossDomainMessageGasLimit',
-    type: 'uint256'
-  }],
-  name: 'setCrossDomainMessageGasLimit',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_seconds',
-    type: 'uint256'
-  }],
-  name: 'setDebtSnapshotStaleTime',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_rate',
-    type: 'uint256'
-  }],
-  name: 'setEtherWrapperBurnFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_maxETH',
-    type: 'uint256'
-  }],
-  name: 'setEtherWrapperMaxETH',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_rate',
-    type: 'uint256'
-  }],
-  name: 'setEtherWrapperMintFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'rounds',
-    type: 'uint256'
-  }],
-  name: 'setExchangeDynamicFeeRounds',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'threshold',
-    type: 'uint256'
-  }],
-  name: 'setExchangeDynamicFeeThreshold',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'weightDecay',
-    type: 'uint256'
-  }],
-  name: 'setExchangeDynamicFeeWeightDecay',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32[]',
-    name: 'synthKeys',
-    type: 'bytes32[]'
-  }, {
-    internalType: 'uint256[]',
-    name: 'exchangeFeeRates',
-    type: 'uint256[]'
-  }],
-  name: 'setExchangeFeeRateForSynths',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'maxFee',
-    type: 'uint256'
-  }],
-  name: 'setExchangeMaxDynamicFee',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_feePeriodDuration',
-    type: 'uint256'
-  }],
-  name: 'setFeePeriodDuration',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'reward',
-    type: 'uint256'
-  }],
-  name: 'setFlagReward',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_collateral',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_interactionDelay',
-    type: 'uint256'
-  }],
-  name: 'setInteractionDelay',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'ratio',
-    type: 'uint256'
-  }],
-  name: 'setIssuanceRatio',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'reward',
-    type: 'uint256'
-  }],
-  name: 'setLiquidateReward',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'time',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationDelay',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'duration',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationEscrowDuration',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'penalty',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationPenalty',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_liquidationRatio',
-    type: 'uint256'
-  }],
-  name: 'setLiquidationRatio',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_seconds',
-    type: 'uint256'
-  }],
-  name: 'setMinimumStakeTime',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_priceDeviationThresholdFactor',
-    type: 'uint256'
-  }],
-  name: 'setPriceDeviationThresholdFactor',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bytes32',
-    name: '_currencyKey',
-    type: 'bytes32'
-  }, {
-    internalType: 'bool',
-    name: '_enabled',
-    type: 'bool'
-  }],
-  name: 'setPureChainlinkPriceForAtomicSwapsEnabled',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'period',
-    type: 'uint256'
-  }],
-  name: 'setRateStalePeriod',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'penalty',
-    type: 'uint256'
-  }],
-  name: 'setSelfLiquidationPenalty',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'penalty',
-    type: 'uint256'
-  }],
-  name: 'setSnxLiquidationPenalty',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: 'percent',
-    type: 'uint256'
-  }],
-  name: 'setTargetThreshold',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'bool',
-    name: '_tradingRewardsEnabled',
-    type: 'bool'
-  }],
-  name: 'setTradingRewardsEnabled',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'uint256',
-    name: '_waitingPeriodSecs',
-    type: 'uint256'
-  }],
-  name: 'setWaitingPeriodSecs',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_wrapper',
-    type: 'address'
-  }, {
-    internalType: 'int256',
-    name: '_rate',
-    type: 'int256'
-  }],
-  name: 'setWrapperBurnFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_wrapper',
-    type: 'address'
-  }, {
-    internalType: 'uint256',
-    name: '_maxTokenAmount',
-    type: 'uint256'
-  }],
-  name: 'setWrapperMaxTokenAmount',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: false,
-  inputs: [{
-    internalType: 'address',
-    name: '_wrapper',
-    type: 'address'
-  }, {
-    internalType: 'int256',
-    name: '_rate',
-    type: 'int256'
-  }],
-  name: 'setWrapperMintFeeRate',
-  outputs: [],
-  payable: false,
-  stateMutability: 'nonpayable',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'snxLiquidationPenalty',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'targetThreshold',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'tradingRewardsEnabled',
-  outputs: [{
-    internalType: 'bool',
-    name: '',
-    type: 'bool'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [],
-  name: 'waitingPeriodSecs',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }],
-  name: 'wrapperBurnFeeRate',
-  outputs: [{
-    internalType: 'int256',
-    name: '',
-    type: 'int256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }],
-  name: 'wrapperMaxTokenAmount',
-  outputs: [{
-    internalType: 'uint256',
-    name: '',
-    type: 'uint256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}, {
-  constant: true,
-  inputs: [{
-    internalType: 'address',
-    name: 'wrapper',
-    type: 'address'
-  }],
-  name: 'wrapperMintFeeRate',
-  outputs: [{
-    internalType: 'int256',
-    name: '',
-    type: 'int256'
-  }],
-  payable: false,
-  stateMutability: 'view',
-  type: 'function'
-}]);
+
+/* harmony default export */ var kovan_SystemSettings = (SystemSettings);
 // CONCATENATED MODULE: ./lib/abis/kovan/index.js
 
 
@@ -70301,21 +68664,21 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param percent {BigNumber}
+   * @param penalty {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTargetThreshold = /*#__PURE__*/function () {
-    var _ref76 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee76(percent, txParams) {
+  this.setSnxLiquidationPenalty = /*#__PURE__*/function () {
+    var _ref76 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee76(penalty, txParams) {
       return regenerator_default.a.wrap(function _callee76$(_context76) {
         while (1) {
           switch (_context76.prev = _context76.next) {
             case 0:
               txParams = txParams || {};
               _context76.next = 3;
-              return _this.contract.setTargetThreshold(percent, txParams);
+              return _this.contract.setSnxLiquidationPenalty(penalty, txParams);
 
             case 3:
               return _context76.abrupt("return", _context76.sent);
@@ -70334,21 +68697,21 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _tradingRewardsEnabled {boolean}
+   * @param percent {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setTradingRewardsEnabled = /*#__PURE__*/function () {
-    var _ref77 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee77(_tradingRewardsEnabled, txParams) {
+  this.setTargetThreshold = /*#__PURE__*/function () {
+    var _ref77 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee77(percent, txParams) {
       return regenerator_default.a.wrap(function _callee77$(_context77) {
         while (1) {
           switch (_context77.prev = _context77.next) {
             case 0:
               txParams = txParams || {};
               _context77.next = 3;
-              return _this.contract.setTradingRewardsEnabled(_tradingRewardsEnabled, txParams);
+              return _this.contract.setTargetThreshold(percent, txParams);
 
             case 3:
               return _context77.abrupt("return", _context77.sent);
@@ -70367,21 +68730,21 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _waitingPeriodSecs {BigNumber}
+   * @param _tradingRewardsEnabled {boolean}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWaitingPeriodSecs = /*#__PURE__*/function () {
-    var _ref78 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee78(_waitingPeriodSecs, txParams) {
+  this.setTradingRewardsEnabled = /*#__PURE__*/function () {
+    var _ref78 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee78(_tradingRewardsEnabled, txParams) {
       return regenerator_default.a.wrap(function _callee78$(_context78) {
         while (1) {
           switch (_context78.prev = _context78.next) {
             case 0:
               txParams = txParams || {};
               _context78.next = 3;
-              return _this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
+              return _this.contract.setTradingRewardsEnabled(_tradingRewardsEnabled, txParams);
 
             case 3:
               return _context78.abrupt("return", _context78.sent);
@@ -70400,22 +68763,21 @@ function SystemSettings_SystemSettings(contractSettings) {
   }();
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _wrapper {String<EthAddress>}
-   * @param _rate {int256}
+   * @param _waitingPeriodSecs {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref79 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee79(_wrapper, _rate, txParams) {
+  this.setWaitingPeriodSecs = /*#__PURE__*/function () {
+    var _ref79 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee79(_waitingPeriodSecs, txParams) {
       return regenerator_default.a.wrap(function _callee79$(_context79) {
         while (1) {
           switch (_context79.prev = _context79.next) {
             case 0:
               txParams = txParams || {};
               _context79.next = 3;
-              return _this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
+              return _this.contract.setWaitingPeriodSecs(_waitingPeriodSecs, txParams);
 
             case 3:
               return _context79.abrupt("return", _context79.sent);
@@ -70428,28 +68790,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee79);
     }));
 
-    return function (_x97, _x98, _x99) {
+    return function (_x97, _x98) {
       return _ref79.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
    * @param _wrapper {String<EthAddress>}
-   * @param _maxTokenAmount {BigNumber}
+   * @param _rate {int256}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperMaxTokenAmount = /*#__PURE__*/function () {
-    var _ref80 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee80(_wrapper, _maxTokenAmount, txParams) {
+  this.setWrapperBurnFeeRate = /*#__PURE__*/function () {
+    var _ref80 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee80(_wrapper, _rate, txParams) {
       return regenerator_default.a.wrap(function _callee80$(_context80) {
         while (1) {
           switch (_context80.prev = _context80.next) {
             case 0:
               txParams = txParams || {};
               _context80.next = 3;
-              return _this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
+              return _this.contract.setWrapperBurnFeeRate(_wrapper, _rate, txParams);
 
             case 3:
               return _context80.abrupt("return", _context80.sent);
@@ -70462,28 +68824,28 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee80);
     }));
 
-    return function (_x100, _x101, _x102) {
+    return function (_x99, _x100, _x101) {
       return _ref80.apply(this, arguments);
     };
   }();
   /**
    * Transaction (consumes gas, requires signer)
    * @param _wrapper {String<EthAddress>}
-   * @param _rate {int256}
+   * @param _maxTokenAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
 
 
-  this.setWrapperMintFeeRate = /*#__PURE__*/function () {
-    var _ref81 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee81(_wrapper, _rate, txParams) {
+  this.setWrapperMaxTokenAmount = /*#__PURE__*/function () {
+    var _ref81 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee81(_wrapper, _maxTokenAmount, txParams) {
       return regenerator_default.a.wrap(function _callee81$(_context81) {
         while (1) {
           switch (_context81.prev = _context81.next) {
             case 0:
               txParams = txParams || {};
               _context81.next = 3;
-              return _this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+              return _this.contract.setWrapperMaxTokenAmount(_wrapper, _maxTokenAmount, txParams);
 
             case 3:
               return _context81.abrupt("return", _context81.sent);
@@ -70496,8 +68858,42 @@ function SystemSettings_SystemSettings(contractSettings) {
       }, _callee81);
     }));
 
-    return function (_x103, _x104, _x105) {
+    return function (_x102, _x103, _x104) {
       return _ref81.apply(this, arguments);
+    };
+  }();
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _wrapper {String<EthAddress>}
+   * @param _rate {int256}
+   * @param txParams {TxParams}
+  
+   **/
+
+
+  this.setWrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref82 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee82(_wrapper, _rate, txParams) {
+      return regenerator_default.a.wrap(function _callee82$(_context82) {
+        while (1) {
+          switch (_context82.prev = _context82.next) {
+            case 0:
+              txParams = txParams || {};
+              _context82.next = 3;
+              return _this.contract.setWrapperMintFeeRate(_wrapper, _rate, txParams);
+
+            case 3:
+              return _context82.abrupt("return", _context82.sent);
+
+            case 4:
+            case "end":
+              return _context82.stop();
+          }
+        }
+      }, _callee82);
+    }));
+
+    return function (_x105, _x106, _x107) {
+      return _ref82.apply(this, arguments);
     };
   }();
   /**
@@ -70506,36 +68902,13 @@ function SystemSettings_SystemSettings(contractSettings) {
    **/
 
 
-  this.targetThreshold = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee82() {
-    return regenerator_default.a.wrap(function _callee82$(_context82) {
-      while (1) {
-        switch (_context82.prev = _context82.next) {
-          case 0:
-            _context82.next = 2;
-            return _this.contract.targetThreshold();
-
-          case 2:
-            return _context82.abrupt("return", _context82.sent);
-
-          case 3:
-          case "end":
-            return _context82.stop();
-        }
-      }
-    }, _callee82);
-  }));
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-
-  this.tradingRewardsEnabled = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee83() {
+  this.snxLiquidationPenalty = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee83() {
     return regenerator_default.a.wrap(function _callee83$(_context83) {
       while (1) {
         switch (_context83.prev = _context83.next) {
           case 0:
             _context83.next = 2;
-            return _this.contract.tradingRewardsEnabled();
+            return _this.contract.snxLiquidationPenalty();
 
           case 2:
             return _context83.abrupt("return", _context83.sent);
@@ -70552,13 +68925,13 @@ function SystemSettings_SystemSettings(contractSettings) {
    * @returns BigNumber
    **/
 
-  this.waitingPeriodSecs = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee84() {
+  this.targetThreshold = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee84() {
     return regenerator_default.a.wrap(function _callee84$(_context84) {
       while (1) {
         switch (_context84.prev = _context84.next) {
           case 0:
             _context84.next = 2;
-            return _this.contract.waitingPeriodSecs();
+            return _this.contract.targetThreshold();
 
           case 2:
             return _context84.abrupt("return", _context84.sent);
@@ -70572,80 +68945,64 @@ function SystemSettings_SystemSettings(contractSettings) {
   }));
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @returns boolean
+   **/
+
+  this.tradingRewardsEnabled = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee85() {
+    return regenerator_default.a.wrap(function _callee85$(_context85) {
+      while (1) {
+        switch (_context85.prev = _context85.next) {
+          case 0:
+            _context85.next = 2;
+            return _this.contract.tradingRewardsEnabled();
+
+          case 2:
+            return _context85.abrupt("return", _context85.sent);
+
+          case 3:
+          case "end":
+            return _context85.stop();
+        }
+      }
+    }, _callee85);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+
+  this.waitingPeriodSecs = /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee86() {
+    return regenerator_default.a.wrap(function _callee86$(_context86) {
+      while (1) {
+        switch (_context86.prev = _context86.next) {
+          case 0:
+            _context86.next = 2;
+            return _this.contract.waitingPeriodSecs();
+
+          case 2:
+            return _context86.abrupt("return", _context86.sent);
+
+          case 3:
+          case "end":
+            return _context86.stop();
+        }
+      }
+    }, _callee86);
+  }));
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param wrapper {String<EthAddress>}
    * @returns int256
    **/
 
   this.wrapperBurnFeeRate = /*#__PURE__*/function () {
-    var _ref85 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee85(wrapper) {
-      return regenerator_default.a.wrap(function _callee85$(_context85) {
-        while (1) {
-          switch (_context85.prev = _context85.next) {
-            case 0:
-              _context85.next = 2;
-              return _this.contract.wrapperBurnFeeRate(wrapper);
-
-            case 2:
-              return _context85.abrupt("return", _context85.sent);
-
-            case 3:
-            case "end":
-              return _context85.stop();
-          }
-        }
-      }, _callee85);
-    }));
-
-    return function (_x106) {
-      return _ref85.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param wrapper {String<EthAddress>}
-   * @returns BigNumber
-   **/
-
-
-  this.wrapperMaxTokenAmount = /*#__PURE__*/function () {
-    var _ref86 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee86(wrapper) {
-      return regenerator_default.a.wrap(function _callee86$(_context86) {
-        while (1) {
-          switch (_context86.prev = _context86.next) {
-            case 0:
-              _context86.next = 2;
-              return _this.contract.wrapperMaxTokenAmount(wrapper);
-
-            case 2:
-              return _context86.abrupt("return", _context86.sent);
-
-            case 3:
-            case "end":
-              return _context86.stop();
-          }
-        }
-      }, _callee86);
-    }));
-
-    return function (_x107) {
-      return _ref86.apply(this, arguments);
-    };
-  }();
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param wrapper {String<EthAddress>}
-   * @returns int256
-   **/
-
-
-  this.wrapperMintFeeRate = /*#__PURE__*/function () {
     var _ref87 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee87(wrapper) {
       return regenerator_default.a.wrap(function _callee87$(_context87) {
         while (1) {
           switch (_context87.prev = _context87.next) {
             case 0:
               _context87.next = 2;
-              return _this.contract.wrapperMintFeeRate(wrapper);
+              return _this.contract.wrapperBurnFeeRate(wrapper);
 
             case 2:
               return _context87.abrupt("return", _context87.sent);
@@ -70660,6 +69017,68 @@ function SystemSettings_SystemSettings(contractSettings) {
 
     return function (_x108) {
       return _ref87.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns BigNumber
+   **/
+
+
+  this.wrapperMaxTokenAmount = /*#__PURE__*/function () {
+    var _ref88 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee88(wrapper) {
+      return regenerator_default.a.wrap(function _callee88$(_context88) {
+        while (1) {
+          switch (_context88.prev = _context88.next) {
+            case 0:
+              _context88.next = 2;
+              return _this.contract.wrapperMaxTokenAmount(wrapper);
+
+            case 2:
+              return _context88.abrupt("return", _context88.sent);
+
+            case 3:
+            case "end":
+              return _context88.stop();
+          }
+        }
+      }, _callee88);
+    }));
+
+    return function (_x109) {
+      return _ref88.apply(this, arguments);
+    };
+  }();
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param wrapper {String<EthAddress>}
+   * @returns int256
+   **/
+
+
+  this.wrapperMintFeeRate = /*#__PURE__*/function () {
+    var _ref89 = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee89(wrapper) {
+      return regenerator_default.a.wrap(function _callee89$(_context89) {
+        while (1) {
+          switch (_context89.prev = _context89.next) {
+            case 0:
+              _context89.next = 2;
+              return _this.contract.wrapperMintFeeRate(wrapper);
+
+            case 2:
+              return _context89.abrupt("return", _context89.sent);
+
+            case 3:
+            case "end":
+              return _context89.stop();
+          }
+        }
+      }, _callee89);
+    }));
+
+    return function (_x110) {
+      return _ref89.apply(this, arguments);
     };
   }();
 }

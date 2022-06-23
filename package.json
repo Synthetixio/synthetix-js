@@ -28,7 +28,7 @@
     "ethereumjs-util": "5.2.0",
     "ethers": "4.0.44",
     "hdkey": "1.1.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "synthetix": "2.74.1",
     "trezor-connect": "8.1.8",
     "walletlink": "2.0.2"

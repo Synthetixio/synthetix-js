@@ -6,7 +6,6 @@ import synths from '../lib/synths';
 const SUPPORTED_NETWORKS = {
   1: 'mainnet',
   5: 'goerli',
-  42: 'kovan',
 };
 
 class ContractSettings {
@@ -14,7 +13,7 @@ class ContractSettings {
    * @constructor
    * @param provider {Object} - ethers.js provider object - default ethers.providers.getDefaultProvider()
    * @param signer {Object} - one of 4 provided signers or a custom ethers.js compatible signer. Use Metamask for Dapp browser support
-   * @param networkId {Number} - default 1 - mainnet, also supports 42 (Kovan)
+   * @param networkId {Number} - default 1 - mainnet, also supports 5 (goerli)
    */
   constructor(contractSettings) {
     contractSettings = contractSettings || {};

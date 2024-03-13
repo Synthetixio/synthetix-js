@@ -141,10 +141,28 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.feesBurned = async account => {
+    return await this.contract.feesBurned(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
    * @returns uint256[2][2]
    **/
   this.feesByPeriod = async account => {
     return await this.contract.feesByPeriod(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.feesToBurn = async account => {
+    return await this.contract.feesToBurn(account);
   };
 
   /**
@@ -368,6 +386,14 @@ function FeePool(contractSettings) {
    **/
   this.totalFeesAvailable = async () => {
     return await this.contract.totalFeesAvailable();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.totalFeesBurned = async () => {
+    return await this.contract.totalFeesBurned();
   };
 
   /**

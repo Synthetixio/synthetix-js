@@ -371,6 +371,47 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "isSelfLiquidation",
+				"type": "bool"
+			}
+		],
+		"name": "liquidationAmounts",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "totalRedeemed",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "debtToRemove",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "escrowToLiquidate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "initialDebtBalance",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "liquidationCollateralRatio",
 		"outputs": [

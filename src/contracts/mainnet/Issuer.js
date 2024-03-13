@@ -16,14 +16,6 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.CIRCUIT_BREAKER_SUSPENSION_REASON = async () => {
-    return await this.contract.CIRCUIT_BREAKER_SUSPENSION_REASON();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @returns bytes32
    **/
   this.CONTRACT_NAME = async () => {
@@ -311,14 +303,6 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.lastDebtRatio = async () => {
-    return await this.contract.lastDebtRatio();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
    **/
@@ -340,6 +324,16 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @param isSelfLiquidation {boolean}
+   * @returns Object
+   **/
+  this.liquidationAmounts = async (account, isSelfLiquidation) => {
+    return await this.contract.liquidationAmounts(account, isSelfLiquidation);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
    * @returns BigNumber
    **/
@@ -353,6 +347,18 @@ function Issuer(contractSettings) {
    **/
   this.minimumStakeTime = async () => {
     return await this.contract.minimumStakeTime();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.modifyDebtSharesForMigration = async (account, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.modifyDebtSharesForMigration(account, amount, txParams);
   };
 
   /**
@@ -448,17 +454,6 @@ function Issuer(contractSettings) {
   this.setCurrentPeriodId = async (periodId, txParams) => {
     txParams = txParams || {};
     return await this.contract.setCurrentPeriodId(periodId, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param ratio {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setLastDebtRatio = async (ratio, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setLastDebtRatio(ratio, txParams);
   };
 
   /**

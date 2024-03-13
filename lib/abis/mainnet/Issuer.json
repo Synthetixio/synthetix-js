@@ -108,21 +108,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "CIRCUIT_BREAKER_SUSPENSION_REASON",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "CONTRACT_NAME",
 		"outputs": [
 			{
@@ -680,21 +665,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "lastDebtRatio",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
 		"inputs": [
 			{
 				"internalType": "address",
@@ -737,12 +707,58 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "amountToLiquidate",
+				"name": "debtRemoved",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "escrowToLiquidate",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "isSelfLiquidation",
+				"type": "bool"
+			}
+		],
+		"name": "liquidationAmounts",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "totalRedeemed",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "debtToRemove",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "escrowToLiquidate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "initialDebtBalance",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -779,6 +795,26 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "modifyDebtSharesForMigration",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -936,21 +972,6 @@
 			}
 		],
 		"name": "setCurrentPeriodId",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "ratio",
-				"type": "uint256"
-			}
-		],
-		"name": "setLastDebtRatio",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",

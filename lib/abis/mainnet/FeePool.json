@@ -358,12 +358,54 @@
 				"type": "address"
 			}
 		],
+		"name": "feesBurned",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
 		"name": "feesByPeriod",
 		"outputs": [
 			{
 				"internalType": "uint256[2][2]",
 				"name": "results",
 				"type": "uint256[2][2]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "feesToBurn",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "feesFromPeriod",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -761,6 +803,21 @@
 		"constant": true,
 		"inputs": [],
 		"name": "totalFeesAvailable",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalFeesBurned",
 		"outputs": [
 			{
 				"internalType": "uint256",

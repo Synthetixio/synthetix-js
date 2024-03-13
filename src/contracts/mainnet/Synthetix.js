@@ -518,14 +518,12 @@ function Synthetix(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns BigNumber
    **/
-  this.initializeLiquidatorRewardsRestitution = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.initializeLiquidatorRewardsRestitution(amount, txParams);
+  this.getFirstNonZeroEscrowIndex = async account => {
+    return await this.contract.getFirstNonZeroEscrowIndex(account);
   };
 
   /**
@@ -604,6 +602,22 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param escrowStartIndex {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.liquidateDelinquentAccountEscrowIndex = async (account, escrowStartIndex, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.liquidateDelinquentAccountEscrowIndex(
+      account,
+      escrowStartIndex,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
    * @returns boolean
    **/
@@ -632,12 +646,33 @@ function Synthetix(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param txParams {TxParams}
+   * @returns Object
+   **/
+  this.migrateAccountBalances = async (account, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.migrateAccountBalances(account, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
    **/
   this.migrateEscrowBalanceToRewardEscrowV2 = async txParams => {
     txParams = txParams || {};
     return await this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.migrateEscrowContractBalance = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.migrateEscrowContractBalance(txParams);
   };
 
   /**
@@ -750,14 +785,6 @@ function Synthetix(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns boolean
-   **/
-  this.restituted = async () => {
-    return await this.contract.restituted();
   };
 
   /**

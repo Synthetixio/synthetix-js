@@ -1164,18 +1164,24 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "getFirstNonZeroEscrowIndex",
+		"outputs": [
+			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "initializeLiquidatorRewardsRestitution",
-		"outputs": [],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1296,6 +1302,32 @@
 	},
 	{
 		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "escrowStartIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "liquidateDelinquentAccountEscrowIndex",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
 		"inputs": [],
 		"name": "liquidateSelf",
 		"outputs": [
@@ -1347,8 +1379,43 @@
 	},
 	{
 		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "migrateAccountBalances",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "totalEscrowRevoked",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalLiquidBalance",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
 		"inputs": [],
 		"name": "migrateEscrowBalanceToRewardEscrowV2",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "migrateEscrowContractBalance",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -1543,21 +1610,6 @@
 				"internalType": "bytes32[]",
 				"name": "addresses",
 				"type": "bytes32[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "restituted",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
 			}
 		],
 		"payable": false,

@@ -26,10 +26,6 @@ import sCHF from './sCHF';
 import sKRW from './sKRW';
 import sBTC from './sBTC';
 import sETH from './sETH';
-import sLINK from './sLINK';
-import sADA from './sADA';
-import sAAVE from './sAAVE';
-import sDOT from './sDOT';
 import sETHBTC from './sETHBTC';
 
 export default {
@@ -61,9 +57,5 @@ export default {
   sKRW,
   sBTC,
   sETH,
-  sLINK,
-  sADA,
-  sAAVE,
-  sDOT,
   sETHBTC,
 };

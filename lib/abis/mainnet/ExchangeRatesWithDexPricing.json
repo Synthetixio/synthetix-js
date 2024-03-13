@@ -270,84 +270,6 @@
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "atomicEquivalentForDexPricing",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "atomicTwapWindow",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "atomicVolatilityConsiderationWindow",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "atomicVolatilityUpdateThreshold",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "aggregator",
 				"type": "address"
@@ -411,13 +333,265 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "sourceAmount",
+				"name": "amount",
 				"type": "uint256"
 			},
 			{
 				"internalType": "bytes32",
 				"name": "destinationCurrencyKey",
 				"type": "bytes32"
+			}
+		],
+		"name": "effectiveAtomicValueAndRates",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "systemValue",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "systemSourceRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "systemDestinationRate",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "currencyKey",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "dexPriceAggregator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "atomicEquivalentForDexPricing",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicExchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicTwapWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicMaxVolumePerBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityConsiderationWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityUpdateThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeMaxDynamicFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeRounds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeWeightDecay",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+				"name": "sourceSettings",
+				"type": "tuple"
+			},
+			{
+				"internalType": "uint256",
+				"name": "sourceAmount",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "currencyKey",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "dexPriceAggregator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "atomicEquivalentForDexPricing",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicExchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicTwapWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicMaxVolumePerBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityConsiderationWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityUpdateThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeMaxDynamicFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeRounds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeWeightDecay",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+				"name": "destinationSettings",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "currencyKey",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "dexPriceAggregator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "atomicEquivalentForDexPricing",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicExchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicTwapWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicMaxVolumePerBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityConsiderationWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityUpdateThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeMaxDynamicFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeRounds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeWeightDecay",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+				"name": "usdSettings",
+				"type": "tuple"
 			}
 		],
 		"name": "effectiveAtomicValueAndRates",
@@ -912,6 +1086,37 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "rateWithSafetyChecks",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "broken",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "staleOrInvalid",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -1070,6 +1275,94 @@
 				"internalType": "bytes32",
 				"name": "currencyKey",
 				"type": "bytes32"
+			}
+		],
+		"name": "synthTooVolatileForAtomicExchange",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "currencyKey",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "dexPriceAggregator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "atomicEquivalentForDexPricing",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicExchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicTwapWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicMaxVolumePerBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityConsiderationWindow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "atomicVolatilityUpdateThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeFeeRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeMaxDynamicFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeRounds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exchangeDynamicFeeWeightDecay",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+				"name": "settings",
+				"type": "tuple"
 			}
 		],
 		"name": "synthTooVolatileForAtomicExchange",

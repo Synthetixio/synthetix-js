@@ -1,0 +1,347 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "src",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "dest",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountReceived",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "exchangeFeeRate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "roundIdForSrc",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "roundIdForDest",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeEntryAppended",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "src",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "dest",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reclaim",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rebate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "srcRoundIdAtPeriodEnd",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "destRoundIdAtPeriodEnd",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "exchangeTimestamp",
+				"type": "uint256"
+			}
+		],
+		"name": "ExchangeEntrySettled",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "contract IExchangeState",
+						"name": "exchangeState",
+						"type": "IExchangeState"
+					},
+					{
+						"internalType": "contract IExchangeRates",
+						"name": "exchangeRates",
+						"type": "IExchangeRates"
+					},
+					{
+						"internalType": "contract ICircuitBreaker",
+						"name": "circuitBreaker",
+						"type": "ICircuitBreaker"
+					},
+					{
+						"internalType": "contract IExchangerInternalDebtCache",
+						"name": "debtCache",
+						"type": "IExchangerInternalDebtCache"
+					},
+					{
+						"internalType": "contract IIssuer",
+						"name": "issuer",
+						"type": "IIssuer"
+					},
+					{
+						"internalType": "contract ISynthetix",
+						"name": "synthetix",
+						"type": "ISynthetix"
+					}
+				],
+				"internalType": "struct ExchangeSettlementLib.ResolvedAddresses",
+				"name": "resolvedAddresses",
+				"type": "tuple"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "waitingPeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "hasWaitingPeriodOrSettlementOwing",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "contract IExchangeState",
+				"name": "exchangeState",
+				"type": "IExchangeState"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "waitingPeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "maxSecsLeftInWaitingPeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "contract IExchangeState",
+						"name": "exchangeState",
+						"type": "IExchangeState"
+					},
+					{
+						"internalType": "contract IExchangeRates",
+						"name": "exchangeRates",
+						"type": "IExchangeRates"
+					},
+					{
+						"internalType": "contract ICircuitBreaker",
+						"name": "circuitBreaker",
+						"type": "ICircuitBreaker"
+					},
+					{
+						"internalType": "contract IExchangerInternalDebtCache",
+						"name": "debtCache",
+						"type": "IExchangerInternalDebtCache"
+					},
+					{
+						"internalType": "contract IIssuer",
+						"name": "issuer",
+						"type": "IIssuer"
+					},
+					{
+						"internalType": "contract ISynthetix",
+						"name": "synthetix",
+						"type": "ISynthetix"
+					}
+				],
+				"internalType": "struct ExchangeSettlementLib.ResolvedAddresses",
+				"name": "resolvedAddresses",
+				"type": "tuple"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "waitingPeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "settlementOwing",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "reclaimAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "rebateAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "numEntries",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "src",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "dest",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reclaim",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rebate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "srcRoundIdAtPeriodEnd",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "destRoundIdAtPeriodEnd",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IExchanger.ExchangeEntrySettlement[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

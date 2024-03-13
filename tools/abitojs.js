@@ -6,7 +6,6 @@ const docsDescriptions = require('../lib/docSrc/descriptions');
 
 const SUPPORTED_NETWORKS = {
   1: 'mainnet',
-  5: 'goerli',
 };
 
 /**

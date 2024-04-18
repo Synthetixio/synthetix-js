@@ -97,6 +97,32 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param currencyKey {bytes32}
+   * @param amountOfSynth {BigNumber}
+   * @param amountInsUSD {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnAndIssueSynthsWithoutDebtCache = async (
+    account,
+    currencyKey,
+    amountOfSynth,
+    amountInsUSD,
+    txParams
+  ) => {
+    txParams = txParams || {};
+    return await this.contract.burnAndIssueSynthsWithoutDebtCache(
+      account,
+      currencyKey,
+      amountOfSynth,
+      amountInsUSD,
+      txParams
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param deprecatedSynthProxy {String<EthAddress>}
    * @param account {String<EthAddress>}
    * @param balance {BigNumber}
@@ -492,18 +518,6 @@ function Issuer(contractSettings) {
    **/
   this.transferableSynthetixAndAnyRateIsInvalid = async (account, balance) => {
     return await this.contract.transferableSynthetixAndAnyRateIsInvalid(account, balance);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param short {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.upgradeCollateralShort = async (short, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.upgradeCollateralShort(short, amount, txParams);
   };
 }
 
